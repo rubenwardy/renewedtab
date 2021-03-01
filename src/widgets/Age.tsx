@@ -1,41 +1,28 @@
 import React from 'react';
 
-interface IAgeProps {
+interface AgeProps {
 	birthDate: Date;
 }
 
-interface IAgeState {
-	age: number;
+function calculateYearsSince(date: Date): number {
+	const delta = (new Date().getTime() - date.getTime());
+	return delta / 365.25 / 1000 / (60 * 60 * 24);
 }
 
-export class Age extends React.Component<IAgeProps, IAgeState> {
-	private timerID?: NodeJS.Timeout;
-	private birthDate: Date;
+export function Age(props: AgeProps) {
+	const [age, setAge] = React.useState(calculateYearsSince(props.birthDate));
 
-	constructor(props: IAgeProps | Readonly<IAgeProps>) {
-		super(props);
-		this.birthDate = props.birthDate;
-		this.state = { age: this.calculateAge() };
-	}
+	React.useEffect(() => {
+		const timer = setInterval(() => {
+			setAge(calculateYearsSince(props.birthDate));
+		}, 500);
 
-	componentDidMount(): void {
-		this.timerID = setInterval(() => this.setState({
-			age: this.calculateAge()
-		}), 500);
-	}
+		return () => {
+			clearInterval(timer);
+		};
+	}, [props.birthDate]);
 
-	componentWillUnmount() {
-		if (this.timerID) {
-			clearInterval(this.timerID);
-		}
-	}
-
-	render() {
-		return (<div className="panel">You are <strong>{this.state.age.toFixed(7)}</strong></div>)
-	}
-
-	calculateAge(): number {
-		const delta = (new Date().getTime() - this.birthDate.getTime());
-		return delta / 365.25 / 1000 / (60 * 60 * 24);
-	}
+	return (<div className="panel">
+		You are <strong>{age.toFixed(7)}</strong>
+		</div>);
 }
