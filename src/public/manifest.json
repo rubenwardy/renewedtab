@@ -1,0 +1,9 @@
+{
+	"short_name": "Homescreen",
+	"name": "Homescreen",
+	"icons": [],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#111",
+	"background_color": "#111"
+}

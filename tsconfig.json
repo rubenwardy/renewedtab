@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"module": "commonjs",
+		"target": "es2019",
+		"sourceMap": true,
+		"typeRoots": [
+			"./node_modules/@types",
+		],
+		"baseUrl": "src",
+		"esModuleInterop": true,
+		"strict": true
+	},
+	"include": [
+		"src"
+	]
+}

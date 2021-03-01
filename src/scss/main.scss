@@ -1,0 +1,148 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	color: #eee;
+	font-family: "Roboto", "Arial", sans-serif;
+	background: #111;
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-image: url("https://i.redd.it/5hm3u7rb4fk61.jpg");
+}
+
+main {
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+	max-width: 600px;
+}
+
+h1 {
+	display: block;
+	text-align: center;
+	font-size: 64pt;
+	margin: 0 0 1rem 0;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+// Columns
+.grid {
+	$gap: 1em;
+	gap: $gap;
+	column-count: 2;
+	& > * {
+		display: inline-block;
+		margin: $gap/2 0;
+		width: 100%;
+	}
+}
+
+
+// Flexbox
+/*
+.grid {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1em;
+
+	& > * {
+		display: inline-block;
+	}
+}
+*/
+
+// Grid
+/*
+.grid {
+	$gap: 1em;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-auto-flow: dense;
+	gap: $gap;
+	column-count: 2;
+
+	& > * {
+		display: block;
+	}
+}
+ */
+
+.panel {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 0.25rem;
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	padding: 0;
+	overflow: hidden auto;
+
+	&:not(.flush) {
+		padding: 0.8rem;
+	}
+
+	*:first-child {
+		margin-top: 0;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	> ul {
+		display: block;
+		margin: 0;
+		list-style: none;
+		padding: 0;
+	}
+
+	> ul li {
+		display: block;
+		margin: 0;
+		list-style: none;
+		padding: 0;
+
+		&.section {
+			display: block;
+			padding: 0.5rem 1rem 0.2rem 1rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+			color: rgba(255, 255, 255, 0.5);
+
+			&:first-child {
+				padding-top: 0.8rem;
+			}
+		}
+
+		a {
+			display: block;
+			padding: 0.5rem 1rem;
+			font-size: 1.171875rem;
+			line-height: 1.5;
+			color: rgba(255, 255, 255, 0.9);
+			text-decoration: none;
+			transition: color 0.2s ease-in-out,
+					background-color 0.2s ease-in-out,
+					border-color 0.2s ease-in-out,
+					box-shadow 0.2s ease-in-out;
+
+			&:hover {
+				color: white;
+				background: rgba(255, 255, 255, 0.1);
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
+}
