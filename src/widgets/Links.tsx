@@ -1,7 +1,10 @@
 import React from 'react';
 
+type Link = { title: string, url: string };
+type LinkSection = { title: string, links: Link[] };
+
 export class Links extends React.Component {
-	private sections = [
+	private sections: LinkSection[] = [
 		{
 			title: "Minetest",
 			links: [
@@ -32,7 +35,6 @@ export class Links extends React.Component {
 				}
 			]
 		}
-
 	]
 
 	render() {
@@ -40,7 +42,7 @@ export class Links extends React.Component {
 			.map(section => [
 				(<li className="section" key={section.title}>{section.title}</li>),
 				section.links.map(link => (<li key={link.title}>
-						<a href="{link.url}">{link.title}</a>
+						<a href={link.url}>{link.title}</a>
 					</li>))
 			])
 			.flat(10);

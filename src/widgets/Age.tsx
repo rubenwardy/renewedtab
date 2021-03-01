@@ -1,21 +1,27 @@
 import React from 'react';
 
+interface IAgeProps {
+	birthDate: Date;
+}
+
 interface IAgeState {
 	age: number;
 }
 
-export class Age extends React.Component<{}, IAgeState> {
+export class Age extends React.Component<IAgeProps, IAgeState> {
 	private timerID?: NodeJS.Timeout;
+	private birthDate: Date;
 
-	constructor(props: {} | Readonly<{}>) {
+	constructor(props: IAgeProps | Readonly<IAgeProps>) {
 		super(props);
+		this.birthDate = props.birthDate;
 		this.state = { age: this.calculateAge() };
 	}
 
 	componentDidMount(): void {
 		this.timerID = setInterval(() => this.setState({
 			age: this.calculateAge()
-		}), 1000);
+		}), 500);
 	}
 
 	componentWillUnmount() {
@@ -29,7 +35,7 @@ export class Age extends React.Component<{}, IAgeState> {
 	}
 
 	calculateAge(): number {
-		const delta = (new Date().getTime() - new Date("1997-01-01").getTime());
+		const delta = (new Date().getTime() - this.birthDate.getTime());
 		return delta / 365.25 / 1000 / (60 * 60 * 24);
 	}
 }

@@ -42,7 +42,7 @@ class App extends React.Component {
 				<Clock />
 				<div className="grid">
 					<Links />
-					<Age />
+					<Age birthDate={new Date("1997-01-01")} />
 				</div>
 			</main>);
 	}
