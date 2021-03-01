@@ -1,0 +1,20 @@
+image: node:14
+
+variables:
+  ENV: production
+  LC_ALL: C.UTF-8
+
+before_script:
+  - npm install
+
+pages:
+  stage: deploy
+  interruptible: true
+  script:
+    - npm run build
+    - cp -r dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
