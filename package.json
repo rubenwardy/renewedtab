@@ -8,8 +8,16 @@
 		"start": "webpack --watch & live-server dist --port=8085",
 		"test": "false"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@gitlab.com/rubenwardy/homescreen.git"
+	},
 	"author": "rubenwardy",
 	"license": "MIT",
+	"bugs": {
+		"url": "https://gitlab.com/rubenwardy/homescreen/issues"
+	},
+	"homepage": "https://gitlab.com/rubenwardy/homescreen#readme",
 	"dependencies": {
 		"@types/react": "^17.0.2",
 		"@types/react-dom": "^17.0.1",
