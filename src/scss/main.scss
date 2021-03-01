@@ -35,56 +35,41 @@ h1 {
 	margin-bottom: 0;
 }
 
-// Columns
-.grid {
-	$gap: 1em;
-	gap: $gap;
-	column-count: 2;
-	& > * {
-		display: inline-block;
-		margin: $gap/2 0;
-		width: 100%;
+$grid_gap: 1em;
+
+@supports not (grid-template-rows: masonry) {
+	.grid {
+		column-count: 2;
+		gap: $grid_gap;
+
+		& > * {
+			display: inline-block;
+			margin: 0 0 $grid_gap 0;
+			width: 100%;
+			box-sizing: border-box;
+		}
 	}
 }
 
+@supports (grid-template-rows: masonry) {
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-auto-flow: dense;
+		grid-gap: $grid_gap;
+		grid-template-rows: masonry;
 
-// Flexbox
-/*
-.grid {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 1em;
-
-	& > * {
-		display: inline-block;
+		& > * {
+			display: inline-block;
+		}
 	}
 }
-*/
-
-// Grid
-/*
-.grid {
-	$gap: 1em;
-
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	grid-auto-flow: dense;
-	gap: $gap;
-	column-count: 2;
-
-	& > * {
-		display: block;
-	}
-}
- */
 
 .panel {
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 0.25rem;
-	-webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(20px);
+	backdrop-filter: blur(20px);
 	padding: 0;
 	overflow: hidden auto;
 
