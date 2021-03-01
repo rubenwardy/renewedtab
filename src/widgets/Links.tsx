@@ -1,0 +1,50 @@
+import React from 'react';
+
+export class Links extends React.Component {
+	private sections = [
+		{
+			title: "Minetest",
+			links: [
+				{
+					"title": "ContentDB Audit Log",
+					"url": "https://content.minetest.net/admin/audit/"
+				},
+				{
+					"title": "GitHub",
+					"url": "https://github.com/notifications"
+				},
+				{
+					"title": "CTF Monitor",
+					"url": "https://monitor.rubenwardy.com/d/9TgIegyGk/ctf"
+				},
+			]
+		},
+		{
+			title: "Interesting reads",
+			links: [
+				{
+					"title": "UX StackExchange",
+					"url": "https://ux.stackexchange.com"
+				},
+				{
+					"title": "UX Collective",
+					"url": "https://uxdesign.cc/"
+				}
+			]
+		}
+
+	]
+
+	render() {
+		const links = this.sections
+			.map(section => [
+				(<li className="section" key={section.title}>{section.title}</li>),
+				section.links.map(link => (<li key={link.title}>
+						<a href="{link.url}">{link.title}</a>
+					</li>))
+			])
+			.flat(10);
+
+		return (<div className="panel flush"><ul>{links}</ul></div>)
+	}
+}
