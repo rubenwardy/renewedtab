@@ -40,7 +40,7 @@ class App extends React.Component {
 		return (
 			<main>
 				<Clock showSeconds={false} />
-				<Search />
+				<Search searchEngine="https://duckduckgo.com" />
 				<div className="grid">
 					<Links sections={sections} />
 					<Notes localStorageKey="notes" />
