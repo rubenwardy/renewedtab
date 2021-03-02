@@ -1,39 +1,5 @@
 import React from 'react';
-import { Age, Links, Notes, Weather } from "./widgets";
-
-interface IClockState {
-	date: Date;
-}
-
-class Clock extends React.Component<{}, IClockState> {
-	private timerID?: NodeJS.Timeout;
-
-	constructor(props: {} | Readonly<{}>) {
-		super(props);
-		this.state = { date: new Date() };
-	}
-
-	componentDidMount(): void {
-		this.timerID = setInterval(() => this.tick(), 1000);
-	}
-
-	componentWillUnmount() {
-		if (this.timerID) {
-			clearInterval(this.timerID);
-		}
-	}
-
-	tick(): void {
-		this.setState({
-			date: new Date()
-		});
-	}
-
-	render() {
-		return (<h1>{this.state.date.toLocaleTimeString()}</h1>);
-	}
-}
-
+import { Age, Clock, Links, Notes, Weather } from "./widgets";
 
 const sections = [
 	{
@@ -73,7 +39,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<main>
-				<Clock />
+				<Clock showSeconds={false} />
 				<div className="grid">
 					<Links sections={sections} />
 					<Notes localStorageKey="notes" />

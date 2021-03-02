@@ -28,7 +28,7 @@ h1 {
 	display: block;
 	text-align: center;
 	font-size: 64pt;
-	margin: 0 0 1rem 0;
+	margin: 0 0 2.5rem 0;
 }
 
 .mb-0 {
@@ -118,15 +118,12 @@ $grid_gap: 1em;
 			color: rgba(255, 255, 255, 0.9);
 			text-decoration: none;
 			transition: color 0.2s ease-in-out,
-					background-color 0.2s ease-in-out,
-					border-color 0.2s ease-in-out,
-					box-shadow 0.2s ease-in-out;
+					background-color 0.2s ease-in-out;
 
 			&:hover {
 				color: white;
 				background: rgba(255, 255, 255, 0.1);
 				text-decoration: none;
-				color: white;
 			}
 		}
 	}
