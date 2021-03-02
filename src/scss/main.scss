@@ -1,6 +1,8 @@
-html, body {
+html, body, #app {
 	width: 100%;
 	height: 100%;
+	padding: 0;
+	margin: 0;
 }
 
 body {
@@ -62,6 +64,23 @@ $grid_gap: 1em;
 		& > * {
 			display: inline-block;
 		}
+	}
+}
+
+@media (max-width: 750px) {
+	main {
+		margin: none;
+		padding: 1em;
+		position: static;
+		transform: none;
+		width: auto;
+	}
+}
+
+@media (max-width: 500px) {
+	.grid {
+		display: block;
+		column-count: inherit;
 	}
 }
 
