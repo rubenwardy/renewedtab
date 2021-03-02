@@ -16,6 +16,17 @@ body {
 	background-image: url("https://i.redd.it/5hm3u7rb4fk61.jpg");
 }
 
+h1 {
+	display: block;
+	text-align: center;
+	font-size: 64pt;
+	margin: 0 0 2.5rem 0;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
 main {
 	margin: 0 auto;
 	position: absolute;
@@ -26,15 +37,10 @@ main {
 	max-width: 600px;
 }
 
-h1 {
-	display: block;
-	text-align: center;
-	font-size: 64pt;
-	margin: 0 0 2.5rem 0;
+@media (min-width: 900px) {
+	.main-wide {
+		max-width: 900px;
 }
-
-.mb-0 {
-	margin-bottom: 0;
 }
 
 $grid_gap: 1em;
@@ -51,6 +57,12 @@ $grid_gap: 1em;
 			box-sizing: border-box;
 		}
 	}
+
+	@media (min-width: 900px) {
+		.main-wide .grid {
+			column-count: 3;
+		}
+	}
 }
 
 @supports (grid-template-rows: masonry) {
@@ -63,6 +75,12 @@ $grid_gap: 1em;
 
 		& > * {
 			display: inline-block;
+		}
+	}
+
+	@media (min-width: 900px) {
+		.main-wide .grid {
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 }

@@ -9,15 +9,16 @@ const widgetManager = new WidgetManager();
 function App(_props: any) {
 	const [createVisible, setCreateVisible] = useState(false);
 
+	const widgets = widgetManager.widgets;
 	return (
 		<div>
 			<CreateWidgetDialog visible={createVisible} manager={widgetManager} onClose={() => setCreateVisible(false)} />
-			<main>
+			<main className={widgets.length > 5 ? "main-wide" : ""}>
 				<Clock showSeconds={false} />
 				<Widget type="Search" id={0} save={() => {}}
 					child={Search} props={{searchTitle: "DuckDuckGo", searchURL: "https://duckduckgo.com"}} />
 				<div className="grid">
-					{widgetManager.widgets}
+					{widgets}
 					<a className="btn" onClick={() => setCreateVisible(true)}>+</a>
 				</div>
 			</main>
