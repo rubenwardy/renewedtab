@@ -2,11 +2,12 @@ const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dest = path.resolve(__dirname, "dist");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   	mode: isProd ? 'production' : 'development',
-	entry: "./src/index.tsx",
+	entry: "./src/index",
 	plugins: [
 		new CopyPlugin({
 			patterns: [
@@ -16,8 +17,12 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			// Options similar to the same options in webpackOptions.output
 			// both options are optional
-			filename: '[name].css',
-			chunkFilename: '[id].css',
+			filename: '[name].[contenthash].css',
+			chunkFilename: '[id].[contenthash].css',
+		}),
+		new HtmlWebpackPlugin({
+			title: "Homescreen",
+			template: "src/templates/index.ejs",
 		}),
 	],
 	module: {
@@ -53,7 +58,7 @@ module.exports = {
 
 	},
 	output: {
-		filename: "[name].js",
+		filename: "[name].[contenthash].js",
 		path: dest
 	},
 };
