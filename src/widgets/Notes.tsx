@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAutoTextArea } from "../hooks";
-import { Widget } from './Widget';
+import { Widget } from '../Widget';
 
 interface NotesProps {
 	localStorageKey: string;

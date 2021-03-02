@@ -1,5 +1,3 @@
-export * from "./Widget";
-
 export * from "./Age";
 export * from "./Clock";
 export * from "./Links";
