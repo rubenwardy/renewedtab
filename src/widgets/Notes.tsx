@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAutoTextArea } from "../hooks";
+import { Widget } from './Widget';
 
 interface NotesProps {
 	localStorageKey: string;
@@ -19,9 +20,10 @@ export function Notes(props: NotesProps) {
 		setNotes(localStorage.getItem(props.localStorageKey));
 	}, [props.localStorageKey]);
 
-	return (<div className="panel">
-		<textarea ref={ref} className="invisble" onChange={handleChange}
-				placeholder="Enter notes here"
-				defaultValue={notes || ""} />
-	</div>);
+	return (
+		<Widget type="Notes" props={props}>
+			<textarea ref={ref} className="invisble" onChange={handleChange}
+					placeholder="Enter notes here"
+					defaultValue={notes || ""} />
+		</Widget>);
 }

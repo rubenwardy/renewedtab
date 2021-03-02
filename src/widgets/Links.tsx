@@ -1,4 +1,5 @@
 import React from 'react';
+import { Widget } from './Widget';
 
 type Link = { title: string, url: string };
 type LinkSection = { title: string, links: Link[] };
@@ -16,5 +17,8 @@ export function Links(props: LinksProps)  {
 		])
 		.flat(10);
 
-	return (<div className="panel flush"><ul>{links}</ul></div>)
+	return (
+		<Widget type="Links" props={props} className="panel flush">
+			<ul>{links}</ul>
+		</Widget>)
 }

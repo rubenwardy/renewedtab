@@ -72,16 +72,17 @@ $grid_gap: 1em;
 	backdrop-filter: blur(20px);
 	padding: 0;
 	overflow: hidden auto;
+	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
 
 	&:not(.flush) {
 		padding: 0.8rem;
 	}
 
-	*:first-child {
+	> *:first-child {
 		margin-top: 0;
 	}
 
-	*:last-child {
+	> *:last-child {
 		margin-bottom: 0;
 	}
 
@@ -127,14 +128,57 @@ $grid_gap: 1em;
 			}
 		}
 	}
+
+	h2 {
+		font-size: 100%;
+		font-weight: bold;
+		margin-top: 0;
+	}
+
+	&.panel-editing {
+		background-color: rgba(255, 255, 255, 0.3);
+		filter: drop-shadow(0 0 8px rgba(33, 33, 33, 0.7));
+	}
+}
+
+.widget {
+	position: relative;
+
+	.btn {
+		position: absolute;
+		top: 0.4rem;
+		right: 0.8rem;
+		color: transparent;
+		transition: color 0.15s ease-in-out;
+		cursor: pointer;
+		z-index: 100;
+	}
+
+	&:hover .btn, &.panel-editing .btn {
+		color: white;
+	}
+}
+
+label {
+	display: block;
+	margin: 0.9em 0 0.3em 0;
+}
+
+input, textarea {
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 0.25rem;
+	color: white;
+	padding: 0.3rem 0.6rem;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 textarea.invisble {
 	background: transparent;
 	border: none;
 	color: white;
-	display: block;
-	width: 100%;
 	resize: none;
 	font-family: inherit;
 }

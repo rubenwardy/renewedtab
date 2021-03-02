@@ -17,7 +17,7 @@ export function Clock(props: ClockProps) {
 		};
 	});
 
-	const options = props.showSeconds ? {} : {
+	const options: Intl.DateTimeFormatOptions = props.showSeconds ? {} : {
 		hour: "numeric",
 		minute: "numeric"
 	}
