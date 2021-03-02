@@ -5,7 +5,7 @@ interface NotesProps {
 	localStorageKey: string;
 }
 
-export function Notes(props: NotesProps) {
+export default function Notes(props: NotesProps) {
 	const [ notes, setNotes ] = useState(localStorage.getItem(props.localStorageKey));
 	const ref = useAutoTextArea(undefined, [notes]);
 

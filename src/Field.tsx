@@ -25,7 +25,10 @@ export function TextField(props: FieldProps<string>) {
 export function DateField(props: FieldProps<Date>) {
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		if (props.onChange) {
-			props.onChange(new Date(e.target.value));
+			const ms = Date.parse(e.target.value);
+			if (!Number.isNaN(ms)) {
+				props.onChange(new Date(ms));
+			}
 		}
 	}
 

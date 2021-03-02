@@ -9,7 +9,7 @@ function calculateYearsSince(date: Date): number {
 	return delta / 365.25 / 1000 / (60 * 60 * 24);
 }
 
-export function Age(props: AgeProps) {
+export default function Age(props: AgeProps) {
 	const [age, setAge] = React.useState(calculateYearsSince(props.birthDate));
 
 	React.useEffect(() => {

@@ -5,7 +5,7 @@ interface WeatherProps {
 	locationName: string;
 }
 
-export function Weather(props: WeatherProps) {
+export default function Weather(props: WeatherProps) {
 	return (
 		<div className="panel">
 			<a className="weatherwidget-io" href={`https://forecast7.com/en/${props.locationId}/${props.locationName.toLowerCase()}/`}

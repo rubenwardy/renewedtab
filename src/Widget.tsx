@@ -1,10 +1,6 @@
 import { makeFieldForValue } from "Field";
 import React, { useState } from "react";
-
-interface WidgetProps<T> {
-	props: T;
-	child: (props: T) => JSX.Element;
-}
+import { WidgetProps } from "WidgetManager";
 
 export function Widget<T>(props: WidgetProps<T>) {
 	const [visible, setVisible] = useState(false);
@@ -15,17 +11,20 @@ export function Widget<T>(props: WidgetProps<T>) {
 				const Field = makeFieldForValue(value);
 				return (
 					<Field key={key} name={key} value={value}
-						onChange={(val: any) => {(props.props as any)[key] = val;}} />);
+						onChange={(val: any) => {
+							(props.props as any)[key] = val;
+							props.save();
+						}} />);
 		});
 
-		return (<div className="widget panel panel-editing">
+		return (<div className="widget panel panel-editing"  key={props.id}>
 			<a className="btn" onClick={() => setVisible(false)}>x</a>
 			<h2>Edit</h2>
 			{inner}
 		</div>);
 	} else {
 		return  (
-			<div className={`widget`}>
+			<div className={`widget`} key={props.id}>
 				<a className="btn" onClick={() => setVisible(true)}>e</a>
 				{child}
 			</div>);

@@ -4,7 +4,7 @@ interface ClockProps {
 	showSeconds: boolean;
 }
 
-export function Clock(props: ClockProps) {
+export default function Clock(props: ClockProps) {
 	const [time, setTime] = React.useState<Date>(new Date());
 
 	React.useEffect(() => {

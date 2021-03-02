@@ -8,7 +8,7 @@ interface LinksProps {
 	sections: LinkSection[];
 }
 
-export function Links(props: LinksProps)  {
+export default function Links(props: LinksProps)  {
 	const links = props.sections.map(section => [
 			(<li className="section" key={section.title}>{section.title}</li>),
 			section.links.map(link => (<li key={link.title}>

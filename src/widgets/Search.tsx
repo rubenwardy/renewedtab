@@ -5,7 +5,7 @@ interface SearchProps {
 	searchURL: string;
 }
 
-export function Search(props: SearchProps) {
+export default function Search(props: SearchProps) {
 	return (
 		<div className="panel flush">
 			<form method="get" action={props.searchURL}>
