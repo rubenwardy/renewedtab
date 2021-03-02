@@ -1,5 +1,5 @@
 import React from 'react';
-import { Age, Links } from "./widgets";
+import { Age, Links, Weather } from "./widgets";
 
 interface IClockState {
 	date: Date;
@@ -77,6 +77,7 @@ class App extends React.Component {
 				<div className="grid">
 					<Links sections={sections} />
 					<Age birthDate={new Date("1997-01-01")} />
+					<Weather locationId="51d45n2d59" locationName="Bristol" />
 				</div>
 			</main>);
 	}
