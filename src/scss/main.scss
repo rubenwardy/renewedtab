@@ -67,7 +67,40 @@ $grid_gap: 1em;
 	}
 }
 
+
+footer {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	font-size: 80%;
+	color: rgba(255, 255, 255, 0.2);
+
+	a {
+		color: rgba(255, 255, 255, 0.3);
+		text-decoration: none;
+
+		&:hover {
+			color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}
+
+
 @media (max-width: 750px) {
+	html, body, #app {
+		height: auto;
+		overflow: auto;
+	}
+
+	footer {
+		display: block;
+		padding: 2em 0;
+		text-align: center;
+		transform: none;
+		position: static;
+	}
+
 	main {
 		margin: none;
 		padding: 1em;
@@ -214,22 +247,4 @@ textarea.invisible, input.invisible {
 
 main > .widget {
 	margin: 1em 0;
-}
-
-footer {
-	position: fixed;
-	bottom: 10px;
-	left: 50%;
-	transform: translate(-50%, 0);
-	font-size: 80%;
-	color: rgba(255, 255, 255, 0.2);
-
-	a {
-		color: rgba(255, 255, 255, 0.3);
-		text-decoration: none;
-
-		&:hover {
-			color: rgba(255, 255, 255, 0.5);
-		}
-	}
 }
