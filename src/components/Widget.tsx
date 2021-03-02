@@ -1,4 +1,4 @@
-import { makeFieldForValue } from "Field";
+import { makeFieldForValue } from "./Field";
 import React, { useState } from "react";
 import { WidgetProps } from "WidgetManager";
 

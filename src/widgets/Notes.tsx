@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAutoTextArea } from "../hooks";
+import { useAutoTextArea } from "../utils/hooks";
 
 interface NotesProps {
 	localStorageKey: string;

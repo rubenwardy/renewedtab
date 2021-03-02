@@ -1,5 +1,5 @@
-import { fromTypedJSON, toTypedJSON } from "TypedJSON";
-import { Widget } from "Widget";
+import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
+import { Widget } from "./components/Widget";
 import { WidgetTypes } from "widgets";
 
 const sections = [

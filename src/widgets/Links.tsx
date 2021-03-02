@@ -1,5 +1,4 @@
 import React from 'react';
-import { Widget } from '../Widget';
 
 type Link = { title: string, url: string };
 type LinkSection = { title: string, links: Link[] };
