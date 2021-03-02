@@ -60,12 +60,12 @@ export class WidgetManager {
 	}
 
 	constructor() {
-		// const json = localStorage.getItem("widgets");
-		// if (json) {
-			// this.widget_props = fromTypedJSON(JSON.parse(json));
-		// } else {
+		const json = localStorage.getItem("widgets");
+		if (json) {
+			this.widget_props = fromTypedJSON(JSON.parse(json));
+		} else {
 			this.resetToDefault();
-		// }
+		}
 	}
 
 	save() {
