@@ -1,35 +1,33 @@
-import { Field } from "Field";
-import React, { ChangeEvent, ChangeEventHandler, useState } from "react";
+import { makeFieldForValue } from "Field";
+import React, { useState } from "react";
 
-interface WidgetProps{
-	className?: string;
-	type: string;
-	props: { [key: string]: any };
-	children?: string|JSX.Element|(string|JSX.Element)[];
+interface WidgetProps<T> {
+	props: T;
+	child: (props: T) => JSX.Element;
 }
 
-export function Widget(props: WidgetProps) {
+export function Widget<T>(props: WidgetProps<T>) {
 	const [visible, setVisible] = useState(false);
+	const child = props.child(props.props);
 
 	if (visible) {
-		function handleChange(key: string, e: any) {
-			console.log(`${key} changed`);
-			props.props[key] = e.target.value;
-		}
-
-		const inner = Object.entries(props.props).map(([key, value]) =>
-				<Field key={key} name={key} value={value} onChange={(val: any) => {props.props[key] = val;}} />);
+		const inner = Object.entries(props.props).map(([key, value]) => {
+				const Field = makeFieldForValue(value);
+				return (
+					<Field key={key} name={key} value={value}
+						onChange={(val: any) => {(props.props as any)[key] = val;}} />);
+		});
 
 		return (<div className="widget panel panel-editing">
 			<a className="btn" onClick={() => setVisible(false)}>x</a>
-			<h2>Edit {props.type}</h2>
+			<h2>Edit</h2>
 			{inner}
 		</div>);
 	} else {
 		return  (
-			<div className={`widget ${props.className ?? 'panel'}`}>
+			<div className={`widget`}>
 				<a className="btn" onClick={() => setVisible(true)}>e</a>
-				{props.children}
+				{child}
 			</div>);
 	}
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Widget } from 'Widget';
 import { Age, Clock, Links, Notes, Search, Weather } from "./widgets";
 
 const sections = [
@@ -40,12 +41,12 @@ class App extends React.Component {
 		return (
 			<main>
 				<Clock showSeconds={false} />
-				<Search searchTitle="DuckDuckGo" searchURL="https://duckduckgo.com" />
+				<Widget child={Search} props={{searchTitle: "DuckDuckGo", searchURL: "https://duckduckgo.com"}} />
 				<div className="grid">
-					<Links sections={sections} />
-					<Notes localStorageKey="notes" />
-					<Age birthDate={new Date("1997-01-01")} />
-					<Weather locationId="51d45n2d59" locationName="Bristol" />
+					<Widget child={Links} props={{sections: sections}} />
+					<Widget child={Notes} props={{localStorageKey: "notes"}} />
+					<Widget child={Age} props={{birthDate: new Date("1997-01-01")}} />
+					{/* <Widget child={Weather} props={{locationId: "51d45n2d59", locationName:"Bristol"}} /> */}
 				</div>
 			</main>);
 	}

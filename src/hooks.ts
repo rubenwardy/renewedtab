@@ -1,3 +1,5 @@
+import { useLayoutEffect, useRef } from "react";
+
 /**
 * Automatically scales a HTML TextArea element to the height of its content,
 * or the specified max-height, whichever is smaller. Returns a ref to attach to
@@ -7,9 +9,6 @@
 * @param {any[]} dependents - A list of dependent variables for the TextArea's content.
 * @return {RefObject} - A RefObject to attach to the targeted TextArea.
 */
-
-import { useEffect, useLayoutEffect, useRef } from "react";
-
 export function useAutoTextArea(maxHeight?: number, dependents?: any[]): React.RefObject<HTMLTextAreaElement> {
 	const ref = useRef<HTMLTextAreaElement>(null);
 

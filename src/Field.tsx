@@ -1,54 +1,78 @@
 import React, { ChangeEvent } from "react";
 
-function getInputInfo(key: string, value: any): [string, string] {
-	if (value instanceof Date) {
-		const ret = (value as Date).toISOString().slice(0, 10);
-		console.log(ret);
-		return ["date", ret];
-	} else if (value instanceof String) {
-		return ["text", value.toString()];
-	} else if (value instanceof Number) {
-		return ["number", value.toString()];
-	} else if (value instanceof Array || value instanceof Object || value instanceof Map) {
-		return ["textarea", JSON.stringify(value)];
-	} else {
-		console.error(`Unknown type for ${key}`, value);
-		return ["text", value.toString()];
-	}
-}
-
-interface FieldProps {
+interface FieldProps<T> {
 	name: string;
-	value: any;
+	value: T;
 	label?: string;
-
-	onChange?: (value: any) => void;
+	onChange?: (value: T) => void;
 }
 
-export function Field(props: FieldProps) {
-	const [type, value] = getInputInfo(props.name, props.value);
-
-	function handleChange(e: ChangeEvent<HTMLElement>) {
-		if (!props.onChange) {
-			return;
+export function TextField(props: FieldProps<string>) {
+	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (props.onChange) {
+			props.onChange(e.target.value);
 		}
-
-		let value;
-		if (e instanceof HTMLTextAreaElement) {
-			value = (e.target as HTMLTextAreaElement).value;
-		} else {
-			value = (e.target as HTMLInputElement).value;
-		}
-		props.onChange(value);
 	}
 
-	const label = (<label htmlFor={props.name}>{props.label ?? props.name}</label>);
-	let field;
-	if (type == "textarea") {
-		field = (<textarea name={props.name} value={value} onChange={handleChange} />);
+	return (
+		<div>
+			<label htmlFor={props.name}>{props.label ?? props.name}</label>
+			<input type="text" name={props.name} defaultValue={props.value}
+					onChange={handleChange} />
+		</div>);
+}
+
+export function DateField(props: FieldProps<Date>) {
+	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (props.onChange) {
+			props.onChange(new Date(e.target.value));
+		}
+	}
+
+	return (
+		<div>
+			<label htmlFor={props.name}>{props.label ?? props.name}</label>
+			<input type="date" name={props.name}
+					defaultValue={props.value.toISOString().slice(0, 10)}
+					onChange={handleChange} />
+		</div>);
+}
+
+
+export function JSONField(props: FieldProps<Object | any[]>) {
+	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
+		if (props.onChange) {
+			props.onChange(JSON.parse(e.target.value));
+		}
+	}
+
+	return (
+		<div>
+			<label htmlFor={props.name}>{props.label ?? props.name}</label>
+			<textarea name={props.name}
+					defaultValue={JSON.stringify(props.value)}
+					onChange={handleChange} />
+		</div>);
+}
+
+export type Type = string | (new (...args: any[]) => any);
+
+export function makeField(type: Type): React.FC<FieldProps<any>> {
+	if (type == Date) {
+		return DateField;
+	} else if (type == "object") {
+		return JSONField;
 	} else {
-		field = (<input type={type} name={props.name} value={value} onChange={handleChange} />);
+		return TextField;
 	}
+}
 
-	return (<div>{label}{field}</div>);
+export function makeFieldForValue(value: any): React.FC<FieldProps<any>> {
+	let type = typeof(value);
+	if (type == "object") {
+		if (value instanceof Date) {
+			return makeField(Date);
+		}
+	}
+	return makeField(type);;
 }

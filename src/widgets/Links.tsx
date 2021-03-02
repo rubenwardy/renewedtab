@@ -18,7 +18,7 @@ export function Links(props: LinksProps)  {
 		.flat(10);
 
 	return (
-		<Widget type="Links" props={props} className="panel flush">
+		<div className="panel flush">
 			<ul>{links}</ul>
-		</Widget>)
+		</div>)
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Widget } from '../Widget';
 
 interface AgeProps {
 	birthDate: Date;
@@ -24,7 +23,7 @@ export function Age(props: AgeProps) {
 	}, [props.birthDate]);
 
 	return (
-		<Widget type="Age" props={props}>
+		<div className="panel">
 			You are <strong>{age.toFixed(7)}</strong>
-		</Widget>);
+		</div>);
 }
