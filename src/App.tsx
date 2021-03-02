@@ -1,5 +1,5 @@
 import React from 'react';
-import { Age, Clock, Links, Notes, Weather } from "./widgets";
+import { Age, Clock, Links, Notes, Search, Weather } from "./widgets";
 
 const sections = [
 	{
@@ -40,6 +40,7 @@ class App extends React.Component {
 		return (
 			<main>
 				<Clock showSeconds={false} />
+				<Search />
 				<div className="grid">
 					<Links sections={sections} />
 					<Notes localStorageKey="notes" />

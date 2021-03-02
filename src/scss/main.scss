@@ -66,6 +66,7 @@ $grid_gap: 1em;
 }
 
 .panel {
+	display: block;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 0.25rem;
 	-webkit-backdrop-filter: blur(20px);
@@ -175,10 +176,19 @@ input, textarea {
 	box-sizing: border-box;
 }
 
-textarea.invisble {
+input.large, textarea.large {
+	font-size: 120%;
+	padding: 0.8rem 1.2rem;
+}
+
+textarea.invisible, input.invisible {
 	background: transparent;
 	border: none;
 	color: white;
 	resize: none;
 	font-family: inherit;
+}
+
+main > .panel {
+	margin: 1em 0;
 }

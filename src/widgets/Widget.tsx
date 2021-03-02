@@ -1,11 +1,4 @@
-import React, { useState } from "react";
-
-interface WidgetProps<T extends Object> {
-	className?: string;
-	type: string;
-	props: T;
-	children?: string|JSX.Element|(string|JSX.Element)[];
-}
+import React, { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 function getInputInfo(key: string, value: any): [string, string] {
 	if (value instanceof Date) {
@@ -28,28 +21,57 @@ interface FieldProps {
 	name: string;
 	value: any;
 	label?: string;
+
+	onChange?: (value: any) => void;
 }
 
 export function Field(props: FieldProps) {
 	const [type, value] = getInputInfo(props.name, props.value);
 
+	function handleChange(e: ChangeEvent<HTMLElement>) {
+		if (!props.onChange) {
+			return;
+		}
+
+		let value;
+		if (e instanceof HTMLTextAreaElement) {
+			value = (e.target as HTMLTextAreaElement).value;
+		} else {
+			value = (e.target as HTMLInputElement).value;
+		}
+		props.onChange(value);
+	}
+
 	const label = (<label htmlFor={props.name}>{props.label ?? props.name}</label>);
 	let field;
 	if (type == "textarea") {
-		field = (<textarea name={props.name} value={value} />);
+		field = (<textarea name={props.name} value={value} onChange={handleChange} />);
 	} else {
-		field = (<input type={type} name={props.name} value={value} />);
+		field = (<input type={type} name={props.name} value={value} onChange={handleChange} />);
 	}
 
 	return (<div>{label}{field}</div>);
 }
 
-export function Widget<T extends Object>(props: WidgetProps<T>) {
+
+interface WidgetProps{
+	className?: string;
+	type: string;
+	props: { [key: string]: any };
+	children?: string|JSX.Element|(string|JSX.Element)[];
+}
+
+export function Widget(props: WidgetProps) {
 	const [visible, setVisible] = useState(false);
 
 	if (visible) {
+		function handleChange(key: string, e: any) {
+			console.log(`${key} changed`);
+			props.props[key] = e.target.value;
+		}
+
 		const inner = Object.entries(props.props).map(([key, value]) =>
-				<Field key={key} name={key} value={value} />);
+				<Field key={key} name={key} value={value} onChange={(val: any) => {props.props[key] = val;}} />);
 
 		return (<div className="widget panel panel-editing">
 			<a className="btn" onClick={() => setVisible(false)}>x</a>

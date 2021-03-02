@@ -22,7 +22,7 @@ export function Notes(props: NotesProps) {
 
 	return (
 		<Widget type="Notes" props={props}>
-			<textarea ref={ref} className="invisble" onChange={handleChange}
+			<textarea ref={ref} className="invisible" onChange={handleChange}
 					placeholder="Enter notes here"
 					defaultValue={notes || ""} />
 		</Widget>);
