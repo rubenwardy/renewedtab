@@ -131,3 +131,13 @@ $grid_gap: 1em;
 		}
 	}
 }
+
+textarea.invisble {
+	background: transparent;
+	border: none;
+	color: white;
+	display: block;
+	width: 100%;
+	resize: none;
+	font-family: inherit;
+}
