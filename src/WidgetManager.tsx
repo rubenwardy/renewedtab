@@ -24,14 +24,18 @@ export class WidgetManager {
 	private widget_props: (WidgetRaw<any>)[] = [];
 
 	get widgets(): (JSX.Element)[] {
-		return this.widget_props.map(widget => React.createElement(Widget, {
-			key: widget.id,
-			id: widget.id,
-			type: widget.type,
-			props: widget.props,
-			child: WidgetTypes[widget.type],
-			save: this.save.bind(this),
-		}));
+		return this.widget_props.map(raw => {
+			const props = {
+				key: raw.id,
+				id: raw.id,
+				type: raw.type,
+				props: raw.props,
+				child: WidgetTypes[raw.type],
+				save: this.save.bind(this),
+			};
+
+			return (<Widget {...props} />);
+		});
 	}
 
 	constructor() {
