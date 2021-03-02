@@ -1,39 +1,13 @@
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 import { Widget } from "./components/Widget";
 import { WidgetTypes } from "widgets";
+import React from "react";
 
-const sections = [
-	{
-		title: "Minetest",
-		links: [
-			{
-				"title": "ContentDB Audit Log",
-				"url": "https://content.minetest.net/admin/audit/"
-			},
-			{
-				"title": "GitHub",
-				"url": "https://github.com/notifications"
-			},
-			{
-				"title": "CTF Monitor",
-				"url": "https://monitor.rubenwardy.com/d/9TgIegyGk/ctf"
-			},
-		]
-	},
-	{
-		title: "Interesting reads",
-		links: [
-			{
-				"title": "UX StackExchange",
-				"url": "https://ux.stackexchange.com"
-			},
-			{
-				"title": "UX Collective",
-				"url": "https://uxdesign.cc/"
-			}
-		]
-	}
-];
+
+type ReactFactory<T> = ((props: T) => JSX.Element) ;
+export interface WidgetFactory<T> extends ReactFactory<T> {
+	defaultProps: T;
+}
 
 interface WidgetRaw<T> {
 	id: number;
@@ -42,7 +16,7 @@ interface WidgetRaw<T> {
 }
 
 export interface WidgetProps<T> extends WidgetRaw<T> {
-	child: (props: T) => JSX.Element;
+	child: WidgetFactory<T>;
 	save(): void;
 }
 
@@ -50,7 +24,8 @@ export class WidgetManager {
 	private widget_props: (WidgetRaw<any>)[] = [];
 
 	get widgets(): (JSX.Element)[] {
-		return this.widget_props.map(widget => Widget({
+		return this.widget_props.map(widget => React.createElement(Widget, {
+			key: widget.id,
 			id: widget.id,
 			type: widget.type,
 			props: widget.props,
@@ -74,36 +49,18 @@ export class WidgetManager {
 	}
 
 	resetToDefault() {
-		this.widget_props = [
-			{
-				id: 1,
-				type: "Links",
-				props: {
-					sections: sections
-				}
-			},
-			{
-				id: 2,
-				type: "Notes",
-				props: {
-					localStorageKey: "notes"
-				}
-			},
-			{
-				id: 3,
-				type: "Age",
-				props: {
-					birthDate: new Date("1971-01-01")
-				}
-			},
-			{
-				id: 4,
-				type: "Weather",
-				props: {
-					locationId: "51d45n2d59",
-					locationName:"Bristol"
-				}
-			}
-		];
+		this.widget_props = [];
+		["Links", "Notes", "Age", "Weather"].forEach(this.createWidget.bind(this));
+	}
+
+	createWidget(type: string) {
+		const widget = WidgetTypes[type];
+
+		this.widget_props.push({
+			id: this.widget_props.length + 1,
+			type: type,
+			props: Object.assign({}, widget.defaultProps)
+		});
+		this.save();
 	}
 }

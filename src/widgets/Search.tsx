@@ -13,3 +13,9 @@ export default function Search(props: SearchProps) {
 			</form>
 		</div>);
 }
+
+
+Search.defaultProps = {
+	searchTitle: "DuckDuckGo",
+	searchURL: "https://duckduckgo.com"
+};

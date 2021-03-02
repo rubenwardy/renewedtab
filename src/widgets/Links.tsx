@@ -21,3 +21,39 @@ export default function Links(props: LinksProps)  {
 			<ul>{links}</ul>
 		</div>)
 }
+
+
+Links.defaultProps = {
+	sections: [
+		{
+			title: "Minetest",
+			links: [
+				{
+					"title": "ContentDB Audit Log",
+					"url": "https://content.minetest.net/admin/audit/"
+				},
+				{
+					"title": "GitHub",
+					"url": "https://github.com/notifications"
+				},
+				{
+					"title": "CTF Monitor",
+					"url": "https://monitor.rubenwardy.com/d/9TgIegyGk/ctf"
+				},
+			]
+		},
+		{
+			title: "Interesting reads",
+			links: [
+				{
+					"title": "UX StackExchange",
+					"url": "https://ux.stackexchange.com"
+				},
+				{
+					"title": "UX Collective",
+					"url": "https://uxdesign.cc/"
+				}
+			]
+		}
+	]
+};

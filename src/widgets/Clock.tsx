@@ -24,3 +24,6 @@ export default function Clock(props: ClockProps) {
 
 	return (<h1>{time.toLocaleTimeString(undefined, options)}</h1>);
 }
+
+
+Clock.defaultProps = {}

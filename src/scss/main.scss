@@ -117,6 +117,21 @@ footer {
 	}
 }
 
+.grid > .btn {
+	display: block;
+	color: rgba(255, 255, 255, 0.25);
+	padding: 0rem 0.8rem;
+	text-align: center;
+	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	font-size: 200%;
+
+	&:hover {
+		background: rgba(255, 255, 255, 0.1);
+	}
+}
+
 .panel {
 	display: block;
 	background: rgba(255, 255, 255, 0.1);
@@ -127,7 +142,7 @@ footer {
 	overflow: hidden auto;
 	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
 
-	&:not(.flush) {
+	&:not(.flush), .panel-inset {
 		padding: 0.8rem;
 	}
 
@@ -186,6 +201,10 @@ footer {
 		font-size: 100%;
 		font-weight: bold;
 		margin-top: 0;
+	}
+
+	h2.panel-inset {
+		margin-bottom: 0;
 	}
 
 	&.panel-editing {
@@ -247,4 +266,23 @@ textarea.invisible, input.invisible {
 
 main > .widget {
 	margin: 1em 0;
+}
+
+.modal {
+	background: rgba(0, 0, 0, 0.85);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+
+	.modal-body {
+		position: absolute;
+		min-width: 400px;
+		max-width: 600px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }

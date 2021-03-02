@@ -27,3 +27,8 @@ export default function Age(props: AgeProps) {
 			You are <strong>{age.toFixed(7)}</strong>
 		</div>);
 }
+
+
+Age.defaultProps = {
+	birthDate: new Date("1971-01-01")
+}

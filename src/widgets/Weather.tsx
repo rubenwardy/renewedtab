@@ -14,3 +14,9 @@ export default function Weather(props: WeatherProps) {
 			</a>
 		</div>);
 }
+
+
+Weather.defaultProps = {
+	locationId: "51d45n2d59",
+	locationName:"Bristol"
+};

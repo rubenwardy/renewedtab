@@ -30,3 +30,8 @@ export default function Notes(props: NotesProps) {
 					defaultValue={notes || ""} />
 		</div>);
 }
+
+
+Notes.defaultProps = {
+	localStorageKey: "notes"
+};

@@ -4,8 +4,6 @@ import { WidgetProps } from "WidgetManager";
 
 export function Widget<T>(props: WidgetProps<T>) {
 	const [visible, setVisible] = useState(false);
-	const child = props.child(props.props);
-
 	if (visible) {
 		const inner = Object.entries(props.props).map(([key, value]) => {
 				const Field = makeFieldForValue(value);
@@ -17,14 +15,15 @@ export function Widget<T>(props: WidgetProps<T>) {
 						}} />);
 		});
 
-		return (<div className="widget panel panel-editing"  key={props.id}>
+		return (<div className="widget panel panel-editing">
 			<a className="btn" onClick={() => setVisible(false)}>x</a>
 			<h2>Edit {props.type}</h2>
 			{inner}
 		</div>);
 	} else {
+		const child = React.createElement(props.child, props.props);
 		return  (
-			<div className={`widget`} key={props.id}>
+			<div className={`widget`}>
 				<a className="btn" onClick={() => setVisible(true)}>e</a>
 				{child}
 			</div>);
