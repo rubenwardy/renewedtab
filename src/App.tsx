@@ -6,7 +6,6 @@ import { Clock, Search } from "widgets";
 const widgetManager = new WidgetManager();
 
 function App(_props: any) {
-	widgetManager.save();
 	return (
 		<main>
 			<Clock showSeconds={false} />

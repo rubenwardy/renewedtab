@@ -60,15 +60,16 @@ export class WidgetManager {
 	}
 
 	constructor() {
-		const json = localStorage.getItem("widgets");
-		if (json) {
-			this.widget_props = fromTypedJSON(JSON.parse(json));
-		} else {
+		// const json = localStorage.getItem("widgets");
+		// if (json) {
+			// this.widget_props = fromTypedJSON(JSON.parse(json));
+		// } else {
 			this.resetToDefault();
-		}
+		// }
 	}
 
 	save() {
+		console.log("Saving");
 		localStorage.setItem("widgets", JSON.stringify(toTypedJSON(this.widget_props)));
 	}
 
@@ -95,6 +96,14 @@ export class WidgetManager {
 					birthDate: new Date("1971-01-01")
 				}
 			},
+			{
+				id: 4,
+				type: "Weather",
+				props: {
+					locationId: "51d45n2d59",
+					locationName:"Bristol"
+				}
+			}
 		];
 	}
 }

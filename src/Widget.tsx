@@ -19,7 +19,7 @@ export function Widget<T>(props: WidgetProps<T>) {
 
 		return (<div className="widget panel panel-editing"  key={props.id}>
 			<a className="btn" onClick={() => setVisible(false)}>x</a>
-			<h2>Edit</h2>
+			<h2>Edit {props.type}</h2>
 			{inner}
 		</div>);
 	} else {
