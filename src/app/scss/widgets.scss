@@ -41,6 +41,11 @@
 		}
 	}
 
+	> ul.scrolling {
+		max-height: 200px;
+		overflow-y: auto;
+	}
+
 	> ul li {
 		display: block;
 		margin: 0;

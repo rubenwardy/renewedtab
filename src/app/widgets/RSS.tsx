@@ -29,8 +29,8 @@ export default function RSS(props: RSSProps) {
 	return (
 		<div className="panel flush">
 			{title}
-			<ul>
-				{rows.slice(0, 5)}
+			<ul className="scrolling">
+				{rows}
 			</ul>
 		</div>);
 }
