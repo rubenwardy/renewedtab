@@ -2,7 +2,7 @@ import express from 'express';
 import fetch, { Request } from 'node-fetch';
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT ?? 8000;
 
 const WHITELISTED_HOSTS = new Set([
 	"forecast7.com",
