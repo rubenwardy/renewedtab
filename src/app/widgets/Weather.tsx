@@ -1,11 +1,6 @@
 import React from 'react';
 import { useJSON } from 'app/utils/hooks';
 
-interface WeatherProps {
-	url: string;
-	locationId: string;
-	locationName: string;
-}
 
 interface WeatherForecastProps {
 	day: string;
@@ -16,13 +11,7 @@ interface WeatherForecastProps {
 	sunset: string;
 }
 
-interface WeatherInfo {
-	current: { icon: string, temp: number };
-	forecast: WeatherForecastProps[];
-}
-
-
-function WeatherInfo(props: WeatherForecastProps) {
+function WeatherForecast(props: WeatherForecastProps) {
 	return (
 		<div className="forecast">
 			<span className="label">{props.day}</span>
@@ -32,6 +21,17 @@ function WeatherInfo(props: WeatherForecastProps) {
 		</div>);
 }
 
+
+interface WeatherInfo {
+	current: { icon: string, temp: number };
+	forecast: WeatherForecastProps[];
+}
+
+interface WeatherProps {
+	url: string;
+	locationId: string;
+	locationName: string;
+}
 
 export default function Weather(props: WeatherProps) {
 	const [info, error] = useJSON<WeatherInfo>(
@@ -45,7 +45,7 @@ export default function Weather(props: WeatherProps) {
 			</div>);
 	}
 
-	const forecast = info.forecast.slice(1, 4).map(forecast => (<WeatherInfo key={forecast.day} {...forecast} />));
+	const forecast = info.forecast.slice(1, 4).map(forecast => (<WeatherForecast key={forecast.day} {...forecast} />));
 
 	return (
 		<div className="panel weather">

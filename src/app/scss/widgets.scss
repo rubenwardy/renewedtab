@@ -109,17 +109,24 @@
 .widget {
 	position: relative;
 
-	.btn {
+	.widget-btns {
 		position: absolute;
 		top: 0.4rem;
 		right: 0.8rem;
-		color: transparent;
-		transition: color 0.15s ease-in-out;
 		cursor: pointer;
 		z-index: 100;
+
+		.btn {
+			color: transparent;
+			transition: color 0.15s ease-in-out;
+			cursor: pointer;
+			z-index: 100;
+			padding: 0.15rem 0.3rem;
+			margin: 0;
+		}
 	}
 
-	&:hover .btn, &.panel-editing .btn {
+	&:hover .widget-btns .btn {
 		color: white;
 	}
 }

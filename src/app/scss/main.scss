@@ -31,6 +31,63 @@ h1 {
 	color: rgba(255, 255, 255, 0.5);
 }
 
+.btn {
+	display: inline-block;
+	padding: 0.375rem 0.75rem;
+	margin: 0.25rem;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+	background: transparent;
+	border: 1px solid transparent;
+	color: white;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.btn-lg {
+	padding: 0.5rem 1rem;
+	font-size: 1.171875rem;
+	line-height: 1.5;
+	border-radius: 0.3rem;
+}
+
+.btn-primary {
+	background-color: #007DB8;
+	border-color: #007DB8;
+
+	&:hover {
+		background-color: #06aed5;
+		border-color: #06aed5;
+	}
+}
+
+.btn-danger {
+	background-color: #e74c3c;
+	border-color: #e74c3c;
+
+	&:hover {
+		background-color: #e12e1c;
+		border-color: #d62c1a;
+		color: white;
+	}
+}
+
+.btn-outline, .btn-secondary {
+	border-color: rgba(255, 255, 255, 0.5);
+	color: white;
+
+	&:hover {
+		border-color: rgba(255, 255, 255, 0.6);
+		background: rgba(255, 255, 255, 0.25);
+	}
+}
+
+
 @import "grid.scss";
 @import "widgets.scss";
 @import "modal.scss";
