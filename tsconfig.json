@@ -9,9 +9,7 @@
 		],
 		"baseUrl": "src",
 		"esModuleInterop": true,
-		"strict": true
-	},
-	"include": [
-		"src"
-	]
+		"strict": true,
+		"resolveJsonModule": true
+	}
 }

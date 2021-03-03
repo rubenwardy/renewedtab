@@ -1,0 +1,18 @@
+.modal {
+	background: rgba(0, 0, 0, 0.85);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+
+	.modal-body {
+		position: absolute;
+		min-width: 400px;
+		max-width: 600px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

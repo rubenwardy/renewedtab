@@ -1,6 +1,6 @@
 import React from "react";
-import { WidgetManager } from "WidgetManager";
-import { WidgetTypes } from "widgets";
+import { WidgetManager } from "../WidgetManager";
+import { WidgetTypes } from "../widgets";
 
 interface CreateWidgetDialog {
 	visible: boolean;

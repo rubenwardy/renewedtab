@@ -1,17 +1,20 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const dest = path.resolve(__dirname, "dist");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const dest = path.resolve(__dirname, "dist/app");
+
+const config = JSON.parse((require("fs")).readFileSync("config.json"));
 
 const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   	mode: isProd ? 'production' : 'development',
-	entry: "./src/index",
+	entry: "./src/app/index",
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				{ from: "src/public", to: dest },
+				{ from: "src/app/public", to: dest },
 			]
 		}),
 		new MiniCssExtractPlugin({
@@ -22,7 +25,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			title: "Homescreen",
-			template: "src/templates/index.ejs",
+			template: "src/app/templates/index.ejs",
 		}),
 	],
 	module: {
@@ -33,7 +36,7 @@ module.exports = {
 					{
 						loader: "ts-loader",
 						options: {
-							configFile: "tsconfig.json",
+							configFile: "tsconfig.app.json",
 						}
 					}
 				],

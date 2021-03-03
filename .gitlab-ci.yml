@@ -11,6 +11,7 @@ pages:
   stage: deploy
   interruptible: true
   script:
+    - "echo '{ \"PROXY_URL\": \"https://rubenwardy.com/homescreen/proxy/\" }' > config.json"
     - npm run build
     - cp -r dist public
   artifacts:

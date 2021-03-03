@@ -6,7 +6,18 @@ License: MIT
 
 ## Usage
 
+### Create Config
+
+Create `config.json` file in the root of this project, with the following content:
+
+```json
+{
+	"PROXY_URL": "http://localhost:8000"
+}
+```
+
 ### Production
+
 
 ```bash
 npm install --prod

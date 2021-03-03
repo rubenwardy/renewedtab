@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Widget } from "./Widget";
-import { WidgetManager } from "WidgetManager";
-import { Clock, Search } from "widgets";
+import { WidgetManager } from "app/WidgetManager";
+import { Clock, Search } from "app/widgets";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 
 const widgetManager = new WidgetManager();

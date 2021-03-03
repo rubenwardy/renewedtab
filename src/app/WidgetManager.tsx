@@ -1,6 +1,6 @@
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 import { Widget } from "./components/Widget";
-import { WidgetTypes } from "widgets";
+import { WidgetTypes } from "./widgets";
 import React from "react";
 
 
