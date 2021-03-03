@@ -54,7 +54,7 @@ export class WidgetManager {
 
 	resetToDefault() {
 		this.widget_props = [];
-		["Links", "Notes", "Age", "Weather"].forEach(this.createWidget.bind(this));
+		["Links", "Notes", "Age", "Weather", "RSS"].forEach(this.createWidget.bind(this));
 	}
 
 	createWidget(type: string) {

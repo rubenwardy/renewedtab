@@ -40,7 +40,7 @@ export default function Weather(props: WeatherProps) {
 	if (!info) {
 		return (
 			<div className="panel text-muted">
-				{error ?? "Loading weather..."}
+				{error ? error.toString() : "Loading weather..."}
 			</div>);
 	}
 

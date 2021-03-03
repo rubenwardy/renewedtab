@@ -6,7 +6,7 @@ const PORT = 8000;
 
 const WHITELISTED_HOSTS = new Set([
 	"forecast7.com",
-	"bbci.com"
+	"feeds.bbci.co.uk",
 ]);
 
 app.use((_req, res, next) => {
@@ -24,7 +24,7 @@ app.get('/', async (req: express.Request, res: express.Response) => {
 
 	const url = new URL(req.query.url as string);
 	if (!WHITELISTED_HOSTS.has(url.host)) {
-		res.status(403).send("Host not allowed");
+		res.status(403).send(`Host ${url.host} not allowed`);
 		return;
 	}
 

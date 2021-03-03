@@ -25,7 +25,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialog) {
 		<aside className="modal" onClick={props.onClose}>
 			<div className="panel flush modal-body" onClick={(e) => e.stopPropagation()}>
 				<h2 className="panel-inset">Create Widget</h2>
-				<ul>
+				<ul className="large">
 					{widgets}
 				</ul>
 			</div>

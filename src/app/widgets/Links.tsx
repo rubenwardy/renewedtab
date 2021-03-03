@@ -18,7 +18,7 @@ export default function Links(props: LinksProps)  {
 
 	return (
 		<div className="panel flush">
-			<ul>{links}</ul>
+			<ul className="large">{links}</ul>
 		</div>)
 }
 

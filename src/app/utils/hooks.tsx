@@ -63,3 +63,36 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 
 	return [info, error];
 }
+
+
+
+/**
+* Downloads an XML document from a URL.
+*
+* @param {number} url - The URL
+* @param {any[]} dependents - A list of dependent variables for the URL.
+* @return {[response, error]]} - Response and error
+*/
+export function useXML(url: string, dependents?: any[]): [(Document | null), (string | null)] {
+	const [info, setInfo] = useState<Document | null>(null);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const fetchJSON = async (url: string) => {
+			const response = await fetch(new Request(makeProxy(url), {
+				method: "GET",
+				headers: {
+					"Accept": "application/json",
+				}
+			}));
+
+			const str = await response.text();
+			const xml = new window.DOMParser().parseFromString(str, "text/xml")
+			return xml;
+		}
+
+		fetchJSON(url).then(setInfo).catch(setError);
+	}, dependents);
+
+	return [info, error];
+}
