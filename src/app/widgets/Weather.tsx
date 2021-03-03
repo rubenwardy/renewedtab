@@ -2,6 +2,7 @@ import React from 'react';
 import { useJSON } from 'app/utils/hooks';
 
 interface WeatherProps {
+	url: string;
 	locationId: string;
 	locationName: string;
 }
@@ -48,7 +49,7 @@ export default function Weather(props: WeatherProps) {
 
 	return (
 		<div className="panel weather">
-			<h2 className="col-span-3">{props.locationName}</h2>
+			<h2 className="col-span-3"><a href={props.url}>{props.locationName}</a></h2>
 			<div className="col-span-3 large">{info.current.temp} &deg;C</div>
 			{forecast}
 		</div>);
@@ -56,6 +57,7 @@ export default function Weather(props: WeatherProps) {
 
 
 Weather.defaultProps = {
+	url: "https://www.bbc.co.uk/weather/2654675",
 	locationId: "51d45n2d59",
 	locationName:"Bristol"
 };

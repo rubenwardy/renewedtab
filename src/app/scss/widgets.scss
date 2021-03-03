@@ -79,6 +79,16 @@
 		font-size: 100%;
 		font-weight: bold;
 		margin-top: 0;
+
+		a {
+			color: white;
+			text-decoration: none;
+
+			&:hover {
+				color: white;
+				text-decoration: underline;
+			}
+		}
 	}
 
 	h2.panel-inset {
