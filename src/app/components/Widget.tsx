@@ -59,10 +59,13 @@ export function Widget<T>(props: WidgetProps<T>) {
 		const child = React.createElement(props.child, props.props);
 		return  (
 			<div className={`widget`}>
-				<span className="widget-btns">
-					<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>e</a>
-					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>d</a>
-				</span>
+				<div className="widget-strip">
+					<span className="widget-title">{props.type}</span>
+					<span className="widget-btns">
+						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>e</a>
+						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>d</a>
+					</span>
+				</div>
 				{child}
 			</div>);
 	}

@@ -109,25 +109,49 @@
 .widget {
 	position: relative;
 
-	.widget-btns {
+	.widget-strip {
 		position: absolute;
-		top: 0.4rem;
-		right: 0.8rem;
-		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		display: flex;
+		flex-flow: row;
+		padding: 0;
+		margin: 0;
+
 		z-index: 100;
+		border-radius: 0.25rem 0.25rem 0 0;
+		transition: opacity 0.15s ease-in-out;
+		opacity: 0;
+		user-select: none;
+
+		.widget-title {
+			margin: 0;
+			padding: 0.2rem 0.8rem;
+			vertical-align: middle;
+			display: inline-block;
+			flex: 1;
+		}
+
+		.widget-btns {
+			margin: 0;
+			padding: 0;
+		}
 
 		.btn {
 			color: transparent;
-			transition: color 0.15s ease-in-out;
 			cursor: pointer;
 			z-index: 100;
-			padding: 0.15rem 0.3rem;
+			padding: 0.2rem 0.5rem;
 			margin: 0;
+			color: white;
 		}
-	}
 
-	&:hover .widget-btns .btn {
-		color: white;
+		&:hover {
+			opacity: 1;
+			background-color: rgba(255, 255, 255, 0.25);
+		}
 	}
 }
 
