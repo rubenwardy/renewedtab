@@ -6,10 +6,11 @@ export { default as IFrame } from "./IFrame";
 export { default as Notes } from "./Notes";
 export { default as RSS } from "./RSS";
 export { default as Search } from "./Search";
+export { default as SpaceLaunches } from "./SpaceLaunches";
 export { default as Weather } from "./Weather";
 
 import { WidgetFactory } from "../WidgetManager";
-import { Age, Button, Clock, Links, IFrame, Notes, RSS, Search, Weather } from ".";
+import { Age, Button, Clock, Links, IFrame, Notes, RSS, Search, SpaceLaunches, Weather } from ".";
 
 export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Age: Age,
@@ -20,5 +21,6 @@ export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Notes: Notes,
 	RSS: RSS,
 	Search: Search,
+	SpaceLaunches: SpaceLaunches,
 	Weather: Weather
 };

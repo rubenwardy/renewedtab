@@ -58,7 +58,7 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 
 		fetchJSON(url)
 			.then(setInfo)
-			.catch((ex) => setError("Failed to load weather"));
+			.catch(setError);
 	}, dependents);
 
 	return [info, error];

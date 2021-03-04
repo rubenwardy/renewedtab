@@ -7,12 +7,16 @@ const PORT = process.env.PORT ?? 8000;
 const WHITELISTED_HOSTS = new Set([
 	"forecast7.com",
 	"feeds.bbci.co.uk",
+	"fdo.rocketlaunch.live",
 ]);
 
 app.use((_req, res, next) => {
+	const expiresAt = new Date(new Date().getTime() + 4*60*60*1000);
+
 	res.append('Access-Control-Allow-Origin', ['*']);
 	res.append('Access-Control-Allow-Methods', 'GET');
 	res.append('Access-Control-Allow-Headers', 'Content-Type');
+	res.append("expires", expiresAt.toISOString());
 	next();
 });
 
