@@ -13,7 +13,7 @@ pages:
   script:
     - "echo '{ \"PROXY_URL\": \"https://rubenwardy.com/homescreen/proxy/\" }' > config.json"
     - npm run build
-    - cp -r dist public
+    - cp -r dist/app public
   artifacts:
     paths:
       - public
