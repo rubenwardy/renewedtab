@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"jsx": "react",
 		"module": "commonjs",
-		"target": "es2019",
+		"target": "esnext",
 		"sourceMap": true,
 		"typeRoots": [
 			"./node_modules/@types",
