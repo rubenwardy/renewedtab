@@ -13,7 +13,7 @@ interface SpaceLaunch {
 }
 
 function getOrdinal(num: number): string {
-	const dec = (num / 10) % 10
+	const dec = Math.floor(num / 10);
 	const unit = num % 10;
 	if (dec == 1) {
 		return "th";
@@ -28,14 +28,24 @@ function getOrdinal(num: number): string {
 	}
 }
 
+const MonthShortToLong = new Map([
+	["jan", "January"], ["feb", "February"], ["mar", "March"], ["apr", "April"],
+	["jun", "June"], ["jul", "July"], ["aug", "August"], ["sep", "September"],
+	["oct", "October"], ["nov", "November"], ["dec", "December"]
+]);
+
 function getDate(launch: SpaceLaunch): string {
-	const ret = launch.date_str.match(RegExp(/([A-Za-z]+) ([0-9]{2,3})$/));
-	if (ret) {
-		const day = Number.parseInt(ret[2]);
-		const month = ret[1];
+	const ret = launch.date_str.match(RegExp(/([A-Za-z]+) ([0-9]+)$/));
+	if (!ret) {
+		return launch.date_str;
+	}
+
+	const day = Number.parseInt(ret[2]);
+	const month = MonthShortToLong.get(ret[1].toLowerCase()) ?? ret[1];
+	if (day <= 31) {
 		return `${day + getOrdinal(day)} ${month}`;
 	} else {
-		return launch.date_str;
+		return month;
 	}
 }
 
