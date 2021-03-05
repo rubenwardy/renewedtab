@@ -2,9 +2,11 @@ import { makeFieldForValue } from "./Field";
 import React, { useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 
+
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
 }
+
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	const inner = Object.entries(props.props).map(([key, value]) => {
@@ -48,6 +50,7 @@ enum WidgetMode {
 	Delete
 }
 
+
 export function Widget<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 	switch (mode) {
@@ -57,7 +60,7 @@ export function Widget<T>(props: WidgetProps<T>) {
 		return (<WidgetDelete onClose={() => setMode(WidgetMode.View)} {...props} />);
 	default:
 		const child = React.createElement(props.child, props.props);
-		return  (
+		return (
 			<div className={`widget`}>
 				<div className="widget-strip">
 					<span className="widget-title">{props.type}</span>

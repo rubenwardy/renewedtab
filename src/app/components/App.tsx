@@ -3,6 +3,7 @@ import { Widget } from "./Widget";
 import { WidgetManager } from "app/WidgetManager";
 import { Clock, Search, WidgetTypes } from "app/widgets";
 import CreateWidgetDialog from "./CreateWidgetDialog";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 const widgetManager = new WidgetManager();
 
@@ -15,11 +16,13 @@ function WidgetContainer(_props: any) {
 	}
 
 	const widgets = widgetManager.widgets.map(raw => (
-		<Widget key={raw.id} id={raw.id}
-			type={raw.type} props={raw.props}
-			child={WidgetTypes[raw.type]}
-			save={widgetManager.save.bind(widgetManager)}
-			remove={() => handleRemove(raw.id)} />));
+		<ErrorBoundary key={raw.id}>
+			<Widget id={raw.id}
+				type={raw.type} props={raw.props}
+				child={WidgetTypes[raw.type]}
+				save={widgetManager.save.bind(widgetManager)}
+				remove={() => handleRemove(raw.id)} />
+		</ErrorBoundary>));
 
 	return (
 		<main className={widgets.length > 5 ? "main-wide" : ""}>
