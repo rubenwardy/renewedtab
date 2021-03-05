@@ -30,5 +30,5 @@ export default function Age(props: AgeProps) {
 
 
 Age.defaultProps = {
-	birthDate: new Date("1971-01-01")
+	birthDate: new Date("1997-01-01")
 }

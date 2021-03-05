@@ -139,20 +139,36 @@
 			padding: 0;
 		}
 
-		.btn {
-			color: transparent;
-			cursor: pointer;
-			z-index: 100;
-			padding: 0.2rem 0.5rem;
-			margin: 0;
-			color: white;
-		}
-
 		&:hover {
 			opacity: 1;
 			background-color: rgba(255, 255, 255, 0.25);
 		}
 	}
+
+	.btn {
+		cursor: pointer;
+		z-index: 100;
+		padding: 0.2rem 0.5rem;
+		margin: 0;
+		color: white;
+	}
+
+
+	> .widget-btns {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		.btn {
+			transition: color 0.15s ease-in-out;
+			color: transparent;
+		}
+	}
+
+	&:hover > .widget-btns .btn {
+		color: white;
+	}
+
 }
 
 label {
