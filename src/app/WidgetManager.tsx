@@ -4,6 +4,7 @@ import { WidgetTypes } from "./widgets";
 type ReactFactory<T> = ((props: T) => JSX.Element) ;
 export interface WidgetFactory<T> extends ReactFactory<T> {
 	defaultProps: T;
+	defaultSize: { x: number, y: number };
 }
 
 interface WidgetRaw<T> {
@@ -42,7 +43,8 @@ export class WidgetManager {
 
 	resetToDefault() {
 		this.widgets = [];
-		["Age", "Links", "Notes", "Weather", "RSS", "SpaceFlights"].forEach(this.createWidget.bind(this));
+		["Clock", "Search", "Age", "Links", "Notes", "Weather",
+				"RSS", "SpaceFlights"].forEach(this.createWidget.bind(this));
 	}
 
 	createWidget(type: string) {

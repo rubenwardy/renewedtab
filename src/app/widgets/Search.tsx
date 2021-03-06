@@ -19,3 +19,5 @@ Search.defaultProps = {
 	searchTitle: "DuckDuckGo",
 	searchURL: "https://duckduckgo.com"
 };
+
+Search.defaultSize = { x: 15, y: 1 };

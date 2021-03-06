@@ -21,3 +21,5 @@ Button.defaultProps = {
 	url: "https://rubenwardy.com",
 	text: "rubenwardy.com"
 };
+
+Button.defaultSize = { x: 5, y: 1 };

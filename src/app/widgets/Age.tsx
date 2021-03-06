@@ -32,3 +32,5 @@ export default function Age(props: AgeProps) {
 Age.defaultProps = {
 	birthDate: new Date("1997-01-01")
 }
+
+Age.defaultSize = { x: 5, y: 1 };

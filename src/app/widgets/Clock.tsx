@@ -27,3 +27,5 @@ export default function Clock(props: ClockProps) {
 
 
 Clock.defaultProps = {}
+
+Clock.defaultSize = { x: 15, y: 2 };

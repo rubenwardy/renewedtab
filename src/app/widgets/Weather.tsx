@@ -61,3 +61,5 @@ Weather.defaultProps = {
 	locationId: "51d45n2d59",
 	locationName:"Bristol"
 };
+
+Weather.defaultSize = { x: 5, y: 3 };

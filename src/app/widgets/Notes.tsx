@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import { useAutoTextArea } from "../utils/hooks";
 
 interface NotesProps {
@@ -23,10 +23,13 @@ export default function Notes(props: NotesProps) {
 		setNotes(value);
 	}, [props.localStorageKey]);
 
+	const css: CSSProperties = {};
+	css.height = "100%";
+
 	return (
 		<div className="panel">
 			<textarea ref={ref} className="invisible" onChange={handleChange}
-					placeholder="Enter notes here"
+					placeholder="Enter notes here" style={css}
 					defaultValue={notes || ""} />
 		</div>);
 }
@@ -35,3 +38,5 @@ export default function Notes(props: NotesProps) {
 Notes.defaultProps = {
 	localStorageKey: "notes"
 };
+
+Notes.defaultSize = { x: 5, y: 2 };

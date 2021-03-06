@@ -72,10 +72,12 @@ export default function SpaceFlights(_props: any) {
 	return (
 		<div className="panel flush">
 			<h2 className="panel-inset">Space Flights</h2>
-			<ul className="scrolling">
+			<ul>
 				{rows}
 			</ul>
 		</div>);
 }
 
 SpaceFlights.defaultProps = {};
+
+SpaceFlights.defaultSize = { x: 5, y: 4 };

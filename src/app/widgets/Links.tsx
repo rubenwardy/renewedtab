@@ -57,3 +57,5 @@ Links.defaultProps = {
 		}
 	]
 };
+
+Links.defaultSize = { x: 5, y: 5 };

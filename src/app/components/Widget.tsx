@@ -1,5 +1,5 @@
 import { makeFieldForValue } from "./Field";
-import React, { useState } from "react";
+import React, { CSSProperties, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 
 
@@ -20,10 +20,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	});
 
 	return (
-		<div className="widget panel panel-editing">
-			<span className="widget-btns">
-				<a className="btn" onClick={props.onClose}>x</a>
-			</span>
+		<div className="panel panel-editing">
 			<h2>Edit {props.type}</h2>
 			{inner}
 		</div>);
@@ -32,10 +29,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 
 function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	return (
-		<div className="widget panel panel-editing">
-			<span className="widget-btns">
-				<a className="btn" onClick={props.onClose}>x</a>
-			</span>
+		<div className="panel panel-editing">
 			<h2>Remove {props.type}?</h2>
 
 			<a className="btn btn-danger" onClick={props.remove}>Delete</a>
@@ -53,23 +47,41 @@ enum WidgetMode {
 
 export function Widget<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
+
+	const close = () => setMode(WidgetMode.View);
+	let content: JSX.Element;
+	let strip = (
+		<span className="widget-btns">
+			<a className="btn" onClick={close}>x</a>
+		</span>)
+
 	switch (mode) {
 	case WidgetMode.Edit:
-		return (<WidgetEditor onClose={() => setMode(WidgetMode.View)} {...props} />);
+		content = (<WidgetEditor onClose={close} {...props} />);
+		break;
 	case WidgetMode.Delete:
-		return (<WidgetDelete onClose={() => setMode(WidgetMode.View)} {...props} />);
+		content = (<WidgetDelete onClose={close} {...props} />);
+		break;
 	default:
-		const child = React.createElement(props.child, props.props);
-		return (
-			<div className={`widget`}>
-				<div className="widget-strip">
-					<span className="widget-title">{props.type}</span>
-					<span className="widget-btns">
-						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>e</a>
-						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>d</a>
-					</span>
-				</div>
-				{child}
+		content = React.createElement(props.child, props.props);
+		strip = (
+			<div className="widget-strip">
+				<span className="widget-title">{props.type}</span>
+				<span className="widget-btns">
+					<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>e</a>
+					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>d</a>
+				</span>
 			</div>);
+		break;
 	}
+
+
+	const style: CSSProperties = {};
+	style.gridColumn = `span ${props.child.defaultSize.x}`;
+	style.gridRow = `span ${props.child.defaultSize.y}`;
+
+	// const h = props.child.defaultSize.y;
+	// style.maxHeight = `calc(${h-1}*1em + ${h}*50px)`;
+
+	return (<div className={`widget`} style={style}>{strip}{content}</div>);
 }

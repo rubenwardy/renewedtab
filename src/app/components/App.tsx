@@ -25,10 +25,7 @@ function WidgetContainer(_props: any) {
 		</ErrorBoundary>));
 
 	return (
-		<main className={widgets.length > 5 ? "main-wide" : ""}>
-			<Clock showSeconds={false} />
-			<Widget type="Search" id={0} save={() => {}} remove={() => {}}
-				child={Search} props={{searchTitle: "DuckDuckGo", searchURL: "https://duckduckgo.com"}} />
+		<main>
 			<div className="grid">
 				{widgets}
 			</div>

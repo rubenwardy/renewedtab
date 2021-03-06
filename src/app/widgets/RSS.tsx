@@ -29,7 +29,7 @@ export default function RSS(props: RSSProps) {
 	return (
 		<div className="panel flush">
 			{title}
-			<ul className="scrolling">
+			<ul>
 				{rows}
 			</ul>
 		</div>);
@@ -40,3 +40,5 @@ RSS.defaultProps = {
 	title: "BBC News",
 	url: "http://feeds.bbci.co.uk/news/rss.xml"
 };
+
+RSS.defaultSize = { x: 5, y: 4 };

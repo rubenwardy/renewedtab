@@ -41,11 +41,6 @@
 		}
 	}
 
-	> ul.scrolling {
-		max-height: 200px;
-		overflow-y: auto;
-	}
-
 	> ul li {
 		display: block;
 		margin: 0;
@@ -145,6 +140,7 @@
 	.widget-btns {
 		margin: 0;
 		padding: 0;
+		z-index: 100;
 
 		.btn {
 			padding: 0.2rem 0.65rem;
@@ -171,6 +167,11 @@
 		color: white;
 	}
 
+	.panel {
+		height: 100%;
+		box-sizing: border-box;
+	}
+
 }
 
 label {
@@ -195,7 +196,7 @@ input, textarea {
 
 input.large, textarea.large {
 	font-size: 120%;
-	padding: 0.8rem 1.2rem;
+	padding: 0.7rem 1rem;
 }
 
 textarea.invisible, input.invisible {
@@ -204,6 +205,10 @@ textarea.invisible, input.invisible {
 	color: white;
 	resize: none;
 	font-family: inherit;
+}
+
+.panel.flush .invisible:focus {
+	outline: none;
 }
 
 main > .widget {
