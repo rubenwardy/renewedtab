@@ -36,12 +36,12 @@ function WidgetContainer(_props: any) {
 }
 
 function App(_props: any) {
-	const [createVisible, setCreateVisible] = useState(false);
+	const [createIsOpen, setCreateOpen] = useState(false);
 	return (
 		<div>
-			<CreateWidgetDialog visible={createVisible} manager={widgetManager} onClose={() => setCreateVisible(false)} />
+			<CreateWidgetDialog isOpen={createIsOpen} manager={widgetManager} onClose={() => setCreateOpen(false)} />
 			<WidgetContainer />
-			<a className="btn" onClick={() => setCreateVisible(true)}>Add Widget</a>
+			<a className="btn" onClick={() => setCreateOpen(true)}>Add Widget</a>
 		</div>);
 }
 

@@ -1,34 +1,27 @@
 import React from "react";
 import { WidgetManager } from "../WidgetManager";
 import { WidgetTypes } from "../widgets";
+import Modal from "./Modal";
 
 interface CreateWidgetDialog {
-	visible: boolean;
-	manager: WidgetManager;
+	isOpen: boolean;
 	onClose: () => void;
+	manager: WidgetManager;
 }
 
 export default function CreateWidgetDialog(props: CreateWidgetDialog) {
-	if (!props.visible) {
-		return null;
-	}
-
 	function select(key: string) {
 		props.manager.createWidget(key);
 		props.onClose();
 	}
 
-	const widgets = Object.entries(WidgetTypes).sort().map(([key, value]) =>(
+	const widgets = Object.entries(WidgetTypes).sort().map(([key]) =>(
 		<li key={key}><a onClick={() => select(key)}>{key}</a></li>))
 
 	return (
-		<aside className="modal" onClick={props.onClose}>
-			<div className="panel flush modal-body" onClick={(e) => e.stopPropagation()}>
-				<h2 className="panel-inset">Create Widget</h2>
-				<ul className="large">
-					{widgets}
-				</ul>
-			</div>
-		</aside>
-	);
+		<Modal title="Create Widget" {...props}>
+			<ul className="large">
+				{widgets}
+			</ul>
+		</Modal>);
 }
