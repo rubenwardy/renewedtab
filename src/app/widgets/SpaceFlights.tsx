@@ -50,7 +50,7 @@ function getDate(launch: SpaceLaunch): string {
 }
 
 
-export default function SpaceLaunches(_props: any) {
+export default function SpaceFlights(_props: any) {
 	const [data, error] = useJSON<{ response: {result: SpaceLaunch[] }}>("https://fdo.rocketlaunch.live/json/launches/next/5", []);
 
 	if (!data) {
@@ -78,4 +78,4 @@ export default function SpaceLaunches(_props: any) {
 		</div>);
 }
 
-SpaceLaunches.defaultProps = {};
+SpaceFlights.defaultProps = {};

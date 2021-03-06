@@ -26,7 +26,8 @@ export class WidgetManager {
 	constructor() {
 		const json = localStorage.getItem("widgets");
 		if (json) {
-			this.widgets = fromTypedJSON(JSON.parse(json));
+			this.widgets = fromTypedJSON(JSON.parse(json))
+				.filter((widget: WidgetRaw<any>) => WidgetTypes[widget.type]);
 			this.id_counter =
 				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 		} else {
@@ -41,7 +42,7 @@ export class WidgetManager {
 
 	resetToDefault() {
 		this.widgets = [];
-		["Age", "Links", "Notes", "Weather", "RSS", "SpaceLaunches"].forEach(this.createWidget.bind(this));
+		["Age", "Links", "Notes", "Weather", "RSS", "SpaceFlights"].forEach(this.createWidget.bind(this));
 	}
 
 	createWidget(type: string) {
