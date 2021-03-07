@@ -37,7 +37,11 @@ export default function Notes(props: NotesProps) {
 
 
 Notes.defaultProps = {
-	localStorageKey: "notes"
+	localStorageKey: "notes",
+};
+
+Notes.schema = {
+	localStorageKey: "string",
 };
 
 Notes.defaultSize = new Vector2(5, 2);

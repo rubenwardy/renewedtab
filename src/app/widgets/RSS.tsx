@@ -42,4 +42,9 @@ RSS.defaultProps = {
 	url: "http://feeds.bbci.co.uk/news/rss.xml"
 };
 
+RSS.schema = {
+	title: "string",
+	url: "string",
+};
+
 RSS.defaultSize = new Vector2(5, 4);

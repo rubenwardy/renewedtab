@@ -23,4 +23,9 @@ Button.defaultProps = {
 	text: "rubenwardy.com"
 };
 
+Button.schema = {
+	url: "string",
+	text: "string",
+};
+
 Button.defaultSize = new Vector2(5, 1);

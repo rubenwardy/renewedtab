@@ -21,4 +21,6 @@ export default function HelpAbout(_props: any) {
 
 HelpAbout.defaultProps = {};
 
+HelpAbout.schema = {};
+
 HelpAbout.defaultSize = new Vector2(5, 4);

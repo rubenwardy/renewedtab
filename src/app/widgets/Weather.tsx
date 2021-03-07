@@ -63,4 +63,11 @@ Weather.defaultProps = {
 	locationName:"Bristol"
 };
 
+
+Weather.schema = {
+	url: "string",
+	locationId: "string",
+	locationName: "string",
+};
+
 Weather.defaultSize = new Vector2(5, 3);

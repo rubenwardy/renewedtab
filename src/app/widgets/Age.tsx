@@ -1,5 +1,7 @@
+import { Schema } from 'app/utils/schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
+import { validateSchema } from 'webpack';
 
 interface AgeProps {
 	birthDate: Date;
@@ -32,6 +34,10 @@ export default function Age(props: AgeProps) {
 
 Age.defaultProps = {
 	birthDate: new Date("1997-01-01")
-}
+};
+
+Age.schema = {
+	birthDate: Date,
+};
 
 Age.defaultSize = new Vector2(5, 1);

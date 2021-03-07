@@ -21,4 +21,9 @@ Search.defaultProps = {
 	searchURL: "https://duckduckgo.com"
 };
 
+Search.schema = {
+	searchTitle: "string",
+	searchURL: "string",
+};
+
 Search.defaultSize = new Vector2(15, 1);

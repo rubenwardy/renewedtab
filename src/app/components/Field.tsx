@@ -1,3 +1,4 @@
+import { Type } from "app/utils/schema";
 import React, { ChangeEvent } from "react";
 
 interface FieldProps<T> {
@@ -58,8 +59,6 @@ export function JSONField(props: FieldProps<Object | any[]>) {
 		</div>);
 }
 
-export type Type = string | (new (...args: any[]) => any);
-
 export function makeField(type: Type): React.FC<FieldProps<any>> {
 	if (type == Date) {
 		return DateField;
@@ -68,14 +67,4 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 	} else {
 		return TextField;
 	}
-}
-
-export function makeFieldForValue(value: any): React.FC<FieldProps<any>> {
-	let type = typeof(value);
-	if (type == "object") {
-		if (value instanceof Date) {
-			return makeField(Date);
-		}
-	}
-	return makeField(type);;
 }

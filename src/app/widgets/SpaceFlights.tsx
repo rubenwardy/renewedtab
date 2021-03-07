@@ -81,4 +81,6 @@ export default function SpaceFlights(_props: any) {
 
 SpaceFlights.defaultProps = {};
 
+SpaceFlights.schema = {};
+
 SpaceFlights.defaultSize = new Vector2(5, 4);

@@ -1,4 +1,4 @@
-import { makeFieldForValue } from "./Field";
+import { makeField } from "./Field";
 import React, { CSSProperties, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 import { Vector2 } from "app/utils/Vector2";
@@ -11,8 +11,9 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
-	const inner = Object.entries(props.props).map(([key, value]) => {
-		const Field = makeFieldForValue(value);
+	const inner = Object.entries(props.child.schema).map(([key, type]) => {
+		const value = (props.props as any)[key];
+		const Field = makeField(type);
 		return (
 			<Field key={key} name={key} value={value}
 				onChange={(val: any) => {

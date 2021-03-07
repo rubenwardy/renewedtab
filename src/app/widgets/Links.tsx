@@ -59,4 +59,8 @@ Links.defaultProps = {
 	]
 };
 
+Links.schema = {
+	sections: "object",
+};
+
 Links.defaultSize = new Vector2(5, 5);

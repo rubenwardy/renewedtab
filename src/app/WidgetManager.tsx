@@ -1,11 +1,14 @@
+import { Schema } from "./utils/schema";
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
+
 
 type ReactFactory<T> = ((props: T) => JSX.Element) ;
 export interface WidgetFactory<T> extends ReactFactory<T> {
 	defaultProps: T;
 	defaultSize: Vector2;
+	schema: Schema;
 }
 
 export interface WidgetRaw<T> {

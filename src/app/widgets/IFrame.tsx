@@ -17,4 +17,8 @@ IFrame.defaultProps = {
 	url: "https://monitor.rubenwardy.com/d-solo/46olEsqWz/overview?orgId=1&from=1614752790104&to=1614774390104&panelId=123126"
 };
 
+IFrame.schema = {
+	url: "string",
+};
+
 IFrame.defaultSize = new Vector2(5, 4);

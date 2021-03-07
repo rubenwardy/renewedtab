@@ -27,6 +27,8 @@ export default function Clock(props: ClockProps) {
 }
 
 
-Clock.defaultProps = {}
+Clock.defaultProps = {};
+
+Clock.schema = {};
 
 Clock.defaultSize = new Vector2(15, 2);
