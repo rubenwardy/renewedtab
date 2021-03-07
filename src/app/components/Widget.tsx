@@ -86,8 +86,8 @@ export function Widget<T>(props: WidgetProps<T>) {
 	style.gridColumn = `${position?.x ?? "auto"} / span ${props.size.x}`;
 	style.gridRow = `${position?.y ?? "auto"} / span ${props.size.y}`;
 
-	// const h = props.child.defaultSize.y;
-	// style.maxHeight = `calc(${h-1}*1em + ${h}*50px)`;
+	const h = props.child.defaultSize.y;
+	style.maxHeight = `calc(${h-1}*1em + ${h}*50px)`;
 
 	return (<div className={`widget`} style={style}>{strip}{content}</div>);
 }

@@ -1,26 +1,31 @@
+import { Rect2 } from "app/utils/Rect2";
 import { V } from "app/utils/Vector2";
 import WidgetLayouter from "app/WidgetLayouter";
 import { WidgetRaw } from "app/WidgetManager";
 import { expect } from "chai";
 
+function R(x: number, y: number, w: number, h: number) {
+	return new Rect2(V(x, y), V(w, h));
+}
+
 describe("WidgetLayouter", function() {
 	it("cell cache works", function() {
 		const layouter = new WidgetLayouter(V(15, 15));
-		expect(layouter.hasWidget(V(1, 1), V(1, 1))).to.be.false;
-		expect(layouter.hasWidget(V(0, 0), V(15, 15))).to.be.false;
-		expect(layouter.hasWidget(V(5, 5), V(3, 3))).to.be.false;
-		expect(layouter.hasWidget(V(4, 4), V(3, 3))).to.be.false;
-		expect(layouter.hasWidget(V(3, 3), V(3, 3))).to.be.false;
-		expect(layouter.hasWidget(V(5, 6), V(1, 1))).to.be.false;
-		expect(layouter.hasWidget(V(6, 6), V(1, 1))).to.be.false;
-		layouter.setHasWidget(V(6, 6), V(3, 3), true);
-		expect(layouter.hasWidget(V(1, 1), V(1, 1))).to.be.false;
-		expect(layouter.hasWidget(V(0, 0), V(15, 15))).to.be.true;
-		expect(layouter.hasWidget(V(5, 5), V(3, 3))).to.be.true;
-		expect(layouter.hasWidget(V(4, 4), V(3, 3))).to.be.true;
-		expect(layouter.hasWidget(V(3, 3), V(3, 3))).to.be.false;
-		expect(layouter.hasWidget(V(5, 6), V(1, 1))).to.be.false;
-		expect(layouter.hasWidget(V(6, 6), V(1, 1))).to.be.true;
+		expect(layouter.hasWidget(R(1, 1, 1, 1))).to.be.false;
+		expect(layouter.hasWidget(R(0, 0, 15, 15))).to.be.false;
+		expect(layouter.hasWidget(R(5, 5, 3, 3))).to.be.false;
+		expect(layouter.hasWidget(R(4, 4, 3, 3))).to.be.false;
+		expect(layouter.hasWidget(R(3, 3, 3, 3))).to.be.false;
+		expect(layouter.hasWidget(R(5, 6, 1, 1))).to.be.false;
+		expect(layouter.hasWidget(R(6, 6, 1, 1))).to.be.false;
+		layouter.addWidgetRect(R(6, 6, 3, 3));
+		expect(layouter.hasWidget(R(1, 1, 1, 1))).to.be.false;
+		expect(layouter.hasWidget(R(0, 0, 15, 15))).to.be.true;
+		expect(layouter.hasWidget(R(5, 5, 3, 3))).to.be.true;
+		expect(layouter.hasWidget(R(4, 4, 3, 3))).to.be.true;
+		expect(layouter.hasWidget(R(3, 3, 3, 3))).to.be.false;
+		expect(layouter.hasWidget(R(5, 6, 1, 1))).to.be.false;
+		expect(layouter.hasWidget(R(6, 6, 1, 1))).to.be.true;
 	});
 
 	it("accepts existing", function() {
@@ -41,7 +46,6 @@ describe("WidgetLayouter", function() {
 	});
 
 	it("finds position for new elements", function() {
-
 		const layouter = new WidgetLayouter(V(15, 15));
 
 		const widget1 : WidgetRaw<any> = {
@@ -76,7 +80,6 @@ describe("WidgetLayouter", function() {
 
 
 	it("repositions existing positions on collision", function() {
-
 		const layouter = new WidgetLayouter(V(15, 15));
 
 		const widget1 : WidgetRaw<any> = {
