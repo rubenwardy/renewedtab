@@ -10,7 +10,7 @@ export default function HelpAbout(_props: any) {
 				as a "New Tab" page in web browsers.
 			</p>
 			<p>
-				Click "Add widget" in the top-left of the screen to add a widget.
+				Click "Add widget" in the bootom of the screen to add a widget.
 			</p>
 			<p>
 				Hover over the top-right of a widget to edit or delete it.

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Widget } from "./Widget";
 import { WidgetManager, WidgetProps } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
@@ -48,7 +48,12 @@ function App(_props: any) {
 		<div>
 			<CreateWidgetDialog isOpen={createIsOpen} manager={widgetManager} onClose={() => setCreateOpen(false)} />
 			<WidgetContainer />
-			<a className="btn" onClick={() => setCreateOpen(true)}>Add Widget</a>
+
+			<footer>
+				Created by <a href="https://rubenwardy.com">rubenwardy</a> |&nbsp;
+				<a href="https://gitlab.com/rubenwardy/homescreen">Source code</a> |&nbsp;
+				<a onClick={() => setCreateOpen(true)}>Add Widget</a>
+			</footer>
 		</div>);
 }
 
