@@ -1,0 +1,40 @@
+.field {
+	margin: 0 0 0.9em 0;
+}
+
+label {
+	display: block;
+	margin: 0.3em 0;
+}
+
+input, textarea {
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 0.25rem;
+	color: white;
+	padding: 0.3rem 0.6rem;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+
+	&::placeholder {
+		color: rgba(255, 255, 255, 0.6);
+	}
+}
+
+input.large, textarea.large {
+	font-size: 120%;
+	padding: 0.7rem 1rem;
+}
+
+textarea.invisible, input.invisible {
+	background: transparent;
+	border: none;
+	color: white;
+	resize: none;
+	font-family: inherit;
+}
+
+.panel.flush .invisible:focus {
+	outline: none;
+}

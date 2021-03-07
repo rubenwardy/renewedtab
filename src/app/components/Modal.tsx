@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import ReactDOM from "react-dom";
 
 export interface ModalProps {
 	title: string;
@@ -12,12 +13,15 @@ export default function Modal(props: ModalProps) {
 		return null;
 	}
 
-	return (
-		<aside className="modal" onClick={props.onClose}>
-			<div className="panel flush modal-body" onClick={(e) => e.stopPropagation()}>
-				<h2 className="panel-inset">{props.title}</h2>
+	return ReactDOM.createPortal((
+		<aside className="modal-bg" onClick={props.onClose}>
+			<div className="panel flush modal" onClick={(e) => e.stopPropagation()}>
+				<h2 className="modal-header">
+					<a className="btn modal-close" onClick={props.onClose}>x</a>
+					{props.title}
+				</h2>
 				{props.children}
 			</div>
 		</aside>
-	);
+	), document.getElementById("app")!);
 }

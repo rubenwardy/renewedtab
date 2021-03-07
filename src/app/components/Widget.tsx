@@ -2,6 +2,7 @@ import { makeFieldForValue } from "./Field";
 import React, { CSSProperties, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 import { Vector2 } from "app/utils/Vector2";
+import Modal from "./Modal";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -21,21 +22,23 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	});
 
 	return (
-		<div className="panel panel-editing">
-			<h2>Edit {props.type}</h2>
-			{inner}
-		</div>);
+		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
+			<div className="modal-body">
+				{inner}
+				<a className="btn btn-secondary" onClick={props.onClose}>OK</a>
+			</div>
+		</Modal>);
 }
 
 
 function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	return (
-		<div className="panel panel-editing">
-			<h2>Remove {props.type}?</h2>
-
-			<a className="btn btn-danger" onClick={props.remove}>Delete</a>
-			<a className="btn btn-secondary" onClick={props.onClose}>Cancel</a>
-		</div>);
+		<Modal title={`Remove ${props.type}`} isOpen={true} {...props}>
+			<p className="modal-body">
+				<a className="btn btn-danger" onClick={props.remove}>Delete</a>
+				<a className="btn btn-secondary" onClick={props.onClose}>Cancel</a>
+			</p>
+		</Modal>);
 }
 
 

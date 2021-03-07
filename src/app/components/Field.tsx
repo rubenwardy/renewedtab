@@ -15,7 +15,7 @@ export function TextField(props: FieldProps<string>) {
 	}
 
 	return (
-		<div>
+		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<input type="text" name={props.name} defaultValue={props.value}
 					onChange={handleChange} />
@@ -33,7 +33,7 @@ export function DateField(props: FieldProps<Date>) {
 	}
 
 	return (
-		<div>
+		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<input type="date" name={props.name}
 					defaultValue={props.value.toISOString().slice(0, 10)}
@@ -50,7 +50,7 @@ export function JSONField(props: FieldProps<Object | any[]>) {
 	}
 
 	return (
-		<div>
+		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<textarea name={props.name}
 					defaultValue={JSON.stringify(props.value)}
