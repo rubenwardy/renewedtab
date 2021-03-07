@@ -27,7 +27,7 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 
 	const url = new URL(req.query.url as string);
 	if (!PROXY_ALLOWED_HOSTS.has(url.host)) {
-		res.status(403).send(`Host ${url.host} not allowed`);
+		res.status(403).send(`Host ${url.host} is not allowed. Consider installing the extension to be able to access any domain.`);
 		return;
 	}
 

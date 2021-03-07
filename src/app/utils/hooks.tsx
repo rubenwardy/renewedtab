@@ -65,6 +65,10 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 				}
 			}));
 
+			if (!response.ok) {
+				throw await response.text();
+			}
+
 			return await response.json();
 		}
 
@@ -99,7 +103,11 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
 			}));
 
 			const str = await response.text();
-			const xml = new window.DOMParser().parseFromString(str, "text/xml")
+			if (!response.ok) {
+				throw str;
+			}
+
+			const xml = new window.DOMParser().parseFromString(str, "text/xml");
 			return xml;
 		}
 
