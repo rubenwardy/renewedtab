@@ -10,7 +10,7 @@ export default function Search(props: SearchProps) {
 	return (
 		<div className="panel flush">
 			<form method="get" action={props.searchURL}>
-				<input autoFocus={true} type="text" name="q" placeholder={`Search on ${props.searchTitle}`} className="large invisible" />
+				<input autoFocus={true} type="text" name="q" placeholder={`Search with ${props.searchTitle}`} className="large invisible" />
 			</form>
 		</div>);
 }
