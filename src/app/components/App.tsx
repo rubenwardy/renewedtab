@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Widget } from "./Widget";
-import { WidgetManager } from "app/WidgetManager";
-import { Clock, Search, WidgetTypes } from "app/widgets";
+import { WidgetManager, WidgetProps } from "app/WidgetManager";
+import { WidgetTypes } from "app/widgets";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 import { ErrorBoundary } from "./ErrorBoundary";
 import WidgetLayouter from "app/WidgetLayouter";
@@ -20,15 +20,19 @@ function WidgetContainer(_props: any) {
 	const layouter = new WidgetLayouter(new Vector2(15, 12));
 	layouter.resolveAll(widgetManager.widgets);
 
-	const widgets = widgetManager.widgets.map(raw => (
-		<ErrorBoundary key={raw.id}>
-			<Widget id={raw.id}
-				type={raw.type} props={raw.props}
-				child={WidgetTypes[raw.type]}
-				position={raw.position} size={raw.size}
-				save={widgetManager.save.bind(widgetManager)}
-				remove={() => handleRemove(raw.id)} />
-		</ErrorBoundary>));
+	const widgets = widgetManager.widgets.map(widget => {
+		const props : WidgetProps<any> = {
+			...widget,
+			child: WidgetTypes[widget.type],
+			save: widgetManager.save.bind(widgetManager),
+			remove: () => handleRemove(widget.id)
+		};
+
+		return (
+			<ErrorBoundary key={widget.id}>
+				<Widget {...props} />
+			</ErrorBoundary>)
+		});
 
 	return (
 		<main>

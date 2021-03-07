@@ -10,8 +10,11 @@
 	backdrop-filter: blur($blur_radius);
 
 	padding: 0;
-	overflow: hidden auto;
 	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
+
+	&:not(.panel-editing) {
+		overflow: hidden auto;
+	}
 
 	&:not(.flush), .panel-inset {
 		padding: 0.8rem;
@@ -103,6 +106,8 @@
 	&.panel-editing {
 		background-color: rgba(255, 255, 255, 0.3);
 		filter: drop-shadow(0 0 8px rgba(33, 33, 33, 0.7));
+		height: auto !important;
+		z-index: 50;
 	}
 }
 
@@ -176,7 +181,6 @@
 		height: 100%;
 		box-sizing: border-box;
 	}
-
 }
 
 label {
