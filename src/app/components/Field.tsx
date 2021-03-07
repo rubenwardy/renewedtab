@@ -1,5 +1,6 @@
 import { Type } from "app/utils/schema";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
+import RequestHostPermission from "./RequestHostPermission";
 
 interface FieldProps<T> {
 	name: string;
@@ -23,6 +24,32 @@ export function TextField(props: FieldProps<string>) {
 		</div>);
 }
 
+export function PermURLField(props: FieldProps<string>) {
+	const [value, setValue] = useState<string>(props.value);
+
+	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (props.onChange) {
+			props.onChange(e.target.value);
+		}
+		setValue(e.target.value);
+	}
+
+	let host = "";
+	try {
+		host = new URL(value).host;
+	} catch (e) {
+		// ignore
+	}
+
+	return (
+		<div className="field">
+			<label htmlFor={props.name}>{props.label ?? props.name}</label>
+			<input type="text" name={props.name} defaultValue={props.value}
+					onChange={handleChange} />
+			<RequestHostPermission host={host} />
+		</div>);
+}
+
 export function DateField(props: FieldProps<Date>) {
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		if (props.onChange) {
@@ -41,7 +68,6 @@ export function DateField(props: FieldProps<Date>) {
 					onChange={handleChange} />
 		</div>);
 }
-
 
 export function JSONField(props: FieldProps<Object | any[]>) {
 	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
@@ -64,6 +90,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return DateField;
 	} else if (type == "object") {
 		return JSONField;
+	} else if (type == "perm_url") {
+		return PermURLField;
 	} else {
 		return TextField;
 	}

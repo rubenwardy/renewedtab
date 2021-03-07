@@ -1,4 +1,5 @@
 import { config } from "app";
+import { checkHostPermission } from "app/components/RequestHostPermission";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const proxy_url = config.PROXY_URL;
@@ -23,13 +24,6 @@ export function useAutoTextArea(maxHeight?: number, dependents?: any[]): React.R
 	}, [ ref.current, ...dependents || [] ]);
 
 	return ref;
-}
-
-
-declare global {
-	interface Window {
-		browser: any | undefined;
-	}
 }
 
 
@@ -58,6 +52,8 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 
 	useEffect(() => {
 		const fetchJSON = async (url: string) => {
+			await checkHostPermission(url);
+
 			const response = await fetch(new Request(makeProxy(url), {
 				method: "GET",
 				headers: {
@@ -72,9 +68,7 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 			return await response.json();
 		}
 
-		fetchJSON(url)
-			.then(setInfo)
-			.catch(setError);
+		fetchJSON(url).then(setInfo).catch(setError);
 	}, dependents);
 
 	return [info, error];
@@ -94,7 +88,9 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
-		const fetchJSON = async (url: string) => {
+		const fetchXML = async (url: string) => {
+			await checkHostPermission(url);
+
 			const response = await fetch(new Request(makeProxy(url), {
 				method: "GET",
 				headers: {
@@ -111,7 +107,7 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
 			return xml;
 		}
 
-		fetchJSON(url).then(setInfo).catch(setError);
+		fetchXML(url).then(setInfo).catch(setError);
 	}, dependents);
 
 	return [info, error];

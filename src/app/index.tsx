@@ -5,6 +5,15 @@ interface Config {
 
 export const config: Config = require("../../config.json");
 
+
+declare global {
+	interface Window {
+		browser: any | undefined;
+		permission: any | undefined;
+	}
+}
+
+
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';

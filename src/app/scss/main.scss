@@ -91,6 +91,17 @@ h1 {
 	}
 }
 
+.link {
+	cursor: pointer;
+	color: #007DB8;
+	text-decoration: none;
+
+	&:hover {
+		color: #06aed5;
+		text-decoration: underline;
+	}
+}
+
 
 @import "grid.scss";
 @import "widgets.scss";

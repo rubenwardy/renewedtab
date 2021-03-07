@@ -44,7 +44,7 @@ RSS.defaultProps = {
 
 RSS.schema = {
 	title: "string",
-	url: "string",
+	url: "perm_url",
 };
 
 RSS.defaultSize = new Vector2(5, 4);
