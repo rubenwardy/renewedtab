@@ -1,9 +1,14 @@
+
+
 .panel {
 	display: block;
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 0.25rem;
-	// -webkit-backdrop-filter: blur(20px);
-	// backdrop-filter: blur(20px);
+
+	$blur_radius: 10px;
+	-webkit-backdrop-filter: blur($blur_radius);
+	backdrop-filter: blur($blur_radius);
+
 	padding: 0;
 	overflow: hidden auto;
 	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
