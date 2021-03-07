@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { Widget } from "./Widget";
 import { WidgetManager, WidgetProps } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
@@ -42,7 +42,7 @@ function WidgetContainer(_props: any) {
 		</main>);
 }
 
-function App(_props: any) {
+export default function App(_props: any) {
 	const [createIsOpen, setCreateOpen] = useState(false);
 	return (
 		<div>
@@ -56,5 +56,3 @@ function App(_props: any) {
 			</footer>
 		</div>);
 }
-
-export default App;

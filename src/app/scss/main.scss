@@ -102,6 +102,24 @@ h1 {
 	}
 }
 
+footer {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	font-size: 80%;
+	color: rgba(255, 255, 255, 0.2);
+
+	a, .link {
+		cursor: pointer;
+		color: rgba(255, 255, 255, 0.3);
+		text-decoration: none;
+
+		&:hover {
+			color: rgba(255, 255, 255, 0.5);
+		}
+	}
+}
 
 @import "grid.scss";
 @import "widgets.scss";
