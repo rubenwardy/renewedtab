@@ -13,7 +13,6 @@ $grid_gap: 1em;
 	display: grid;
 	grid-template-columns: repeat(15, 50px);
 	grid-template-rows: repeat(12, 50px);
-	grid-auto-flow: dense;
 	grid-gap: $grid_gap;
 
 	& > * {

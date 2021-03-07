@@ -1,5 +1,6 @@
 import React from 'react';
 import { useXML } from 'app/utils/hooks';
+import { Vector2 } from 'app/utils/Vector2';
 
 interface RSSProps {
 	title?: string;
@@ -41,4 +42,4 @@ RSS.defaultProps = {
 	url: "http://feeds.bbci.co.uk/news/rss.xml"
 };
 
-RSS.defaultSize = { x: 5, y: 4 };
+RSS.defaultSize = new Vector2(5, 4);

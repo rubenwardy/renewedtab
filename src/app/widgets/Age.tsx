@@ -1,3 +1,4 @@
+import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
 interface AgeProps {
@@ -33,4 +34,4 @@ Age.defaultProps = {
 	birthDate: new Date("1997-01-01")
 }
 
-Age.defaultSize = { x: 5, y: 1 };
+Age.defaultSize = new Vector2(5, 1);

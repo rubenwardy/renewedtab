@@ -1,3 +1,4 @@
+import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
 interface ButtonProps {
@@ -22,4 +23,4 @@ Button.defaultProps = {
 	text: "rubenwardy.com"
 };
 
-Button.defaultSize = { x: 5, y: 1 };
+Button.defaultSize = new Vector2(5, 1);

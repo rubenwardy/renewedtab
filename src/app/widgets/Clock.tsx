@@ -1,3 +1,4 @@
+import { Vector2 } from "app/utils/Vector2";
 import React from "react";
 
 interface ClockProps {
@@ -28,4 +29,4 @@ export default function Clock(props: ClockProps) {
 
 Clock.defaultProps = {}
 
-Clock.defaultSize = { x: 15, y: 2 };
+Clock.defaultSize = new Vector2(15, 2);

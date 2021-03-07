@@ -1,4 +1,10 @@
 image: node:14
+cache:
+  paths:
+    - node_modules/
+stages:
+  - test
+  - deploy
 
 variables:
   ENV: production
@@ -6,6 +12,11 @@ variables:
 
 before_script:
   - npm install
+
+test:
+  stage: test
+  script:
+    - npm test
 
 pages:
   stage: deploy

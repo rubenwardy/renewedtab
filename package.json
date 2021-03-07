@@ -10,7 +10,8 @@
 		"start": "concurrently \"npm run start-app\" \"npm run start-proxy\" ",
 		"start-app": "webpack --watch & live-server dist/app --port=8085",
 		"start-proxy": "tsc --preserveWatchOutput --watch --outDir dist/proxy --project tsconfig.proxy.json & NODE_PATH=dist/proxy nodemon dist/proxy/server.js",
-		"test": "false"
+		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
+		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
 	},
 	"repository": {
 		"type": "git",
@@ -45,7 +46,12 @@
 		"webpack-cli": "^4.5.0"
 	},
 	"devDependencies": {
+		"@types/chai": "^4.2.15",
+		"@types/mocha": "^8.2.1",
+		"chai": "^4.3.3",
 		"concurrently": "^6.0.0",
-		"live-server": "^1.2.1"
+		"live-server": "^1.2.1",
+		"mocha": "^8.3.1",
+		"ts-node": "^9.1.1"
 	}
 }

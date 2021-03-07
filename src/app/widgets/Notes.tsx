@@ -1,3 +1,4 @@
+import { Vector2 } from 'app/utils/Vector2';
 import React, { CSSProperties, useState } from 'react';
 import { useAutoTextArea } from "../utils/hooks";
 
@@ -39,4 +40,4 @@ Notes.defaultProps = {
 	localStorageKey: "notes"
 };
 
-Notes.defaultSize = { x: 5, y: 2 };
+Notes.defaultSize = new Vector2(5, 2);

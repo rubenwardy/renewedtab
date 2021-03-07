@@ -4,6 +4,8 @@ import { WidgetManager } from "app/WidgetManager";
 import { Clock, Search, WidgetTypes } from "app/widgets";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 import { ErrorBoundary } from "./ErrorBoundary";
+import WidgetLayouter from "app/WidgetLayouter";
+import { Vector2 } from "app/utils/Vector2";
 
 const widgetManager = new WidgetManager();
 
@@ -15,11 +17,15 @@ function WidgetContainer(_props: any) {
 		setUpdate({});
 	}
 
+	const layouter = new WidgetLayouter(new Vector2(15, 12));
+	layouter.resolveAll(widgetManager.widgets);
+
 	const widgets = widgetManager.widgets.map(raw => (
 		<ErrorBoundary key={raw.id}>
 			<Widget id={raw.id}
 				type={raw.type} props={raw.props}
 				child={WidgetTypes[raw.type]}
+				position={raw.position} size={raw.size}
 				save={widgetManager.save.bind(widgetManager)}
 				remove={() => handleRemove(raw.id)} />
 		</ErrorBoundary>));

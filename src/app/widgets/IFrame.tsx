@@ -1,3 +1,4 @@
+import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
 interface IFrameProps {
@@ -16,4 +17,4 @@ IFrame.defaultProps = {
 	url: "https://monitor.rubenwardy.com/d-solo/46olEsqWz/overview?orgId=1&from=1614752790104&to=1614774390104&panelId=123126"
 };
 
-IFrame.defaultSize = { x: 5, y: 4 };
+IFrame.defaultSize = new Vector2(5, 4);

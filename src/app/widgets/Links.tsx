@@ -1,3 +1,4 @@
+import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
 type Link = { title: string, url: string };
@@ -58,4 +59,4 @@ Links.defaultProps = {
 	]
 };
 
-Links.defaultSize = { x: 5, y: 5 };
+Links.defaultSize = new Vector2(5, 5);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useJSON } from 'app/utils/hooks';
+import { Vector2 } from 'app/utils/Vector2';
 
 interface SpaceLaunch {
 	id: number;
@@ -80,4 +81,4 @@ export default function SpaceFlights(_props: any) {
 
 SpaceFlights.defaultProps = {};
 
-SpaceFlights.defaultSize = { x: 5, y: 4 };
+SpaceFlights.defaultSize = new Vector2(5, 4);

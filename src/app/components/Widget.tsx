@@ -1,6 +1,7 @@
 import { makeFieldForValue } from "./Field";
 import React, { CSSProperties, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
+import { Vector2 } from "app/utils/Vector2";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -77,8 +78,10 @@ export function Widget<T>(props: WidgetProps<T>) {
 
 
 	const style: CSSProperties = {};
-	style.gridColumn = `span ${props.child.defaultSize.x}`;
-	style.gridRow = `span ${props.child.defaultSize.y}`;
+	const position = props.position?.add(new Vector2(1, 1));
+
+	style.gridColumn = `${position?.x ?? "auto"} / span ${props.size.x}`;
+	style.gridRow = `${position?.y ?? "auto"} / span ${props.size.y}`;
 
 	// const h = props.child.defaultSize.y;
 	// style.maxHeight = `calc(${h-1}*1em + ${h}*50px)`;

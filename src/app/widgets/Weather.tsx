@@ -1,5 +1,6 @@
 import React from 'react';
 import { useJSON } from 'app/utils/hooks';
+import { Vector2 } from 'app/utils/Vector2';
 
 
 interface WeatherForecastProps {
@@ -62,4 +63,4 @@ Weather.defaultProps = {
 	locationName:"Bristol"
 };
 
-Weather.defaultSize = { x: 5, y: 3 };
+Weather.defaultSize = new Vector2(5, 3);

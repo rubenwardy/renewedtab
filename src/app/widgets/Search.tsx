@@ -1,3 +1,4 @@
+import { Vector2 } from "app/utils/Vector2";
 import React from "react";
 
 interface SearchProps {
@@ -20,4 +21,4 @@ Search.defaultProps = {
 	searchURL: "https://duckduckgo.com"
 };
 
-Search.defaultSize = { x: 15, y: 1 };
+Search.defaultSize = new Vector2(15, 1);

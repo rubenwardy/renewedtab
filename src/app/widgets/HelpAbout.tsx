@@ -1,3 +1,4 @@
+import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
 export default function HelpAbout(_props: any) {
@@ -20,4 +21,4 @@ export default function HelpAbout(_props: any) {
 
 HelpAbout.defaultProps = {};
 
-HelpAbout.defaultSize = { x: 5, y: 4 };
+HelpAbout.defaultSize = new Vector2(5, 4);

@@ -1,16 +1,20 @@
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
+import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
 
 type ReactFactory<T> = ((props: T) => JSX.Element) ;
 export interface WidgetFactory<T> extends ReactFactory<T> {
 	defaultProps: T;
-	defaultSize: { x: number, y: number };
+	defaultSize: Vector2;
 }
 
-interface WidgetRaw<T> {
+export interface WidgetRaw<T> {
 	id: number;
 	type: string;
 	props: T;
+
+	position?: Vector2;
+	size: Vector2;
 }
 
 export interface WidgetProps<T> extends WidgetRaw<T> {
@@ -31,6 +35,11 @@ export class WidgetManager {
 				.filter((widget: WidgetRaw<any>) => WidgetTypes[widget.type]);
 			this.id_counter =
 				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
+
+			this.widgets.forEach(widget => {
+				widget.position = undefined;
+				widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
+			})
 		} else {
 			this.resetToDefault();
 		}
@@ -55,6 +64,8 @@ export class WidgetManager {
 		this.widgets.push({
 			id: this.id_counter,
 			type: type,
+			position: undefined,
+			size: widget.defaultSize,
 			props: Object.assign({}, widget.defaultProps)
 		});
 		this.save();
