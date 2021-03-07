@@ -12,19 +12,36 @@ variables:
 
 before_script:
   - npm install
+  - cp config.example.json config.json
 
 test:
   stage: test
+  dependencies: []
+  interruptible: true
   script:
     - npm test
 
-pages:
+firefox:
   stage: deploy
+  dependencies: []
   interruptible: true
   script:
-    - "echo '{ \"PROXY_URL\": \"https://rubenwardy.com/homescreen/proxy/\" }' > config.json"
-    - npm run build
-    - cp -r dist/app public
+    - npm run package:firefox
+    - mv web-ext-artifacts/homescreen.zip firefox-homescreen.zip
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - firefox-homescreen.zip
+  only:
+    - master
+
+pages:
+  stage: deploy
+  dependencies: []
+  interruptible: true
+  script:
+    - npm run build:app
+    - cp -r dist/webext/app public
   artifacts:
     paths:
       - public

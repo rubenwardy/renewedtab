@@ -76,7 +76,6 @@ export function Widget<T>(props: WidgetProps<T>) {
 		break;
 	}
 
-
 	const style: CSSProperties = {};
 	const position = props.position?.add(new Vector2(1, 1));
 

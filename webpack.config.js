@@ -3,29 +3,34 @@ const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const dest = path.resolve(__dirname, "dist/app");
-
-const config = JSON.parse((require("fs")).readFileSync("config.json"));
-
 const isProd = process.env.NODE_ENV === 'production';
+const dest = path.resolve(__dirname, "dist/webext/app");
+
 module.exports = {
-  	mode: isProd ? 'production' : 'development',
+	mode: isProd ? 'production' : 'development',
 	entry: "./src/app/index",
+	devtool: "source-map",
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				{ from: "src/app/public", to: dest },
+				{ from: "src/app/public/", to: dest },
+			]
+		}),
+		new CopyPlugin({
+			patterns: [
+				{ from: "src/webext/manifest.json", to: path.resolve(__dirname, "dist/webext") },
 			]
 		}),
 		new MiniCssExtractPlugin({
 			// Options similar to the same options in webpackOptions.output
 			// both options are optional
-			filename: '[name].[contenthash].css',
-			chunkFilename: '[id].[contenthash].css',
+			filename: '[name].css',
+			chunkFilename: '[id].css',
 		}),
 		new HtmlWebpackPlugin({
 			title: "Homescreen",
 			template: "src/app/templates/index.ejs",
+			hash: true
 		}),
 	],
 	module: {
@@ -61,7 +66,7 @@ module.exports = {
 
 	},
 	output: {
-		filename: "[name].[contenthash].js",
+		filename: "[name].js",
 		path: dest
 	},
 };

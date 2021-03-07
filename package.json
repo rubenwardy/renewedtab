@@ -4,12 +4,14 @@
 	"description": "A customisable home page for your web browser",
 	"main": "webpack.config.js",
 	"scripts": {
-		"build": "npm run build-app && npm run build-proxy",
-		"build-app": "webpack",
-		"build-proxy": "tsc --outDir dist/proxy --project tsconfig.proxy.json",
-		"start": "concurrently \"npm run start-app\" \"npm run start-proxy\" ",
-		"start-app": "webpack --watch & live-server dist/app --port=8085",
-		"start-proxy": "tsc --preserveWatchOutput --watch --outDir dist/proxy --project tsconfig.proxy.json & NODE_PATH=dist/proxy nodemon dist/proxy/server.js",
+		"build": "npm run build:app && npm run build:server",
+		"build:app": "webpack",
+		"build:server": "tsc --outDir dist/server --project tsconfig.server.json",
+		"start": "concurrently \"npm run start:app\" \"npm run start:server\" ",
+		"start:app": "concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\" ",
+		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server.js\"",
+		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -s ./dist/webext/ -i ./dist/webext/app/manifest.json \" ",
+		"package:firefox": "npm run build:app && web-ext build -s ./dist/webext/ -i ./dist/webext/app/manifest.json -n homescreen.zip",
 		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
 		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
 	},
@@ -52,6 +54,8 @@
 		"concurrently": "^6.0.0",
 		"live-server": "^1.2.1",
 		"mocha": "^8.3.1",
-		"ts-node": "^9.1.1"
+		"ts-node": "^9.1.1",
+		"web-ext": "^5.5.0",
+		"webextension-polyfill-ts": "^0.25.0"
 	}
 }

@@ -1,0 +1,8 @@
+{
+	"PROXY_URL": "https://rubenwardy.com/homescreen/proxy/",
+	"PROXY_ALLOWED_HOSTS": [
+		"forecast7.com",
+		"feeds.bbci.co.uk",
+		"fdo.rocketlaunch.live"
+	]
+}

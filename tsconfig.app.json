@@ -4,6 +4,7 @@
 		"baseUrl": "src/app"
 	},
 	"include": [
-		"src/app"
+		"src/app",
+		"src/webext"
 	]
 }

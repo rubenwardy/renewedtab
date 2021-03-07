@@ -1,0 +1,23 @@
+{
+
+	"manifest_version": 2,
+	"name": "Homescreen",
+	"version": "0.1",
+	"description": "A customisable New Tab page for your browser",
+	"developer": {
+		"name": "rubenwardy",
+		"url": "https://rubenwardy.com/"
+	},
+	"chrome_url_overrides" : {
+		"newtab": "app/index.html"
+	},
+	"permissions": [
+		"*://rubenwardy.com/*",
+		"*://forecast7.com/*",
+		"*://feeds.bbci.co.uk/*",
+		"*://fdo.rocketlaunch.live/*"
+	],
+	"optional_permissions": [
+		"*://*/"
+	]
+}

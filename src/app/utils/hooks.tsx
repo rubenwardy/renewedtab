@@ -26,10 +26,22 @@ export function useAutoTextArea(maxHeight?: number, dependents?: any[]): React.R
 }
 
 
-function makeProxy(url: string){
-	const ret = new URL(proxy_url);
-	ret.searchParams.set("url", url);
-	return ret.toString();
+declare global {
+	interface Window {
+		browser: any | undefined;
+	}
+}
+
+
+function makeProxy(url: string) {
+	if (window.browser) {
+		console.log("Detected running as webext");
+		return url;
+	} else {
+		const ret = new URL(proxy_url);
+		ret.searchParams.set("url", url);
+		return ret.toString();
+	}
 }
 
 

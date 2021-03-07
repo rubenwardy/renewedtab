@@ -8,11 +8,13 @@ License: MIT
 
 ### Create Config
 
-Create `config.json` file in the root of this project, with the following content:
+Copy `config.example.json` to `config.json`, and change URLs:
 
-```json
+```js
 {
-	"PROXY_URL": "http://localhost:8000"
+	"PROXY_URL": "http://localhost:8000/proxy/",
+
+	/* other settings here *//
 }
 ```
 
