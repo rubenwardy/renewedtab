@@ -20,6 +20,13 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 				}} />);
 	});
 
+	if (inner.length == 0) {
+		inner.push(
+			<p className="text-muted">
+				Nothing to edit.
+			</p>);
+	}
+
 	return (
 		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
 			<div className="modal-body">
