@@ -38,6 +38,17 @@ function makeProxy(url: string) {
 	}
 }
 
+async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Response> {
+	try {
+		return await fetch(request, init);
+	} catch (e) {
+		if (typeof(e) == "object" && e.message.includes("NetworkError")) {
+			await checkHostPermission(request.url);
+		}
+		throw e;
+	}
+}
+
 
 /**
 * Downloads a JSON document from a URL, without using a proxy
@@ -52,7 +63,7 @@ function useJSONRaw<T>(url: string, dependents?: any[]): [(T | null), (string | 
 
 	useEffect(() => {
 		const fetchJSON = async (url: string) => {
-			const response = await fetch(new Request(url, {
+			const response = await fetchCheckCors(new Request(url, {
 				method: "GET",
 				headers: {
 					"Accept": "application/json",
@@ -116,9 +127,7 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
 
 	useEffect(() => {
 		const fetchXML = async (url: string) => {
-			await checkHostPermission(url);
-
-			const response = await fetch(new Request(makeProxy(url), {
+			const response = await fetchCheckCors(new Request(makeProxy(url), {
 				method: "GET",
 				headers: {
 					"Accept": "application/json",
