@@ -43,31 +43,28 @@ export function Widget<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 
 	const close = () => setMode(WidgetMode.View);
-	let content: JSX.Element;
-	let strip = (
-		<span className="widget-btns">
-			<a className="btn" onClick={close}>x</a>
-		</span>)
 
 	switch (mode) {
 	case WidgetMode.Edit:
-		content = (<WidgetEditor onClose={close} {...props} />);
-		break;
+		return (<WidgetEditor onClose={close} {...props} />);
 	case WidgetMode.Delete:
-		content = (<WidgetDelete onClose={close} {...props} />);
-		break;
+		return (<WidgetDelete onClose={close} {...props} />);
 	default:
-		content = React.createElement(props.child, props.props);
-		strip = (
-			<div className="widget-strip">
-				<span className="widget-title">{props.type}</span>
-				<span className="widget-btns">
-					<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>e</a>
-					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>d</a>
-				</span>
-			</div>);
-		break;
+		const Child = React.createElement(props.child, props.props);
+		return (
+			<>
+				<div className="widget-strip">
+					<span className="widget-title">{props.type}</span>
+					<span className="widget-btns">
+						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
+							<i className="fas fa-pen" />
+						</a>
+						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
+							<i className="fas fa-trash" />
+						</a>
+					</span>
+				</div>
+				{Child}
+			</>);
 	}
-
-	return (<Fragment>{strip}{content}</Fragment>);
 }

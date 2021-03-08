@@ -48,12 +48,16 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.s[ac]ss$/i,
+				test: /\.s?[ac]ss$/i,
 				use: [
 					MiniCssExtractPlugin.loader,
 					"css-loader",
 					"sass-loader"
 				],
+			},
+			{
+				test: /\.(svg|eot|woff|woff2|ttf)$/,
+				type: 'asset/resource',
 			},
 		]
 	},

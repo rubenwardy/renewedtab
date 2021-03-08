@@ -27,7 +27,9 @@ export default function Modal(props: ModalProps) {
 		<aside className="modal-bg" onClick={props.onClose} style={style}>
 			<div className="panel flush modal" onClick={(e) => e.stopPropagation()}>
 				<h2 className="modal-header">
-					<a className="btn modal-close" onClick={props.onClose}>x</a>
+					<a className="btn modal-close" onClick={props.onClose}>
+						<i className="fas fa-times" />
+					</a>
 					{props.title}
 				</h2>
 				{props.children}
