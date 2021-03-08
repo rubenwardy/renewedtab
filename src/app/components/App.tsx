@@ -6,6 +6,7 @@ import CreateWidgetDialog from "./CreateWidgetDialog";
 import { ErrorBoundary } from "./ErrorBoundary";
 import WidgetLayouter from "app/WidgetLayouter";
 import { Vector2 } from "app/utils/Vector2";
+import GridLayout, { Layout } from "react-grid-layout";
 
 const widgetManager = new WidgetManager();
 
@@ -29,16 +30,41 @@ function WidgetContainer(_props: any) {
 		};
 
 		return (
-			<ErrorBoundary key={widget.id}>
-				<Widget {...props} />
-			</ErrorBoundary>)
+			<div key={widget.id} className="widget">
+				<ErrorBoundary>
+					<Widget {...props} />
+				</ErrorBoundary>
+			</div>);
+	});
+
+	const layout : Layout[] = widgetManager.widgets.map(widget => ({
+		i: widget.id.toString(),
+		x: widget.position?.x ?? 0,
+		y: widget.position?.y ?? 0,
+		w: widget.size.x,
+		h: widget.size.y,
+	}));
+
+	function onLayoutChange(layouts: Layout[]) {
+		const lut = new Map<string, Layout>();
+		layouts.forEach(layout => lut.set(layout.i, layout));
+
+		widgetManager.widgets.forEach(widget => {
+			const layout = lut.get(widget.id.toString());
+			if (layout) {
+				widget.position = new Vector2(layout.x, layout.y);
+				widget.size = new Vector2(layout.w, layout.h);
+			}
 		});
+
+		widgetManager.save();
+	}
 
 	return (
 		<main>
-			<div className="grid">
+			<GridLayout className="layout" layout={layout} onLayoutChange={onLayoutChange} cols={15} rowHeight={50} margin={[16, 16]} width={974} draggableHandle=".widget-title">
 				{widgets}
-			</div>
+			</GridLayout>
 		</main>);
 }
 

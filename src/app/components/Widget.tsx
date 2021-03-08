@@ -1,9 +1,7 @@
 import { makeField } from "./Field";
-import React, { CSSProperties, useState } from "react";
+import React, { Fragment, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
-import { Vector2 } from "app/utils/Vector2";
 import Modal from "./Modal";
-
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
@@ -49,7 +47,6 @@ enum WidgetMode {
 	Delete
 }
 
-
 export function Widget<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 
@@ -80,14 +77,5 @@ export function Widget<T>(props: WidgetProps<T>) {
 		break;
 	}
 
-	const style: CSSProperties = {};
-	const position = props.position?.add(new Vector2(1, 1));
-
-	style.gridColumn = `${position?.x ?? "auto"} / span ${props.size.x}`;
-	style.gridRow = `${position?.y ?? "auto"} / span ${props.size.y}`;
-
-	const h = props.child.defaultSize.y;
-	style.maxHeight = `calc(${h-1}*1em + ${h}*50px)`;
-
-	return (<div className={`widget`} style={style}>{strip}{content}</div>);
+	return (<Fragment>{strip}{content}</Fragment>);
 }

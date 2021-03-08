@@ -121,7 +121,42 @@ footer {
 	}
 }
 
-@import "grid.scss";
+main {
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 974px;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+
+@media (max-width: 750px) {
+	html, body, #app {
+		height: auto;
+		overflow: auto;
+	}
+
+	footer {
+		display: block;
+		padding: 2em 0;
+		text-align: center;
+		transform: none;
+		position: static;
+	}
+
+	main {
+		margin: none;
+		padding: 1em;
+		position: static;
+		transform: none;
+		width: auto;
+	}
+}
+
 @import "widgets.scss";
 @import "fields.scss";
 @import "modal.scss";
+
+@import "~react-grid-layout/css/styles.css";
+@import "~react-resizable/css/styles.css";

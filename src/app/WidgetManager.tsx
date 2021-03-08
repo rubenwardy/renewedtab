@@ -40,7 +40,7 @@ export class WidgetManager {
 				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 
 			this.widgets.forEach(widget => {
-				widget.position = undefined;
+				widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
 				widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
 			})
 		} else {
