@@ -84,7 +84,7 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 
 	return (
 		<main ref={mainRef} className={isScrolling ? "scrolling" : ""}>
-			<GridLayout className={gridClassNames} compactType={null}
+			<GridLayout className={gridClassNames}
 					layout={layout} onLayoutChange={onLayoutChange}
 					cols={15} rowHeight={50} margin={[16, 16]} width={974}
 					draggableHandle=".widget-title">
