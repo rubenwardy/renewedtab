@@ -3,13 +3,13 @@ import { WidgetManager } from "../WidgetManager";
 import { WidgetTypes } from "../widgets";
 import Modal from "./Modal";
 
-interface CreateWidgetDialog {
+interface CreateWidgetDialogProps {
 	isOpen: boolean;
 	onClose: () => void;
 	manager: WidgetManager;
 }
 
-export default function CreateWidgetDialog(props: CreateWidgetDialog) {
+export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	function select(key: string) {
 		props.manager.createWidget(key);
 		props.onClose();

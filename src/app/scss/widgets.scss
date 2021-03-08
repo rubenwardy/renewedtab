@@ -88,9 +88,12 @@
 	}
 
 	h2 {
+		margin-top: 0;
+	}
+
+	h2, h3, h4, h5 {
 		font-size: 100%;
 		font-weight: bold;
-		margin-top: 0;
 
 		a {
 			color: white;
