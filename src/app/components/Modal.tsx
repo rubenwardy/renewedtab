@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 export interface ModalProps {
@@ -13,8 +13,18 @@ export default function Modal(props: ModalProps) {
 		return null;
 	}
 
+	const [mounted, setMounted] = useState(false);
+	useEffect(() => {
+		window.requestAnimationFrame(() => setMounted(true));
+	}, []);
+
+	const style: CSSProperties = {};
+	if (mounted) {
+		style.opacity = 1;
+	}
+
 	return ReactDOM.createPortal((
-		<aside className="modal-bg" onClick={props.onClose}>
+		<aside className="modal-bg" onClick={props.onClose} style={style}>
 			<div className="panel flush modal" onClick={(e) => e.stopPropagation()}>
 				<h2 className="modal-header">
 					<a className="btn modal-close" onClick={props.onClose}>x</a>
