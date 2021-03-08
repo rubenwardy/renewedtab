@@ -40,21 +40,19 @@ function makeProxy(url: string) {
 
 
 /**
-* Downloads a JSON document from a URL.
+* Downloads a JSON document from a URL, without using a proxy
 *
 * @param {number} url - The URL
 * @param {any[]} dependents - A list of dependent variables for the URL.
 * @return {[response, error]]} - Response and error
 */
-export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (string | null)] {
+function useJSONRaw<T>(url: string, dependents?: any[]): [(T | null), (string | null)] {
 	const [info, setInfo] = useState<T | null>(null);
 	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		const fetchJSON = async (url: string) => {
-			await checkHostPermission(url);
-
-			const response = await fetch(new Request(makeProxy(url), {
+			const response = await fetch(new Request(url, {
 				method: "GET",
 				headers: {
 					"Accept": "application/json",
@@ -74,6 +72,35 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 	return [info, error];
 }
 
+
+/**
+* Downloads a JSON document from a URL.
+*
+* @param {number} url - The URL
+* @param {any[]} dependents - A list of dependent variables for the URL.
+* @return {[response, error]]} - Response and error
+*/
+export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (string | null)] {
+	return useJSONRaw(makeProxy(url), dependents);
+}
+
+
+/**
+* Downloads a JSON document from a URL.
+*
+* @param {number} url - The URL
+* @param {any[]} dependents - A list of dependent variables for the URL.
+* @return {[response, error]]} - Response and error
+*/
+export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | null), (string | null)] {
+	const url = new URL(config.API_URL);
+	url.pathname = (url.pathname + path).replaceAll("//", "/");
+	Object.entries(args).forEach(([key, value]) => {
+		url.searchParams.set(key.toString(), (value as Object).toString());
+	})
+
+	return useJSONRaw(url.toString(), dependents);
+}
 
 
 /**

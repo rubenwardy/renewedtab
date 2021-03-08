@@ -8,9 +8,9 @@
 		"build:app": "webpack",
 		"build:server": "tsc --outDir dist/server --project tsconfig.server.json",
 		"start": "concurrently \"npm run start:app\" \"npm run start:server\" ",
-		"start:app": "concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\" ",
+		"start:app": "concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\"",
 		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server.js\"",
-		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -s ./dist/webext/ -i ./dist/webext/app/manifest.json \" ",
+		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -s ./dist/webext/ -i ./dist/webext/app/manifest.json \" \"npm run start:server\"",
 		"package:firefox": "npm run build:app && web-ext build -s ./dist/webext/ -i ./dist/webext/app/manifest.json -n homescreen.zip",
 		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
 		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"

@@ -13,7 +13,6 @@
 	},
 	"permissions": [
 		"*://rubenwardy.com/*",
-		"*://forecast7.com/*",
 		"*://fdo.rocketlaunch.live/*"
 	],
 	"optional_permissions": [

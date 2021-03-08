@@ -232,6 +232,25 @@ main > .widget {
 		color: rgba(255, 255, 255, 0.5);
 		margin-bottom: 0.3rem;
 	}
+
+	.icon {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.forecast {
+		font-size: 80%;
+
+		.label {
+			font-size: 100%;
+		}
+	}
+
+	.forecast .icon {
+		width: 25px;
+		padding: 0;
+		margin: 0 2px 0 0;
+	}
 }
 
 .row-span-2 {

@@ -11,8 +11,6 @@ export async function needsPermission(host: string): Promise<boolean> {
 		return false;
 	}
 
-	console.log(window.browser.permissions.getAll());
-
 	return !(await window.browser.permissions.contains(makePermission(host)));
 }
 

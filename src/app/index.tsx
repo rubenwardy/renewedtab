@@ -1,4 +1,5 @@
 interface Config {
+	API_URL: string;
 	PROXY_URL: string;
 	PROXY_ALLOWED_HOSTS: string[];
 }
