@@ -91,9 +91,15 @@ function parseWeatherInfo(info: any): any {
 
 
 const cache = new Map<string, any>();
+if (IS_DEBUG) {
+	setInterval(() => {
+		cache.clear();
+	}, 15 * 60 * 1000);
+}
+
 async function getWeatherInfo(lat: number, long: number): Promise<any> {
 	const key = `${lat.toFixed(5)},${long.toFixed(5)}`;
-	if (IS_DEBUG && cache.has(key)) {
+	if (cache.has(key)) {
 		console.log("Using cached weather");
 		return cache.get(key);
 	}
