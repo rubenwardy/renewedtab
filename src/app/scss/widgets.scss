@@ -110,6 +110,10 @@
 .widget {
 	position: relative;
 
+	&:hover .widget-strip {
+		opacity: 0.25;
+	}
+
 	.widget-strip {
 		position: absolute;
 		top: 0;
@@ -128,6 +132,7 @@
 		opacity: 0;
 		user-select: none;
 		overflow: hidden;
+		background-color: rgba(255, 255, 255, 0.25);
 
 		.widget-title {
 			margin: 0;
@@ -140,7 +145,6 @@
 
 		&:hover {
 			opacity: 1;
-			background-color: rgba(255, 255, 255, 0.25);
 		}
 	}
 

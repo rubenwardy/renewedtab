@@ -4,16 +4,19 @@ import React from 'react';
 export default function HelpAbout(_props: any) {
 	return (
 		<div className="panel">
-			<h2>Homescreen</h2>
+			<h2>Homescreen Help and Tips</h2>
 			<p>
 				Welcome to homescreen. This is a web app designed to be used
 				as a "New Tab" page in web browsers.
 			</p>
 			<p>
-				Click "Add widget" in the bootom of the screen to add a widget.
+				Click "Add widget" in the bottom of the screen to add a widget.
+				Also take a look at "Settings".
 			</p>
 			<p>
-				Hover over the top-right of a widget to edit or delete it.
+				To move, edit, or delete a widget, use the handle that appears
+				in the top-right of the widget. To resize, use the drag
+				handle in the bottom-right.
 			</p>
 		</div>);
 }
@@ -23,4 +26,4 @@ HelpAbout.defaultProps = {};
 
 HelpAbout.schema = {};
 
-HelpAbout.defaultSize = new Vector2(5, 4);
+HelpAbout.defaultSize = new Vector2(5, 5);
