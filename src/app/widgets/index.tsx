@@ -4,7 +4,6 @@ export { default as Clock } from "./Clock";
 export { default as Links } from "./Links";
 export { default as HelpAbout } from "./HelpAbout";
 export { default as IFrame } from "./IFrame";
-export { default as Invisible } from "./Invisible";
 export { default as Notes } from "./Notes";
 export { default as RSS } from "./RSS";
 export { default as Search } from "./Search";
@@ -12,7 +11,7 @@ export { default as SpaceFlights } from "./SpaceFlights";
 export { default as Weather } from "./Weather";
 
 import { WidgetFactory } from "../WidgetManager";
-import { Age, Button, Clock, Links, HelpAbout, IFrame, Invisible, Notes, RSS, Search, SpaceFlights, Weather } from ".";
+import { Age, Button, Clock, Links, HelpAbout, IFrame, Notes, RSS, Search, SpaceFlights, Weather } from ".";
 
 export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Age: Age,
@@ -21,7 +20,6 @@ export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Links: Links,
 	HelpAbout: HelpAbout,
 	IFrame: IFrame,
-	Invisible: Invisible,
 	Notes: Notes,
 	RSS: RSS,
 	Search: Search,
