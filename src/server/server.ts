@@ -8,6 +8,7 @@ const PORT = process.env.PORT ?? 8000;
 const config = JSON.parse(fs.readFileSync("config.json").toString());
 const OPEN_WEATHER_MAP_API_KEY = process.env.OPEN_WEATHER_MAP_API_KEY || config.OPEN_WEATHER_MAP_API_KEY;
 const PROXY_ALLOWED_HOSTS = new Set(config.PROXY_ALLOWED_HOSTS);
+const IS_DEBUG = process.env.NODE_ENV !== "production";
 
 app.use((_req, res, next) => {
 	const expiresAt = new Date(new Date().getTime() + 4*60*60*1000);
@@ -92,7 +93,7 @@ function parseWeatherInfo(info: any): any {
 const cache = new Map<string, any>();
 async function getWeatherInfo(lat: number, long: number): Promise<any> {
 	const key = `${lat.toFixed(5)},${long.toFixed(5)}`;
-	if (cache.has(key)) {
+	if (IS_DEBUG && cache.has(key)) {
 		console.log("Using cached weather");
 		return cache.get(key);
 	}
@@ -110,10 +111,18 @@ async function getWeatherInfo(lat: number, long: number): Promise<any> {
 		}
 	}));
 
-	const text = await response.text();
-	const json = parseWeatherInfo(JSON.parse(text));
-	cache.set(key, json);
-	return json;
+	const json = JSON.parse(await response.text());
+	if (!response.ok) {
+		if (json.message && json.message.includes("requests limitation")) {
+			throw Error("Too many requests to Weather API service.");
+		} else {
+			throw Error(`Error getting weather, ${response.statusText}.`);
+		}
+	}
+
+	const ret = parseWeatherInfo(json);
+	cache.set(key, ret);
+	return ret;
 }
 
 
@@ -128,11 +137,11 @@ app.get("/weather/", async (req: express.Request, res: express.Response) => {
 			Number.parseFloat(req.query.lat as string),
 			Number.parseFloat(req.query.long as string)));
 	} catch (ex) {
-		res.status(404).send(ex.message);
+		res.status(400).send(ex.message);
 	}
 });
 
 
 app.listen(PORT, () => {
-	console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
+	console.log(`⚡️[server]: Server is running in ${IS_DEBUG ? "debug" : "prod"} at http://localhost:${PORT}`);
 });
