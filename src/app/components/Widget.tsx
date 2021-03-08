@@ -54,6 +54,7 @@ export function Widget<T>(props: WidgetProps<T>) {
 		return (
 			<>
 				<div className="widget-strip">
+					<i className="collapsed fas fa-ellipsis-h" />
 					<span className="widget-title">{props.type}</span>
 					<span className="widget-btns">
 						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
