@@ -1,3 +1,4 @@
+import Background from "app/Background";
 import React, { useState } from "react";
 import AboutSettings from "./AboutSettings";
 import BackgroundSettings from "./BackgroundSettings";
@@ -7,6 +8,7 @@ import Modal from "./Modal";
 interface SettingsDialogProps {
 	isOpen: boolean;
 	onClose: () => void;
+	background: Background;
 }
 
 enum SettingsTab {
@@ -56,7 +58,7 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 				<nav>
 					{tabs}
 				</nav>
-				<Tab />
+				<Tab {...props} />
 			</div>
 		</Modal>);
 }

@@ -3,7 +3,7 @@
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 0.25rem;
 
-	$blur_radius: 10px;
+	$blur_radius: 7px;
 	-webkit-backdrop-filter: blur($blur_radius);
 	backdrop-filter: blur($blur_radius);
 
@@ -150,10 +150,12 @@
 		z-index: 100;
 
 		.btn {
+			color: white;
 			padding: 0.2rem 0.65rem;
 			margin: 0;
 			border-radius: 0;
 			&:hover {
+				color: white;
 				background-color: rgba(255, 255, 255, 0.25);
 			}
 		}

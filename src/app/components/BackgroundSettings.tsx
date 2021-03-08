@@ -1,63 +1,11 @@
-import { Schema } from "app/utils/schema";
-import { fromTypedJSON, toTypedJSON } from "app/utils/TypedJSON";
+import Background, { BackgroundMode, BackgroundModeType, getDescriptionForMode, getSchemaForMode } from "app/Background";
 import React, { useState } from "react";
 import { Radio, RadioGroup } from "react-radio-group";
 import { makeField } from "./Field";
 
-
-enum BackgroundMode {
-	Auto,
-	Color,
-	ImageUrl,
-	// ImageUpload,
-	// Reddit
-}
-
-function getSchemaForMode(mode: BackgroundMode): Schema {
-	switch (mode) {
-	case BackgroundMode.Auto:
-		return {};
-	case BackgroundMode.Color:
-		return {
-			color: "string"
-		};
-	case BackgroundMode.ImageUrl:
-		return {
-			url: "string"
-		};
-	}
-}
-
-function getDescriptionForMode(mode: BackgroundMode): string {
-	switch (mode) {
-	case BackgroundMode.Auto:
-		return "Random backgrounds";
-	case BackgroundMode.Color:
-		return "A single color";
-	case BackgroundMode.ImageUrl:
-		return "An image from a URL";
-	}
-}
-
-function getValue(key: string): any {
-	const str = localStorage.getItem("bg_" + key);
-	return str ? fromTypedJSON(JSON.parse(str)) : null;
-}
-
-function setValue(key: string, v: any) {
-	const str = toTypedJSON(v);
-	localStorage.setItem("bg_" + key, JSON.stringify(str));
-}
-
-declare type BackgroundModeType = keyof typeof BackgroundMode;
-
-function getStoredMode(): (BackgroundMode | undefined) {
-	const type = (localStorage.getItem("bg_mode")) as BackgroundModeType;
-	return BackgroundMode[type];
-}
-
-export default function BackgroundSettings(_props: any) {
-	const [mode, setMode] = useState(getStoredMode() ?? BackgroundMode.Auto);
+export default function BackgroundSettings(props: { background: Background }) {
+	const background = props.background;
+	const [mode, setMode] = useState(background.getMode());
 
 	const radioModes =
 		Object.keys(BackgroundMode)
@@ -78,11 +26,11 @@ export default function BackgroundSettings(_props: any) {
 
 	const schema = getSchemaForMode(mode);
 	const inner = Object.entries(schema).map(([key, type]) => {
-		const value = getValue(key);
+		const value = background.getValue(key);
 		const Field = makeField(type);
 		return (
 			<Field key={key} name={key} value={value}
-				onChange={(val) => setValue(key, val)} />);
+				onChange={(val) => background.setValue(key, val)} />);
 	});
 
 	if (inner.length == 0) {

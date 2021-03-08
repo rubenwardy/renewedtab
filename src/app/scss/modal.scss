@@ -86,7 +86,6 @@
 
 @supports (backdrop-filter: blur(10px)) {
 	.modal {
-		background: rgba(0, 0, 0, 0.7);
 		backdrop-filter: blur(10px);
 
 		.panel {
