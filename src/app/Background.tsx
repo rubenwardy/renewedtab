@@ -1,4 +1,4 @@
-import { Schema } from "./utils/schema";
+import Schema from "./utils/Schema";
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 
 

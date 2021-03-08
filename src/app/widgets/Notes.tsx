@@ -1,3 +1,4 @@
+import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React, { CSSProperties, useState } from 'react';
 import { useAutoTextArea } from "../utils/hooks";
@@ -42,6 +43,6 @@ Notes.defaultProps = {
 
 Notes.schema = {
 	localStorageKey: "string",
-};
+} as Schema;
 
 Notes.defaultSize = new Vector2(5, 2);

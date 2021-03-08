@@ -1,3 +1,4 @@
+import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import React from "react";
 
@@ -29,6 +30,6 @@ export default function Clock(props: ClockProps) {
 
 Clock.defaultProps = {};
 
-Clock.schema = {};
+Clock.schema = {} as Schema;
 
 Clock.defaultSize = new Vector2(15, 2);

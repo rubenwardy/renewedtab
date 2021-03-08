@@ -1,4 +1,4 @@
-import { Schema } from "app/utils/schema";
+import Schema from "app/utils/Schema";
 import React from "react";
 import { makeField } from "./Field";
 

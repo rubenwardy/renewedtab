@@ -1,3 +1,4 @@
+import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
@@ -61,6 +62,6 @@ Links.defaultProps = {
 
 Links.schema = {
 	sections: "object",
-};
+} as Schema;
 
 Links.defaultSize = new Vector2(5, 5);

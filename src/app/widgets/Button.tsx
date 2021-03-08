@@ -1,3 +1,4 @@
+import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
@@ -26,6 +27,6 @@ Button.defaultProps = {
 Button.schema = {
 	url: "string",
 	text: "string",
-};
+} as Schema;
 
 Button.defaultSize = new Vector2(5, 1);

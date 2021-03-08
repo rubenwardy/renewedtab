@@ -10,20 +10,13 @@ You need to:
 
 ## Hello World Example
 
-Widgets are React components and must implement the `WidgetFactory` interface:
-
-```ts
-type ReactFactory<T> = ((props: T) => JSX.Element);
-export interface WidgetFactory<T> extends ReactFactory<T> {
-	defaultProps: T;
-	defaultSize: Vector2;
-	schema: Schema;
-}
-```
+Widgets are React components and must implement the `WidgetFactory` interface.
+This is done by assigning properties to the function, as seen below.
 
 Here's an example:
 
 ```ts
+import Schema from 'app/utils/Schema';
 import React from 'react';
 
 interface HelloWorldProps {
@@ -37,7 +30,7 @@ export default function HelloWorld(props: HelloWorldProps) {
 		</div>);
 }
 
-// Default props values
+// Default values for props
 HelloWorld.defaultProps = {
 	name: "",
 };
@@ -45,7 +38,7 @@ HelloWorld.defaultProps = {
 // Schema for props, see below
 HelloWorld.schema = {
 	name: "string",
-};
+} as Schema;
 
 // Default size on grid when created
 HelloWorld.defaultSize = new Vector2(5, 1);

@@ -1,4 +1,5 @@
-export type Type = string | (new (...args: any[]) => any);
+type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
+export type Type = JSType | "perm_url";
 
 
 /**
@@ -6,6 +7,6 @@ export type Type = string | (new (...args: any[]) => any);
  *
  * Used to provide automatic forms to edit widgets.
  */
-export interface Schema {
+export default interface Schema {
 	[name: string]: Type;
 }

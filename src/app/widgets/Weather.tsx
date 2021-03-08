@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAPI } from 'app/utils/hooks';
 import { Vector2 } from 'app/utils/Vector2';
+import Schema from 'app/utils/Schema';
 
 
 interface WeatherForecastProps {
@@ -84,6 +85,6 @@ Weather.schema = {
 	latitude: "number",
 	longitude: "number",
 	url: "string",
-};
+} as Schema;
 
 Weather.defaultSize = new Vector2(5, 3);

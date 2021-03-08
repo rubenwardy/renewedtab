@@ -1,4 +1,4 @@
-import { Type } from "app/utils/schema";
+import { Type } from "app/utils/Schema";
 import React, { ChangeEvent, useState } from "react";
 import RequestHostPermission from "./RequestHostPermission";
 

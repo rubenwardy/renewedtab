@@ -1,3 +1,4 @@
+import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
@@ -36,6 +37,6 @@ Age.defaultProps = {
 
 Age.schema = {
 	birthDate: Date,
-};
+} as Schema;
 
 Age.defaultSize = new Vector2(5, 1);

@@ -1,3 +1,4 @@
+import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
@@ -19,6 +20,6 @@ IFrame.defaultProps = {
 
 IFrame.schema = {
 	url: "string",
-};
+} as Schema;
 
 IFrame.defaultSize = new Vector2(5, 4);

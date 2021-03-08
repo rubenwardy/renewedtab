@@ -1,3 +1,4 @@
+import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
@@ -24,6 +25,6 @@ export default function HelpAbout(_props: any) {
 
 HelpAbout.defaultProps = {};
 
-HelpAbout.schema = {};
+HelpAbout.schema = {} as Schema;
 
 HelpAbout.defaultSize = new Vector2(5, 5);
