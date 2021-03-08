@@ -17,7 +17,7 @@ export default function Search(props: SearchProps) {
 }
 
 
-Search.defaultProps = {
+Search.initialProps = {
 	searchTitle: "DuckDuckGo",
 	searchURL: "https://duckduckgo.com"
 };

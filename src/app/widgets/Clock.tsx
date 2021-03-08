@@ -28,7 +28,7 @@ export default function Clock(props: ClockProps) {
 }
 
 
-Clock.defaultProps = {};
+Clock.initialProps = {};
 
 Clock.schema = {} as Schema;
 

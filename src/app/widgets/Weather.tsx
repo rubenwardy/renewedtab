@@ -72,7 +72,7 @@ export default function Weather(props: WeatherProps) {
 }
 
 
-Weather.defaultProps = {
+Weather.initialProps = {
 	locationName: "Bristol",
 	latitude: "51.454514",
 	longitude: "-2.587910",

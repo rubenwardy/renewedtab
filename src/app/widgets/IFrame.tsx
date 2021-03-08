@@ -14,7 +14,7 @@ export default function IFrame(props: IFrameProps) {
 }
 
 
-IFrame.defaultProps = {
+IFrame.initialProps = {
 	url: "https://monitor.rubenwardy.com/d-solo/46olEsqWz/overview?orgId=1&from=1614752790104&to=1614774390104&panelId=123126"
 };
 

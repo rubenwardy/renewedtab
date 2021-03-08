@@ -1,5 +1,6 @@
 import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { WidgetRaw } from 'app/WidgetManager';
 import React, { CSSProperties, useState } from 'react';
 import { useAutoTextArea } from "../utils/hooks";
 
@@ -37,9 +38,13 @@ export default function Notes(props: NotesProps) {
 }
 
 
-Notes.defaultProps = {
-	localStorageKey: "notes",
+Notes.initialProps = {
+	localStorageKey: "",
 };
+
+Notes.onCreated = function(widget: WidgetRaw<NotesProps>) {
+	widget.props.localStorageKey = `notes-${widget.id}`;
+}
 
 Notes.schema = {
 	localStorageKey: "string",

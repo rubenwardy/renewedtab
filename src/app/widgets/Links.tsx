@@ -25,7 +25,7 @@ export default function Links(props: LinksProps)  {
 }
 
 
-Links.defaultProps = {
+Links.initialProps = {
 	sections: [
 		{
 			title: "Minetest",

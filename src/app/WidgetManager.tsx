@@ -6,9 +6,10 @@ import { WidgetTypes } from "./widgets";
 
 type ReactFactory<T> = ((props: T) => JSX.Element) ;
 export interface WidgetFactory<T> extends ReactFactory<T> {
-	defaultProps: T;
+	initialProps: T;
 	defaultSize: Vector2;
 	schema: Schema;
+	onCreated?: (widget: WidgetRaw<T>) => void;
 }
 
 export interface WidgetRaw<T> {
@@ -66,15 +67,20 @@ export class WidgetManager {
 	createWidget(type: string) {
 		this.id_counter++;
 
-		const widget = WidgetTypes[type];
-
-		this.widgets.push({
+		const widget_type = WidgetTypes[type];
+		const widget = {
 			id: this.id_counter,
 			type: type,
 			position: undefined,
-			size: widget.defaultSize,
-			props: Object.assign({}, widget.defaultProps)
-		});
+			size: widget_type.defaultSize,
+			props:  Object.assign({}, widget_type.initialProps),
+		};
+		this.widgets.push(widget);
+
+		if (widget_type.onCreated) {
+			widget_type.onCreated(widget);
+		}
+
 		this.save();
 	}
 

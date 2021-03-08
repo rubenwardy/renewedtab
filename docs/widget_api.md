@@ -31,7 +31,7 @@ export default function HelloWorld(props: HelloWorldProps) {
 }
 
 // Default values for props
-HelloWorld.defaultProps = {
+HelloWorld.initialProps = {
 	name: "",
 };
 

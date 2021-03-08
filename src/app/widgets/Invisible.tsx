@@ -6,7 +6,7 @@ export default function Invisible(_props: any) {
 	return (<></>);
 }
 
-Invisible.defaultProps = {};
+Invisible.initialProps = {};
 
 Invisible.schema = {} as Schema;
 

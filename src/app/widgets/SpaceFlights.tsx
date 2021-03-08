@@ -80,7 +80,7 @@ export default function SpaceFlights(_props: any) {
 		</div>);
 }
 
-SpaceFlights.defaultProps = {};
+SpaceFlights.initialProps = {};
 
 SpaceFlights.schema = {} as Schema;
 

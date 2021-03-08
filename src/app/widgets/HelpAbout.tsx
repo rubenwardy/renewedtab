@@ -23,7 +23,7 @@ export default function HelpAbout(_props: any) {
 }
 
 
-HelpAbout.defaultProps = {};
+HelpAbout.initialProps = {};
 
 HelpAbout.schema = {} as Schema;
 

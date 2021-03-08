@@ -19,7 +19,7 @@ export default function Button(props: ButtonProps)  {
 }
 
 
-Button.defaultProps = {
+Button.initialProps = {
 	url: "https://rubenwardy.com",
 	text: "rubenwardy.com"
 };
