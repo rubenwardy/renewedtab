@@ -18,8 +18,8 @@ export default function Search(props: SearchProps) {
 
 
 Search.initialProps = {
-	searchTitle: "DuckDuckGo",
-	searchURL: "https://duckduckgo.com"
+	searchTitle: "Google",
+	searchURL: "https://google.com/search"
 };
 
 Search.schema = {

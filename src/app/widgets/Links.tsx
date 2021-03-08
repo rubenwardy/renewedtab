@@ -28,32 +28,24 @@ export default function Links(props: LinksProps)  {
 Links.initialProps = {
 	sections: [
 		{
-			title: "Minetest",
+			title: "Homescreen",
 			links: [
 				{
-					"title": "ContentDB Audit Log",
-					"url": "https://content.minetest.net/admin/audit/"
-				},
-				{
-					"title": "GitHub",
-					"url": "https://github.com/notifications"
-				},
-				{
-					"title": "CTF Monitor",
-					"url": "https://monitor.rubenwardy.com/d/9TgIegyGk/ctf"
+					"title": "Source code",
+					"url": "https://gitlab.com/rubenwardy/homescreen/"
 				},
 			]
 		},
 		{
-			title: "Interesting reads",
+			title: "rubenwardy",
 			links: [
 				{
-					"title": "UX StackExchange",
-					"url": "https://ux.stackexchange.com"
+					"title": "rubenwardy.com",
+					"url": "https://rubenwardy.com/"
 				},
 				{
-					"title": "UX Collective",
-					"url": "https://uxdesign.cc/"
+					"title": "@rubenwardy on Twitter",
+					"url": "https://twitter.com/rubenwardy/"
 				}
 			]
 		}
@@ -64,4 +56,4 @@ Links.schema = {
 	sections: "object",
 } as Schema;
 
-Links.defaultSize = new Vector2(5, 5);
+Links.defaultSize = new Vector2(5, 4);
