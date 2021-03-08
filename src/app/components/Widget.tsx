@@ -1,7 +1,7 @@
-import { makeField } from "./Field";
 import React, { Fragment, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 import Modal from "./Modal";
+import FieldList from "./FieldList";
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
@@ -9,28 +9,13 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
-	const inner = Object.entries(props.child.schema).map(([key, type]) => {
-		const value = (props.props as any)[key];
-		const Field = makeField(type);
-		return (
-			<Field key={key} name={key} value={value}
-				onChange={(val: any) => {
-					(props.props as any)[key] = val;
-					props.save();
-				}} />);
-	});
-
-	if (inner.length == 0) {
-		inner.push(
-			<p className="text-muted" key="none">
-				Nothing to edit.
-			</p>);
-	}
-
 	return (
 		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
 			<div className="modal-body">
-				{inner}
+				<FieldList
+						values={props.props}
+						schema={props.child.schema}
+						onChange={props.save} />
 				<a className="btn btn-secondary" onClick={props.onClose}>OK</a>
 			</div>
 		</Modal>);

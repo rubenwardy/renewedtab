@@ -12,7 +12,7 @@ export enum BackgroundMode {
 
 export declare type BackgroundModeType = keyof typeof BackgroundMode;
 
-export function getSchemaForMode(mode: BackgroundMode): Schema {
+function getSchemaForMode(mode: BackgroundMode): Schema {
 	switch (mode) {
 	case BackgroundMode.Auto:
 		return {};
@@ -28,7 +28,7 @@ export function getSchemaForMode(mode: BackgroundMode): Schema {
 	}
 }
 
-export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any } {
+function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any } {
 	switch (mode) {
 	case BackgroundMode.Auto:
 		return {};
@@ -59,6 +59,20 @@ export default class Background {
 	getMode(): BackgroundMode {
 		const type = (localStorage.getItem("bg_mode")) as BackgroundModeType;
 		return BackgroundMode[type] ?? BackgroundMode.Auto
+	}
+
+	getSchema(): Schema {
+		return getSchemaForMode(this.getMode());
+	}
+
+	getValues(): ({ [key: string]: any }) {
+		const ret: ({ [key: string]: any }) = {};
+
+		Object.keys(this.getSchema()).forEach(key => {
+			ret[key] = this.getValue(key);
+		});
+
+		return ret;
 	}
 
 	getValue(key: string): (any | undefined) {

@@ -1,7 +1,7 @@
-import Background, { BackgroundMode, BackgroundModeType, getDescriptionForMode, getSchemaForMode } from "app/Background";
+import Background, { BackgroundMode, BackgroundModeType, getDescriptionForMode } from "app/Background";
 import React, { useState } from "react";
 import { Radio, RadioGroup } from "react-radio-group";
-import { makeField } from "./Field";
+import FieldList from "./FieldList";
 
 export default function BackgroundSettings(props: { background: Background }) {
 	const background = props.background;
@@ -24,22 +24,6 @@ export default function BackgroundSettings(props: { background: Background }) {
 		localStorage.setItem("bg_mode", newMode);
 	}
 
-	const schema = getSchemaForMode(mode);
-	const inner = Object.entries(schema).map(([key, type]) => {
-		const value = background.getValue(key);
-		const Field = makeField(type);
-		return (
-			<Field key={key} name={key} value={value}
-				onChange={(val) => background.setValue(key, val)} />);
-	});
-
-	if (inner.length == 0) {
-		inner.push(
-			<p className="text-muted" key="none">
-				No options.
-			</p>);
-	}
-
 	return (
 		<div className="modal-body">
 			<h3>Background Type</h3>
@@ -47,6 +31,9 @@ export default function BackgroundSettings(props: { background: Background }) {
 				{radioModes}
 			</RadioGroup>
 			<h3>{`${BackgroundMode[mode]} Options`}</h3>
-			{inner}
+			<FieldList
+				values={background.getValues()}
+				schema={background.getSchema()}
+				onChange={background.setValue} />
 		</div>);
 }
