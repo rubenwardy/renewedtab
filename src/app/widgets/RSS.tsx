@@ -24,12 +24,17 @@ export default function RSS(props: RSSProps) {
 		rows.push(<li key={link}><a href={link}>{title}</a></li>);
 	});
 
+
 	const title = (props.title && props.title.length > 0)
-			? (<h2 className="panel-inset">{props.title}</h2>) : null;
+		? props.title
+		: data.querySelector("channel > title")?.textContent;
+
+	const link = data.querySelector("channel > link")?.textContent;
+	const titleContent = link ? (<a href={link}>{title}</a>) : title;
 
 	return (
 		<div className="panel flush">
-			{title}
+			<h2 className="panel-inset">{titleContent}</h2>
 			<ul>
 				{rows}
 			</ul>
@@ -38,7 +43,7 @@ export default function RSS(props: RSSProps) {
 
 
 RSS.defaultProps = {
-	title: "BBC News",
+	title: "",
 	url: "http://feeds.bbci.co.uk/news/rss.xml"
 };
 
