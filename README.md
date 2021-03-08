@@ -51,3 +51,7 @@ npm start:firefox
 ### Production
 
 See .gitlab-ci.yml. Sorry.
+
+### More documentation
+
+See the [docs](docs) folder.

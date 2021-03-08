@@ -8,6 +8,9 @@ interface FieldListProps {
 	onChange?: (key: string, value: any) => void;
 }
 
+/**
+ * Automatically creates fields based on the given values and schema.
+ */
 export default function FieldList(props: FieldListProps) {
 	const inner = Object.entries(props.schema).map(([key, type]) => {
 		const Field = makeField(type);

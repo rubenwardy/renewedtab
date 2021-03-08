@@ -2,6 +2,12 @@ import { Rect2 } from "./utils/Rect2";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetRaw } from "./WidgetManager";
 
+
+/**
+ * Auto-boxes widgets into a dense layout.
+ *
+ * React-Grid-Layout only supports auto column placement.
+ */
 export default class WidgetLayouter {
 	private rects: Rect2[] = [];
 

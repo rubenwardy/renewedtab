@@ -26,6 +26,10 @@ export interface WidgetProps<T> extends WidgetRaw<T> {
 	remove(): void;
 }
 
+
+/**
+ * Model to store and save widgets.
+ */
 export class WidgetManager {
 	private id_counter = 0;
 

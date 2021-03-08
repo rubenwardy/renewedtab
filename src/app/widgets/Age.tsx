@@ -1,7 +1,5 @@
-import { Schema } from 'app/utils/schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
-import { validateSchema } from 'webpack';
 
 interface AgeProps {
 	birthDate: Date;

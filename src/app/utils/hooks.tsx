@@ -38,6 +38,7 @@ function makeProxy(url: string) {
 	}
 }
 
+
 async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Response> {
 	try {
 		return await fetch(request, init);
@@ -99,7 +100,8 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 /**
 * Downloads a JSON document from a URL.
 *
-* @param {number} url - The URL
+* @param {number} path - Path to endpoint, relative to API_URL's path.
+* @param {any} args - Key-value object representing query arguments.
 * @param {any[]} dependents - A list of dependent variables for the URL.
 * @return {[response, error]]} - Response and error
 */

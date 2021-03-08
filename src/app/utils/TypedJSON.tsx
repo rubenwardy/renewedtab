@@ -2,7 +2,23 @@ import { Vector2 } from "./Vector2";
 
 type JSONValues = { [key: string]: any } | any[] | string | number | boolean | null;
 
-export function toTypedJSON(anyObj: JSONValues): JSONValues {
+
+/**
+ * Converts typed values in the input to a form that can be JSON.stringify'd.
+ *
+ * For example, `toTypedJSON({ birth_date: new Date() })` will result in:
+ *
+ * 	{
+ * 		birth_date: {
+ * 			__type__: "date",
+ * 			value: "2021-03-08T00:00:00.000Z"
+ * 		}
+ * 	}
+ *
+ * @param anyObj Something to convert
+ */
+
+export function toTypedJSON(anyObj: any): JSONValues {
 	if (anyObj == null) {
 		return null;
 	} else if (Array.isArray(anyObj)) {
@@ -33,6 +49,12 @@ export function toTypedJSON(anyObj: JSONValues): JSONValues {
 	}
 }
 
+
+/**
+ * Inverse of toTypedJSON
+ *
+ * @param anyObj Value from JSON
+ */
 export function fromTypedJSON(anyObj: JSONValues): any {
 	if (Array.isArray(anyObj)) {
 		return (anyObj as any[]).map(x => fromTypedJSON(x));

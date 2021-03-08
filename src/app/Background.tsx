@@ -55,6 +55,10 @@ export function getDescriptionForMode(mode: BackgroundMode): string {
 	}
 }
 
+
+/**
+ * Stores Background information, and applies it to document.body.
+ */
 export default class Background {
 	getMode(): BackgroundMode {
 		const type = (localStorage.getItem("bg_mode")) as BackgroundModeType;
