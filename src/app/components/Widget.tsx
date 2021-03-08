@@ -22,7 +22,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 
 	if (inner.length == 0) {
 		inner.push(
-			<p className="text-muted">
+			<p className="text-muted" key="none">
 				Nothing to edit.
 			</p>);
 	}

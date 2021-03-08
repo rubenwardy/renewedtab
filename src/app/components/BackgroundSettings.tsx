@@ -87,7 +87,7 @@ export default function BackgroundSettings(_props: any) {
 
 	if (inner.length == 0) {
 		inner.push(
-			<p className="text-muted">
+			<p className="text-muted" key="none">
 				No options.
 			</p>);
 	}
