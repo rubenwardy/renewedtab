@@ -1,3 +1,4 @@
+import { usePromise } from "app/utils/hooks";
 import React, { useEffect, useState } from "react";
 
 function makePermission(host: string): any {
@@ -39,9 +40,9 @@ export default function RequestHostPermission(props: RequestHostPermissionProps)
 		}
 	}
 
-	useEffect(() => {
-		needsPermission(props.host).then(setVisible);
-	}, [props.host]);
+	usePromise(() => needsPermission(props.host),
+		setVisible, () => {},
+		[props.host]);
 
 	if (isVisible) {
 		return (

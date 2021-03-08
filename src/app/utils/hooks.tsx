@@ -4,6 +4,36 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const proxy_url = config.PROXY_URL;
 
+/**
+ * Runs promise and makes cancellable
+ *
+ * @param func Lambda to make promise
+ * @param then If successful and not cancelled
+ * @param reject If unsuccessful and not cancelled
+ * @param dependents A list of dependent variables
+ */
+export function usePromise<T>(func: () => Promise<T>,
+		then: (value: T) => void, reject: (reason: any) => void,
+		dependents?: any[]) {
+	useEffect(() => {
+		let cancelled = false;
+
+		func().then((value) => {
+			if (!cancelled) {
+				then(value);
+			}
+		}).catch((reason) => {
+			if (!cancelled) {
+				reject(reason);
+			}
+		});
+
+		return () => {
+			cancelled = true;
+		}
+	}, dependents);
+}
+
 
 /**
 * Automatically scales a HTML TextArea element to the height of its content,
@@ -62,24 +92,22 @@ function useJSONRaw<T>(url: string, dependents?: any[]): [(T | null), (string | 
 	const [info, setInfo] = useState<T | null>(null);
 	const [error, setError] = useState<string | null>(null);
 
-	useEffect(() => {
-		const fetchJSON = async (url: string) => {
-			const response = await fetchCheckCors(new Request(url, {
-				method: "GET",
-				headers: {
-					"Accept": "application/json",
-				}
-			}));
-
-			if (!response.ok) {
-				throw await response.text();
+	const fetchJSON = async (url: string) => {
+		const response = await fetchCheckCors(new Request(url, {
+			method: "GET",
+			headers: {
+				"Accept": "application/json",
 			}
+		}));
 
-			return await response.json();
+		if (!response.ok) {
+			throw await response.text();
 		}
 
-		fetchJSON(url).then(setInfo).catch(setError);
-	}, dependents);
+		return await response.json();
+	}
+
+	usePromise(() => fetchJSON(url), setInfo, setError, dependents);
 
 	return [info, error];
 }
@@ -127,26 +155,24 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
 	const [info, setInfo] = useState<Document | null>(null);
 	const [error, setError] = useState<string | null>(null);
 
-	useEffect(() => {
-		const fetchXML = async (url: string) => {
-			const response = await fetchCheckCors(new Request(makeProxy(url), {
-				method: "GET",
-				headers: {
-					"Accept": "application/json",
-				}
-			}));
-
-			const str = await response.text();
-			if (!response.ok) {
-				throw str;
+	const fetchXML = async (url: string) => {
+		const response = await fetchCheckCors(new Request(makeProxy(url), {
+			method: "GET",
+			headers: {
+				"Accept": "application/json",
 			}
+		}));
 
-			const xml = new window.DOMParser().parseFromString(str, "text/xml");
-			return xml;
+		const str = await response.text();
+		if (!response.ok) {
+			throw str;
 		}
 
-		fetchXML(url).then(setInfo).catch(setError);
-	}, dependents);
+		const xml = new window.DOMParser().parseFromString(str, "text/xml");
+		return xml;
+	}
+
+	usePromise(() => fetchXML(url), setInfo, setError, dependents);
 
 	return [info, error];
 }
