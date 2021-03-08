@@ -90,22 +90,22 @@ export default class Background {
 	}
 
 	update() {
-		const body = document.body;
+		const el = document.getElementById("background")!;
 
 		switch (this.getMode()) {
 		case BackgroundMode.Auto:
-			body.style.backgroundColor = "";
-			body.style.backgroundPosition = "";
-			body.style.backgroundImage = "url('https://i.redd.it/5hm3u7rb4fk61.jpg')";
+			el.style.backgroundColor = "";
+			el.style.backgroundPosition = "";
+			el.style.backgroundImage = "url('https://i.redd.it/5hm3u7rb4fk61.jpg')";
 			break;
 		case BackgroundMode.Color:
-			body.style.backgroundColor = this.getValue("color") ?? "black";
-			body.style.backgroundImage = "";
+			el.style.backgroundColor = this.getValue("color") ?? "black";
+			el.style.backgroundImage = "";
 			break;
 		case BackgroundMode.ImageUrl:
-			body.style.backgroundColor = "";
-			body.style.backgroundPosition = this.getValue("position");
-			body.style.backgroundImage = `url('${this.getValue("url") ?? ""}')`;
+			el.style.backgroundColor = "";
+			el.style.backgroundPosition = this.getValue("position");
+			el.style.backgroundImage = `url('${this.getValue("url") ?? ""}')`;
 			break;
 		}
 	}

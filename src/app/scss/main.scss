@@ -6,13 +6,8 @@ html, body, #app {
 }
 
 body {
-	overflow: hidden;
 	color: #eee;
 	font-family: "Roboto", "Arial", sans-serif;
-	background: #111;
-	background-size: cover;
-	background-position: bottom;
-	background-repeat: no-repeat;
 }
 
 h1 {
@@ -104,8 +99,7 @@ a, .link {
 footer {
 	position: fixed;
 	bottom: 10px;
-	left: 50%;
-	transform: translate(-50%, 0);
+	right: 20px;
 	font-size: 80%;
 	color: rgba(255, 255, 255, 0.2);
 
@@ -121,13 +115,32 @@ footer {
 }
 
 main {
-	margin: 0 auto;
+	display: block;
+	margin: 0;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	width: 974px;
 	transform: translate(-50%, -50%);
-	display: block;
+}
+
+main.scrolling {
+	top: 10%;
+	transform: translate(-50%, 0);
+}
+
+#background {
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background: #111;
+	background-size: cover;
+	background-position: bottom;
+	background-repeat: no-repeat;
 }
 
 @media (max-width: 750px) {

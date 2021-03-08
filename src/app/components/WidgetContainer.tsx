@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Widget } from "./Widget";
 import { WidgetManager, WidgetProps } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
@@ -10,7 +10,7 @@ import GridLayout, { Layout } from "react-grid-layout";
 
 export default function WidgetContainer(props: { wm: WidgetManager }) {
 	const widgetManager = props.wm;
-	const [gridClassNames, setGridClassNames] = useState<string>("layout");
+	const [gridClassNames, setGridClassNames] = useState("layout");
 	const [, setUpdate] = useState({});
 
 	useEffect(() => {
@@ -42,6 +42,21 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 			</div>);
 	});
 
+
+	const [isScrolling, setIsScrolling] = useState(false);
+	const mainRef = useRef<HTMLElement>(null);
+	function updateIsScrolling() {
+		if (mainRef.current) {
+			console.log(mainRef.current.clientHeight, window.innerHeight * 0.8);
+			const shouldBeScrolling = mainRef.current.clientHeight > window.innerHeight * 0.8;
+			if (isScrolling != shouldBeScrolling) {
+				setIsScrolling(shouldBeScrolling);
+			}
+		}
+	}
+	useEffect(() => updateIsScrolling);
+
+
 	const layout : Layout[] = widgetManager.widgets.map(widget => ({
 		i: widget.id.toString(),
 		x: widget.position?.x ?? 0,
@@ -63,10 +78,12 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 		});
 
 		widgetManager.save();
+		updateIsScrolling();
 	}
 
+
 	return (
-		<main>
+		<main ref={mainRef} className={isScrolling ? "scrolling" : ""}>
 			<GridLayout className={gridClassNames}
 					layout={layout} onLayoutChange={onLayoutChange}
 					cols={15} rowHeight={50} margin={[16, 16]} width={974}
