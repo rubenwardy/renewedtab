@@ -9,6 +9,7 @@ export interface WidgetFactory<T> extends ReactFactory<T> {
 	initialProps: T;
 	defaultSize: Vector2;
 	schema: Schema;
+	description: string;
 	onCreated?: (widget: WidgetRaw<T>) => void;
 }
 

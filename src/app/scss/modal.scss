@@ -51,6 +51,15 @@
 		}
 	}
 
+	.modal-body {
+		padding: 0 0.8rem 0.8rem 0.8rem;
+	}
+
+	.modal-body, & > ul {
+		max-height: 500px;
+		overflow: hidden auto;
+	}
+
 	.modal-flex {
 		display: flex;
 		flex-direction: row;
@@ -59,12 +68,8 @@
 
 		.modal-body {
 			flex: 1;
+			max-height: none;
 		}
-	}
-
-	.modal-body {
-		padding: 0 0.8rem 0.8rem 0.8rem;
-		overflow: hidden auto;
 	}
 
 	.modal-close {

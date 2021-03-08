@@ -30,6 +30,8 @@ export default function HelloWorld(props: HelloWorldProps) {
 		</div>);
 }
 
+HelloWorld.description = "A helpful description shown in the create widget dialog";
+
 // Default values for props
 HelloWorld.initialProps = {
 	name: "",

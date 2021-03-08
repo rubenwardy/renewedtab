@@ -80,6 +80,9 @@ export default function SpaceFlights(_props: any) {
 		</div>);
 }
 
+
+SpaceFlights.description = "A list of upcoming space launches";
+
 SpaceFlights.initialProps = {};
 
 SpaceFlights.schema = {} as Schema;

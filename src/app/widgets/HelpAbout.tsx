@@ -23,6 +23,8 @@ export default function HelpAbout(_props: any) {
 }
 
 
+HelpAbout.description = "Help for new users of Homescreen";
+
 HelpAbout.initialProps = {};
 
 HelpAbout.schema = {} as Schema;

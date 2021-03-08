@@ -6,6 +6,9 @@ export default function Invisible(_props: any) {
 	return (<></>);
 }
 
+
+Invisible.description = "Shows nothing, useful for layouting purposes";
+
 Invisible.initialProps = {};
 
 Invisible.schema = {} as Schema;

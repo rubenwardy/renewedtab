@@ -43,6 +43,8 @@ export default function RSS(props: RSSProps) {
 }
 
 
+RSS.description = "Shows an RSS feed";
+
 RSS.initialProps = {
 	title: "",
 	url: "http://feeds.bbci.co.uk/news/rss.xml"

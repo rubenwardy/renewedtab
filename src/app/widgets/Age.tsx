@@ -31,6 +31,8 @@ export default function Age(props: AgeProps) {
 }
 
 
+Age.description = "States your current age in way too much precision, live updating";
+
 Age.initialProps = {
 	birthDate: new Date("1997-01-01")
 };

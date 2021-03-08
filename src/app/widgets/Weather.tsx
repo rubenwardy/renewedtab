@@ -72,6 +72,8 @@ export default function Weather(props: WeatherProps) {
 }
 
 
+Weather.description = "Current and forecasted weather";
+
 Weather.initialProps = {
 	locationName: "Bristol",
 	latitude: "51.454514",

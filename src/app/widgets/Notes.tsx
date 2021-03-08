@@ -38,6 +38,8 @@ export default function Notes(props: NotesProps) {
 }
 
 
+Notes.description = "An editable text area for notes";
+
 Notes.initialProps = {
 	localStorageKey: "",
 };

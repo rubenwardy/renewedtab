@@ -28,6 +28,8 @@ export default function Clock(props: ClockProps) {
 }
 
 
+Clock.description = "Shows the time";
+
 Clock.initialProps = {};
 
 Clock.schema = {} as Schema;

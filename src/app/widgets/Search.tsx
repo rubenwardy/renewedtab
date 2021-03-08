@@ -17,6 +17,8 @@ export default function Search(props: SearchProps) {
 }
 
 
+Search.description = "Search box to your favourite search engine";
+
 Search.initialProps = {
 	searchTitle: "Google",
 	searchURL: "https://google.com/search"

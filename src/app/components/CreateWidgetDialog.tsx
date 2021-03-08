@@ -15,8 +15,16 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		props.onClose();
 	}
 
-	const widgets = Object.entries(WidgetTypes).sort().map(([key]) =>(
-		<li key={key}><a onClick={() => select(key)}>{key}</a></li>))
+	const widgets = Object.entries(WidgetTypes).sort().map(([key, widget]) => (
+		<li key={key}>
+			<a onClick={() => select(key)}>
+				{key}
+				<span className="text-muted ml-2">
+					&nbsp;
+					{widget.description}
+				</span>
+			</a>
+		</li>))
 
 	return (
 		<Modal title="Create Widget" {...props}>

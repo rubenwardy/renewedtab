@@ -14,6 +14,8 @@ export default function IFrame(props: IFrameProps) {
 }
 
 
+IFrame.description = "Shows a webpage";
+
 IFrame.initialProps = {
 	url: "https://example.com"
 };
