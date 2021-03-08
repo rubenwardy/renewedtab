@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Widget } from "./Widget";
 import { WidgetManager, WidgetProps } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
@@ -11,7 +11,13 @@ import GridLayout, { Layout } from "react-grid-layout";
 const widgetManager = new WidgetManager();
 
 function WidgetContainer(_props: any) {
+	const [gridClassNames, setGridClassNames] = useState<string>("layout");
 	const [_, setUpdate] = useState({});
+
+	useEffect(() => {
+		const timer = setTimeout(() => setGridClassNames("layout animated") , 1);
+		return () => clearTimeout(timer);
+	}, []);
 
 	function handleRemove(id: number) {
 		widgetManager.removeWidget(id);
@@ -62,7 +68,10 @@ function WidgetContainer(_props: any) {
 
 	return (
 		<main>
-			<GridLayout className="layout" layout={layout} onLayoutChange={onLayoutChange} cols={15} rowHeight={50} margin={[16, 16]} width={974} draggableHandle=".widget-title">
+			<GridLayout className={gridClassNames}
+					layout={layout} onLayoutChange={onLayoutChange}
+					cols={15} rowHeight={50} margin={[16, 16]} width={974}
+					draggableHandle=".widget-title">
 				{widgets}
 			</GridLayout>
 		</main>);
