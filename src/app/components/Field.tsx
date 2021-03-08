@@ -6,6 +6,7 @@ interface FieldProps<T> {
 	name: string;
 	value: T;
 	label?: string;
+	hint?: string;
 	onChange?: (value: T) => void;
 }
 
@@ -16,11 +17,13 @@ export function TextField(props: FieldProps<string>) {
 		}
 	}
 
+	const hint = props.hint ? (<p className="text-muted">{props.hint}</p>) : null;
 	return (
 		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<input type="text" name={props.name} defaultValue={props.value}
 					onChange={handleChange} />
+					{hint}
 		</div>);
 }
 
@@ -41,11 +44,13 @@ export function PermURLField(props: FieldProps<string>) {
 		// ignore
 	}
 
+	const hint = props.hint ? (<p className="text-muted">{props.hint}</p>) : null;
 	return (
 		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<input type="text" name={props.name} defaultValue={props.value}
 					onChange={handleChange} />
+			{hint}
 			<RequestHostPermission host={host} />
 		</div>);
 }
@@ -60,12 +65,14 @@ export function DateField(props: FieldProps<Date>) {
 		}
 	}
 
+	const hint = props.hint ? (<p className="text-muted">{props.hint}</p>) : null;
 	return (
 		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<input type="date" name={props.name}
 					defaultValue={props.value.toISOString().slice(0, 10)}
 					onChange={handleChange} />
+			{hint}
 		</div>);
 }
 
@@ -76,12 +83,14 @@ export function JSONField(props: FieldProps<Object | any[]>) {
 		}
 	}
 
+	const hint = props.hint ? (<p className="text-muted">{props.hint}</p>) : null;
 	return (
 		<div className="field">
 			<label htmlFor={props.name}>{props.label ?? props.name}</label>
 			<textarea name={props.name}
 					defaultValue={JSON.stringify(props.value)}
 					onChange={handleChange} />
+			{hint}
 		</div>);
 }
 

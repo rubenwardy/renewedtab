@@ -1,4 +1,4 @@
-import Schema from 'app/utils/Schema';
+import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
@@ -55,7 +55,7 @@ Links.initialProps = {
 };
 
 Links.schema = {
-	sections: "object",
+	sections: type.object("Sections"),
 } as Schema;
 
 Links.defaultSize = new Vector2(5, 4);

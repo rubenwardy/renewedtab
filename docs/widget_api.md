@@ -16,7 +16,7 @@ This is done by assigning properties to the function, as seen below.
 Here's an example:
 
 ```ts
-import Schema from 'app/utils/Schema';
+import Schema, { type } from 'app/utils/Schema';
 import React from 'react';
 
 interface HelloWorldProps {
@@ -39,7 +39,7 @@ HelloWorld.initialProps = {
 
 // Schema for props, see below
 HelloWorld.schema = {
-	name: "string",
+	name: type.string("Your Name"),
 } as Schema;
 
 // Default size on grid when created
@@ -52,11 +52,5 @@ Schema is a key-value object used to define the types that are expected.
 
 It's used to provide automatic forms to edit widgets.
 
-Valid values:
-
-* Any JavaScript type name, as returned by `typeof`.
-* A class.
-* One of:
-	* `perm_url`: URL, but will ask the user to grant permission
-	  to the host when using as an extension and the URL is blocked
-	  by CORS.
+See the `type` namespace in Schema.ts for the types, these functions should be
+used when defining Schemas.

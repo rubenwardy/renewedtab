@@ -1,4 +1,4 @@
-import Schema from "app/utils/Schema";
+import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import React from "react";
 
@@ -25,8 +25,8 @@ Search.initialProps = {
 };
 
 Search.schema = {
-	searchTitle: "string",
-	searchURL: "string",
+	searchTitle: type.string("Search engine name"),
+	searchURL: type.url("URL"),
 } as Schema;
 
 Search.defaultSize = new Vector2(15, 1);

@@ -1,4 +1,4 @@
-import Schema from 'app/utils/Schema';
+import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetRaw } from 'app/WidgetManager';
 import React, { CSSProperties, useState } from 'react';
@@ -49,7 +49,7 @@ Notes.onCreated = function(widget: WidgetRaw<NotesProps>) {
 }
 
 Notes.schema = {
-	localStorageKey: "string",
+	localStorageKey: type.string("Key"),
 } as Schema;
 
 Notes.defaultSize = new Vector2(5, 2);

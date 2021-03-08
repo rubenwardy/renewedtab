@@ -1,4 +1,4 @@
-import Schema from "./utils/Schema";
+import Schema, { type } from "./utils/Schema";
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 
 
@@ -18,12 +18,12 @@ function getSchemaForMode(mode: BackgroundMode): Schema {
 		return {};
 	case BackgroundMode.Color:
 		return {
-			color: "string"
+			color: type.color("Color")
 		};
 	case BackgroundMode.ImageUrl:
 		return {
-			url: "string",
-			position: "string",
+			url: type.url("Image URL"),
+			position: type.string("Position", "center, top, or bottom"),
 		};
 	}
 }

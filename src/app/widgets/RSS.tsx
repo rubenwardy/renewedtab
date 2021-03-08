@@ -1,7 +1,7 @@
 import React from 'react';
 import { useXML } from 'app/utils/hooks';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema from 'app/utils/Schema';
+import Schema, { type } from 'app/utils/Schema';
 
 interface RSSProps {
 	title?: string;
@@ -51,8 +51,8 @@ RSS.initialProps = {
 };
 
 RSS.schema = {
-	title: "string",
-	url: "perm_url",
+	title: type.string("Title", "Leave blank to use RSS feed's title"),
+	url: type.urlPerm("URL"),
 } as Schema;
 
 RSS.defaultSize = new Vector2(5, 4);
