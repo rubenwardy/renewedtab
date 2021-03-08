@@ -2,7 +2,7 @@
 
 A clean web browser "New Tab" / "Home page" page, created using TypeScript and React.
 
-License: MIT
+License: GPLv3 or later.
 
 ## Usage
 

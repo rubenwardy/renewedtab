@@ -20,7 +20,7 @@
 		"url": "git+ssh://git@gitlab.com/rubenwardy/homescreen.git"
 	},
 	"author": "rubenwardy",
-	"license": "MIT",
+	"license": "GPLv3+",
 	"bugs": {
 		"url": "https://gitlab.com/rubenwardy/homescreen/issues"
 	},
