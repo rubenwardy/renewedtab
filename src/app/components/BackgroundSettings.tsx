@@ -1,7 +1,7 @@
 import BackgroundStore, { BackgroundMode, BackgroundModeType, getDescriptionForMode } from "app/BackgroundStore";
 import React, { useState } from "react";
 import { Radio, RadioGroup } from "react-radio-group";
-import FieldList from "./FieldList";
+import { Form } from "./forms";
 
 export default function BackgroundSettings(props: { background: BackgroundStore }) {
 	const background = props.background;
@@ -31,7 +31,7 @@ export default function BackgroundSettings(props: { background: BackgroundStore 
 				{radioModes}
 			</RadioGroup>
 			<h3>{`${BackgroundMode[mode]} Options`}</h3>
-			<FieldList
+			<Form
 				values={background.getValues()}
 				schema={background.getSchema()}
 				onChange={background.setValue} />

@@ -1,6 +1,6 @@
 import Schema from "app/utils/Schema";
 import React from "react";
-import { makeField } from "./Field";
+import { makeField } from ".";
 
 interface FieldListProps {
 	values: { [key: string]: any };
@@ -11,7 +11,7 @@ interface FieldListProps {
 /**
  * Automatically creates fields based on the given values and schema.
  */
-export default function FieldList(props: FieldListProps) {
+export default function Form(props: FieldListProps) {
 	const inner = Object.entries(props.schema).map(([key, entry]) => {
 		const Field = makeField(entry.type);
 		return (

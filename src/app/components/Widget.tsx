@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 import Modal from "./Modal";
-import FieldList from "./FieldList";
+import { Form } from "./forms";
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
@@ -12,7 +12,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	return (
 		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
 			<div className="modal-body">
-				<FieldList
+				<Form
 						values={props.props}
 						schema={props.child.schema}
 						onChange={props.save} />
