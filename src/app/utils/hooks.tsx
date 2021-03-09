@@ -90,7 +90,7 @@ async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Res
 */
 function useJSONRaw<T>(url: string, dependents?: any[]): [(T | null), (string | null)] {
 	const [info, setInfo] = useState<T | null>(null);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<any | null>(null);
 
 	const fetchJSON = async (url: string) => {
 		const response = await fetchCheckCors(new Request(url, {

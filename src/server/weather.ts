@@ -1,5 +1,5 @@
 import fetch, { Request } from "node-fetch";
-import { IS_DEBUG, serverConfig } from "./server";
+import { IS_DEBUG, serverConfig, UA_DEFAULT } from "./server";
 
 const OPEN_WEATHER_MAP_API_KEY =
 	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
@@ -68,6 +68,7 @@ export async function getWeatherInfo(lat: number, long: number): Promise<any> {
 	const response = await fetch(new Request(url, {
 		method: "GET",
 		headers: {
+			"User-Agent": UA_DEFAULT,
 			"Accept": "application/json",
 		}
 	}));

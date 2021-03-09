@@ -1,5 +1,5 @@
-import fetch, { Request, Response } from "node-fetch";
-import { IS_DEBUG } from "./server";
+import fetch, { Request } from "node-fetch";
+import { IS_DEBUG, UA_PROXY } from "./server";
 
 export interface Result {
 	status: number;
@@ -26,7 +26,7 @@ export async function handleProxy(url: URL): Promise<Result> {
 		method: "GET",
 		size: 1 * 1000 * 1000,
 		headers: {
-			"User-Agent": "Mozilla/5.0 (compatible; Homescreen Proxy/0.1; +https://rubenwardy.com/homescreen/bot.html)",
+			"User-Agent": UA_PROXY,
 			"Accept": "application/json, application/xml, text/xml, application/rss+xml, application/atom+xml",
 		}
 	}));

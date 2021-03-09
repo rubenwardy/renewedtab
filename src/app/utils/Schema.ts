@@ -1,5 +1,5 @@
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "perm_url";
+export type Type = JSType | "perm_url" | "location";
 
 export interface SchemaEntry {
 	type: Type;
@@ -50,4 +50,13 @@ export namespace type {
 	export const urlPerm = makeEntryFunc("perm_url");
 
 	export const color = makeEntryFunc("string");
+
+	export const location = makeEntryFunc("location");
+}
+
+
+export interface Location {
+	name: string;
+	latitude: number;
+	longitude: number;
 }

@@ -13,6 +13,9 @@ export const serverConfig = (function() {
 })();
 
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
+export const OWNER_EMAIL = process.env.OWNER_EMAIL ?? serverConfig.OWNER_EMAIL;
+export const UA_DEFAULT = "Mozilla/5.0 (compatible; Homescreen App/0.1; +https://rubenwardy.com/homescreen/bot.html)";
+export const UA_PROXY = "Mozilla/5.0 (compatible; Homescreen Proxy/0.1; +https://rubenwardy.com/homescreen/bot.html)";
 
 
 // App
@@ -20,6 +23,7 @@ export const IS_DEBUG = process.env.NODE_ENV !== "production";
 import { getWeatherInfo } from "./weather";
 import { getBackground } from "./backgrounds";
 import { handleProxy } from "./proxy";
+import { getCoordsFromQuery } from "./geocode";
 
 const app = express();
 app.use((_req, res, next) => {
@@ -59,6 +63,20 @@ app.get("/weather/", async (req: express.Request, res: express.Response) => {
 		res.json(await getWeatherInfo(
 			Number.parseFloat(req.query.lat as string),
 			Number.parseFloat(req.query.long as string)));
+	} catch (ex) {
+		res.status(400).send(ex.message);
+	}
+});
+
+
+app.get("/geocode/", async (req: express.Request, res: express.Response) => {
+	if (!req.query.q) {
+		res.status(400).send("Missing query");
+		return;
+	}
+
+	try {
+		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
 	} catch (ex) {
 		res.status(400).send(ex.message);
 	}

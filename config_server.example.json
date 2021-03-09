@@ -1,5 +1,6 @@
 {
 	"OPEN_WEATHER_MAP_API_KEY": "",
 	"PIXABAY_API_KEY": "",
-	"UNSPLASH_ACCESS_KEY": ""
+	"UNSPLASH_ACCESS_KEY": "",
+	"OWNER_EMAIL": "your@email.com"
 }

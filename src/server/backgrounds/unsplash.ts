@@ -1,6 +1,6 @@
 import fetch, { Request } from "node-fetch";
 import { BackgroundInfo } from ".";
-import { serverConfig } from "../server";
+import { serverConfig, UA_DEFAULT } from "../server";
 
 const UNSPLASH_ACCESS_KEY =
 	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;
@@ -23,6 +23,7 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 	const response = await fetch(new Request(url, {
 		method: "GET",
 		headers: {
+			"User-Agent": UA_DEFAULT,
 			"Accept": "application/json",
 			"Authorization": `Client-ID ${UNSPLASH_ACCESS_KEY}`
 		}

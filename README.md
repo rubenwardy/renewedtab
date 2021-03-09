@@ -33,6 +33,7 @@ features. These are optional, but will prevent some features from working.
 * `OPEN_WEATHER_MAP_API_KEY`: [openweathermap.org](https://home.openweathermap.org/users/sign_up)
 * `PIXABAY_API_KEY`: [pixabay.com](https://pixabay.com/api/docs/)
 * `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
+* `OWNER_EMAIL`: Your email, required by OpenStreetMap
 
 You can do this either by copying `config_server.example.json` to
 `config_server.json` and editing it, or by using environment variables

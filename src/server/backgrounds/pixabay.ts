@@ -1,6 +1,6 @@
 import fetch, { Request } from "node-fetch";
 import { BackgroundInfo } from ".";
-import { serverConfig } from "../server";
+import { serverConfig, UA_DEFAULT } from "../server";
 
 const PIXABAY_API_KEY =
 	process.env.PIXABAY_API_KEY ?? serverConfig.PIXABAY_API_KEY;
@@ -26,6 +26,7 @@ export default async function getImageFromPixabay(): Promise<BackgroundInfo> {
 	const response = await fetch(new Request(url, {
 		method: "GET",
 		headers: {
+			"User-Agent": UA_DEFAULT,
 			"Accept": "application/json",
 		}
 	}));

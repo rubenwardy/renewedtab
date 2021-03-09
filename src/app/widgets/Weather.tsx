@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAPI } from 'app/utils/hooks';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema, { type } from 'app/utils/Schema';
+import Schema, { Location, type } from 'app/utils/Schema';
 
 
 interface WeatherForecastProps {
@@ -40,16 +40,22 @@ interface WeatherInfo {
 
 
 interface WeatherProps {
-	locationName: string;
-	latitude: number;
-	longitude: number;
 	url: string;
+	location: Location;
 }
 
 export default function Weather(props: WeatherProps) {
+	if (!props.location) {
+		return (
+			<div className="panel text-muted">
+				Location needed. Click edit to add it.
+			</div>);
+	}
+
+
 	const [info, error] = useAPI<WeatherInfo>("/weather/",
-		{ lat: props.latitude, long: props.longitude},
-		[props.latitude, props.longitude]);
+		{ lat: props.location.latitude, long: props.location.longitude},
+		[props.location.latitude, props.location.longitude]);
 
 	if (!info) {
 		return (
@@ -62,7 +68,7 @@ export default function Weather(props: WeatherProps) {
 
 	return (
 		<div className="panel weather">
-			<h2 className="col-span-3"><a href={props.url}>{props.locationName}</a></h2>
+			<h2 className="col-span-3"><a href={props.url}>{props.location.name}</a></h2>
 			<div className="col-span-3 large">
 				{makeIconElement(info.current.icon)}
 				{info.current.temp.toFixed(0)} &deg;C
@@ -75,18 +81,18 @@ export default function Weather(props: WeatherProps) {
 Weather.description = "Current and forecasted weather";
 
 Weather.initialProps = {
-	locationName: "Bristol",
-	latitude: "51.454514",
-	longitude: "-2.587910",
 	url: "https://www.bbc.co.uk/weather/2654675",
+	location: {
+		locationName: "Bristol",
+		latitude: 51.454514,
+		longitude: -2.587910,
+	},
 };
 
 
 Weather.schema = {
-	locationName: type.string("Location Name"),
-	latitude: type.number("Latitude"),
-	longitude: type.number("Longitude"),
 	url: type.url("Link URL"),
+	location: type.location("Location"),
 } as Schema;
 
 Weather.defaultSize = new Vector2(5, 3);
