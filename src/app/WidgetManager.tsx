@@ -62,7 +62,7 @@ export class WidgetManager {
 	resetToDefault() {
 		this.widgets = [];
 		["Clock", "Search", "Age", "Links", "Notes", "Weather",
-			"HelpAbout", "RSS", "SpaceFlights"].forEach(this.createWidget.bind(this));
+			"HelpAbout", "Feed", "SpaceFlights"].forEach(this.createWidget.bind(this));
 	}
 
 	createWidget(type: string) {

@@ -10,7 +10,7 @@ import { getBackground } from "./backgrounds";
 const PORT = process.env.PORT ?? 8000;
 const serverConfig = JSON.parse(fs.readFileSync("config_server.json").toString());
 
-const PROXY_ALLOWED_HOSTS = new Set(serverConfig.PROXY_ALLOWED_HOSTS);
+const PROXY_ALLOWED_HOSTS: string[] =serverConfig.PROXY_ALLOWED_HOSTS;
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
 export const UPLOADS_DIR =
 	process.env.UPLOADS_DIR ?? serverConfig.UPLOADS_DIR;
@@ -34,6 +34,12 @@ app.use((_req, res, next) => {
 });
 
 
+function isHostAllowed(host: string): boolean {
+	return PROXY_ALLOWED_HOSTS.some(other =>
+		host == other || host.endsWith("." + other));
+}
+
+
 app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.url) {
 		res.status(400).send("Missing URL");
@@ -41,8 +47,8 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 	}
 
 	const url = new URL(req.query.url as string);
-	if (!PROXY_ALLOWED_HOSTS.has(url.host)) {
-		const msg = `Accessing host ${url.host} is not allowed on the web version. ` +
+	if (!isHostAllowed(url.hostname)) {
+		const msg = `Accessing host ${url.hostname} is not allowed on the web version. ` +
 			`Consider using the Chrome/Firefox extension to be able to access any domain.`
 		res.status(403).send(msg);
 		return;

@@ -4,6 +4,7 @@
 	"UPLOADS_DIR": "/tmp/homescreen",
 	"PROXY_ALLOWED_HOSTS": [
 		"feeds.bbci.co.uk",
-		"fdo.rocketlaunch.live"
+		"fdo.rocketlaunch.live",
+		"theregister.com"
 	]
 }
