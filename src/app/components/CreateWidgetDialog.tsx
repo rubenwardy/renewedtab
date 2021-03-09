@@ -19,7 +19,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		<li key={key}>
 			<a onClick={() => select(key)}>
 				{key}
-				<span className="text-muted ml-2">
+				<span className="text-muted ml-1">
 					&nbsp;
 					{widget.description}
 				</span>

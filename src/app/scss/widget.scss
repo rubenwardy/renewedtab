@@ -23,7 +23,7 @@
 		opacity: 0;
 		user-select: none;
 		overflow: hidden;
-		background-color: rgba(255, 255, 255, 0.25);
+		background-color: rgba(15, 15, 15, 0.5);
 
 		.widget-title {
 			margin: 0;
@@ -67,7 +67,7 @@
 			border-radius: 0;
 			&:hover {
 				color: white;
-				background-color: rgba(255, 255, 255, 0.25);
+				background-color: rgba(255, 255, 255, 0.1);
 			}
 		}
 	}
@@ -108,6 +108,10 @@
 
 .react-grid-item.cssTransforms {
 	transition-property: none;
+}
+
+.react-grid-item.react-grid-placeholder {
+	background: #336699;
 }
 
 .animated .react-grid-item.cssTransforms {

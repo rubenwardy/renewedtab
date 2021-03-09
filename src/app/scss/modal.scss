@@ -1,5 +1,5 @@
 .modal-bg {
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.8);
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -17,6 +17,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	background: rgba(15, 15, 15, 0.95);
+	border: 1px solid rgba(15, 15, 15, 1);
 
 	.modal-header {
 		padding: 0.8rem;
@@ -90,7 +92,7 @@
 }
 
 @supports (backdrop-filter: blur(10px)) {
-	.modal {
+	.modal-bg {
 		backdrop-filter: blur(10px);
 
 		.panel {

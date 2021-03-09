@@ -107,15 +107,23 @@ a, .link {
 
 footer, .credits {
 	font-size: 80%;
-	color: rgba(255, 255, 255, 0.2);
+	color: rgba(255, 255, 255, 0.4);
+
+	* {
+		vertical-align: middle;
+	}
+
+	.large {
+		font-size: 140%;
+	}
 
 	a, .link {
 		cursor: pointer;
-		color: rgba(255, 255, 255, 0.3);
+		color: rgba(255, 255, 255, 0.65);
 		text-decoration: none;
 
 		&:hover {
-			color: rgba(255, 255, 255, 0.5);
+			color: rgba(255, 255, 255, 1);
 		}
 	}
 }
