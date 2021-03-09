@@ -1,10 +1,4 @@
 {
 	"OPEN_WEATHER_MAP_API_KEY": "123",
-	"PIXABAY_API_KEY": "123",
-	"UPLOADS_DIR": "/tmp/homescreen",
-	"PROXY_ALLOWED_HOSTS": [
-		"feeds.bbci.co.uk",
-		"fdo.rocketlaunch.live",
-		"theregister.com"
-	]
+	"PIXABAY_API_KEY": "123"
 }

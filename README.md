@@ -39,8 +39,7 @@ and [pixabay.com](https://pixabay.com/api/docs/) API tokens inside:
 ```json
 {
 	"OPEN_WEATHER_MAP_API_KEY": "123",
-	"PIXABAY_API_KEY": "123",
-	"UPLOADS_DIR": "/tmp/homescreen"
+	"PIXABAY_API_KEY": "123"
 }
 ```
 
@@ -48,10 +47,6 @@ Possible values:
 
 * `OPEN_WEATHER_MAP_API_KEY`: API key for [openweathermap.org](https://home.openweathermap.org/users/sign_up).
 * `PIXABAY_API_KEY`: API key for [pixabay.com](https://pixabay.com/api/docs/).
-* `UPLOADS_DIR`: URL to the proxy, for the web version.
-* `PROXY_ALLOWED_HOSTS`:
-	Array of hostnames that the proxy is allowed to GET from.
-	Subdomains of a given hostname will also be allowed.
 
 ### Debug: Web
 
