@@ -25,6 +25,14 @@ h1 {
 	color: rgba(255, 255, 255, 0.5);
 }
 
+.text-shadow-soft {
+	text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.6);
+}
+
+.text-shadow-hard {
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.6);
+}
+
 .float-right {
 	float: right;
 }
@@ -80,6 +88,7 @@ h1 {
 	color: white;
 
 	&:hover {
+		color: white;
 		border-color: rgba(255, 255, 255, 0.6);
 		background: rgba(255, 255, 255, 0.25);
 	}
@@ -87,11 +96,11 @@ h1 {
 
 a, .link {
 	cursor: pointer;
-	color: #007DB8;
+	color: #06aed5;
 	text-decoration: none;
 
 	&:hover {
-		color: #06aed5;
+		color: #20c0e5;
 		text-decoration: underline;
 	}
 }
@@ -150,7 +159,7 @@ main.scrolling {
 	right: 0;
 	bottom: 0;
 
-	background: #111;
+	background-color: #111;
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;
@@ -179,7 +188,8 @@ main.scrolling {
 	}
 }
 
-@import "widgets.scss";
+@import "panel.scss";
+@import "widget.scss";
 @import "fields.scss";
 @import "modal.scss";
 @import "utils.scss";

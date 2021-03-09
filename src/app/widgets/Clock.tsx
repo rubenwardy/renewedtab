@@ -24,7 +24,7 @@ export default function Clock(props: ClockProps) {
 		minute: "numeric"
 	}
 
-	return (<h1>{time.toLocaleTimeString(undefined, options)}</h1>);
+	return (<h1 className="text-shadow-soft">{time.toLocaleTimeString(undefined, options)}</h1>);
 }
 
 

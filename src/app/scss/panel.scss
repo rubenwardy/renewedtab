@@ -1,0 +1,108 @@
+.panel {
+	display: block;
+	background: rgba(15, 15, 15, 0.5);
+	border-radius: 0.25rem;
+
+	$blur_radius: 7px;
+	backdrop-filter: blur($blur_radius);
+
+	padding: 0;
+	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
+
+	&:not(.panel-editing) {
+		overflow: hidden auto;
+	}
+
+	&:not(.flush), .panel-inset {
+		padding: 0.8rem;
+	}
+
+	h2.panel-inset {
+		margin-bottom: 0;
+	}
+}
+
+.panel, .modal-body {
+	> *:first-child {
+		margin-top: 0;
+	}
+
+	> *:last-child {
+		margin-bottom: 0;
+	}
+
+	> ul {
+		display: block;
+		margin: 0;
+		list-style: none;
+		padding: 0;
+	}
+
+	> ul.large {
+		li.section {
+			padding: 0.5rem 1rem 0.2rem 1rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+		}
+
+		a {
+			padding: 0.5rem 1rem;
+			font-size: 1.171875rem;
+			line-height: 1.5;
+		}
+	}
+
+	> ul li {
+		display: block;
+		margin: 0;
+		list-style: none;
+		padding: 0;
+
+		&.section {
+			display: block;
+			padding: 0.4rem 0.8rem 0.2rem 0.8rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+			color: white;
+			opacity: 0.5;
+
+			&:first-child {
+				padding-top: 0.8rem;
+			}
+		}
+
+		a {
+			display: block;
+			padding: 0.4rem 0.8rem;
+			color: rgba(255, 255, 255, 0.9);
+			text-decoration: none;
+			transition: color 0.2s ease-in-out,
+					background-color 0.2s ease-in-out;
+
+			&:hover {
+				color: white;
+				background: rgba(255, 255, 255, 0.1);
+				text-decoration: none;
+			}
+		}
+	}
+
+	h2 {
+		margin-top: 0;
+	}
+
+	h2, h3, h4, h5 {
+		font-size: 100%;
+		font-weight: bold;
+
+		a {
+			color: white;
+			text-decoration: none;
+
+			&:hover {
+				color: white;
+				text-decoration: underline;
+			}
+		}
+	}
+}
