@@ -1,5 +1,9 @@
 import fetch, { Request } from "node-fetch";
-import { PIXABAY_API_KEY } from "./server";
+import { BackgroundInfo } from ".";
+import { serverConfig } from "../server";
+
+const PIXABAY_API_KEY =
+	process.env.PIXABAY_API_KEY ?? serverConfig.PIXABAY_API_KEY;
 
 interface PixabayImage {
 	pageURL: string;
@@ -7,13 +11,7 @@ interface PixabayImage {
 	user: string
 }
 
-
-let cache : PixabayImage | null = null;
-async function getImageFromPixabay() {
-	if (cache) {
-		return cache;
-	}
-
+export default async function getImageFromPixabay(): Promise<BackgroundInfo> {
 	const url = new URL("https://pixabay.com/api/");
 	url.searchParams.set("key", PIXABAY_API_KEY);
 	url.searchParams.set("orientation", "horizontal");
@@ -33,17 +31,11 @@ async function getImageFromPixabay() {
 	}));
 
 	const json : { hits: PixabayImage[] } = JSON.parse(await response.text());
-	cache = json.hits[Math.floor(Math.random() * json.hits.length)];
-	return cache;
-}
-
-
-export async function getBackground() {
-	const image = await getImageFromPixabay();
+	const image : PixabayImage = json.hits[Math.floor(Math.random() * json.hits.length)];
 	return {
 		url: image.largeImageURL,
 		author: image.user,
 		site: "Pixabay",
 		link: image.pageURL,
-	};
+	}
 }

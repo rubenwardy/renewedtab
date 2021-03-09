@@ -1,14 +1,11 @@
 import express from "express";
 import fs from "fs";
-import { getWeatherInfo } from "./weather";
-import { getBackground } from "./backgrounds";
-import { handleProxy } from "./proxy";
 
 
 // Settings
 
 const PORT = process.env.PORT ?? 8000;
-const serverConfig = (function() {
+export const serverConfig = (function() {
 	if (!fs.existsSync("config_server.json")) {
 		return {};
 	}
@@ -16,13 +13,13 @@ const serverConfig = (function() {
 })();
 
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
-export const OPEN_WEATHER_MAP_API_KEY =
-	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
-export const PIXABAY_API_KEY =
-	process.env.PIXABAY_API_KEY ?? serverConfig.PIXABAY_API_KEY;
 
 
 // App
+
+import { getWeatherInfo } from "./weather";
+import { getBackground } from "./backgrounds";
+import { handleProxy } from "./proxy";
 
 const app = express();
 app.use((_req, res, next) => {

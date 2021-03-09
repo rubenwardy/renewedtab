@@ -19,7 +19,7 @@ export default function App(_props: any) {
 			<SettingsDialog isOpen={settingsIsOpen} background={background} onClose={() => setSettingsOpen(false)} />
 			<WidgetContainer wm={widgetManager} />
 
-			<footer>
+			<footer className="text-shadow-soft">
 				<a onClick={() => setCreateOpen(true)}>Add Widget</a> |&nbsp;
 				<a onClick={() => setSettingsOpen(true)}>Settings</a>
 			</footer>

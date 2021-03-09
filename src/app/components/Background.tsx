@@ -16,7 +16,7 @@ interface BackgroundInfo {
 
 function Credits(props: BackgroundInfo) {
 	return (
-		<div className="credits">
+		<div className="credits text-shadow-soft">
 			<span>
 				<a href={props.link}>
 					{props.author} / {props.site}

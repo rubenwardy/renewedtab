@@ -38,7 +38,7 @@ function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any } {
 		};
 	case BackgroundMode.ImageUrl:
 		return {
-			url: "https://i.redd.it/5hm3u7rb4fk61.jpg",
+			url: "",
 			position: "bottom",
 		};
 	}
@@ -62,7 +62,7 @@ export function getDescriptionForMode(mode: BackgroundMode): string {
 export default class BackgroundStore {
 	getMode(): BackgroundMode {
 		const type = (localStorage.getItem("bg_mode")) as BackgroundModeType;
-		return BackgroundMode[type] ?? BackgroundMode.ImageUrl
+		return BackgroundMode[type] ?? BackgroundMode.Auto
 	}
 
 	getSchema(): Schema {

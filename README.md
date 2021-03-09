@@ -27,26 +27,16 @@ Possible values:
 
 ### Server config
 
-Copy `config_server.example.json` to `config_server.json`.
+You'll need to configure some API keys for the server in order to use certain
+features. These are optional, but will prevent some features from working.
 
-If you change "API_URL", then you'll need to set up API tokens to get
-certain features to work. You can do this using `config_server.json` or using environment variables.
+* `OPEN_WEATHER_MAP_API_KEY`: [openweathermap.org](https://home.openweathermap.org/users/sign_up)
+* `PIXABAY_API_KEY`: [pixabay.com](https://pixabay.com/api/docs/)
+* `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
 
-Create `config.server.json` and put your
-[openweathermap.org](https://home.openweathermap.org/users/sign_up)
-and [pixabay.com](https://pixabay.com/api/docs/) API tokens inside:
-
-```json
-{
-	"OPEN_WEATHER_MAP_API_KEY": "123",
-	"PIXABAY_API_KEY": "123"
-}
-```
-
-Possible values:
-
-* `OPEN_WEATHER_MAP_API_KEY`: API key for [openweathermap.org](https://home.openweathermap.org/users/sign_up).
-* `PIXABAY_API_KEY`: API key for [pixabay.com](https://pixabay.com/api/docs/).
+You can do this either by copying `config_server.example.json` to
+`config_server.json` and editing it, or by using environment variables
+(recommended for production).
 
 ### Debug: Web
 

@@ -1,5 +1,8 @@
 import fetch, { Request } from "node-fetch";
-import { IS_DEBUG, OPEN_WEATHER_MAP_API_KEY } from "./server";
+import { IS_DEBUG, serverConfig } from "./server";
+
+const OPEN_WEATHER_MAP_API_KEY =
+	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
 
 function parseWeatherInfo(info: any): any {
 	function unixToDate(unix: number): Date {
