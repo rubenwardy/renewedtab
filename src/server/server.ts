@@ -1,15 +1,39 @@
 import express from "express";
 import fetch, { Request } from "node-fetch";
 import fs from "fs";
+import { getWeatherInfo } from "./weather";
+import { getBackground } from "./backgrounds";
+
+
+// Settings
+
+const PORT = process.env.PORT ?? 8000;
+const config = JSON.parse(fs.readFileSync("config.json").toString());
+
+const keys = (function() {
+	if (!process.env.HOME) {
+		return {};
+	}
+
+	const path = process.env.HOME + "/.homescreen_keys.json";
+	if (fs.existsSync(path)) {
+		return JSON.parse(fs.readFileSync(path).toString());
+	} else {
+		return {};
+	}
+})();
+
+const PROXY_ALLOWED_HOSTS = new Set(config.PROXY_ALLOWED_HOSTS);
+export const IS_DEBUG = process.env.NODE_ENV !== "production";
+export const OPEN_WEATHER_MAP_API_KEY =
+	process.env.OPEN_WEATHER_MAP_API_KEY ?? keys.OPEN_WEATHER_MAP_API_KEY;
+export const PIXABAY_API_KEY =
+	process.env.PIXABAY_API_KEY ?? keys.PIXABAY_API_KEY;
+
+
+// App
 
 const app = express();
-const PORT = process.env.PORT ?? 8000;
-
-const config = JSON.parse(fs.readFileSync("config.json").toString());
-const OPEN_WEATHER_MAP_API_KEY = process.env.OPEN_WEATHER_MAP_API_KEY || config.OPEN_WEATHER_MAP_API_KEY;
-const PROXY_ALLOWED_HOSTS = new Set(config.PROXY_ALLOWED_HOSTS);
-const IS_DEBUG = process.env.NODE_ENV !== "production";
-
 app.use((_req, res, next) => {
 	const expiresAt = new Date(new Date().getTime() + 4*60*60*1000);
 
@@ -19,6 +43,7 @@ app.use((_req, res, next) => {
 	res.append("expires", expiresAt.toISOString());
 	next();
 });
+
 
 app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.url) {
@@ -50,89 +75,6 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 });
 
 
-function parseWeatherInfo(info: any): any {
-	function unixToDate(unix: number): Date {
-		return new Date((unix + info.timezone_offset) * 1000);
-	}
-
-	function unixToDay(unix: number): string {
-		const DAY_OF_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-		return DAY_OF_WEEK[unixToDate(unix).getDay()];
-	}
-
-	function unixToTime(unix: number): string {
-		const date = unixToDate(unix);
-		return `${date.getHours()}:${date.getMinutes()}`;
-	}
-
-	function kelvinToCelsius(k: number) {
-		return k - 272.15;
-	}
-
-	function getIcon(forecast: any): string | undefined {
-		return forecast.weather[0]?.icon;
-	}
-
-	return {
-		timezone_offset: info.timezone_offset,
-		current: {
-			icon: getIcon(info.current),
-			temp: kelvinToCelsius(info.current.temp)
-		},
-		forecast: info.daily.map((day: any) => ({
-			day: unixToDay(day.dt),
-			icon: getIcon(day),
-			minTemp: kelvinToCelsius(day.temp.min),
-			maxTemp: kelvinToCelsius(day.temp.max),
-			sunrise: unixToTime(day.sunrise),
-			sunset: unixToTime(day.sunset),
-		})),
-	}
-}
-
-
-const cache = new Map<string, any>();
-if (IS_DEBUG) {
-	setInterval(() => {
-		cache.clear();
-	}, 15 * 60 * 1000);
-}
-
-async function getWeatherInfo(lat: number, long: number): Promise<any> {
-	const key = `${lat.toFixed(5)},${long.toFixed(5)}`;
-	if (cache.has(key)) {
-		console.log("Using cached weather");
-		return cache.get(key);
-	}
-
-	const url = new URL("https://api.openweathermap.org/data/2.5/onecall");
-	url.searchParams.set("lon", long.toString());
-	url.searchParams.set("lat", lat.toString());
-	url.searchParams.set("appid", OPEN_WEATHER_MAP_API_KEY);
-	url.searchParams.set("exclude", "minutely,hourly");
-
-	const response = await fetch(new Request(url, {
-		method: "GET",
-		headers: {
-			"Accept": "application/json",
-		}
-	}));
-
-	const json = JSON.parse(await response.text());
-	if (!response.ok) {
-		if (json.message && json.message.includes("requests limitation")) {
-			throw Error("Too many requests to Weather API service.");
-		} else {
-			throw Error(`Error getting weather, ${response.statusText}.`);
-		}
-	}
-
-	const ret = parseWeatherInfo(json);
-	cache.set(key, ret);
-	return ret;
-}
-
-
 app.get("/weather/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.long || !req.query.lat) {
 		res.status(400).send("Missing location");
@@ -143,6 +85,15 @@ app.get("/weather/", async (req: express.Request, res: express.Response) => {
 		res.json(await getWeatherInfo(
 			Number.parseFloat(req.query.lat as string),
 			Number.parseFloat(req.query.long as string)));
+	} catch (ex) {
+		res.status(400).send(ex.message);
+	}
+});
+
+
+app.get("/background/", async (_req: express.Request, res: express.Response) => {
+	try {
+		res.json(await getBackground());
 	} catch (ex) {
 		res.status(400).send(ex.message);
 	}
