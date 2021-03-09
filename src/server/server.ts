@@ -52,7 +52,7 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 
 function parseWeatherInfo(info: any): any {
 	function unixToDate(unix: number): Date {
-		return new Date(unix * 1000);
+		return new Date((unix + info.timezone_offset) * 1000);
 	}
 
 	function unixToDay(unix: number): string {
@@ -74,6 +74,7 @@ function parseWeatherInfo(info: any): any {
 	}
 
 	return {
+		timezone_offset: info.timezone_offset,
 		current: {
 			icon: getIcon(info.current),
 			temp: kelvinToCelsius(info.current.temp)
