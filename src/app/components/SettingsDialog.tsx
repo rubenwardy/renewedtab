@@ -1,4 +1,4 @@
-import Background from "app/Background";
+import BackgroundStore from "app/BackgroundStore";
 import React, { useState } from "react";
 import AboutSettings from "./AboutSettings";
 import BackgroundSettings from "./BackgroundSettings";
@@ -8,7 +8,7 @@ import Modal from "./Modal";
 interface SettingsDialogProps {
 	isOpen: boolean;
 	onClose: () => void;
-	background: Background;
+	background: BackgroundStore;
 }
 
 enum SettingsTab {

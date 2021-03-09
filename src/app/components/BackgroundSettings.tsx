@@ -1,9 +1,9 @@
-import Background, { BackgroundMode, BackgroundModeType, getDescriptionForMode } from "app/Background";
+import BackgroundStore, { BackgroundMode, BackgroundModeType, getDescriptionForMode } from "app/BackgroundStore";
 import React, { useState } from "react";
 import { Radio, RadioGroup } from "react-radio-group";
 import FieldList from "./FieldList";
 
-export default function BackgroundSettings(props: { background: Background }) {
+export default function BackgroundSettings(props: { background: BackgroundStore }) {
 	const background = props.background;
 	const [mode, setMode] = useState(background.getMode());
 

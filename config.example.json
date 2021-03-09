@@ -1,8 +1,0 @@
-{
-	"API_URL": "https://rubenwardy.com/homescreen/",
-	"PROXY_URL": "https://rubenwardy.com/homescreen/proxy/",
-	"PROXY_ALLOWED_HOSTS": [
-		"feeds.bbci.co.uk",
-		"fdo.rocketlaunch.live"
-	]
-}

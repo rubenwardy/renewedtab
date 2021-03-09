@@ -3,17 +3,18 @@ import { WidgetManager } from "app/WidgetManager";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetContainer from "./WidgetContainer";
 import SettingsDialog from "./SettingsDialog";
-import Background from "app/Background";
+import BackgroundStore from "app/BackgroundStore";
+import Background from "./Background";
 
 const widgetManager = new WidgetManager();
-const background = new Background();
+const background = new BackgroundStore();
 
 export default function App(_props: any) {
-	background.update();
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	return (
 		<>
+			<Background mode={background.getMode()} values={background.getValues()} />
 			<CreateWidgetDialog isOpen={createIsOpen} manager={widgetManager} onClose={() => setCreateOpen(false)} />
 			<SettingsDialog isOpen={settingsIsOpen} background={background} onClose={() => setSettingsOpen(false)} />
 			<WidgetContainer wm={widgetManager} />

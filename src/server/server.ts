@@ -8,27 +8,16 @@ import { getBackground } from "./backgrounds";
 // Settings
 
 const PORT = process.env.PORT ?? 8000;
-const config = JSON.parse(fs.readFileSync("config.json").toString());
+const serverConfig = JSON.parse(fs.readFileSync("config_server.json").toString());
 
-const keys = (function() {
-	if (!process.env.HOME) {
-		return {};
-	}
-
-	const path = process.env.HOME + "/.homescreen_keys.json";
-	if (fs.existsSync(path)) {
-		return JSON.parse(fs.readFileSync(path).toString());
-	} else {
-		return {};
-	}
-})();
-
-const PROXY_ALLOWED_HOSTS = new Set(config.PROXY_ALLOWED_HOSTS);
+const PROXY_ALLOWED_HOSTS = new Set(serverConfig.PROXY_ALLOWED_HOSTS);
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
+export const UPLOADS_DIR =
+	process.env.UPLOADS_DIR ?? serverConfig.UPLOADS_DIR;
 export const OPEN_WEATHER_MAP_API_KEY =
-	process.env.OPEN_WEATHER_MAP_API_KEY ?? keys.OPEN_WEATHER_MAP_API_KEY;
+	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
 export const PIXABAY_API_KEY =
-	process.env.PIXABAY_API_KEY ?? keys.PIXABAY_API_KEY;
+	process.env.PIXABAY_API_KEY ?? serverConfig.PIXABAY_API_KEY;
 
 
 // App

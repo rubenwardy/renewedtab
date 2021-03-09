@@ -4,7 +4,7 @@ interface Config {
 	PROXY_ALLOWED_HOSTS: string[];
 }
 
-export const config: Config = require("../../config.json");
+export const config: Config = require("../../config_client.json");
 
 
 declare global {

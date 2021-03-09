@@ -38,8 +38,8 @@ function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any } {
 		};
 	case BackgroundMode.ImageUrl:
 		return {
-			url: "",
-			position: "center",
+			url: "https://i.redd.it/5hm3u7rb4fk61.jpg",
+			position: "bottom",
 		};
 	}
 }
@@ -59,10 +59,10 @@ export function getDescriptionForMode(mode: BackgroundMode): string {
 /**
  * Stores Background information, and applies it to document.body.
  */
-export default class Background {
+export default class BackgroundStore {
 	getMode(): BackgroundMode {
 		const type = (localStorage.getItem("bg_mode")) as BackgroundModeType;
-		return BackgroundMode[type] ?? BackgroundMode.Auto
+		return BackgroundMode[type] ?? BackgroundMode.ImageUrl
 	}
 
 	getSchema(): Schema {
@@ -87,26 +87,5 @@ export default class Background {
 	setValue(key: string, v: any) {
 		const str = toTypedJSON(v);
 		localStorage.setItem("bg_" + key, JSON.stringify(str));
-	}
-
-	update() {
-		const el = document.getElementById("background")!;
-
-		switch (this.getMode()) {
-		case BackgroundMode.Auto:
-			el.style.backgroundColor = "";
-			el.style.backgroundPosition = "";
-			el.style.backgroundImage = "url('https://i.redd.it/5hm3u7rb4fk61.jpg')";
-			break;
-		case BackgroundMode.Color:
-			el.style.backgroundColor = this.getValue("color") ?? "black";
-			el.style.backgroundImage = "";
-			break;
-		case BackgroundMode.ImageUrl:
-			el.style.backgroundColor = "";
-			el.style.backgroundPosition = this.getValue("position");
-			el.style.backgroundImage = `url('${this.getValue("url") ?? ""}')`;
-			break;
-		}
 	}
 }
