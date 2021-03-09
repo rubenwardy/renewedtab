@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { WidgetProps } from "../WidgetManager";
 import Modal from "./Modal";
 import { Form } from "./forms";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
@@ -65,7 +66,9 @@ export function Widget<T>(props: WidgetProps<T>) {
 						</a>
 					</span>
 				</div>
-				{Child}
+				<ErrorBoundary>
+					{Child}
+				</ErrorBoundary>
 			</>);
 	}
 }
