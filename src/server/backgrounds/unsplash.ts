@@ -18,6 +18,7 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 	url.searchParams.set("orientation", "landscape");
 	url.searchParams.set("content_filter", "high");
 	url.searchParams.set("order_by", "popular");
+	url.searchParams.set("page", (Math.random() * 10 + 1).toFixed(0));
 
 	const response = await fetch(new Request(url, {
 		method: "GET",
