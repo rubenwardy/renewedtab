@@ -41,15 +41,9 @@ async function getImageFromPixabay() {
 export async function getBackground() {
 	const image = await getImageFromPixabay();
 	return {
-		image_url: image.largeImageURL,
-		author: {
-			title: image.user,
-			url: null
-		},
-		site: {
-			title: "Pixabay",
-			url: "https://pixabay.com",
-		},
-		url: image.pageURL,
+		url: image.largeImageURL,
+		author: image.user,
+		site: "Pixabay",
+		link: image.pageURL,
 	};
 }

@@ -8,19 +8,19 @@ interface BackgroundProps {
 }
 
 interface BackgroundInfo {
-	image_url: string;
-	author: { title: string, url?: string };
-	site: { title: string, url?: string };
 	url: string;
+	author: string;
+	site: string;
+	link: string;
 }
 
 function Credits(props: BackgroundInfo) {
 	return (
 		<div className="credits">
 			<span>
-				<a href={props.author.url ?? props.url}>{props.author.title}</a>
-				&nbsp;/&nbsp;
-				<a href={props.site.url}>{props.site.title}</a>
+				<a href={props.link}>
+					{props.author} / {props.site}
+				</a>
 			</span>
 		</div>);
 }
@@ -30,7 +30,7 @@ function AutoBackground(props: BackgroundProps) {
 
 	const [info, error] = useAPI<BackgroundInfo>("background/", {}, [props.values]);
 	if (info) {
-		style.backgroundImage = `url('${info.image_url}')`;
+		style.backgroundImage = `url('${info.url}')`;
 		return (
 			<>
 				<div id="background" style={style} />
