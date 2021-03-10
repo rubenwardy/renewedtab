@@ -13,7 +13,7 @@ Replace the URLs in the `config_client.json`:
 
 ```js
 {
-	"API_URL": "http://localhost:8000/",
+	"API_URL": "http://localhost:8000/api/",
 	"PROXY_URL": "http://localhost:8000/proxy/",
 
 	/* other settings here */

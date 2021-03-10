@@ -53,7 +53,7 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 });
 
 
-app.get("/weather/", async (req: express.Request, res: express.Response) => {
+app.get("/api/weather/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.long || !req.query.lat) {
 		res.status(400).send("Missing location");
 		return;
@@ -69,7 +69,7 @@ app.get("/weather/", async (req: express.Request, res: express.Response) => {
 });
 
 
-app.get("/geocode/", async (req: express.Request, res: express.Response) => {
+app.get("/api/geocode/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.q) {
 		res.status(400).send("Missing query");
 		return;
@@ -83,7 +83,7 @@ app.get("/geocode/", async (req: express.Request, res: express.Response) => {
 });
 
 
-app.get("/background/", async (_req: express.Request, res: express.Response) => {
+app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
 	try {
 		res.json(await getBackground());
 	} catch (ex) {

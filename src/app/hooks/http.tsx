@@ -89,7 +89,7 @@ export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | nu
 		url.searchParams.set(key.toString(), (value as Object).toString());
 	})
 
-	return usePromise(() => fetchJSON(makeProxy(url.toString())), dependents);
+	return usePromise(() => fetchJSON(url.toString()), dependents);
 }
 
 
