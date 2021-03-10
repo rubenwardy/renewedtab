@@ -1,6 +1,11 @@
 import fetchCatch, { Request } from "./http";
-import { IS_DEBUG, UA_PROXY } from "./server";
-import dns from "dns";
+import { IS_DEBUG, serverConfig, UA_PROXY } from "./server";
+
+const PROXY_ALLOWED_HOSTS: string[] = serverConfig.PROXY_ALLOWED_HOSTS ?? [
+	"feeds.bbci.co.uk",
+	"fdo.rocketlaunch.live",
+	"theregister.com"
+];
 
 export interface Result {
 	status: number;
@@ -16,33 +21,24 @@ if (!IS_DEBUG) {
 	}, 15 * 60 * 1000);
 }
 
-function lookupDns(url: string): Promise<string> {
-	return new Promise((resolve, reject) => {
-		dns.lookup(url, (err, address, family) => {
-			if (err) {
-				reject(err);
-			} else {
-				resolve(address);
-			}
-		});
-	});
+
+function checkProxyURL(url: URL) {
+	const hostAllowed = PROXY_ALLOWED_HOSTS.some(other =>
+		url.hostname == other || url.hostname.endsWith("." + other));
+	if (!hostAllowed) {
+		throw new Error(`Accessing host ${url.hostname} is not allowed on the web version. ` +
+			`For security reasons, the web version may only access pre-approved domains. ` +
+			`Consider using the Chrome/Firefox extension instead.`);
+	}
 }
 
-function isLocalIP(address: string): boolean {
-	return address.startsWith("127.0.0");
-}
 
 export async function handleProxy(url: URL): Promise<Result> {
+	checkProxyURL(url);
+
 	const key = url.toString();
 	if (cache.has(key)) {
 		return cache.get(key)!;
-	}
-
-	const hostname = url.hostname;
-	const address = await lookupDns(url.hostname);
-	url.hostname = address;
-	if (isLocalIP(address)) {
-		throw Error(`Error whilst connecting to ${url.host}`);
 	}
 
 	const response = await fetchCatch(new Request(url, {
@@ -50,7 +46,6 @@ export async function handleProxy(url: URL): Promise<Result> {
 		size: 1 * 1000 * 1000,
 		timeout: 10000,
 		headers: {
-			"Host": hostname,
 			"User-Agent": UA_PROXY,
 			"Accept": "application/json, application/xml, text/xml, application/rss+xml, application/atom+xml",
 		},

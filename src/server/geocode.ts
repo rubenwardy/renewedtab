@@ -17,7 +17,7 @@ const cache = new Map<string, Location[]>();
 
 export async function getCoordsFromQuery(query: string) {
 	if (!OWNER_EMAIL || !OWNER_EMAIL.includes("@")) {
-		throw Error("Geocoding API disabled as the server owner hasn't configured OWNER_EMAIL.")
+		throw new Error("Geocoding API disabled as the server owner hasn't configured OWNER_EMAIL.")
 	}
 
 	if (cache.has(query)) {
@@ -39,7 +39,7 @@ export async function getCoordsFromQuery(query: string) {
 	}));
 
 	if (!response.ok) {
-		throw Error(`Error getting location, ${response.statusText}.`);
+		throw new Error(`Error getting location, ${response.statusText}.`);
 	}
 
 	const json: OSMLocation[] = JSON.parse(await response.text());
