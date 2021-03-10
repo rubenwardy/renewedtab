@@ -41,10 +41,8 @@ export class WidgetManager {
 	constructor() {}
 
 	async load() {
-		console.log("Reading from storage");
 		const json = await storage.get<WidgetRaw<any>[]>("widgets");
 		if (json) {
-			console.log("Loading from storage");
 			this.widgets = json.filter((widget: WidgetRaw<any>) => WidgetTypes[widget.type]);
 			this.id_counter =
 				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
@@ -54,13 +52,11 @@ export class WidgetManager {
 				widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
 			})
 		} else {
-			console.log("Creating default widgets");
 			this.resetToDefault();
 		}
 	}
 
 	save() {
-		console.log("Saving");
 		storage.set("widgets", this.widgets);
 	}
 
@@ -91,11 +87,9 @@ export class WidgetManager {
 	}
 
 	removeWidget(id: number) {
-		console.log("Remove widget by id ", id);
 		var i = this.widgets.length;
 		while (i--) {
 			if (this.widgets[i].id == id) {
-				console.log("- found and deleted ", this.widgets[i]);
 				this.widgets.splice(i, 1);
 			}
 		}

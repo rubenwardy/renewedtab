@@ -47,7 +47,6 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 	const mainRef = useRef<HTMLElement>(null);
 	function updateIsScrolling() {
 		if (mainRef.current) {
-			console.log(mainRef.current.clientHeight, window.innerHeight * 0.8);
 			const shouldBeScrolling = mainRef.current.clientHeight > window.innerHeight * 0.8;
 			if (isScrolling != shouldBeScrolling) {
 				setIsScrolling(shouldBeScrolling);

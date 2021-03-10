@@ -55,7 +55,6 @@ if (!IS_DEBUG) {
 export async function getWeatherInfo(lat: number, long: number): Promise<any> {
 	const key = `${lat.toFixed(5)},${long.toFixed(5)}`;
 	if (cache.has(key)) {
-		console.log("Using cached weather");
 		return cache.get(key);
 	}
 
