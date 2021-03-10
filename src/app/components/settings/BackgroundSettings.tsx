@@ -1,7 +1,7 @@
 import { BackgroundConfig, BackgroundMode, BackgroundModeType, getDefaultsForMode, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
 import React from "react";
 import { Radio, RadioGroup } from "react-radio-group";
-import { Form } from "./forms";
+import { Form } from "../forms";
 
 
 export interface BackgroundSettingsProps {

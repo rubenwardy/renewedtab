@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { WidgetManager } from "app/WidgetManager";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetContainer from "./WidgetContainer";
-import SettingsDialog from "./SettingsDialog";
+import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./Background";
 import { useBackground, usePromise } from "app/hooks";
 

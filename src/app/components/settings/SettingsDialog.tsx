@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AboutSettings from "./AboutSettings";
 import BackgroundSettings, { BackgroundSettingsProps } from "./BackgroundSettings";
-import Modal from "./Modal";
+import Modal from "../Modal";
 
 interface SettingsDialogProps extends BackgroundSettingsProps {
 	isOpen: boolean;
