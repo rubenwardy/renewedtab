@@ -14,8 +14,8 @@ export const serverConfig = (function() {
 
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
 export const OWNER_EMAIL = process.env.OWNER_EMAIL ?? serverConfig.OWNER_EMAIL;
-export const UA_DEFAULT = "Mozilla/5.0 (compatible; Homescreen App/0.1; +https://rubenwardy.com/homescreen/bot.html)";
-export const UA_PROXY = "Mozilla/5.0 (compatible; Homescreen Proxy/0.1; +https://rubenwardy.com/homescreen/bot.html)";
+export const UA_DEFAULT = "Mozilla/5.0 (compatible; Homescreen App/0.1; +https://homescreen.rubenwardy.com/)";
+export const UA_PROXY = "Mozilla/5.0 (compatible; Homescreen Proxy/0.1; +https://homescreen.rubenwardy.com/)";
 
 
 // App
