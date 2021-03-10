@@ -60,15 +60,18 @@ export default function Weather(props: WeatherProps) {
 	if (!info) {
 		return (
 			<div className="panel text-muted">
-			{error ? error.toString() : "Loading weather..."}
-		</div>);
+				{error ? error.toString() : "Loading weather..."}
+			</div>);
 	}
 
-	const forecast = info.forecast.slice(1, 4).map(forecast => (<WeatherForecast key={forecast.day} {...forecast} />));
+	const forecast = info.forecast.slice(1, 4).map(forecast =>
+			(<WeatherForecast key={forecast.day} {...forecast} />));
 
 	return (
 		<div className="panel weather">
-			<h2 className="col-span-3"><a href={props.url}>{props.location.name}</a></h2>
+			<h2 className="col-span-3">
+				<a href={props.url}>{props.location.name}</a>
+			</h2>
 			<div className="col-span-3 large">
 				{makeIconElement(info.current.icon)}
 				{info.current.temp.toFixed(0)} &deg;C

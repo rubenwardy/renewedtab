@@ -7,8 +7,10 @@ export default function HelpAbout(_props: any) {
 		<div className="panel">
 			<h2>Homescreen Help and Tips</h2>
 			<p>
-				Welcome to homescreen. This is a web app designed to be used
-				as a "New Tab" page in web browsers.
+				Welcome to&nbsp;
+				<a href="https://homescreen.rubenwardy.com">Homescreen</a>.
+				This is a web app and browser extension designed to be used as
+				a "New Tab" page in web browsers.
 			</p>
 			<p>
 				Click "Add widget" in the bottom of the screen to add a widget.

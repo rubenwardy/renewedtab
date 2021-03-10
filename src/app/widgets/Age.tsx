@@ -1,6 +1,6 @@
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface AgeProps {
 	birthDate: Date;
@@ -12,9 +12,9 @@ function calculateYearsSince(date: Date): number {
 }
 
 export default function Age(props: AgeProps) {
-	const [age, setAge] = React.useState(calculateYearsSince(props.birthDate));
+	const [age, setAge] = useState(calculateYearsSince(props.birthDate));
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const timer = setInterval(() => {
 			setAge(calculateYearsSince(props.birthDate));
 		}, 500);
@@ -31,7 +31,7 @@ export default function Age(props: AgeProps) {
 }
 
 
-Age.description = "States your current age in way too much precision, live updating";
+Age.description = "States your current age with way too much precision";
 
 Age.initialProps = {
 	birthDate: new Date("1997-01-01")

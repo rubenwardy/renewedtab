@@ -1,4 +1,4 @@
-import { BackgroundConfig, BackgroundMode, BackgroundModeType, getDefaultsForMode, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
+import { BackgroundConfig, BackgroundMode, BackgroundModeType, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
 import React from "react";
 import { Radio, RadioGroup } from "react-radio-group";
 import { Form } from "../forms";
