@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAPI } from 'app/utils/hooks';
+import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { Location, type } from 'app/utils/Schema';
 

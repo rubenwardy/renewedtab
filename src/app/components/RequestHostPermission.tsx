@@ -1,5 +1,5 @@
-import { usePromise } from "app/utils/hooks";
-import React, { useEffect, useState } from "react";
+import { runPromise } from "app/hooks";
+import React, { useState } from "react";
 
 function makePermission(host: string): any {
 	return {
@@ -8,11 +8,11 @@ function makePermission(host: string): any {
 }
 
 export async function needsPermission(host: string): Promise<boolean> {
-	if (!window.browser) {
+	if (typeof browser === 'undefined') {
 		return false;
 	}
 
-	return !(await window.browser.permissions.contains(makePermission(host)));
+	return !(await browser.permissions.contains(makePermission(host)));
 }
 
 export async function checkHostPermission(url: string) {
@@ -28,19 +28,21 @@ interface RequestHostPermissionProps {
 }
 
 export default function RequestHostPermission(props: RequestHostPermissionProps) {
+	if (typeof browser === 'undefined') {
+		return null;
+	}
+
 	const [isVisible, setVisible] = useState<boolean>(false);
 
 	function handleClick() {
-		if (window.browser) {
-			window.browser.permissions.request(makePermission(props.host)).then((accepted: boolean) => {
-				if (accepted) {
-					setVisible(false);
-				}
-			});
-		}
+		browser.permissions.request(makePermission(props.host)).then((accepted: boolean) => {
+			if (accepted) {
+				setVisible(false);
+			}
+		});
 	}
 
-	usePromise(() => needsPermission(props.host),
+	runPromise(() => needsPermission(props.host),
 		setVisible, () => {},
 		[props.host]);
 

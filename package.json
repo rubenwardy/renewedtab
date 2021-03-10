@@ -61,6 +61,7 @@
 		"mocha": "^8.3.1",
 		"ts-node": "^9.1.1",
 		"web-ext": "^5.5.0",
+		"web-ext-types": "^3.2.1",
 		"webextension-polyfill-ts": "^0.25.0"
 	}
 }

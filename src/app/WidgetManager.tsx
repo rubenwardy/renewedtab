@@ -1,3 +1,4 @@
+import { storage } from "./Storage";
 import Schema from "./utils/Schema";
 import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 import { Vector2 } from "./utils/Vector2";
@@ -37,11 +38,14 @@ export class WidgetManager {
 
 	widgets: (WidgetRaw<any>)[] = [];
 
-	constructor() {
-		const json = localStorage.getItem("widgets");
+	constructor() {}
+
+	async load() {
+		console.log("Reading from storage");
+		const json = await storage.get<WidgetRaw<any>[]>("widgets");
 		if (json) {
-			this.widgets = fromTypedJSON(JSON.parse(json))
-				.filter((widget: WidgetRaw<any>) => WidgetTypes[widget.type]);
+			console.log("Loading from storage");
+			this.widgets = json.filter((widget: WidgetRaw<any>) => WidgetTypes[widget.type]);
 			this.id_counter =
 				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 
@@ -50,13 +54,14 @@ export class WidgetManager {
 				widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
 			})
 		} else {
+			console.log("Creating default widgets");
 			this.resetToDefault();
 		}
 	}
 
 	save() {
 		console.log("Saving");
-		localStorage.setItem("widgets", JSON.stringify(toTypedJSON(this.widgets)));
+		storage.set("widgets", this.widgets);
 	}
 
 	resetToDefault() {

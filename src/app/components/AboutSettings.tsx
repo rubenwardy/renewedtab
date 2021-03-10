@@ -1,8 +1,9 @@
+import { storage } from "app/Storage";
 import React from "react";
 
 export default function AboutSettings(_props: any) {
-	function handleReset() {
-		localStorage.clear();
+	async function handleReset() {
+		await storage.clear();
 		location.reload();
 	}
 

@@ -1,10 +1,9 @@
-import { BackgroundMode } from "app/BackgroundStore";
-import { useAPI } from "app/utils/hooks";
+import { BackgroundConfig, BackgroundMode } from "app/hooks/background";
+import { useAPI } from "app/hooks";
 import React, { CSSProperties } from "react";
 
 interface BackgroundProps {
-	mode: BackgroundMode;
-	values: any;
+	background: BackgroundConfig | null;
 }
 
 interface BackgroundInfo {
@@ -28,10 +27,10 @@ function Credits(props: BackgroundInfo) {
 		</div>);
 }
 
-function AutoBackground(props: BackgroundProps) {
+function AutoBackground() {
 	const style: CSSProperties = {};
 
-	const [info, error] = useAPI<BackgroundInfo>("background/", {}, [props.values]);
+	const [info] = useAPI<BackgroundInfo>("background/", {}, []);
 	if (info) {
 		if (info.color) {
 			style.backgroundColor = info.color;
@@ -48,18 +47,21 @@ function AutoBackground(props: BackgroundProps) {
 }
 
 export default function Background(props: BackgroundProps) {
-	const style: CSSProperties = {};
+	const background = props.background;
 
-	switch (props.mode) {
-	case BackgroundMode.Auto:
-		return (<AutoBackground {...props} />)
-	case BackgroundMode.Color:
-		style.backgroundColor = props.values.color ?? "black";
-		break;
-	case BackgroundMode.ImageUrl:
-		style.backgroundImage = `url('${props.values.url}')`;
-		style.backgroundPosition = props.values.position;
-		break;
+	const style: CSSProperties = {};
+	if (background) {
+		switch (background.mode) {
+		case BackgroundMode.Auto:
+			return (<AutoBackground />)
+		case BackgroundMode.Color:
+			style.backgroundColor = background.values.color ?? "black";
+			break;
+		case BackgroundMode.ImageUrl:
+			style.backgroundImage = `url('${background.values.url}')`;
+			style.backgroundPosition = background.values.position;
+			break;
+		}
 	}
 
 	return (<div id="background" style={style} />);

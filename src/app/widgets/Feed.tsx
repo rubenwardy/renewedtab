@@ -1,5 +1,5 @@
 import React from 'react';
-import { useXML } from 'app/utils/hooks';
+import { useXML } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 

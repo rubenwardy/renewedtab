@@ -3,20 +3,26 @@ import { WidgetManager } from "app/WidgetManager";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetContainer from "./WidgetContainer";
 import SettingsDialog from "./SettingsDialog";
-import BackgroundStore from "app/BackgroundStore";
 import Background from "./Background";
+import { useBackground, usePromise } from "app/hooks";
 
 const widgetManager = new WidgetManager();
-const background = new BackgroundStore();
 
 export default function App(_props: any) {
+	usePromise(() => widgetManager.load(), []);
+	const [background, setBackground] = useBackground([]);
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
+
 	return (
 		<>
-			<Background mode={background.getMode()} values={background.getValues()} />
-			<CreateWidgetDialog isOpen={createIsOpen} manager={widgetManager} onClose={() => setCreateOpen(false)} />
-			<SettingsDialog isOpen={settingsIsOpen} background={background} onClose={() => setSettingsOpen(false)} />
+			<Background background={background} />
+			<CreateWidgetDialog isOpen={createIsOpen}
+					manager={widgetManager}
+					onClose={() => setCreateOpen(false)} />
+			<SettingsDialog isOpen={settingsIsOpen}
+					onClose={() => setSettingsOpen(false)}
+					background={background} setBackground={setBackground} />
 			<WidgetContainer wm={widgetManager} />
 
 			<footer className="text-shadow-soft">

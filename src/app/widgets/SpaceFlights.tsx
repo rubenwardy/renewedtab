@@ -1,5 +1,5 @@
 import React from 'react';
-import { useJSON } from 'app/utils/hooks';
+import { useJSON } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema from 'app/utils/Schema';
 
