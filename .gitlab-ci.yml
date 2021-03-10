@@ -12,7 +12,7 @@ variables:
   LC_ALL: C.UTF-8
 
 before_script:
-  - npm install
+  - NODE_ENV=debug npm install
   - cp config_client.example.json config_client.json
   - cp config_server.example.json config_server.json
 
