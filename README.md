@@ -1,5 +1,7 @@
 # Homescreen
 
+[![pipeline status](https://gitlab.com/rubenwardy/homescreen/badges/master/pipeline.svg)](https://gitlab.com/rubenwardy/homescreen/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://homescreen.rubenwardy.com/)
+
 A clean web browser "New Tab" / "Home page" page, created using TypeScript and React.
 
 License: GPLv3 or later.
@@ -41,25 +43,23 @@ You can do this either by copying `config_server.example.json` to
 `config_server.json` and editing it, or by using environment variables
 (recommended for production).
 
-### Debug: Web
+### Debug
 
-```bash
-npm install
-npm start
-# ^ this will open your web browser
-```
+Make sure to run `npm install`.
 
-### Debug: Firefox extension
-
-```bash
-npm install
-npm start:firefox
-# ^ this will open a Firefox window for testing the extension
-```
+* Web: `npm start`
+* Firefox: `npm run start:firefox`
 
 ### Production
 
-See .gitlab-ci.yml. Sorry.
+Make sure to run `npm install`, and to set the `NODE_ENV` environment
+variable to `production`.
+
+* Web + server: `npm run build`
+* Web only: `npm run build:app`
+* Firefox: `npm run package:firefox`
+
+Also see .gitlab-ci.yml.
 
 ### More documentation
 
