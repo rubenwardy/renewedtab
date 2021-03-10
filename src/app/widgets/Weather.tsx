@@ -83,10 +83,10 @@ Weather.description = "Current and forecasted weather";
 Weather.initialProps = {
 	url: "https://www.bbc.co.uk/weather/2654675",
 	location: {
-		locationName: "Bristol",
+		name: "Bristol",
 		latitude: 51.454514,
 		longitude: -2.587910,
-	},
+	} as Location,
 };
 
 
