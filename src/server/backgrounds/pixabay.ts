@@ -1,4 +1,4 @@
-import fetch, { Request } from "node-fetch";
+import fetchCatch, { Request } from "../http";
 import { BackgroundInfo } from ".";
 import { serverConfig, UA_DEFAULT } from "../server";
 
@@ -23,7 +23,7 @@ export default async function getImageFromPixabay(): Promise<BackgroundInfo> {
 	url.searchParams.set("min_height", "1080");
 	url.searchParams.set("per_page", "5");
 
-	const response = await fetch(new Request(url, {
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,

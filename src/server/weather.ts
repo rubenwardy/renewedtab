@@ -1,4 +1,4 @@
-import fetch, { Request } from "node-fetch";
+import fetchCatch, { Request } from "./http";
 import { IS_DEBUG, serverConfig, UA_DEFAULT } from "./server";
 
 const OPEN_WEATHER_MAP_API_KEY =
@@ -64,7 +64,7 @@ export async function getWeatherInfo(lat: number, long: number): Promise<any> {
 	url.searchParams.set("appid", OPEN_WEATHER_MAP_API_KEY);
 	url.searchParams.set("exclude", "minutely,hourly");
 
-	const response = await fetch(new Request(url, {
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,

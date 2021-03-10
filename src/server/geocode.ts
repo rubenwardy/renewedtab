@@ -1,4 +1,4 @@
-import fetch, { Request } from "node-fetch";
+import fetchCatch, { Request } from "./http";
 import { OWNER_EMAIL, UA_DEFAULT } from "./server";
 
 interface OSMLocation {
@@ -30,7 +30,7 @@ export async function getCoordsFromQuery(query: string) {
 	url.searchParams.set("email", OWNER_EMAIL);
 	url.searchParams.set("limit", "5");
 
-	const response = await fetch(new Request(url, {
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,

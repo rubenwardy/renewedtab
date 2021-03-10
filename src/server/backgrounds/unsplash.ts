@@ -1,4 +1,4 @@
-import fetch, { Request } from "node-fetch";
+import fetchCatch, { Request } from "../http";
 import { BackgroundInfo } from ".";
 import { serverConfig, UA_DEFAULT } from "../server";
 
@@ -20,7 +20,7 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 	url.searchParams.set("order_by", "popular");
 	url.searchParams.set("page", (Math.random() * 10 + 1).toFixed(0));
 
-	const response = await fetch(new Request(url, {
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,

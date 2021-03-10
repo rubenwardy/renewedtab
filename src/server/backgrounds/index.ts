@@ -14,7 +14,7 @@ let cache : BackgroundInfo | null = null;
 if (!IS_DEBUG) {
 	setInterval(() => {
 		cache = null;
-		getBackground();
+		getBackground().catch(console.error);
 	}, 15 * 60 * 1000);
 }
 
@@ -27,4 +27,4 @@ export async function getBackground(): Promise<BackgroundInfo> {
 	return cache;
 }
 
-getBackground();
+getBackground().catch(console.error);
