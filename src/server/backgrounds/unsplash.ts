@@ -26,7 +26,12 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 		}
 	}));
 
-	const image : UnsplashImage = JSON.parse(await response.text());
+	const text = await response.text();
+	if (text.startsWith("Rate Limit")) {
+		throw Error("Unsplash rate limit exceeded");
+	}
+
+	const image : UnsplashImage = JSON.parse(text);
 	return {
 		title: image.location?.title,
 		color: image.color,
