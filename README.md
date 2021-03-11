@@ -8,6 +8,19 @@ License: GPLv3 or later.
 
 ## Usage
 
+### Introduction
+
+Homescreen has 3 components:
+
+* A web **app**, found at `src/app`. This is written using React, and
+  uses some browser extension APIs when available.
+* An API/proxy **server**, found at `src/server`.
+  This provides various APIs, and allows requests to be proxied to get
+  around CORS. You can also use the production server if you're not changing
+  any APIs.
+* A **webext**, found at `src/webext`. This contains the manifest.json,
+  and will wrap the web app when compiled.
+
 ### Client Config
 
 Copy `config_client.example.json` to `config_client.json`.
@@ -47,8 +60,11 @@ You can do this either by copying `config_server.example.json` to
 
 Make sure to run `npm install`.
 
-* Web: `npm start`
-* Firefox: `npm run start:firefox`
+* Web + server: `npm start`
+* Web only: `npm run start:app`
+* Web extension
+	* Firefox: `npm run start:firefox`
+	* Chrome: `npm run start:chrome`
 
 ### Production
 
@@ -57,7 +73,7 @@ variable to `production`.
 
 * Web + server: `npm run build`
 * Web only: `npm run build:app`
-* Firefox: `npm run package:firefox`
+* Web extension: `npm run package:webext`
 
 Also see .gitlab-ci.yml.
 

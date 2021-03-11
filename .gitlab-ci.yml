@@ -23,17 +23,17 @@ test:
   script:
     - npm test
 
-firefox:
+webext:
   stage: deploy
   dependencies: []
   interruptible: true
   script:
-    - npm run package:firefox
-    - mv web-ext-artifacts/homescreen.zip firefox-homescreen.zip
+    - npm run package:webext
+    - mv web-ext-artifacts/homescreen.zip homescreen.zip
   artifacts:
     expire_in: 1 week
     paths:
-      - firefox-homescreen.zip
+      - homescreen.zip
   only:
     - master
 

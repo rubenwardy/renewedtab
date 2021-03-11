@@ -10,7 +10,7 @@ export default function AboutSettings(_props: any) {
 	return (
 		<div className="modal-body">
 			<p>
-				Welcome to
+				Welcome to&nbsp;
 				<a href="https://homescreen.rubenwardy.com">Homescreen</a>.
 				This is a web app and browser extension designed to be used as
 				a "New Tab" page in web browsers.
