@@ -1,15 +1,17 @@
+import { SchemaEntry, Type } from "app/utils/Schema";
+
+
 export interface FieldProps<T> {
 	name: string;
 	value: T;
-	label?: string;
-	hint?: string;
+	schemaEntry: SchemaEntry;
 	onChange?: (value: T) => void;
 }
 
-import { Type } from "app/utils/Schema";
 import { DateField, PermURLField, TextField } from "./Field";
-import { JSONField } from "./JSONField";
-import { LocationField } from "./LocationField";
+import JSONField from "./JSONField";
+import LocationField from "./LocationField";
+import ArrayField from "./ArrayField";
 
 export function makeField(type: Type): React.FC<FieldProps<any>> {
 	if (type == Date) {
@@ -20,6 +22,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return PermURLField;
 	} else if (type == "location") {
 		return LocationField;
+	} else if (type == "array") {
+		return ArrayField;
 	} else {
 		return TextField;
 	}

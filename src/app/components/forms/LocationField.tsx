@@ -28,7 +28,7 @@ export function LocationQuery(props: { query: string, onSelect: (loc: Location) 
 	return (<ul className="links">{items}</ul>);
 }
 
-export function LocationField(props: FieldProps<Location>) {
+export default function LocationField(props: FieldProps<Location>) {
 	const ref = useRef<HTMLInputElement>(null);
 	const [query, setQuery] = useState<string | null>(null);
 	const [value, setValue] = useState<Location>(props.value ?? {});
@@ -68,7 +68,7 @@ export function LocationField(props: FieldProps<Location>) {
 
 	return (
 		<div className="field">
-			<label htmlFor={props.name}>{props.label ?? props.name}</label>
+			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
 			<div className="field-group">
 				<input type="text" ref={ref} name={props.name} defaultValue={value.name} />
 				<a className="btn btn-primary" onClick={handleSearch}>Search</a>
@@ -76,7 +76,7 @@ export function LocationField(props: FieldProps<Location>) {
 			{location_after}
 			<p className="text-muted">
 				Powered by <a href="https://www.openstreetmap.org/">OpenStreetMap</a>.
-				{props.hint}
+				{props.schemaEntry.hint}
 			</p>
 		</div>);
 }

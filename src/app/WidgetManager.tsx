@@ -12,6 +12,7 @@ export interface WidgetFactory<T> extends ReactFactory<T> {
 	schema: Schema;
 	description: string;
 	onCreated?: (widget: WidgetRaw<T>) => void;
+	onLoaded?: (widget: WidgetRaw<T>) => void;
 }
 
 export interface WidgetRaw<T> {
@@ -50,6 +51,11 @@ export class WidgetManager {
 			this.widgets.forEach(widget => {
 				widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
 				widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
+
+				const widget_type = WidgetTypes[widget.type];
+				if (widget_type.onLoaded) {
+					widget_type.onLoaded(widget);
+				}
 			})
 		} else {
 			this.resetToDefault();

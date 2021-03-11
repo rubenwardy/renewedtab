@@ -2,7 +2,7 @@ import Schema from "app/utils/Schema";
 import React from "react";
 import { makeField } from ".";
 
-interface FieldListProps {
+export interface FormProps {
 	values: { [key: string]: any };
 	schema: Schema;
 	onChange?: (key: string, value: any) => void;
@@ -11,12 +11,12 @@ interface FieldListProps {
 /**
  * Automatically creates fields based on the given values and schema.
  */
-export default function Form(props: FieldListProps) {
+export default function Form(props: FormProps) {
 	const inner = Object.entries(props.schema).map(([key, entry]) => {
 		const Field = makeField(entry.type);
 		return (
 			<Field key={key} name={key} value={props.values[key]}
-				label={entry.label} hint={entry.hint}
+				schemaEntry={entry}
 				onChange={(val) => {
 					props.values[key] = val;
 					props.onChange?.call(null, key, val);
@@ -30,5 +30,5 @@ export default function Form(props: FieldListProps) {
 			</p>);
 	}
 
-	return (<>{inner}</>);
+	return (<div className="form">{inner}</div>);
 }

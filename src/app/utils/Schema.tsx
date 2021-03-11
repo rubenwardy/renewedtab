@@ -1,8 +1,9 @@
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "perm_url" | "location";
+export type Type = JSType | "perm_url" | "location" | "array";
 
 export interface SchemaEntry {
 	type: Type;
+	subschema?: Schema;
 	label: string;
 	hint?: string;
 }
@@ -18,7 +19,7 @@ export default interface Schema {
 }
 
 
-function makeEntryFunc(type: Type) {
+function makeTypeFunc(type: Type) {
 	return (label: string, hint?: string) => ({
 		type: type,
 		label: label,
@@ -31,27 +32,40 @@ function makeEntryFunc(type: Type) {
  * Utility functions for defining Schema entries.
  */
 export namespace type {
-	export const boolean = makeEntryFunc("boolean");
-	export const string = makeEntryFunc("string");
-	export const number = makeEntryFunc("number");
-	export const object = makeEntryFunc("object");
+	export const boolean = makeTypeFunc("boolean");
+	export const string = makeTypeFunc("string");
+	export const number = makeTypeFunc("number");
+	export const object = makeTypeFunc("object");
 
 	/**
 	 * Date entry only, no time
 	 */
-	export const date = makeEntryFunc(Date);
+	export const date = makeTypeFunc(Date);
 
-	export const url = makeEntryFunc("string");
+	export const url = makeTypeFunc("string");
 
 	/**
-	 * URL, but will ask the user to grant permission to the host when using as
+	 * URL, but will ask the user to grant host permissions when using as
 	 * an extension and the URL is blocked by CORS.
 	 */
-	export const urlPerm = makeEntryFunc("perm_url");
+	export const urlPerm = makeTypeFunc("perm_url");
 
-	export const color = makeEntryFunc("string");
+	export const color = makeTypeFunc("string");
 
-	export const location = makeEntryFunc("location");
+	export const location = makeTypeFunc("location");
+
+	/**
+	 * Note: the values in the array MUST have an `id` field which is set to a
+	 * large random number. This is used for React keys.
+	 * You shouldn't include `id` in the subschema, as you don't want users to
+	 * edit it.
+	 */
+	export const array = (subschema: Schema, label: string, hint?: string) => ({
+		type: "array",
+		subschema: subschema,
+		label: label,
+		hint: hint,
+	});
 }
 
 

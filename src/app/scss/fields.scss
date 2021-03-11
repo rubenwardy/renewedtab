@@ -56,3 +56,21 @@ textarea.invisible, input.invisible {
 .panel.flush .invisible:focus {
 	outline: none;
 }
+
+.field-array {
+	.row {
+		padding: 0.8em 1em;
+		margin: 1em 0;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 0.25rem;
+
+		h3 {
+			margin-top: 0;
+			font-size: 100%;
+		}
+
+		*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
