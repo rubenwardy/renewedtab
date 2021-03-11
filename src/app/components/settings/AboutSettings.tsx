@@ -1,5 +1,7 @@
+import { usePromise } from "app/hooks";
 import { storage } from "app/Storage";
-import React from "react";
+import { toTypedJSON } from "app/utils/TypedJSON";
+import React, { useEffect, useState } from "react";
 
 export default function AboutSettings(_props: any) {
 	async function handleReset() {
@@ -7,8 +9,15 @@ export default function AboutSettings(_props: any) {
 		location.reload();
 	}
 
+	async function getStoredData(): Promise<string> {
+		return JSON.stringify(toTypedJSON(await storage.getAll()));
+	}
+
+	const [data, error] = usePromise(() => getStoredData(), []);
+
 	return (
 		<div className="modal-body">
+			<h3>About Homescreen</h3>
 			<p>
 				Welcome to&nbsp;
 				<a href="https://homescreen.rubenwardy.com">Homescreen</a>.
@@ -20,6 +29,22 @@ export default function AboutSettings(_props: any) {
 				Licensed under GPLv3 or later,&nbsp;
 				<a href="https://gitlab.com/rubenwardy/homescreen/">source code</a>.
 			</p>
+			<h3>Help and Requests</h3>
+			<p>
+				You can get help or request a feature using the link below.
+			</p>
+			<p>
+				<a className="btn btn-primary"
+						href="https://homescreen.rubenwardy.com/help/">
+					Help and Requests
+				</a>
+			</p>
+			<h3>Stored data</h3>
+			<p>
+				Warning: this may contain personal data, if any was entered into
+				widget settings.
+			</p>
+			<textarea readOnly value={data ?? (error && error.toString()) ?? "Loading..."} />
 			<p>
 				<a className="btn btn-danger" onClick={handleReset}>Reset everything</a>
 			</p>

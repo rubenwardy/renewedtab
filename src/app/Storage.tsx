@@ -5,6 +5,7 @@ import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
  * Interface to support storing and retrieving information
  */
 interface IStorage {
+	getAll(): Promise<{ [key: string]: any }>;
 	get<T>(key: string): Promise<T | null>;
 	set<T>(key: string, value: T): void;
 	remove(key: string): void;
@@ -18,6 +19,11 @@ class WebExtStorage implements IStorage {
 	constructor() {
 		// TODO: change this to `sync` when we have an app ID
 		this.store = browser.storage.local;
+	}
+
+	async getAll(): Promise<{ [key: string]: any }> {
+		console.log(`[Storage] Get All`);
+		return await this.store.get();
 	}
 
 	async get<T>(key: string): Promise<T | null> {
@@ -44,23 +50,36 @@ class WebExtStorage implements IStorage {
 
 
 class LocalStorage implements IStorage {
+	async getAll(): Promise<{ [key: string]: any }> {
+		console.log(`[Storage] Get All`);
+		const ret: { [key: string]: any } = {};
+		for (let i = 0; i < window.localStorage.length; i++) {
+			const key = window.localStorage.key(i);
+			if (key) {
+				ret[key] = await this.get(key);
+			}
+		}
+
+		return ret;
+	}
+
 	async get<T>(key: string): Promise<T> {
 		console.log(`[Storage] Get ${key}`);
-		const json = localStorage.getItem(key);
+		const json = window.localStorage.getItem(key);
 		return json ? fromTypedJSON(JSON.parse(json)) : null;
 	}
 
 	set<T>(key: string, value: T): void {
 		console.log(`[Storage] Set ${key}`);
-		localStorage.setItem(key, JSON.stringify(toTypedJSON(value)));
+		window.localStorage.setItem(key, JSON.stringify(toTypedJSON(value)));
 	}
 
 	remove(key: string): void {
-		localStorage.removeItem(key);
+		window.localStorage.removeItem(key);
 	}
 
 	async clear(): Promise<void> {
-		localStorage.clear();
+		window.localStorage.clear();
 	}
 }
 
