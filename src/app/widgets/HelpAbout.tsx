@@ -31,4 +31,4 @@ HelpAbout.initialProps = {};
 
 HelpAbout.schema = {} as Schema;
 
-HelpAbout.defaultSize = new Vector2(5, 5);
+HelpAbout.defaultSize = new Vector2(5, 6);
