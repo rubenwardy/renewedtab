@@ -7,18 +7,15 @@ const UNSPLASH_ACCESS_KEY =
 
 interface UnsplashImage {
 	color: string;
-	description: string;
+	location?: { title: string };
 	links: { html: string };
 	user: { name: string, links: { html: string } };
 	urls: { raw: string };
 }
 
 export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
-	const url = new URL("https://api.unsplash.com/topics/wallpapers/photos");
-	url.searchParams.set("orientation", "landscape");
-	url.searchParams.set("content_filter", "high");
-	url.searchParams.set("order_by", "popular");
-	url.searchParams.set("page", (Math.random() * 10 + 1).toFixed(0));
+	const url = new URL("https://api.unsplash.com/photos/random");
+	url.searchParams.set("collections", "42576559");
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
@@ -29,10 +26,9 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 		}
 	}));
 
-	const json : UnsplashImage[] = JSON.parse(await response.text());
-	const image = json[Math.floor(Math.random() * json.length)];
+	const image : UnsplashImage = JSON.parse(await response.text());
 	return {
-		title: image.description,
+		title: image.location?.title,
 		color: image.color,
 		url: image.urls.raw + "&w=1920&h=1080",
 		author: image.user.name,

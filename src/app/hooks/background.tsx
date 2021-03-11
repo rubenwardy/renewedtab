@@ -1,10 +1,7 @@
 import { storage } from "app/Storage";
 import { useState } from "react";
-import { BackgroundInfo } from "server/backgrounds";
-import { useStorage } from ".";
 import Schema, { type } from "../utils/Schema";
-import { fromTypedJSON, toTypedJSON } from "../utils/TypedJSON";
-import { runPromise, usePromise } from "./promises";
+import { runPromise } from "./promises";
 
 
 export enum BackgroundMode {
@@ -52,7 +49,7 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 export function getDescriptionForMode(mode: BackgroundMode): string {
 	switch (mode) {
 	case BackgroundMode.Auto:
-		return "Random backgrounds";
+		return "Random curated backgrounds";
 	case BackgroundMode.Color:
 		return "A single color";
 	case BackgroundMode.ImageUrl:
