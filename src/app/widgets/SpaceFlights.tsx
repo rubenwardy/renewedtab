@@ -1,14 +1,14 @@
 import React from 'react';
-import { useJSON } from 'app/hooks';
+import { useAPI, useJSON } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema from 'app/utils/Schema';
 
 interface SpaceLaunch {
 	id: number;
 	name: string;
-	slug: string;
-	provider: { name: string };
-	vehicle: { name: string };
+	link: string;
+	provider: string;
+	vehicle: string;
 	win_open: string | null;
 	win_close: string | null;
 	date_str: string;
@@ -53,7 +53,7 @@ function getDate(launch: SpaceLaunch): string {
 
 
 export default function SpaceFlights(_props: any) {
-	const [data, error] = useJSON<{ response: {result: SpaceLaunch[] }}>("https://fdo.rocketlaunch.live/json/launches/next/5", []);
+	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
 
 	if (!data) {
 		return (
@@ -62,11 +62,11 @@ export default function SpaceFlights(_props: any) {
 			</div>);
 	}
 
-	const rows = data.response.result.map(launch => (
+	const rows = data.map(launch => (
 		<li key={launch.id}>
-			<a href={`https://rocketlaunch.live/launch/${launch.slug}`}>
+			<a href={launch.link}>
 				{launch.name}<br />
-				<span className="text-muted">{launch.provider.name}</span>
+				<span className="text-muted">{launch.provider}</span>
 				<span className="float-right text-muted">{getDate(launch)}</span>
 			</a>
 		</li>));

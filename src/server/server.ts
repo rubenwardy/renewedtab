@@ -1,5 +1,6 @@
 import express from "express";
 import fs from "fs";
+import fetchCatch, { Request } from "./http";
 
 
 // Settings
@@ -86,6 +87,28 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
 	try {
 		res.json(await getBackground());
+	} catch (ex) {
+		res.status(400).send(ex.message);
+	}
+});
+
+
+app.get("/api/space-flights/", async (_req: express.Request, res: express.Response) => {
+	try {
+		const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {}));
+		const result = (await ret.json()).result;
+		const launches = result.map((launch: any) => ({
+			id: launch.id,
+			name: launch.name,
+			provider: launch.provider?.name,
+			vehicle: launch.vehicle?.name,
+			win_open: launch.win_open,
+			win_close: launch.win_close,
+			date_str: launch.date_str,
+			link: `https://rocketlaunch.live/launch/${launch.slug}`,
+		}));
+
+		res.json(launches);
 	} catch (ex) {
 		res.status(400).send(ex.message);
 	}

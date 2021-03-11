@@ -72,7 +72,7 @@ export async function getWeatherInfo(lat: number, long: number): Promise<any> {
 		}
 	}));
 
-	const json = JSON.parse(await response.text());
+	const json = await response.json();
 	if (!response.ok) {
 		if (json.message && json.message.includes("requests limitation")) {
 			throw new Error("Too many requests to Weather API service.");

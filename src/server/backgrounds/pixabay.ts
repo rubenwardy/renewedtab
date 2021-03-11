@@ -31,7 +31,7 @@ export default async function getImageFromPixabay(): Promise<BackgroundInfo> {
 		}
 	}));
 
-	const json : { hits: PixabayImage[] } = JSON.parse(await response.text());
+	const json : { hits: PixabayImage[] } = await response.json();
 	const image : PixabayImage = json.hits[Math.floor(Math.random() * json.hits.length)];
 	return {
 		url: image.largeImageURL,

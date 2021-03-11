@@ -42,7 +42,7 @@ export async function getCoordsFromQuery(query: string) {
 		throw new Error(`Error getting location, ${response.statusText}.`);
 	}
 
-	const json: OSMLocation[] = JSON.parse(await response.text());
+	const json: OSMLocation[] = await response.json();
 
 	const retval : Location[] = json.map(loc => ({
 		name: loc.display_name,
