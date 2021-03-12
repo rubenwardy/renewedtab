@@ -14,6 +14,7 @@ import JSONField from "./JSONField";
 import LocationField from "./LocationField";
 import ArrayField from "./ArrayField";
 import SelectField from "./SelectField";
+import CheckboxField from "./CheckboxField";
 
 function isEnumType(x: any) {
 	const keys = new Set(Object.getOwnPropertyNames(x));
@@ -29,6 +30,8 @@ function isEnumType(x: any) {
 export function makeField(type: Type): React.FC<FieldProps<any>> {
 	if (type == Date) {
 		return DateField;
+	} else if (type == "boolean") {
+		return CheckboxField;
 	} else if (type == "object") {
 		return JSONField;
 	} else if (typeof(type) == "object" && isEnumType(type)) {
