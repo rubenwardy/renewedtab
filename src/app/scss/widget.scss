@@ -187,3 +187,20 @@ main > .widget {
 .col-span-3 {
 	grid-column: span 3;
 }
+
+.widget-image {
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 0.25rem;
+	}
+
+	a {
+		display: inline-block;
+
+		&:hover {
+			filter: brightness(1.1);
+		}
+	}
+}
