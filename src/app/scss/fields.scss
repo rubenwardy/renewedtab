@@ -25,7 +25,7 @@ label {
 	margin: 0.3em 0;
 }
 
-input[type="text"], input[type="date"], textarea {
+input:not(.invisible), textarea:not(.invisible) {
 	background: rgba(255, 255, 255, 0.2);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 0.25rem;
@@ -34,7 +34,9 @@ input[type="text"], input[type="date"], textarea {
 	display: block;
 	width: 100%;
 	box-sizing: border-box;
+}
 
+input, textarea {
 	&::placeholder {
 		color: rgba(255, 255, 255, 0.6);
 	}
