@@ -4,7 +4,12 @@ import { Vector2 } from 'app/utils/Vector2';
 import Schema, { Location, type } from 'app/utils/Schema';
 
 
-interface WeatherForecastProps {
+enum TemperatureUnit {
+	Celsius,
+	Fahrenheit // :'(
+}
+
+interface WeatherForecast {
 	day: string;
 	icon?: string,
 	minTemp: number;
@@ -13,6 +18,9 @@ interface WeatherForecastProps {
 	sunset: string;
 }
 
+interface WeatherForecastProps extends WeatherForecast {
+	renderTemp: (celsius: number) => string;
+}
 
 function makeIconElement(icon?: string) {
 	return icon
@@ -27,7 +35,7 @@ function WeatherForecast(props: WeatherForecastProps) {
 			<span className="label">{props.day}</span>
 			<span>
 				{makeIconElement(props.icon)}
-				{props.minTemp.toFixed(0)}&deg;C {props.maxTemp.toFixed(0)}&deg;C
+				{props.renderTemp(props.minTemp)} {props.renderTemp(props.maxTemp)}
 			</span>
 		</div>);
 }
@@ -35,13 +43,14 @@ function WeatherForecast(props: WeatherForecastProps) {
 
 interface WeatherInfo {
 	current: { icon?: string, temp: number };
-	forecast: WeatherForecastProps[];
+	forecast: WeatherForecast[];
 }
 
 
 interface WeatherProps {
 	url: string;
 	location: Location;
+	unit: TemperatureUnit;
 }
 
 export default function Weather(props: WeatherProps) {
@@ -50,6 +59,16 @@ export default function Weather(props: WeatherProps) {
 			<div className="panel text-muted">
 				Location needed. Click edit to add it.
 			</div>);
+	}
+
+	const unit = props.unit ?? TemperatureUnit.Celsius;
+	function renderTemp(celsuis: number): string {
+		if (unit == TemperatureUnit.Celsius) {
+			return `${celsuis.toFixed(0)}°C`;
+		} else {
+			const fh = 1.8 * celsuis + 32;
+			return `${fh.toFixed(0)}°F`;
+		}
 	}
 
 
@@ -65,7 +84,7 @@ export default function Weather(props: WeatherProps) {
 	}
 
 	const forecast = info.forecast.slice(1, 4).map(forecast =>
-			(<WeatherForecast key={forecast.day} {...forecast} />));
+			(<WeatherForecast key={forecast.day} renderTemp={renderTemp} {...forecast} />));
 
 	return (
 		<div className="panel weather">
@@ -74,7 +93,7 @@ export default function Weather(props: WeatherProps) {
 			</h2>
 			<div className="col-span-3 large">
 				{makeIconElement(info.current.icon)}
-				{info.current.temp.toFixed(0)} &deg;C
+				{renderTemp(info.current.temp)}
 			</div>
 			{forecast}
 		</div>);
@@ -92,12 +111,14 @@ Weather.initialProps = {
 		latitude: 51.454514,
 		longitude: -2.587910,
 	} as Location,
+	unit: TemperatureUnit.Celsius,
 };
 
 
 Weather.schema = {
 	url: type.url("Link URL"),
 	location: type.location("Location"),
+	unit: type.selectEnum(TemperatureUnit, "Temperature Unit"),
 } as Schema;
 
 Weather.defaultSize = new Vector2(5, 3);

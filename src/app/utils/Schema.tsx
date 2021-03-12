@@ -57,6 +57,15 @@ export namespace type {
 	export const image_upload = makeTypeFunc("image_upload");
 
 	/**
+	 * enumType: The TypeScript enum object
+	 */
+	export const selectEnum = (enumType: any, label: string, hint?: string) => ({
+		type: enumType,
+		label: label,
+		hint: hint,
+	});
+
+	/**
 	 * Note: the values in the array MUST have an `id` field which is set to a
 	 * large random number. This is used for React keys.
 	 * You shouldn't include `id` in the subschema, as you don't want users to

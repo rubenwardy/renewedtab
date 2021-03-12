@@ -17,7 +17,7 @@ export default function Form(props: FormProps) {
 		const Field = makeField(entry.type);
 		return (
 			<Field key={key} name={key} value={props.values[key]}
-				schemaEntry={entry}
+				schemaEntry={entry} type={entry.type}
 				onChange={(val) => {
 					props.values[key] = val;
 					props.onChange?.call(null, key, val);
