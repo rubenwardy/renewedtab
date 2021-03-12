@@ -35,7 +35,7 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 	return {
 		title: image.location?.title,
 		color: image.color,
-		url: image.urls.raw + "&w=1920&h=1080",
+		url: image.urls.raw + "&w=2048&h=1117&crop=entropy&fit=crop",
 		author: image.user.name,
 		site: "Unsplash",
 		link: image.links.html + "?utm_source=homescreen&utm_medium=referral",
