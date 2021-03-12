@@ -1,8 +1,8 @@
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetRaw } from 'app/WidgetManager';
-import React, { CSSProperties } from 'react';
-import { useAutoTextArea, useStorage } from "../hooks";
+import React from 'react';
+import { useStorage } from "../hooks";
 
 interface NotesProps {
 	storageKey: string;
@@ -14,7 +14,6 @@ export default function Notes(props: NotesProps) {
 	}
 
 	const [ notes, setNotes ] = useStorage(props.storageKey, "", [props.storageKey]);
-	const ref = useAutoTextArea(undefined, [notes]);
 
 	if (notes == null) {
 		return (<div className="panel">Loading notes...</div>);
@@ -25,13 +24,11 @@ export default function Notes(props: NotesProps) {
 		setNotes(element.value);
 	}
 
-	const css: CSSProperties = {};
-	css.height = "100%";
 	return (
 		<div className="panel">
-			<textarea ref={ref} className="invisible" onChange={handleChange}
-					placeholder="Enter notes here" style={css}
-					defaultValue={notes || ""} />
+			<textarea className="invisible" onChange={handleChange}
+					placeholder="Enter notes here"
+					value={notes || ""} />
 		</div>);
 }
 
