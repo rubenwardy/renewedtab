@@ -1,7 +1,7 @@
 import { usePromise } from "app/hooks";
 import { storage } from "app/Storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default function AboutSettings(_props: any) {
 	async function handleReset() {
@@ -33,7 +33,7 @@ export default function AboutSettings(_props: any) {
 				Thanks to <a href="https://unsplash.com">Unsplash</a>,&nbsp;
 				<a href="http://openstreetmap.org/">OpenStreetMap</a>,&nbsp;
 				<a href="https://openweathermap.org/">OpenWeatherMap</a>, and&nbsp;
-				<a href="https://www.rocketlaunch.live/">rocketlaunch.live</a>
+				<a href="https://www.rocketlaunch.live/">RocketLaunch.Live</a>
 				&nbsp;for their APIs.
 			</p>
 			<h3>Help and Requests</h3>
