@@ -74,3 +74,29 @@ textarea.invisible, input.invisible {
 		}
 	}
 }
+
+.input-auto {
+	display: inline-block;
+	position: relative;
+	min-width: 50px;
+
+	.backing {
+		display: inline-block;
+		visibility: hidden;
+		text-shadow: transparent;
+	}
+
+	input {
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: -1px;
+	}
+
+	input[value=""], input:focus {
+		border-bottom: 2px solid rgba(202, 202, 202, 1);
+		padding-bottom: 3px;
+		margin-bottom: -3px;
+	}
+}

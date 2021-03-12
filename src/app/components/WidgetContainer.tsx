@@ -35,7 +35,7 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 		};
 
 		return (
-			<div key={widget.id} className="widget">
+			<div key={widget.id} className={`widget widget-${widget.type.toLowerCase()}`}>
 				<ErrorBoundary>
 					<Widget {...props} />
 				</ErrorBoundary>

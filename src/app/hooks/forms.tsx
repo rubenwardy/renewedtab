@@ -14,8 +14,8 @@ export function useAutoTextArea(maxHeight?: number, dependents?: any[]): React.R
 
 	useLayoutEffect(() => {
 		if (!ref.current) return;
-		ref.current.style.height = '';
-		ref.current.style.height = Math.min(ref.current.scrollHeight + 2, maxHeight ?? Infinity) + 'px';
+		ref.current.style.height = "";
+		ref.current.style.height = Math.min(ref.current.scrollHeight + 2, maxHeight ?? Infinity) + "px";
 	}, [ ref.current, ...dependents || [] ]);
 
 	return ref;

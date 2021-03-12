@@ -1,5 +1,5 @@
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "perm_url" | "location" | "array";
+export type Type = JSType | "perm_url" | "location" | "image_upload" | "array";
 
 export interface SchemaEntry {
 	type: Type;
@@ -53,6 +53,8 @@ export namespace type {
 	export const color = makeTypeFunc("string");
 
 	export const location = makeTypeFunc("location");
+
+	export const image_upload = makeTypeFunc("image_upload");
 
 	/**
 	 * Note: the values in the array MUST have an `id` field which is set to a

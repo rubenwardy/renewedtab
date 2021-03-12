@@ -7,7 +7,7 @@ interface AgeProps {
 }
 
 function calculateYearsSince(date: Date): number {
-	const delta = (new Date().getTime() - date.getTime());
+	const delta = new Date().getTime() - date.getTime();
 	return delta / 365.25 / 1000 / (60 * 60 * 24);
 }
 
