@@ -29,6 +29,13 @@ export default function AboutSettings(_props: any) {
 				Licensed under GPLv3 or later,&nbsp;
 				<a href="https://gitlab.com/rubenwardy/homescreen/">source code</a>.
 			</p>
+			<p>
+				Thanks to <a href="https://unsplash.com">Unsplash</a>,&nbsp;
+				<a href="http://openstreetmap.org/">OpenStreetMap</a>,&nbsp;
+				<a href="https://openweathermap.org/">OpenWeatherMap</a>, and&nbsp;
+				<a href="https://www.rocketlaunch.live/">rocketlaunch.live</a>
+				&nbsp;for their APIs.
+			</p>
 			<h3>Help and Requests</h3>
 			<p>
 				You can get help or request a feature using the link below.
