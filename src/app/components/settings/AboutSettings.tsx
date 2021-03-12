@@ -52,6 +52,10 @@ export default function AboutSettings(_props: any) {
 				You can get help or request a feature using the link below.
 			</p>
 			<p>
+				<a className="btn btn-primary"
+						href="https://homescreen.rubenwardy.com/help/">
+					Help and Requests
+				</a>
 			</p>
 
 			<h3 className="mt-4">Stored data</h3>
