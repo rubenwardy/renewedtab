@@ -95,8 +95,17 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response)
 
 app.get("/api/space-flights/", async (_req: express.Request, res: express.Response) => {
 	try {
-		const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {}));
-		const result = (await ret.json()).result;
+		const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {
+			method: "GET",
+			size: 0.1 * 1000 * 1000,
+			timeout: 10000,
+			headers: {
+				"User-Agent": UA_DEFAULT,
+				"Accept": "application/json",
+			},
+		}));
+
+		const result = (await ret.json()).response.result;
 		const launches = result.map((launch: any) => ({
 			id: launch.id,
 			name: launch.name,
