@@ -1,18 +1,20 @@
 $thumb: rgba(255, 255, 255, 0.3);
 $track: rgba(255, 255, 255, 0.05);
 
-* {
-	scrollbar-color: $thumb $track;
-}
+body {
+	* {
+		scrollbar-color: $thumb $track;
+	}
 
-*::-webkit-scrollbar {
-	width: 12px;
-}
+	*::-webkit-scrollbar {
+		width: 12px;
+	}
 
-*::-webkit-scrollbar-track {
-	background-color: $track;
-}
+	*::-webkit-scrollbar-track {
+		background-color: $track;
+	}
 
-*::-webkit-scrollbar-thumb {
-	background-color: $thumb;
+	*::-webkit-scrollbar-thumb {
+		background-color: $thumb;
+	}
 }
