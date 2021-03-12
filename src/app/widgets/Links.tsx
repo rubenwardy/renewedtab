@@ -46,8 +46,13 @@ Links.initialProps = {
 		},
 		{
 			id: uuid(),
-			title: "Source code",
-			url: "https://gitlab.com/rubenwardy/homescreen/"
+			title: "Website",
+			url: "https://homescreen.rubenwardy.com/"
+		},
+		{
+			id: uuid(),
+			title: "Donate",
+			url: "https://homescreen.rubenwardy.com/donate/"
 		},
 		{
 			id: uuid(),

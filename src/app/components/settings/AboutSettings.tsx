@@ -25,9 +25,9 @@ export default function AboutSettings(_props: any) {
 				a "New Tab" page in web browsers.
 			</p>
 			<p>
-				Created by <a href="https://rubenwardy.com">rubenwardy</a>.
-				Licensed under GPLv3 or later,&nbsp;
-				<a href="https://gitlab.com/rubenwardy/homescreen/">source code</a>.
+				Created by <a href="https://rubenwardy.com">rubenwardy</a>.&nbsp;
+				<a href="https://gitlab.com/rubenwardy/homescreen/">Open source</a>,
+				licensed under GPLv3+.
 			</p>
 			<p>
 				Thanks to <a href="https://unsplash.com">Unsplash</a>,&nbsp;
@@ -36,17 +36,25 @@ export default function AboutSettings(_props: any) {
 				<a href="https://www.rocketlaunch.live/">RocketLaunch.Live</a>
 				&nbsp;for their APIs.
 			</p>
-			<h3>Help and Requests</h3>
+			<p>
+				Consider donating to
+				cover costs and help support development.
+			</p>
+			<p>
+				<a className="btn btn-primary"
+						href="https://homescreen.rubenwardy.com/donate/">
+					Donate
+				</a>
+			</p>
+
+			<h3 className="mt-4">Help and Requests</h3>
 			<p>
 				You can get help or request a feature using the link below.
 			</p>
 			<p>
-				<a className="btn btn-primary"
-						href="https://homescreen.rubenwardy.com/help/">
-					Help and Requests
-				</a>
 			</p>
-			<h3>Stored data</h3>
+
+			<h3 className="mt-4">Stored data</h3>
 			<p>
 				Warning: this may contain personal data, if any was entered into
 				widget settings.
