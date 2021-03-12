@@ -1,8 +1,13 @@
 .widget {
 	position: relative;
 
-	&:hover .widget-strip {
-		opacity: 0.5;
+	&:hover {
+		border: 2px dashed rgba(15, 15, 15, 0.3);
+		margin: -2px;
+
+		.widget-strip {
+			opacity: 0.5;
+		}
 	}
 
 	.widget-strip {
