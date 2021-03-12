@@ -83,6 +83,8 @@ export default function Weather(props: WeatherProps) {
 
 Weather.description = "Current and forecasted weather";
 
+Weather.editHint = "Powered by OpenWeatherMap.org";
+
 Weather.initialProps = {
 	url: "https://www.bbc.co.uk/weather/2654675",
 	location: {

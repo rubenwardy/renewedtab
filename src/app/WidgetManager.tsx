@@ -1,6 +1,5 @@
 import { storage } from "./Storage";
 import Schema from "./utils/Schema";
-import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
 
@@ -9,9 +8,31 @@ type ReactFactory<T> = ((props: T) => (JSX.Element | null)) ;
 export interface WidgetFactory<T> extends ReactFactory<T> {
 	initialProps: T;
 	defaultSize: Vector2;
+
+	/**
+	 * Schema for the props, used to generate WidgetEditor forms.
+	 */
 	schema: Schema;
+
+	/**
+	 * Description shown in Create Widget dialog.
+	 */
 	description: string;
+
+	/**
+	 * Hint to be shown in the WidgetEditor.
+	 */
+	editHint?: string;
+
+	/**
+	 * Called when the widget is created, either by the user
+	 * or from defaults.
+	 */
 	onCreated?: (widget: WidgetRaw<T>) => void;
+
+	/**
+	 * Called when the widget is loaded from save.
+	 */
 	onLoaded?: (widget: WidgetRaw<T>) => void;
 }
 

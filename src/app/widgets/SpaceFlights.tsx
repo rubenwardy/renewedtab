@@ -83,6 +83,8 @@ export default function SpaceFlights(_props: any) {
 
 SpaceFlights.description = "A list of upcoming space launches, powered by RocketLaunch.Live";
 
+SpaceFlights.editHint = "Powered by RocketLaunch.Live";
+
 SpaceFlights.initialProps = {};
 
 SpaceFlights.schema = {} as Schema;

@@ -13,7 +13,10 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	return (
 		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
 			<div className="modal-body">
+				{props.child.editHint &&
+					<p className="text-muted">{props.child.editHint}</p>}
 				<Form
+						showEmptyView={!props.child.editHint}
 						values={props.props}
 						schema={props.child.schema}
 						onChange={props.save} />

@@ -36,6 +36,8 @@ export default function Greeting() {
 
 Greeting.description = "Greets you";
 
+Greeting.editHint = "You can change the name by clicking it on the widget";
+
 Greeting.initialProps = {};
 
 Greeting.schema = {} as Schema;

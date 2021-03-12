@@ -5,6 +5,7 @@ import { makeField } from ".";
 export interface FormProps {
 	values: { [key: string]: any };
 	schema: Schema;
+	showEmptyView?: boolean;
 	onChange?: (key: string, value: any) => void;
 }
 
@@ -23,7 +24,7 @@ export default function Form(props: FormProps) {
 				}} />);
 	});
 
-	if (inner.length == 0) {
+	if (inner.length == 0 && props.showEmptyView !== false) {
 		inner.push(
 			<p className="text-muted" key="none">
 				Nothing to edit.
