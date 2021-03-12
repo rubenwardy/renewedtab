@@ -35,7 +35,7 @@ export default function Links(props: LinksProps)  {
 }
 
 
-Links.description = "A list of links, with sections";
+Links.description = "A list of links, with support for headings";
 
 Links.initialProps = {
 	links: [
