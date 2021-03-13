@@ -2,20 +2,35 @@ import React, { useState } from "react";
 import Form, { FormProps } from "./Form";
 import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
-import Schema, { SchemaEntry } from "app/utils/Schema";
+import Schema from "app/utils/Schema";
 
 interface RowProps extends FormProps {
 	idx: number;
+	isLast: boolean;
 	onDelete: () => void;
+	onMove: (up: boolean) => void;
 }
 
 function ArrayRow(props: RowProps) {
 	return (
 		<div className="row">
-			<a className="float-right btn btn-sm btn-danger"
-					onClick={props.onDelete}>
-				<i className="fas fa-trash" />
-			</a>
+			<span className="float-right">
+				{props.idx > 0 &&
+					<a className="btn btn-sm"
+							onClick={() => props.onMove(true)}>
+						<i className="fas fa-caret-up" />
+					</a>}
+				{!props.isLast &&
+					<a className="btn btn-sm"
+							onClick={() => props.onMove(false)}>
+						<i className="fas fa-caret-down" />
+					</a>}
+				<a className="btn btn-sm btn-danger"
+						onClick={props.onDelete}>
+					<i className="fas fa-trash" />
+				</a>
+			</span>
+
 			<h3>{ props.idx + 1 }</h3>
 			<Form {...props} />
 		</div>);
@@ -62,11 +77,30 @@ export default function ArrayField(props: FieldProps<any[]>) {
 		setState({});
 	}
 
+	function handleMove(idx: number, up: boolean) {
+		const tmp = props.value[idx];
+		if (up) {
+			if (idx > 0) {
+				props.value[idx] = props.value[idx - 1];
+				props.value[idx - 1] = tmp;
+			}
+		} else {
+			if (idx < props.value.length - 1) {
+				props.value[idx] = props.value[idx + 1];
+				props.value[idx + 1] = tmp;
+			}
+		}
+		handleChange();
+		setState({});
+	}
+
 	const rows = props.value.map((row, idx) => (
 		<ArrayRow key={row.id} idx={idx} values={row}
 			schema={props.schemaEntry.subschema!}
+			isLast={idx >= props.value.length - 1}
 			onChange={() => handleChange()}
-			onDelete={() => handleDelete(idx)} />));
+			onDelete={() => handleDelete(idx)}
+			onMove={(up) => handleMove(idx, up)} />));
 
 	return (
 		<div className="field field-array">
