@@ -28,7 +28,7 @@ module.exports = {
 			chunkFilename: '[id].css',
 		}),
 		new HtmlWebpackPlugin({
-			title: "Homescreen",
+			title: "New Tab",
 			template: "src/app/templates/index.ejs",
 			hash: true
 		}),
