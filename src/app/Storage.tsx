@@ -50,6 +50,19 @@ class WebExtStorage implements IStorage {
 
 
 class LocalStorage implements IStorage {
+	constructor() {
+		this.requestPersistantStorage();
+	}
+
+	requestPersistantStorage() {
+		if (navigator.storage && navigator.storage.persist) {
+			navigator.storage.persist()
+				.then((isPersisted) =>
+					console.log(`Persisted storage granted: ${isPersisted}`))
+				.catch(console.error);
+		}
+	}
+
 	async getAll(): Promise<{ [key: string]: any }> {
 		console.log(`[Storage] Get All`);
 		const ret: { [key: string]: any } = {};
