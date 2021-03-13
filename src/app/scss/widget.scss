@@ -216,3 +216,24 @@ main > .widget {
 	height: 100%;
 	box-sizing: border-box;
 }
+
+.widget-webcomic .panel {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	gap: 10px;
+	text-align: center;
+
+	& > a {
+		display: block;
+		flex: 1;
+		overflow: hidden;
+
+		img {
+			display: block;
+			object-fit: contain;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}

@@ -11,10 +11,11 @@ export { default as Notes } from "./Notes";
 export { default as Feed } from "./Feed";
 export { default as Search } from "./Search";
 export { default as SpaceFlights } from "./SpaceFlights";
+export { default as WebComic } from "./WebComic";
 export { default as Weather } from "./Weather";
 
 import { WidgetFactory } from "../WidgetManager";
-import { Age, Button, Clock, Greeting, HelpAbout, IFrame, Image, Invisible, Links, Notes, Feed, Search, SpaceFlights, Weather } from ".";
+import { Age, Button, Clock, Greeting, HelpAbout, IFrame, Image, Invisible, Links, Notes, Feed, Search, SpaceFlights, WebComic, Weather } from ".";
 
 export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Age: Age,
@@ -30,5 +31,6 @@ export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Feed: Feed,
 	Search: Search,
 	SpaceFlights: SpaceFlights,
-	Weather: Weather
+	WebComic: WebComic,
+	Weather: Weather,
 };
