@@ -20,9 +20,8 @@ export default function AboutSettings(_props: any) {
 			<h3>About Homescreen</h3>
 			<p>
 				Welcome to&nbsp;
-				<a href="https://homescreen.rubenwardy.com">Homescreen</a>.
-				This is a web app and browser extension designed to be used as
-				a "New Tab" page in web browsers.
+				<a href="https://homescreen.rubenwardy.com">Homescreen</a>:
+				A customisable New Tab page for your browser.
 			</p>
 			<p>
 				Created by <a href="https://rubenwardy.com">rubenwardy</a>.&nbsp;
@@ -31,10 +30,11 @@ export default function AboutSettings(_props: any) {
 			</p>
 			<p>
 				Thanks to <a href="https://unsplash.com">Unsplash</a>,&nbsp;
-				<a href="http://openstreetmap.org/">OpenStreetMap</a>,&nbsp;
+				<a href="https://openstreetmap.org/">OpenStreetMap</a>,&nbsp;
 				<a href="https://openweathermap.org/">OpenWeatherMap</a>, and&nbsp;
 				<a href="https://www.rocketlaunch.live/">RocketLaunch.Live</a>
-				&nbsp;for their APIs.
+				&nbsp;for their APIs. Thanks to Font-Awesome for icons,
+				React for UI, and WebPack for builds.
 			</p>
 			<p>
 				Consider donating to

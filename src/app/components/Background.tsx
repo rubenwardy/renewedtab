@@ -75,10 +75,6 @@ export default function Background(props: BackgroundProps) {
 			style.backgroundPosition = background.values.position;
 			break;
 		}
-
-		if (props.setWidgetsHidden) {
-			props.setWidgetsHidden(false);
-		}
 	}
 
 	return (<div id="background" style={style} />);
