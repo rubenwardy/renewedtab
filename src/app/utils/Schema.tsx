@@ -1,5 +1,6 @@
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "perm_url" | "location" | "image_upload" | "array";
+export type Type = JSType | "perm_url" | "location" | "image_upload" | "array"
+	| "json" | "url" | "color";
 
 export interface SchemaEntry {
 	type: Type;
@@ -35,14 +36,14 @@ export namespace type {
 	export const boolean = makeTypeFunc("boolean");
 	export const string = makeTypeFunc("string");
 	export const number = makeTypeFunc("number");
-	export const object = makeTypeFunc("object");
+	export const json = makeTypeFunc("json");
 
 	/**
 	 * Date entry only, no time
 	 */
 	export const date = makeTypeFunc(Date);
 
-	export const url = makeTypeFunc("string");
+	export const url = makeTypeFunc("url");
 
 	/**
 	 * URL, but will ask the user to grant host permissions when using as
@@ -50,7 +51,7 @@ export namespace type {
 	 */
 	export const urlPerm = makeTypeFunc("perm_url");
 
-	export const color = makeTypeFunc("string");
+	export const color = makeTypeFunc("color");
 
 	export const location = makeTypeFunc("location");
 

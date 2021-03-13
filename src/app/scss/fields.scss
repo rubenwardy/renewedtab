@@ -7,15 +7,29 @@ label:not(.inline) {
 	margin: 0.3em 0;
 }
 
-input:not(.invisible):not([type="radio"]):not([type="checkbox"]), textarea:not(.invisible) {
+input:not(.invisible):not([type="radio"]):not([type="checkbox"]):not([type="color"]), textarea:not(.invisible) {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+input:not(.invisible), textarea:not(.invisible) {
 	background: rgba(255, 255, 255, 0.2);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 0.25rem;
 	color: white;
 	padding: 0.3rem 0.6rem;
-	display: block;
-	width: 100%;
-	box-sizing: border-box;
+
+	&:invalid {
+		background: rgba(255, 180, 180, 0.2);
+		border: 2px solid rgba(255, 32, 32, 0.75);
+	}
+}
+
+input[type="color"] {
+	padding: 0.2rem;
+	width: 50px;
+	height: 50px;
 }
 
 input, textarea {

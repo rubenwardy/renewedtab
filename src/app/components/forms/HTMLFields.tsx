@@ -40,7 +40,7 @@ export function PermURLField(props: FieldProps<string>) {
 	return (
 		<div className="field">
 			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-			<input type="text" name={props.name} defaultValue={props.value}
+			<input type="url" name={props.name} defaultValue={props.value}
 					onChange={handleChange} />
 
 			{props.schemaEntry.hint &&
@@ -66,6 +66,43 @@ export function DateField(props: FieldProps<Date>) {
 			<input type="date" name={props.name}
 					defaultValue={props.value.toISOString().slice(0, 10)}
 					onChange={handleChange} />
+			{props.schemaEntry.hint &&
+				<p className="text-muted">{props.schemaEntry.hint}</p>}
+		</div>);
+}
+
+export function URLField(props: FieldProps<string>) {
+	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (props.onChange) {
+			props.onChange(e.target.value);
+		}
+	}
+
+	return (
+		<div className="field">
+			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
+			<input type="url" name={props.name} defaultValue={props.value}
+					onChange={handleChange} />
+
+			{props.schemaEntry.hint &&
+				<p className="text-muted">{props.schemaEntry.hint}</p>}
+		</div>);
+}
+
+
+export function ColorField(props: FieldProps<string>) {
+	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (props.onChange) {
+			props.onChange(e.target.value);
+		}
+	}
+
+	return (
+		<div className="field">
+			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
+			<input type="color" name={props.name} defaultValue={props.value}
+					onChange={handleChange} />
+
 			{props.schemaEntry.hint &&
 				<p className="text-muted">{props.schemaEntry.hint}</p>}
 		</div>);
