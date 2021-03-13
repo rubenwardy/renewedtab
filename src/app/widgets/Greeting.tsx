@@ -25,7 +25,7 @@ export default function Greeting() {
 	}
 
 	return (
-		<div className="text-shadow-hard large text-center">
+		<div className="text-shadow-hard large middle-center">
 			{getGreeting()},&nbsp;
 			{name !== undefined &&
 				<AutoWidthInput onChange={handleChange} value={name ?? ""}

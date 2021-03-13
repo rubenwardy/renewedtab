@@ -33,3 +33,17 @@
 .text-center {
 	text-align: center;
 }
+
+.vertical-middle {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	height: 100%;
+}
+
+.middle-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}

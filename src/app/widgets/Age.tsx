@@ -25,8 +25,8 @@ export default function Age(props: AgeProps) {
 	}, [props.birthDate]);
 
 	return (
-		<div className="panel">
-			You are <strong>{age.toFixed(7)}</strong>
+		<div className="panel vertical-middle">
+			You are&nbsp;<strong>{age.toFixed(7)}</strong>
 		</div>);
 }
 
