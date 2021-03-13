@@ -13,10 +13,11 @@ export default function App(_props: any) {
 	const [background, setBackground] = useBackground([]);
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
+	const [widgetsHidden, setWidgetsHidden] = useState(false);
 
 	return (
-		<>
-			<Background background={background} />
+		<div className={widgetsHidden ? "hidden" : ""}>
+			<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 			<CreateWidgetDialog isOpen={createIsOpen}
 					manager={widgetManager}
 					onClose={() => setCreateOpen(false)} />
@@ -35,5 +36,5 @@ export default function App(_props: any) {
 					<i className="large fas fa-cog mr-1" />
 				</a>
 			</footer>
-		</>);
+		</div>);
 }

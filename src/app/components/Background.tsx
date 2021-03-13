@@ -2,9 +2,6 @@ import { BackgroundConfig, BackgroundMode } from "app/hooks/background";
 import { useAPI } from "app/hooks";
 import React, { CSSProperties } from "react";
 
-interface BackgroundProps {
-	background: BackgroundConfig | null;
-}
 
 interface BackgroundInfo {
 	title?: string;
@@ -15,19 +12,35 @@ interface BackgroundInfo {
 	link: string;
 }
 
-function Credits(props: BackgroundInfo) {
+
+interface CreditProps {
+	info: BackgroundInfo;
+	setIsHovered?: (value: boolean) => void;
+}
+
+function Credits(props: CreditProps) {
+	const setIsHovered = props.setIsHovered ?? (() => {});
+
 	return (
-		<div className="credits text-shadow-soft">
-			<a href={props.link}>
-				<span className="title">{props.title}</span>
+		<div className="credits text-shadow-soft"
+				onMouseEnter={() => setIsHovered(true)}
+				onMouseLeave={() => setIsHovered(false)}>
+			<a href={props.info.link}>
+				<span className="title">{props.info.title}</span>
 				<span>
-					{props.author} / {props.site}
+					{props.info.author} / {props.info.site}
 				</span>
 			</a>
 		</div>);
 }
 
-function AutoBackground() {
+
+interface BackgroundProps {
+	background: BackgroundConfig | null;
+	setWidgetsHidden?: (value: boolean) => void;
+}
+
+function AutoBackground(props: BackgroundProps) {
 	const style: CSSProperties = {};
 
 	const [info] = useAPI<BackgroundInfo>("background/", {}, []);
@@ -39,7 +52,7 @@ function AutoBackground() {
 		return (
 			<>
 				<div id="background" style={style} />
-				<Credits {...info} />
+				<Credits info={info} setIsHovered={props.setWidgetsHidden} />
 			</>);
 	} else {
 		return (<div id="background" style={style} />);
@@ -53,7 +66,7 @@ export default function Background(props: BackgroundProps) {
 	if (background) {
 		switch (background.mode) {
 		case BackgroundMode.Auto:
-			return (<AutoBackground />)
+			return (<AutoBackground {...props} />)
 		case BackgroundMode.Color:
 			style.backgroundColor = background.values.color ?? "black";
 			break;
@@ -61,6 +74,10 @@ export default function Background(props: BackgroundProps) {
 			style.backgroundImage = `url('${background.values.url}')`;
 			style.backgroundPosition = background.values.position;
 			break;
+		}
+
+		if (props.setWidgetsHidden) {
+			props.setWidgetsHidden(false);
 		}
 	}
 
