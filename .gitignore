@@ -1,5 +1,5 @@
 web-ext-artifacts
-config_*.json
+config*.json
 !*.example.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,linux

@@ -4,7 +4,9 @@ interface Config {
 	PROXY_ALLOWED_HOSTS: string[];
 }
 
-export const config: Config = require("../../config_client.json");
+declare global {
+	var config: Config;
+}
 
 import React from "react";
 import { render } from "react-dom";

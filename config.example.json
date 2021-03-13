@@ -1,4 +1,6 @@
 {
+	"API_URL": "https://homescreen.rubenwardy.com/api/",
+	"PROXY_URL": "https://homescreen.rubenwardy.com/proxy/",
 	"OPEN_WEATHER_MAP_API_KEY": "",
 	"UNSPLASH_ACCESS_KEY": "",
 	"OWNER_EMAIL": "your@email.com",

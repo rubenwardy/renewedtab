@@ -1,6 +1,6 @@
 # Homescreen
 
-[![pipeline status](https://gitlab.com/rubenwardy/homescreen/badges/master/pipeline.svg)](https://gitlab.com/rubenwardy/homescreen/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://homescreen.rubenwardy.com/)
+[![pipeline status](https://gitlab.com/rubenwardy/homescreen/badges/master/pipeline.svg)](https://gitlab.com/rubenwardy/homescreen/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://homescreen.rubenwardy.com/web/)
 
 A clean web browser "New Tab" / "Home page" page, created using TypeScript and React.
 
@@ -21,39 +21,35 @@ Homescreen has 3 components:
 * A **webext**, found at `src/webext`. This contains the manifest.json,
   and will wrap the web app when compiled.
 
-### Client Config
+### Configure
 
-Copy `config_client.example.json` to `config_client.json`.
-Replace the URLs in the `config_client.json`:
+Copy `config.example.json` to `config.json`.
 
-```js
-{
-	"API_URL": "http://localhost:8000/api/",
-	"PROXY_URL": "http://localhost:8000/proxy/",
+(Optional) If you want to run a local API/proxy server, then you will need to:
 
-	/* other settings here */
-}
-```
+* Change `API_URL` and `PROXY_URL` in `config.json` to localhost:
 
-Possible values:
 
-* `API_URL`: Base URL for the API. May contain a path.
-* `PROXY_URL`: URL to the proxy, for the web version.
+	```js
+	{
+		"API_URL": "http://localhost:8000/api/",
+		"PROXY_URL": "http://localhost:8000/proxy/",
 
-### Server config
+		/* other settings here */
+	}
+	```
 
-You'll need to configure some API keys for the server in order to use certain
-features. These are optional, but will prevent some features from working.
+* Configure some API keys if you want to use third-party services.
+  These are optional, but will prevent some features from working.
+	* The settings:
+		* `OPEN_WEATHER_MAP_API_KEY`: [openweathermap.org](https://home.openweathermap.org/users/sign_up)
+		* `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
+		* `OWNER_EMAIL`: Your email, required by OpenStreetMap
+	* You can set the above server settings in `config.json`, or using
+	  environment variables (recommended for production).
 
-* `OPEN_WEATHER_MAP_API_KEY`: [openweathermap.org](https://home.openweathermap.org/users/sign_up)
-* `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
-* `OWNER_EMAIL`: Your email, required by OpenStreetMap
-* `PROXY_ALLOWED_HOSTS`:
-	Array of hostnames that the proxy is allowed to GET from.
-
-You can do this either by copying `config_server.example.json` to
-`config_server.json` and editing it, or by using environment variables
-(recommended for production).
+* You can also change other server settings in `config.json`:
+	* `PROXY_ALLOWED_HOSTS`: Array of allowed host names.
 
 ### Debug
 

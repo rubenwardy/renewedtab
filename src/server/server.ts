@@ -7,10 +7,10 @@ import fetchCatch, { Request } from "./http";
 
 const PORT = process.env.PORT ?? 8000;
 export const serverConfig = (function() {
-	if (!fs.existsSync("config_server.json")) {
+	if (!fs.existsSync("config.json")) {
 		return {};
 	}
-	return JSON.parse(fs.readFileSync("config_server.json").toString());
+	return JSON.parse(fs.readFileSync("config.json").toString());
 })();
 
 export const IS_DEBUG = process.env.NODE_ENV !== "production";

@@ -1,4 +1,3 @@
-import { config } from "app";
 import { checkHostPermission } from "app/components/RequestHostPermission";
 import { usePromise } from "./promises";
 

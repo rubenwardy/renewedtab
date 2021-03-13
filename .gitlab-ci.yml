@@ -13,8 +13,7 @@ variables:
 
 before_script:
   - NODE_ENV=debug npm install
-  - cp config_client.example.json config_client.json
-  - cp config_server.example.json config_server.json
+  - cp config.example.json config.json
 
 test:
   stage: test
