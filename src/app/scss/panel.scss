@@ -81,6 +81,14 @@
 		list-style: none;
 		padding: 0;
 
+		.icon {
+			display: inline-block;
+			margin: 0 0.5rem 0 0;
+			object-fit: cover;
+			max-height: 18px;
+			vertical-align: middle;
+		}
+
 		&.section {
 			display: block;
 			padding: 0.4rem 0.8rem 0.2rem 0.8rem;
