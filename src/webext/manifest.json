@@ -12,9 +12,6 @@
 		"newtab": "app/index.html"
 	},
 	"permissions": [
-		"*://rubenwardy.com/*",
-		"*://fdo.rocketlaunch.live/*",
-		"*://127.0.0.1:8000/",
 		"storage"
 	],
 	"optional_permissions": [

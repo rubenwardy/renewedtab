@@ -29,7 +29,7 @@ export default function Greeting() {
 			{getGreeting()},&nbsp;
 			{name !== undefined &&
 				<AutoWidthInput onChange={handleChange} value={name ?? ""}
-						placeholder="name" />}
+						placeholder="name" />}.
 		</div>);
 }
 
