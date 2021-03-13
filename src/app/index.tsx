@@ -11,8 +11,8 @@ import { render } from "react-dom";
 import App from "./components/App";
 import "./scss/main.scss";
 
-require("@fortawesome/fontawesome-free/css/all.min.css");
-
+require("@fortawesome/fontawesome-free/css/fontawesome.min.css");
+require("@fortawesome/fontawesome-free/css/solid.min.css");
 
 render(
   <App />,

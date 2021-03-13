@@ -9,7 +9,7 @@ const dest = path.resolve(__dirname, "dist/webext/app");
 module.exports = {
 	mode: isProd ? 'production' : 'development',
 	entry: "./src/app/index",
-	devtool: "source-map",
+	devtool: isProd ? undefined : "source-map",
 	plugins: [
 		new CopyPlugin({
 			patterns: [
