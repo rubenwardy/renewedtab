@@ -1,5 +1,6 @@
 import { storage } from "app/Storage";
-import { useState } from "react";
+import debounce from "app/utils/debounce";
+import { useMemo, useState } from "react";
 import { runPromise } from "./promises";
 
 /**
@@ -17,8 +18,12 @@ export function useStorage<T>(key: string, defaultValue?: (T | null), dependents
 		(v) => setValue(v ?? defaultValue ?? null),
 		() => {}, dependents);
 
+	const setStorage = useMemo(
+		() => debounce((key: string, val: T) => storage.set(key, val), 1000),
+		[ key ]);
+
 	function updateValue(val: T) {
-		storage.set(key, val);
+		setStorage(key, val);
 		setValue(val);
 	}
 
