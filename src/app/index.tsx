@@ -13,9 +13,6 @@ import { render } from "react-dom";
 import App from "./components/App";
 import "./scss/main.scss";
 
-require("@fortawesome/fontawesome-free/css/fontawesome.min.css");
-require("@fortawesome/fontawesome-free/css/solid.min.css");
-
 render(
   <App />,
   document.getElementById("app")
@@ -26,3 +23,11 @@ window.onload = () => {
 		document.title = "Homescreen Web";
 	}
 };
+
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
+	faEllipsisH, faCircle } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
+	faEllipsisH, faCircle);
+dom.watch();

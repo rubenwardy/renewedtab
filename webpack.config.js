@@ -68,10 +68,7 @@ module.exports = {
 					"css-loader",
 					"sass-loader"
 				],
-			},
-			{
-				test: /\.(svg|eot|woff|woff2|ttf)$/,
-				type: 'asset/resource',
+				sideEffects: true,
 			},
 		]
 	},
