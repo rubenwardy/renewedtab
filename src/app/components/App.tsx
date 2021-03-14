@@ -27,12 +27,12 @@ export default function App(_props: any) {
 			<WidgetContainer wm={widgetManager} />
 
 			<footer className="text-shadow-soft">
-				<a onClick={() => setCreateOpen(true)}>
+				<a onClick={() => setCreateOpen(true)} tabIndex={0}>
 					<i className="fas fa-plus mr-1" />
 					Add Widget
 				</a>
 				<span className="mx-2">|</span>
-				<a onClick={() => setSettingsOpen(true)}>
+				<a onClick={() => setSettingsOpen(true)} tabIndex={0}>
 					<i className="large fas fa-cog mr-1" />
 				</a>
 			</footer>

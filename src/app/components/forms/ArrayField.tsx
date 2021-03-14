@@ -3,6 +3,7 @@ import Form, { FormProps } from "./Form";
 import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
 import Schema from "app/utils/Schema";
+import { useForceUpdate } from "app/hooks";
 
 interface RowProps extends FormProps {
 	idx: number;
@@ -51,7 +52,7 @@ function createFromSchema(schema: Schema): any {
 
 
 export default function ArrayField(props: FieldProps<any[]>) {
-	const [_, setState] = useState({});
+	const forceUpdate = useForceUpdate();
 
 	function handleChange() {
 		if (props.onChange) {
@@ -68,13 +69,13 @@ export default function ArrayField(props: FieldProps<any[]>) {
 		}
 
 		handleChange();
-		setState({});
+		forceUpdate();
 	}
 
 	function handleDelete(idx: number) {
 		props.value.splice(idx, 1);
 		handleChange();
-		setState({});
+		forceUpdate();
 	}
 
 	function handleMove(idx: number, up: boolean) {
@@ -91,7 +92,7 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			}
 		}
 		handleChange();
-		setState({});
+		forceUpdate();
 	}
 
 	const rows = props.value.map((row, idx) => (

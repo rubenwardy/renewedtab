@@ -6,12 +6,13 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import WidgetLayouter from "app/WidgetLayouter";
 import { Vector2 } from "app/utils/Vector2";
 import GridLayout, { Layout } from "react-grid-layout";
+import { useForceUpdate } from "app/hooks";
 
 
 export default function WidgetContainer(props: { wm: WidgetManager }) {
 	const widgetManager = props.wm;
 	const [gridClassNames, setGridClassNames] = useState("layout");
-	const [, setUpdate] = useState({});
+	const forceUpdate = useForceUpdate();
 
 	useEffect(() => {
 		const timer = setTimeout(() => setGridClassNames("layout animated") , 1);
@@ -20,11 +21,17 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 
 	function handleRemove(id: number) {
 		widgetManager.removeWidget(id);
-		setUpdate({});
+		forceUpdate();
 	}
+
 
 	const layouter = new WidgetLayouter(new Vector2(15, 12));
 	layouter.resolveAll(widgetManager.widgets);
+
+	widgetManager.widgets.sort((a, b) =>
+		(a.position!.x + 100 * a.position!.y) -
+		(b.position!.x + 100 * b.position!.y));
+
 
 	const widgets = widgetManager.widgets.map(widget => {
 		const props : WidgetProps<any> = {
@@ -55,7 +62,6 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 	}
 	useEffect(() => updateIsScrolling);
 
-
 	const layout : Layout[] = widgetManager.widgets.map(widget => ({
 		i: widget.id.toString(),
 		x: widget.position?.x ?? 0,
@@ -78,6 +84,7 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 
 		widgetManager.save();
 		updateIsScrolling();
+		forceUpdate();
 	}
 
 
