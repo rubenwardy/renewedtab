@@ -65,20 +65,6 @@
 	list-style: none;
 	padding: 0;
 
-	&.large {
-		li.section {
-			padding: 0.5rem 1rem 0.2rem 1rem;
-			font-size: 0.9rem;
-			line-height: 1.5;
-		}
-
-		a {
-			padding: 0.5rem 1rem;
-			font-size: 1.171875rem;
-			line-height: 1.5;
-		}
-	}
-
 	li {
 		display: block;
 		margin: 0;
@@ -106,6 +92,14 @@
 			}
 		}
 
+		&.text {
+			display: block;
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			font-size: 1.171875rem;
+			line-height: 1.5;
+		}
+
 		a {
 			display: block;
 			padding: 0.4rem 0.8rem;
@@ -119,6 +113,20 @@
 				background: rgba(255, 255, 255, 0.1);
 				text-decoration: none;
 			}
+		}
+	}
+
+	&.large {
+		li.section {
+			padding: 0.5rem 1rem 0.2rem 1rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+		}
+
+		a {
+			padding: 0.5rem 1rem;
+			font-size: 1.171875rem;
+			line-height: 1.5;
 		}
 	}
 }

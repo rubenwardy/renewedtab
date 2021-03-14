@@ -1,23 +1,24 @@
 import { runPromise } from "app/hooks";
 import React, { useState } from "react";
+import RequestPermission from "./RequestPermission";
 
-function makePermission(host: string): any {
+function makeHostPermission(host: string): any {
 	return {
 		origins: [`*://${host}/*`]
 	}
 }
 
-export async function needsPermission(host: string): Promise<boolean> {
+export async function needsHostPermission(host: string): Promise<boolean> {
 	if (typeof browser === 'undefined') {
 		return false;
 	}
 
-	return !(await browser.permissions.contains(makePermission(host)));
+	return !(await browser.permissions.contains(makeHostPermission(host)));
 }
 
 export async function checkHostPermission(url: string) {
 	const host = new URL(url).host;
-	if (await needsPermission(host)) {
+	if (await needsHostPermission(host)) {
 		throw `Permission needed to access ${host}. Edit this widget to grant it.`;
 	}
 }
@@ -34,24 +35,16 @@ export default function RequestHostPermission(props: RequestHostPermissionProps)
 
 	const [isVisible, setVisible] = useState<boolean>(false);
 
-	function handleClick() {
-		browser.permissions.request(makePermission(props.host)).then((accepted: boolean) => {
-			if (accepted) {
-				setVisible(false);
-			}
-		});
-	}
-
-	runPromise(() => needsPermission(props.host),
+	runPromise(() => needsHostPermission(props.host),
 		setVisible, () => {},
 		[props.host]);
 
 	if (isVisible) {
 		return (
 			<p>
-				<a className="link" onClick={() => handleClick()}>
-					Grant permission to access {props.host}
-				</a>
+				<RequestPermission permissions={makeHostPermission(props.host)}
+						label={`Grant permission to access ${props.host}`}
+						onResult={() => setVisible(false)} />
 			</p>);
 	} else {
 		return null;

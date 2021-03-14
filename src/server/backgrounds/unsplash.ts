@@ -14,6 +14,10 @@ interface UnsplashImage {
 }
 
 export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
+	if (UNSPLASH_ACCESS_KEY == "") {
+		throw new Error("Missing unsplash key")
+	}
+
 	const url = new URL("https://api.unsplash.com/photos/random");
 	url.searchParams.set("collections", "42576559");
 
@@ -28,7 +32,7 @@ export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
 
 	const text = await response.text();
 	if (text.startsWith("Rate Limit")) {
-		throw Error("Unsplash rate limit exceeded");
+		throw new Error("Unsplash rate limit exceeded");
 	}
 
 	const image : UnsplashImage = JSON.parse(text);

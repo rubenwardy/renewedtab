@@ -18,7 +18,7 @@ class WebExtStorage implements IStorage {
 
 	constructor() {
 		// TODO: change this to `sync` when we have an app ID
-		this.store = browser.storage.sync;
+		this.store = browser.storage.local;
 	}
 
 	async getAll(): Promise<{ [key: string]: any }> {

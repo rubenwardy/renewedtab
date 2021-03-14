@@ -19,6 +19,8 @@ export interface WidgetFactory<T> extends ReactFactory<T> {
 	 */
 	description: string;
 
+	isBrowserOnly?: boolean;
+
 	/**
 	 * Hint to be shown in the WidgetEditor.
 	 */

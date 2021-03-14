@@ -15,6 +15,7 @@
 		"storage"
 	],
 	"optional_permissions": [
-		"*://*/"
+		"*://*/",
+		"topSites"
 	]
 }
