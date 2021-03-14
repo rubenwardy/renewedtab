@@ -11,9 +11,9 @@
 		"start": "concurrently \"npm run start:app\" \"npm run start:server\" ",
 		"start:app": "concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\"",
 		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server.js\"",
-		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -t firefox-desktop -s ./dist/webext/ -i app/manifest.json \" \"npm run start:server\"",
-		"start:chrome": "web-ext run -t chromium -s ./dist/webext/ -i app/manifest.json",
-		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -n homescreen.zip",
+		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -t firefox-desktop -s ./dist/webext/ -i app/manifest.json -i app/index.html \" \"npm run start:server\"",
+		"start:chrome": "concurrently \"webpack --watch\" \"web-ext run -t chromium -s ./dist/webext/ -i app/manifest.json -i app/index.html\" \"npm run start:server\"",
+		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -n homescreen.zip",
 		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
 		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
 	},

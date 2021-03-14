@@ -18,11 +18,6 @@ render(
   document.getElementById("app")
 );
 
-window.onload = () => {
-	if (typeof browser === "undefined") {
-		document.title = "Homescreen Web";
-	}
-};
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,

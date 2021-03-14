@@ -2,13 +2,13 @@ const webpack = require("webpack");
 const path = require("path");
 const fs = require("fs");
 const CopyPlugin = require("copy-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
 const dest = path.resolve(__dirname, "dist/webext/app");
 
-const configFile = path.resolve(__dirname, 'config.json');
+const configFile = path.resolve(__dirname, "config.json");
 function getConfig() {
 	const config = JSON.parse(fs.readFileSync(configFile).toString());
 	return {
@@ -18,7 +18,7 @@ function getConfig() {
 }
 
 module.exports = {
-	mode: isProd ? 'production' : 'development',
+	mode: isProd ? "production" : "development",
 	entry: "./src/app/index",
 	devtool: isProd ? undefined : "source-map",
 	plugins: [
@@ -28,23 +28,35 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{ from: "src/app/public/", to: dest },
-			]
-		}),
-		new CopyPlugin({
-			patterns: [
 				{ from: "src/webext/manifest.json", to: path.resolve(__dirname, "dist/webext") },
+				{ from: "node_modules/webextension-polyfill/dist/browser-polyfill.min.js", to: dest },
 			]
 		}),
 		new MiniCssExtractPlugin({
 			// Options similar to the same options in webpackOptions.output
 			// both options are optional
-			filename: '[name].css',
-			chunkFilename: '[id].css',
+			filename: "[name].css",
+			chunkFilename: "[id].css",
 		}),
 		new HtmlWebpackPlugin({
+			filename: "index.html",
+			title: "Homescreen Web",
+			template: "src/app/templates/index.ejs",
+			hash: true,
+			templateParameters: {
+				"webext": false,
+			},
+		}),
+		new HtmlWebpackPlugin({
+			filename: "webext.html",
 			title: "New Tab",
 			template: "src/app/templates/index.ejs",
-			hash: true
+			hash: false,
+			chunksSortMode: "manual",
+			scriptLoading: "blocking",
+			templateParameters: {
+				"webext": true,
+			},
 		}),
 	],
 	module: {

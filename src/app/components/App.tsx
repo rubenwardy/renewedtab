@@ -16,7 +16,7 @@ export default function App(_props: any) {
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
 
 	return (
-		<div className={widgetsHidden ? "hidden" : ""}>
+		<div className={widgetsHidden ? "hidden" : undefined}>
 			<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 			<CreateWidgetDialog isOpen={createIsOpen}
 					manager={widgetManager}

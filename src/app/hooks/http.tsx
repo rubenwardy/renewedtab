@@ -19,7 +19,9 @@ async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Res
 	try {
 		return await fetch(request, init);
 	} catch (e) {
-		if (typeof(e) == "object" && e.message.includes("NetworkError")) {
+		if (typeof(e) == "object" &&
+				(e.message.includes("NetworkError") ||
+					e.message.includes("Failed to fetch"))) {
 			await checkHostPermission(request.url);
 		}
 		throw e;

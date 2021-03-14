@@ -9,7 +9,7 @@
 		"url": "https://rubenwardy.com/"
 	},
 	"chrome_url_overrides" : {
-		"newtab": "app/index.html"
+		"newtab": "app/webext.html"
 	},
 	"permissions": [
 		"storage"
