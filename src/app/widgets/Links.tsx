@@ -13,7 +13,7 @@ interface Link {
 
 const LinkSchema : Schema = {
 	title: type.string("Title"),
-	icon: type.string("Icon", "Optional, URL to image (18px recommended)"),
+	icon: type.url("Icon", "Optional, URL to image (18px recommended)"),
 	url: type.url("URL", "Leave blank to make heading"),
 };
 
