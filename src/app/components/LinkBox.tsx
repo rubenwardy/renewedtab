@@ -35,9 +35,9 @@ export default function LinkBox(props: LinkBoxProps)  {
 		}
 
 		if (link.url.trim() != "") {
-			return (<li key={link.title}><a href={link.url}>{icon}{link.title}</a></li>);
+			return (<li key={link.title}><a href={link.url}>{icon}<span>{link.title}</span></a></li>);
 		} else {
-			return (<li key={link.title} className="section">{icon}{link.title}</li>);
+			return (<li key={link.title} className="section">{icon}<span>{link.title}</span></li>);
 		}
 	});
 

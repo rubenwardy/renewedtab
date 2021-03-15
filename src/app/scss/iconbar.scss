@@ -2,14 +2,14 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	align-items: center;
 	justify-content: center;
 
 	list-style: none;
 	gap: 1em;
-	padding: 0;
+	padding: 10px;
 	margin: 0;
 	height: 100%;
+	box-sizing: border-box;
 	overflow: hidden auto;
 
 	li {
@@ -20,7 +20,7 @@
 		text-shadow: 2px 2px 2px rgba(15, 15, 15, 0.25);
 
 		.icon {
-			margin: 0 auto 10px auto;
+			margin: 0 auto;
 			display: block;
 			border-radius: 0.25rem;
 			width: 50px;
@@ -28,6 +28,11 @@
 			font-size: 50px;
 			text-align: center;
 			object-fit: cover;
+		}
+
+		span {
+			display: block;
+			margin: 10px 0 0 0;
 		}
 
 		a {
