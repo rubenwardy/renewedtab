@@ -23,6 +23,8 @@ async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Res
 				(e.message.includes("NetworkError") ||
 					e.message.includes("Failed to fetch"))) {
 			await checkHostPermission(request.url);
+
+			throw new Error("Unable to connect to the Internet");
 		}
 		throw e;
 	}

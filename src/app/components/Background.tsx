@@ -43,7 +43,7 @@ interface BackgroundProps {
 function AutoBackground(props: BackgroundProps) {
 	const style: CSSProperties = {};
 
-	const [info] = useAPI<BackgroundInfo>("background/", {}, []);
+	const [info, error] = useAPI<BackgroundInfo>("background/", {}, []);
 	if (info) {
 		if (info.color) {
 			style.backgroundColor = info.color;
@@ -55,6 +55,9 @@ function AutoBackground(props: BackgroundProps) {
 				<Credits info={info} setIsHovered={props.setWidgetsHidden} />
 			</>);
 	} else {
+		if (error) {
+			style.backgroundColor = props.background!.values.color ?? "#336699";
+		}
 		return (<div id="background" style={style} />);
 	}
 }
@@ -68,7 +71,7 @@ export default function Background(props: BackgroundProps) {
 		case BackgroundMode.Auto:
 			return (<AutoBackground {...props} />)
 		case BackgroundMode.Color:
-			style.backgroundColor = background.values.color ?? "black";
+			style.backgroundColor = background.values.color ?? "#336699";
 			break;
 		case BackgroundMode.ImageUrl:
 			style.backgroundImage = `url('${background.values.url}')`;
