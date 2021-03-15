@@ -37,13 +37,22 @@ export default function AboutSettings(_props: any) {
 				React for UI, and WebPack for builds.
 			</p>
 			<p>
-				Consider donating to
+				Like Homescreen? Consider donating to
 				cover costs and help support development.
 			</p>
 			<p>
 				<a className="btn btn-primary"
+						href="https://homescreen.rubenwardy.com/">
+					<i className="fas fa-globe-europe mr-1" />
+					Website
+				</a>
+				<a className="btn btn-primary"
 						href="https://homescreen.rubenwardy.com/donate/">
 					Donate
+				</a>
+				<a className="btn btn-secondary"
+						href="https://discord.gg/zYjR54b">
+					Discord Server
 				</a>
 			</p>
 
