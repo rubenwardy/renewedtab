@@ -9,13 +9,7 @@ export default function JSONField(props: FieldProps<Object | any[]>) {
 	}
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-			<textarea name={props.name}
-					defaultValue={JSON.stringify(props.value)}
-					onChange={handleChange} />
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		<textarea name={props.name}
+			defaultValue={JSON.stringify(props.value)}
+			onChange={handleChange} />);
 }

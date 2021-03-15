@@ -38,15 +38,7 @@ export default function SelectField(props: FieldProps<any>) {
 				</div>));
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-
-			<RadioGroup name="mode" selectedValue={getValue(value)} onChange={handleChanged}>
-				{radioModes}
-			</RadioGroup>
-
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		<RadioGroup name="mode" selectedValue={getValue(value)} onChange={handleChanged}>
+			{radioModes}
+		</RadioGroup>);
 }

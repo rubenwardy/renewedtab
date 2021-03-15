@@ -26,6 +26,10 @@
 	margin-top: 0.5rem;
 }
 
+.mt-3, .my-3 {
+	margin-top: 0.75rem;
+}
+
 .mt-4, .my-4 {
 	margin-top: 2rem;
 }
@@ -50,4 +54,8 @@
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+}
+
+.clear-both {
+	clear: both;
 }

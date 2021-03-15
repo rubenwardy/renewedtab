@@ -65,10 +65,8 @@ export default function LocationField(props: FieldProps<Location>) {
 		location_after = (<p className="text-muted">Please select a location</p>);
 	}
 
-
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
+		<>
 			<div className="field-group">
 				<input type="text" ref={ref} name={props.name} defaultValue={value.name} />
 				<a className="btn btn-primary" onClick={handleSearch}>Search</a>
@@ -76,7 +74,6 @@ export default function LocationField(props: FieldProps<Location>) {
 			{location_after}
 			<p className="text-muted">
 				Powered by <a href="https://www.openstreetmap.org/">OpenStreetMap</a>.
-				{props.schemaEntry.hint}
 			</p>
-		</div>);
+		</>);
 }

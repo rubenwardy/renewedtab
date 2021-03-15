@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Form, { FormProps } from "./Form";
 import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
@@ -14,27 +14,30 @@ interface RowProps extends FormProps {
 
 function ArrayRow(props: RowProps) {
 	return (
-		<div className="row">
-			<span className="float-right">
+		<tr>
+			<td>
 				{props.idx > 0 &&
 					<a className="btn btn-sm"
 							onClick={() => props.onMove(true)}>
 						<i className="fas fa-caret-up" />
 					</a>}
+
 				{!props.isLast &&
 					<a className="btn btn-sm"
 							onClick={() => props.onMove(false)}>
 						<i className="fas fa-caret-down" />
 					</a>}
+			</td>
+
+			<Form {...props} table={true} />
+
+			<td>
 				<a className="btn btn-sm btn-danger"
 						onClick={props.onDelete}>
 					<i className="fas fa-trash" />
 				</a>
-			</span>
-
-			<h3>{ props.idx + 1 }</h3>
-			<Form {...props} />
-		</div>);
+			</td>
+		</tr>);
 }
 
 
@@ -95,6 +98,11 @@ export default function ArrayField(props: FieldProps<any[]>) {
 		forceUpdate();
 	}
 
+	const headers = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
+		<th key={key}>{type.label}</th>));
+	const hints = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
+		<td key={key}>{type.hint}</td>));
+
 	const rows = props.value.map((row, idx) => (
 		<ArrayRow key={row.id} idx={idx} values={row}
 			schema={props.schemaEntry.subschema!}
@@ -104,27 +112,36 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			onMove={(up) => handleMove(idx, up)} />));
 
 	return (
-		<div className="field field-array">
-
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-
-			<a className="btn btn-sm btn-primary"
+		<>
+			<a className="float-right btn btn-sm btn-primary"
 					onClick={() => handleAdd(true)}>
 				<i className="fas fa-plus mr-2" />
 				Add
 			</a>
+			<div className="clear-both" />
 
-			{rows}
+			<table>
+				<thead>
+					<tr>
+						<td />
+						{headers}
+						<td />
+					</tr>
+					<tr className="hint">
+						<td />
+						{hints}
+						<td />
+					</tr>
+				</thead>
+				<tbody>{rows}</tbody>
+			</table>
 
 			{rows.length > 0 &&
-				<a className="btn btn-sm btn-primary"
+				<a className="float-right mt-3 btn btn-sm btn-primary"
 						onClick={() => handleAdd(false)}>
 					<i className="fas fa-plus mr-2" />
 					Add
 				</a>}
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-
-		</div>);
+			<div className="clear-both" />
+		</>);
 }

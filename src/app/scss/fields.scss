@@ -75,22 +75,6 @@ textarea.invisible, input.invisible {
 	}
 }
 
-.field-array .row {
-	padding: 0.8em 1em;
-	margin: 1em 0;
-	border: 1px solid rgba(255, 255, 255, 0.2);
-	border-radius: 0.25rem;
-
-	h3 {
-		margin-top: 0;
-		font-size: 100%;
-	}
-
-	*:last-child {
-		margin-bottom: 0;
-	}
-}
-
 .input-auto {
 	display: inline-block;
 	position: relative;
@@ -115,4 +99,19 @@ textarea.invisible, input.invisible {
 		padding-bottom: 3px;
 		margin-bottom: -3px;
 	}
+}
+
+.form table {
+	min-width: 770px;
+	white-space: nowrap;
+}
+
+td.field input {
+	width: 100%;
+}
+
+tr.hint td {
+	font-size: 80%;
+	white-space: normal;
+	color: rgba(255, 255, 255, 0.8);
 }

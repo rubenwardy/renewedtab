@@ -10,14 +10,8 @@ export function TextField(props: FieldProps<string>) {
 	}
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-			<input type="text" name={props.name} defaultValue={props.value}
-					onChange={handleChange} />
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		<input type="text" name={props.name} defaultValue={props.value}
+				onChange={handleChange} />);
 }
 
 export function PermURLField(props: FieldProps<string>) {
@@ -38,16 +32,11 @@ export function PermURLField(props: FieldProps<string>) {
 	}
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
+		<>
 			<input type="url" name={props.name} defaultValue={props.value}
 					onChange={handleChange} />
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-
 			<RequestHostPermission host={host} />
-		</div>);
+		</>);
 }
 
 export function DateField(props: FieldProps<Date>) {
@@ -61,14 +50,9 @@ export function DateField(props: FieldProps<Date>) {
 	}
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-			<input type="date" name={props.name}
-					defaultValue={props.value.toISOString().slice(0, 10)}
-					onChange={handleChange} />
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		<input type="date" name={props.name}
+				defaultValue={props.value.toISOString().slice(0, 10)}
+				onChange={handleChange} />);
 }
 
 export function URLField(props: FieldProps<string>) {
@@ -79,14 +63,8 @@ export function URLField(props: FieldProps<string>) {
 	}
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-			<input type="url" name={props.name} defaultValue={props.value}
-					onChange={handleChange} />
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		<input type="url" name={props.name} defaultValue={props.value}
+				onChange={handleChange} />);
 }
 
 
@@ -98,12 +76,6 @@ export function ColorField(props: FieldProps<string>) {
 	}
 
 	return (
-		<div className="field">
-			<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>
-			<input type="color" name={props.name} defaultValue={props.value}
-					onChange={handleChange} />
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		<input type="color" name={props.name} defaultValue={props.value}
+			onChange={handleChange} />);
 }

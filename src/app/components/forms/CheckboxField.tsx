@@ -12,13 +12,12 @@ export default function CheckboxField(props: FieldProps<boolean>) {
 	}
 
 	return (
-		<div className="field">
+		<>
 			<input type="checkbox" checked={value ?? false} onChange={handleChange} />
 			<label className="inline ml-2" htmlFor={props.name}>
 				{props.schemaEntry.label ?? props.name}
 			</label>
-
-			{props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
-		</div>);
+		</>);
 }
+
+CheckboxField.noParentLabel = true;
