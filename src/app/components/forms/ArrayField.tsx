@@ -41,7 +41,7 @@ function ArrayRow(props: RowProps) {
 function createFromSchema(schema: Schema): any {
 	const retval: any = { id: uuid() };
 	Object.entries(schema).forEach(([key, entry]) => {
-		if (entry.type == "string") {
+		if (entry.type == "string" || entry.type == "url") {
 			retval[key] = "";
 		} else if (entry.type == "number") {
 			retval[key] = 0;
