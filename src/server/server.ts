@@ -94,11 +94,17 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response)
 });
 
 
+const reCollectionID = /^[0-9]+$/;
 app.get("/api/unsplash/", async (req: express.Request, res: express.Response) => {
 	try {
 		const collection = req.query.collection as (string | undefined);
 		if (!collection) {
 			res.status(400).send("Missing collection ID");
+			return;
+		}
+
+		if (!reCollectionID.test(collection)) {
+			res.status(400).send("Invalid collection ID");
 			return;
 		}
 
