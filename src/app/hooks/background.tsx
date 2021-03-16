@@ -8,6 +8,7 @@ export enum BackgroundMode {
 	Auto,
 	Color,
 	ImageUrl,
+	Unsplash,
 	// ImageUpload,
 	// Reddit
 }
@@ -27,6 +28,10 @@ export function getSchemaForMode(mode: BackgroundMode): Schema {
 			url: type.url("Image URL"),
 			position: type.string("Position", "center, top, or bottom"),
 		};
+	case BackgroundMode.Unsplash:
+		return {
+			collection: type.string("Unsplash collection", "Collection ID. Found in the URL, example: 42576559"),
+		}
 	}
 }
 
@@ -43,6 +48,8 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 			url: "",
 			position: "bottom",
 		};
+	case BackgroundMode.Unsplash:
+		return {};
 	}
 }
 
@@ -54,6 +61,8 @@ export function getDescriptionForMode(mode: BackgroundMode): string {
 		return "A single color";
 	case BackgroundMode.ImageUrl:
 		return "An image from a URL";
+	case BackgroundMode.Unsplash:
+		return "Random image from an Unsplash collection";
 	}
 }
 

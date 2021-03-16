@@ -25,6 +25,7 @@ import { getWeatherInfo } from "./weather";
 import { getBackground } from "./backgrounds";
 import { handleProxy } from "./proxy";
 import { getCoordsFromQuery } from "./geocode";
+import getImageFromUnsplash from "./backgrounds/unsplash";
 
 const app = express();
 app.use((_req, res, next) => {
@@ -87,6 +88,21 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
 	try {
 		res.json(await getBackground());
+	} catch (ex) {
+		res.status(400).send(ex.message);
+	}
+});
+
+
+app.get("/api/unsplash/", async (req: express.Request, res: express.Response) => {
+	try {
+		const collection = req.query.collection as (string | undefined);
+		if (!collection) {
+			res.status(400).send("Missing collection ID");
+			return;
+		}
+
+		res.json(await getImageFromUnsplash(collection));
 	} catch (ex) {
 		res.status(400).send(ex.message);
 	}

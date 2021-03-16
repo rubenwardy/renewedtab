@@ -58,6 +58,7 @@ interface BackgroundProps {
 	setWidgetsHidden?: (value: boolean) => void;
 }
 
+
 function AutoBackground(props: BackgroundProps) {
 	const style: CSSProperties = {};
 
@@ -80,6 +81,37 @@ function AutoBackground(props: BackgroundProps) {
 	}
 }
 
+
+function UnsplashBackground(props: BackgroundProps) {
+	const style: CSSProperties = {};
+
+	const collection = props.background?.values.collection;
+	if (collection == undefined) {
+		console.error("Collection not defined");
+		return (<div id="background" style={style} />);
+	}
+
+	const [info, error] = useAPI<BackgroundInfo>("unsplash/",
+			{ collection: collection }, []);
+	if (info) {
+		if (info.color) {
+			style.backgroundColor = info.color;
+		}
+		style.backgroundImage = `url('${info.url}')`;
+		return (
+			<>
+				<div id="background" style={style} />
+				<Credits info={info} setIsHovered={props.setWidgetsHidden} />
+			</>);
+	} else {
+		if (error) {
+			style.backgroundColor = props.background!.values.color ?? "#336699";
+		}
+		return (<div id="background" style={style} />);
+	}
+}
+
+
 export default function Background(props: BackgroundProps) {
 	const background = props.background;
 
@@ -87,7 +119,7 @@ export default function Background(props: BackgroundProps) {
 	if (background) {
 		switch (background.mode) {
 		case BackgroundMode.Auto:
-			return (<AutoBackground {...props} />)
+			return (<AutoBackground {...props} />);
 		case BackgroundMode.Color:
 			style.backgroundColor = background.values.color ?? "#336699";
 			break;
@@ -95,6 +127,8 @@ export default function Background(props: BackgroundProps) {
 			style.backgroundImage = `url('${background.values.url}')`;
 			style.backgroundPosition = background.values.position;
 			break;
+		case BackgroundMode.Unsplash:
+			return (<UnsplashBackground {...props} />);
 		}
 	}
 

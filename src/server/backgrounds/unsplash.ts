@@ -13,13 +13,13 @@ interface UnsplashImage {
 	urls: { raw: string };
 }
 
-export default async function getImageFromUnsplash(): Promise<BackgroundInfo> {
+export default async function getImageFromUnsplash(collection: string): Promise<BackgroundInfo> {
 	if (UNSPLASH_ACCESS_KEY == "") {
 		throw new Error("Missing unsplash key")
 	}
 
 	const url = new URL("https://api.unsplash.com/photos/random");
-	url.searchParams.set("collections", "42576559");
+	url.searchParams.set("collections", collection);
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",

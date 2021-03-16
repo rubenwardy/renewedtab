@@ -28,7 +28,7 @@ export async function getBackground(): Promise<BackgroundInfo> {
 	}
 
 	try {
-		cache = await getImageFromUnsplash();
+		cache = await getImageFromUnsplash("42576559");
 		return cache;
 	} catch (e) {
 		console.log(e);
