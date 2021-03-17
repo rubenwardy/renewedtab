@@ -4,6 +4,8 @@ import { BackgroundInfo } from ".";
 interface CreditProps {
 	info: BackgroundInfo;
 	setIsHovered?: (value: boolean) => void;
+
+	isPositive?: boolean;
 	onLike?: (info: BackgroundInfo) => void;
 	onBlock?: (info: BackgroundInfo) => void;
 }
@@ -25,13 +27,13 @@ export function Credits(props: CreditProps) {
 
 				{props.onLike &&
 					<a onClick={() => props.onLike!(props.info)}
-							className="btn btn-sm" title="Like">
+							className={`btn btn-sm ${props.isPositive === true && "active"}`} title="Like">
 						<i className="fas fa-thumbs-up" />
 					</a>}
 
 				{props.onBlock &&
 					<a onClick={() => props.onBlock!(props.info)}
-							className="btn btn-sm" title="Never show again">
+							className={`btn btn-sm ${props.isPositive === false && "active"}`} title="Never show again">
 						<i className="fas fa-ban" />
 					</a>}
 			</div>);

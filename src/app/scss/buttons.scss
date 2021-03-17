@@ -16,6 +16,10 @@
 		text-decoration: none;
 		background-color: rgba(255, 255, 255, 0.25);
 	}
+
+	&.active {
+		color: #06aed5;
+	}
 }
 
 .btn-sm {

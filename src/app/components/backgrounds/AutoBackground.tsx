@@ -25,12 +25,12 @@ function reportVote(info: BackgroundInfo, isPositive: boolean) {
 }
 
 
-function useAutoBackground(blocked: Set<string>): [(BackgroundInfo | undefined), (any | undefined)] {
+function useAutoBackground(votes: { [id: string]: boolean }): [(BackgroundInfo | undefined), (any | undefined)] {
 	const [backgrounds, error] = useAPI<BackgroundInfo[]>("background/", {}, []);
 
 	if (backgrounds && backgrounds.length > 0) {
 		for (let i = 0; i < backgrounds.length; i++) {
-			if (!blocked.has(backgrounds[i].id)) {
+			if (votes[backgrounds[i].id] !== false) {
 				return [backgrounds[i], undefined];
 			}
 		}
@@ -45,24 +45,21 @@ function useAutoBackground(blocked: Set<string>): [(BackgroundInfo | undefined),
 export default function AutoBackground(props: BackgroundProps) {
 	const style: CSSProperties = {};
 
-	const [blocked, setBlocked] = useStorage<string[]>("blocked_backgrounds");
-	const blockedSet = new Set(blocked ?? []);
+	const [_votes, setVotes] = useStorage<{ [id: string]: boolean }>("background_votes");
+	const votes = _votes ?? {};
 
-	const [liked, setLiked] = useStorage<string[]>("liked_backgrounds");
-	const likedSet = new Set(liked ?? []);
-
-	const [background, error] = useAutoBackground(blockedSet);
+	const [background, error] = useAutoBackground(votes ?? {});
 	if (background) {
 		function handleBlock(info: BackgroundInfo) {
 			reportVote(info, false);
-			blockedSet.add(info.id);
-			setBlocked(Array.from(blockedSet.values()));
+			votes[info.id] = false;
+			setVotes(votes);
 		}
 
 		function handleLike(info: BackgroundInfo) {
 			reportVote(info, true);
-			likedSet.add(info.id);
-			setLiked(Array.from(likedSet.values()));
+			votes[info.id] = true;
+			setVotes(votes);
 		}
 
 		if (background.color) {
@@ -73,7 +70,7 @@ export default function AutoBackground(props: BackgroundProps) {
 			<>
 				<div id="background" style={style} />
 				<Credits info={background} setIsHovered={props.setWidgetsHidden}
-					onBlock={handleBlock} onLike={handleLike} />
+					onBlock={handleBlock} onLike={handleLike} isPositive={votes[background.id]}  />
 			</>);
 	} else {
 		if (error) {
