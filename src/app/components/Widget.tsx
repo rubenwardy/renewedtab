@@ -61,11 +61,11 @@ export function Widget<T>(props: WidgetProps<T>) {
 					<i className="collapsed fas fa-ellipsis-h" />
 					<span className="widget-title">{props.type}</span>
 					<span className="widget-btns">
-						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
-							<i className="fas fa-pen" />
-						</a>
 						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
 							<i className="fas fa-trash" />
+						</a>
+						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
+							<i className="fas fa-pen" />
 						</a>
 					</span>
 				</div>
