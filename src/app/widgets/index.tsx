@@ -1,6 +1,7 @@
 export { default as Age } from "./Age";
 export { default as Button } from "./Button";
 export { default as Clock } from "./Clock";
+export { default as DailyGoal } from "./DailyGoal";
 export { default as Greeting } from "./Greeting";
 export { default as HelpAbout } from "./HelpAbout";
 export { default as IFrame } from "./IFrame";
@@ -16,13 +17,14 @@ export { default as WebComic } from "./WebComic";
 export { default as Weather } from "./Weather";
 
 import { WidgetFactory } from "../WidgetManager";
-import { Age, Button, Clock, Greeting, HelpAbout, IFrame, Image, Invisible,
+import { Age, Button, Clock, DailyGoal, Greeting, HelpAbout, IFrame, Image, Invisible,
 	Links, Notes, Feed, Search, SpaceFlights, TopSites, WebComic, Weather } from ".";
 
 export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
 	Age: Age,
 	Button: Button,
 	Clock: Clock,
+	DailyGoal: DailyGoal,
 	Greeting: Greeting,
 	HelpAbout: HelpAbout,
 	IFrame: IFrame,

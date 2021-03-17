@@ -237,3 +237,13 @@ main > .widget {
 		}
 	}
 }
+
+.widget-dailygoal {
+	.btn {
+		visibility: collapse;
+	}
+
+	&:hover .btn {
+		visibility: visible;
+	}
+}
