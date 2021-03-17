@@ -38,7 +38,7 @@ export default async function getImageFromUnsplash(collection: string): Promise<
 
 	const image : UnsplashImage = JSON.parse(text);
 	return {
-		id: image.id,
+		id: `unsplash:${image.id}`,
 		title: image.location?.title,
 		color: image.color,
 		url: image.urls.raw + "&w=2048&h=1117&crop=entropy&fit=crop",
