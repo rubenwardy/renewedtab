@@ -45,10 +45,10 @@ function useAutoBackground(votes: { [id: string]: boolean }): [(BackgroundInfo |
 export default function AutoBackground(props: BackgroundProps) {
 	const style: CSSProperties = {};
 
-	const [_votes, setVotes] = useStorage<{ [id: string]: boolean }>("background_votes");
-	const votes = _votes ?? {};
+	const [votes_, setVotes] = useStorage<{ [id: string]: boolean }>("background_votes");
+	const votes = votes_ ?? {};
 
-	const [background, error] = useAutoBackground(votes ?? {});
+	const [background, error] = useAutoBackground(votes);
 	if (background) {
 		function handleBlock(info: BackgroundInfo) {
 			reportVote(info, false);

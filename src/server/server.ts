@@ -113,7 +113,6 @@ app.post("/api/background/vote/", async (req: express.Request, res: express.Resp
 			`${ip}, ${background.id}, ${isPositive ? 'good' : 'bad'}, ${url}\n`;
 		backgroundVoteStream.write(line);
 
-		console.log(req.body);
 		res.json({ success: true });
 	} catch (ex) {
 		res.status(400).send(ex.message);
