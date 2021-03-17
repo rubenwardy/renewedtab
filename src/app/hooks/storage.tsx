@@ -16,7 +16,7 @@ export function useStorage<T>(key: string, defaultValue?: (T | null), dependents
 
 	runPromise<T | null>(() => storage.get(key),
 		(v) => setValue(v ?? defaultValue ?? null),
-		() => {}, dependents);
+		() => {}, dependents ?? []);
 
 	const setStorage = useMemo(
 		() => debounce((key: string, val: T) => storage.set(key, val), 1000),

@@ -1,9 +1,10 @@
 import { BackgroundConfig, BackgroundMode } from "app/hooks/background";
-import { useAPI } from "app/hooks";
+import { useAPI, useStorage } from "app/hooks";
 import React, { CSSProperties } from "react";
 
 
 interface BackgroundInfo {
+	id: string;
 	title?: string;
 	color?: string;
 	url: string;
@@ -20,6 +21,8 @@ interface BackgroundInfo {
 interface CreditProps {
 	info: BackgroundInfo;
 	setIsHovered?: (value: boolean) => void;
+	onLike?: (info: BackgroundInfo) => void;
+	onBlock?: (info: BackgroundInfo) => void;
 }
 
 function Credits(props: CreditProps) {
@@ -35,7 +38,19 @@ function Credits(props: CreditProps) {
 				<a className="title" href={props.info.links.photo}>{title}</a>
 				<a href={props.info.links.author}>{props.info.author}</a>
 				&nbsp;/&nbsp;
-				<a href={props.info.links.site}>{props.info.site}</a>
+				<a href={props.info.links.site} className="mr-2">{props.info.site}</a>
+
+				{props.onLike &&
+					<a onClick={() => props.onLike!(props.info)}
+							className="btn btn-sm" title="Like">
+						<i className="fas fa-thumbs-up" />
+					</a>}
+
+				{props.onBlock &&
+					<a onClick={() => props.onBlock!(props.info)}
+							className="btn btn-sm" title="Never show again">
+						<i className="fas fa-ban" />
+					</a>}
 			</div>);
 	} else {
 		return (
@@ -59,19 +74,76 @@ interface BackgroundProps {
 }
 
 
+function reportVote(info: BackgroundInfo, isPositive: boolean) {
+	const url = new URL(config.API_URL);
+	url.pathname = (url.pathname + "background/vote/").replaceAll("//", "/");
+
+	fetch(new Request(url.toString(), {
+		method: "POST",
+		cache: "no-cache",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			background: {
+				id: info.id,
+				url: info.links.photo,
+			},
+			is_positive: isPositive,
+		}),
+	})).catch(console.error);
+}
+
+
+function useAutoBackground(blocked: Set<string>): [(BackgroundInfo | undefined), (any | undefined)] {
+	const [backgrounds, error] = useAPI<BackgroundInfo[]>("background/", {}, []);
+
+	if (backgrounds && backgrounds.length > 0) {
+		for (let i = 0; i < backgrounds.length; i++) {
+			if (!blocked.has(backgrounds[i].id)) {
+				return [backgrounds[i], undefined];
+			}
+		}
+
+		return [backgrounds[0], undefined];
+	} else {
+		return [undefined, error];
+	}
+}
+
+
 function AutoBackground(props: BackgroundProps) {
 	const style: CSSProperties = {};
 
-	const [info, error] = useAPI<BackgroundInfo>("background/", {}, []);
-	if (info) {
-		if (info.color) {
-			style.backgroundColor = info.color;
+	const [blocked, setBlocked] = useStorage<string[]>("blocked_backgrounds");
+	const blockedSet = new Set(blocked ?? []);
+
+	const [liked, setLiked] = useStorage<string[]>("liked_backgrounds");
+	const likedSet = new Set(liked ?? []);
+
+	const [background, error] = useAutoBackground(blockedSet);
+	if (background) {
+		function handleBlock(info: BackgroundInfo) {
+			reportVote(info, false);
+			blockedSet.add(info.id);
+			setBlocked(Array.from(blockedSet.values()));
 		}
-		style.backgroundImage = `url('${info.url}')`;
+
+		function handleLike(info: BackgroundInfo) {
+			reportVote(info, true);
+			likedSet.add(info.id);
+			setLiked(Array.from(likedSet.values()));
+		}
+
+		if (background.color) {
+			style.backgroundColor = background.color;
+		}
+		style.backgroundImage = `url('${background.url}')`;
 		return (
 			<>
 				<div id="background" style={style} />
-				<Credits info={info} setIsHovered={props.setWidgetsHidden} />
+				<Credits info={background} setIsHovered={props.setWidgetsHidden}
+					onBlock={handleBlock} onLike={handleLike} />
 			</>);
 	} else {
 		if (error) {

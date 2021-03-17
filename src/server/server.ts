@@ -28,6 +28,9 @@ import { getCoordsFromQuery } from "./geocode";
 import getImageFromUnsplash from "./backgrounds/unsplash";
 
 const app = express();
+
+app.use(express.json());
+
 app.use((_req, res, next) => {
 	const expiresAt = new Date(new Date().getTime() + 4*60*60*1000);
 
@@ -88,6 +91,30 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
 	try {
 		res.json(await getBackground());
+	} catch (ex) {
+		res.status(400).send(ex.message);
+	}
+});
+
+
+const backgroundVoteStream = fs.createWriteStream("votes.csv", { flags: "a" });
+app.post("/api/background/vote/", async (req: express.Request, res: express.Response) => {
+	try {
+		const background = req.body.background;
+		const isPositive = req.body.is_positive;
+		if (background?.id == undefined || isPositive === undefined) {
+			res.status(400).send("Missing background.id or is_positive");
+			return;
+		}
+
+		const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+		const url = background.url ?? "";
+		const line =
+			`${ip}, ${background.id}, ${isPositive ? 'good' : 'bad'}, ${url}\n`;
+		backgroundVoteStream.write(line);
+
+		console.log(req.body);
+		res.json({ success: true });
 	} catch (ex) {
 		res.status(400).send(ex.message);
 	}

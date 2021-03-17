@@ -6,6 +6,7 @@ const UNSPLASH_ACCESS_KEY =
 	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;
 
 interface UnsplashImage {
+	id: string;
 	color: string;
 	location?: { title: string };
 	links: { html: string };
@@ -37,6 +38,7 @@ export default async function getImageFromUnsplash(collection: string): Promise<
 
 	const image : UnsplashImage = JSON.parse(text);
 	return {
+		id: image.id,
 		title: image.location?.title,
 		color: image.color,
 		url: image.urls.raw + "&w=2048&h=1117&crop=entropy&fit=crop",

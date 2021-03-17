@@ -1,3 +1,4 @@
+votes.csv
 web-ext-artifacts
 config*.json
 !*.example.json

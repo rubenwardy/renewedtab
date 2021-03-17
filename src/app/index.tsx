@@ -21,8 +21,8 @@ render(
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
-	faEllipsisH, faCircle, faGlobeEurope } from '@fortawesome/free-solid-svg-icons'
+	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
-	faEllipsisH, faCircle, faGlobeEurope);
+	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp);
 dom.watch();

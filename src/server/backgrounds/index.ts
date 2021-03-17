@@ -2,6 +2,7 @@ import { IS_DEBUG } from "../server";
 import getImageFromUnsplash from "./unsplash";
 
 export interface BackgroundInfo {
+	id: string;
 	title?: string;
 	color?: string;
 	url: string;
@@ -14,25 +15,38 @@ export interface BackgroundInfo {
 	};
 }
 
-let cache : BackgroundInfo | null = null;
+
+let cache : BackgroundInfo[] | null = null;
+
+async function fillCache(): Promise<BackgroundInfo[]> {
+	const images: BackgroundInfo[] = [];
+	for (let i = 0; i < 4; i++) {
+		images.push(await getImageFromUnsplash("42576559"));
+	}
+
+	cache = images;
+	return cache;
+}
+
+
 if (!IS_DEBUG) {
 	setInterval(() => {
-		cache = null;
-		getBackground().catch(console.error);
+		fillCache().catch(console.error);
 	}, 15 * 60 * 1000);
 }
 
-export async function getBackground(): Promise<BackgroundInfo> {
+
+export async function getBackground(): Promise<BackgroundInfo[]> {
 	if (cache) {
 		return cache;
 	}
 
 	try {
-		cache = await getImageFromUnsplash("42576559");
-		return cache;
+		return await fillCache();
 	} catch (e) {
-		console.log(e);
-		return {
+		console.error(e);
+		return [{
+			id: "1533756972958",
 			title: "Valdez, United States",
 			color: "#404059",
 			url: "https://images.unsplash.com/photo-1533756972958-d6f38a9761e3?ixid=MnwyMTM1ODB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MTU0ODI1MjQ&ixlib=rb-1.2.1&w=1920&h=1080",
@@ -43,7 +57,7 @@ export async function getBackground(): Promise<BackgroundInfo> {
 				author: "https://unsplash.com/@chadpeltola?utm_source=homescreen&utm_medium=referral",
 				site: "https://unsplash.com?utm_source=homescreen&utm_medium=referral",
 			},
-		}
+		}];
 	}
 }
 
