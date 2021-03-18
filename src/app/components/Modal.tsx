@@ -23,6 +23,17 @@ export default function Modal(props: ModalProps) {
 		style.opacity = 1;
 	}
 
+	useEffect(() => {
+		function close(e: KeyboardEvent) {
+			if (e.key == "Escape") {
+				props.onClose()
+			}
+		};
+
+		window.addEventListener('keydown', close);
+		return () => window.removeEventListener('keydown', close);
+	}, []);
+
 	return ReactDOM.createPortal((
 		<aside className="modal-bg" onClick={props.onClose} style={style}>
 			<div className="panel flush modal" onClick={(e) => e.stopPropagation()}>
