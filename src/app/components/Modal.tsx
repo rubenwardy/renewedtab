@@ -18,6 +18,8 @@ export default function Modal(props: ModalProps) {
 		window.requestAnimationFrame(() => setMounted(true));
 	}, []);
 
+	const [didClickBegin, setDidClickBegin] = useState(false);
+
 	const style: CSSProperties = {};
 	if (mounted) {
 		style.opacity = 1;
@@ -34,9 +36,25 @@ export default function Modal(props: ModalProps) {
 		return () => window.removeEventListener('keydown', close);
 	}, []);
 
+
+
+	function handleMouseDown() {
+		setDidClickBegin(true);
+	}
+
+	function handleMouseUp() {
+		if (didClickBegin) {
+			props.onClose();
+		}
+		setDidClickBegin(false);
+	}
+
 	return ReactDOM.createPortal((
-		<aside className="modal-bg" onClick={props.onClose} style={style}>
-			<div className="panel flush modal" onClick={(e) => e.stopPropagation()}>
+		<aside className="modal-bg" onMouseDown={handleMouseDown}
+				onMouseUp={handleMouseUp} style={style}>
+			<div className="panel flush modal"
+					onMouseDown={(e) => e.stopPropagation()}
+					onMouseUp={(e) => e.stopPropagation()}>
 				<h2 className="modal-header">
 					<a className="btn modal-close" onClick={props.onClose}>
 						<i className="fas fa-times" />
