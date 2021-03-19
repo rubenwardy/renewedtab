@@ -10,7 +10,14 @@ export default function AboutSettings(_props: any) {
 	}
 
 	async function getStoredData(): Promise<string> {
-		return JSON.stringify(toTypedJSON(await storage.getAll()));
+		const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
+		for (let key in data) {
+			if (key.startsWith("large-")) {
+				data[key] = undefined;
+			}
+		}
+
+		return JSON.stringify(data);
 	}
 
 	const [data, error] = usePromise(() => getStoredData(), []);

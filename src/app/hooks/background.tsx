@@ -48,9 +48,7 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 			color: "#336699"
 		};
 	case BackgroundMode.Image:
-		return {
-			image: "background_image",
-		};
+		return {};
 	case BackgroundMode.ImageUrl:
 		return {
 			url: "",

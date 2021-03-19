@@ -27,6 +27,10 @@ class WebExtStorage implements IStorage {
 	}
 
 	async get<T>(key: string): Promise<T | null> {
+		if (key == undefined) {
+			return null;
+		}
+
 		console.log(`[Storage] Get ${key}`);
 		const ret = fromTypedJSON(await this.store.get(key));
 		return ret ? ret[key] : null;
@@ -76,7 +80,11 @@ class LocalStorage implements IStorage {
 		return ret;
 	}
 
-	async get<T>(key: string): Promise<T> {
+	async get<T>(key: string): Promise<T | null> {
+		if (key == undefined) {
+			return null;
+		}
+
 		console.log(`[Storage] Get ${key}`);
 		const json = window.localStorage.getItem(key);
 		return json ? fromTypedJSON(JSON.parse(json)) : null;
@@ -107,6 +115,9 @@ class DelegateStorage implements IStorage {
 	}
 
 	async get<T>(key: string): Promise<T | null> {
+		if (key == undefined) {
+			return null;
+		}
 		return await this.delegate.get(this.prefix + key);
 	}
 
