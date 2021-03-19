@@ -115,3 +115,14 @@ tr.hint td {
 	white-space: normal;
 	color: rgba(255, 255, 255, 0.8);
 }
+
+textarea.stored {
+	box-sizing: border-box;
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 200px;
+}
+
+.hidden {
+	display: none !important;
+}

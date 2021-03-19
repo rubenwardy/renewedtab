@@ -1,27 +1,6 @@
-import { usePromise } from "app/hooks";
-import { storage } from "app/Storage";
-import { toTypedJSON } from "app/utils/TypedJSON";
 import React from "react";
 
 export default function AboutSettings(_props: any) {
-	async function handleReset() {
-		await storage.clear();
-		location.reload();
-	}
-
-	async function getStoredData(): Promise<string> {
-		const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
-		for (let key in data) {
-			if (key.startsWith("large-")) {
-				data[key] = undefined;
-			}
-		}
-
-		return JSON.stringify(data);
-	}
-
-	const [data, error] = usePromise(() => getStoredData(), []);
-
 	return (
 		<div className="modal-body">
 			<h3>About Homescreen</h3>
@@ -72,16 +51,6 @@ export default function AboutSettings(_props: any) {
 						href="https://homescreen.rubenwardy.com/help/">
 					Help and Requests
 				</a>
-			</p>
-
-			<h3 className="mt-4">Stored data</h3>
-			<p>
-				Warning: this may contain personal data, if any was entered into
-				widget settings.
-			</p>
-			<textarea readOnly value={data ?? (error && error.toString()) ?? "Loading..."} />
-			<p>
-				<a className="btn btn-danger" onClick={handleReset}>Reset everything</a>
 			</p>
 		</div>);
 }

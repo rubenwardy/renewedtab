@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AboutSettings from "./AboutSettings";
 import BackgroundSettings, { BackgroundSettingsProps } from "./BackgroundSettings";
 import Modal from "../Modal";
+import ImportExport from "./ImportExport";
 
 interface SettingsDialogProps extends BackgroundSettingsProps {
 	isOpen: boolean;
@@ -10,7 +11,8 @@ interface SettingsDialogProps extends BackgroundSettingsProps {
 
 enum SettingsTab {
 	Background,
-	About
+	ImportExport,
+	About,
 }
 
 declare type SettingsTabType = keyof typeof SettingsTab;
@@ -19,6 +21,8 @@ function getTitleForTab(tab: SettingsTab) {
 	switch (tab) {
 	case SettingsTab.Background:
 		return "Background";
+	case SettingsTab.ImportExport:
+		return "Import / Export";
 	case SettingsTab.About:
 		return "About and Credits";
 	}
@@ -28,6 +32,8 @@ function getComponentForTab(tab: SettingsTab) {
 	switch (tab) {
 	case SettingsTab.Background:
 		return BackgroundSettings;
+	case SettingsTab.ImportExport:
+		return ImportExport;
 	case SettingsTab.About:
 		return AboutSettings;
 	}
