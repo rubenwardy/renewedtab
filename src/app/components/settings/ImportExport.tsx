@@ -47,7 +47,7 @@ export default function ImportExport(_props: any) {
 			</p>
 			<textarea className="stored" readOnly
 				value={data ?? (error && error.toString()) ?? "Loading..."} />
-			<input ref={ref} type="file" className="hidden"
+			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
 			<p>
 				<a className="btn btn-danger" onClick={handleReset}>Reset everything</a>
