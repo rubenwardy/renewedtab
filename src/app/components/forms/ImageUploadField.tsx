@@ -1,7 +1,7 @@
 import { useLargeStorage } from "app/hooks";
 import { largeStorage } from "app/Storage";
 import uuid from "app/utils/uuid";
-import React from "react";
+import React, { useRef } from "react";
 import { FieldProps } from ".";
 
 
@@ -34,6 +34,7 @@ export interface FileInfo {
 
 export default function ImageUploadField(props: FieldProps<string>) {
 	const [file] = useLargeStorage<FileInfo>(props.value);
+	const ref = useRef<HTMLInputElement>(null);
 
 	async function handleFile(file: File) {
 		if (props.value) {
@@ -55,11 +56,16 @@ export default function ImageUploadField(props: FieldProps<string>) {
 
 	return (
 		<>
-			<input type="file" accept=".png,.jpg,image/png,image/jpeg"
+			<input type="file" className="display-none" ref={ref}
+				accept=".png,.jpg,image/png,image/jpeg"
 				onChange={(e) => handleFile(e.target.files![0]).catch(console.error)} />
+
 			{file &&
 				<p className="text-muted">
-					Selected {file.filename}
+					Image: {file.filename}
 				</p>}
+
+			<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>Choose file</a>
+
 		</>);
 }

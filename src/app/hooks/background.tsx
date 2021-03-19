@@ -25,7 +25,7 @@ export function getSchemaForMode(mode: BackgroundMode): Schema {
 		};
 	case BackgroundMode.Image:
 		return {
-			image: type.image("Choose an image"),
+			image: type.image("Choose an image", "Images are stored locally on your browser, and never uploaded"),
 		};
 	case BackgroundMode.ImageUrl:
 		return {
