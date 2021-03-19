@@ -1,6 +1,6 @@
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "perm_url" | "location" | "image_upload" | "array"
-	| "json" | "url" | "color";
+	| "json" | "url" | "color" | "image";
 
 export interface SchemaEntry {
 	type: Type;
@@ -56,6 +56,8 @@ export namespace type {
 	export const location = makeTypeFunc("location");
 
 	export const image_upload = makeTypeFunc("image_upload");
+
+	export const image = makeTypeFunc("image");
 
 	/**
 	 * enumType: The TypeScript enum object

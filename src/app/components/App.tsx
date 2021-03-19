@@ -10,7 +10,7 @@ const widgetManager = new WidgetManager();
 
 export default function App(_props: any) {
 	usePromise(() => widgetManager.load(), []);
-	const [background, setBackground] = useBackground([]);
+	const [background, setBackground] = useBackground();
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);

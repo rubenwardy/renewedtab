@@ -7,9 +7,9 @@ import { runPromise } from "./promises";
 export enum BackgroundMode {
 	Auto,
 	Color,
+	Image,
 	ImageUrl,
 	Unsplash,
-	// ImageUpload,
 	// Reddit
 }
 
@@ -22,6 +22,10 @@ export function getSchemaForMode(mode: BackgroundMode): Schema {
 	case BackgroundMode.Color:
 		return {
 			color: type.color("Color")
+		};
+	case BackgroundMode.Image:
+		return {
+			image: type.image("Choose an image"),
 		};
 	case BackgroundMode.ImageUrl:
 		return {
@@ -43,6 +47,10 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 		return {
 			color: "#336699"
 		};
+	case BackgroundMode.Image:
+		return {
+			image: "background_image",
+		};
 	case BackgroundMode.ImageUrl:
 		return {
 			url: "",
@@ -61,6 +69,8 @@ export function getDescriptionForMode(mode: BackgroundMode): string {
 		return "A single color";
 	case BackgroundMode.ImageUrl:
 		return "An image from a URL";
+	case BackgroundMode.Image:
+		return "Use a custom image";
 	case BackgroundMode.Unsplash:
 		return "Random image from an Unsplash collection";
 	}
@@ -87,9 +97,10 @@ export function updateBackgroundConfig(info: BackgroundConfig) {
 	storage.set("background", info);
 }
 
-export function useBackground(dependents?: any[]): [(BackgroundConfig | null), (info: BackgroundConfig) => void] {
+export function useBackground(): [(BackgroundConfig | null), (info: BackgroundConfig) => void] {
 	const [value, setValue] = useState<BackgroundConfig | null>(null);
-	runPromise<BackgroundConfig | null>(getBackgroundConfig, setValue, () => {}, dependents);
+	runPromise<BackgroundConfig | null>(
+		getBackgroundConfig, setValue, () => {}, []);
 
 	function updateValue(val: BackgroundConfig) {
 		const copy = { ...val };

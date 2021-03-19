@@ -23,6 +23,7 @@ export interface BackgroundProps {
 
 
 import AutoBackground from "./AutoBackground";
+import ImageBackground from "./ImageBackground";
 import UnsplashBackground from "./UnsplashBackground";
 
 
@@ -37,6 +38,8 @@ export default function Background(props: BackgroundProps) {
 		case BackgroundMode.Color:
 			style.backgroundColor = background.values.color ?? "#336699";
 			break;
+		case BackgroundMode.Image:
+			return (<ImageBackground {...props} />);
 		case BackgroundMode.ImageUrl:
 			style.backgroundImage = `url('${background.values.url}')`;
 			style.backgroundPosition = background.values.position;

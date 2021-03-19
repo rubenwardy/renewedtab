@@ -4,11 +4,11 @@ import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
 /**
  * Interface to support storing and retrieving information
  */
-interface IStorage {
+export interface IStorage {
 	getAll(): Promise<{ [key: string]: any }>;
 	get<T>(key: string): Promise<T | null>;
-	set<T>(key: string, value: T): void;
-	remove(key: string): void;
+	set<T>(key: string, value: T): Promise<void>;
+	remove(key: string): Promise<void>;
 	clear(): Promise<void>;
 }
 
@@ -32,15 +32,15 @@ class WebExtStorage implements IStorage {
 		return ret ? ret[key] : null;
 	}
 
-	set<T>(key: string, value: T): void {
+	async set<T>(key: string, value: T): Promise<void> {
 		console.log(`[Storage] Set ${key}`);
-		this.store.set({
+		await this.store.set({
 			[key]: toTypedJSON(value)
-		}).catch(console.error);
+		});
 	}
 
-	remove(key: string): void {
-		this.store.remove(key).catch(console.error);
+	async remove(key: string): Promise<void> {
+		await this.store.remove(key);
 	}
 
 	async clear(): Promise<void> {
@@ -82,12 +82,12 @@ class LocalStorage implements IStorage {
 		return json ? fromTypedJSON(JSON.parse(json)) : null;
 	}
 
-	set<T>(key: string, value: T): void {
+	async set<T>(key: string, value: T): Promise<void> {
 		console.log(`[Storage] Set ${key}`);
 		window.localStorage.setItem(key, JSON.stringify(toTypedJSON(value)));
 	}
 
-	remove(key: string): void {
+	async remove(key: string): Promise<void> {
 		window.localStorage.removeItem(key);
 	}
 
@@ -97,5 +97,34 @@ class LocalStorage implements IStorage {
 }
 
 
+class DelegateStorage implements IStorage {
+	constructor(private delegate: IStorage, private prefix: string) {}
+
+	async getAll(): Promise<{ [key: string]: any; }> {
+		const data = await this.delegate.getAll();
+		return Object.entries(data)
+			.filter(([key, _value]) => key.startsWith(this.prefix));
+	}
+
+	async get<T>(key: string): Promise<T | null> {
+		return await this.delegate.get(this.prefix + key);
+	}
+
+	async set<T>(key: string, value: T): Promise<void> {
+		await this.delegate.set(this.prefix + key, value);
+	}
+
+	async remove(key: string): Promise<void> {
+		await this.delegate.remove(this.prefix + key);
+	}
+
+	async clear(): Promise<void> {
+		await this.delegate.clear();
+	}
+}
+
+
 export const storage : IStorage =
 	(typeof browser !== 'undefined') ? new WebExtStorage() : new LocalStorage();
+
+export const largeStorage : IStorage = new DelegateStorage(storage, "large-");

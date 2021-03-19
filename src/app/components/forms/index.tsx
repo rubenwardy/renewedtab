@@ -15,6 +15,7 @@ import LocationField from "./LocationField";
 import ArrayField from "./ArrayField";
 import SelectField from "./SelectField";
 import CheckboxField from "./CheckboxField";
+import ImageUploadField from "./ImageUploadField";
 
 function isEnumType(x: any) {
 	const keys = new Set(Object.getOwnPropertyNames(x));
@@ -46,6 +47,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return ColorField;
 	} else if (type == "array") {
 		return ArrayField;
+	} else if (type == "image") {
+		return ImageUploadField;
 	} else {
 		return TextField;
 	}
