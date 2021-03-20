@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Widget } from "./Widget";
 import { WidgetManager, WidgetProps } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
@@ -9,7 +9,12 @@ import GridLayout, { Layout } from "react-grid-layout";
 import { useForceUpdate } from "app/hooks";
 
 
-export default function WidgetContainer(props: { wm: WidgetManager }) {
+interface WidgetContainerProps {
+	wm: WidgetManager;
+	isLocked: boolean;
+}
+
+export default function WidgetContainer(props: WidgetContainerProps) {
 	const widgetManager = props.wm;
 	const [gridClassNames, setGridClassNames] = useState("layout");
 	const forceUpdate = useForceUpdate();
@@ -91,6 +96,7 @@ export default function WidgetContainer(props: { wm: WidgetManager }) {
 	return (
 		<main ref={mainRef} className={isScrolling ? "scrolling" : undefined}>
 			<GridLayout className={gridClassNames}
+					isDraggable={!props.isLocked} isResizable={!props.isLocked}
 					layout={layout} onLayoutChange={onLayoutChange}
 					cols={15} rowHeight={50} margin={[16, 16]} width={974}
 					draggableHandle=".widget-title">

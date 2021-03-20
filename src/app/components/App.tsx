@@ -33,7 +33,7 @@ export default function App(_props: any) {
 			<SettingsDialog isOpen={settingsIsOpen}
 					onClose={() => setSettingsOpen(false)}
 					background={background} setBackground={setBackground} />
-			<WidgetContainer wm={widgetManager} />
+			<WidgetContainer wm={widgetManager} isLocked={isLocked ?? false} />
 
 			<footer className="text-shadow-soft">
 				{isLocked && (
