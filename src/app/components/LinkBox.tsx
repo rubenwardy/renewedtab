@@ -1,6 +1,7 @@
 import Schema, { type } from 'app/utils/Schema';
 import React from 'react';
 
+
 export interface Link {
 	id: string; //< used by React for keys.
 	title: string;
@@ -8,11 +9,29 @@ export interface Link {
 	url: string;
 }
 
+
 export const LinkSchema : Schema = {
 	title: type.string("Title"),
 	icon: type.url("Icon", "Optional, URL to image (18px recommended)"),
 	url: type.url("URL", "Leave blank to make heading"),
 };
+
+
+function Icon(props: { icon: string, requiresIcons: boolean }) {
+	if (!props.requiresIcons && props.icon.length == 0) {
+		return null;
+	} else if (props.icon.includes("/")) {
+		console.log("URL icon");
+		return (<img className="icon" src={props.icon} />);
+	} else if (props.icon.startsWith("fa-")) {
+		console.log("FA icon");
+		return (<span><i className={`fas ${props.icon} icon`} /></span>);
+	} else {
+		console.log("Placeholder icon");
+		return (<span><i className="fas fa-circle icon" /></span>);
+	}
+}
+
 
 export interface LinkBoxProps {
 	useIconBar: boolean;
@@ -20,24 +39,22 @@ export interface LinkBoxProps {
 }
 
 export default function LinkBox(props: LinkBoxProps)  {
-	const requiresIcons = props.useIconBar;
-
 	const links = props.links.map(link => {
-		let icon: JSX.Element | undefined;
-		if (requiresIcons || link.icon.length > 0) {
-			if (link.icon.includes("/")) {
-				icon = (<img className="icon" src={link.icon} />);
-			} else if (link.icon.length > 0) {
-				icon = (<i className={`fas ${link.icon} icon`} />);
-			} else if (link.url.trim() != "") {
-				icon = (<i className="fas fa-circle icon" />);
-			}
-		}
-
+		const requiresIcons = props.useIconBar && link.url.trim() != "";
 		if (link.url.trim() != "") {
-			return (<li key={link.title}><a href={link.url}>{icon}<span>{link.title}</span></a></li>);
+			return (
+				<li key={link.title + link.url}>
+					<a href={link.url}>
+						<Icon icon={link.icon} requiresIcons={requiresIcons} />
+						<span>{link.title}</span>
+					</a>
+				</li>);
 		} else {
-			return (<li key={link.title} className="section">{icon}<span>{link.title}</span></li>);
+			return (
+				<li key={link.title} className="section">
+					<Icon icon={link.icon} requiresIcons={requiresIcons} />
+					<span>{link.title}</span>
+				</li>);
 		}
 	});
 
