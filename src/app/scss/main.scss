@@ -73,6 +73,10 @@ footer, .credits {
 	}
 }
 
+.locked footer {
+	opacity: 0.3;
+}
+
 footer {
 	position: fixed;
 	bottom: 10px;

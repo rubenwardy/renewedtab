@@ -12,7 +12,7 @@ interface Goal {
 
 
 export default function DailyGoal() {
-	const [goal, setGoal] = useStorage<Goal | null>("goal", undefined, []);
+	const [goal, setGoal] = useStorage<Goal | null>("goal");
 
 	useEffect(() => {
 		if (goal && goal.time.getDate() != new Date().getDate()) {

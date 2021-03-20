@@ -5,12 +5,12 @@ import { runPromise } from "./promises";
 
 
 function useStorageBacking<T>(backing: IStorage, key: string,
-		defaultValue?: (T | null), dependents?: any[]): [T | null, (val: T) => void] {
+		defaultValue?: (T | null)): [T | null, (val: T) => void] {
 	const [value, setValue] = useState<T | null>(null);
 
 	runPromise<T | null>(() => backing.get(key),
 		(v) => setValue(v ?? defaultValue ?? null),
-		() => {}, dependents ?? [ key ]);
+		() => {}, [ key ]);
 
 	const setStorage = useMemo(
 		() => debounce((key: string, val: T) => backing.set(key, val), 1000),
@@ -33,8 +33,9 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 * @param {any[]} dependents - A list of dependent variables for the URL.
 * @return {[value, setValue]]} - Response and error
 */
-export function useStorage<T>(key: string, defaultValue?: (T | null), dependents?: any[]): [T | null, (val: T) => void] {
-	return useStorageBacking(storage, key, defaultValue, dependents);
+export function useStorage<T>(key: string,
+		defaultValue?: (T | null)): [T | null, (val: T) => void] {
+	return useStorageBacking(storage, key, defaultValue);
 }
 
 
@@ -46,6 +47,7 @@ export function useStorage<T>(key: string, defaultValue?: (T | null), dependents
 * @param {any[]} dependents - A list of dependent variables for the URL.
 * @return {[value, setValue]]} - Response and error
 */
-export function useLargeStorage<T>(key: string, defaultValue?: (T | null), dependents?: any[]): [T | null, (val: T) => void] {
-	return useStorageBacking(largeStorage, key, defaultValue, dependents);
+export function useLargeStorage<T>(key: string,
+		defaultValue?: (T | null)): [T | null, (val: T) => void] {
+	return useStorageBacking(largeStorage, key, defaultValue);
 }

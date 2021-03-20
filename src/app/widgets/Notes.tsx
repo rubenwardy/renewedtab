@@ -4,6 +4,7 @@ import { WidgetRaw } from 'app/WidgetManager';
 import React from 'react';
 import { useStorage } from "../hooks";
 
+
 interface NotesProps {
 	storageKey: string;
 }
@@ -13,7 +14,7 @@ export default function Notes(props: NotesProps) {
 		return (<div className="panel">Missing storage key</div>);
 	}
 
-	const [ notes, setNotes ] = useStorage(props.storageKey, "", [props.storageKey]);
+	const [ notes, setNotes ] = useStorage(props.storageKey, "");
 
 	if (notes == null) {
 		return (<div className="panel">Loading notes...</div>);

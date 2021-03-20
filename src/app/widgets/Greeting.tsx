@@ -18,7 +18,7 @@ function getGreeting(): string {
 
 
 export default function Greeting() {
-	const [name, setName] = useStorage<string | undefined>("name", undefined, []);
+	const [name, setName] = useStorage<string | undefined>("name");
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		setName(e.target.value);
