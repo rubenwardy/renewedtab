@@ -43,7 +43,7 @@ export default function TopSites(props: TopSitesProps)  {
 	if (typeof browser.topSites === "undefined") {
 		const permissions: browser.permissions.Permissions = {
 			permissions: ["topSites"],
-			origins: ["*://*/*"]
+			origins: ["*://*/"],
 		};
 
 		return (

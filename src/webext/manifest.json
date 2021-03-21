@@ -12,7 +12,8 @@
 		"newtab": "app/webext.html"
 	},
 	"permissions": [
-		"storage"
+		"storage",
+		"search"
 	],
 	"optional_permissions": [
 		"*://*/",
