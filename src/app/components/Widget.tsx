@@ -43,9 +43,9 @@ enum WidgetMode {
 	Delete
 }
 
+
 export function Widget<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
-
 	const close = () => setMode(WidgetMode.View);
 
 	switch (mode) {
@@ -53,8 +53,9 @@ export function Widget<T>(props: WidgetProps<T>) {
 		return (<WidgetEditor onClose={close} {...props} />);
 	case WidgetMode.Delete:
 		return (<WidgetDelete onClose={close} {...props} />);
-	default:
-		const Child = React.createElement(props.child, props.props);
+	}
+
+	if (typeof browser === "undefined" && props.child.isBrowserOnly === true) {
 		return (
 			<>
 				<div className="widget-strip">
@@ -64,14 +65,31 @@ export function Widget<T>(props: WidgetProps<T>) {
 						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
 							<i className="fas fa-trash" />
 						</a>
-						<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
-							<i className="fas fa-pen" />
-						</a>
 					</span>
 				</div>
-				<ErrorBoundary>
-					{Child}
-				</ErrorBoundary>
+				<div className="panel text-muted">
+					This widget requires the browser extension version.
+				</div>
 			</>);
 	}
+
+	const Child = React.createElement(props.child, props.props);
+	return (
+		<>
+			<div className="widget-strip">
+				<i className="collapsed fas fa-ellipsis-h" />
+				<span className="widget-title">{props.type}</span>
+				<span className="widget-btns">
+					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
+						<i className="fas fa-trash" />
+					</a>
+					<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
+						<i className="fas fa-pen" />
+					</a>
+				</span>
+			</div>
+			<ErrorBoundary>
+				{Child}
+			</ErrorBoundary>
+		</>);
 }
