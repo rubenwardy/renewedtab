@@ -72,7 +72,7 @@ class LocalStorage implements IStorage {
 		const ret: { [key: string]: any } = {};
 		for (let i = 0; i < window.localStorage.length; i++) {
 			const key = window.localStorage.key(i);
-			if (key) {
+			if (key && !key.startsWith("_")) {
 				ret[key] = await this.get(key);
 			}
 		}
@@ -139,3 +139,5 @@ export const storage : IStorage =
 	(typeof browser !== 'undefined') ? new WebExtStorage() : new LocalStorage();
 
 export const largeStorage : IStorage = new DelegateStorage(storage, "large-");
+
+export const cacheStorage : IStorage = new DelegateStorage(new LocalStorage(), "_");

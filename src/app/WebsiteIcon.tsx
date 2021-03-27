@@ -1,9 +1,30 @@
+import { cacheStorage } from "./Storage";
+
+
+interface CachedIcon {
+	url: string;
+	lastUsed: Date;
+}
+
+
 function getDomain(url: string): string {
 	return new URL(url).hostname;
 }
 
 
 async function fetchIcon(url: string): Promise<string> {
+	const key = new URL(url).hostname;
+	if (cacheStorage) {
+		const value = await cacheStorage.get<CachedIcon>(key)
+		if (value) {
+			console.log(`Loaded favicon for ${key} from cache`);
+
+			value.lastUsed = new Date();
+			await cacheStorage.set(key, value);
+			return value.url;
+		}
+	}
+
 	const response = await fetch(new Request(url, {
 		method: "GET",
 		headers: {
@@ -28,8 +49,13 @@ async function fetchIcon(url: string): Promise<string> {
 		}
 	}
 
-	const ret = new URL(url);
-	ret.pathname = topIcon?.getAttribute("href") ?? "/favicon.ico";
+	const ret = new URL(topIcon?.getAttribute("href") ?? "/favicon.ico", url);
+	await cacheStorage.set(key, {
+		url: ret.toString(),
+		lastUsed: new Date(),
+	});
+
+	console.log(`Fetched favicon from ${key}`);
 	return ret.toString();
 }
 
