@@ -153,7 +153,7 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 			},
 		}));
 
-		const result = (await ret.json()).response.result;
+		const result = (await ret.json()).result;
 		const launches = result.map((launch: any) => ({
 			id: launch.id,
 			name: launch.name,
