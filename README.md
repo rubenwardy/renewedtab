@@ -1,6 +1,6 @@
-# Homescreen
+# Renewed Tab
 
-[![pipeline status](https://gitlab.com/rubenwardy/homescreen/badges/master/pipeline.svg)](https://gitlab.com/rubenwardy/homescreen/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://homescreen.rubenwardy.com/web/)
+[![pipeline status](https://gitlab.com/rubenwardy/renewedtab/badges/master/pipeline.svg)](https://gitlab.com/rubenwardy/renewedtab/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://renewedtab.rubenwardy.com/web/)
 
 A clean web browser "New Tab" / "Home page" page, created using TypeScript and React.
 
@@ -10,7 +10,7 @@ License: GPLv3 or later.
 
 ### Introduction
 
-Homescreen has 3 components:
+Renewed Tab has 3 components:
 
 * A web **app**, found at `src/app`. This is written using React, and
   uses some browser extension APIs when available.

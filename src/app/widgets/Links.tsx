@@ -18,7 +18,7 @@ Links.initialProps = {
 	links: [
 		{
 			id: uuid(),
-			title: "Homescreen",
+			title: "Renewed Tab",
 			icon: "",
 			url: "",
 		},
@@ -26,13 +26,13 @@ Links.initialProps = {
 			id: uuid(),
 			title: "Website",
 			icon: "",
-			url: "https://homescreen.rubenwardy.com/"
+			url: "https://renewedtab.rubenwardy.com/"
 		},
 		{
 			id: uuid(),
 			title: "Donate",
 			icon: "",
-			url: "https://homescreen.rubenwardy.com/donate/"
+			url: "https://renewedtab.rubenwardy.com/donate/"
 		},
 		{
 			id: uuid(),

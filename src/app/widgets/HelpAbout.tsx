@@ -5,10 +5,10 @@ import React from 'react';
 export default function HelpAbout(_props: any) {
 	return (
 		<div className="panel">
-			<h2>Homescreen Help and Tips</h2>
+			<h2>Renewed Tab Help and Tips</h2>
 			<p>
 				Welcome to&nbsp;
-				<a href="https://homescreen.rubenwardy.com">Homescreen</a>:
+				<a href="https://renewedtab.rubenwardy.com">Renewed Tab</a>:
 				A customisable New Tab page for your browser.
 			</p>
 			<p>
@@ -24,7 +24,7 @@ export default function HelpAbout(_props: any) {
 }
 
 
-HelpAbout.description = "Help for new users of Homescreen";
+HelpAbout.description = "Help for new users of Renewed Tab";
 
 HelpAbout.initialProps = {};
 

@@ -54,7 +54,7 @@ export default function ImportExport(_props: any) {
 				<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>Import</a>
 				<a className="btn btn-primary ml-2"
 						href={`data:text/plain;base64,${encode(data ?? "")}`}
-						download="homescreen.json">
+						download="renewedtab.json">
 					Export
 				</a>
 			</p>

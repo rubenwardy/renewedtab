@@ -40,7 +40,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
-			title: "Homescreen Web",
+			title: "Renewed Tab Web",
 			template: "src/app/templates/index.ejs",
 			hash: true,
 			templateParameters: {

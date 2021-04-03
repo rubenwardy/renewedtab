@@ -3,15 +3,15 @@ import React from "react";
 export default function AboutSettings(_props: any) {
 	return (
 		<div className="modal-body">
-			<h3>About Homescreen</h3>
+			<h3>About Renewed Tab</h3>
 			<p>
 				Welcome to&nbsp;
-				<a href="https://homescreen.rubenwardy.com">Homescreen</a>:
+				<a href="https://renewedtab.rubenwardy.com">Renewed Tab</a>:
 				A customisable New Tab page for your browser.
 			</p>
 			<p>
 				Created by <a href="https://rubenwardy.com">rubenwardy</a>.&nbsp;
-				<a href="https://gitlab.com/rubenwardy/homescreen/">Open source</a>,
+				<a href="https://gitlab.com/rubenwardy/renewedtab/">Open source</a>,
 				licensed under GPLv3+.
 			</p>
 			<p>
@@ -23,17 +23,17 @@ export default function AboutSettings(_props: any) {
 				React for UI, and WebPack for builds.
 			</p>
 			<p>
-				Like Homescreen? Consider donating to
+				Like Renewed Tab? Consider donating to
 				cover costs and help support development.
 			</p>
 			<p>
 				<a className="btn btn-primary"
-						href="https://homescreen.rubenwardy.com/">
+						href="https://renewedtab.rubenwardy.com/">
 					<i className="fas fa-globe-europe mr-1" />
 					Website
 				</a>
 				<a className="btn btn-primary"
-						href="https://homescreen.rubenwardy.com/donate/">
+						href="https://renewedtab.rubenwardy.com/donate/">
 					Donate
 				</a>
 				<a className="btn btn-secondary"
@@ -48,7 +48,7 @@ export default function AboutSettings(_props: any) {
 			</p>
 			<p>
 				<a className="btn btn-primary"
-						href="https://homescreen.rubenwardy.com/help/">
+						href="https://renewedtab.rubenwardy.com/help/">
 					Help and Requests
 				</a>
 			</p>

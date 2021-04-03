@@ -53,9 +53,9 @@ export async function getBackground(): Promise<BackgroundInfo[]> {
 			author: "Chad Peltola",
 			site: "Unsplash",
 			links: {
-				photo: "https://unsplash.com/photos/comjArgHF4Y?utm_source=homescreen&utm_medium=referral",
-				author: "https://unsplash.com/@chadpeltola?utm_source=homescreen&utm_medium=referral",
-				site: "https://unsplash.com?utm_source=homescreen&utm_medium=referral",
+				photo: "https://unsplash.com/photos/comjArgHF4Y?utm_source=renewedtab&utm_medium=referral",
+				author: "https://unsplash.com/@chadpeltola?utm_source=renewedtab&utm_medium=referral",
+				site: "https://unsplash.com?utm_source=renewedtab&utm_medium=referral",
 			},
 		}];
 	}

@@ -28,11 +28,11 @@ webext:
   interruptible: true
   script:
     - npm run package:webext
-    - mv web-ext-artifacts/homescreen.zip homescreen.zip
+    - mv web-ext-artifacts/renewedtab.zip renewedtab.zip
   artifacts:
     expire_in: 1 week
     paths:
-      - homescreen.zip
+      - renewedtab.zip
   only:
     - master
 

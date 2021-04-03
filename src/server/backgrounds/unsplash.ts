@@ -45,9 +45,9 @@ export default async function getImageFromUnsplash(collection: string): Promise<
 		author: image.user.name,
 		site: "Unsplash",
 		links: {
-			photo: image.links.html + "?utm_source=homescreen&utm_medium=referral",
-			author: image.user.links.html + "?utm_source=homescreen&utm_medium=referral",
-			site: "https://unsplash.com?utm_source=homescreen&utm_medium=referral",
+			photo: image.links.html + "?utm_source=renewedtab&utm_medium=referral",
+			author: image.user.links.html + "?utm_source=renewedtab&utm_medium=referral",
+			site: "https://unsplash.com?utm_source=renewedtab&utm_medium=referral",
 		},
 	};
 }

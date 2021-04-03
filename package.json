@@ -1,5 +1,5 @@
 {
-	"name": "homescreen",
+	"name": "renewedtab",
 	"version": "0.1.0",
 	"description": "A customisable home page for your web browser",
 	"main": "webpack.config.js",
@@ -13,20 +13,20 @@
 		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server.js\"",
 		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -t firefox-desktop -s ./dist/webext/ -i app/manifest.json -i app/index.html \" \"npm run start:server\"",
 		"start:chrome": "concurrently \"webpack --watch\" \"web-ext run -t chromium -s ./dist/webext/ -i app/manifest.json -i app/index.html\" \"npm run start:server\"",
-		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -n homescreen.zip",
+		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -n renewedtab.zip",
 		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
 		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@gitlab.com/rubenwardy/homescreen.git"
+		"url": "git+ssh://git@gitlab.com/rubenwardy/renewedtab.git"
 	},
 	"author": "rubenwardy",
 	"license": "GPLv3+",
 	"bugs": {
-		"url": "https://gitlab.com/rubenwardy/homescreen/issues"
+		"url": "https://gitlab.com/rubenwardy/renewedtab/issues"
 	},
-	"homepage": "https://gitlab.com/rubenwardy/homescreen#readme",
+	"homepage": "https://gitlab.com/rubenwardy/renewedtab#readme",
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.34",
 		"@fortawesome/free-solid-svg-icons": "^5.15.2",
