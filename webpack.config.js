@@ -27,8 +27,7 @@ module.exports = {
 		}),
 		new CopyPlugin({
 			patterns: [
-				{ from: "src/app/public/", to: dest },
-				{ from: "src/webext/manifest.json", to: path.resolve(__dirname, "dist/webext") },
+				{ from: "src/webext/", to: path.resolve(__dirname, "dist/webext/") },
 				{ from: "node_modules/webextension-polyfill/dist/browser-polyfill.min.js", to: dest },
 			]
 		}),

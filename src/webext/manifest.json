@@ -1,16 +1,20 @@
 {
-
 	"manifest_version": 2,
 	"name": "Renewed Tab",
 	"version": "0.1",
 	"description": "A customisable New Tab page for your browser",
-	"developer": {
-		"name": "rubenwardy",
-		"url": "https://rubenwardy.com/"
+	"author": "rubenwardy",
+	"homepage_url": "https://renewedtab.rubenwardy.com/",
+	"icons": {
+		"32": "icon-32.png",
+		"48": "icon-48.png",
+		"128": "icon-128.png"
 	},
+
 	"chrome_url_overrides" : {
 		"newtab": "app/webext.html"
 	},
+
 	"permissions": [
 		"storage",
 		"search"
