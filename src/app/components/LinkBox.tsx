@@ -1,5 +1,5 @@
 import Schema, { type } from 'app/utils/Schema';
-import React from 'react';
+import React, { useState } from 'react';
 
 
 export interface Link {
@@ -17,18 +17,30 @@ export const LinkSchema : Schema = {
 };
 
 
-function Icon(props: { icon: string, requiresIcons: boolean }) {
+interface IconProps {
+	icon: string;
+	requiresIcons: boolean;
+	defaultIcon?: string;
+	errorIcon?: string;
+}
+
+function Icon(props: IconProps) {
+	const [errored, setErrored] = useState(false);
+
 	if (!props.requiresIcons && props.icon.length == 0) {
 		return null;
+	} else if (errored) {
+		console.log("Error icon");
+		return (<span><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
 	} else if (props.icon.includes("/")) {
 		console.log("URL icon");
-		return (<img className="icon" src={props.icon} />);
+		return (<img className="icon" src={props.icon} onError={() => setErrored(true)} />);
 	} else if (props.icon.startsWith("fa-")) {
 		console.log("FA icon");
 		return (<span><i className={`fas ${props.icon} icon`} /></span>);
 	} else {
 		console.log("Placeholder icon");
-		return (<span><i className="fas fa-circle icon" /></span>);
+		return (<span><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
 	}
 }
 
@@ -36,24 +48,30 @@ function Icon(props: { icon: string, requiresIcons: boolean }) {
 export interface LinkBoxProps {
 	useIconBar: boolean;
 	links: Link[];
+	defaultIcon?: string;
+	errorIcon?: string;
 }
 
 export default function LinkBox(props: LinkBoxProps)  {
 	const links = props.links.map(link => {
 		const requiresIcons = props.useIconBar && link.url.trim() != "";
+		const icon = (
+			<Icon icon={link.icon} requiresIcons={requiresIcons}
+				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
+
 		if (link.url.trim() != "") {
 			return (
 				<li key={link.title + link.url}>
 					<a href={link.url}>
-						<Icon icon={link.icon} requiresIcons={requiresIcons} />
-						<span>{link.title}</span>
+						{icon}
+						<span className="title">{link.title}</span>
 					</a>
 				</li>);
 		} else {
 			return (
 				<li key={link.title} className="section">
-					<Icon icon={link.icon} requiresIcons={requiresIcons} />
-					<span>{link.title}</span>
+					{icon}
+					<span className="title">{link.title}</span>
 				</li>);
 		}
 	});

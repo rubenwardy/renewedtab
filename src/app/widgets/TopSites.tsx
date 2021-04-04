@@ -28,13 +28,15 @@ function TopSitesImpl(props: TopSitesProps) {
 	const links: Link[] = sites.map((site, i) => ({
 		id: site.url,
 		title: site.title,
-		icon: (icons ?? [])[i] ?? "fa-globe-europe",
+		icon: (icons ?? [])[i] ?? "",
 		url: site.url,
 	}));
 
 	console.log(links);
 
-	return (<LinkBox {...props} links={links} />);
+	return (
+		<LinkBox {...props} links={links}
+			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
 export default function TopSites(props: TopSitesProps)  {
