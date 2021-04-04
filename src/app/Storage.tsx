@@ -17,7 +17,6 @@ class WebExtStorage implements IStorage {
 	private readonly store : any;
 
 	constructor() {
-		// TODO: change this to `sync` when we have an app ID
 		this.store = browser.storage.local;
 	}
 
@@ -54,19 +53,6 @@ class WebExtStorage implements IStorage {
 
 
 class LocalStorage implements IStorage {
-	constructor() {
-		this.requestPersistantStorage();
-	}
-
-	requestPersistantStorage() {
-		if (navigator.storage && navigator.storage.persist) {
-			navigator.storage.persist()
-				.then((isPersisted) =>
-					console.log(`Persisted storage granted: ${isPersisted}`))
-				.catch(console.error);
-		}
-	}
-
 	async getAll(): Promise<{ [key: string]: any }> {
 		console.log(`[Storage] Get All`);
 		const ret: { [key: string]: any } = {};
@@ -132,6 +118,15 @@ class DelegateStorage implements IStorage {
 	async clear(): Promise<void> {
 		await this.delegate.clear();
 	}
+}
+
+
+if (typeof browser === 'undefined' &&
+		navigator.storage && navigator.storage.persist) {
+	navigator.storage.persist()
+		.then((isPersisted) =>
+			console.log(`Persisted storage granted: ${isPersisted}`))
+		.catch(console.error);
 }
 
 
