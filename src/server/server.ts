@@ -15,8 +15,8 @@ export const serverConfig = (function() {
 
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
 export const OWNER_EMAIL = process.env.OWNER_EMAIL ?? serverConfig.OWNER_EMAIL;
-export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/0.1; +https://renewedtab.rubenwardy.com/)";
-export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/0.1; +https://renewedtab.rubenwardy.com/)";
+export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.0.0; +https://renewedtab.rubenwardy.com/)";
+export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.0.0; +https://renewedtab.rubenwardy.com/)";
 
 
 // App
