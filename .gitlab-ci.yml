@@ -4,6 +4,7 @@ cache:
     - node_modules/
 stages:
   - test
+  - package
   - deploy
 
 variables:
@@ -23,7 +24,7 @@ test:
     - npm test
 
 webext:
-  stage: deploy
+  stage: package
   dependencies: []
   interruptible: true
   script:
@@ -33,8 +34,6 @@ webext:
     expire_in: 1 week
     paths:
       - renewedtab.zip
-  only:
-    - master
 
 pages:
   stage: deploy
@@ -48,3 +47,16 @@ pages:
       - public
   only:
     - master
+
+firefox:
+  stage: deploy
+  dependencies: ["webext"]
+  interruptible: false
+  script:
+    - VERSION=${CI_COMMIT_REF_NAME:1}
+    - >
+      curl "https://addons.mozilla.org/api/v4/addons/${FIREFOX_EXTENSION_ID}/versions/${VERSION}/" \
+        -g -XPUT --form "upload=@renewedtab.zip" \
+        -H "Authorization: JWT ${FIREFOX_JWT_SECRET}"
+  only:
+    - tags

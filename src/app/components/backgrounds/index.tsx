@@ -41,6 +41,7 @@ export default function Background(props: BackgroundProps) {
 		case BackgroundMode.Image:
 			return (<ImageBackground {...props} />);
 		case BackgroundMode.ImageUrl:
+			style.backgroundColor = props.background!.values.color ?? "#336699";
 			style.backgroundImage = `url('${background.values.url}')`;
 			style.backgroundPosition = background.values.position;
 			break;
