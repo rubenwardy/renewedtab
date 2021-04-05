@@ -1,4 +1,5 @@
 import { useXML } from "app/hooks/http";
+import { escapeHTMLtoText } from "app/utils/html";
 
 export interface Article {
 	title: string;
@@ -33,7 +34,7 @@ function parseFeed(root: Element): Feed | null {
 		root.querySelectorAll("item").forEach(el => {
 			const img = getImage(el.querySelector("description")?.textContent ?? undefined);
 			articles.push({
-				title: el.querySelector("title")!.textContent!,
+				title: escapeHTMLtoText(el.querySelector("title")!.textContent!),
 				link: el.querySelector("link")!.textContent!,
 				image: img && img[0],
 				alt: img && img[1],
@@ -49,7 +50,7 @@ function parseFeed(root: Element): Feed | null {
 		root.querySelectorAll("entry").forEach(el => {
 			const img = getImage(el.querySelector("summary")?.textContent ?? undefined);
 			articles.push({
-				title: el.querySelector("title")!.textContent!,
+				title: escapeHTMLtoText(el.querySelector("title")!.textContent!),
 				link: el.querySelector("link")!.getAttribute("href")!,
 				image: img && img[0],
 				alt: img && img[1],
