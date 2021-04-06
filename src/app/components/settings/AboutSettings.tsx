@@ -40,6 +40,10 @@ export default function AboutSettings(_props: any) {
 						href="https://discord.gg/zYjR54b">
 					Discord Server
 				</a>
+				<a className="btn btn-secondary"
+						href="https://matrix.to/#/#renewedtab:matrix.org">
+					Matrix Chat
+				</a>
 			</p>
 
 			<h3 className="mt-4">Help and Requests</h3>
