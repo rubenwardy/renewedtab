@@ -4,7 +4,7 @@ import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
 
 
-type ReactFactory<T> = ((props: T) => (JSX.Element | null)) ;
+type ReactFactory<T> = ((props: T) => (JSX.Element | null));
 export interface WidgetFactory<T> extends ReactFactory<T> {
 	initialProps: T;
 	defaultSize: Vector2;

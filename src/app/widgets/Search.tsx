@@ -2,7 +2,7 @@ import { usePromise } from "app/hooks";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetRaw } from "app/WidgetManager";
-import React from "react";
+import React, { useRef } from "react";
 
 
 interface SearchProps {
@@ -21,57 +21,74 @@ declare namespace browser.search {
 	}
 
 	function get(): Promise<SearchEngine[]>;
+	function search(props: any): void;
+	function query(props: any): void;
+}
+
+declare namespace browser.tabs {
+	interface Tab {
+		id?: number;
+	}
+
+	function getCurrent(): Promise<Tab>;
 }
 
 
-const searchUrlByName: { [key: string]: string } = {
-	google: "https://google.com/search",
-	duckduckgo: "https://duckduckgo.com",
-	bing: "https://www.bing.com/search",
-	yahoo: "https://yahoo.com/search",
-};
+const hasSearchAPI = typeof browser !== "undefined" && typeof browser.search !== "undefined";
 
-const hasSearchAPI = typeof browser !== "undefined" &&
-	typeof browser.search !== "undefined" &&
-	typeof browser.search.get !== "undefined";
+const hasSearchGetAPI = hasSearchAPI && typeof browser.search.get !== "undefined";
 
 
-async function getDefaultSearchEngine(): Promise<SearchProps> {
-	const def = (await browser.search.get()).find((x) => x.isDefault);
-	if (def && searchUrlByName[def.name.toLowerCase()]) {
-		return {
-			useBrowserEngine: false,
-			searchTitle: def.name,
-			searchURL: searchUrlByName[def.name.toLowerCase()],
-		};
+async function getBrowserSearchEngineName(): Promise<string> {
+	if (!hasSearchGetAPI) {
+		return "";
 	}
 
-	return {
-		useBrowserEngine: false,
-		searchTitle: "Google",
-		searchURL: "https://google.com/search",
-	};
+	const def = (await browser.search.get()).find((x) => x.isDefault);
+	return def?.name ?? "";
 }
 
 
 export default function Search(props: SearchProps) {
-	let engine = props;
 	if (hasSearchAPI && props.useBrowserEngine) {
-		const [def, error] = usePromise(() => getDefaultSearchEngine(), []);
-		engine = def ?? props;
-		if (!engine) {
-			return (
-				<div className="panel text-muted">
-					{error ? error.toString() : "Loading flights..."}
-				</div>);
+		const [name] = usePromise(() => getBrowserSearchEngineName(), []);
+		const ref = useRef<HTMLInputElement>(null);
+
+		function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+			e.preventDefault();
+
+			const query = ref.current?.value;
+			if (query) {
+				if (typeof browser.search.query == "function") {
+					browser.search.query({
+						text: query
+					});
+				} else {
+					browser.tabs.getCurrent().then((tab) => {
+						browser.search.search({
+							query: query,
+							tabId: tab.id,
+						});
+					})
+				}
+			}
 		}
+
+		return (
+			<div className="panel flush">
+				<form onSubmit={onSubmit}>
+					<input autoFocus={true} type="text" name="q" ref={ref}
+							placeholder={name ? `Search with ${name}` : "Search"}
+							className="large invisible" />
+				</form>
+			</div>);
 	}
 
 	return (
 		<div className="panel flush">
-			<form method="get" action={engine.searchURL}>
+			<form method="get" action={props.searchURL}>
 				<input autoFocus={true} type="text" name="q"
-						placeholder={`Search with ${engine.searchTitle}`}
+						placeholder={`Search with ${props.searchTitle}`}
 						className="large invisible" />
 			</form>
 		</div>);
