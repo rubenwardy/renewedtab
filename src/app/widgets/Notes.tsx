@@ -44,8 +44,6 @@ Notes.onCreated = function(widget: WidgetRaw<NotesProps>) {
 	widget.props.storageKey = `notes-${widget.id}`;
 }
 
-Notes.schema = {
-	storageKey: type.string("Key"),
-} as Schema;
+Notes.schema = {} as Schema;
 
 Notes.defaultSize = new Vector2(5, 2);
