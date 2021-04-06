@@ -12,7 +12,7 @@ export interface WidgetFactory<T> extends ReactFactory<T> {
 	/**
 	 * Schema for the props, used to generate WidgetEditor forms.
 	 */
-	schema: Schema;
+	schema: Schema | ((widget: WidgetRaw<T>) => Schema);
 
 	/**
 	 * Description shown in Create Widget dialog.
@@ -51,6 +51,18 @@ export interface WidgetProps<T> extends WidgetRaw<T> {
 	child: WidgetFactory<T>;
 	save(): void;
 	remove(): void;
+}
+
+
+/**
+ * Gets the schema for a widget
+ */
+export function getSchemaForWidget<T>(widget: WidgetRaw<T>, type: WidgetFactory<T>) {
+	if (typeof type.schema == "function") {
+		return type.schema(widget);
+	} else {
+		return type.schema;
+	}
 }
 
 

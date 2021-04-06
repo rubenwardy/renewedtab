@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
-import { WidgetProps } from "../WidgetManager";
+import { getSchemaForWidget, WidgetProps } from "../WidgetManager";
 import Modal from "./Modal";
 import { Form } from "./forms";
 import { ErrorBoundary } from "./ErrorBoundary";
+import { useForceUpdate } from "app/hooks";
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
@@ -10,6 +11,17 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
+	const schema = getSchemaForWidget(props, props.child);
+	const forceUpdate = useForceUpdate();
+
+	function onChange() {
+		if (typeof props.child.schema == "function") {
+			forceUpdate();
+		}
+
+		props.save();
+	}
+
 	return (
 		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
 			<div className="modal-body">
@@ -18,8 +30,8 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 				<Form
 						showEmptyView={!props.child.editHint}
 						values={props.props}
-						schema={props.child.schema}
-						onChange={props.save} />
+						schema={schema}
+						onChange={onChange} />
 				<a className="btn btn-secondary" onClick={props.onClose}>OK</a>
 			</div>
 		</Modal>);

@@ -86,18 +86,25 @@ Search.initialProps = {
 	searchURL: "https://google.com/search",
 };
 
-if (hasSearchAPI) {
-	Search.schema = {
-		useBrowserEngine: type.boolean("Use browser engine"),
-		searchTitle: type.string("Search engine name"),
-		searchURL: type.url("URL"),
-	} as Schema;
-} else {
-	Search.schema = {
-		searchTitle: type.string("Search engine name"),
-		searchURL: type.url("URL"),
-	} as Schema;
+Search.schema = (widget: WidgetRaw<SearchProps>) => {
+	if (!hasSearchAPI) {
+		return {
+			searchTitle: type.string("Search engine name"),
+			searchURL: type.url("URL"),
+		} as Schema;
+	} else if (widget.props.useBrowserEngine) {
+		return {
+			useBrowserEngine: type.boolean("Use browser's default search engine"),
+		}
+	} else {
+		return {
+			useBrowserEngine: type.boolean("Use browser's default search engine"),
+			searchTitle: type.string("Search engine name"),
+			searchURL: type.url("URL"),
+		} as Schema;
+	}
 }
+
 
 Search.defaultSize = new Vector2(15, 1);
 
