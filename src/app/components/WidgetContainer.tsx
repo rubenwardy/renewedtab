@@ -20,7 +20,7 @@ export default function WidgetContainer(props: WidgetContainerProps) {
 	const forceUpdate = useForceUpdate();
 
 	useEffect(() => {
-		const timer = setTimeout(() => setGridClassNames("layout animated") , 1);
+		const timer = setTimeout(() => setGridClassNames("layout animated"), 1000);
 		return () => clearTimeout(timer);
 	}, []);
 

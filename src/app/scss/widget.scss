@@ -129,6 +129,14 @@
 	background: #336699;
 }
 
+.react-grid-layout {
+	transition: none;
+}
+
+.react-grid-layout.animated {
+	transition: height 200ms ease;
+}
+
 .animated .react-grid-item.cssTransforms {
 	transition-property: transform;
 }
