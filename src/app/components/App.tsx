@@ -5,6 +5,7 @@ import WidgetContainer from "./WidgetContainer";
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { useBackground, usePromise, useStorage } from "app/hooks";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 
 const widgetManager = new WidgetManager();
@@ -26,7 +27,9 @@ export default function App(_props: any) {
 
 	return (
 		<div className={classes.join(" ")}>
-			<Background background={background} setWidgetsHidden={setWidgetsHidden} />
+			<ErrorBoundary errorChild={() => (<div id="background"></div>)}>
+				<Background background={background} setWidgetsHidden={setWidgetsHidden} />
+			</ErrorBoundary>
 			<CreateWidgetDialog isOpen={createIsOpen}
 					manager={widgetManager}
 					onClose={() => setCreateOpen(false)} />
