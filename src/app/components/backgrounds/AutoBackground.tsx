@@ -6,7 +6,7 @@ import { BackgroundInfo, BackgroundProps } from ".";
 
 function reportVote(info: BackgroundInfo, isPositive: boolean) {
 	const url = new URL(config.API_URL);
-	url.pathname = (url.pathname + "background/vote/").replaceAll("//", "/");
+	url.pathname = (url.pathname + "background/vote/").replace(/\/\//g, "/");
 
 	fetch(new Request(url.toString(), {
 		method: "POST",

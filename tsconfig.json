@@ -3,7 +3,7 @@
 		"jsx": "react",
 		"module": "CommonJS",
 		"moduleResolution": "Node",
-		"target": "esnext",
+		"target": "ES2018",
 		"sourceMap": true,
 		"typeRoots": [
 			"./node_modules/@types",

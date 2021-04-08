@@ -87,7 +87,7 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 */
 export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | null), (string | null)] {
 	const url = new URL(config.API_URL);
-	url.pathname = (url.pathname + path).replaceAll("//", "/");
+	url.pathname = (url.pathname + path).replace(/\/\//g, "/");
 	Object.entries(args).forEach(([key, value]) => {
 		url.searchParams.set(key.toString(), (value as Object).toString());
 	})
