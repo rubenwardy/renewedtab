@@ -41,7 +41,7 @@ Feed.description = "Shows an Atom or RSS feed";
 
 Feed.initialProps = {
 	title: "",
-	url: "http://feeds.bbci.co.uk/news/rss.xml"
+	url: "https://feeds.bbci.co.uk/news/rss.xml"
 };
 
 Feed.schema = {

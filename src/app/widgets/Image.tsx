@@ -20,7 +20,7 @@ Image.description = "Display an image, optionally making it a link";
 
 Image.initialProps = {
 	link: "",
-	image_url: "http://placekitten.com/300/300"
+	image_url: "https://placekitten.com/300/300"
 };
 
 Image.schema = {

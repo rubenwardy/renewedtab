@@ -17,8 +17,12 @@ function getConfig() {
 	};
 }
 
+const mode = isProd ? "production" : "development";
+
+console.log(`Webpack is building in ${mode}`);
+
 module.exports = {
-	mode: isProd ? "production" : "development",
+	mode: mode,
 	entry: "./src/app/index",
 	devtool: isProd ? undefined : "source-map",
 	plugins: [
