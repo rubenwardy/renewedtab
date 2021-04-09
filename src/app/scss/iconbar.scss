@@ -34,12 +34,14 @@
 		.title {
 			display: block;
 			margin: 10px 0 0 0;
+			overflow-wrap: break-word;
 		}
 
 		a {
 			display: inline-block;
 			color: #eee;
 			transition: transform 200ms ease;
+			width: 90px;
 		}
 
 		&:not(.section) a:hover {
