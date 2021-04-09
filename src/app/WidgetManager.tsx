@@ -1,69 +1,7 @@
 import { storage } from "./Storage";
-import Schema from "./utils/Schema";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
-
-
-type ReactFactory<T> = ((props: T) => (JSX.Element | null));
-export interface WidgetFactory<T> extends ReactFactory<T> {
-	initialProps: T;
-	defaultSize: Vector2;
-
-	/**
-	 * Schema for the props, used to generate WidgetEditor forms.
-	 */
-	schema: Schema | ((widget: WidgetRaw<T>) => Schema);
-
-	/**
-	 * Description shown in Create Widget dialog.
-	 */
-	description: string;
-
-	isBrowserOnly?: boolean;
-
-	/**
-	 * Hint to be shown in the WidgetEditor.
-	 */
-	editHint?: string;
-
-	/**
-	 * Called when the widget is created, either by the user
-	 * or from defaults.
-	 */
-	onCreated?: (widget: WidgetRaw<T>) => void;
-
-	/**
-	 * Called when the widget is loaded from save.
-	 */
-	onLoaded?: (widget: WidgetRaw<T>) => void;
-}
-
-export interface WidgetRaw<T> {
-	id: number;
-	type: string;
-	props: T;
-
-	position?: Vector2;
-	size: Vector2;
-}
-
-export interface WidgetProps<T> extends WidgetRaw<T> {
-	child: WidgetFactory<T>;
-	save(): void;
-	remove(): void;
-}
-
-
-/**
- * Gets the schema for a widget
- */
-export function getSchemaForWidget<T>(widget: WidgetRaw<T>, type: WidgetFactory<T>) {
-	if (typeof type.schema == "function") {
-		return type.schema(widget);
-	} else {
-		return type.schema;
-	}
-}
+import { Widget } from "./Widget";
 
 
 /**
@@ -72,14 +10,14 @@ export function getSchemaForWidget<T>(widget: WidgetRaw<T>, type: WidgetFactory<
 export class WidgetManager {
 	private id_counter = 0;
 
-	widgets: (WidgetRaw<any>)[] = [];
+	widgets: (Widget<any>)[] = [];
 
 	constructor() {}
 
 	async load() {
-		const json = await storage.get<WidgetRaw<any>[]>("widgets");
+		const json = await storage.get<Widget<any>[]>("widgets");
 		if (json) {
-			this.widgets = json.filter((widget: WidgetRaw<any>) => WidgetTypes[widget.type]);
+			this.widgets = json.filter((widget: Widget<any>) => WidgetTypes[widget.type]);
 			this.id_counter =
 				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 

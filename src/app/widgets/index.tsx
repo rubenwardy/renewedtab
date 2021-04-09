@@ -16,11 +16,11 @@ export { default as TopSites } from "./TopSites";
 export { default as WebComic } from "./WebComic";
 export { default as Weather } from "./Weather";
 
-import { WidgetFactory } from "../WidgetManager";
+import { WidgetType } from "../Widget";
 import { Age, Button, Clock, DailyGoal, Greeting, HelpAbout, IFrame, Image, Invisible,
 	Links, Notes, Feed, Search, SpaceFlights, TopSites, WebComic, Weather } from ".";
 
-export const WidgetTypes: { [name: string]: WidgetFactory<any> } = {
+export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	Age: Age,
 	Button: Button,
 	Clock: Clock,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { WidgetManager } from "app/WidgetManager";
 import CreateWidgetDialog from "./CreateWidgetDialog";
-import WidgetContainer from "./WidgetContainer";
+import WidgetGrid from "./WidgetGrid";
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { useBackground, usePromise, useStorage } from "app/hooks";
@@ -36,7 +36,7 @@ export default function App(_props: any) {
 			<SettingsDialog isOpen={settingsIsOpen}
 					onClose={() => setSettingsOpen(false)}
 					background={background} setBackground={setBackground} />
-			<WidgetContainer wm={widgetManager} isLocked={isLocked ?? false} />
+			<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />
 
 			<footer className="text-shadow-soft">
 				{isLocked && (

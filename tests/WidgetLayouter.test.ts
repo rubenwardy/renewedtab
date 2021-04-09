@@ -1,7 +1,7 @@
 import { Rect2 } from "app/utils/Rect2";
 import { V } from "app/utils/Vector2";
 import WidgetLayouter from "app/WidgetLayouter";
-import { WidgetRaw } from "app/WidgetManager";
+import { Widget } from "app/Widget";
 import { expect } from "chai";
 
 function R(x: number, y: number, w: number, h: number) {
@@ -31,7 +31,7 @@ describe("WidgetLayouter", function() {
 	it("accepts existing", function() {
 		const layouter = new WidgetLayouter(V(15, 15));
 
-		const widget : WidgetRaw<any> = {
+		const widget : Widget<any> = {
 			id: 1,
 			type: "Type",
 			position: V(1, 1),
@@ -48,21 +48,21 @@ describe("WidgetLayouter", function() {
 	it("finds position for new elements", function() {
 		const layouter = new WidgetLayouter(V(15, 15));
 
-		const widget1 : WidgetRaw<any> = {
+		const widget1 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			size: V(3, 3),
 			props: {}
 		};
 
-		const widget2 : WidgetRaw<any> = {
+		const widget2 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			size: V(15, 2),
 			props: {}
 		};
 
-		const widget3 : WidgetRaw<any> = {
+		const widget3 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			size: V(3, 3),
@@ -82,14 +82,14 @@ describe("WidgetLayouter", function() {
 	it("repositions existing positions on collision", function() {
 		const layouter = new WidgetLayouter(V(15, 15));
 
-		const widget1 : WidgetRaw<any> = {
+		const widget1 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			size: V(3, 3),
 			props: {}
 		};
 
-		const widget2 : WidgetRaw<any> = {
+		const widget2 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			position: V(0, 0),
@@ -97,7 +97,7 @@ describe("WidgetLayouter", function() {
 			props: {}
 		};
 
-		const widget3 : WidgetRaw<any> = {
+		const widget3 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			position: V(3, 0),

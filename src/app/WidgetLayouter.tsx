@@ -1,6 +1,6 @@
 import { Rect2 } from "./utils/Rect2";
 import { Vector2 } from "./utils/Vector2";
-import { WidgetRaw } from "./WidgetManager";
+import { Widget } from "./Widget";
 
 
 /**
@@ -32,7 +32,7 @@ export default class WidgetLayouter {
 		};
 	}
 
-	add(widget: WidgetRaw<any>) {
+	add(widget: Widget<any>) {
 		if (!widget.position ||
 				this.hasWidget(new Rect2(widget.position, widget.size))) {
 			if (widget.position) {
@@ -44,7 +44,7 @@ export default class WidgetLayouter {
 		this.rects.push(new Rect2(widget.position, widget.size));
 	}
 
-	resolveAll(widgets: WidgetRaw<any>[]) {
+	resolveAll(widgets: Widget<any>[]) {
 		widgets.filter(widget => widget.position).forEach(this.add.bind(this));
 		widgets.filter(widget => !widget.position).forEach(this.add.bind(this));
 	}

@@ -1,6 +1,6 @@
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetRaw } from 'app/WidgetManager';
+import { Widget } from 'app/Widget';
 import React from 'react';
 import { useStorage } from "../hooks";
 
@@ -40,7 +40,7 @@ Notes.initialProps = {
 	storageKey: "",
 };
 
-Notes.onCreated = function(widget: WidgetRaw<NotesProps>) {
+Notes.onCreated = function(widget: Widget<NotesProps>) {
 	widget.props.storageKey = `notes-${widget.id}`;
 }
 

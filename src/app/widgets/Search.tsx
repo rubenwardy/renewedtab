@@ -1,7 +1,7 @@
 import { usePromise } from "app/hooks";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetRaw } from "app/WidgetManager";
+import { Widget } from "app/Widget";
 import React, { useRef } from "react";
 
 
@@ -103,7 +103,7 @@ Search.initialProps = {
 	searchURL: "https://google.com/search",
 };
 
-Search.schema = (widget: WidgetRaw<SearchProps>) => {
+Search.schema = (widget: Widget<SearchProps>) => {
 	if (!hasSearchAPI) {
 		return {
 			searchTitle: type.string("Search engine name"),
@@ -125,7 +125,7 @@ Search.schema = (widget: WidgetRaw<SearchProps>) => {
 
 Search.defaultSize = new Vector2(15, 1);
 
-Search.onCreated = (widget: WidgetRaw<SearchProps>) => {
+Search.onCreated = (widget: Widget<SearchProps>) => {
 	if (!hasSearchAPI) {
 		widget.props.searchTitle = "Google";
 		widget.props.searchURL = "https://google.com/search";

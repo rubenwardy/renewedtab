@@ -2,7 +2,7 @@ import LinkBox, { Link, LinkSchema, LinkBoxProps } from 'app/components/LinkBox'
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetRaw } from 'app/WidgetManager';
+import { Widget } from 'app/Widget';
 import React from 'react';
 
 
@@ -62,7 +62,7 @@ Links.schema = {
 
 Links.defaultSize = new Vector2(5, 4);
 
-Links.onLoaded = function(widget: WidgetRaw<any>) {
+Links.onLoaded = function(widget: Widget<any>) {
 	if (widget.props.sections && !widget.props.links) {
 		widget.props.links = widget.props.sections.map((section: any) => [
 			{ title: section.title, url: "" },
