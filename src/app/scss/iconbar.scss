@@ -28,6 +28,7 @@
 			font-size: 50px;
 			text-align: center;
 			object-fit: cover;
+			filter: drop-shadow(2px 2px 2px rgba(15, 15, 15, 0.3));
 		}
 
 		.title {
@@ -36,16 +37,14 @@
 		}
 
 		a {
+			display: inline-block;
 			color: #eee;
+			transition: transform 200ms ease;
 		}
 
-		transition: transform 200ms ease;
-
-		&:not(.section):hover {
-			a {
-				color: white;
-				text-decoration: none;
-			}
+		&:not(.section) a:hover {
+			color: white;
+			text-decoration: none;
 			transform: scale(1.05, 1.05);
 			z-index: 2;
 
