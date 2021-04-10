@@ -5,7 +5,11 @@ import { runPromise } from "./promises";
 
 
 function useStorageBacking<T>(backing: IStorage, key: string,
-		defaultValue?: (T | null)): [T | null, (val: T) => void] {
+		defaultValue?: (T | null), enableDebounce?: boolean): [T | null, (val: T) => void] {
+	if (enableDebounce === undefined) {
+		enableDebounce = true;
+	}
+
 	const [value, setValue] = useState<T | null>(null);
 
 	runPromise<T | null>(() => backing.get(key),
@@ -17,7 +21,11 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 		[ key ]);
 
 	function updateValue(val: T) {
-		setStorage(key, val);
+		if (enableDebounce) {
+			setStorage(key, val);
+		} else {
+			backing.set(key, val)
+		}
 		setValue(val);
 	}
 
@@ -34,8 +42,8 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 * @return {[value, setValue]]} - Response and error
 */
 export function useStorage<T>(key: string,
-		defaultValue?: (T | null)): [T | null, (val: T) => void] {
-	return useStorageBacking(storage, key, defaultValue);
+		defaultValue?: (T | null), enableDebounce?: boolean): [T | null, (val: T) => void] {
+	return useStorageBacking(storage, key, defaultValue, enableDebounce);
 }
 
 

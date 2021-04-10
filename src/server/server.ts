@@ -180,8 +180,8 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 const feedbackStream = fs.createWriteStream("feedback.txt", { flags: "a" });
 app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
 	try {
-		if (!req.body.reason) {
-			res.status(400).send("Missing reason");
+		if (!req.body.event) {
+			res.status(400).send("Missing event");
 			return;
 		}
 
@@ -193,8 +193,9 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 				**Feedback**
 				Event: ${req.body.event}
 				Info: ${req.body.version ? "v" + req.body.version : ""} / ${req.body.browser} / ${req.body.platform}
-				Reasons: ${reasons.join(", ")}
-				         ${req.body.other_reason}
+				${reasons ? `Reasons: ${reasons.join(", ")}
+				         ${req.body.other_reason}` : ""}
+				${req.body.email ? `Email: ${req.body.email}` : ""}
 
 				${req.body.comments}
 			`;

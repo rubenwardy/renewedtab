@@ -9,6 +9,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import getTranslation, { getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
+import ReviewRequester from "./ReviewRequester";
 
 
 const widgetManager = new WidgetManager();
@@ -51,6 +52,8 @@ export default function App() {
 						background={background} setBackground={setBackground}
 						theme={theme} setTheme={setTheme} />
 				<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />
+
+				<ReviewRequester />
 
 				<footer className="text-shadow-soft">
 					{isLocked && (
