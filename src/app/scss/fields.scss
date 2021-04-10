@@ -82,7 +82,7 @@ textarea.invisible, input.invisible {
 	.backing {
 		display: inline-block;
 		visibility: hidden;
-		text-shadow: transparent;
+		text-shadow: none;
 	}
 
 	input {

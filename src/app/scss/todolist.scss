@@ -1,0 +1,37 @@
+.todolist {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0.25rem 0.5rem;
+
+		input[type="checkbox"] {
+			margin-right: 0.75em;
+
+			&:checked + span {
+				&, input {
+					text-decoration: line-through;
+				}
+				opacity: 0.8;
+			}
+
+			&:disabled {
+				visibility: hidden;
+			}
+		}
+
+		input[type="text"], .input-auto > .backing {
+			font-size: 120%;
+		}
+	}
+}
+
+.widget .todolist {
+	height: 100%;
+	// box-sizing: border-box;
+	overflow: hidden auto;
+}

@@ -14,6 +14,7 @@ import Links from "./Links";
 import Notes from "./Notes";
 import Search from "./Search";
 import SpaceFlights from "./SpaceFlights";
+import TodoList from "./TodoList";
 import TopSites from "./TopSites";
 import Weather from "./Weather";
 import WebComic from "./WebComic";
@@ -33,6 +34,7 @@ export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	Feed: Feed,
 	Search: Search,
 	SpaceFlights: SpaceFlights,
+	TodoList: TodoList,
 	TopSites: TopSites,
 	WebComic: WebComic,
 	Weather: Weather,
