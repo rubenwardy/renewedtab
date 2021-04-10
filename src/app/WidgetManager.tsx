@@ -2,6 +2,7 @@ import { storage } from "./Storage";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
 import { Widget } from "./Widget";
+import deepCopy from "./utils/deepcopy";
 
 
 /**
@@ -54,7 +55,7 @@ export class WidgetManager {
 			type: type,
 			position: undefined,
 			size: widget_type.defaultSize,
-			props:  Object.assign({}, widget_type.initialProps),
+			props: deepCopy(widget_type.initialProps),
 		};
 		this.widgets.push(widget);
 
