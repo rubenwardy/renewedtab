@@ -54,9 +54,9 @@ firefox:
   interruptible: false
   script:
     - VERSION=${CI_COMMIT_REF_NAME:1}
+    - JWT=$(node utils/make_jwt.js $FIREFOX_JWT_ISSUER $FIREFOX_JWT_SECRET)
     - >
       curl "https://addons.mozilla.org/api/v4/addons/${FIREFOX_EXTENSION_ID}/versions/${VERSION}/" \
-        -g -XPUT --form "upload=@renewedtab.zip" \
-        -H "Authorization: JWT ${FIREFOX_JWT_SECRET}"
+        -g -XPUT --form "upload=@renewedtab.zip" -H "Authorization: JWT ${JWT}"
   only:
     - tags
