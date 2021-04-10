@@ -40,6 +40,9 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 		<input type="checkbox" checked={props.item.completed} onChange={onChecked} />
 		<AutoWidthInput onChange={onTextChanged} value={props.item.text ?? ""}
 				onFinished={onFinished} minWidth="50%" />
+		<a onClick={() => props.delete()} className="btn btn-sm">
+			<i className="fas fa-times" />
+		</a>
 	</li>)
 }
 
@@ -79,7 +82,8 @@ export default function TodoList(widget: WidgetProps<TodoListProps>) {
 				<input type="checkbox" disabled />
 				<AutoWidthInput onChange={(e) => setNewItemText(e.target.value)}
 						value={newItemText} onFinished={createItem}
-						minWidth="50%" />
+						minWidth="50%"
+						placeholder={list.length == 0 ? "Create a new todo item" : undefined} />
 			</li>
 		</ul>);
 }
