@@ -2,12 +2,12 @@ import LinkBox, { Link, LinkSchema, LinkBoxProps } from 'app/components/LinkBox'
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
-import { Widget } from 'app/Widget';
+import { Widget, WidgetProps } from 'app/Widget';
 import React from 'react';
 
 
-export default function Links(props: LinkBoxProps)  {
-	return (<LinkBox {...props} />);
+export default function Links(props: WidgetProps<LinkBoxProps>)  {
+	return (<LinkBox {...props.props} />);
 }
 
 

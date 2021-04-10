@@ -1,7 +1,8 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
-import { useStorage } from "app/hooks";
+import { useWidgetProp } from "app/hooks/widget";
 import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
+import { WidgetProps } from "app/Widget";
 import React, { ChangeEvent, useEffect } from "react";
 
 
@@ -10,19 +11,23 @@ interface Goal {
 	time: Date;
 }
 
+interface DailyGoalProps {
+	goal?: Goal;
+}
 
-export default function DailyGoal() {
-	const [goal, setGoal] = useStorage<Goal | null>("goal");
+
+export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
+	const [goal, setGoal] = useWidgetProp<Goal | undefined>(widget, "goal");
 
 	useEffect(() => {
 		if (goal && goal.time.getDate() != new Date().getDate()) {
-			setGoal(null);
+			setGoal(undefined);
 		}
 	}, []);
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		if (e.target.value == "") {
-			setGoal(null);
+			setGoal(undefined);
 		} else {
 			setGoal({
 				text: e.target.value,
@@ -33,12 +38,11 @@ export default function DailyGoal() {
 
 	return (
 		<div className="text-shadow-hard large middle-center">
-			{goal !== undefined &&
-				<AutoWidthInput onChange={handleChange} value={goal?.text ?? ""}
-						placeholder="What's your goal for today?" />}
+			<AutoWidthInput onChange={handleChange} value={goal?.text ?? ""}
+					placeholder="What's your goal for today?" />
 
 			{goal &&
-				(<a onClick={() => setGoal(null)} className="btn btn-sm ml-2">
+				(<a onClick={() => setGoal(undefined)} className="btn btn-sm ml-2">
 					<i className="fas fa-times" />
 				</a>)}
 		</div>);

@@ -52,7 +52,7 @@ function getDate(launch: SpaceLaunch): string {
 }
 
 
-export default function SpaceFlights(_props: any) {
+export default function SpaceFlights() {
 	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
 
 	if (!data) {

@@ -1,5 +1,6 @@
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { WidgetProps } from 'app/Widget';
 import React, { useEffect, useState } from 'react';
 
 interface AgeProps {
@@ -11,7 +12,9 @@ function calculateYearsSince(date: Date): number {
 	return delta / 365.25 / 1000 / (60 * 60 * 24);
 }
 
-export default function Age(props: AgeProps) {
+export default function Age(widget: WidgetProps<AgeProps>) {
+	const props = widget.props;
+
 	const [age, setAge] = useState(calculateYearsSince(props.birthDate));
 
 	useEffect(() => {

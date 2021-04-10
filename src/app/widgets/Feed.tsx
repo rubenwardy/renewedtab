@@ -2,13 +2,16 @@ import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { useFeed } from 'app/hooks/feeds';
+import { WidgetProps } from 'app/Widget';
 
 interface FeedProps {
 	title?: string;
 	url: string;
 }
 
-export default function Feed(props: FeedProps) {
+export default function Feed(widget: WidgetProps<FeedProps>) {
+	const props = widget.props;
+
 	const [feed, error] = useFeed(props.url, [props.url]);
 
 	if (!feed) {

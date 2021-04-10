@@ -2,7 +2,7 @@ import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import React from 'react';
 
-export default function HelpAbout(_props: any) {
+export default function HelpAbout() {
 	return (
 		<div className="panel">
 			<h2>Renewed Tab Help and Tips</h2>

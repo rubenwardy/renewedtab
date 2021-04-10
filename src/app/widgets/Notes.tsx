@@ -1,24 +1,18 @@
+import { useWidgetProp } from 'app/hooks/widget';
+import { storage } from 'app/Storage';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { Widget } from 'app/Widget';
+import { Widget, WidgetProps } from 'app/Widget';
 import React from 'react';
 import { useStorage } from "../hooks";
 
 
 interface NotesProps {
-	storageKey: string;
+	notes: string;
 }
 
-export default function Notes(props: NotesProps) {
-	if (!props.storageKey) {
-		return (<div className="panel">Missing storage key</div>);
-	}
-
-	const [ notes, setNotes ] = useStorage(props.storageKey, "");
-
-	if (notes == null) {
-		return (<div className="panel">Loading notes...</div>);
-	}
+export default function Notes(widget: WidgetProps<NotesProps>) {
+	const [ notes, setNotes ] = useWidgetProp<string>(widget, "notes");
 
 	function handleChange(event: React.FormEvent<HTMLTextAreaElement>) {
 		const element = event.target as HTMLTextAreaElement;
@@ -37,11 +31,21 @@ export default function Notes(props: NotesProps) {
 Notes.description = "An editable text area for notes";
 
 Notes.initialProps = {
-	storageKey: "",
+	notes: "",
 };
 
-Notes.onCreated = function(widget: Widget<NotesProps>) {
-	widget.props.storageKey = `notes-${widget.id}`;
+Notes.onLoaded = function(widget: Widget<any>) {
+	if (widget.props.storageKey) {
+		widget.props.notes = "";
+
+		storage.get(widget.props.storageKey).then((value) => {
+			if (typeof value == "string") {
+				widget.props.notes = value;
+			}
+		});
+
+		widget.props.storageKey = undefined;
+	}
 }
 
 Notes.schema = {} as Schema;

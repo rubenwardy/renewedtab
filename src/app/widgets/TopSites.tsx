@@ -4,6 +4,7 @@ import { useForceUpdate, usePromise } from 'app/hooks';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { getWebsiteIcon } from 'app/WebsiteIcon';
+import { WidgetProps } from 'app/Widget';
 import React from 'react';
 
 
@@ -39,7 +40,9 @@ function TopSitesImpl(props: TopSitesProps) {
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
-export default function TopSites(props: TopSitesProps)  {
+export default function TopSites(widget: WidgetProps<TopSitesProps>) {
+	const props = widget.props;
+
 	const forceUpdate = useForceUpdate();
 
 	if (typeof browser.topSites === "undefined") {

@@ -2,6 +2,7 @@ import React from 'react';
 import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { Location, type } from 'app/utils/Schema';
+import { WidgetProps } from 'app/Widget';
 
 
 enum TemperatureUnit {
@@ -53,7 +54,9 @@ interface WeatherProps {
 	unit: TemperatureUnit;
 }
 
-export default function Weather(props: WeatherProps) {
+export default function Weather(widget: WidgetProps<WeatherProps>) {
+	const props = widget.props;
+
 	if (!props.location) {
 		return (
 			<div className="panel text-muted">

@@ -4,7 +4,7 @@ import { Vector2 } from "./utils/Vector2";
 
 type ReactFC<T> = ((props: T) => (JSX.Element | null));
 
-export interface WidgetType<T> extends ReactFC<T> {
+export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	initialProps: T;
 	defaultSize: Vector2;
 

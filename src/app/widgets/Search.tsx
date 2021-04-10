@@ -1,7 +1,7 @@
 import { usePromise } from "app/hooks";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { Widget } from "app/Widget";
+import { Widget, WidgetProps } from "app/Widget";
 import React, { useRef } from "react";
 
 
@@ -49,7 +49,9 @@ async function getBrowserSearchEngineName(): Promise<string> {
 }
 
 
-export default function Search(props: SearchProps) {
+export default function Search(widget: WidgetProps<SearchProps>) {
+	const props = widget.props;
+
 	if (hasSearchAPI && props.useBrowserEngine) {
 		const [name] = usePromise(() => getBrowserSearchEngineName(), []);
 		const ref = useRef<HTMLInputElement>(null);

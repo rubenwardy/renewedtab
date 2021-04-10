@@ -1,5 +1,6 @@
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { WidgetProps } from 'app/Widget';
 import React from 'react';
 
 interface ButtonProps {
@@ -7,12 +8,12 @@ interface ButtonProps {
 	text: string;
 }
 
-export default function Button(props: ButtonProps)  {
+export default function Button(props: WidgetProps<ButtonProps>)  {
 	return (
 		<div className="panel flush">
 			<ul className="large">
 				<li>
-					<a href={props.url}>{props.text}</a>
+					<a href={props.props.url}>{props.props.text}</a>
 				</li>
 			</ul>
 		</div> );

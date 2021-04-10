@@ -1,5 +1,6 @@
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
+import { WidgetProps } from "app/Widget";
 import React from "react";
 
 interface ClockProps {
@@ -7,7 +8,8 @@ interface ClockProps {
 	hour12: boolean;
 }
 
-export default function Clock(props: ClockProps) {
+export default function Clock(widget: WidgetProps<ClockProps>) {
+	const props = widget.props;
 	const [time, setTime] = React.useState<Date>(new Date());
 
 	React.useEffect(() => {

@@ -1,5 +1,6 @@
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { WidgetProps } from 'app/Widget';
 import React from 'react';
 
 interface ImageProps {
@@ -7,7 +8,9 @@ interface ImageProps {
 	link: string;
 }
 
-export default function Image(props: ImageProps)  {
+export default function Image(widget: WidgetProps<ImageProps>) {
+	const props = widget.props;
+
 	if ((props.link ?? "").length > 0) {
 		return (<a href={props.link}><img src={props.image_url} /></a>);
 	} else {

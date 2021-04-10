@@ -85,7 +85,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 			</>);
 	}
 
-	const Child = React.createElement(props.child, props.props);
+	const Child = props.child;
 	return (
 		<>
 			<div className="widget-strip">
@@ -101,7 +101,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 				</span>
 			</div>
 			<ErrorBoundary>
-				{Child}
+				<Child {...props} />
 			</ErrorBoundary>
 		</>);
 }
