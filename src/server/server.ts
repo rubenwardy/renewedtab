@@ -48,8 +48,8 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 		return;
 	}
 
-	const url = new URL(req.query.url as string);
 	try {
+		const url = new URL(req.query.url as string);
 		const result = await handleProxy(url);
 		res.status(result.status).type(result.contentType).send(result.text);
 	} catch (ex) {
