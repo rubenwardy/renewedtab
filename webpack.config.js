@@ -4,6 +4,7 @@ const fs = require("fs");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const formatjs = require("@formatjs/ts-transformer");
 
 const isProd = process.env.NODE_ENV === "production";
 const dest = path.resolve(__dirname, "dist/webext/app");
@@ -71,8 +72,17 @@ module.exports = {
 						loader: "ts-loader",
 						options: {
 							configFile: "tsconfig.app.json",
-						}
-					}
+							getCustomTransformers() {
+								return {
+									before: [
+										formatjs.transform({
+											overrideIdFn: '[sha512:contenthash:base64:6]',
+										}),
+									],
+								};
+							},
+						},
+					},
 				],
 				exclude: /node_modules/
 			},
@@ -88,7 +98,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: [ ".ts", ".tsx", ".js" ],
+		extensions: [".ts", ".tsx", ".js"],
 		modules: [
 			path.resolve(__dirname, "src"),
 			"node_modules"

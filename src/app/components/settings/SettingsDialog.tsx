@@ -3,6 +3,9 @@ import AboutSettings from "./AboutSettings";
 import BackgroundSettings, { BackgroundSettingsProps } from "./BackgroundSettings";
 import Modal from "../Modal";
 import ImportExport from "./ImportExport";
+import { MessageDescriptor } from "@formatjs/intl";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+
 
 interface SettingsDialogProps extends BackgroundSettingsProps {
 	isOpen: boolean;
@@ -17,16 +20,19 @@ enum SettingsTab {
 
 declare type SettingsTabType = keyof typeof SettingsTab;
 
-function getTitleForTab(tab: SettingsTab) {
-	switch (tab) {
-	case SettingsTab.Background:
-		return "Background";
-	case SettingsTab.ImportExport:
-		return "Import / Export";
-	case SettingsTab.About:
-		return "About and Credits";
-	}
-}
+const tabTitles = defineMessages({
+	[SettingsTab.Background]: {
+		defaultMessage: "Background",
+	},
+
+	[SettingsTab.ImportExport]: {
+		defaultMessage: "Import / Export",
+	},
+
+	[SettingsTab.About]: {
+		defaultMessage: "About and Credits",
+	},
+});
 
 function getComponentForTab(tab: SettingsTab) {
 	switch (tab) {
@@ -50,7 +56,7 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 			return (
 				<a key={tabName} onClick={() => setTab(tab)}
 						className={isSelected ? "active" : undefined}>
-					{getTitleForTab(tab)}
+					<FormattedMessage {...tabTitles[tab]} />
 				</a>)
 		});
 

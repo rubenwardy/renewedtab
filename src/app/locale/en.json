@@ -1,0 +1,384 @@
+{
+  "0mqoSv": {
+    "defaultMessage": "Loading feed..."
+  },
+  "1Ajc0a": {
+    "defaultMessage": "Reminds you about a daily goal"
+  },
+  "1QiItI": {
+    "defaultMessage": "Leave blank to make heading"
+  },
+  "1e9zwh": {
+    "defaultMessage": "Link URL"
+  },
+  "1wIgYC": {
+    "defaultMessage": "You can change the name by clicking it on the widget"
+  },
+  "2/2yg+": {
+    "defaultMessage": "Add"
+  },
+  "2IFGap": {
+    "defaultMessage": "Donate"
+  },
+  "2zQ/Df": {
+    "defaultMessage": "Birth date"
+  },
+  "3ZfhWo": {
+    "defaultMessage": "Permission needed to access {host}. Edit this widget to grant it."
+  },
+  "3aaibf": {
+    "defaultMessage": "Add Widget"
+  },
+  "3zkgWw": {
+    "defaultMessage": "Images are stored locally on your browser, and never uploaded"
+  },
+  "47FYwb": {
+    "defaultMessage": "Cancel"
+  },
+  "4NtnV1": {
+    "defaultMessage": "Help for new users of Renewed Tab"
+  },
+  "4syC1B": {
+    "defaultMessage": "Help and Requests"
+  },
+  "4wtLvc": {
+    "defaultMessage": "What's your goal for today?"
+  },
+  "50XVmf": {
+    "defaultMessage": "No images found on feed"
+  },
+  "6VamZD": {
+    "defaultMessage": "Powered by RocketLaunch.Live"
+  },
+  "6mHlh1": {
+    "defaultMessage": "Grant permission to access top sites"
+  },
+  "7JMBBk": {
+    "defaultMessage": "An error occured:"
+  },
+  "8J0Bhj": {
+    "defaultMessage": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+  },
+  "8S+esS": {
+    "defaultMessage": "Renewed Tab Help and Tips"
+  },
+  "8bdazr": {
+    "defaultMessage": "Greets you"
+  },
+  "9+2gJZ": {
+    "defaultMessage": "This widget requires the browser extension version."
+  },
+  "9XUYQt": {
+    "defaultMessage": "Import"
+  },
+  "9a9+ww": {
+    "defaultMessage": "Title"
+  },
+  "9bmERx": {
+    "defaultMessage": "An image from a URL"
+  },
+  "Ae/0CS": {
+    "defaultMessage": "center, top, or bottom"
+  },
+  "B9mB91": {
+    "defaultMessage": "Image URL"
+  },
+  "CExMi4": {
+    "defaultMessage": "Good evening"
+  },
+  "CRRVsD": {
+    "defaultMessage": "Please select a location"
+  },
+  "CshCZY": {
+    "defaultMessage": "Background Type"
+  },
+  "DbkCFr": {
+    "defaultMessage": "Create a new todo item"
+  },
+  "DyNSTr": {
+    "defaultMessage": "Shows the most recent page from a webcomic, using Atom or RSS"
+  },
+  "EHTHzJ": {
+    "defaultMessage": "Search engine name"
+  },
+  "EP5E9y": {
+    "defaultMessage": "Collection ID. Found in the URL, example: 42576559"
+  },
+  "GqPEp+": {
+    "defaultMessage": "Requires browser extension version"
+  },
+  "GxevlG": {
+    "defaultMessage": "Optional, URL to image (18px recommended)"
+  },
+  "HFMAre": {
+    "defaultMessage": "Display as icons"
+  },
+  "HGSt8N": {
+    "defaultMessage": "Choose an image"
+  },
+  "HPZ0pC": {
+    "defaultMessage": "Shows nothing, useful for layouting purposes"
+  },
+  "I9KXpO": {
+    "defaultMessage": "Location needed. Click edit to add it."
+  },
+  "JBWS0c": {
+    "defaultMessage": "Link"
+  },
+  "JU5H2h": {
+    "defaultMessage": "Temperature Unit"
+  },
+  "JkLHGw": {
+    "defaultMessage": "Website"
+  },
+  "K3r6DQ": {
+    "defaultMessage": "Delete"
+  },
+  "KFe74G": {
+    "defaultMessage": "Reset everything"
+  },
+  "M81yvY": {
+    "defaultMessage": "Nothing to edit."
+  },
+  "Mee7wz": {
+    "defaultMessage": "Optional, makes image a link"
+  },
+  "N/7Stk": {
+    "defaultMessage": "Created by <a>rubenwardy</a>."
+  },
+  "N3HgMZ": {
+    "defaultMessage": "Also take a look at settings (the cog)."
+  },
+  "N5qakN": {
+    "defaultMessage": "Track to do list items"
+  },
+  "Necq3a": {
+    "defaultMessage": "Links, with support for headings and icons"
+  },
+  "Nw66w+": {
+    "defaultMessage": "Powered by OpenWeatherMap.org"
+  },
+  "O0rXuF": {
+    "defaultMessage": "Shows top sites"
+  },
+  "OJ6oXo": {
+    "defaultMessage": "You can change the goal by clicking it on the widget"
+  },
+  "OkRzUA": {
+    "defaultMessage": "Shows a webpage"
+  },
+  "PD6In8": {
+    "defaultMessage": "Never show again"
+  },
+  "PM6qZ7": {
+    "defaultMessage": "Show seconds"
+  },
+  "Ptdy4D": {
+    "defaultMessage": "States your current age with way too much precision"
+  },
+  "PuZCei": {
+    "defaultMessage": "Leave blank to use feed's title"
+  },
+  "RQ+k9r": {
+    "defaultMessage": "A list of upcoming space launches, powered by RocketLaunch.Live"
+  },
+  "RUl5Gc": {
+    "defaultMessage": "Display an image, optionally making it a link"
+  },
+  "Rw51mJ": {
+    "defaultMessage": "Powered by <a>OpenStreetMap</a>."
+  },
+  "SQJLG3": {
+    "defaultMessage": "Click \"Add widget\" in the bottom of the screen to add a widget."
+  },
+  "SVwJTM": {
+    "defaultMessage": "Export"
+  },
+  "SfgURe": {
+    "defaultMessage": "No locations found"
+  },
+  "T/wBPw": {
+    "defaultMessage": "Remove {type}"
+  },
+  "TkgCJ9": {
+    "defaultMessage": "You can get help or request a feature using the link below."
+  },
+  "U6qGuO": {
+    "defaultMessage": "Position"
+  },
+  "UP4EUm": {
+    "defaultMessage": "Click items to edit them"
+  },
+  "WZjKFf": {
+    "defaultMessage": "Warning: this may contain personal data, if any was entered into widget settings."
+  },
+  "WxuQ8x": {
+    "defaultMessage": "A single color"
+  },
+  "X6ciR9": {
+    "defaultMessage": "To move, edit, or delete a widget, use the handle that appears in the top-right of the widget. To resize, use the drag handle in the bottom-right."
+  },
+  "XQZA8e": {
+    "defaultMessage": "Background"
+  },
+  "YqlpSM": {
+    "defaultMessage": "You are <b>{age}</b>"
+  },
+  "Z2/hH0": {
+    "defaultMessage": "Image: {filename}"
+  },
+  "aA8bDw": {
+    "defaultMessage": "Text"
+  },
+  "ajnDv2": {
+    "defaultMessage": "Enter notes here"
+  },
+  "bN0iM4": {
+    "defaultMessage": "Found a bug, or have a request?"
+  },
+  "bQFsdR": {
+    "defaultMessage": "Grant permission to access {host}"
+  },
+  "bRP0Dg": {
+    "defaultMessage": "Search box to your favourite search engine"
+  },
+  "bWjdfa": {
+    "defaultMessage": "URL"
+  },
+  "cy8B6K": {
+    "defaultMessage": "Import / Export"
+  },
+  "egigiF": {
+    "defaultMessage": "Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs."
+  },
+  "ekIjqh": {
+    "defaultMessage": "Grant permission to access all websites"
+  },
+  "f5NvWw": {
+    "defaultMessage": "About and Credits"
+  },
+  "gjBiyj": {
+    "defaultMessage": "Loading..."
+  },
+  "h/ftND": {
+    "defaultMessage": "Choose a file"
+  },
+  "hktZIl": {
+    "defaultMessage": "Shows the time"
+  },
+  "iH2AHA": {
+    "defaultMessage": "<a>Open source</a>, licensed under GPLv3+."
+  },
+  "iU5dhE": {
+    "defaultMessage": "Check out the <a>Help and FAQ page</a> to see common questions and to get in contact."
+  },
+  "iZNw+V": {
+    "defaultMessage": "Good afternoon"
+  },
+  "ibhC3l": {
+    "defaultMessage": "Like Renewed Tab? Consider donating to cover costs and help support development."
+  },
+  "ihn9EZ": {
+    "defaultMessage": "Good morning"
+  },
+  "j1jRSI": {
+    "defaultMessage": "An editable text area for notes"
+  },
+  "j7BbFE": {
+    "defaultMessage": "Unsplash collection"
+  },
+  "jG9AdO": {
+    "defaultMessage": "Space Flights"
+  },
+  "jKD1tT": {
+    "defaultMessage": "Like",
+    "description": "Like background"
+  },
+  "kAEQyV": {
+    "defaultMessage": "OK"
+  },
+  "kTpqlc": {
+    "defaultMessage": "Loading weather..."
+  },
+  "kk4TVW": {
+    "defaultMessage": "Icon"
+  },
+  "krty63": {
+    "defaultMessage": "Need help?"
+  },
+  "mY9tpI": {
+    "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
+  },
+  "o2uuHu": {
+    "defaultMessage": "12 hour clock"
+  },
+  "or8yqP": {
+    "defaultMessage": "Random curated backgrounds"
+  },
+  "pPi9TQ": {
+    "defaultMessage": "Loading flights..."
+  },
+  "qX503y": {
+    "defaultMessage": "Random image from an Unsplash collection"
+  },
+  "rPjMRD": {
+    "defaultMessage": "{mode} Options"
+  },
+  "rvirM2": {
+    "defaultMessage": "Location"
+  },
+  "sRTzEd": {
+    "defaultMessage": "name"
+  },
+  "uCwc2+": {
+    "defaultMessage": "Selected {name} at {latitude} by {longitude}."
+  },
+  "uMhpKe": {
+    "defaultMessage": "Color"
+  },
+  "uN6slI": {
+    "defaultMessage": "Use browser's default search engine"
+  },
+  "uRYRJh": {
+    "defaultMessage": "Edit {type}"
+  },
+  "ueVsqa": {
+    "defaultMessage": "Use a custom image"
+  },
+  "wogY8a": {
+    "defaultMessage": "Create Widget"
+  },
+  "wr7JBR": {
+    "defaultMessage": "Use icons from websites (favicons)"
+  },
+  "wubRXu": {
+    "defaultMessage": "Search with {name}"
+  },
+  "xaOK72": {
+    "defaultMessage": "Shows an Atom or RSS feed"
+  },
+  "xmcVZ0": {
+    "defaultMessage": "Search"
+  },
+  "yNe5MS": {
+    "defaultMessage": "Current and forecasted weather"
+  },
+  "ySmliM": {
+    "defaultMessage": "URL to an Atom or RSS feed"
+  },
+  "yYM0Bg": {
+    "defaultMessage": "Loading results..."
+  },
+  "yfgoZf": {
+    "defaultMessage": "Discord / Matrix chats"
+  },
+  "yi8bIC": {
+    "defaultMessage": "A link button"
+  },
+  "ykNa5O": {
+    "defaultMessage": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
+  },
+  "z7UTSa": {
+    "defaultMessage": "About Renewed Tab"
+  }
+}

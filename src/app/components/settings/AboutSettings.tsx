@@ -1,55 +1,77 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
+
 
 export default function AboutSettings(_props: any) {
 	return (
 		<div className="modal-body">
-			<h3>About Renewed Tab</h3>
+			<h2>
+				<FormattedMessage defaultMessage="About Renewed Tab" />
+			</h2>
 			<p>
-				Welcome to&nbsp;
-				<a href="https://renewedtab.rubenwardy.com">Renewed Tab</a>:
-				A customisable New Tab page for your browser.
+				<FormattedMessage
+					defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+					values={{
+						a: (chunk: any) => (<a href="https://renewedtab.rubenwardy.com">{chunk}</a>)
+					}} />
 			</p>
 			<p>
-				Created by <a href="https://rubenwardy.com">rubenwardy</a>.&nbsp;
-				<a href="https://gitlab.com/rubenwardy/renewedtab/">Open source</a>,
-				licensed under GPLv3+.
+				<FormattedMessage
+						defaultMessage="Created by <a>rubenwardy</a>."
+						values={{
+							a: (chunk: any) => (<a href="https://rubenwardy.com">{chunk}</a>)
+						}} />&nbsp;
+
+				<FormattedMessage
+						defaultMessage="<a>Open source</a>, licensed under GPLv3+."
+						values={{
+							a: (chunk: any) => (<a href="https://gitlab.com/rubenwardy/renewedtab/">{chunk}</a>)
+						}} />
 			</p>
 			<p>
-				Thanks to <a href="https://unsplash.com">Unsplash</a>,&nbsp;
-				<a href="https://openstreetmap.org/">OpenStreetMap</a>,&nbsp;
-				<a href="https://openweathermap.org/">OpenWeatherMap</a>, and&nbsp;
-				<a href="https://www.rocketlaunch.live/">RocketLaunch.Live</a>
-				&nbsp;for their APIs. Thanks to Font-Awesome for icons,
-				React for UI, and WebPack for builds.
+				<FormattedMessage
+						defaultMessage="Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs." />
+				&nbsp;
+				<FormattedMessage
+						defaultMessage="Thanks to Font-Awesome for icons, React for UI, and WebPack for builds." />
 			</p>
 			<p>
-				Like Renewed Tab? Consider donating to
-				cover costs and help support development.
+				<FormattedMessage
+						defaultMessage="Like Renewed Tab? Consider donating to cover costs and help support development." />
 			</p>
 			<p>
 				<a className="btn btn-primary"
 						href="https://renewedtab.rubenwardy.com/">
 					<i className="fas fa-globe-europe mr-1" />
-					Website
+
+					<FormattedMessage
+							defaultMessage="Website" />
 				</a>
 				<a className="btn btn-primary"
 						href="https://renewedtab.rubenwardy.com/donate/">
-					Donate
+					<FormattedMessage
+							defaultMessage="Donate" />
 				</a>
 				<a className="btn btn-secondary"
 						href="https://renewedtab.rubenwardy.com/community/">
-					Discord / Matrix chats
+					<FormattedMessage
+							defaultMessage="Discord / Matrix chats" />
 				</a>
 			</p>
 
-			<h3 className="mt-4">Help and Requests</h3>
+			<h3 className="mt-4">
+				<FormattedMessage
+						defaultMessage="Help and Requests" />
+			</h3>
 			<p>
-				You can get help or request a feature using the link below.
+				<FormattedMessage
+						defaultMessage="You can get help or request a feature using the link below." />
 			</p>
 			<p>
 				<a className="btn btn-primary"
 						href="https://renewedtab.rubenwardy.com/help/">
-					Help and Requests
+					<FormattedMessage
+							defaultMessage="Help and Requests" />
 				</a>
 			</p>
 		</div>);

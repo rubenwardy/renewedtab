@@ -1,9 +1,22 @@
+import React, { useMemo, useState } from 'react';
+import { defineMessages } from 'react-intl';
+
 import { usePromise } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
-import Schema, { type } from 'app/utils/Schema';
 import { getWebsiteIcon } from 'app/WebsiteIcon';
-import React, { useMemo, useState } from 'react';
+import schemaMessages from 'app/locale/common';
+import Schema, { type } from 'app/utils/Schema';
 
+
+const messages = defineMessages({
+	iconHint: {
+		defaultMessage: "Optional, URL to image (18px recommended)",
+	},
+
+	urlHint: {
+		defaultMessage: "Leave blank to make heading",
+	},
+})
 
 export interface Link {
 	id: string; //< used by React for keys.
@@ -14,9 +27,9 @@ export interface Link {
 
 
 export const LinkSchema : Schema = {
-	title: type.string("Title"),
-	icon: type.url("Icon", "Optional, URL to image (18px recommended)"),
-	url: type.url("URL", "Leave blank to make heading"),
+	title: type.string(schemaMessages.title),
+	icon: type.url(schemaMessages.icon, messages.iconHint),
+	url: type.url(schemaMessages.url, messages.urlHint),
 };
 
 

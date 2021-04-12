@@ -1,3 +1,4 @@
+import { MessageDescriptor } from "@formatjs/intl";
 import Schema from "./utils/Schema";
 import { Vector2 } from "./utils/Vector2";
 
@@ -16,14 +17,14 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	/**
 	 * Description shown in Create Widget dialog.
 	 */
-	description: string;
+	description: MessageDescriptor;
 
 	isBrowserOnly?: boolean;
 
 	/**
 	 * Hint to be shown in the WidgetEditor.
 	 */
-	editHint?: string;
+	editHint?: MessageDescriptor;
 
 	/**
 	 * Called when the widget is created, either by the user
@@ -56,7 +57,7 @@ export interface WidgetProps<T> extends Widget<T> {
 /**
  * Gets the schema for a widget
  */
-export function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>) {
+export function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>): Schema {
 	if (typeof type.schema == "function") {
 		return type.schema(widget);
 	} else {

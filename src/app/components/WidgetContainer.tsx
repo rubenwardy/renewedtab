@@ -4,6 +4,8 @@ import Modal from "./Modal";
 import { Form } from "./forms";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { useForceUpdate } from "app/hooks";
+import { FormattedMessage, useIntl } from "react-intl";
+
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
 	onClose: () => void;
@@ -13,6 +15,7 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	const schema = getSchemaForWidget(props, props.child);
 	const forceUpdate = useForceUpdate();
+	const intl = useIntl();
 
 	function onChange() {
 		if (typeof props.child.schema == "function") {
@@ -22,28 +25,44 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 		props.save();
 	}
 
+	const title = intl.formatMessage(
+			{ defaultMessage: "Edit {type}" },
+			{ type: props.type });
 	return (
-		<Modal title={`Edit ${props.type}`} isOpen={true} {...props}>
+		<Modal title={title} isOpen={true} {...props}>
 			<div className="modal-body">
 				{props.child.editHint &&
-					<p className="text-muted">{props.child.editHint}</p>}
+					<p className="text-muted">
+						<FormattedMessage {...props.child.editHint} />
+					</p>}
+
 				<Form
 						showEmptyView={!props.child.editHint}
 						values={props.props}
 						schema={schema}
 						onChange={onChange} />
-				<a className="btn btn-secondary" onClick={props.onClose}>OK</a>
+				<a className="btn btn-secondary" onClick={props.onClose}>
+					<FormattedMessage defaultMessage="OK" />
+				</a>
 			</div>
 		</Modal>);
 }
 
 
 function WidgetDelete<T>(props: WidgetDialogProps<T>) {
+	const intl = useIntl();
+	const title = intl.formatMessage(
+			{ defaultMessage: "Remove {type}" },
+			{ type: props.type });
 	return (
-		<Modal title={`Remove ${props.type}`} isOpen={true} {...props}>
+		<Modal title={title} isOpen={true} {...props}>
 			<p className="modal-body">
-				<a className="btn btn-danger" onClick={props.remove}>Delete</a>
-				<a className="btn btn-secondary" onClick={props.onClose}>Cancel</a>
+				<a className="btn btn-danger" onClick={props.remove}>
+					<FormattedMessage defaultMessage="Delete" />
+				</a>
+				<a className="btn btn-secondary" onClick={props.onClose}>
+					<FormattedMessage defaultMessage="Cancel" />
+				</a>
 			</p>
 		</Modal>);
 }
@@ -59,6 +78,7 @@ enum WidgetMode {
 export function WidgetContainer<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 	const close = () => setMode(WidgetMode.View);
+	const intl = useIntl();
 
 	switch (mode) {
 	case WidgetMode.Edit:
@@ -80,7 +100,9 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 					</span>
 				</div>
 				<div className="panel text-muted">
-					This widget requires the browser extension version.
+					title={intl.formatMessage({ defaultMessage: "Create Widget" })}
+					<FormattedMessage
+							defaultMessage="This widget requires the browser extension version." />
 				</div>
 			</>);
 	}

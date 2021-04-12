@@ -1,7 +1,16 @@
+import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps } from 'app/Widget';
 import React from 'react';
+import { defineMessages } from 'react-intl';
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "A link button",
+	},
+});
 
 interface ButtonProps {
 	url: string;
@@ -20,7 +29,7 @@ export default function Button(props: WidgetProps<ButtonProps>)  {
 }
 
 
-Button.description = "A link button";
+Button.description = messages.description;
 
 Button.initialProps = {
 	url: "https://rubenwardy.com",
@@ -28,8 +37,8 @@ Button.initialProps = {
 };
 
 Button.schema = {
-	url: type.url("URL"),
-	text: type.string("Text"),
+	url: type.url(schemaMessages.url),
+	text: type.string(schemaMessages.text),
 } as Schema;
 
 Button.defaultSize = new Vector2(5, 1);

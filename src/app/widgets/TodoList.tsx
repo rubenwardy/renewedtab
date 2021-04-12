@@ -5,6 +5,22 @@ import uuid from "app/utils/uuid";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps } from "app/Widget";
 import React, { ChangeEvent, useState } from "react";
+import { defineMessages, useIntl } from "react-intl";
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Track to do list items",
+	},
+
+	editHint: {
+		defaultMessage: "Click items to edit them",
+	},
+
+	placeholder: {
+		defaultMessage: "Create a new todo item",
+	},
+});
 
 
 interface TodoItemData {
@@ -50,6 +66,7 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 export default function TodoList(widget: WidgetProps<TodoListProps>) {
 	const [list, setList] = useWidgetProp<TodoItemData[]>(widget, "list");
 	const [newItemText, setNewItemText] = useState<string>("");
+	const intl = useIntl();
 
 	function createItem() {
 		if (newItemText.trim() == "") {
@@ -83,15 +100,15 @@ export default function TodoList(widget: WidgetProps<TodoListProps>) {
 				<AutoWidthInput onChange={(e) => setNewItemText(e.target.value)}
 						value={newItemText} onFinished={createItem}
 						minWidth="50%"
-						placeholder={list.length == 0 ? "Create a new todo item" : undefined} />
+						placeholder={list.length == 0 ? intl.formatMessage(messages.placeholder) : undefined} />
 			</li>
 		</ul>);
 }
 
 
-TodoList.description = "Track to do list items";
+TodoList.description = messages.description;
 
-TodoList.editHint = "Click items to edit them";
+TodoList.editHint = messages.editHint;
 
 TodoList.initialProps = {
 	list: [],

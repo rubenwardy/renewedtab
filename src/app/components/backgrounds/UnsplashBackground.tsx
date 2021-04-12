@@ -8,7 +8,7 @@ export default function UnsplashBackground(props: BackgroundProps) {
 
 	const collection = props.background?.values.collection;
 	if (collection == undefined) {
-		console.error("Collection not defined");
+		console.warn("Collection ID is undefined");
 		return (<div id="background" style={style} />);
 	}
 

@@ -1,5 +1,19 @@
 import React from "react";
+import { defineMessages, useIntl } from "react-intl";
 import { BackgroundInfo } from ".";
+
+
+const messages = defineMessages({
+	like: {
+		description: "Like background",
+		defaultMessage: "Like",
+	},
+
+	block: {
+		defaultMessage: "Never show again",
+	},
+});
+
 
 interface CreditProps {
 	info: BackgroundInfo;
@@ -12,6 +26,8 @@ interface CreditProps {
 
 export function Credits(props: CreditProps) {
 	const setIsHovered = props.setIsHovered ?? (() => {});
+
+	const intl = useIntl();
 
 	if (props.info.links.author || props.info.links.site) {
 		const title = (props.info.title && props.info.title.length > 0)
@@ -27,13 +43,15 @@ export function Credits(props: CreditProps) {
 
 				{props.onLike &&
 					<a onClick={() => props.onLike!(props.info)}
-							className={`btn btn-sm ${props.isPositive === true && "active"}`} title="Like">
+							className={`btn btn-sm ${props.isPositive === true && "active"}`}
+							title={intl.formatMessage(messages.like)}>
 						<i className="fas fa-thumbs-up" />
 					</a>}
 
 				{props.onBlock &&
 					<a onClick={() => props.onBlock!(props.info)}
-							className={`btn btn-sm ${props.isPositive === false && "active"}`} title="Never show again">
+							className={`btn btn-sm ${props.isPositive === false && "active"}`}
+							title={intl.formatMessage(messages.block)}>
 						<i className="fas fa-ban" />
 					</a>}
 			</div>);

@@ -14,7 +14,6 @@ export default function RequestPermission(props: RequestPermissionProps) {
 	function handleClick() {
 		browser.permissions.request(props.permissions)
 			.then(props.onResult).catch(console.error);
-
 	}
 
 	return (

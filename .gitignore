@@ -3,6 +3,7 @@
 web-ext-artifacts
 config*.json
 !*.example.json
+compiled
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,linux

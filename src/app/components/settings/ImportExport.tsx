@@ -2,6 +2,14 @@ import { usePromise } from "app/hooks";
 import { storage } from "app/Storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useRef } from "react";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+
+
+const messages = defineMessages({
+	loading: {
+		defaultMessage: "Loading...",
+	},
+});
 
 export default function ImportExport(_props: any) {
 	async function handleReset() {
@@ -37,25 +45,37 @@ export default function ImportExport(_props: any) {
 
 	const ref = useRef<HTMLInputElement>(null);
 	const [data, error] = usePromise(() => getStoredData(), []);
+	const intl = useIntl();
 
 	return (
 		<div className="modal-body">
-			<h3>Import / Export</h3>
+			<h3>
+				<FormattedMessage
+						defaultMessage="Import / Export" />
+			</h3>
 			<p>
-				Warning: this may contain personal data, if any was entered into
-				widget settings.
+				<FormattedMessage
+						defaultMessage="Warning: this may contain personal data,
+							if any was entered into widget settings." />
 			</p>
 			<textarea className="stored" readOnly
-				value={data ?? (error && error.toString()) ?? "Loading..."} />
+				value={data ?? (error ? error.toString() : intl.formatMessage(messages.loading))} />
 			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
 			<p>
-				<a className="btn btn-danger" onClick={handleReset}>Reset everything</a>
-				<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>Import</a>
+				<a className="btn btn-danger" onClick={handleReset}>
+					<FormattedMessage
+							defaultMessage="Reset everything" />
+				</a>
+				<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>
+					<FormattedMessage
+							defaultMessage="Import" />
+				</a>
 				<a className="btn btn-primary ml-2"
 						href={`data:text/plain;base64,${encode(data ?? "")}`}
 						download="renewedtab.json">
-					Export
+					<FormattedMessage
+							defaultMessage="Export" />
 				</a>
 			</p>
 		</div>);

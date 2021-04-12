@@ -2,6 +2,7 @@ import { useLargeStorage } from "app/hooks";
 import { largeStorage } from "app/Storage";
 import uuid from "app/utils/uuid";
 import React, { useRef } from "react";
+import { FormattedMessage } from "react-intl";
 import { FieldProps } from ".";
 
 
@@ -62,10 +63,15 @@ export default function ImageUploadField(props: FieldProps<string>) {
 
 			{file &&
 				<p className="text-muted">
-					Image: {file.filename}
+					<FormattedMessage
+							defaultMessage="Image: {filename}"
+							values={{ filename: file.filename }} />
 				</p>}
 
-			<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>Choose file</a>
+			<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>
+				<FormattedMessage
+						defaultMessage="Choose a file" />
+			</a>
 
 		</>);
 }

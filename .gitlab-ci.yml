@@ -12,7 +12,7 @@ variables:
   ENV: production
   LC_ALL: C.UTF-8
 
-before_script:
+before_script: &before_script
   - NODE_ENV=debug npm install
   - cp config.example.json config.json
 

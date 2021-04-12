@@ -2,6 +2,23 @@ import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps } from 'app/Widget';
 import React, { useEffect, useState } from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "States your current age with way too much precision",
+	},
+
+	birth_date: {
+		defaultMessage: "Birth date",
+	},
+
+	current_age: {
+		defaultMessage: "You are <b>{age}</b>"
+	},
+});
+
 
 interface AgeProps {
 	birthDate: Date;
@@ -29,19 +46,23 @@ export default function Age(widget: WidgetProps<AgeProps>) {
 
 	return (
 		<div className="panel vertical-middle">
-			You are&nbsp;<strong>{age.toFixed(7)}</strong>
+			<FormattedMessage {...messages.current_age}
+				values={{
+					b: (chunks: any) => <strong>&nbsp;{chunks}</strong>,
+					age: age.toFixed(7),
+				}} />
 		</div>);
 }
 
 
-Age.description = "States your current age with way too much precision";
+Age.description = messages.description;
 
 Age.initialProps = {
 	birthDate: new Date("1997-01-01")
 };
 
 Age.schema = {
-	birthDate: type.date("Birth date"),
+	birthDate: type.date(messages.birth_date),
 } as Schema;
 
 Age.defaultSize = new Vector2(5, 1);

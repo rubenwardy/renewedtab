@@ -1,4 +1,5 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
+import { IntlShape, useIntl } from "react-intl";
 import { usePromise } from "./promises";
 
 const proxy_url = config.PROXY_URL;
@@ -15,14 +16,15 @@ function makeProxy(url: string) {
 }
 
 
-async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Response> {
+async function fetchCheckCors(intl: IntlShape, request: Request,
+		init?: RequestInit): Promise<Response> {
 	try {
 		return await fetch(request, init);
 	} catch (e) {
 		if (typeof(e) == "object" &&
 				(e.message.includes("NetworkError") ||
 					e.message.includes("Failed to fetch"))) {
-			await checkHostPermission(request.url);
+			await checkHostPermission(intl, request.url);
 
 			throw new Error("Unable to connect to the Internet");
 		}
@@ -31,8 +33,8 @@ async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Res
 }
 
 
-async function fetchJSON(url: string) {
-	const response = await fetchCheckCors(new Request(url, {
+async function fetchJSON(intl: IntlShape, url: string) {
+	const response = await fetchCheckCors(intl, new Request(url, {
 		method: "GET",
 		headers: {
 			"Accept": "application/json",
@@ -47,8 +49,8 @@ async function fetchJSON(url: string) {
 }
 
 
-async function fetchXML(url: string) {
-	const response = await fetchCheckCors(new Request(url, {
+async function fetchXML(intl: IntlShape, url: string) {
+	const response = await fetchCheckCors(intl, new Request(url, {
 		method: "GET",
 		headers: {
 			"Accept": "application/json",
@@ -73,7 +75,8 @@ async function fetchXML(url: string) {
 * @return {[response, error]]} - Response and error
 */
 export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (string | null)] {
-	return usePromise(() => fetchJSON(makeProxy(url)), dependents);
+	const intl = useIntl();
+	return usePromise(() => fetchJSON(intl, makeProxy(url)), dependents);
 }
 
 
@@ -92,7 +95,9 @@ export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | nu
 		url.searchParams.set(key.toString(), (value as Object).toString());
 	})
 
-	return usePromise(() => fetchJSON(url.toString()), dependents);
+	const intl = useIntl();
+
+	return usePromise(() => fetchJSON(intl, url.toString()), dependents);
 }
 
 
@@ -104,5 +109,6 @@ export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | nu
 * @return {[response, error]]} - Response and error
 */
 export function useXML(url: string, dependents?: any[]): [(Document | null), (string | null)] {
-	return usePromise(() => fetchXML(makeProxy(url)), dependents);
+	const intl = useIntl();
+	return usePromise(() => fetchXML(intl, makeProxy(url)), dependents);
 }

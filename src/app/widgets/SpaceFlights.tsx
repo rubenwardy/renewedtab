@@ -1,7 +1,28 @@
 import React from 'react';
-import { useAPI, useJSON } from 'app/hooks';
+import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema from 'app/utils/Schema';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+
+
+const messages = defineMessages({
+	title: {
+		defaultMessage: "Space Flights",
+	},
+
+	description: {
+		defaultMessage: "A list of upcoming space launches, powered by RocketLaunch.Live",
+	},
+
+	editHint: {
+		defaultMessage: "Powered by RocketLaunch.Live",
+	},
+
+	loadingFlights: {
+		defaultMessage: "Loading flights...",
+	},
+});
+
 
 interface SpaceLaunch {
 	id: number;
@@ -54,11 +75,12 @@ function getDate(launch: SpaceLaunch): string {
 
 export default function SpaceFlights() {
 	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
+	const intl = useIntl();
 
 	if (!data) {
 		return (
 			<div className="panel text-muted">
-				{error ? error.toString() : "Loading flights..."}
+				{error ? error.toString() : intl.formatMessage(messages.loadingFlights)}
 			</div>);
 	}
 
@@ -73,7 +95,9 @@ export default function SpaceFlights() {
 
 	return (
 		<div className="panel flush">
-			<h2 className="panel-inset">Space Flights</h2>
+			<h2 className="panel-inset">
+				<FormattedMessage {...messages.title} />
+			</h2>
 			<ul>
 				{rows}
 			</ul>
@@ -81,9 +105,9 @@ export default function SpaceFlights() {
 }
 
 
-SpaceFlights.description = "A list of upcoming space launches, powered by RocketLaunch.Live";
+SpaceFlights.description = messages.description;
 
-SpaceFlights.editHint = "Powered by RocketLaunch.Live";
+SpaceFlights.editHint = messages.editHint;
 
 SpaceFlights.initialProps = {};
 

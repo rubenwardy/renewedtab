@@ -1,10 +1,17 @@
 import { useForceUpdate, usePromise } from "app/hooks";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
 import React, { ChangeEvent, useState } from "react";
+import { defineMessages, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import RequestHostPermission from "../RequestHostPermission";
 import RequestPermission from "../RequestPermission";
 
+
+const messages = defineMessages({
+	grantAll: {
+		defaultMessage: "Grant permission to access all websites",
+	},
+});
 
 export function HostURLFIeld(props: FieldProps<string>) {
 	const [value, setValue] = useState<string>(props.value);
@@ -35,6 +42,7 @@ export function HostURLFIeld(props: FieldProps<string>) {
 export function HostAllField(props: FieldProps<boolean>) {
 	const [value, setValue] = useState(props.value);
 	const forceUpdate = useForceUpdate();
+	const intl = useIntl();
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		if (props.onChange) {
@@ -61,13 +69,13 @@ export function HostAllField(props: FieldProps<boolean>) {
 		<>
 			<input type="checkbox" checked={value ?? false} onChange={handleChange} />
 			<label className="inline ml-2" htmlFor={props.name}>
-				{props.schemaEntry.label ?? props.name}
+				{intl.formatMessage(props.schemaEntry.label)}
 			</label>
 
 			{needsPermission && value && (
 				<p>
 					<RequestPermission permissions={permissions}
-						label="Grant permission to access all websites"
+						label={intl.formatMessage(messages.grantAll)}
 						onResult={onResult} />
 				</p>)}
 		</>);

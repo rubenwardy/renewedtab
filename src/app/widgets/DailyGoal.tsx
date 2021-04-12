@@ -4,7 +4,22 @@ import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps } from "app/Widget";
 import React, { ChangeEvent, useEffect } from "react";
+import { defineMessages, useIntl } from "react-intl";
 
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Reminds you about a daily goal",
+	},
+
+	editHint: {
+		defaultMessage: "You can change the goal by clicking it on the widget",
+	},
+
+	placeholder: {
+		defaultMessage: "What's your goal for today?",
+	},
+});
 
 interface Goal {
 	text: string;
@@ -36,10 +51,11 @@ export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 		}
 	}
 
+	const intl = useIntl();
 	return (
 		<div className="text-shadow-hard large middle-center">
 			<AutoWidthInput onChange={handleChange} value={goal?.text ?? ""}
-					placeholder="What's your goal for today?" />
+					placeholder={intl.formatMessage(messages.placeholder)} />
 
 			{goal &&
 				(<a onClick={() => setGoal(undefined)} className="btn btn-sm ml-2">
@@ -49,9 +65,9 @@ export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 }
 
 
-DailyGoal.description = "Reminds you about a daily goal";
+DailyGoal.description = messages.description;
 
-DailyGoal.editHint = "You can change the goal by clicking it on the widget";
+DailyGoal.editHint = messages.editHint;
 
 DailyGoal.initialProps = {};
 

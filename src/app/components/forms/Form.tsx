@@ -1,5 +1,6 @@
 import Schema, { SchemaEntry } from "app/utils/Schema";
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { Field } from "./Field";
 
 
@@ -39,7 +40,8 @@ export default function Form(props: FormProps) {
 	if (inner.length == 0 && props.showEmptyView !== false) {
 		inner.push(
 			<p className="text-muted" key="none">
-				Nothing to edit.
+				<FormattedMessage
+						defaultMessage="Nothing to edit." />
 			</p>);
 	}
 

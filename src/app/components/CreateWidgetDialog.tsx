@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetManager } from "../WidgetManager";
 import { WidgetTypes } from "../widgets";
 import Modal from "./Modal";
@@ -18,6 +19,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	const isBrowser = typeof browser !== "undefined";
 
 	const widgetTypes = Object.entries(WidgetTypes).sort();
+	const intl = useIntl();
 
 	let widgets = widgetTypes
 		.filter(([_, widget]) => isBrowser || widget.isBrowserOnly !== true)
@@ -27,7 +29,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 					{key}
 					<span className="text-muted ml-1">
 						&nbsp;
-						{widget.description}
+						<FormattedMessage {...widget.description} />
 					</span>
 				</a>
 			</li>));
@@ -35,18 +37,20 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	if (!isBrowser) {
 		widgets = widgets.concat(widgetTypes
 			.filter(([_, widget]) => widget.isBrowserOnly === true)
-			.map(([key, widget]) => (
+			.map(([key, _widget]) => (
 				<li key={key} className="text text-muted">
 					{key}
 					<span className="ml-1">
 						&nbsp;
-						Requires browser extension version
+						<FormattedMessage
+								defaultMessage="Requires browser extension version" />
 					</span>
 				</li>)));
 	}
 
 	return (
-		<Modal title="Create Widget" {...props}>
+		<Modal title={intl.formatMessage({ defaultMessage: "Create Widget" })}
+				{...props}>
 			<ul className="large">
 				{widgets}
 			</ul>

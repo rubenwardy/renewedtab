@@ -2,6 +2,22 @@ import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps } from "app/Widget";
 import React from "react";
+import { defineMessages } from "react-intl";
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Shows the time",
+	},
+
+	showSeconds: {
+		defaultMessage: "Show seconds",
+	},
+
+	hour12: {
+		defaultMessage: "12 hour clock",
+	},
+});
 
 interface ClockProps {
 	showSeconds: boolean;
@@ -35,7 +51,7 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 }
 
 
-Clock.description = "Shows the time";
+Clock.description = messages.description;
 
 Clock.initialProps = {
 	showSeconds: false,
@@ -43,8 +59,8 @@ Clock.initialProps = {
 };
 
 Clock.schema = {
-	showSeconds: type.boolean("Show seconds"),
-	hour12: type.boolean("12 hour clock"),
+	showSeconds: type.boolean(messages.showSeconds),
+	hour12: type.boolean(messages.hour12),
 } as Schema;
 
 Clock.defaultSize = new Vector2(15, 2);

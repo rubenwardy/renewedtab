@@ -1,8 +1,48 @@
+import schemaMessages from "app/locale/common";
 import { storage } from "app/Storage";
 import { useState } from "react";
+import { defineMessages, MessageDescriptor } from "react-intl";
 import Schema, { type } from "../utils/Schema";
 import { runPromise } from "./promises";
 
+
+const messages = defineMessages({
+	position: {
+		defaultMessage: "Position",
+	},
+
+	positionHint: {
+		defaultMessage: "center, top, or bottom",
+	},
+
+	collection: {
+		defaultMessage: "Unsplash collection",
+	},
+
+	collectionHint: {
+		defaultMessage: "Collection ID. Found in the URL, example: 42576559",
+	},
+
+	autoDescription: {
+		defaultMessage: "Random curated backgrounds",
+	},
+
+	colorDescription: {
+		defaultMessage: "A single color",
+	},
+
+	imageDescription: {
+		defaultMessage: "An image from a URL",
+	},
+
+	imageUrlDescription: {
+		defaultMessage: "Use a custom image",
+	},
+
+	unsplashDescription: {
+		defaultMessage: "Random image from an Unsplash collection",
+	},
+});
 
 export enum BackgroundMode {
 	Auto,
@@ -21,20 +61,20 @@ export function getSchemaForMode(mode: BackgroundMode): Schema {
 		return {};
 	case BackgroundMode.Color:
 		return {
-			color: type.color("Color")
+			color: type.color(schemaMessages.color)
 		};
 	case BackgroundMode.Image:
 		return {
-			image: type.image("Choose an image", "Images are stored locally on your browser, and never uploaded"),
+			image: type.image(schemaMessages.image, schemaMessages.imageHint),
 		};
 	case BackgroundMode.ImageUrl:
 		return {
-			url: type.url("Image URL"),
-			position: type.string("Position", "center, top, or bottom"),
+			url: type.url(schemaMessages.imageUrl),
+			position: type.string(messages.position, messages.positionHint),
 		};
 	case BackgroundMode.Unsplash:
 		return {
-			collection: type.string("Unsplash collection", "Collection ID. Found in the URL, example: 42576559"),
+			collection: type.string(messages.collection, messages.collectionHint),
 		}
 	}
 }
@@ -59,18 +99,18 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 	}
 }
 
-export function getDescriptionForMode(mode: BackgroundMode): string {
+export function getDescriptionForMode(mode: BackgroundMode): MessageDescriptor {
 	switch (mode) {
 	case BackgroundMode.Auto:
-		return "Random curated backgrounds";
+		return messages.autoDescription;
 	case BackgroundMode.Color:
-		return "A single color";
+		return messages.colorDescription;
 	case BackgroundMode.ImageUrl:
-		return "An image from a URL";
+		return messages.imageUrlDescription;
 	case BackgroundMode.Image:
-		return "Use a custom image";
+		return messages.imageDescription;
 	case BackgroundMode.Unsplash:
-		return "Random image from an Unsplash collection";
+		return messages.unsplashDescription;
 	}
 }
 

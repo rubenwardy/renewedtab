@@ -6,16 +6,18 @@
 	"sideEffects": false,
 	"scripts": {
 		"build": "npm run build:app && npm run build:server",
-		"build:app": "webpack",
+		"build:app": "npm run trans:compile && webpack",
 		"build:server": "tsc --outDir dist/server --project tsconfig.server.json",
 		"start": "concurrently \"npm run start:app\" \"npm run start:server\" ",
-		"start:app": "concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\"",
+		"start:app": "npm run trans:compile && concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\"",
 		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server.js\"",
-		"start:firefox": "concurrently \"webpack --watch\" \"web-ext run -t firefox-desktop -s ./dist/webext/ -i app/manifest.json -i app/index.html \" \"npm run start:server\"",
-		"start:chrome": "concurrently \"webpack --watch\" \"web-ext run -t chromium -s ./dist/webext/ -i app/manifest.json -i app/index.html\" \"npm run start:server\"",
+		"start:firefox": "npm run trans:compile && concurrently \"webpack --watch\" \"web-ext run -t firefox-desktop -s ./dist/webext/ -i app/manifest.json -i app/index.html \" \"npm run start:server\"",
+		"start:chrome": "npm run trans:compile && concurrently \"webpack --watch\" \"web-ext run -t chromium -s ./dist/webext/ -i app/manifest.json -i app/index.html\" \"npm run start:server\"",
 		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -n renewedtab.zip",
 		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
-		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+		"trans:extract": "formatjs extract 'src/app/**/*.ts*' --out-file src/app/locale/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+		"trans:compile": "node utils/compile_translations.js"
 	},
 	"repository": {
 		"type": "git",
@@ -48,6 +50,7 @@
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
 		"react-grid-layout": "^1.2.2",
+		"react-intl": "^5.15.7",
 		"react-radio-group": "^3.0.3",
 		"sass-loader": "^11.0.1",
 		"ts-loader": "^8.0.17",
@@ -56,6 +59,7 @@
 		"webpack-cli": "^4.5.0"
 	},
 	"devDependencies": {
+		"@formatjs/cli": "^4.2.6",
 		"@types/chai": "^4.2.15",
 		"@types/mocha": "^8.2.1",
 		"chai": "^4.3.3",

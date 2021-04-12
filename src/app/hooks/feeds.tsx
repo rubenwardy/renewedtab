@@ -1,5 +1,6 @@
 import { useXML } from "app/hooks/http";
 import { escapeHTMLtoText } from "app/utils/html";
+import { useIntl } from "react-intl";
 
 export interface Article {
 	title: string;
@@ -68,6 +69,7 @@ function parseFeed(root: Element): Feed | null {
 }
 
 export function useFeed(url: string, dependents?: any[]): [Feed | undefined, any] {
+	const intl = useIntl();
 	const [data, error] = useXML(url, dependents);
 	if (!data || error) {
 		return [undefined, error];
@@ -76,7 +78,9 @@ export function useFeed(url: string, dependents?: any[]): [Feed | undefined, any
 	const feed = parseFeed(data.children[0]);
 	if (!feed) {
 		return [undefined,
-				"Error loading feed. Make sure it is an RSS or Atom feed."];
+				intl.formatMessage({
+					defaultMessage: "Error loading feed. Make sure it is an RSS or Atom feed."
+				})];
 
 	}
 

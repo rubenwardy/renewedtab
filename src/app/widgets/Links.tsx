@@ -1,9 +1,26 @@
 import LinkBox, { Link, LinkSchema, LinkBoxProps } from 'app/components/LinkBox';
+import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
 import { Widget, WidgetProps } from 'app/Widget';
 import React from 'react';
+import { defineMessages } from 'react-intl';
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Links, with support for headings and icons",
+	},
+
+	links: {
+		defaultMessage: "Link",
+	},
+
+	useWebsiteIcons: {
+		defaultMessage: "Use icons from websites (favicons)",
+	},
+});
 
 
 export default function Links(props: WidgetProps<LinkBoxProps>)  {
@@ -11,7 +28,7 @@ export default function Links(props: WidgetProps<LinkBoxProps>)  {
 }
 
 
-Links.description = "Links, with support for headings and icons";
+Links.description = messages.description;
 
 Links.initialProps = {
 	useIconBar: false,
@@ -58,14 +75,14 @@ Links.initialProps = {
 Links.schema = (_widget: Widget<LinkBoxProps>) => {
 	if (typeof browser !== "undefined") {
 		return {
-			useIconBar: type.boolean("Display as icons"),
-			useWebsiteIcons: type.booleanHostPerm("Use icons from websites (favicons)"),
-			links: type.array(LinkSchema, "Links"),
+			useIconBar: type.boolean(schemaMessages.useIconBar),
+			useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
+			links: type.array(LinkSchema, messages.links),
 		} as Schema;
 	} else {
 		return {
-			useIconBar: type.boolean("Display as icons"),
-			links: type.array(LinkSchema, "Links"),
+			useIconBar: type.boolean(schemaMessages.useIconBar),
+			links: type.array(LinkSchema, messages.links),
 		} as Schema;
 	}
 }

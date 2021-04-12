@@ -1,3 +1,5 @@
+import { MessageDescriptor } from "@formatjs/intl";
+
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
 	"image_upload" | "array" | "json" | "url" | "color" | "image";
@@ -5,8 +7,8 @@ export type Type = JSType | "host_url" | "host_all" | "location" |
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema;
-	label: string;
-	hint?: string;
+	label: MessageDescriptor;
+	hint?: MessageDescriptor;
 }
 
 
@@ -21,7 +23,7 @@ export default interface Schema {
 
 
 function makeTypeFunc(type: Type) {
-	return (label: string, hint?: string) => ({
+	return (label: MessageDescriptor, hint?: MessageDescriptor) => ({
 		type: type,
 		label: label,
 		hint: hint,
@@ -64,7 +66,7 @@ export namespace type {
 	/**
 	 * enumType: The TypeScript enum object
 	 */
-	export const selectEnum = (enumType: any, label: string, hint?: string) => ({
+	export const selectEnum = (enumType: any, label: MessageDescriptor, hint?: string) => ({
 		type: enumType,
 		label: label,
 		hint: hint,
@@ -76,7 +78,7 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	export const array = (subschema: Schema, label: string, hint?: string) => ({
+	export const array = (subschema: Schema, label: MessageDescriptor, hint?: string) => ({
 		type: "array",
 		subschema: subschema,
 		label: label,

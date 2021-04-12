@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 
 interface ErrorBoundaryProps {
 	children: any;
@@ -24,7 +25,9 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, { error?:
 		} else {
 			return (
 				<div className="panel text-muted">
-					An error occured: {this.state.error}
+					<FormattedMessage
+							defaultMessage="An error occured:" />
+					{this.state.error}
 				</div>);
 		}
 	}

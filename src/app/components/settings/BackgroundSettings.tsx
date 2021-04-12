@@ -1,5 +1,6 @@
 import { BackgroundConfig, BackgroundMode, BackgroundModeType, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
 import React from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { Radio, RadioGroup } from "react-radio-group";
 import { Form } from "../forms";
 
@@ -22,7 +23,8 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 					<Radio value={x} />
 					{x}:&nbsp;
 					<span className="text-muted">
-						{getDescriptionForMode(BackgroundMode[x as BackgroundModeType])}
+						<FormattedMessage
+								{...getDescriptionForMode(BackgroundMode[x as BackgroundModeType])} />
 					</span>
 				</div>));
 
@@ -40,14 +42,21 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 
 	return (
 		<div className="modal-body">
-			<h3>Background Type</h3>
+			<h3>
+				<FormattedMessage
+						defaultMessage="Background Type" />
+			</h3>
 			<RadioGroup name="mode" selectedValue={modeName} onChange={handleModeChanged}>
 				{radioModes}
 			</RadioGroup>
-			<h3>{modeName} Options</h3>
+			<h3>
+				<FormattedMessage
+						defaultMessage="{mode} Options"
+						values={{mode: modeName}} />
+			</h3>
 			<Form
-				values={props.background.values}
-				schema={getSchemaForMode(props.background.mode)}
-				onChange={handleSetValue} />
+					values={props.background.values}
+					schema={getSchemaForMode(props.background.mode)}
+					onChange={handleSetValue} />
 		</div>);
 }

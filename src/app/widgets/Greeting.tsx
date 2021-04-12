@@ -3,16 +3,44 @@ import { useStorage } from "app/hooks";
 import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import React, { ChangeEvent } from "react";
+import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
 
 
-function getGreeting(): string {
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Greets you",
+	},
+
+	editHint: {
+		defaultMessage: "You can change the name by clicking it on the widget",
+	},
+
+	morning: {
+		defaultMessage: "Good morning",
+	},
+
+	afternoon: {
+		defaultMessage: "Good afternoon",
+	},
+
+	evening: {
+		defaultMessage: "Good evening",
+	},
+
+	name: {
+		defaultMessage: "name",
+	},
+});
+
+
+function getGreeting(): MessageDescriptor {
 	const hour = new Date().getHours();
 	if (hour < 12) {
-		return "Good morning";
+		return messages.morning;
 	} else if (hour < 16) {
-		return "Good afternoon";
+		return messages.afternoon;
 	} else {
-		return "Good evening";
+		return messages.evening;
 	}
 }
 
@@ -24,19 +52,20 @@ export default function Greeting() {
 		setName(e.target.value);
 	}
 
+	const intl = useIntl();
 	return (
 		<div className="text-shadow-hard large middle-center">
-			{getGreeting()},&nbsp;
+			<FormattedMessage {...getGreeting()} />,&nbsp;
 			{name !== undefined &&
 				<AutoWidthInput onChange={handleChange} value={name ?? ""}
-						placeholder="name" />}.
+						placeholder={intl.formatMessage(messages.name)} />}.
 		</div>);
 }
 
 
-Greeting.description = "Greets you";
+Greeting.description = messages.description;
 
-Greeting.editHint = "You can change the name by clicking it on the widget";
+Greeting.editHint = messages.editHint;
 
 Greeting.initialProps = {};
 

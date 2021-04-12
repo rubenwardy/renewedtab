@@ -4,6 +4,7 @@ import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
 import Schema from "app/utils/Schema";
 import { useForceUpdate } from "app/hooks";
+import { FormattedMessage, useIntl } from "react-intl";
 
 interface RowProps extends FormProps {
 	idx: number;
@@ -99,9 +100,13 @@ export default function ArrayField(props: FieldProps<any[]>) {
 	}
 
 	const headers = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
-		<th key={key}>{type.label}</th>));
+		<th key={key}>
+			<FormattedMessage {...type.label} />
+		</th>));
 	const hints = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
-		<td key={key}>{type.hint}</td>));
+		<td key={key}>
+			{type.hint && <FormattedMessage {...type.hint} />}
+		</td>));
 
 	const rows = props.value.map((row, idx) => (
 		<ArrayRow key={row.id} idx={idx} values={row}
@@ -116,7 +121,9 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			<a className="float-right btn btn-sm btn-primary"
 					onClick={() => handleAdd(true)}>
 				<i className="fas fa-plus mr-2" />
-				Add
+
+				<FormattedMessage
+						defaultMessage="Add" />
 			</a>
 			<div className="clear-both" />
 
@@ -140,7 +147,9 @@ export default function ArrayField(props: FieldProps<any[]>) {
 				<a className="float-right mt-3 btn btn-sm btn-primary"
 						onClick={() => handleAdd(false)}>
 					<i className="fas fa-plus mr-2" />
-					Add
+
+					<FormattedMessage
+							defaultMessage="Add" />
 				</a>}
 			<div className="clear-both" />
 		</>);

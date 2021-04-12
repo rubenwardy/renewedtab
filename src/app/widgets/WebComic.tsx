@@ -3,7 +3,27 @@ import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { useFeed } from 'app/hooks/feeds';
 import { WidgetProps } from 'app/Widget';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import schemaMessages from 'app/locale/common';
 
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Shows the most recent page from a webcomic, using Atom or RSS",
+	},
+
+	titleHint: {
+		defaultMessage: "Leave blank to use feed's title",
+	},
+
+	loading: {
+		defaultMessage: "Loading feed...",
+	},
+
+	noImages: {
+		defaultMessage: "No images found on feed"
+	}
+});
 
 interface WebComicProps {
 	url: string;
@@ -11,13 +31,14 @@ interface WebComicProps {
 
 export default function WebComic(widget: WidgetProps<WebComicProps>) {
 	const props = widget.props;
+	const intl = useIntl();
 
 	const [feed, error] = useFeed(props.url, [props.url]);
 
 	if (!feed) {
 		return (
 			<div className="panel text-muted">
-				{error ? error.toString() : "Loading feed..."}
+				{error ? error.toString() : intl.formatMessage(messages.loading)}
 			</div>);
 	}
 
@@ -25,7 +46,7 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 	if (article?.image == undefined) {
 		return (
 			<div className="panel text-muted">
-				No image found on feed
+				<FormattedMessage {...messages.noImages} />
 			</div>);
 	}
 
@@ -40,14 +61,14 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 }
 
 
-WebComic.description = "Shows the most recent page from a webcomic, using Atom or RSS";
+WebComic.description = messages.description;
 
 WebComic.initialProps = {
 	url: "https://xkcd.com/atom.xml"
 };
 
 WebComic.schema = {
-	url: type.urlPerm("Feed URL", "URL to an Atom or RSS feed"),
+	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint),
 } as Schema;
 
 WebComic.defaultSize = new Vector2(5, 4);

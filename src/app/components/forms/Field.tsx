@@ -1,5 +1,6 @@
 import { SchemaEntry } from "app/utils/Schema";
 import React from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import { makeField } from ".";
 
 
@@ -19,13 +20,17 @@ export function Field(props: FieldProps) {
 	return (
 		<>
 			{showLabel &&
-				<label htmlFor={props.name}>{props.schemaEntry.label ?? props.name}</label>}
+				<label htmlFor={props.name}>
+					<FormattedMessage {...props.schemaEntry.label} />
+				</label>}
 
 			<SubField name={props.name} value={props.value}
 					schemaEntry={props.schemaEntry} type={props.schemaEntry.type}
 					onChange={props.onChange} />
 
 			{showHint && props.schemaEntry.hint &&
-				<p className="text-muted">{props.schemaEntry.hint}</p>}
+				<p className="text-muted">
+					<FormattedMessage {...props.schemaEntry.hint} />
+				</p>}
 		</>);
 }

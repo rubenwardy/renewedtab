@@ -1,8 +1,37 @@
 import { usePromise } from "app/hooks";
+import schemaMessages from "app/locale/common";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { Widget, WidgetProps } from "app/Widget";
 import React, { useRef } from "react";
+import { defineMessages, useIntl } from "react-intl";
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Search box to your favourite search engine",
+	},
+
+	placeholder: {
+		defaultMessage: "Enter notes here",
+	},
+
+	searchTitle: {
+		defaultMessage: "Search engine name",
+	},
+
+	useBrowserDefault: {
+		defaultMessage: "Use browser's default search engine",
+	},
+
+	searchWith: {
+		defaultMessage: "Search with {name}",
+	},
+
+	search: {
+		defaultMessage: "Search",
+	},
+});
 
 
 interface SearchProps {
@@ -51,6 +80,7 @@ async function getBrowserSearchEngineName(): Promise<string> {
 
 export default function Search(widget: WidgetProps<SearchProps>) {
 	const props = widget.props;
+	const intl = useIntl();
 
 	if (hasSearchAPI && props.useBrowserEngine) {
 		const [name] = usePromise(() => getBrowserSearchEngineName(), []);
@@ -76,11 +106,15 @@ export default function Search(widget: WidgetProps<SearchProps>) {
 			}
 		}
 
+		const placeholder = name
+			? intl.formatMessage(messages.searchWith, { name: props.searchTitle })
+			: intl.formatMessage(messages.search);
+
 		return (
 			<div className="panel flush">
 				<form onSubmit={onSubmit}>
-					<input autoFocus={true} type="text" name="q" ref={ref}
-							placeholder={name ? `Search with ${name}` : "Search"}
+					<input autoFocus={true} placeholder={placeholder}
+							type="text" name="q" ref={ref}
 							className="large invisible" />
 				</form>
 			</div>);
@@ -90,14 +124,15 @@ export default function Search(widget: WidgetProps<SearchProps>) {
 		<div className="panel flush">
 			<form method="get" action={props.searchURL}>
 				<input autoFocus={true} type="text" name="q"
-						placeholder={`Search with ${props.searchTitle}`}
+						placeholder={
+							intl.formatMessage(messages.searchWith, { name: props.searchTitle })}
 						className="large invisible" />
 			</form>
 		</div>);
 }
 
 
-Search.description = "Search box to your favourite search engine";
+Search.description = messages.description;
 
 Search.initialProps = {
 	useBrowserEngine: true,
@@ -108,18 +143,18 @@ Search.initialProps = {
 Search.schema = (widget: Widget<SearchProps>) => {
 	if (!hasSearchAPI) {
 		return {
-			searchTitle: type.string("Search engine name"),
-			searchURL: type.url("URL"),
+			searchTitle: type.string(messages.searchTitle),
+			searchURL: type.url(schemaMessages.url),
 		} as Schema;
 	} else if (widget.props.useBrowserEngine) {
 		return {
-			useBrowserEngine: type.boolean("Use browser's default search engine"),
+			useBrowserEngine: type.boolean(messages.useBrowserDefault),
 		}
 	} else {
 		return {
-			useBrowserEngine: type.boolean("Use browser's default search engine"),
-			searchTitle: type.string("Search engine name"),
-			searchURL: type.url("URL"),
+			useBrowserEngine: type.boolean(messages.useBrowserDefault),
+			searchTitle: type.string(messages.searchTitle),
+			searchURL: type.url(schemaMessages.url),
 		} as Schema;
 	}
 }

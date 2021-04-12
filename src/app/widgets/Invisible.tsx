@@ -1,12 +1,21 @@
 import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { defineMessages } from 'react-intl';
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Shows nothing, useful for layouting purposes",
+	},
+})
+
 
 export default function Invisible(): (JSX.Element | null) {
 	return null;
 }
 
 
-Invisible.description = "Shows nothing, useful for layouting purposes";
+Invisible.description = messages.description;
 
 Invisible.initialProps = {};
 

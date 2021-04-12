@@ -3,6 +3,31 @@ import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { Location, type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import schemaMessages from 'app/locale/common';
+
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "Current and forecasted weather",
+	},
+
+	editHint: {
+		defaultMessage: "Powered by OpenWeatherMap.org",
+	},
+
+	locationNeeded: {
+		defaultMessage: "Location needed. Click edit to add it.",
+	},
+
+	loadingWeather: {
+		defaultMessage: "Loading weather...",
+	},
+
+	temperatureUnit: {
+		defaultMessage: "Temperature Unit",
+	}
+});
 
 
 enum TemperatureUnit {
@@ -56,11 +81,12 @@ interface WeatherProps {
 
 export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
+	const intl = useIntl();
 
 	if (!props.location) {
 		return (
 			<div className="panel text-muted">
-				Location needed. Click edit to add it.
+				<FormattedMessage {...messages.locationNeeded} />
 			</div>);
 	}
 
@@ -82,7 +108,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 	if (!info) {
 		return (
 			<div className="panel text-muted">
-				{error ? error.toString() : "Loading weather..."}
+				{error ? error.toString() : intl.formatMessage(messages.loadingWeather)}
 			</div>);
 	}
 
@@ -103,9 +129,9 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 }
 
 
-Weather.description = "Current and forecasted weather";
+Weather.description = messages.description;
 
-Weather.editHint = "Powered by OpenWeatherMap.org";
+Weather.editHint = messages.editHint;
 
 Weather.initialProps = {
 	url: "https://www.bbc.co.uk/weather/2654675",
@@ -119,9 +145,9 @@ Weather.initialProps = {
 
 
 Weather.schema = {
-	url: type.url("Link URL"),
-	location: type.location("Location"),
-	unit: type.selectEnum(TemperatureUnit, "Temperature Unit"),
+	url: type.url(schemaMessages.linkUrl),
+	location: type.location(schemaMessages.location),
+	unit: type.selectEnum(TemperatureUnit, messages.temperatureUnit),
 } as Schema;
 
 Weather.defaultSize = new Vector2(5, 3);

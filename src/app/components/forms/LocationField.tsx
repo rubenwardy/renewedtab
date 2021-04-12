@@ -1,21 +1,35 @@
 import { useAPI } from "app/hooks";
 import { Location } from "app/utils/Schema";
 import React, { useRef, useState } from "react";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
+
+const messages = defineMessages({
+	loading: {
+		defaultMessage: "Loading results...",
+	},
+
+	selected: {
+		defaultMessage: "Selected {name} at {latitude} by {longitude}.",
+	},
+})
 
 export function LocationQuery(props: { query: string, onSelect: (loc: Location) => void }) {
 	const [info, error] = useAPI<Location[]>("geocode/", { q: props.query }, [props.query]);
+	const intl = useIntl();
+
 	if (!info) {
 		return (
 			<p className="text-muted">
-				{error ? error.toString() : "Loading results..."}
+				{error ? error.toString() : intl.formatMessage(messages.loading)}
 			</p>);
 	}
 
 	if (info.length == 0) {
 		return (
 			<p className="text-muted">
-				No locations found
+				<FormattedMessage
+						defaultMessage="No locations found" />
 			</p>);
 
 	}
@@ -59,21 +73,36 @@ export default function LocationField(props: FieldProps<Location>) {
 	} else if (props.value) {
 		location_after = (
 			<p>
-				Selected {value.name} at {value.latitude} by {value.longitude}.
+				<FormattedMessage {...messages.selected} values={{
+						name: value.name,
+						latitude: value.latitude,
+						longitude: value.longitude,
+					}} />
 			</p>);
 	} else {
-		location_after = (<p className="text-muted">Please select a location</p>);
+		location_after = (
+			<p className="text-muted">
+				<FormattedMessage
+						defaultMessage="Please select a location" />
+			</p>);
 	}
 
 	return (
 		<>
 			<div className="field-group">
 				<input type="text" ref={ref} name={props.name} defaultValue={value.name} />
-				<a className="btn btn-primary" onClick={handleSearch}>Search</a>
+				<a className="btn btn-primary" onClick={handleSearch}>
+					<FormattedMessage
+							defaultMessage="Search" />
+				</a>
 			</div>
 			{location_after}
 			<p className="text-muted">
-				Powered by <a href="https://www.openstreetmap.org/">OpenStreetMap</a>.
+				<FormattedMessage
+					defaultMessage="Powered by <a>OpenStreetMap</a>."
+					values={{
+						a: (chunk: any) => (<a href="https://www.openstreetmap.org/">{chunk}</a>)
+					}} />
 			</p>
 		</>);
 }
