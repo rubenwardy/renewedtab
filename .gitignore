@@ -1,4 +1,5 @@
-votes.csv
+/votes.csv
+/feedback.txt
 web-ext-artifacts
 config*.json
 !*.example.json

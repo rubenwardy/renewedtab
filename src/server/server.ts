@@ -30,6 +30,7 @@ import getImageFromUnsplash from "./backgrounds/unsplash";
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use((_req, res, next) => {
 	const expiresAt = new Date(new Date().getTime() + 15*60*1000);
@@ -170,6 +171,26 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 		}));
 
 		res.json(launches);
+	} catch (ex) {
+		res.status(400).send(ex.message);
+	}
+});
+
+const feedbackStream = fs.createWriteStream("feedback.txt", { flags: "a" });
+app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
+	try {
+		if (!req.body.reason) {
+			res.status(400).send("Missing reason");
+			return;
+		}
+
+		feedbackStream.write(JSON.stringify(req.body) + "\n\n");
+
+		if (req.query.r) {
+			res.redirect("https://renewedtab.rubenwardy.com");
+		} else {
+			res.json({ success: true });
+		}
 	} catch (ex) {
 		res.status(400).send(ex.message);
 	}
