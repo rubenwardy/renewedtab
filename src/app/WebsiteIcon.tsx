@@ -70,3 +70,7 @@ export function getWebsiteIcon(url: string): Promise<string> {
 
 	return cache.get(key)!;
 }
+
+export function clearWebsiteIcons() {
+	cache.clear();
+}

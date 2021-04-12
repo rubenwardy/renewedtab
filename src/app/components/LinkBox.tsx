@@ -1,5 +1,8 @@
+import { usePromise } from 'app/hooks';
+import deepCopy from 'app/utils/deepcopy';
 import Schema, { type } from 'app/utils/Schema';
-import React, { useState } from 'react';
+import { getWebsiteIcon } from 'app/WebsiteIcon';
+import React, { useMemo, useState } from 'react';
 
 
 export interface Link {
@@ -48,12 +51,30 @@ function Icon(props: IconProps) {
 export interface LinkBoxProps {
 	useIconBar: boolean;
 	links: Link[];
+	useWebsiteIcons?: boolean;
 	defaultIcon?: string;
 	errorIcon?: string;
 }
 
+
+function getAllIcons(sites: Link[]): Promise<string[]> {
+	return Promise.all(sites.map((site) => getWebsiteIcon(site.url)));
+}
+
 export default function LinkBox(props: LinkBoxProps)  {
-	const links = props.links.map(link => {
+	const links = useMemo<Link[]>(() => deepCopy(props.links), [props.links]);
+	if (props.useWebsiteIcons == true && typeof browser !== "undefined") {
+		const sites = useMemo(
+			() => links.filter(link => link.url.length > 0 && link.icon == ""), [links]);
+		const [icons] = usePromise(() => getAllIcons(sites ?? []), [links]);
+		if (icons) {
+			icons.forEach((icon, i) => {
+				sites[i].icon = icon;
+			});
+		}
+	}
+
+	const linkElements = links.map(link => {
 		const requiresIcons = props.useIconBar && link.url.trim() != "";
 		const icon = (
 			<Icon icon={link.icon} requiresIcons={requiresIcons}
@@ -78,11 +99,11 @@ export default function LinkBox(props: LinkBoxProps)  {
 
 	if (props.useIconBar) {
 		return (
-			<ul className="iconbar">{links}</ul>);
+			<ul className="iconbar">{linkElements}</ul>);
 	} else {
 		return (
 			<div className="panel flush">
-				<ul className="large">{links}</ul>
+				<ul className="large">{linkElements}</ul>
 			</div>);
 	}
 }

@@ -1,6 +1,6 @@
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "perm_url" | "location" | "image_upload" | "array"
-	| "json" | "url" | "color" | "image";
+export type Type = JSType | "host_url" | "host_all" | "location" |
+	"image_upload" | "array" | "json" | "url" | "color" | "image";
 
 export interface SchemaEntry {
 	type: Type;
@@ -49,7 +49,7 @@ export namespace type {
 	 * URL, but will ask the user to grant host permissions when using as
 	 * an extension and the URL is blocked by CORS.
 	 */
-	export const urlPerm = makeTypeFunc("perm_url");
+	export const urlPerm = makeTypeFunc("host_url");
 
 	export const color = makeTypeFunc("color");
 
@@ -58,6 +58,8 @@ export namespace type {
 	export const image_upload = makeTypeFunc("image_upload");
 
 	export const image = makeTypeFunc("image");
+
+	export const booleanHostPerm = makeTypeFunc("host_all");
 
 	/**
 	 * enumType: The TypeScript enum object

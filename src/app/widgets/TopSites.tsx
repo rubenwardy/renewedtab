@@ -12,13 +12,8 @@ interface TopSitesProps {
 	useIconBar: boolean;
 }
 
-function getAllIcons(sites: any[]): Promise<string[]> {
-	return Promise.all(sites.map((site) => getWebsiteIcon(site.url)));
-}
-
 function TopSitesImpl(props: TopSitesProps) {
 	const [sites, error] = usePromise(() => browser.topSites.get(), []);
-	const [icons, _error2] = usePromise(() => getAllIcons(sites ?? []), [sites]);
 	if (!sites) {
 		return (
 			<div className="panel text-muted">
@@ -26,17 +21,15 @@ function TopSitesImpl(props: TopSitesProps) {
 			</div>);
 	}
 
-	const links: Link[] = sites.map((site, i) => ({
+	const links: Link[] = sites.map((site) => ({
 		id: site.url,
 		title: site.title,
-		icon: (icons ?? [])[i] ?? "",
+		icon: "",
 		url: site.url,
 	}));
 
-	console.log(links);
-
 	return (
-		<LinkBox {...props} links={links}
+		<LinkBox {...props} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 

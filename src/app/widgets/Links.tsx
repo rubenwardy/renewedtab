@@ -55,10 +55,20 @@ Links.initialProps = {
 	]
 };
 
-Links.schema = {
-	useIconBar: type.boolean("Display as icons"),
-	links: type.array(LinkSchema, "Links"),
-} as Schema;
+Links.schema = (_widget: Widget<LinkBoxProps>) => {
+	if (typeof browser !== "undefined") {
+		return {
+			useIconBar: type.boolean("Display as icons"),
+			useWebsiteIcons: type.booleanHostPerm("Use icons from websites (favicons)"),
+			links: type.array(LinkSchema, "Links"),
+		} as Schema;
+	} else {
+		return {
+			useIconBar: type.boolean("Display as icons"),
+			links: type.array(LinkSchema, "Links"),
+		} as Schema;
+	}
+}
 
 Links.defaultSize = new Vector2(5, 4);
 
