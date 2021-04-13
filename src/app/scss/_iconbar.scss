@@ -35,6 +35,8 @@
 			display: block;
 			margin: 10px 0 0 0;
 			overflow-wrap: break-word;
+
+			@include line-clamp(2);
 		}
 
 		a {

@@ -173,15 +173,16 @@ main.scrolling {
 	}
 }
 
-@import "buttons.scss";
-@import "panel.scss";
-@import "widget.scss";
-@import "fields.scss";
-@import "modal.scss";
-@import "utils.scss";
-@import "scrollbar.scss";
-@import "iconbar.scss";
-@import "todolist.scss";
+@import "mixins";
+@import "buttons";
+@import "panel";
+@import "widget";
+@import "fields";
+@import "modal";
+@import "utils";
+@import "scrollbar";
+@import "iconbar";
+@import "todolist";
 
 @import "~react-grid-layout/css/styles.css";
 @import "~react-resizable/css/styles.css";
