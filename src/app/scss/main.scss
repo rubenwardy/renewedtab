@@ -28,10 +28,19 @@ h1 {
 
 .text-shadow-soft, .text-shadow-soft input {
 	text-shadow: 0 0 1em rgba(15, 15, 15, 0.4), 3px 3px 3px rgba(15, 15, 15, 0.2);
+
+	svg {
+		filter: drop-shadow(0 0 1em rgba(15, 15, 15, 0.4))
+			drop-shadow(3px 3px 3px rgba(15, 15, 15, 0.2));
+	}
 }
 
 .text-shadow-hard, .text-shadow-hard input {
 	text-shadow: 2px 2px 2px rgba(15, 15, 15, 0.3);
+
+	svg {
+		filter: drop-shadow(2px 2px 2px rgba(15, 15, 15, 0.3));
+	}
 }
 
 .float-right {
