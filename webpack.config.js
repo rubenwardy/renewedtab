@@ -5,6 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const formatjs = require("@formatjs/ts-transformer");
+const package_json = require('./package.json');
 
 const isProd = process.env.NODE_ENV === "production";
 const dest = path.resolve(__dirname, "dist/webext/app");
@@ -28,6 +29,7 @@ module.exports = {
 	devtool: isProd ? undefined : "source-map",
 	plugins: [
 		new webpack.DefinePlugin({
+			app_version: JSON.stringify(package_json.version),
 			config: getConfig(),
 		}),
 		new CopyPlugin({

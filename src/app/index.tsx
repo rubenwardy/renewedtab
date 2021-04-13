@@ -5,7 +5,8 @@ interface Config {
 }
 
 declare global {
-	var config: Config;
+	const config: Config;
+	const app_version: string;
 }
 
 import React from "react";
@@ -33,15 +34,25 @@ if (typeof browser !== "undefined") {
 	async function setUninstallURL() {
 		const url = new URL("https://renewedtab.rubenwardy.com/uninstall/");
 
-		const platform = await browser.runtime.getPlatformInfo();
-		url.searchParams.set("platform", platform.os ?? '?');
-
-		if (typeof browser.runtime.getBrowserInfo !== "undefined") {
-			const browserInfo = await browser.runtime.getBrowserInfo()
-			url.searchParams.set("browser", `${browserInfo.name} ${browserInfo.version}`);
-		} else {
-			url.searchParams.set("browser", "Chrome");
+		try {
+			const platform = await browser.runtime.getPlatformInfo();
+			url.searchParams.set("platform", platform.os ?? '?');
+		} catch (e) {
+			console.error(e);
 		}
+
+		try {
+			if (typeof browser.runtime.getBrowserInfo !== "undefined") {
+				const browserInfo = await browser.runtime.getBrowserInfo()
+				url.searchParams.set("browser", `${browserInfo.name} ${browserInfo.version}`);
+			} else {
+				url.searchParams.set("browser", "Chrome");
+			}
+		} catch (e) {
+			console.error(e);
+		}
+
+		url.searchParams.set("version", app_version);
 
 		browser.runtime.setUninstallURL(url.toString());
 	}
