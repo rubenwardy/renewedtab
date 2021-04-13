@@ -18,6 +18,17 @@ Here's an example:
 ```ts
 import Schema, { type } from 'app/utils/Schema';
 import React from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
+
+const messages = defineMessages({
+	description: {
+		defaultMessage: "A helpful description shown in the create widget dialog",
+	},
+
+	yourName: {
+		defaultMessage: "Your name",
+	},
+});
 
 interface HelloWorldProps {
 	name: string;
@@ -26,11 +37,13 @@ interface HelloWorldProps {
 export default function HelloWorld(props: HelloWorldProps) {
 	return (
 		<div className="panel">
-			<p>Hello {props.name}</p>
+			<FormattedMessage
+					defaultMessage="Hello {name}!"
+					values={{ name: props.name }}>
 		</div>);
 }
 
-HelloWorld.description = "A helpful description shown in the create widget dialog";
+HelloWorld.description = messages.description;
 
 // Default values for props
 HelloWorld.initialProps = {
@@ -39,7 +52,7 @@ HelloWorld.initialProps = {
 
 // Schema for props, see below
 HelloWorld.schema = {
-	name: type.string("Your Name"),
+	name: type.string(messages.yourName),
 } as Schema;
 
 // Default size on grid when created
