@@ -30,7 +30,7 @@ const tabTitles = defineMessages({
 	},
 
 	[SettingsTab.About]: {
-		defaultMessage: "About and Credits",
+		defaultMessage: "About and Help",
 	},
 });
 

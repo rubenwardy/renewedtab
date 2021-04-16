@@ -68,6 +68,9 @@
   "9+2gJZ": {
     "defaultMessage": "This widget requires the browser extension version."
   },
+  "9EQuAK": {
+    "defaultMessage": "About and Help"
+  },
   "9XUYQt": {
     "defaultMessage": "Import"
   },
@@ -253,9 +256,6 @@
   },
   "ekIjqh": {
     "defaultMessage": "Grant permission to access all websites"
-  },
-  "f5NvWw": {
-    "defaultMessage": "About and Credits"
   },
   "gjBiyj": {
     "defaultMessage": "Loading..."
