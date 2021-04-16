@@ -2,7 +2,7 @@ import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps } from "app/Widget";
 import React from "react";
-import { defineMessages } from "react-intl";
+import { defineMessages, FormattedTime } from "react-intl";
 
 
 const messages = defineMessages({
@@ -38,15 +38,12 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 		};
 	});
 
-	const options: Intl.DateTimeFormatOptions = props.showSeconds ? {} : {
-		hour: "numeric",
-		minute: "numeric",
-		hour12: props.hour12,
-	}
-
 	return (
 		<h1 className="text-shadow-soft middle-center">
-			{time.toLocaleTimeString(undefined, options)}
+			<FormattedTime
+				value={time} hour12={props.hour12}
+				hour="numeric" minute="numeric"
+				second={props.showSeconds ? "numeric" : undefined} />
 		</h1>);
 }
 
