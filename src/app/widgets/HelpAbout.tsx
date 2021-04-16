@@ -29,6 +29,7 @@ export default function HelpAbout() {
 			<p>
 				<FormattedMessage
 					defaultMessage={"Click \"Add widget\" in the bottom of the screen to add a widget."} />
+				&nbsp;
 				<FormattedMessage
 					defaultMessage="Also take a look at settings (the cog)." />
 			</p>
@@ -40,8 +41,10 @@ export default function HelpAbout() {
 			<p>
 				<FormattedMessage
 					defaultMessage="Need help?" />
+				&nbsp;
 				<FormattedMessage
 					defaultMessage="Found a bug, or have a request?" />
+				&nbsp;
 				<FormattedMessage
 					defaultMessage="Check out the <a>Help and FAQ page</a> to see common questions and to get in contact."
 					values={{
