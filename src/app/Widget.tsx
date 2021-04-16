@@ -35,7 +35,7 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	/**
 	 * Called when the widget is loaded from save.
 	 */
-	onLoaded?: (widget: Widget<T>) => void;
+	onLoaded?: (widget: Widget<T>) => Promise<void>;
 }
 
 export interface Widget<T> {

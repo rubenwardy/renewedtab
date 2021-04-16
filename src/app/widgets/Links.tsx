@@ -89,7 +89,7 @@ Links.schema = (_widget: Widget<LinkBoxProps>) => {
 
 Links.defaultSize = new Vector2(5, 4);
 
-Links.onLoaded = function(widget: Widget<any>) {
+Links.onLoaded = async (widget: Widget<any>) => {
 	if (widget.props.sections && !widget.props.links) {
 		widget.props.links = widget.props.sections.map((section: any) => [
 			{ title: section.title, url: "" },

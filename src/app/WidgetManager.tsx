@@ -17,22 +17,23 @@ export class WidgetManager {
 
 	async load() {
 		const json = await storage.get<Widget<any>[]>("widgets");
-		if (json) {
-			this.widgets = json.filter((widget: Widget<any>) => WidgetTypes[widget.type]);
-			this.id_counter =
-				this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
-
-			this.widgets.forEach(widget => {
-				widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
-				widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
-
-				const widget_type = WidgetTypes[widget.type];
-				if (widget_type.onLoaded) {
-					widget_type.onLoaded(widget);
-				}
-			})
-		} else {
+		if (!json) {
 			this.resetToDefault();
+			return;
+		}
+
+		this.widgets = json.filter((widget: Widget<any>) => WidgetTypes[widget.type]);
+		this.id_counter =
+			this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
+
+		for (let widget of this.widgets) {
+			widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
+			widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
+
+			const widget_type = WidgetTypes[widget.type];
+			if (widget_type.onLoaded) {
+				await widget_type.onLoaded(widget);
+			}
 		}
 	}
 

@@ -45,17 +45,16 @@ Notes.initialProps = {
 	notes: "",
 };
 
-Notes.onLoaded = (widget: Widget<any>) => {
+Notes.onLoaded = async (widget: Widget<any>) => {
 	if (widget.props.storageKey &&
 			(widget.props.notes == undefined || widget.props.notes === "")) {
 		widget.props.notes = "";
 
-		storage.get(widget.props.storageKey).then((value) => {
-			if (typeof value == "string") {
-				widget.props.notes = value;
-				widget.props.storageKey = undefined;
-			}
-		});
+		const value = await storage.get(widget.props.storageKey);
+		if (typeof value == "string") {
+			widget.props.notes = value;
+			widget.props.storageKey = undefined;
+		}
 	}
 }
 
