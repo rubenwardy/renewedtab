@@ -35,7 +35,7 @@ async function fetchIcon(url: string): Promise<string> {
 	const html = new window.DOMParser().parseFromString(
 		await response.text(), "text/html");
 
-	const icons = html.querySelectorAll("link[rel='icon']");
+	const icons = html.querySelectorAll("link[rel~='icon']");
 
 	let topScore = -1;
 	let topIcon : (Element | null) = null;
