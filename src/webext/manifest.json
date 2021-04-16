@@ -21,6 +21,7 @@
 	],
 	"optional_permissions": [
 		"*://*/",
+		"bookmarks",
 		"topSites"
 	]
 }

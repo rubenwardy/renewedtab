@@ -212,6 +212,9 @@
   "UP4EUm": {
     "defaultMessage": "Click items to edit them"
   },
+  "WQeyl4": {
+    "defaultMessage": "Grant permission to access bookmarks"
+  },
   "WZjKFf": {
     "defaultMessage": "Warning: this may contain personal data, if any was entered into widget settings."
   },
@@ -330,6 +333,9 @@
   "sRTzEd": {
     "defaultMessage": "name"
   },
+  "tzWexR": {
+    "defaultMessage": "Shows your bookmarks"
+  },
   "uCwc2+": {
     "defaultMessage": "Selected {name} at {latitude} by {longitude}."
   },
@@ -353,6 +359,9 @@
   },
   "wubRXu": {
     "defaultMessage": "Search with {name}"
+  },
+  "x7IPhN": {
+    "defaultMessage": "Include folders as sections"
   },
   "xaOK72": {
     "defaultMessage": "Shows an Atom or RSS feed"
