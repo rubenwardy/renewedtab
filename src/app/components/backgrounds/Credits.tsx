@@ -1,3 +1,4 @@
+import { useDelay } from "app/hooks/delay";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 import { BackgroundInfo } from ".";
@@ -26,6 +27,12 @@ interface CreditProps {
 
 export function Credits(props: CreditProps) {
 	const setIsHovered = props.setIsHovered ?? (() => {});
+	const [startOnHover, cancelOnHover] = useDelay(setIsHovered, 200, true);
+
+	function onMouseLeave() {
+		cancelOnHover();
+		setIsHovered(false);
+	}
 
 	const intl = useIntl();
 
@@ -34,8 +41,8 @@ export function Credits(props: CreditProps) {
 				? props.info.title : "Photo";
 		return (
 			<div className="credits text-shadow-soft"
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}>
+					onMouseEnter={startOnHover}
+					onMouseLeave={onMouseLeave}>
 				<a className="title" href={props.info.links.photo}>{title}</a>
 				<a href={props.info.links.author}>{props.info.author}</a>
 				&nbsp;/&nbsp;
