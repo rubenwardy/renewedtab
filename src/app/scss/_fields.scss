@@ -118,7 +118,11 @@ textarea.invisible, input.invisible {
 	white-space: nowrap;
 }
 
-td.field input {
+td.field {
+	text-align: center;
+}
+
+td.field input:not([type='checkbox']):not([type='radio']) {
 	width: 100%;
 }
 

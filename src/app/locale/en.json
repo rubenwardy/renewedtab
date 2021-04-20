@@ -80,6 +80,9 @@
   "9bmERx": {
     "defaultMessage": "An image from a URL"
   },
+  "A3jj9z": {
+    "defaultMessage": "Font"
+  },
   "Ae/0CS": {
     "defaultMessage": "center, top, or bottom"
   },
@@ -125,6 +128,9 @@
   "I9KXpO": {
     "defaultMessage": "Location needed. Click edit to add it."
   },
+  "IgzvjY": {
+    "defaultMessage": "Filter Articles"
+  },
   "JBWS0c": {
     "defaultMessage": "Link"
   },
@@ -155,6 +161,9 @@
   "N5qakN": {
     "defaultMessage": "Track to do list items"
   },
+  "NIJnhw": {
+    "defaultMessage": "Panel Blur radius"
+  },
   "Necq3a": {
     "defaultMessage": "Links, with support for headings and icons"
   },
@@ -175,6 +184,9 @@
   },
   "PM6qZ7": {
     "defaultMessage": "Show seconds"
+  },
+  "Pe0ogR": {
+    "defaultMessage": "Theme"
   },
   "Ptdy4D": {
     "defaultMessage": "States your current age with way too much precision"
@@ -309,6 +321,9 @@
   "krty63": {
     "defaultMessage": "Need help?"
   },
+  "lQtuyb": {
+    "defaultMessage": "Experimental, requires a page reload."
+  },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
   },
@@ -333,6 +348,9 @@
   "sRTzEd": {
     "defaultMessage": "name"
   },
+  "tPuTXu": {
+    "defaultMessage": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
+  },
   "tzWexR": {
     "defaultMessage": "Shows your bookmarks"
   },
@@ -351,6 +369,9 @@
   "ueVsqa": {
     "defaultMessage": "Use a custom image"
   },
+  "wOMXgK": {
+    "defaultMessage": "Font Scaling"
+  },
   "wogY8a": {
     "defaultMessage": "Create Widget"
   },
@@ -368,6 +389,9 @@
   },
   "xmcVZ0": {
     "defaultMessage": "Search"
+  },
+  "y/bmsG": {
+    "defaultMessage": "Allow"
   },
   "yNe5MS": {
     "defaultMessage": "Current and forecasted weather"
