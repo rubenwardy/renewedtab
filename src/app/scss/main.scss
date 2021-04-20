@@ -1,3 +1,9 @@
+:root {
+	--font-family: "Roboto";
+	--font-size: 100%
+	--panel-blur: 12px;
+}
+
 html, body, #app {
 	width: 100%;
 	height: 100%;
@@ -7,8 +13,8 @@ html, body, #app {
 
 body {
 	color: #eee;
-	font-family: "Roboto", "Arial", sans-serif;
-	font-size: 100%;
+	font-family: var(--font-family), "Arial", sans-serif;
+	font-size: var(--font-size);
 }
 
 h1 {

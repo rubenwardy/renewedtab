@@ -8,6 +8,7 @@ import { useBackground, usePromise, useStorage } from "app/hooks";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import getTranslation, { getUserLocale } from "app/locale";
+import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 
 
 const widgetManager = new WidgetManager();
@@ -19,10 +20,15 @@ export default function App() {
 	const messages = getTranslation(locale);
 
 	const [background, setBackground] = useBackground();
+	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
 	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
+
+	if (theme) {
+		applyTheme(theme);
+	}
 
 	const classes: string[] = [];
 	if (widgetsHidden) {
@@ -42,7 +48,8 @@ export default function App() {
 						onClose={() => setCreateOpen(false)} />
 				<SettingsDialog isOpen={settingsIsOpen}
 						onClose={() => setSettingsOpen(false)}
-						background={background} setBackground={setBackground} />
+						background={background} setBackground={setBackground}
+						theme={theme} setTheme={setTheme} />
 				<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />
 
 				<footer className="text-shadow-soft">

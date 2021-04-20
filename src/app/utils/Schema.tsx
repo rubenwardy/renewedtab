@@ -2,13 +2,16 @@ import { MessageDescriptor } from "@formatjs/intl";
 
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
-	"image_upload" | "array" | "json" | "url" | "color" | "image";
+	"image_upload" | "array" | "json" | "url" | "color" | "image" |
+	"unit_number";
+
 
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema;
 	label: MessageDescriptor;
 	hint?: MessageDescriptor;
+	unit?: string;
 }
 
 
@@ -40,6 +43,13 @@ export namespace type {
 	export const number = makeTypeFunc("number");
 	export const json = makeTypeFunc("json");
 
+	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor) => ({
+		type: "unit_number",
+		label: label,
+		hint: hint,
+		unit: unit,
+	} as SchemaEntry);
+
 	/**
 	 * Date entry only, no time
 	 */
@@ -66,7 +76,7 @@ export namespace type {
 	/**
 	 * enumType: The TypeScript enum object
 	 */
-	export const selectEnum = (enumType: any, label: MessageDescriptor, hint?: string) => ({
+	export const selectEnum = (enumType: any, label: MessageDescriptor, hint?: MessageDescriptor) => ({
 		type: enumType,
 		label: label,
 		hint: hint,
@@ -78,7 +88,7 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	export const array = (subschema: Schema, label: MessageDescriptor, hint?: string) => ({
+	export const array = (subschema: Schema, label: MessageDescriptor, hint?: MessageDescriptor) => ({
 		type: "array",
 		subschema: subschema,
 		label: label,

@@ -14,15 +14,15 @@ input:not(.invisible):not([type="radio"]):not([type="checkbox"]):not([type="colo
 }
 
 input:not(.invisible), textarea:not(.invisible) {
-	background: rgba(255, 255, 255, 0.2);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(200, 200, 200, 0.1);
+	border: 1px solid rgba(200, 200, 200, 0.1);
 	border-radius: 0.25rem;
 	color: white;
 	padding: 0.3rem 0.6rem;
 
 	&:invalid {
 		background: rgba(255, 180, 180, 0.2);
-		border: 2px solid rgba(255, 32, 32, 0.75);
+		border: 2px solid rgba(255, 32, 32, 0.6);
 	}
 }
 
@@ -73,6 +73,19 @@ textarea.invisible, input.invisible {
 			border-bottom-right-radius: 0 !important;
 		}
 	}
+
+	.unit {
+		background: rgba(200, 200, 200, 0.05);
+		border: 1px solid rgba(200, 200, 200, 0.1);
+		border-radius: 0.25rem;
+		padding: 0.3rem 0.6rem;
+		min-width: 20px;
+		text-align: center;
+	}
+}
+
+.unit-field input {
+	width: auto !important;
 }
 
 .input-auto {

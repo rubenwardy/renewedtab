@@ -17,6 +17,7 @@ import SelectField from "./SelectField";
 import CheckboxField from "./CheckboxField";
 import ImageUploadField from "./ImageUploadField";
 import { HostAllField, HostURLFIeld } from "./HostPermFields";
+import { UnitNumberField } from "./NumberField";
 
 function isEnumType(x: any) {
 	const keys = new Set(Object.getOwnPropertyNames(x));
@@ -34,6 +35,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return DateField;
 	} else if (type == "boolean") {
 		return CheckboxField;
+	} else if (type == "unit_number") {
+		return UnitNumberField;
 	} else if (type == "json") {
 		return JSONField;
 	} else if (typeof(type) == "object" && isEnumType(type)) {

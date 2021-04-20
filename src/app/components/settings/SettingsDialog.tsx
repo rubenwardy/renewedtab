@@ -3,26 +3,27 @@ import AboutSettings from "./AboutSettings";
 import BackgroundSettings, { BackgroundSettingsProps } from "./BackgroundSettings";
 import Modal from "../Modal";
 import ImportExport from "./ImportExport";
-import { MessageDescriptor } from "@formatjs/intl";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+import { ThemeSettings, ThemeSettingsProps } from "./ThemeSettings";
 
-
-interface SettingsDialogProps extends BackgroundSettingsProps {
-	isOpen: boolean;
-	onClose: () => void;
-}
 
 enum SettingsTab {
 	Background,
+	Theme,
 	ImportExport,
 	About,
 }
+
 
 declare type SettingsTabType = keyof typeof SettingsTab;
 
 const tabTitles = defineMessages({
 	[SettingsTab.Background]: {
 		defaultMessage: "Background",
+	},
+
+	[SettingsTab.Theme]: {
+		defaultMessage: "Theme",
 	},
 
 	[SettingsTab.ImportExport]: {
@@ -38,11 +39,19 @@ function getComponentForTab(tab: SettingsTab) {
 	switch (tab) {
 	case SettingsTab.Background:
 		return BackgroundSettings;
+	case SettingsTab.Theme:
+		return ThemeSettings;
 	case SettingsTab.ImportExport:
 		return ImportExport;
 	case SettingsTab.About:
 		return AboutSettings;
 	}
+}
+
+
+interface SettingsDialogProps extends BackgroundSettingsProps, ThemeSettingsProps {
+	isOpen: boolean;
+	onClose: () => void;
 }
 
 export default function SettingsDialog(props: SettingsDialogProps) {

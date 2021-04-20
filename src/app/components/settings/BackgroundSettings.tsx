@@ -49,7 +49,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 			<RadioGroup name="mode" selectedValue={modeName} onChange={handleModeChanged}>
 				{radioModes}
 			</RadioGroup>
-			<h3>
+			<h3 className="mt-4">
 				<FormattedMessage
 						defaultMessage="{mode} Options"
 						values={{mode: modeName}} />

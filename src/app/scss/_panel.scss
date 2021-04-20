@@ -26,7 +26,8 @@
 @supports (backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)) {
 	.panel {
 		background: none;
-		backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px);
+		backdrop-filter: brightness(70%) contrast(110%) saturate(140%)
+				blur(var(--panel-blur));
 	}
 }
 
