@@ -95,7 +95,8 @@ Feed.description = messages.description;
 
 Feed.initialProps = {
 	title: "",
-	url: "https://feeds.bbci.co.uk/news/rss.xml"
+	url: "https://feeds.bbci.co.uk/news/rss.xml",
+	filters: [],
 };
 
 
