@@ -41,9 +41,10 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	return (
 		<h1 className="text-shadow-soft middle-center">
 			<FormattedTime
-				value={time} hour12={props.hour12}
+				value={time}
 				hour="numeric" minute="numeric"
-				second={props.showSeconds ? "numeric" : undefined} />
+				second={props.showSeconds ? "numeric" : undefined}
+				hourCycle={props.hour12 ? "h12" : "h23"} />
 		</h1>);
 }
 
