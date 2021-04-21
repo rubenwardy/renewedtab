@@ -7,11 +7,11 @@ import { ColorPair } from "../forms/ColorFields";
 
 const messages = defineMessages({
 	experimental: {
-		defaultMessage: "The following settings are experimental. This means that you may encounter bugs and weirdness when changing them.",
+		defaultMessage: "The following settings are experimental; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes.",
 	},
 
 	requiresReload: {
-		defaultMessage: "These settings require a page reload to take affect.",
+		defaultMessage: "You may need to reload the page to see changes take affect.",
 	},
 
 	font: {
@@ -26,8 +26,12 @@ const messages = defineMessages({
 		defaultMessage: "Font Scaling",
 	},
 
-	blurRadius: {
-		defaultMessage: "Panel Blur radius",
+	panelBlurRadius: {
+		defaultMessage: "Panel Blur Radius",
+	},
+
+	panelOpacity: {
+		defaultMessage: "Panel Background Darkness",
 	},
 
 	colorPrimary: {
@@ -43,14 +47,16 @@ const messages = defineMessages({
 export interface ThemeConfig {
 	fontFamily?: string;
 	fontScaling?: number;
-	blurRadius?: number;
+	panelBlurRadius?: number;
+	panelOpacity?: number;
 	colorPrimary?: ColorPair;
 }
 
 const defaults: ThemeConfig = {
 	fontFamily: "Roboto",
 	fontScaling: 100,
-	blurRadius: 12,
+	panelBlurRadius: 12,
+	panelOpacity: 50,
 	colorPrimary: { one: "#007DB8", two: "#06aed5" },
 };
 
@@ -95,7 +101,8 @@ function getThemeSchema(): Schema {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
 			fontScaling: type.unit_number(messages.fontScaling, "%"),
-			blurRadius: type.unit_number(messages.blurRadius, "px"),
+			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px"),
+			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
 			colorPrimary: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
 		};
 	} else {
@@ -116,7 +123,8 @@ export function applyTheme(theme: ThemeConfig) {
 	const style = document.documentElement.style;
 	style.setProperty("--font-family", theme.fontFamily!);
 	style.setProperty("--font-size", `${fontScaling}%`);
-	style.setProperty("--panel-blur", `${theme.blurRadius}px`);
+	style.setProperty("--panel-blur", `${theme.panelBlurRadius}px`);
+	style.setProperty("--panel-opacity", `${theme.panelOpacity}%`);
 	style.setProperty("--color-primary", theme.colorPrimary!.one);
 	style.setProperty("--color-primary-highlight", theme.colorPrimary!.two);
 }
