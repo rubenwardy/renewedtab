@@ -33,6 +33,10 @@ h1 {
 
 .text-muted {
 	color: rgba(255, 255, 255, 0.5);
+
+	b, strong{
+		color: rgba(255, 255, 255, 0.65);
+	}
 }
 
 .text-shadow-soft, .text-shadow-soft input {

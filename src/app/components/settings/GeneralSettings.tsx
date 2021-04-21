@@ -12,8 +12,8 @@ export default function GeneralSettings() {
 				<label htmlFor="locale">
 					<FormattedMessage defaultMessage="Language" />
 				</label>
-				<select>
-					<option selected>English (en)</option>
+				<select value="en" onChange={() => {}}>
+					<option key="en">English (en)</option>
 				</select>
 				<p className="text-muted">
 					<FormattedMessage

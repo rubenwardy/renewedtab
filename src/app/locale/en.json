@@ -14,9 +14,6 @@
   "1iEPTM": {
     "defaultMessage": "General"
   },
-  "1sFG61": {
-    "defaultMessage": "These settings require a page reload to take affect."
-  },
   "1wIgYC": {
     "defaultMessage": "You can change the name by clicking it on the widget"
   },
@@ -107,6 +104,9 @@
   "CExMi4": {
     "defaultMessage": "Good evening"
   },
+  "CLm56q": {
+    "defaultMessage": "Panel Blur Radius"
+  },
   "CRRVsD": {
     "defaultMessage": "Please select a location"
   },
@@ -161,6 +161,9 @@
   "KFe74G": {
     "defaultMessage": "Reset everything"
   },
+  "KKmoGl": {
+    "defaultMessage": "You may need to reload the page to see changes take affect."
+  },
   "M81yvY": {
     "defaultMessage": "Nothing to edit."
   },
@@ -175,9 +178,6 @@
   },
   "N5qakN": {
     "defaultMessage": "Track to do list items"
-  },
-  "NIJnhw": {
-    "defaultMessage": "Panel Blur radius"
   },
   "Necq3a": {
     "defaultMessage": "Links, with support for headings and icons"
@@ -260,8 +260,8 @@
   "YqlpSM": {
     "defaultMessage": "You are <b>{age}</b>"
   },
-  "YuWQ5m": {
-    "defaultMessage": "The following settings are experimental. This means that you may encounter bugs and weirdness when changing them."
+  "Yudtqh": {
+    "defaultMessage": "Panel Background Darkness"
   },
   "Z2/hH0": {
     "defaultMessage": "Image: {filename}"
@@ -341,6 +341,9 @@
   },
   "krty63": {
     "defaultMessage": "Need help?"
+  },
+  "lU5v+P": {
+    "defaultMessage": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
   },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."

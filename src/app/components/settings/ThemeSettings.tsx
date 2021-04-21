@@ -7,7 +7,7 @@ import { ColorPair } from "../forms/ColorFields";
 
 const messages = defineMessages({
 	experimental: {
-		defaultMessage: "The following settings are experimental; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes.",
+		defaultMessage: "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes.",
 	},
 
 	requiresReload: {
@@ -82,7 +82,8 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 				<FormattedMessage defaultMessage="Theme" />
 			</h2>
 			<p className="text-muted">
-				<FormattedMessage {...messages.experimental} />
+				<FormattedMessage {...messages.experimental}
+					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
 			</p>
 			<p className="text-muted">
 				<FormattedMessage {...messages.requiresReload} />
@@ -109,6 +110,7 @@ function getThemeSchema(): Schema {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
 			fontScaling: type.unit_number(messages.fontScaling, "%"),
+			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
 			colorPrimary: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
 		};
 	}
