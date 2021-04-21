@@ -188,17 +188,18 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 		feedbackStream.write(JSON.stringify(req.body) + "\n\n");
 
 		if (DISCORD_WEBHOOK) {
+			const reasons = (typeof req.body.reason === "string") ? [ req.body.reason ] : req.body.reason;
 			const content = `
 				**Feedback**
 				Event: ${req.body.event}
-				Info: ${req.body.version && "v" + req.body.version} / ${req.body.browser} / ${req.body.platform}
-				Reasons: ${req.body.reason.join(", ")}
+				Info: ${req.body.version ? "v" + req.body.version : ""} / ${req.body.browser} / ${req.body.platform}
+				Reasons: ${reasons.join(", ")}
 				         ${req.body.other_reason}
 
 				${req.body.comments}
 			`;
 
-			const res = await fetchCatch(new Request(DISCORD_WEBHOOK, {
+			await fetchCatch(new Request(DISCORD_WEBHOOK, {
 				method: "POST",
 				timeout: 10000,
 				headers: {
@@ -209,8 +210,6 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 					content: content.replace(/\t/g, "").substr(0, 2000)
 				}),
 			}));
-
-			console.log(res);
 		}
 
 		if (req.query.r) {
