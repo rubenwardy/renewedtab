@@ -9,16 +9,24 @@ const messages = defineMessages({
 		defaultMessage: "Font",
 	},
 
+	fontHint: {
+		defaultMessage: "Any font name installed on your computer",
+	},
+
 	fontScaling: {
 		defaultMessage: "Font Scaling",
 	},
 
 	fontScalingHint: {
-		defaultMessage: "Experimental, requires a page reload.",
+		defaultMessage: "Requires a page reload.",
 	},
 
 	blurRadius: {
 		defaultMessage: "Panel Blur radius",
+	},
+
+	experimental: {
+		defaultMessage: "The following settings are experimental. This means that you may encounter bugs and weirdness when changing them.",
 	},
 });
 
@@ -56,6 +64,9 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 			<h2>
 				<FormattedMessage defaultMessage="Theme" />
 			</h2>
+			<p className="text-muted">
+				<FormattedMessage {...messages.experimental} />
+			</p>
 			<Form values={theme} schema={themeSchema}
 						onChange={handleOnChange} />
 		</div>);
@@ -63,7 +74,7 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 
 
 const themeSchema: Schema = {
-	fontFamily: type.string(messages.font),
+	fontFamily: type.string(messages.font, messages.fontHint),
 	fontScaling: type.unit_number(messages.fontScaling, "%",
 			messages.fontScalingHint),
 	blurRadius: type.unit_number(messages.blurRadius, "px"),
