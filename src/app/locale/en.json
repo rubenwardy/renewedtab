@@ -11,6 +11,9 @@
   "1e9zwh": {
     "defaultMessage": "Link URL"
   },
+  "1iEPTM": {
+    "defaultMessage": "General"
+  },
   "1sFG61": {
     "defaultMessage": "These settings require a page reload to take affect."
   },
@@ -100,6 +103,9 @@
   },
   "B9mB91": {
     "defaultMessage": "Image URL"
+  },
+  "Ba+GF/": {
+    "defaultMessage": "Consider <a>adding support for your language</a>."
   },
   "CExMi4": {
     "defaultMessage": "Good evening"
@@ -413,6 +419,9 @@
   },
   "y/bmsG": {
     "defaultMessage": "Allow"
+  },
+  "y1Z3or": {
+    "defaultMessage": "Language"
   },
   "yNe5MS": {
     "defaultMessage": "Current and forecasted weather"

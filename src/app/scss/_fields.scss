@@ -13,7 +13,7 @@ input:not(.invisible):not([type="radio"]):not([type="checkbox"]):not([type="colo
 	box-sizing: border-box;
 }
 
-input:not(.invisible), textarea:not(.invisible) {
+input:not(.invisible), textarea:not(.invisible), select {
 	background: rgba(200, 200, 200, 0.1);
 	border: 1px solid rgba(200, 200, 200, 0.1);
 	border-radius: 0.25rem;

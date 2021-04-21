@@ -5,9 +5,11 @@ import Modal from "../Modal";
 import ImportExport from "./ImportExport";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { ThemeSettings, ThemeSettingsProps } from "./ThemeSettings";
+import GeneralSettings from "./GeneralSettings";
 
 
 enum SettingsTab {
+	General,
 	Background,
 	Theme,
 	ImportExport,
@@ -18,6 +20,10 @@ enum SettingsTab {
 declare type SettingsTabType = keyof typeof SettingsTab;
 
 const tabTitles = defineMessages({
+	[SettingsTab.General]: {
+		defaultMessage: "General",
+	},
+
 	[SettingsTab.Background]: {
 		defaultMessage: "Background",
 	},
@@ -35,8 +41,11 @@ const tabTitles = defineMessages({
 	},
 });
 
+
 function getComponentForTab(tab: SettingsTab) {
 	switch (tab) {
+	case SettingsTab.General:
+		return GeneralSettings;
 	case SettingsTab.Background:
 		return BackgroundSettings;
 	case SettingsTab.Theme:
@@ -55,7 +64,7 @@ interface SettingsDialogProps extends BackgroundSettingsProps, ThemeSettingsProp
 }
 
 export default function SettingsDialog(props: SettingsDialogProps) {
-	const [currentTab, setTab] = useState(SettingsTab.Background);
+	const [currentTab, setTab] = useState(SettingsTab.General);
 
 	const tabs = Object.keys(SettingsTab)
 		.filter(value => isNaN(Number(value)))
