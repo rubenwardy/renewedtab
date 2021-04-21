@@ -11,6 +11,9 @@
   "1e9zwh": {
     "defaultMessage": "Link URL"
   },
+  "1sFG61": {
+    "defaultMessage": "These settings require a page reload to take affect."
+  },
   "1wIgYC": {
     "defaultMessage": "You can change the name by clicking it on the widget"
   },
@@ -37,6 +40,12 @@
   },
   "4NtnV1": {
     "defaultMessage": "Help for new users of Renewed Tab"
+  },
+  "4VY8UE": {
+    "defaultMessage": "Used for primary buttons and links"
+  },
+  "4WrgwI": {
+    "defaultMessage": "Nothing here"
   },
   "4syC1B": {
     "defaultMessage": "Help and Requests"
@@ -80,6 +89,9 @@
   "9bmERx": {
     "defaultMessage": "An image from a URL"
   },
+  "9jHqcS": {
+    "defaultMessage": "Primary Color Highlight"
+  },
   "A3jj9z": {
     "defaultMessage": "Font"
   },
@@ -88,6 +100,9 @@
   },
   "B9mB91": {
     "defaultMessage": "Image URL"
+  },
+  "BMAHuW": {
+    "defaultMessage": "Used when hovering a primary button or link"
   },
   "CExMi4": {
     "defaultMessage": "Good evening"
@@ -224,6 +239,9 @@
   "UP4EUm": {
     "defaultMessage": "Click items to edit them"
   },
+  "VNlygV": {
+    "defaultMessage": "Any font name installed on your computer"
+  },
   "WQeyl4": {
     "defaultMessage": "Grant permission to access bookmarks"
   },
@@ -241,6 +259,9 @@
   },
   "YqlpSM": {
     "defaultMessage": "You are <b>{age}</b>"
+  },
+  "YuWQ5m": {
+    "defaultMessage": "The following settings are experimental. This means that you may encounter bugs and weirdness when changing them."
   },
   "Z2/hH0": {
     "defaultMessage": "Image: {filename}"
@@ -321,9 +342,6 @@
   "krty63": {
     "defaultMessage": "Need help?"
   },
-  "lQtuyb": {
-    "defaultMessage": "Experimental, requires a page reload."
-  },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
   },
@@ -338,6 +356,9 @@
   },
   "qX503y": {
     "defaultMessage": "Random image from an Unsplash collection"
+  },
+  "qzFcWI": {
+    "defaultMessage": "Primary Color"
   },
   "rPjMRD": {
     "defaultMessage": "{mode} Options"
