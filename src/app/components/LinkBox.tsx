@@ -95,7 +95,7 @@ export default function LinkBox(props: LinkBoxProps)  {
 
 		if (link.url.trim() != "") {
 			return (
-				<li key={link.title + link.url}>
+				<li key={link.id}>
 					<a href={link.url}>
 						{icon}
 						<span className="title">{link.title}</span>
@@ -103,7 +103,7 @@ export default function LinkBox(props: LinkBoxProps)  {
 				</li>);
 		} else {
 			return (
-				<li key={link.title} className="section">
+				<li key={link.id} className="section">
 					{icon}
 					<span className="title">{link.title}</span>
 				</li>);
