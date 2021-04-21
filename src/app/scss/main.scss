@@ -58,11 +58,11 @@ h1 {
 
 a, .link {
 	cursor: pointer;
-	color: var(--color-primary);
+	color: var(--color-primary-highlight);
 	text-decoration: none;
 
 	&:hover {
-		color: var(--color-primary-highlight);
+		filter: brightness(1.2);
 		text-decoration: underline;
 	}
 }
