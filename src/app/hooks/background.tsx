@@ -32,11 +32,11 @@ const messages = defineMessages({
 	},
 
 	imageDescription: {
-		defaultMessage: "An image from a URL",
+		defaultMessage: "Use a custom image",
 	},
 
 	imageUrlDescription: {
-		defaultMessage: "Use a custom image",
+		defaultMessage: "An image from a URL",
 	},
 
 	unsplashDescription: {
