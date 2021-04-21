@@ -90,19 +90,33 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 			<p className="text-muted">
 				<FormattedMessage {...messages.requiresReload} />
 			</p>
-			<Form values={theme} schema={themeSchema}
+			<Form values={theme} schema={getThemeSchema()}
 						onChange={handleOnChange} />
 		</div>);
 }
 
 
-const themeSchema: Schema = {
-	fontFamily: type.string(messages.font, messages.fontHint),
-	fontScaling: type.unit_number(messages.fontScaling, "%"),
-	blurRadius: type.unit_number(messages.blurRadius, "px"),
-	colorPrimary: type.color(messages.colorPrimary, messages.colorPrimaryHint),
-	colorPrimaryHighlight: type.color(messages.colorPrimaryHighlight, messages.colorPrimaryHighlightHint),
-};
+function getThemeSchema(): Schema {
+	const supportsBackdropFilter =
+		CSS.supports("backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)");
+
+	if (supportsBackdropFilter) {
+		return {
+			fontFamily: type.string(messages.font, messages.fontHint),
+			fontScaling: type.unit_number(messages.fontScaling, "%"),
+			blurRadius: type.unit_number(messages.blurRadius, "px"),
+			colorPrimary: type.color(messages.colorPrimary, messages.colorPrimaryHint),
+			colorPrimaryHighlight: type.color(messages.colorPrimaryHighlight, messages.colorPrimaryHighlightHint),
+		};
+	} else {
+		return {
+			fontFamily: type.string(messages.font, messages.fontHint),
+			fontScaling: type.unit_number(messages.fontScaling, "%"),
+			colorPrimary: type.color(messages.colorPrimary, messages.colorPrimaryHint),
+			colorPrimaryHighlight: type.color(messages.colorPrimaryHighlight, messages.colorPrimaryHighlightHint),
+		};
+	}
+}
 
 
 export function applyTheme(theme: ThemeConfig) {
