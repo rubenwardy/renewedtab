@@ -2,8 +2,8 @@ import { MessageDescriptor } from "@formatjs/intl";
 
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
-	"image_upload" | "array" | "unordered_array" | "json" | "url" | "color" |
-	"image" | "unit_number";
+	"image_upload" | "array" | "unordered_array" | "json" | "url" |
+	"color" | "color_pair" | "image" | "unit_number";
 
 
 export interface SchemaEntry {
@@ -64,6 +64,7 @@ export namespace type {
 	export const urlPerm = makeTypeFunc("host_url");
 
 	export const color = makeTypeFunc("color");
+	export const colorPair = makeTypeFunc("color_pair");
 
 	export const location = makeTypeFunc("location");
 

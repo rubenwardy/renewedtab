@@ -40,16 +40,3 @@ export function URLField(props: FieldProps<string>) {
 		<input type="url" name={props.name} defaultValue={props.value}
 				onChange={handleChange} />);
 }
-
-
-export function ColorField(props: FieldProps<string>) {
-	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		if (props.onChange) {
-			props.onChange(e.target.value);
-		}
-	}
-
-	return (
-		<input type="color" name={props.name} defaultValue={props.value}
-			onChange={handleChange} />);
-}

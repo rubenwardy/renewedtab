@@ -9,7 +9,7 @@ export interface FieldProps<T> {
 	onChange?: (value: T) => void;
 }
 
-import { ColorField, DateField, TextField, URLField } from "./HTMLFields";
+import { DateField, TextField, URLField } from "./HTMLFields";
 import JSONField from "./JSONField";
 import LocationField from "./LocationField";
 import ArrayField from "./ArrayField";
@@ -18,6 +18,7 @@ import CheckboxField from "./CheckboxField";
 import ImageUploadField from "./ImageUploadField";
 import { HostAllField, HostURLFIeld } from "./HostPermFields";
 import { UnitNumberField } from "./NumberField";
+import { ColorField, ColorPairField } from "./ColorFields";
 
 function isEnumType(x: any) {
 	const keys = new Set(Object.getOwnPropertyNames(x));
@@ -51,6 +52,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return URLField;
 	} else if (type == "color") {
 		return ColorField;
+	} else if (type == "color_pair") {
+		return ColorPairField;
 	} else if (type == "array" || type == "unordered_array") {
 		return ArrayField;
 	} else if (type == "image") {
