@@ -5,6 +5,14 @@ import { Form } from "../forms";
 
 
 const messages = defineMessages({
+	experimental: {
+		defaultMessage: "The following settings are experimental. This means that you may encounter bugs and weirdness when changing them.",
+	},
+
+	requiresReload: {
+		defaultMessage: "These settings require a page reload to take affect.",
+	},
+
 	font: {
 		defaultMessage: "Font",
 	},
@@ -17,16 +25,24 @@ const messages = defineMessages({
 		defaultMessage: "Font Scaling",
 	},
 
-	fontScalingHint: {
-		defaultMessage: "Requires a page reload.",
-	},
-
 	blurRadius: {
 		defaultMessage: "Panel Blur radius",
 	},
 
-	experimental: {
-		defaultMessage: "The following settings are experimental. This means that you may encounter bugs and weirdness when changing them.",
+	colorPrimary: {
+		defaultMessage: "Primary Color",
+	},
+
+	colorPrimaryHint: {
+		defaultMessage: "Used for primary buttons and links",
+	},
+
+	colorPrimaryHighlight: {
+		defaultMessage: "Primary Color Highlight",
+	},
+
+	colorPrimaryHighlightHint: {
+		defaultMessage: "Used when hovering a primary button or link",
 	},
 });
 
@@ -35,12 +51,16 @@ export interface ThemeConfig {
 	fontFamily?: string;
 	fontScaling?: number;
 	blurRadius?: number;
+	colorPrimary?: string;
+	colorPrimaryHighlight?: string;
 }
 
 const defaults: ThemeConfig = {
 	fontFamily: "Roboto",
 	fontScaling: 100,
 	blurRadius: 12,
+	colorPrimary: "#007DB8",
+	colorPrimaryHighlight: "06aed5",
 };
 
 
@@ -67,6 +87,9 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 			<p className="text-muted">
 				<FormattedMessage {...messages.experimental} />
 			</p>
+			<p className="text-muted">
+				<FormattedMessage {...messages.requiresReload} />
+			</p>
 			<Form values={theme} schema={themeSchema}
 						onChange={handleOnChange} />
 		</div>);
@@ -75,9 +98,10 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 
 const themeSchema: Schema = {
 	fontFamily: type.string(messages.font, messages.fontHint),
-	fontScaling: type.unit_number(messages.fontScaling, "%",
-			messages.fontScalingHint),
+	fontScaling: type.unit_number(messages.fontScaling, "%"),
 	blurRadius: type.unit_number(messages.blurRadius, "px"),
+	colorPrimary: type.color(messages.colorPrimary, messages.colorPrimaryHint),
+	colorPrimaryHighlight: type.color(messages.colorPrimaryHighlight, messages.colorPrimaryHighlightHint),
 };
 
 
@@ -90,4 +114,6 @@ export function applyTheme(theme: ThemeConfig) {
 	style.setProperty("--font-family", theme.fontFamily!);
 	style.setProperty("--font-size", `${fontScaling}%`);
 	style.setProperty("--panel-blur", `${theme.blurRadius}px`);
+	style.setProperty("--color-primary", theme.colorPrimary!);
+	style.setProperty("--color-primary-highlight", theme.colorPrimaryHighlight!);
 }

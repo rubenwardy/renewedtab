@@ -18,7 +18,7 @@
 	}
 
 	&.active {
-		color: #06aed5;
+		color: var(--color-primary);
 	}
 }
 
@@ -37,12 +37,12 @@
 }
 
 .btn-primary {
-	background-color: #007DB8;
-	border-color: #007DB8;
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
 
 	&:hover {
-		background-color: #06aed5;
-		border-color: #06aed5;
+		background-color: var(--color-primary-highlight);
+		border-color: var(--color-primary-highlight);
 	}
 }
 

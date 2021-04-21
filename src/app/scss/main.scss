@@ -2,6 +2,8 @@
 	--font-family: "Roboto";
 	--font-size: 100%
 	--panel-blur: 12px;
+	--color-primary: #007DB8;
+	--color-primary-highlight: #06aed5;
 }
 
 html, body, #app {
@@ -55,11 +57,11 @@ h1 {
 
 a, .link {
 	cursor: pointer;
-	color: #06aed5;
+	color: var(--color-primary);
 	text-decoration: none;
 
 	&:hover {
-		color: #20c0e5;
+		color: var(--color-primary-highlight);
 		text-decoration: underline;
 	}
 }
