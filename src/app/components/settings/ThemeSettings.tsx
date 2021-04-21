@@ -42,7 +42,7 @@ const messages = defineMessages({
 	},
 
 	colorPrimaryHighlightHint: {
-		defaultMessage: "Used when hovering a primary button or link",
+		defaultMessage: "Used when hovering over a primary button or link",
 	},
 });
 
@@ -60,7 +60,7 @@ const defaults: ThemeConfig = {
 	fontScaling: 100,
 	blurRadius: 12,
 	colorPrimary: "#007DB8",
-	colorPrimaryHighlight: "06aed5",
+	colorPrimaryHighlight: "#06aed5",
 };
 
 

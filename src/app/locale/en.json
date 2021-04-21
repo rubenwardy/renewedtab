@@ -101,9 +101,6 @@
   "B9mB91": {
     "defaultMessage": "Image URL"
   },
-  "BMAHuW": {
-    "defaultMessage": "Used when hovering a primary button or link"
-  },
   "CExMi4": {
     "defaultMessage": "Good evening"
   },
@@ -160,6 +157,9 @@
   },
   "KFe74G": {
     "defaultMessage": "Reset everything"
+  },
+  "LI6pBt": {
+    "defaultMessage": "Used when hovering over a primary button or link"
   },
   "M81yvY": {
     "defaultMessage": "Nothing to edit."
