@@ -51,7 +51,7 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return URLField;
 	} else if (type == "color") {
 		return ColorField;
-	} else if (type == "array") {
+	} else if (type == "array" || type == "unordered_array") {
 		return ArrayField;
 	} else if (type == "image") {
 		return ImageUploadField;

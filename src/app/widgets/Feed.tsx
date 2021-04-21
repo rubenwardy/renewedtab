@@ -108,7 +108,7 @@ const filterSchema: Schema = {
 Feed.schema = {
 	title: type.string(schemaMessages.title, messages.titleHint),
 	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint),
-	filters: type.array(filterSchema, messages.filters, messages.filtersHint),
+	filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
 } as Schema;
 
 Feed.defaultSize = new Vector2(5, 4);

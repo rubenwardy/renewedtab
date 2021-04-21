@@ -10,25 +10,26 @@ interface RowProps extends FormProps {
 	idx: number;
 	isLast: boolean;
 	onDelete: () => void;
-	onMove: (up: boolean) => void;
+	onMove?: (up: boolean) => void;
 }
 
 function ArrayRow(props: RowProps) {
 	return (
 		<tr>
-			<td>
-				{props.idx > 0 &&
-					<a className="btn btn-sm"
-							onClick={() => props.onMove(true)}>
-						<i className="fas fa-caret-up" />
-					</a>}
+			{props.onMove && (
+				<td>
+					{props.idx > 0 &&
+						<a className="btn btn-sm"
+								onClick={() => props.onMove!(true)}>
+							<i className="fas fa-caret-up" />
+						</a>}
 
-				{!props.isLast &&
-					<a className="btn btn-sm"
-							onClick={() => props.onMove(false)}>
-						<i className="fas fa-caret-down" />
-					</a>}
-			</td>
+					{!props.isLast &&
+						<a className="btn btn-sm"
+								onClick={() => props.onMove!(false)}>
+							<i className="fas fa-caret-down" />
+						</a>}
+				</td>)}
 
 			<Form {...props} table={true} />
 
@@ -108,42 +109,58 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			{type.hint && <FormattedMessage {...type.hint} />}
 		</td>));
 
+	const isOrdered = props.type != "unordered_array";
+
 	const rows = props.value.map((row, idx) => (
 		<ArrayRow key={row.id} idx={idx} values={row}
 			schema={props.schemaEntry.subschema!}
 			isLast={idx >= props.value.length - 1}
 			onChange={() => handleChange()}
 			onDelete={() => handleDelete(idx)}
-			onMove={(up) => handleMove(idx, up)} />));
+			onMove={isOrdered ? ((up) => handleMove(idx, up)) : undefined} />));
 
 	return (
 		<>
-			<a className="float-right btn btn-sm btn-primary"
-					onClick={() => handleAdd(true)}>
-				<i className="fas fa-plus mr-2" />
+			{isOrdered && (
+				<>
+					<a className="float-right btn btn-sm btn-primary"
+							onClick={() => handleAdd(true)}>
+						<i className="fas fa-plus mr-2" />
 
-				<FormattedMessage
-						defaultMessage="Add" />
-			</a>
-			<div className="clear-both" />
+						<FormattedMessage
+								defaultMessage="Add" />
+					</a>
+					<div className="clear-both" />
+				</>)}
 
 			<table>
 				<thead>
 					<tr>
-						<td />
+						{isOrdered && <td />}
 						{headers}
 						<td />
 					</tr>
 					<tr className="hint">
-						<td />
+						{isOrdered && <td />}
 						{hints}
 						<td />
 					</tr>
 				</thead>
-				<tbody>{rows}</tbody>
+				<tbody>
+					{rows}
+
+					{rows.length == 0 && (
+						<tr>
+							<td className="text-muted text-center" colSpan={headers.length + (isOrdered ? 2 : 1)}>
+								<FormattedMessage
+									defaultMessage="Nothing here" />
+							</td>
+						</tr>
+					)}
+				</tbody>
 			</table>
 
-			{rows.length > 0 &&
+			{(rows.length > 0 || !isOrdered) &&
 				<a className="float-right mt-3 btn btn-sm btn-primary"
 						onClick={() => handleAdd(false)}>
 					<i className="fas fa-plus mr-2" />
@@ -151,6 +168,5 @@ export default function ArrayField(props: FieldProps<any[]>) {
 					<FormattedMessage
 							defaultMessage="Add" />
 				</a>}
-			<div className="clear-both" />
 		</>);
 }
