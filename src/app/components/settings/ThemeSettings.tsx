@@ -1,8 +1,8 @@
+import Color from "app/utils/Color";
 import Schema, { type } from "app/utils/Schema";
 import React, { useMemo } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import { Form } from "../forms";
-import { ColorPair } from "../forms/ColorFields";
 
 
 const messages = defineMessages({
@@ -49,7 +49,7 @@ export interface ThemeConfig {
 	fontScaling?: number;
 	panelBlurRadius?: number;
 	panelOpacity?: number;
-	colorPrimary?: ColorPair;
+	colorPrimary?: string;
 }
 
 const defaults: ThemeConfig = {
@@ -57,7 +57,7 @@ const defaults: ThemeConfig = {
 	fontScaling: 100,
 	panelBlurRadius: 12,
 	panelOpacity: 50,
-	colorPrimary: { one: "#007DB8", two: "#06aed5" },
+	colorPrimary: "#007DB8",
 };
 
 
@@ -104,14 +104,14 @@ function getThemeSchema(): Schema {
 			fontScaling: type.unit_number(messages.fontScaling, "%"),
 			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px"),
 			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
-			colorPrimary: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
+			colorPrimary: type.color(messages.colorPrimary, messages.colorPrimaryHint),
 		};
 	} else {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
 			fontScaling: type.unit_number(messages.fontScaling, "%"),
 			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
-			colorPrimary: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
+			colorPrimary: type.color(messages.colorPrimary, messages.colorPrimaryHint),
 		};
 	}
 }
@@ -122,11 +122,13 @@ export function applyTheme(theme: ThemeConfig) {
 
 	const fontScaling = Math.max(Math.min(theme.fontScaling!, 200), 80);
 
+	const colorPrimary = Color.fromString(theme.colorPrimary!);
+
 	const style = document.documentElement.style;
 	style.setProperty("--font-family", theme.fontFamily!);
 	style.setProperty("--font-size", `${fontScaling}%`);
 	style.setProperty("--panel-blur", `${theme.panelBlurRadius}px`);
 	style.setProperty("--panel-opacity", `${theme.panelOpacity}%`);
-	style.setProperty("--color-primary", theme.colorPrimary!.one);
-	style.setProperty("--color-primary-highlight", theme.colorPrimary!.two);
+	style.setProperty("--color-primary", colorPrimary!.hex);
+	style.setProperty("--color-primary-highlight", colorPrimary!.lighten(1.2).hex);
 }
