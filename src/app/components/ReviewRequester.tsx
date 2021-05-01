@@ -45,6 +45,8 @@ export default function ReviewRequester() {
 
 	const showDate = new Date(reviewRequestInfo.installDate.valueOf() + 5*24*60*60*1000);
 	if (new Date().valueOf() <= showDate.valueOf()) {
+		console.log(`Will request review at ${showDate.toUTCString()}`);
+
 		return (<></>);
 	}
 

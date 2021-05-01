@@ -1,3 +1,4 @@
+import { storage } from "app/Storage";
 import Color from "app/utils/Color";
 import Schema, { type } from "app/utils/Schema";
 import React, { useMemo } from "react";
@@ -76,6 +77,11 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 		props.setTheme(props.theme!);
 	}
 
+	async function resetTheme() {
+		await storage.remove("theme");
+		location.reload();
+	}
+
 	return (
 		<div className="modal-body">
 			<h2>
@@ -87,6 +93,14 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 			</p>
 			<p className="text-muted">
 				<FormattedMessage {...messages.requiresReload} />
+			</p>
+			<p>
+				<a className="btn btn-secondary" onClick={resetTheme}>
+					<FormattedMessage defaultMessage="Reset theme to default" />
+				</a>
+				<a className="btn btn-secondary" onClick={() => location.reload()}>
+					<FormattedMessage defaultMessage="Reload page" />
+				</a>
 			</p>
 			<Form values={theme} schema={getThemeSchema()}
 						onChange={handleOnChange} />
@@ -130,5 +144,5 @@ export function applyTheme(theme: ThemeConfig) {
 	style.setProperty("--panel-blur", `${theme.panelBlurRadius}px`);
 	style.setProperty("--panel-opacity", `${theme.panelOpacity}%`);
 	style.setProperty("--color-primary", colorPrimary!.hex);
-	style.setProperty("--color-primary-highlight", colorPrimary!.lighten(1.2).hex);
+	style.setProperty("--color-primary-lighter", colorPrimary!.lighten(1.3).hex);
 }

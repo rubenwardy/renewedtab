@@ -23,7 +23,7 @@ export default class Color {
 			const long = parseInt(value.substring(1), 16);
 			const b = long & 0xFF;
 			const g = (long >> 8) & 0xFF;
-			const r = (long >> 16) % 0xFF;
+			const r = (long >> 16) & 0xFF;
 			return new Color(r, g, b, 255);
 		} else if (value.startsWith("rgba(")) {
 			const re = /^rgba *\( *([0-9]+) *, *([0-9]+) *, *([0-9]+) *, *([0-9]+) *\) *$/;
