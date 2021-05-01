@@ -215,6 +215,9 @@
   "RUl5Gc": {
     "defaultMessage": "Display an image, optionally making it a link"
   },
+  "RtfJfe": {
+    "defaultMessage": "Reload page"
+  },
   "Rw51mJ": {
     "defaultMessage": "Powered by <a>OpenStreetMap</a>."
   },
@@ -283,6 +286,9 @@
   },
   "bWjdfa": {
     "defaultMessage": "URL"
+  },
+  "cR7nCG": {
+    "defaultMessage": "Reset theme to default"
   },
   "cy8B6K": {
     "defaultMessage": "Import / Export"
