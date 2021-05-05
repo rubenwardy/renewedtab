@@ -20,7 +20,7 @@
 		"search"
 	],
 	"optional_permissions": [
-		"*://*/",
+		"<all_urls>",
 		"bookmarks",
 		"topSites"
 	]
