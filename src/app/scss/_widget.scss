@@ -88,6 +88,14 @@
 	div.large input {
 		font-size: 100%;
 	}
+
+	div.medium {
+		font-size: 130%;
+	}
+
+	div.medium input {
+		font-size: 100%;
+	}
 }
 
 .unlocked .widget {
@@ -256,4 +264,8 @@ main > .widget {
 	&:hover .btn {
 		visibility: visible;
 	}
+}
+
+.widget-text .scrollable {
+	white-space: pre-wrap;
 }

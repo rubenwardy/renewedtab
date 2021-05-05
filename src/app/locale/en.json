@@ -351,6 +351,9 @@
   "lU5v+P": {
     "defaultMessage": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
   },
+  "lq7eF/": {
+    "defaultMessage": "Show a message"
+  },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
   },

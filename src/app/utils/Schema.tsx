@@ -3,7 +3,7 @@ import { MessageDescriptor } from "@formatjs/intl";
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
-	"color" | "color_pair" | "image" | "unit_number";
+	"color" | "color_pair" | "image" | "unit_number" | "textarea";
 
 
 export interface SchemaEntry {
@@ -40,6 +40,7 @@ function makeTypeFunc(type: Type) {
 export namespace type {
 	export const boolean = makeTypeFunc("boolean");
 	export const string = makeTypeFunc("string");
+	export const textarea = makeTypeFunc("textarea");
 	export const number = makeTypeFunc("number");
 	export const json = makeTypeFunc("json");
 

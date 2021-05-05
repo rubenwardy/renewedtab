@@ -11,6 +11,7 @@ import HelpAbout from "./HelpAbout";
 import IFrame from "./IFrame";
 import Image from "./Image";
 import Invisible from "./Invisible";
+import Text from "./Text";
 import Links from "./Links";
 import Notes from "./Notes";
 import Search from "./Search";
@@ -21,23 +22,24 @@ import Weather from "./Weather";
 import WebComic from "./WebComic";
 
 export const WidgetTypes: { [name: string]: WidgetType<any> } = {
-	Age: Age,
-	Button: Button,
-	Bookmarks: Bookmarks,
-	Clock: Clock,
-	DailyGoal: DailyGoal,
-	Greeting: Greeting,
-	HelpAbout: HelpAbout,
-	IFrame: IFrame,
-	Image: Image,
-	Invisible: Invisible,
-	Links: Links,
-	Notes: Notes,
-	Feed: Feed,
-	Search: Search,
-	SpaceFlights: SpaceFlights,
-	TodoList: TodoList,
-	TopSites: TopSites,
-	WebComic: WebComic,
-	Weather: Weather,
+	Age,
+	Button,
+	Bookmarks,
+	Clock,
+	DailyGoal,
+	Greeting,
+	HelpAbout,
+	IFrame,
+	Image,
+	Invisible,
+	Text,
+	Links,
+	Notes,
+	Feed,
+	Search,
+	SpaceFlights,
+	TodoList,
+	TopSites,
+	WebComic,
+	Weather,
 };

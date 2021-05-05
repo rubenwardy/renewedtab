@@ -40,3 +40,16 @@ export function URLField(props: FieldProps<string>) {
 		<input type="url" name={props.name} defaultValue={props.value}
 				onChange={handleChange} />);
 }
+
+
+export function TextAreaField(props: FieldProps<string>) {
+	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
+		if (props.onChange) {
+			props.onChange(e.target.value);
+		}
+	}
+
+	return (
+		<textarea name={props.name} defaultValue={props.value}
+				onChange={handleChange} />);
+}

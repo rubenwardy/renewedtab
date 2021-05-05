@@ -9,7 +9,7 @@ export interface FieldProps<T> {
 	onChange?: (value: T) => void;
 }
 
-import { DateField, TextField, URLField } from "./HTMLFields";
+import { DateField, TextAreaField, TextField, URLField } from "./HTMLFields";
 import JSONField from "./JSONField";
 import LocationField from "./LocationField";
 import ArrayField from "./ArrayField";
@@ -58,6 +58,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return ArrayField;
 	} else if (type == "image") {
 		return ImageUploadField;
+	} else if (type == "textarea") {
+		return TextAreaField;
 	} else {
 		return TextField;
 	}
