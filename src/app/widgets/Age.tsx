@@ -48,7 +48,7 @@ export default function Age(widget: WidgetProps<AgeProps>) {
 		<div className="panel vertical-middle">
 			<FormattedMessage {...messages.current_age}
 				values={{
-					b: (chunks: any) => <strong>&nbsp;{chunks}</strong>,
+					b: (chunks: any) => <strong>&nbsp;{chunks}&nbsp;</strong>,
 					age: age.toFixed(7),
 				}} />
 		</div>);

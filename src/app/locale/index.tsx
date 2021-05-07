@@ -2,6 +2,7 @@ import { MessageFormatElement } from "react-intl";
 
 const locales : { [key: string]: Record<string, MessageFormatElement[]> } = {
 	"en": require("./compiled/en.json"),
+	"tr": require("./compiled/tr.json"),
 };
 
 for (let lang in locales) {

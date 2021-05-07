@@ -1,0 +1,453 @@
+{
+  "0mqoSv": {
+    "defaultMessage": "Besleme yükleniyor..."
+  },
+  "1Ajc0a": {
+    "defaultMessage": "Günlük bir hedefinizi hatırlatır"
+  },
+  "1QiItI": {
+    "defaultMessage": "Heading oluşturmak için boş bırakın"
+  },
+  "1e9zwh": {
+    "defaultMessage": "Link URL'i"
+  },
+  "1iEPTM": {
+    "defaultMessage": "Genel"
+  },
+  "1wIgYC": {
+    "defaultMessage": "Araç içinde tıklayarak ismi değiştirebilirsiniz"
+  },
+  "2/2yg+": {
+    "defaultMessage": "Ekle"
+  },
+  "2IFGap": {
+    "defaultMessage": "Bağış yap"
+  },
+  "2zQ/Df": {
+    "defaultMessage": "Doğum tarihi"
+  },
+  "3ZfhWo": {
+    "defaultMessage": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz"
+  },
+  "3aaibf": {
+    "defaultMessage": "Araç ekle"
+  },
+  "3zkgWw": {
+    "defaultMessage": "Görüntüler tarayıcınızda yerel olarak saklanır, asla internete yüklenmez"
+  },
+  "47FYwb": {
+    "defaultMessage": "İptal"
+  },
+  "4NtnV1": {
+    "defaultMessage": "Renewed Tab'in yeni kullanıcıları için yardım"
+  },
+  "4VY8UE": {
+    "defaultMessage": "Ana butonlar ve linkler için kullanılır"
+  },
+  "4WrgwI": {
+    "defaultMessage": "Burada bir şey yok"
+  },
+  "4syC1B": {
+    "defaultMessage": "Yardım ve İstekler"
+  },
+  "4wtLvc": {
+    "defaultMessage": "Bugünkü hedefiniz nedir?"
+  },
+  "50XVmf": {
+    "defaultMessage": "Beslemede görüntü bulunamadı"
+  },
+  "6VamZD": {
+    "defaultMessage": "RocketLaunch.Live ile çalışır"
+  },
+  "6mHlh1": {
+    "defaultMessage": "Sık kullanılan sitelerinize erişmek için izin verin"
+  },
+  "7JMBBk": {
+    "defaultMessage": "Bir hata oluştu:"
+  },
+  "8J0Bhj": {
+    "defaultMessage": "<a>Renewed Tab</a>'e hoş geldiniz: araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası."
+  },
+  "8S+esS": {
+    "defaultMessage": "Renewed Tab Yardım ve İpuçları"
+  },
+  "8bdazr": {
+    "defaultMessage": "Sizi selamlar"
+  },
+  "9+2gJZ": {
+    "defaultMessage": "Bu araç tarayıcı uzantı versiyonuna ihtiyaç duyar."
+  },
+  "9EQuAK": {
+    "defaultMessage": "Hakkında ve Yardım"
+  },
+  "9XUYQt": {
+    "defaultMessage": "Dışarıdan yükle"
+  },
+  "9a9+ww": {
+    "defaultMessage": "Başlık"
+  },
+  "9bmERx": {
+    "defaultMessage": "Bir URL'den görüntü"
+  },
+  "A3jj9z": {
+    "defaultMessage": "Yazı tipi"
+  },
+  "Ae/0CS": {
+    "defaultMessage": "orta, üst, veya alt"
+  },
+  "B9mB91": {
+    "defaultMessage": "Görüntü URL'i"
+  },
+  "Ba+GF/": {
+    "defaultMessage": "<a>Kendi dilinizde destek eklemeyi</a> düşünebilirsiniz"
+  },
+  "CExMi4": {
+    "defaultMessage": "İyi akşamlar"
+  },
+  "CLm56q": {
+    "defaultMessage": "Panel Bulanıklık Yarıçapı"
+  },
+  "CRRVsD": {
+    "defaultMessage": "Lütfen bir konum seçin"
+  },
+  "CshCZY": {
+    "defaultMessage": "Arkaplan Tipi"
+  },
+  "DbkCFr": {
+    "defaultMessage": "Yeni bir yapılacak hatırlatması yarat"
+  },
+  "DyNSTr": {
+    "defaultMessage": "Atom veya RSS kullanarak bir webcomic'in en yeni sayfasını gösterir"
+  },
+  "EHTHzJ": {
+    "defaultMessage": "Arama motoru ismi"
+  },
+  "EP5E9y": {
+    "defaultMessage": "Koleksiyon kodu. URL'de bulabilirsiniz, örnek: 42576559"
+  },
+  "GqPEp+": {
+    "defaultMessage": "Tarayıcı uzantı versiyonuna ihtiyaç duyar"
+  },
+  "GxevlG": {
+    "defaultMessage": "İsteğe bağlı, URL'den görüntü (18px önerilir)"
+  },
+  "HFMAre": {
+    "defaultMessage": "İkonlar olarak göster"
+  },
+  "HGSt8N": {
+    "defaultMessage": "Bir görüntü seç"
+  },
+  "HPZ0pC": {
+    "defaultMessage": "Bir şey göstermez, yerleşim için kullanılır"
+  },
+  "I9KXpO": {
+    "defaultMessage": "Konum gerekli. Düzenle'ye tıklayarak ekleyin."
+  },
+  "IgzvjY": {
+    "defaultMessage": "Makaleleri Filtrele"
+  },
+  "JBWS0c": {
+    "defaultMessage": "Link"
+  },
+  "JU5H2h": {
+    "defaultMessage": "Sıcaklık Birimi"
+  },
+  "JkLHGw": {
+    "defaultMessage": "İnternet sitesi"
+  },
+  "K3r6DQ": {
+    "defaultMessage": "Sil"
+  },
+  "KFe74G": {
+    "defaultMessage": "Her şeyi sıfırla"
+  },
+  "KKmoGl": {
+    "defaultMessage": "Değişiklerin uygulanması için sayfayı yenilemeniz gerekebilir."
+  },
+  "M81yvY": {
+    "defaultMessage": "Düzenlenecek bir şey yok."
+  },
+  "Mee7wz": {
+    "defaultMessage": "İsteğe bağlı, resmi link haline getirir."
+  },
+  "N/7Stk": {
+    "defaultMessage": "<a>rubenwardy</a> tarafından yaratılmıştır."
+  },
+  "N3HgMZ": {
+    "defaultMessage": "Bir de ayarlara bakın (çark)."
+  },
+  "N5qakN": {
+    "defaultMessage": "Yapılacaklar listesi ögelerini takip edin"
+  },
+  "Necq3a": {
+    "defaultMessage": "Linkler. Heading ve ikon desteği de vardır"
+  },
+  "Nw66w+": {
+    "defaultMessage": "OpenWeatherMap.org ile çalışır"
+  },
+  "O0rXuF": {
+    "defaultMessage": "Sık kullanılan sitelerinizi gösterir"
+  },
+  "OJ6oXo": {
+    "defaultMessage": "Araca tıklayarak hedefinizi değiştirebilirsiniz"
+  },
+  "OkRzUA": {
+    "defaultMessage": "Bir internet sayfası gösterir"
+  },
+  "PD6In8": {
+    "defaultMessage": "Bir daha gösterme"
+  },
+  "PM6qZ7": {
+    "defaultMessage": "Saniye göster"
+  },
+  "Pe0ogR": {
+    "defaultMessage": "Tema"
+  },
+  "Ptdy4D": {
+    "defaultMessage": "Şu anki yaşınızı gereğinden fazla hassasiyetle gösterir"
+  },
+  "PuZCei": {
+    "defaultMessage": "Beslemenin başlığını kullanmak için boş bırakın"
+  },
+  "RQ+k9r": {
+    "defaultMessage": "Yakında gerçekleşecek uzay uçuşlarının bir listesi, RocketLaunch.Live ile çalışır"
+  },
+  "RUl5Gc": {
+    "defaultMessage": "Bir görüntü göster, isteğe bağlı olarak link de yapılabilir"
+  },
+  "RtfJfe": {
+    "defaultMessage": "Sayfayı yenile"
+  },
+  "Rw51mJ": {
+    "defaultMessage": "<a>OpenStreetMap</a> ile çalışır."
+  },
+  "SQJLG3": {
+    "defaultMessage": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
+  },
+  "SVwJTM": {
+    "defaultMessage": "Dışarı gönder"
+  },
+  "SfgURe": {
+    "defaultMessage": "Konum bulunamadı"
+  },
+  "T/wBPw": {
+    "defaultMessage": "{type} aracını kaldır"
+  },
+  "TkgCJ9": {
+    "defaultMessage": "Aşağıdaki linki kullanarak yardım alabilir veya bir özellik talep edebilirsiniz."
+  },
+  "U6qGuO": {
+    "defaultMessage": "Pozisyon"
+  },
+  "UP4EUm": {
+    "defaultMessage": "Ögelere tıklayarak onları düzenleyebilirsiniz"
+  },
+  "VNlygV": {
+    "defaultMessage": "Bilgisayarınızda kurulu olan bir yazı tipi ismi"
+  },
+  "WQeyl4": {
+    "defaultMessage": "Yer işaretlerine erişmek için izin verin"
+  },
+  "WZjKFf": {
+    "defaultMessage": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
+  },
+  "WxuQ8x": {
+    "defaultMessage": "Tek bir renk"
+  },
+  "X6ciR9": {
+    "defaultMessage": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sağ üst tarafında çıkan tuşları kullanın. Boyutunu değiştirmek için, sağ alttaki tuşu kullanın."
+  },
+  "XQZA8e": {
+    "defaultMessage": "Arkaplan"
+  },
+  "YqlpSM": {
+    "defaultMessage": "<b>{age}</b> yaşındasınız"
+  },
+  "Yudtqh": {
+    "defaultMessage": "Panel Arkaplan Koyuluğu"
+  },
+  "Z2/hH0": {
+    "defaultMessage": "Görüntü: {filename}"
+  },
+  "aA8bDw": {
+    "defaultMessage": "Yazı"
+  },
+  "ajnDv2": {
+    "defaultMessage": "Buraya not yazın"
+  },
+  "bN0iM4": {
+    "defaultMessage": "Bir hata mı buldunuz? Bir isteğiniz mi var?"
+  },
+  "bQFsdR": {
+    "defaultMessage": "{host}'a erişmek için izin verin"
+  },
+  "bRP0Dg": {
+    "defaultMessage": "En sevdiğiniz arama motoru için bir arama çubuğu"
+  },
+  "bWjdfa": {
+    "defaultMessage": "URL"
+  },
+  "cR7nCG": {
+    "defaultMessage": "Temayı varsayılana sıfırla"
+  },
+  "cy8B6K": {
+    "defaultMessage": "Dışarıdan yükle / Dışarı gönder"
+  },
+  "egigiF": {
+    "defaultMessage": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
+  },
+  "ekIjqh": {
+    "defaultMessage": "Bütün internet sitelerine erişmek için izin verin"
+  },
+  "gjBiyj": {
+    "defaultMessage": "Yükleniyor..."
+  },
+  "h/ftND": {
+    "defaultMessage": "Bir dosya seçin"
+  },
+  "hktZIl": {
+    "defaultMessage": "Zamanı gösterir"
+  },
+  "iH2AHA": {
+    "defaultMessage": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
+  },
+  "iU5dhE": {
+    "defaultMessage": "<a>Yardım ve SSS sayfası</a>nı inceleyerek sıkça sorulan soruları görebilir, iletişime geçebilirsiniz."
+  },
+  "iZNw+V": {
+    "defaultMessage": "Tünaydın"
+  },
+  "ibhC3l": {
+    "defaultMessage": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
+  },
+  "ihn9EZ": {
+    "defaultMessage": "Günaydın"
+  },
+  "j1jRSI": {
+    "defaultMessage": "Notlar için düzenlenebilir bir metin kutusu"
+  },
+  "j7BbFE": {
+    "defaultMessage": "Unsplash koleksiyonu"
+  },
+  "jG9AdO": {
+    "defaultMessage": "Uzay Uçuşları"
+  },
+  "jKD1tT": {
+    "defaultMessage": "Beğen",
+    "description": "Arkaplanı beğen"
+  },
+  "kAEQyV": {
+    "defaultMessage": "Tamam"
+  },
+  "kTpqlc": {
+    "defaultMessage": "Hava durumu yükleniyor..."
+  },
+  "kk4TVW": {
+    "defaultMessage": "İkon"
+  },
+  "krty63": {
+    "defaultMessage": "Yardım mı lazım?"
+  },
+  "lU5v+P": {
+    "defaultMessage": "Aşağıdaki ayarlar <b>deneyseldir</b>; yani bu ayarları değiştirirken çeşitli hatalar ve acayip şeylerle karşılaşabilirsiniz, ve güncellemeler temalarınızı bozabilir."
+  },
+  "lq7eF/": {
+    "defaultMessage": "Bir mesaj göster"
+  },
+  "mY9tpI": {
+    "defaultMessage": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
+  },
+  "o2uuHu": {
+    "defaultMessage": "12 saatlik saat"
+  },
+  "or8yqP": {
+    "defaultMessage": "Elle seçilmiş rastgele arkaplanlar"
+  },
+  "pPi9TQ": {
+    "defaultMessage": "Uçuşlar yükleniyor..."
+  },
+  "qX503y": {
+    "defaultMessage": "Bir Unsplash koleksiyonundan rastgele bir görüntü"
+  },
+  "qzFcWI": {
+    "defaultMessage": "Ana Renk"
+  },
+  "rPjMRD": {
+    "defaultMessage": "{mode} Ayarları"
+  },
+  "rvirM2": {
+    "defaultMessage": "Konum"
+  },
+  "sRTzEd": {
+    "defaultMessage": "isim"
+  },
+  "tPuTXu": {
+    "defaultMessage": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir."
+  },
+  "tzWexR": {
+    "defaultMessage": "Yer işaretlerinizi gösterir"
+  },
+  "uCwc2+": {
+    "defaultMessage": "{latitude}'e {longitude} konumundaki {name} seçildi."
+  },
+  "uMhpKe": {
+    "defaultMessage": "Renk"
+  },
+  "uN6slI": {
+    "defaultMessage": "Tarayıcının varsayılan arama motorunu kullan"
+  },
+  "uRYRJh": {
+    "defaultMessage": "{type} aracını düzenle"
+  },
+  "ueVsqa": {
+    "defaultMessage": "Özel bir görüntü kullan"
+  },
+  "wOMXgK": {
+    "defaultMessage": "Yazı Tipi Boyutlama"
+  },
+  "wogY8a": {
+    "defaultMessage": "Araç Yarat"
+  },
+  "wr7JBR": {
+    "defaultMessage": "İnternet sitelerinden ikon kullan (favicon)"
+  },
+  "wubRXu": {
+    "defaultMessage": "{name} ile ara"
+  },
+  "x7IPhN": {
+    "defaultMessage": "Klasörleri bölme olarak göster"
+  },
+  "xaOK72": {
+    "defaultMessage": "Bir Atom veya RSS beslemesini gösterir"
+  },
+  "xmcVZ0": {
+    "defaultMessage": "Ara"
+  },
+  "y/bmsG": {
+    "defaultMessage": "İzin ver"
+  },
+  "y1Z3or": {
+    "defaultMessage": "Dil"
+  },
+  "yNe5MS": {
+    "defaultMessage": "Şu anki ve tahmin edilen hava durumları"
+  },
+  "ySmliM": {
+    "defaultMessage": "Bir Atom veya RSS beslemesi URL'i"
+  },
+  "yYM0Bg": {
+    "defaultMessage": "Sonuçlar yükleniyor..."
+  },
+  "yfgoZf": {
+    "defaultMessage": "Discord / Matrix odaları"
+  },
+  "yi8bIC": {
+    "defaultMessage": "Bir link butonu"
+  },
+  "ykNa5O": {
+    "defaultMessage": "Font-Awesome'a ikonlar için, React'e arayüz için, WebPack'e buildler için teşekkürler."
+  },
+  "z7UTSa": {
+    "defaultMessage": "Renewed Tab hakkında"
+  }
+}
