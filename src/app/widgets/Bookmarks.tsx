@@ -1,10 +1,11 @@
 import LinkBox, { Link } from 'app/components/LinkBox';
+import Panel from 'app/components/Panel';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -24,7 +25,6 @@ const messages = defineMessages({
 });
 
 interface BookmarksProps {
-	useIconBar: boolean;
 	includeFolders: boolean;
 }
 
@@ -79,7 +79,9 @@ async function getBookmarks(includeFolders: boolean): Promise<Link[]> {
 	return ret;
 }
 
-function BookmarksImpl(props: BookmarksProps) {
+function BookmarksImpl(widget: WidgetProps<BookmarksProps>) {
+	const props = widget.props;
+
 	const [sites, error] = usePromise(() => getBookmarks(props.includeFolders), []);
 	if (!sites) {
 		return (error &&
@@ -96,13 +98,11 @@ function BookmarksImpl(props: BookmarksProps) {
 	}));
 
 	return (
-		<LinkBox {...props} links={links} useWebsiteIcons={true}
+		<LinkBox {...props} widgetTheme={widget.theme} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
 export default function Bookmarks(widget: WidgetProps<BookmarksProps>) {
-	const props = widget.props;
-
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
 
@@ -113,14 +113,14 @@ export default function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 		};
 
 		return (
-			<div className="panel text-muted">
+			<Panel {...widget.theme} className="panel text-muted">
 				<RequestPermission permissions={permissions}
 						label={intl.formatMessage(messages.permissionLabel)}
 						onResult={forceUpdate} />
-			</div>);
+			</Panel>);
 	}
 
-	return (<BookmarksImpl {...props} />);
+	return (<BookmarksImpl {...widget} />);
 }
 
 
@@ -129,13 +129,26 @@ Bookmarks.description = messages.description;
 Bookmarks.isBrowserOnly = true;
 
 Bookmarks.initialProps = {
-	useIconBar: true,
 	includeFolders: false,
 };
 
 Bookmarks.schema = {
-	useIconBar: type.boolean(schemaMessages.useIconBar),
 	includeFolders: type.boolean(messages.includeFolders),
 } as Schema;
 
 Bookmarks.defaultSize = new Vector2(15, 2);
+
+Bookmarks.themeSchema = defaultLinksThemeSchema;
+
+Bookmarks.initialTheme = {
+	showPanelBG: false,
+	useIconBar: true,
+} as WidgetTheme;
+
+Bookmarks.onLoaded = async (widget: Widget<any>) => {
+	if (typeof widget.props.useIconBar !== "undefined") {
+		widget.theme.useIconBar = widget.props.useIconBar;
+		widget.theme.showPanelBG = !widget.props.useIconBar;
+		widget.props.useIconBar = undefined;
+	}
+}

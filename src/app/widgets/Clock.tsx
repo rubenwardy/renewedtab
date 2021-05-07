@@ -1,6 +1,7 @@
+import Panel from "app/components/Panel";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetProps } from "app/Widget";
+import { WidgetProps, WidgetTheme } from "app/Widget";
 import React from "react";
 import { defineMessages, FormattedTime } from "react-intl";
 
@@ -39,13 +40,15 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	});
 
 	return (
-		<h1 className="text-shadow-soft middle-center">
-			<FormattedTime
-				value={time}
-				hour="numeric" minute="numeric"
-				second={props.showSeconds ? "numeric" : undefined}
-				hourCycle={props.hour12 ? "h12" : "h23"} />
-		</h1>);
+		<Panel {...widget.theme}>
+			<h1 className="text-shadow-soft middle-center">
+				<FormattedTime
+					value={time}
+					hour="numeric" minute="numeric"
+					second={props.showSeconds ? "numeric" : undefined}
+					hourCycle={props.hour12 ? "h12" : "h23"} />
+			</h1>
+		</Panel>);
 }
 
 
@@ -62,3 +65,7 @@ Clock.schema = {
 } as Schema;
 
 Clock.defaultSize = new Vector2(15, 2);
+
+Clock.initialTheme = {
+	showPanelBG: false,
+} as WidgetTheme;

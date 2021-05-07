@@ -51,7 +51,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	return (
 		<Modal title={intl.formatMessage({ defaultMessage: "Create Widget" })}
 				{...props}>
-			<ul className="large">
+			<ul className="links large">
 				{widgets}
 			</ul>
 		</Modal>);

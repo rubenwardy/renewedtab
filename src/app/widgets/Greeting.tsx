@@ -1,7 +1,9 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
+import Panel from "app/components/Panel";
 import { useStorage } from "app/hooks";
 import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
+import { WidgetProps, WidgetTheme } from "app/Widget";
 import React, { ChangeEvent } from "react";
 import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
 
@@ -45,7 +47,7 @@ function getGreeting(): MessageDescriptor {
 }
 
 
-export default function Greeting() {
+export default function Greeting(widget: WidgetProps<any>) {
 	const [name, setName] = useStorage<string | undefined>("name");
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -54,12 +56,14 @@ export default function Greeting() {
 
 	const intl = useIntl();
 	return (
-		<div className="text-shadow-hard large middle-center">
-			<FormattedMessage {...getGreeting()} />,&nbsp;
-			{name !== undefined &&
-				<AutoWidthInput onChange={handleChange} value={name ?? ""}
-						placeholder={intl.formatMessage(messages.name)} />}.
-		</div>);
+		<Panel {...widget.theme}>
+			<div className="text-shadow-hard large middle-center">
+				<FormattedMessage {...getGreeting()} />,&nbsp;
+				{name !== undefined &&
+					<AutoWidthInput onChange={handleChange} value={name ?? ""}
+							placeholder={intl.formatMessage(messages.name)} />}.
+			</div>
+		</Panel>);
 }
 
 
@@ -72,3 +76,7 @@ Greeting.initialProps = {};
 Greeting.schema = {} as Schema;
 
 Greeting.defaultSize = new Vector2(15, 1);
+
+Greeting.initialTheme = {
+	showPanelBG: false,
+} as WidgetTheme;

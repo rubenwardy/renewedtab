@@ -6,6 +6,8 @@ import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIcon } from 'app/WebsiteIcon';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
+import { WidgetTheme } from 'app/Widget';
+import Panel from './Panel';
 
 
 const messages = defineMessages({
@@ -62,7 +64,7 @@ function Icon(props: IconProps) {
 
 
 export interface LinkBoxProps {
-	useIconBar: boolean;
+	widgetTheme: WidgetTheme;
 	links: Link[];
 	useWebsiteIcons?: boolean;
 	defaultIcon?: string;
@@ -75,6 +77,8 @@ function getAllIcons(sites: Link[]): Promise<string[]> {
 }
 
 export default function LinkBox(props: LinkBoxProps)  {
+	const useIconBar = props.widgetTheme.useIconBar;
+
 	const links = useMemo<Link[]>(() => deepCopy(props.links), [props.links]);
 	if (props.useWebsiteIcons == true && typeof browser !== "undefined") {
 		const sites = useMemo(
@@ -88,7 +92,7 @@ export default function LinkBox(props: LinkBoxProps)  {
 	}
 
 	const linkElements = links.map(link => {
-		const requiresIcons = props.useIconBar && link.url.trim() != "";
+		const requiresIcons = useIconBar && link.url.trim() != "";
 		const icon = (
 			<Icon icon={link.icon} requiresIcons={requiresIcons}
 				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
@@ -110,13 +114,10 @@ export default function LinkBox(props: LinkBoxProps)  {
 		}
 	});
 
-	if (props.useIconBar) {
-		return (
-			<ul className="iconbar">{linkElements}</ul>);
-	} else {
-		return (
-			<div className="panel flush">
-				<ul className="large">{linkElements}</ul>
-			</div>);
-	}
+	return (
+		<Panel {...props.widgetTheme} flush={true}>
+			<ul className={useIconBar ? "iconbar" : "links large"}>
+				{linkElements}
+			</ul>
+		</Panel>);
 }

@@ -1,3 +1,4 @@
+import Panel from 'app/components/Panel';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps } from 'app/Widget';
@@ -45,13 +46,13 @@ export default function Age(widget: WidgetProps<AgeProps>) {
 	}, [props.birthDate]);
 
 	return (
-		<div className="panel vertical-middle">
+		<Panel {...widget.theme} className="vertical-middle">
 			<FormattedMessage {...messages.current_age}
 				values={{
 					b: (chunks: any) => <strong>&nbsp;{chunks}&nbsp;</strong>,
 					age: age.toFixed(7),
 				}} />
-		</div>);
+		</Panel>);
 }
 
 

@@ -1,7 +1,8 @@
+import Panel from 'app/components/Panel';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetTheme } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -28,11 +29,13 @@ interface ImageProps {
 export default function Image(widget: WidgetProps<ImageProps>) {
 	const props = widget.props;
 
-	if ((props.link ?? "").length > 0) {
-		return (<a href={props.link}><img src={props.image_url} /></a>);
-	} else {
-		return (<img src={props.image_url} />);
-	}
+	return (
+		<Panel {...widget.theme}>
+			{((props.link ?? "").length > 0)
+				? (<a href={props.link}><img src={props.image_url} /></a>)
+				: (<img src={props.image_url} />)}
+		</Panel>
+	);
 }
 
 
@@ -49,3 +52,7 @@ Image.schema = {
 } as Schema;
 
 Image.defaultSize = new Vector2(5, 5);
+
+Image.initialTheme = {
+	showPanelBG: false,
+} as WidgetTheme;

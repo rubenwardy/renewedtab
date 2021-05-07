@@ -1,7 +1,7 @@
 import { storage } from "./Storage";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
-import { Widget } from "./Widget";
+import { getInitialTheme, Widget } from "./Widget";
 import deepCopy from "./utils/deepcopy";
 
 
@@ -30,9 +30,14 @@ export class WidgetManager {
 			widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
 			widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
 
-			const widget_type = WidgetTypes[widget.type];
-			if (widget_type.onLoaded) {
-				await widget_type.onLoaded(widget);
+			const widgetType = WidgetTypes[widget.type];
+
+			if (typeof widget.theme === "undefined") {
+				widget.theme = getInitialTheme(widgetType);
+			}
+
+			if (widgetType.onLoaded) {
+				await widgetType.onLoaded(widget);
 			}
 		}
 	}
@@ -57,6 +62,7 @@ export class WidgetManager {
 			position: undefined,
 			size: widget_type.defaultSize,
 			props: deepCopy(widget_type.initialProps),
+			theme: deepCopy(getInitialTheme(widget_type)),
 		};
 		this.widgets.push(widget);
 

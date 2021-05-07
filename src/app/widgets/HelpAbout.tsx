@@ -1,5 +1,8 @@
+import Panel from 'app/components/Panel';
+import { WidgetContainer } from 'app/components/WidgetContainer';
 import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { WidgetProps } from 'app/Widget';
 import React from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
@@ -13,9 +16,9 @@ const messages = defineMessages({
 	},
 });
 
-export default function HelpAbout() {
+export default function HelpAbout(widget: WidgetProps<any>) {
 	return (
-		<div className="panel">
+		<Panel {...widget.theme}>
 			<h2>
 				<FormattedMessage {...messages.title} />
 			</h2>
@@ -51,7 +54,7 @@ export default function HelpAbout() {
 						a: (chunk: any) => (<a href="https://renewedtab.rubenwardy.com/help/">{chunk}</a>)
 					}} />
 			</p>
-		</div>);
+		</Panel>);
 }
 
 

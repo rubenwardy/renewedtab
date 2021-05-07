@@ -3,7 +3,7 @@ import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
-import { Widget, WidgetProps } from 'app/Widget';
+import { defaultLinksThemeSchema, Widget, WidgetProps } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -24,14 +24,13 @@ const messages = defineMessages({
 
 
 export default function Links(props: WidgetProps<LinkBoxProps>)  {
-	return (<LinkBox {...props.props} />);
+	return (<LinkBox {...props.props} widgetTheme={props.theme} />);
 }
 
 
 Links.description = messages.description;
 
 Links.initialProps = {
-	useIconBar: false,
 	links: [
 		{
 			id: uuid(),
@@ -75,13 +74,11 @@ Links.initialProps = {
 Links.schema = (_widget: Widget<LinkBoxProps>) => {
 	if (typeof browser !== "undefined") {
 		return {
-			useIconBar: type.boolean(schemaMessages.useIconBar),
 			useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
 			links: type.array(LinkSchema, messages.links),
 		} as Schema;
 	} else {
 		return {
-			useIconBar: type.boolean(schemaMessages.useIconBar),
 			links: type.array(LinkSchema, messages.links),
 		} as Schema;
 	}
@@ -100,10 +97,11 @@ Links.onLoaded = async (widget: Widget<any>) => {
 		});
 	}
 
-	if (widget.props.useIconBar === undefined) {
-		widget.props.useIconBar = false;
-		widget.props.links.forEach((link: Link) => {
-			link.icon = "";
-		})
+	if (typeof widget.props.useIconBar !== "undefined") {
+		widget.theme.useIconBar = widget.props.useIconBar;
+		widget.theme.showPanelBG = !widget.props.useIconBar;
+		widget.props.useIconBar = undefined;
 	}
 }
+
+Links.themeSchema = defaultLinksThemeSchema;

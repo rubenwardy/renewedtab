@@ -1,3 +1,4 @@
+import Panel from 'app/components/Panel';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
@@ -16,11 +17,11 @@ interface IFrameProps {
 	url: string;
 }
 
-export default function IFrame(props: WidgetProps<IFrameProps>) {
+export default function IFrame(widget: WidgetProps<IFrameProps>) {
 	return (
-		<div className="panel flush">
-			<iframe src={props.props.url} width="100%" height="100%" frameBorder="0" />
-		</div>);
+		<Panel {...widget.theme}>
+			<iframe src={widget.props.url} width="100%" height="100%" frameBorder="0" />
+		</Panel>);
 }
 
 

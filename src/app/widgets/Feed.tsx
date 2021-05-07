@@ -5,6 +5,7 @@ import { Feed, useFeed } from 'app/hooks/feeds';
 import { Widget, WidgetProps } from 'app/Widget';
 import { defineMessages, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
+import Panel from 'app/components/Panel';
 
 
 const messages = defineMessages({
@@ -82,12 +83,12 @@ export default function Feed(widget: WidgetProps<FeedProps>) {
 	const titleContent = feed.link ? (<a href={feed.link}>{title}</a>) : title;
 
 	return (
-		<div className="panel flush">
+		<Panel {...widget.theme} flush={true}>
 			<h2 className="panel-inset">{titleContent}</h2>
-			<ul>
+			<ul className="links">
 				{rows}
 			</ul>
-		</div>);
+		</Panel>);
 }
 
 

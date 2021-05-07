@@ -1,5 +1,6 @@
 import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
+import { WidgetTheme } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 
 
@@ -22,3 +23,9 @@ Invisible.initialProps = {};
 Invisible.schema = {} as Schema;
 
 Invisible.defaultSize = new Vector2(5, 5);
+
+Invisible.initialTheme = {
+	showPanelBG: false,
+} as WidgetTheme;
+
+Invisible.themeSchema = {} as Schema;

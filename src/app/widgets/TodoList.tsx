@@ -1,4 +1,5 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
+import Panel from "app/components/Panel";
 import { useWidgetProp } from "app/hooks/widget";
 import Schema from "app/utils/Schema";
 import uuid from "app/utils/uuid";
@@ -89,20 +90,22 @@ export default function TodoList(widget: WidgetProps<TodoListProps>) {
 	}
 
 	return (
-		<ul className="todolist">
-			{list.map(item => (
-				<TodoItem key={item.id} item={item}
-						delete={() => onDelete(item)}
-						onChange={() => setList(list)} />))}
+		<Panel {...widget.theme}>
+			<ul className="todolist">
+				{list.map(item => (
+					<TodoItem key={item.id} item={item}
+							delete={() => onDelete(item)}
+							onChange={() => setList(list)} />))}
 
-			<li className="text-shadow-hard">
-				<input type="checkbox" disabled />
-				<AutoWidthInput onChange={(e) => setNewItemText(e.target.value)}
-						value={newItemText} onFinished={createItem}
-						minWidth="50%"
-						placeholder={list.length == 0 ? intl.formatMessage(messages.placeholder) : undefined} />
-			</li>
-		</ul>);
+				<li className="text-shadow-hard">
+					<input type="checkbox" disabled />
+					<AutoWidthInput onChange={(e) => setNewItemText(e.target.value)}
+							value={newItemText} onFinished={createItem}
+							minWidth="50%"
+							placeholder={list.length == 0 ? intl.formatMessage(messages.placeholder) : undefined} />
+				</li>
+			</ul>
+		</Panel>);
 }
 
 

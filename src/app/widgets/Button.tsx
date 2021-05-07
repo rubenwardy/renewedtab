@@ -1,3 +1,4 @@
+import Panel from 'app/components/Panel';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
@@ -19,13 +20,13 @@ interface ButtonProps {
 
 export default function Button(props: WidgetProps<ButtonProps>)  {
 	return (
-		<div className="panel flush">
+		<Panel {...props.theme} flush={true}>
 			<ul className="large">
 				<li>
 					<a href={props.props.url}>{props.props.text}</a>
 				</li>
 			</ul>
-		</div> );
+		</Panel> );
 }
 
 

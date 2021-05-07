@@ -1,3 +1,4 @@
+import Panel from "app/components/Panel";
 import { usePromise } from "app/hooks";
 import schemaMessages from "app/locale/common";
 import Schema, { type } from "app/utils/Schema";
@@ -111,24 +112,24 @@ export default function Search(widget: WidgetProps<SearchProps>) {
 			: intl.formatMessage(messages.search);
 
 		return (
-			<div className="panel flush">
+			<Panel {...widget.theme} flush={true}>
 				<form onSubmit={onSubmit}>
 					<input autoFocus={true} placeholder={placeholder}
 							type="text" name="q" ref={ref}
 							className="large invisible" />
 				</form>
-			</div>);
+			</Panel>);
 	}
 
 	return (
-		<div className="panel flush">
+		<Panel {...widget.theme} flush={true}>
 			<form method="get" action={props.searchURL}>
 				<input autoFocus={true} type="text" name="q"
 						placeholder={
 							intl.formatMessage(messages.searchWith, { name: props.searchTitle })}
 						className="large invisible" />
 			</form>
-		</div>);
+		</Panel>);
 }
 
 

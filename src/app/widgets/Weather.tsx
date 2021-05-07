@@ -5,6 +5,7 @@ import Schema, { Location, type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
+import Panel from 'app/components/Panel';
 
 
 const messages = defineMessages({
@@ -116,7 +117,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 			(<WeatherForecast key={forecast.day} renderTemp={renderTemp} {...forecast} />));
 
 	return (
-		<div className="panel weather">
+		<Panel {...widget.theme} className="weather" noBgWrap={true}>
 			<h2 className="col-span-3">
 				<a href={props.url}>{props.location.name}</a>
 			</h2>
@@ -125,7 +126,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 				{renderTemp(info.current.temp)}
 			</div>
 			{forecast}
-		</div>);
+		</Panel>);
 }
 
 

@@ -4,7 +4,7 @@ import { useForceUpdate, usePromise } from 'app/hooks';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -19,11 +19,9 @@ const messages = defineMessages({
 	},
 });
 
-interface TopSitesProps {
-	useIconBar: boolean;
-}
+function TopSitesImpl(widget: WidgetProps<any>) {
+	const props = widget.props;
 
-function TopSitesImpl(props: TopSitesProps) {
 	const [sites, error] = usePromise(() => browser.topSites.get(), []);
 	if (!sites) {
 		return (error &&
@@ -40,13 +38,11 @@ function TopSitesImpl(props: TopSitesProps) {
 	}));
 
 	return (
-		<LinkBox {...props} links={links} useWebsiteIcons={true}
+		<LinkBox {...props} widgetTheme={widget.theme} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
-export default function TopSites(widget: WidgetProps<TopSitesProps>) {
-	const props = widget.props;
-
+export default function TopSites(widget: WidgetProps<any>) {
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
 
@@ -64,7 +60,7 @@ export default function TopSites(widget: WidgetProps<TopSitesProps>) {
 			</div>);
 	}
 
-	return (<TopSitesImpl {...props} />);
+	return (<TopSitesImpl {...widget} />);
 }
 
 
@@ -72,12 +68,23 @@ TopSites.description = messages.description;
 
 TopSites.isBrowserOnly = true;
 
-TopSites.initialProps = {
-	useIconBar: true,
-};
+TopSites.initialProps = {};
 
-TopSites.schema = {
-	useIconBar: type.boolean(schemaMessages.useIconBar),
-} as Schema;
+TopSites.schema = {} as Schema;
 
 TopSites.defaultSize = new Vector2(15, 2);
+
+TopSites.themeSchema = defaultLinksThemeSchema;
+
+TopSites.initialTheme = {
+	showPanelBG: false,
+	useIconBar: true,
+} as WidgetTheme;
+
+TopSites.onLoaded = async (widget: Widget<any>) => {
+	if (typeof widget.props.useIconBar !== "undefined") {
+		widget.theme.useIconBar = widget.props.useIconBar;
+		widget.theme.showPanelBG = !widget.props.useIconBar;
+		widget.props.useIconBar = undefined;
+	}
+}

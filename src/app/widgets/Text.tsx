@@ -1,7 +1,8 @@
+import Panel from 'app/components/Panel';
 import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetTheme } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -17,11 +18,13 @@ interface TextProps
 	text: string;
 }
 
-export default function Text(props: WidgetProps<TextProps>)  {
+export default function Text(widget: WidgetProps<TextProps>)  {
 	return (
-		<div className="text-shadow-hard scrollable medium">
-			{props.props.text}
-		</div> );
+		<Panel {...widget.theme}>
+			<div className="text-shadow-hard scrollable medium">
+				{widget.props.text}
+			</div>
+		</Panel>);
 }
 
 
@@ -36,3 +39,7 @@ Text.schema = {
 } as Schema;
 
 Text.defaultSize = new Vector2(5, 1);
+
+Text.initialTheme = {
+	showPanelBG: false,
+} as WidgetTheme;

@@ -1,3 +1,4 @@
+import Panel from 'app/components/Panel';
 import { useWidgetProp } from 'app/hooks/widget';
 import { storage } from 'app/Storage';
 import Schema from 'app/utils/Schema';
@@ -31,11 +32,11 @@ export default function Notes(widget: WidgetProps<NotesProps>) {
 
 	const intl = useIntl();
 	return (
-		<div className="panel">
+		<Panel {...widget.theme}>
 			<textarea className="invisible" onChange={handleChange}
 					placeholder={intl.formatMessage(messages.placeholder)}
 					value={notes || ""} />
-		</div>);
+		</Panel>);
 }
 
 

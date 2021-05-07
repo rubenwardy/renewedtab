@@ -5,6 +5,7 @@ import { useFeed } from 'app/hooks/feeds';
 import { WidgetProps } from 'app/Widget';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
+import Panel from 'app/components/Panel';
 
 
 const messages = defineMessages({
@@ -52,12 +53,12 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 
 	const title = article.title;
 	return (
-		<div className="panel">
+		<Panel {...widget.theme}>
 			<a href={article.link} title={article.alt ?? ""}>
 				<img src={article.image} alt={article.alt ?? ""} />
 			</a>
 			<h2><a href={article.link}>{title}</a></h2>
-		</div>);
+		</Panel>);
 }
 
 

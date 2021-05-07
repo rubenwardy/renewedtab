@@ -60,7 +60,7 @@
 	}
 }
 
-.panel > ul, ul.links {
+ul.links {
 	display: block;
 	margin: 0;
 	list-style: none;
@@ -132,7 +132,7 @@
 	}
 }
 
-ul.links {
+.form ul.links {
 	margin: 0.5em 0;
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 2px;

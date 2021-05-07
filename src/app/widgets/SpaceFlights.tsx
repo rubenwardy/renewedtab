@@ -3,6 +3,8 @@ import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema from 'app/utils/Schema';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import Panel from 'app/components/Panel';
+import { WidgetProps } from 'app/Widget';
 
 
 const messages = defineMessages({
@@ -73,7 +75,7 @@ function getDate(launch: SpaceLaunch): string {
 }
 
 
-export default function SpaceFlights() {
+export default function SpaceFlights(widget: WidgetProps<any>) {
 	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
 	const intl = useIntl();
 
@@ -94,14 +96,14 @@ export default function SpaceFlights() {
 		</li>));
 
 	return (
-		<div className="panel flush">
+		<Panel {...widget.theme} flush={true}>
 			<h2 className="panel-inset">
 				<FormattedMessage {...messages.title} />
 			</h2>
 			<ul>
 				{rows}
 			</ul>
-		</div>);
+		</Panel>);
 }
 
 
