@@ -5,7 +5,7 @@ import Modal from "../Modal";
 import ImportExport from "./ImportExport";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { ThemeSettings, ThemeSettingsProps } from "./ThemeSettings";
-import GeneralSettings from "./GeneralSettings";
+import GeneralSettings, { GeneralSettingsProps } from "./GeneralSettings";
 
 
 enum SettingsTab {
@@ -58,7 +58,8 @@ function getComponentForTab(tab: SettingsTab) {
 }
 
 
-interface SettingsDialogProps extends BackgroundSettingsProps, ThemeSettingsProps {
+interface SettingsDialogProps extends BackgroundSettingsProps,
+		ThemeSettingsProps, GeneralSettingsProps {
 	isOpen: boolean;
 	onClose: () => void;
 }

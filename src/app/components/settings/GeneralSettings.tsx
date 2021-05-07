@@ -1,8 +1,21 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { FormattedMessage } from "react-intl";
 
+export interface GeneralSettingsProps {
+	locale: string;
+	setLocale: (locale: string) => void;
+}
 
-export default function GeneralSettings() {
+
+export default function GeneralSettings(props: GeneralSettingsProps) {
+	function onChange(e: ChangeEvent<HTMLSelectElement>) {
+		const selectedIndex = e.target.options.selectedIndex;
+		const locale = e.target.options[selectedIndex].getAttribute("value");
+		if (locale) {
+			props.setLocale(locale);
+		}
+	}
+
 	return (
 		<div className="modal-body">
 			<h2>
@@ -12,8 +25,9 @@ export default function GeneralSettings() {
 				<label htmlFor="locale">
 					<FormattedMessage defaultMessage="Language" />
 				</label>
-				<select value="en" onChange={() => {}}>
-					<option key="en">English (en)</option>
+				<select value={props.locale} onChange={onChange}>
+					<option key="en" value="en">English (en)</option>
+					<option key="tr" value="tr">Türkçe (tr)</option>
 				</select>
 				<p className="text-muted">
 					<FormattedMessage

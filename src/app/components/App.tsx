@@ -17,7 +17,8 @@ const widgetManager = new WidgetManager();
 export default function App() {
 	usePromise(() => widgetManager.load(), []);
 
-	const [locale, _setLocale] = useState(getUserLocale());
+	const [actualLocale, setLocale] = useStorage<string>("locale", getUserLocale());
+	const locale = actualLocale ?? "en"
 	const messages = getTranslation(locale);
 
 	const [background, setBackground] = useBackground();
@@ -50,7 +51,8 @@ export default function App() {
 				<SettingsDialog isOpen={settingsIsOpen}
 						onClose={() => setSettingsOpen(false)}
 						background={background} setBackground={setBackground}
-						theme={theme} setTheme={setTheme} />
+						theme={theme} setTheme={setTheme}
+						locale={locale} setLocale={setLocale} />
 				<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />
 
 				<ReviewRequester />
