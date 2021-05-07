@@ -30,6 +30,12 @@ export default function AboutSettings(_props: any) {
 			</p>
 			<p>
 				<FormattedMessage
+						id="translation_credits"
+						defaultMessage=""
+						description="Credit the translators: LANGUAGE translation by YOUR NAME" />
+			</p>
+			<p>
+				<FormattedMessage
 						defaultMessage="Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs." />
 				&nbsp;
 				<FormattedMessage

@@ -384,6 +384,10 @@
   "tPuTXu": {
     "defaultMessage": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir."
   },
+  "translation_credits": {
+    "defaultMessage": "Doğucan Gelbal tarafından Türkçeye çevrilmiştir.",
+    "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+  },
   "tzWexR": {
     "defaultMessage": "Yer işaretlerinizi gösterir"
   },

@@ -384,6 +384,10 @@
   "tPuTXu": {
     "defaultMessage": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
   },
+  "translation_credits": {
+    "defaultMessage": "",
+    "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+  },
   "tzWexR": {
     "defaultMessage": "Shows your bookmarks"
   },
