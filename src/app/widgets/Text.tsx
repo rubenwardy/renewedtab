@@ -21,7 +21,7 @@ interface TextProps
 export default function Text(widget: WidgetProps<TextProps>)  {
 	return (
 		<Panel {...widget.theme}>
-			<div className="text-shadow-hard scrollable medium">
+			<div className="medium">
 				{widget.props.text}
 			</div>
 		</Panel>);

@@ -1,8 +1,6 @@
 import LinkBox, { Link } from 'app/components/LinkBox';
-import Panel from 'app/components/Panel';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
-import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
@@ -113,11 +111,11 @@ export default function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 		};
 
 		return (
-			<Panel {...widget.theme} className="panel text-muted">
+			<div className="panel text-muted">
 				<RequestPermission permissions={permissions}
 						label={intl.formatMessage(messages.permissionLabel)}
 						onResult={forceUpdate} />
-			</Panel>);
+			</div>);
 	}
 
 	return (<BookmarksImpl {...widget} />);

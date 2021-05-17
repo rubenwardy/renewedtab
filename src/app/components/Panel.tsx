@@ -6,30 +6,37 @@ export interface PanelProps extends WidgetTheme {
 	children: ReactNode;
 	className?: string;
 
+	/**
+	 * Whether the content should scroll. Defaults to true.
+	 */
+	scrolling?: boolean;
+
 	flush?: boolean;
 
 	/**
-	 * Whether to still wrap the content in a div if showPanelBG is false.
+	 * CSS classes to use when the panel bg is hidden
 	 */
-	noBgWrap?: boolean;
+	invisClassName?: string;
 }
 
 
 export default function Panel(props: PanelProps) {
-	if (!props.showPanelBG) {
-		if (props.noBgWrap) {
-			return (<div className={props.className}>{props.children}</div>);
-		} else {
-			return (<>{props.children}</>);
+	let className = [];
+	if (props.showPanelBG) {
+		className.push("panel");
+		if (props.flush) {
+			className.push("flush");
 		}
+		if (props.className) {
+			className.push(props.className);
+		}
+	} else {
+		className.push("panel-invis");
+		className.push(props.invisClassName ?? "text-shadow-hard");
 	}
 
-	let className = ["panel"];
-	if (props.flush) {
-		className.push("flush");
-	}
-	if (props.className) {
-		className.push(props.className);
+	if (props.scrolling !== false) {
+		className.push("scrollable");
 	}
 
 	return (

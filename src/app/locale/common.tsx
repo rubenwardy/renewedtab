@@ -48,6 +48,10 @@ const schemaMessages = defineMessages({
 	imageUrl: {
 		defaultMessage: "Image URL",
 	},
+
+	opacity: {
+		defaultMessage: "Opacity",
+	}
 });
 
 export default schemaMessages;

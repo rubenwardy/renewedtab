@@ -57,7 +57,7 @@ export default function Greeting(widget: WidgetProps<any>) {
 	const intl = useIntl();
 	return (
 		<Panel {...widget.theme}>
-			<div className="text-shadow-hard large middle-center">
+			<div className="large middle-center">
 				<FormattedMessage {...getGreeting()} />,&nbsp;
 				{name !== undefined &&
 					<AutoWidthInput onChange={handleChange} value={name ?? ""}

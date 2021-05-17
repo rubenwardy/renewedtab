@@ -117,7 +117,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 			(<WeatherForecast key={forecast.day} renderTemp={renderTemp} {...forecast} />));
 
 	return (
-		<Panel {...widget.theme} className="weather" noBgWrap={true}>
+		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow-hard">
 			<h2 className="col-span-3">
 				<a href={props.url}>{props.location.name}</a>
 			</h2>

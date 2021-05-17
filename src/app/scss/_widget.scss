@@ -219,8 +219,10 @@ main > .widget {
 		border-radius: 0.25rem;
 	}
 
-	a {
-		display: inline-block;
+	.panel > a, .panel-invis > a {
+		display: block;
+		width: 100%;
+		height: 100%;
 
 		&:hover {
 			filter: brightness(1.1);
@@ -235,7 +237,7 @@ main > .widget {
 	box-sizing: border-box;
 }
 
-.widget-webcomic .panel {
+.image-caption {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -268,4 +270,11 @@ main > .widget {
 
 .widget-text .scrollable {
 	white-space: pre-wrap;
+}
+
+.widget-button > .btn {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	margin: 0;
 }

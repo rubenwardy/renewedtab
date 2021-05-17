@@ -146,9 +146,6 @@
   "IgzvjY": {
     "defaultMessage": "Filter Articles"
   },
-  "JBWS0c": {
-    "defaultMessage": "Link"
-  },
   "JU5H2h": {
     "defaultMessage": "Temperature Unit"
   },
@@ -196,6 +193,9 @@
   },
   "PD6In8": {
     "defaultMessage": "Never show again"
+  },
+  "PHutSR": {
+    "defaultMessage": "Opacity"
   },
   "PM6qZ7": {
     "defaultMessage": "Show seconds"
@@ -368,6 +368,9 @@
   },
   "pPi9TQ": {
     "defaultMessage": "Loading flights..."
+  },
+  "qCcwo3": {
+    "defaultMessage": "Links"
   },
   "qX503y": {
     "defaultMessage": "Random image from an Unsplash collection"

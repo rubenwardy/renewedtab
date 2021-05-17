@@ -47,6 +47,16 @@
 	}
 }
 
+.btn-custom {
+	background-color: var(--color-button);
+	border-color: var(--color-button);
+
+	&:hover {
+		background-color: var(--color-button-lighter);
+		border-color: var(--color-button-lighter);
+	}
+}
+
 .btn-danger {
 	background-color: #e74c3c;
 	border-color: #e74c3c;

@@ -9,7 +9,9 @@ type ReactFC<T> = ((props: T) => (JSX.Element | null));
 
 export interface WidgetTheme {
 	showPanelBG: boolean;
-	useIconBar: boolean;
+	useIconBar?: boolean;
+	color?: string;
+	opacity?: number;
 }
 
 export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
@@ -144,5 +146,6 @@ export function getInitialTheme(type: WidgetType<any>): WidgetTheme {
 	return {
 		showPanelBG: true,
 		useIconBar: false,
+		color: undefined,
 	}
 }

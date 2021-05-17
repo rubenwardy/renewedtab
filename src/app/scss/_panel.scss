@@ -6,10 +6,6 @@
 	padding: 0;
 	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;
 
-	&:not(.panel-editing) {
-		overflow: hidden auto;
-	}
-
 	&:not(.flush), .panel-inset {
 		padding: 0.8rem;
 	}
@@ -31,7 +27,7 @@
 	}
 }
 
-.panel, .modal-body {
+.panel, .modal-body, .widget {
 	> *:first-child {
 		margin-top: 0;
 	}
@@ -136,4 +132,10 @@ ul.links {
 	margin: 0.5em 0;
 	background: rgba(255, 255, 255, 0.05);
 	border-radius: 2px;
+}
+
+.panel-invis {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }

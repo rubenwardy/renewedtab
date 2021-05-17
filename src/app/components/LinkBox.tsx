@@ -77,7 +77,7 @@ function getAllIcons(sites: Link[]): Promise<string[]> {
 }
 
 export default function LinkBox(props: LinkBoxProps)  {
-	const useIconBar = props.widgetTheme.useIconBar;
+	const useIconBar = props.widgetTheme.useIconBar ?? false;
 
 	const links = useMemo<Link[]>(() => deepCopy(props.links), [props.links]);
 	if (props.useWebsiteIcons == true && typeof browser !== "undefined") {

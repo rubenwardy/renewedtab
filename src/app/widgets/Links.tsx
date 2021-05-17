@@ -1,5 +1,4 @@
 import LinkBox, { Link, LinkSchema, LinkBoxProps } from 'app/components/LinkBox';
-import schemaMessages from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
@@ -14,7 +13,7 @@ const messages = defineMessages({
 	},
 
 	links: {
-		defaultMessage: "Link",
+		defaultMessage: "Links",
 	},
 
 	useWebsiteIcons: {
@@ -74,8 +73,8 @@ Links.initialProps = {
 Links.schema = (_widget: Widget<LinkBoxProps>) => {
 	if (typeof browser !== "undefined") {
 		return {
-			useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
 			links: type.array(LinkSchema, messages.links),
+			useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
 		} as Schema;
 	} else {
 		return {

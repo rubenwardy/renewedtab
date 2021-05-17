@@ -1,8 +1,8 @@
-import Panel from 'app/components/Panel';
 import schemaMessages from 'app/locale/common';
+import Color from 'app/utils/Color';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetTheme } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -19,14 +19,14 @@ interface ButtonProps {
 }
 
 export default function Button(props: WidgetProps<ButtonProps>)  {
-	return (
-		<Panel {...props.theme} flush={true}>
-			<ul className="large">
-				<li>
-					<a href={props.props.url}>{props.props.text}</a>
-				</li>
-			</ul>
-		</Panel> );
+	const color = Color.fromString(props.theme.color ?? "") ?? Color.fromString("#007DB8")!;
+	color.a = Math.min(100, Math.max(0, props.theme.opacity ?? 100)) / 100;
+	const style: any = {
+		"--color-button": color.rgba,
+		"--color-button-lighter": color.lighten(1.3).rgba,
+	};
+
+	return (<a href={props.props.url} className="btn btn-custom middle-center" style={style}>{props.props.text}</a>);
 }
 
 
@@ -34,7 +34,7 @@ Button.description = messages.description;
 
 Button.initialProps = {
 	url: "https://rubenwardy.com",
-	text: "rubenwardy.com"
+	text: "rubenwardy.com",
 };
 
 Button.schema = {
@@ -43,3 +43,15 @@ Button.schema = {
 } as Schema;
 
 Button.defaultSize = new Vector2(5, 1);
+
+Button.themeSchema = {
+	color: type.color(schemaMessages.color),
+	opacity: type.unit_number(schemaMessages.opacity, "%"),
+};
+
+Button.initialTheme = {
+	showPanelBG: false,
+	useIconBar: false,
+	color: "#007DB8",
+	opacity: 100,
+} as WidgetTheme;

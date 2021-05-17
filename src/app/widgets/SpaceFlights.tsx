@@ -100,7 +100,7 @@ export default function SpaceFlights(widget: WidgetProps<any>) {
 			<h2 className="panel-inset">
 				<FormattedMessage {...messages.title} />
 			</h2>
-			<ul>
+			<ul className="links">
 				{rows}
 			</ul>
 		</Panel>);

@@ -40,8 +40,8 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	});
 
 	return (
-		<Panel {...widget.theme}>
-			<h1 className="text-shadow-soft middle-center">
+		<Panel {...widget.theme} scrolling={false}>
+			<h1 className="middle-center">
 				<FormattedTime
 					value={time}
 					hour="numeric" minute="numeric"

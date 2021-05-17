@@ -1,6 +1,6 @@
 export default class Color {
-	constructor(readonly r: number, readonly g: number,
-		readonly b: number, readonly a: number) {}
+	constructor(public r: number, public g: number,
+		public b: number, public a: number) {}
 
 	get hex(): string {
 		function fm(x: number): string {

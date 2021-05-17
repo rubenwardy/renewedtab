@@ -30,7 +30,7 @@ export default function Image(widget: WidgetProps<ImageProps>) {
 	const props = widget.props;
 
 	return (
-		<Panel {...widget.theme}>
+		<Panel {...widget.theme} scrolling={false}>
 			{((props.link ?? "").length > 0)
 				? (<a href={props.link}><img src={props.image_url} /></a>)
 				: (<img src={props.image_url} />)}

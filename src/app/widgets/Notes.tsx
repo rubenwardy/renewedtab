@@ -32,7 +32,7 @@ export default function Notes(widget: WidgetProps<NotesProps>) {
 
 	const intl = useIntl();
 	return (
-		<Panel {...widget.theme}>
+		<Panel {...widget.theme} scrolling={false}>
 			<textarea className="invisible" onChange={handleChange}
 					placeholder={intl.formatMessage(messages.placeholder)}
 					value={notes || ""} />

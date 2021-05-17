@@ -55,7 +55,7 @@ export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 	const intl = useIntl();
 	return (
 		<Panel {...widget.theme}>
-			<div className="text-shadow-hard large middle-center">
+			<div className="large middle-center">
 				<AutoWidthInput onChange={handleChange} value={goal?.text ?? ""}
 						placeholder={intl.formatMessage(messages.placeholder)} />
 
