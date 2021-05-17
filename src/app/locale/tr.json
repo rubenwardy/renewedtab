@@ -583,5 +583,9 @@
   "x59fh0": {
     "defaultMessage": "Space Flights",
     "description": "Space Flights Widget"
+  },
+  "or/+Da": {
+    "defaultMessage": "Styling",
+    "description": "Subheading for per-widget styling properties"
   }
 }

@@ -464,6 +464,10 @@
   "o2uuHu": {
     "defaultMessage": "12 hour clock"
   },
+  "or/+Da": {
+    "defaultMessage": "Styling",
+    "description": "Subheading for per-widget styling properties"
+  },
   "or8yqP": {
     "defaultMessage": "Random curated backgrounds"
   },

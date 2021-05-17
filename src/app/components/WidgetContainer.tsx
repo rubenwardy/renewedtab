@@ -43,7 +43,11 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						schema={schema}
 						onChange={onChange} />
 
-				<h2 className="mt-4">Styling</h2>
+				<h2 className="mt-4">
+					<FormattedMessage
+						defaultMessage="Styling"
+						description="Subheading for per-widget styling properties" />
+				</h2>
 
 				<Form
 						values={props.theme}
