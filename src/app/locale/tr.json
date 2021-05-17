@@ -62,9 +62,6 @@
   "6mHlh1": {
     "defaultMessage": "Sık kullanılan sitelerinize erişmek için izin verin"
   },
-  "7JMBBk": {
-    "defaultMessage": "Bir hata oluştu:"
-  },
   "8J0Bhj": {
     "defaultMessage": "<a>Renewed Tab</a>'e hoş geldiniz: araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası."
   },
@@ -145,9 +142,6 @@
   },
   "IgzvjY": {
     "defaultMessage": "Makaleleri Filtrele"
-  },
-  "JBWS0c": {
-    "defaultMessage": "Link"
   },
   "JU5H2h": {
     "defaultMessage": "Sıcaklık Birimi"
@@ -339,9 +333,6 @@
   "kAEQyV": {
     "defaultMessage": "Tamam"
   },
-  "kTpqlc": {
-    "defaultMessage": "Hava durumu yükleniyor..."
-  },
   "kk4TVW": {
     "defaultMessage": "İkon"
   },
@@ -453,5 +444,67 @@
   },
   "z7UTSa": {
     "defaultMessage": "Renewed Tab hakkında"
+  },
+  "D3idYv": {
+    "defaultMessage": "Settings"
+  },
+  "PHutSR": {
+    "defaultMessage": "Opacity"
+  },
+  "QqE4JC": {
+    "defaultMessage": "Missing feed URL."
+  },
+  "QrihTZ": {
+    "defaultMessage": "Friday"
+  },
+  "T4VxQN": {
+    "defaultMessage": "Loading…"
+  },
+  "U2Qnh7": {
+    "defaultMessage": "Image",
+    "description": "Image background mode"
+  },
+  "WKiXhX": {
+    "defaultMessage": "Color",
+    "description": "Color background mode"
+  },
+  "WMNHPh": {
+    "defaultMessage": "Saturday"
+  },
+  "XITVvp": {
+    "defaultMessage": "Show panel background"
+  },
+  "YAgYL6": {
+    "defaultMessage": "Tuesday"
+  },
+  "azMsfM": {
+    "defaultMessage": "Monday"
+  },
+  "lUdRdE": {
+    "defaultMessage": "Error: {msg}"
+  },
+  "lYJGY5": {
+    "defaultMessage": "Image URL",
+    "description": "Image URL background mode"
+  },
+  "lkJAu6": {
+    "defaultMessage": "Unsplash",
+    "description": "Unsplash background mode"
+  },
+  "lxblgl": {
+    "defaultMessage": "Wednesday"
+  },
+  "mJR06P": {
+    "defaultMessage": "Sunday"
+  },
+  "qAhUUO": {
+    "defaultMessage": "Thursday"
+  },
+  "qCcwo3": {
+    "defaultMessage": "Links"
+  },
+  "ycaP+t": {
+    "defaultMessage": "Auto",
+    "description": "Auto background mode"
   }
 }

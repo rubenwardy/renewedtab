@@ -16,7 +16,7 @@
 		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -n renewedtab.zip",
 		"test": "NODE_PATH=src mocha -r ts-node/register tests/**/*.test.ts",
 		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
-		"trans:extract": "formatjs extract 'src/app/**/*.ts*' --out-file src/app/locale/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]'",
+		"trans:extract": "formatjs extract 'src/app/**/*.ts*' --out-file src/app/locale/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]' && node utils/update_translations.js",
 		"trans:compile": "node utils/compile_translations.js"
 	},
 	"repository": {
