@@ -1,4 +1,5 @@
 import { MessageDescriptor } from "@formatjs/intl";
+import { IntlShape } from "react-intl";
 
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
@@ -6,12 +7,15 @@ export type Type = JSType | "host_url" | "host_all" | "location" |
 	"color" | "color_pair" | "image" | "unit_number" | "textarea";
 
 
+export type AutocompleteList = {label: string, value: string};
+
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema;
 	label: MessageDescriptor;
 	hint?: MessageDescriptor;
 	unit?: string;
+	autocomplete?: (intl: IntlShape) => Promise<AutocompleteList[]>;
 }
 
 
@@ -31,6 +35,13 @@ function makeTypeFunc(type: Type) {
 		label: label,
 		hint: hint,
 	});
+}
+
+function makeAutocompletedTypeFunc(type: Type) {
+	return (label: MessageDescriptor, hint?: MessageDescriptor,
+			autocomplete?: (intl: IntlShape) => Promise<{label: string, value: string}[]>) => (
+		{ type, label, hint, autocomplete }
+	);
 }
 
 
@@ -62,7 +73,7 @@ export namespace type {
 	 * URL, but will ask the user to grant host permissions when using as
 	 * an extension and the URL is blocked by CORS.
 	 */
-	export const urlPerm = makeTypeFunc("host_url");
+	export const urlPerm = makeAutocompletedTypeFunc("host_url");
 
 	export const color = makeTypeFunc("color");
 	export const colorPair = makeTypeFunc("color_pair");

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema, { type } from 'app/utils/Schema';
+import Schema, { AutocompleteList, type } from 'app/utils/Schema';
 import { Feed, useFeed } from 'app/hooks/feeds';
 import { Widget, WidgetProps } from 'app/Widget';
 import { defineMessages, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
 import Panel from 'app/components/Panel';
+import { getAPI, useAPI } from 'app/hooks';
 
 
 const messages = defineMessages({
@@ -33,6 +34,7 @@ const messages = defineMessages({
 		defaultMessage: "Allow",
 	},
 });
+
 
 interface Filter {
 	id: string; //< required for React
@@ -108,7 +110,8 @@ const filterSchema: Schema = {
 
 Feed.schema = {
 	title: type.string(schemaMessages.title, messages.titleHint),
-	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint),
+	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
+			(intl) => getAPI<AutocompleteList[]>(intl, "feeds/", {})),
 	filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
 } as Schema;
 

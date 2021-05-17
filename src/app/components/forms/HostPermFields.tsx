@@ -30,10 +30,23 @@ export function HostURLFIeld(props: FieldProps<string>) {
 		// ignore
 	}
 
+	const intl = useIntl();
+	const [autocomplete, _] = props.schemaEntry.autocomplete
+			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
+			: [ null, null ];
+
 	return (
 		<>
 			<input type="url" name={props.name} defaultValue={props.value}
-					onChange={handleChange} />
+					autoComplete={autocomplete ? "off" : "on"}
+					onChange={handleChange} list={autocomplete ? `dl-${props.name}` : undefined} />
+
+			{autocomplete &&
+				<datalist id={`dl-${props.name}`}>
+					{autocomplete.map(v => (
+						<option key={v.value} value={v.value}>{v.label}</option>))}
+				</datalist>}
+
 			<RequestHostPermission host={host} />
 		</>);
 }

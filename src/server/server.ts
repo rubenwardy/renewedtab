@@ -224,6 +224,35 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 });
 
 
+function readAutocompleteFromFile(filename: string) {
+	return fs.readFileSync(`src/server/data/${filename}.csv`)
+		.toString()
+		.split(/\r?\n/)
+		.map(x => x.split(","))
+		.filter(x => x.length == 2)
+		.map(([label, value]) => ({ label: label.trim(), value: value.trim() }))
+		.sort((a, b) => {
+			if (a.label < b.label) {
+				return -1;
+			}
+			if (a.label > b.label) {
+				return 1;
+			}
+			return 0;
+		});
+}
+
+
+const feeds = readAutocompleteFromFile("feeds");
+const webcomics = readAutocompleteFromFile("webcomics");
+app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
+	res.json(feeds);
+});
+app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) => {
+	res.json(webcomics);
+});
+
+
 app.listen(PORT, () => {
 	console.log(`⚡️[server]: Server is running in ${IS_DEBUG ? "debug" : "prod"} at http://localhost:${PORT}`);
 });

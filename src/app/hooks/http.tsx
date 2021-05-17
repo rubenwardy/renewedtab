@@ -81,33 +81,46 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 
 
 /**
-* Downloads a JSON document from a URL.
-*
-* @param {string} path - Path to endpoint, relative to API_URL's path.
-* @param {any} args - Key-value object representing query arguments.
-* @param {any[]} dependents - A list of dependent variables for the URL.
-* @return {[response, error]]} - Response and error
-*/
-export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | null), (string | null)] {
+ * Downloads a JSON document from a URL.
+ *
+ * @param intl Intl
+ * @param {string} path - Path to endpoint, relative to API_URL's path.
+ * @param {any} args - Key-value object representing query arguments.
+ * @param {any[]} dependents - A list of dependent variables for the URL.
+ * @return {[response, error]]} - Response and error
+ */
+export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promise<T> {
 	const url = new URL(config.API_URL);
 	url.pathname = (url.pathname + path).replace(/\/\//g, "/");
 	Object.entries(args).forEach(([key, value]) => {
 		url.searchParams.set(key.toString(), (value as Object).toString());
 	})
 
-	const intl = useIntl();
-
-	return usePromise(() => fetchJSON(intl, url.toString()), dependents);
+	return fetchJSON(intl, url.toString());
 }
 
 
 /**
-* Downloads an XML document from a URL.
-*
-* @param {string} url - The URL
-* @param {any[]} dependents - A list of dependent variables for the URL.
-* @return {[response, error]]} - Response and error
-*/
+ * Downloads a JSON document from a URL.
+ *
+ * @param {string} path - Path to endpoint, relative to API_URL's path.
+ * @param {any} args - Key-value object representing query arguments.
+ * @param {any[]} dependents - A list of dependent variables for the URL.
+ * @return {[response, error]]} - Response and error
+ */
+export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | null), (string | null)] {
+	const intl = useIntl();
+	return usePromise(() => getAPI(intl, path, args), dependents);
+}
+
+
+/**
+ * Downloads an XML document from a URL.
+ *
+ * @param {string} url - The URL
+ * @param {any[]} dependents - A list of dependent variables for the URL.
+ * @return {[response, error]]} - Response and error
+ */
 export function useXML(url: string, dependents?: any[]): [(Document | null), (string | null)] {
 	const intl = useIntl();
 	return usePromise(() => fetchXML(intl, makeProxy(url)), dependents);
