@@ -5,6 +5,7 @@ import Schema from 'app/utils/Schema';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import Panel from 'app/components/Panel';
 import { WidgetProps } from 'app/Widget';
+import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
@@ -77,13 +78,8 @@ function getDate(launch: SpaceLaunch): string {
 
 export default function SpaceFlights(widget: WidgetProps<any>) {
 	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
-	const intl = useIntl();
-
 	if (!data) {
-		return (
-			<div className="panel text-muted">
-				{error ? error.toString() : intl.formatMessage(messages.loadingFlights)}
-			</div>);
+		return (<ErrorView error={error} loading={true} />);
 	}
 
 	const rows = data.map(launch => (

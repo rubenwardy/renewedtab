@@ -1,3 +1,4 @@
+import ErrorView from 'app/components/ErrorView';
 import LinkBox, { Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
@@ -24,10 +25,7 @@ function TopSitesImpl(widget: WidgetProps<any>) {
 
 	const [sites, error] = usePromise(() => browser.topSites.get(), []);
 	if (!sites) {
-		return (error &&
-			<div className="panel text-muted">
-				{error.toString()}
-			</div>);
+		return (<ErrorView error={error} loading={true} />);
 	}
 
 	const links: Link[] = sites.map((site) => ({

@@ -7,6 +7,7 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI } from 'app/hooks/http';
+import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
@@ -33,23 +34,15 @@ interface WebComicProps {
 
 export default function WebComic(widget: WidgetProps<WebComicProps>) {
 	const props = widget.props;
-	const intl = useIntl();
-
 	const [feed, error] = useFeed(props.url, [props.url]);
 
 	if (!feed) {
-		return (
-			<div className="panel text-muted">
-				{error ? error.toString() : intl.formatMessage(messages.loading)}
-			</div>);
+		return (<ErrorView error={error} loading={true} />);
 	}
 
 	const article = feed.articles[0];
 	if (article?.image == undefined) {
-		return (
-			<div className="panel text-muted">
-				<FormattedMessage {...messages.noImages} />
-			</div>);
+		return (<ErrorView error={messages.noImages} />);
 	}
 
 	const title = article.title;

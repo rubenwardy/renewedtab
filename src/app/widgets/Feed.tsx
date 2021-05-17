@@ -7,6 +7,7 @@ import { defineMessages, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI, useAPI } from 'app/hooks';
+import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
@@ -52,13 +53,9 @@ export default function Feed(widget: WidgetProps<FeedProps>) {
 	const props = widget.props;
 
 	const [feed, error] = useFeed(props.url, [props.url]);
-	const intl = useIntl();
 
 	if (!feed) {
-		return (
-			<div className="panel text-muted">
-				{error ? error.toString() : intl.formatMessage(messages.loading)}
-			</div>);
+		return (<ErrorView error={error} loading={true} />);
 	}
 
 	const allowFilters = props.filters

@@ -3,6 +3,7 @@ import { Location } from "app/utils/Schema";
 import React, { useRef, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
+import ErrorView from "../ErrorView";
 
 const messages = defineMessages({
 	loading: {
@@ -16,13 +17,8 @@ const messages = defineMessages({
 
 export function LocationQuery(props: { query: string, onSelect: (loc: Location) => void }) {
 	const [info, error] = useAPI<Location[]>("geocode/", { q: props.query }, [props.query]);
-	const intl = useIntl();
-
 	if (!info) {
-		return (
-			<p className="text-muted">
-				{error ? error.toString() : intl.formatMessage(messages.loading)}
-			</p>);
+		return (<ErrorView error={error} loading={true} panel={false} />);
 	}
 
 	if (info.length == 0) {

@@ -6,6 +6,7 @@ import { WidgetProps } from 'app/Widget';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
 import Panel from 'app/components/Panel';
+import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
@@ -19,10 +20,6 @@ const messages = defineMessages({
 
 	locationNeeded: {
 		defaultMessage: "Location needed. Click edit to add it.",
-	},
-
-	loadingWeather: {
-		defaultMessage: "Loading weather...",
 	},
 
 	temperatureUnit: {
@@ -82,13 +79,9 @@ interface WeatherProps {
 
 export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
-	const intl = useIntl();
 
 	if (!props.location) {
-		return (
-			<div className="panel text-muted">
-				<FormattedMessage {...messages.locationNeeded} />
-			</div>);
+		return (<ErrorView error={messages.locationNeeded} />);
 	}
 
 	const unit = props.unit ?? TemperatureUnit.Celsius;
@@ -107,10 +100,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 		[props.location.latitude, props.location.longitude]);
 
 	if (!info) {
-		return (
-			<div className="panel text-muted">
-				{error ? error.toString() : intl.formatMessage(messages.loadingWeather)}
-			</div>);
+		return (<ErrorView error={error} loading={true} />);
 	}
 
 	const forecast = info.forecast.slice(1, 4).map(forecast =>

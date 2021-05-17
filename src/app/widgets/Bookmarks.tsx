@@ -1,3 +1,4 @@
+import ErrorView from 'app/components/ErrorView';
 import LinkBox, { Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
@@ -82,10 +83,7 @@ function BookmarksImpl(widget: WidgetProps<BookmarksProps>) {
 
 	const [sites, error] = usePromise(() => getBookmarks(props.includeFolders), []);
 	if (!sites) {
-		return (error &&
-			<div className="panel text-muted">
-				{error.toString()}
-			</div>);
+		return (<ErrorView error={error} />);
 	}
 
 	const links: Link[] = sites.map((site) => ({

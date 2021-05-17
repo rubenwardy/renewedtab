@@ -86,7 +86,6 @@ enum WidgetMode {
 export function WidgetContainer<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 	const close = () => setMode(WidgetMode.View);
-	const intl = useIntl();
 
 	switch (mode) {
 	case WidgetMode.Edit:
@@ -108,7 +107,6 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 					</span>
 				</div>
 				<div className="panel text-muted">
-					title={intl.formatMessage({ defaultMessage: "Create Widget" })}
 					<FormattedMessage
 							defaultMessage="This widget requires the browser extension version." />
 				</div>

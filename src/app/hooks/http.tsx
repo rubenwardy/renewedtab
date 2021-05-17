@@ -59,7 +59,7 @@ async function fetchXML(intl: IntlShape, url: string) {
 
 	const str = await response.text();
 	if (!response.ok) {
-		throw str;
+		throw new Error(`HTTP request failed, ${response.status} ${response.statusText}`);
 	}
 
 	const xml = new window.DOMParser().parseFromString(str, "text/xml");
