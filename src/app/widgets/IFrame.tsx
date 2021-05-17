@@ -8,6 +8,11 @@ import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "IFrame",
+		description: "IFrame Widget",
+	},
+
 	description: {
 		defaultMessage: "Shows a webpage",
 	},
@@ -25,6 +30,7 @@ export default function IFrame(widget: WidgetProps<IFrameProps>) {
 }
 
 
+IFrame.title = messages.title;
 IFrame.description = messages.description;
 
 IFrame.initialProps = {

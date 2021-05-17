@@ -15,6 +15,8 @@ export interface WidgetTheme {
 }
 
 export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
+	title: MessageDescriptor;
+
 	defaultSize: Vector2;
 
 	/**

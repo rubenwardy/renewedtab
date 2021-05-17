@@ -1,4 +1,8 @@
 {
+  "/dtDqf": {
+    "defaultMessage": "Notes",
+    "description": "Notes Widget"
+  },
   "0mqoSv": {
     "defaultMessage": "Loading feed..."
   },
@@ -56,11 +60,19 @@
   "50XVmf": {
     "defaultMessage": "No images found on feed"
   },
+  "5CFbLI": {
+    "defaultMessage": "Greeting",
+    "description": "Gretting Widget"
+  },
   "6VamZD": {
     "defaultMessage": "Powered by RocketLaunch.Live"
   },
   "6mHlh1": {
     "defaultMessage": "Grant permission to access top sites"
+  },
+  "7OH6mh": {
+    "defaultMessage": "Image",
+    "description": "Image Widget"
   },
   "8J0Bhj": {
     "defaultMessage": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
@@ -107,6 +119,10 @@
   "CRRVsD": {
     "defaultMessage": "Please select a location"
   },
+  "CmRs9p": {
+    "defaultMessage": "Search",
+    "description": "Search Widget"
+  },
   "CshCZY": {
     "defaultMessage": "Background Type"
   },
@@ -124,6 +140,10 @@
   },
   "EP5E9y": {
     "defaultMessage": "Collection ID. Found in the URL, example: 42576559"
+  },
+  "G6WG/N": {
+    "defaultMessage": "Invisible",
+    "description": "Invisible Widget"
   },
   "GqPEp+": {
     "defaultMessage": "Requires browser extension version"
@@ -161,8 +181,16 @@
   "KKmoGl": {
     "defaultMessage": "You may need to reload the page to see changes take affect."
   },
+  "Lxc1x4": {
+    "defaultMessage": "Clock",
+    "description": "Clock Widget"
+  },
   "M81yvY": {
     "defaultMessage": "Nothing to edit."
+  },
+  "MeEElY": {
+    "defaultMessage": "Age",
+    "description": "Age Widget"
   },
   "Mee7wz": {
     "defaultMessage": "Optional, makes image a link"
@@ -227,6 +255,18 @@
   "Rw51mJ": {
     "defaultMessage": "Powered by <a>OpenStreetMap</a>."
   },
+  "S3njcM": {
+    "defaultMessage": "IFrame",
+    "description": "IFrame Widget"
+  },
+  "SAo61B": {
+    "defaultMessage": "Bookmarks",
+    "description": "Bookmarks Widget"
+  },
+  "SG4UJU": {
+    "defaultMessage": "Button",
+    "description": "Button Widget"
+  },
   "SQJLG3": {
     "defaultMessage": "Click \"Add widget\" in the bottom of the screen to add a widget."
   },
@@ -241,6 +281,10 @@
   },
   "T4VxQN": {
     "defaultMessage": "Loading…"
+  },
+  "TUnCKb": {
+    "defaultMessage": "Text",
+    "description": "Text Widget"
   },
   "TkgCJ9": {
     "defaultMessage": "You can get help or request a feature using the link below."
@@ -271,6 +315,10 @@
   "WZjKFf": {
     "defaultMessage": "Warning: this may contain personal data, if any was entered into widget settings."
   },
+  "Wv6Hyh": {
+    "defaultMessage": "HelpAbout",
+    "description": "HelpAbout Widget"
+  },
   "WxuQ8x": {
     "defaultMessage": "A single color"
   },
@@ -283,6 +331,10 @@
   "XQZA8e": {
     "defaultMessage": "Background"
   },
+  "XsTD4Q": {
+    "defaultMessage": "Todo List",
+    "description": "Todo List Widget"
+  },
   "YAgYL6": {
     "defaultMessage": "Tuesday"
   },
@@ -294,6 +346,10 @@
   },
   "Z2/hH0": {
     "defaultMessage": "Image: {filename}"
+  },
+  "ZZIlU9": {
+    "defaultMessage": "Daily Goal",
+    "description": "Daily Goal Widget"
   },
   "aA8bDw": {
     "defaultMessage": "Text"
@@ -322,11 +378,19 @@
   "cy8B6K": {
     "defaultMessage": "Import / Export"
   },
+  "dGu5JQ": {
+    "defaultMessage": "Feed",
+    "description": "Feed Widget"
+  },
   "egigiF": {
     "defaultMessage": "Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs."
   },
   "ekIjqh": {
     "defaultMessage": "Grant permission to access all websites"
+  },
+  "gSjZfg": {
+    "defaultMessage": "Links",
+    "description": "Links Widget"
   },
   "gjBiyj": {
     "defaultMessage": "Loading..."
@@ -357,9 +421,6 @@
   },
   "j7BbFE": {
     "defaultMessage": "Unsplash collection"
-  },
-  "jG9AdO": {
-    "defaultMessage": "Space Flights"
   },
   "jKD1tT": {
     "defaultMessage": "Like",
@@ -406,6 +467,10 @@
   "or8yqP": {
     "defaultMessage": "Random curated backgrounds"
   },
+  "p8GKKf": {
+    "defaultMessage": "Top Sites",
+    "description": "Top Sites Widget"
+  },
   "pPi9TQ": {
     "defaultMessage": "Loading flights..."
   },
@@ -437,6 +502,10 @@
     "defaultMessage": "",
     "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
   },
+  "tyq8NB": {
+    "defaultMessage": "Weather",
+    "description": "Weather Widget"
+  },
   "tzWexR": {
     "defaultMessage": "Shows your bookmarks"
   },
@@ -452,6 +521,10 @@
   "uRYRJh": {
     "defaultMessage": "Edit {type}"
   },
+  "ubO4zt": {
+    "defaultMessage": "Web Comic",
+    "description": "Web Comic Widget"
+  },
   "ueVsqa": {
     "defaultMessage": "Use a custom image"
   },
@@ -466,6 +539,10 @@
   },
   "wubRXu": {
     "defaultMessage": "Search with {name}"
+  },
+  "x59fh0": {
+    "defaultMessage": "Space Flights",
+    "description": "Space Flights Widget"
   },
   "x7IPhN": {
     "defaultMessage": "Include folders as sections"

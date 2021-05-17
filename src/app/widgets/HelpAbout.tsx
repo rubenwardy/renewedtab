@@ -1,5 +1,4 @@
 import Panel from 'app/components/Panel';
-import { WidgetContainer } from 'app/components/WidgetContainer';
 import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps } from 'app/Widget';
@@ -8,6 +7,11 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
 	title: {
+		defaultMessage: "HelpAbout",
+		description: "HelpAbout Widget",
+	},
+
+	heading: {
 		defaultMessage: "Renewed Tab Help and Tips",
 	},
 
@@ -20,7 +24,7 @@ export default function HelpAbout(widget: WidgetProps<any>) {
 	return (
 		<Panel {...widget.theme}>
 			<h2>
-				<FormattedMessage {...messages.title} />
+				<FormattedMessage {...messages.heading} />
 			</h2>
 			<p>
 				<FormattedMessage
@@ -57,7 +61,7 @@ export default function HelpAbout(widget: WidgetProps<any>) {
 		</Panel>);
 }
 
-
+HelpAbout.title = messages.title;
 HelpAbout.description = messages.description;
 
 HelpAbout.initialProps = {};

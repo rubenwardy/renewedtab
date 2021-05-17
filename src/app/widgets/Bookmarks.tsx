@@ -10,6 +10,11 @@ import { defineMessages, useIntl } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Bookmarks",
+		description: "Bookmarks Widget",
+	},
+
 	description: {
 		defaultMessage: "Shows your bookmarks",
 	},
@@ -120,6 +125,7 @@ export default function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 }
 
 
+Bookmarks.title = messages.title;
 Bookmarks.description = messages.description;
 
 Bookmarks.isBrowserOnly = true;

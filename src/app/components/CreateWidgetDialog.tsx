@@ -26,7 +26,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		.map(([key, widget]) => (
 			<li key={key}>
 				<a onClick={() => select(key)}>
-					{key}
+					<FormattedMessage {...widget.title} />
 					<span className="text-muted ml-1">
 						&nbsp;
 						<FormattedMessage {...widget.description} />

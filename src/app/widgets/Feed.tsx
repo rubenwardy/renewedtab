@@ -11,6 +11,11 @@ import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Feed",
+		description: "Feed Widget",
+	},
+
 	description: {
 		defaultMessage: "Shows an Atom or RSS feed",
 	},
@@ -91,6 +96,7 @@ export default function Feed(widget: WidgetProps<FeedProps>) {
 }
 
 
+Feed.title = messages.title;
 Feed.description = messages.description;
 
 Feed.initialProps = {

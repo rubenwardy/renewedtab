@@ -11,6 +11,7 @@ import ErrorView from 'app/components/ErrorView';
 const messages = defineMessages({
 	title: {
 		defaultMessage: "Space Flights",
+		description: "Space Flights Widget",
 	},
 
 	description: {
@@ -103,6 +104,7 @@ export default function SpaceFlights(widget: WidgetProps<any>) {
 }
 
 
+SpaceFlights.title = messages.title;
 SpaceFlights.description = messages.description;
 
 SpaceFlights.editHint = messages.editHint;

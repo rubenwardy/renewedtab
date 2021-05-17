@@ -10,6 +10,11 @@ import { defineMessages, useIntl } from "react-intl";
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Todo List",
+		description: "Todo List Widget",
+	},
+
 	description: {
 		defaultMessage: "Track to do list items",
 	},
@@ -110,6 +115,7 @@ export default function TodoList(widget: WidgetProps<TodoListProps>) {
 }
 
 
+TodoList.title = messages.title;
 TodoList.description = messages.description;
 
 TodoList.editHint = messages.editHint;

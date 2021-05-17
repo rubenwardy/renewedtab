@@ -11,6 +11,11 @@ import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Web Comic",
+		description: "Web Comic Widget",
+	},
+
 	description: {
 		defaultMessage: "Shows the most recent page from a webcomic, using Atom or RSS",
 	},
@@ -56,6 +61,7 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 }
 
 
+WebComic.title = messages.title;
 WebComic.description = messages.description;
 
 WebComic.initialProps = {

@@ -28,7 +28,8 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 
 	const title = intl.formatMessage(
 			{ defaultMessage: "Edit {type}" },
-			{ type: props.type });
+			{ type: intl.formatMessage(props.child.title) });
+
 	return (
 		<Modal title={title} isOpen={true} {...props}>
 			<div className="modal-body">
@@ -99,7 +100,9 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 			<>
 				<div className="widget-strip">
 					<i className="collapsed fas fa-ellipsis-h" />
-					<span className="widget-title">{props.type}</span>
+					<span className="widget-title">
+						<FormattedMessage {...props.child.title} />
+					</span>
 					<span className="widget-btns">
 						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
 							<i className="fas fa-trash" />
@@ -118,7 +121,9 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		<>
 			<div className="widget-strip">
 				<i className="collapsed fas fa-ellipsis-h" />
-				<span className="widget-title">{props.type}</span>
+				<span className="widget-title">
+					<FormattedMessage {...props.child.title} />
+				</span>
 				<span className="widget-btns">
 					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
 						<i className="fas fa-trash" />

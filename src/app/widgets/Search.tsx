@@ -9,6 +9,11 @@ import { defineMessages, useIntl } from "react-intl";
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Search",
+		description: "Search Widget",
+	},
+
 	description: {
 		defaultMessage: "Search box to your favourite search engine",
 	},
@@ -133,6 +138,7 @@ export default function Search(widget: WidgetProps<SearchProps>) {
 }
 
 
+Search.title = messages.title;
 Search.description = messages.description;
 
 Search.initialProps = {

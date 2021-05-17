@@ -10,6 +10,11 @@ import ErrorView from 'app/components/ErrorView';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Weather",
+		description: "Weather Widget",
+	},
+
 	description: {
 		defaultMessage: "Current and forecasted weather",
 	},
@@ -135,6 +140,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 }
 
 
+Weather.title = messages.title;
 Weather.description = messages.description;
 
 Weather.editHint = messages.editHint;

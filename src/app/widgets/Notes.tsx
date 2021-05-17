@@ -9,6 +9,11 @@ import { defineMessages, useIntl } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Notes",
+		description: "Notes Widget",
+	},
+
 	description: {
 		defaultMessage: "An editable text area for notes",
 	},
@@ -40,6 +45,7 @@ export default function Notes(widget: WidgetProps<NotesProps>) {
 }
 
 
+Notes.title = messages.title;
 Notes.description = messages.description;
 
 Notes.initialProps = {

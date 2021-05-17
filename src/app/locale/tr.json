@@ -323,9 +323,6 @@
   "j7BbFE": {
     "defaultMessage": "Unsplash koleksiyonu"
   },
-  "jG9AdO": {
-    "defaultMessage": "Uzay Uçuşları"
-  },
   "jKD1tT": {
     "defaultMessage": "Beğen",
     "description": "Arkaplanı beğen"
@@ -506,5 +503,85 @@
   "ycaP+t": {
     "defaultMessage": "Auto",
     "description": "Auto background mode"
+  },
+  "/dtDqf": {
+    "defaultMessage": "Notes",
+    "description": "Notes Widget"
+  },
+  "5CFbLI": {
+    "defaultMessage": "Greeting",
+    "description": "Gretting Widget"
+  },
+  "7OH6mh": {
+    "defaultMessage": "Image",
+    "description": "Image Widget"
+  },
+  "CmRs9p": {
+    "defaultMessage": "Search",
+    "description": "Search Widget"
+  },
+  "G6WG/N": {
+    "defaultMessage": "Invisible",
+    "description": "Invisible Widget"
+  },
+  "Lxc1x4": {
+    "defaultMessage": "Clock",
+    "description": "Clock Widget"
+  },
+  "MeEElY": {
+    "defaultMessage": "Age",
+    "description": "Age Widget"
+  },
+  "S3njcM": {
+    "defaultMessage": "IFrame",
+    "description": "IFrame Widget"
+  },
+  "SAo61B": {
+    "defaultMessage": "Bookmarks",
+    "description": "Bookmarks Widget"
+  },
+  "SG4UJU": {
+    "defaultMessage": "Button",
+    "description": "Button Widget"
+  },
+  "TUnCKb": {
+    "defaultMessage": "Text",
+    "description": "Text Widget"
+  },
+  "Wv6Hyh": {
+    "defaultMessage": "HelpAbout",
+    "description": "HelpAbout Widget"
+  },
+  "XsTD4Q": {
+    "defaultMessage": "Todo List",
+    "description": "Todo List Widget"
+  },
+  "ZZIlU9": {
+    "defaultMessage": "Daily Goal",
+    "description": "Daily Goal Widget"
+  },
+  "dGu5JQ": {
+    "defaultMessage": "Feed",
+    "description": "Feed Widget"
+  },
+  "gSjZfg": {
+    "defaultMessage": "Links",
+    "description": "Links Widget"
+  },
+  "p8GKKf": {
+    "defaultMessage": "Top Sites",
+    "description": "Top Sites Widget"
+  },
+  "tyq8NB": {
+    "defaultMessage": "Weather",
+    "description": "Weather Widget"
+  },
+  "ubO4zt": {
+    "defaultMessage": "Web Comic",
+    "description": "Web Comic Widget"
+  },
+  "x59fh0": {
+    "defaultMessage": "Space Flights",
+    "description": "Space Flights Widget"
   }
 }

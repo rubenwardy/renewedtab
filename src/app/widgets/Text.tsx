@@ -8,6 +8,11 @@ import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Text",
+		description: "Text Widget",
+	},
+
 	description: {
 		defaultMessage: "Show a message",
 	},
@@ -28,6 +33,7 @@ export default function Text(widget: WidgetProps<TextProps>)  {
 }
 
 
+Text.title = messages.title;
 Text.description = messages.description;
 
 Text.initialProps = {

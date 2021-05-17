@@ -8,6 +8,11 @@ import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Image",
+		description: "Image Widget",
+	},
+
 	description: {
 		defaultMessage: "Display an image, optionally making it a link",
 	},
@@ -39,6 +44,7 @@ export default function Image(widget: WidgetProps<ImageProps>) {
 }
 
 
+Image.title = messages.title;
 Image.description = messages.description;
 
 Image.initialProps = {

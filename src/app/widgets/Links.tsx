@@ -1,4 +1,4 @@
-import LinkBox, { Link, LinkSchema, LinkBoxProps } from 'app/components/LinkBox';
+import LinkBox, { LinkSchema, LinkBoxProps } from 'app/components/LinkBox';
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
@@ -8,6 +8,11 @@ import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Links",
+		description: "Links Widget",
+	},
+
 	description: {
 		defaultMessage: "Links, with support for headings and icons",
 	},
@@ -27,6 +32,7 @@ export default function Links(props: WidgetProps<LinkBoxProps>)  {
 }
 
 
+Links.title = messages.title;
 Links.description = messages.description;
 
 Links.initialProps = {

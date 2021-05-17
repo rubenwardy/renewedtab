@@ -8,6 +8,11 @@ import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Button",
+		description: "Button Widget",
+	},
+
 	description: {
 		defaultMessage: "A link button",
 	},
@@ -30,6 +35,7 @@ export default function Button(props: WidgetProps<ButtonProps>)  {
 }
 
 
+Button.title = messages.title;
 Button.description = messages.description;
 
 Button.initialProps = {

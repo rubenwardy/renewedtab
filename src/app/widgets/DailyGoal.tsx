@@ -9,6 +9,11 @@ import { defineMessages, useIntl } from "react-intl";
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Daily Goal",
+		description: "Daily Goal Widget",
+	},
+
 	description: {
 		defaultMessage: "Reminds you about a daily goal",
 	},
@@ -68,6 +73,7 @@ export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 }
 
 
+DailyGoal.title = messages.title;
 DailyGoal.description = messages.description;
 
 DailyGoal.editHint = messages.editHint;

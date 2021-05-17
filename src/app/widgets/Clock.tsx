@@ -7,6 +7,11 @@ import { defineMessages, FormattedTime } from "react-intl";
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Clock",
+		description: "Clock Widget",
+	},
+
 	description: {
 		defaultMessage: "Shows the time",
 	},
@@ -51,7 +56,7 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 		</Panel>);
 }
 
-
+Clock.title = messages.title;
 Clock.description = messages.description;
 
 Clock.initialProps = {

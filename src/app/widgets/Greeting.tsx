@@ -9,6 +9,11 @@ import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from "re
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Greeting",
+		description: "Gretting Widget",
+	},
+
 	description: {
 		defaultMessage: "Greets you",
 	},
@@ -67,6 +72,7 @@ export default function Greeting(widget: WidgetProps<any>) {
 }
 
 
+Greeting.title = messages.title;
 Greeting.description = messages.description;
 
 Greeting.editHint = messages.editHint;

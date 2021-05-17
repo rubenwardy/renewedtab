@@ -7,6 +7,11 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Age",
+		description: "Age Widget",
+	},
+
 	description: {
 		defaultMessage: "States your current age with way too much precision",
 	},
@@ -55,7 +60,7 @@ export default function Age(widget: WidgetProps<AgeProps>) {
 		</Panel>);
 }
 
-
+Age.title = messages.title;
 Age.description = messages.description;
 
 Age.initialProps = {

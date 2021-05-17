@@ -5,6 +5,11 @@ import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Invisible",
+		description: "Invisible Widget",
+	},
+
 	description: {
 		defaultMessage: "Shows nothing, useful for layouting purposes",
 	},
@@ -16,6 +21,7 @@ export default function Invisible(): (JSX.Element | null) {
 }
 
 
+Invisible.title = messages.title;
 Invisible.description = messages.description;
 
 Invisible.initialProps = {};
