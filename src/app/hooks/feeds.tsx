@@ -70,6 +70,14 @@ function parseFeed(root: Element): Feed | null {
 
 export function useFeed(url: string, dependents?: any[]): [Feed | undefined, any] {
 	const intl = useIntl();
+
+	if (!url) {
+		return [undefined,
+				intl.formatMessage({
+					defaultMessage: "Missing feed URL."
+				})];
+	}
+
 	const [data, error] = useXML(url, dependents);
 	if (!data || error) {
 		return [undefined, error];
@@ -81,7 +89,6 @@ export function useFeed(url: string, dependents?: any[]): [Feed | undefined, any
 				intl.formatMessage({
 					defaultMessage: "Error loading feed. Make sure it is an RSS or Atom feed."
 				})];
-
 	}
 
 	return [feed, undefined];
