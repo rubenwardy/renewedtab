@@ -22,27 +22,8 @@ const messages = defineMessages({
 	collectionHint: {
 		defaultMessage: "Collection ID. Found in the URL, example: 42576559",
 	},
-
-	autoDescription: {
-		defaultMessage: "Random curated backgrounds",
-	},
-
-	colorDescription: {
-		defaultMessage: "A single color",
-	},
-
-	imageDescription: {
-		defaultMessage: "Use a custom image",
-	},
-
-	imageUrlDescription: {
-		defaultMessage: "An image from a URL",
-	},
-
-	unsplashDescription: {
-		defaultMessage: "Random image from an Unsplash collection",
-	},
 });
+
 
 export enum BackgroundMode {
 	Auto,
@@ -50,8 +31,58 @@ export enum BackgroundMode {
 	Image,
 	ImageUrl,
 	Unsplash,
-	// Reddit
 }
+
+
+const bgTitles = defineMessages({
+	[BackgroundMode.Auto]: {
+		defaultMessage: "Auto",
+		description: "Auto background mode",
+	},
+
+	[BackgroundMode.Color]: {
+		defaultMessage: "Color",
+		description: "Color background mode",
+	},
+
+	[BackgroundMode.Image]: {
+		defaultMessage: "Image",
+		description: "Image background mode",
+	},
+
+	[BackgroundMode.ImageUrl]: {
+		defaultMessage: "Image URL",
+		description: "Image URL background mode",
+	},
+
+	[BackgroundMode.Unsplash]: {
+		defaultMessage: "Unsplash",
+		description: "Unsplash background mode",
+	},
+});
+
+
+const bgDescriptions = defineMessages({
+	[BackgroundMode.Auto]: {
+		defaultMessage: "Random curated backgrounds",
+	},
+
+	[BackgroundMode.Color]: {
+		defaultMessage: "A single color",
+	},
+
+	[BackgroundMode.Image]: {
+		defaultMessage: "Use a custom image",
+	},
+
+	[BackgroundMode.ImageUrl]: {
+		defaultMessage: "An image from a URL",
+	},
+
+	[BackgroundMode.Unsplash]: {
+		defaultMessage: "Random image from an Unsplash collection",
+	},
+});
 
 export declare type BackgroundModeType = keyof typeof BackgroundMode;
 
@@ -99,19 +130,14 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 	}
 }
 
+
+export function getTitleForMode(mode: BackgroundMode): MessageDescriptor {
+	return bgTitles[mode];
+}
+
+
 export function getDescriptionForMode(mode: BackgroundMode): MessageDescriptor {
-	switch (mode) {
-	case BackgroundMode.Auto:
-		return messages.autoDescription;
-	case BackgroundMode.Color:
-		return messages.colorDescription;
-	case BackgroundMode.ImageUrl:
-		return messages.imageUrlDescription;
-	case BackgroundMode.Image:
-		return messages.imageDescription;
-	case BackgroundMode.Unsplash:
-		return messages.unsplashDescription;
-	}
+	return bgDescriptions[mode];
 }
 
 export interface BackgroundConfig {

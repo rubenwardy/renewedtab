@@ -62,9 +62,6 @@
   "6mHlh1": {
     "defaultMessage": "Grant permission to access top sites"
   },
-  "7JMBBk": {
-    "defaultMessage": "An error occured:"
-  },
   "8J0Bhj": {
     "defaultMessage": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
   },
@@ -112,6 +109,9 @@
   },
   "CshCZY": {
     "defaultMessage": "Background Type"
+  },
+  "D3idYv": {
+    "defaultMessage": "Settings"
   },
   "DbkCFr": {
     "defaultMessage": "Create a new todo item"
@@ -209,6 +209,9 @@
   "PuZCei": {
     "defaultMessage": "Leave blank to use feed's title"
   },
+  "QqE4JC": {
+    "defaultMessage": "Missing feed URL."
+  },
   "RQ+k9r": {
     "defaultMessage": "A list of upcoming space launches, powered by RocketLaunch.Live"
   },
@@ -233,8 +236,15 @@
   "T/wBPw": {
     "defaultMessage": "Remove {type}"
   },
+  "T4VxQN": {
+    "defaultMessage": "Loading…"
+  },
   "TkgCJ9": {
     "defaultMessage": "You can get help or request a feature using the link below."
+  },
+  "U2Qnh7": {
+    "defaultMessage": "Image",
+    "description": "Image background mode"
   },
   "U6qGuO": {
     "defaultMessage": "Position"
@@ -244,6 +254,10 @@
   },
   "VNlygV": {
     "defaultMessage": "Any font name installed on your computer"
+  },
+  "WKiXhX": {
+    "defaultMessage": "Color",
+    "description": "Color background mode"
   },
   "WQeyl4": {
     "defaultMessage": "Grant permission to access bookmarks"
@@ -342,9 +356,6 @@
   "kAEQyV": {
     "defaultMessage": "OK"
   },
-  "kTpqlc": {
-    "defaultMessage": "Loading weather..."
-  },
   "kk4TVW": {
     "defaultMessage": "Icon"
   },
@@ -353,6 +364,17 @@
   },
   "lU5v+P": {
     "defaultMessage": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
+  },
+  "lUdRdE": {
+    "defaultMessage": "Error: {msg}"
+  },
+  "lYJGY5": {
+    "defaultMessage": "Image URL",
+    "description": "Image URL background mode"
+  },
+  "lkJAu6": {
+    "defaultMessage": "Unsplash",
+    "description": "Unsplash background mode"
   },
   "lq7eF/": {
     "defaultMessage": "Show a message"
@@ -447,6 +469,10 @@
   },
   "yYM0Bg": {
     "defaultMessage": "Loading results..."
+  },
+  "ycaP+t": {
+    "defaultMessage": "Auto",
+    "description": "Auto background mode"
   },
   "yfgoZf": {
     "defaultMessage": "Discord / Matrix chats"

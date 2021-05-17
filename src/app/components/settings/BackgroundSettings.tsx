@@ -1,6 +1,6 @@
-import { BackgroundConfig, BackgroundMode, BackgroundModeType, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
+import { BackgroundConfig, BackgroundMode, BackgroundModeType, getTitleForMode, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
 import React from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { Radio, RadioGroup } from "react-radio-group";
 import { Form } from "../forms";
 
@@ -21,7 +21,8 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 			.map(x => (
 				<div className="field" key={x}>
 					<Radio value={x} />
-					{x}:&nbsp;
+					<FormattedMessage
+							{...getTitleForMode(BackgroundMode[x as BackgroundModeType])} />:&nbsp;
 					<span className="text-muted">
 						<FormattedMessage
 								{...getDescriptionForMode(BackgroundMode[x as BackgroundModeType])} />

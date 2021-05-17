@@ -79,10 +79,11 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 				</a>)
 		});
 
+	const intl = useIntl();
 	const Tab = getComponentForTab(currentTab);
 
 	return (
-		<Modal title="Settings" {...props}>
+		<Modal title={intl.formatMessage({ defaultMessage: "Settings "})} {...props}>
 			<div className="modal-flex">
 				<nav>
 					{tabs}
