@@ -35,6 +35,7 @@ function parseWeatherInfo(info: any): any {
 		},
 		forecast: info.daily.map((day: any) => ({
 			day: unixToDay(day.dt),
+			dayOfWeek: unixToDate(day.dt).getDay(),
 			icon: getIcon(day),
 			minTemp: kelvinToCelsius(day.temp.min),
 			maxTemp: kelvinToCelsius(day.temp.max),

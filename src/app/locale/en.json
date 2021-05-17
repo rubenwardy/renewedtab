@@ -212,6 +212,9 @@
   "QqE4JC": {
     "defaultMessage": "Missing feed URL."
   },
+  "QrihTZ": {
+    "defaultMessage": "Friday"
+  },
   "RQ+k9r": {
     "defaultMessage": "A list of upcoming space launches, powered by RocketLaunch.Live"
   },
@@ -259,6 +262,9 @@
     "defaultMessage": "Color",
     "description": "Color background mode"
   },
+  "WMNHPh": {
+    "defaultMessage": "Saturday"
+  },
   "WQeyl4": {
     "defaultMessage": "Grant permission to access bookmarks"
   },
@@ -277,6 +283,9 @@
   "XQZA8e": {
     "defaultMessage": "Background"
   },
+  "YAgYL6": {
+    "defaultMessage": "Tuesday"
+  },
   "YqlpSM": {
     "defaultMessage": "You are <b>{age}</b>"
   },
@@ -291,6 +300,9 @@
   },
   "ajnDv2": {
     "defaultMessage": "Enter notes here"
+  },
+  "azMsfM": {
+    "defaultMessage": "Monday"
   },
   "bN0iM4": {
     "defaultMessage": "Found a bug, or have a request?"
@@ -379,6 +391,12 @@
   "lq7eF/": {
     "defaultMessage": "Show a message"
   },
+  "lxblgl": {
+    "defaultMessage": "Wednesday"
+  },
+  "mJR06P": {
+    "defaultMessage": "Sunday"
+  },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
   },
@@ -390,6 +408,9 @@
   },
   "pPi9TQ": {
     "defaultMessage": "Loading flights..."
+  },
+  "qAhUUO": {
+    "defaultMessage": "Thursday"
   },
   "qCcwo3": {
     "defaultMessage": "Links"

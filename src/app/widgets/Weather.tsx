@@ -3,7 +3,7 @@ import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { Location, type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
-import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from 'react-intl';
 import schemaMessages from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
@@ -28,13 +28,24 @@ const messages = defineMessages({
 });
 
 
+const dayNames = defineMessages({
+	[0]: { defaultMessage: "Sunday" },
+	[1]: { defaultMessage: "Monday" },
+	[2]: { defaultMessage: "Tuesday" },
+	[3]: { defaultMessage: "Wednesday" },
+	[4]: { defaultMessage: "Thursday" },
+	[5]: { defaultMessage: "Friday" },
+	[6]: { defaultMessage: "Saturday" },
+}) as { [num: number]: MessageDescriptor };
+
+
 enum TemperatureUnit {
 	Celsius,
 	Fahrenheit // :'(
 }
 
 interface WeatherForecast {
-	day: string;
+	dayOfWeek: number;
 	icon?: string,
 	minTemp: number;
 	maxTemp: number;
@@ -53,10 +64,14 @@ function makeIconElement(icon?: string) {
 }
 
 
+
+
 function WeatherForecast(props: WeatherForecastProps) {
 	return (
 		<div className="forecast">
-			<span className="label">{props.day}</span>
+			<span className="label">
+				<FormattedMessage {...dayNames[props.dayOfWeek]} />
+			</span>
 			<span>
 				{makeIconElement(props.icon)}
 				{props.renderTemp(props.minTemp)} {props.renderTemp(props.maxTemp)}
@@ -104,7 +119,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 	}
 
 	const forecast = info.forecast.slice(1, 4).map(forecast =>
-			(<WeatherForecast key={forecast.day} renderTemp={renderTemp} {...forecast} />));
+			(<WeatherForecast key={forecast.dayOfWeek} renderTemp={renderTemp} {...forecast} />));
 
 	return (
 		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow-hard">
