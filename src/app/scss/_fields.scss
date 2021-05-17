@@ -26,6 +26,11 @@ input:not(.invisible), textarea:not(.invisible), select {
 	}
 }
 
+option {
+	background: #333;
+	color: white;
+}
+
 input[type="color"] {
 	padding: 0.2rem;
 	width: 50px;
