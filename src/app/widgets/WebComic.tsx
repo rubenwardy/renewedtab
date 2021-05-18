@@ -17,7 +17,7 @@ const messages = defineMessages({
 	},
 
 	description: {
-		defaultMessage: "Shows the most recent page from a webcomic, using Atom or RSS",
+		defaultMessage: "Shows the most recent image from a Atom or RSS, useful for WebComics.",
 	},
 
 	titleHint: {

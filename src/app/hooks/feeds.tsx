@@ -15,7 +15,21 @@ export interface Feed {
 	articles: Article[];
 }
 
-function getImage(html?: string): ([string, string] | undefined) {
+function cleanURL(url: string) {
+	if (url.startsWith("//")) {
+		return "https://" + url.slice(2);
+	} else {
+		return url;
+	}
+}
+
+function getImage(el: Element): ([string, string | undefined] | undefined) {
+	const enclosure = el.querySelector("enclosure[type^='image/'][url]");
+	if (enclosure) {
+		return [ cleanURL(enclosure.getAttribute("url")!), undefined ];
+	}
+
+	const html = el.querySelector("description, summary")?.textContent ?? undefined
 	if (!html) {
 		return undefined;
 	}
@@ -26,19 +40,14 @@ function getImage(html?: string): ([string, string] | undefined) {
 		return undefined;
 	}
 
-	let src = img.getAttribute("src")!;
-	if (src.startsWith("//")) {
-		src = "https://" + src.slice(2);
-	}
-
-	return [ src, img.getAttribute("alt") ?? ""];
+	return [ cleanURL(img.getAttribute("src")!), img.getAttribute("alt") ?? ""];
 }
 
 function parseFeed(root: Element): Feed | null {
 	const articles: Article[] = [];
 	if (root.tagName == "rss") {
 		root.querySelectorAll("item").forEach(el => {
-			const img = getImage(el.querySelector("description")?.textContent ?? undefined);
+			const img = getImage(el);
 			articles.push({
 				title: escapeHTMLtoText(el.querySelector("title")!.textContent!),
 				link: el.querySelector("link")!.textContent!,
@@ -54,7 +63,7 @@ function parseFeed(root: Element): Feed | null {
 		};
 	} else if (root.tagName == "feed") {
 		root.querySelectorAll("entry").forEach(el => {
-			const img = getImage(el.querySelector("summary")?.textContent ?? undefined);
+			const img = getImage(el);
 			articles.push({
 				title: escapeHTMLtoText(el.querySelector("title")!.textContent!),
 				link: el.querySelector("link")!.getAttribute("href")!,

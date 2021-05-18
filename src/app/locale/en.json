@@ -129,9 +129,6 @@
   "DbkCFr": {
     "defaultMessage": "Create a new todo item"
   },
-  "DyNSTr": {
-    "defaultMessage": "Shows the most recent page from a webcomic, using Atom or RSS"
-  },
   "EHTHzJ": {
     "defaultMessage": "Search engine name"
   },
@@ -469,6 +466,9 @@
   },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
+  },
+  "nG+fb7": {
+    "defaultMessage": "Shows the most recent image from a Atom or RSS, useful for WebComics."
   },
   "o24MzT": {
     "defaultMessage": "Unable to get bookmarks"

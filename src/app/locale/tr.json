@@ -110,9 +110,6 @@
   "DbkCFr": {
     "defaultMessage": "Yeni bir yapılacak hatırlatması yarat"
   },
-  "DyNSTr": {
-    "defaultMessage": "Atom veya RSS kullanarak bir webcomic'in en yeni sayfasını gösterir"
-  },
   "EHTHzJ": {
     "defaultMessage": "Arama motoru ismi"
   },
@@ -602,5 +599,8 @@
   },
   "LeB+DB": {
     "defaultMessage": "Enable custom icons"
+  },
+  "nG+fb7": {
+    "defaultMessage": "Shows the most recent image from a Atom or RSS, useful for WebComics."
   }
 }
