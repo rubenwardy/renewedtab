@@ -1,6 +1,6 @@
 import { MessageDescriptor } from "@formatjs/intl";
 import { defineMessages } from "react-intl";
-import schemaMessages from "./locale/common";
+import { schemaMessages } from "./locale/common";
 import Schema, { type } from "./utils/Schema";
 import { Vector2 } from "./utils/Vector2";
 

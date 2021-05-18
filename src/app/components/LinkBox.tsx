@@ -4,7 +4,7 @@ import { defineMessages } from 'react-intl';
 import { usePromise } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIcon } from 'app/WebsiteIcon';
-import schemaMessages from 'app/locale/common';
+import { schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetTheme } from 'app/Widget';
 import Panel from './Panel';

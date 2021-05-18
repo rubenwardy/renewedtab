@@ -351,6 +351,9 @@
     "defaultMessage": "Daily Goal",
     "description": "Daily Goal Widget"
   },
+  "a09vzt": {
+    "defaultMessage": "HTTP request failed, {code} {msg}."
+  },
   "aA8bDw": {
     "defaultMessage": "Text"
   },
@@ -387,6 +390,9 @@
   },
   "ekIjqh": {
     "defaultMessage": "Grant permission to access all websites"
+  },
+  "ekW/+6": {
+    "defaultMessage": "Unable to connect to the Internet"
   },
   "gSjZfg": {
     "defaultMessage": "Links",
@@ -460,6 +466,9 @@
   },
   "mY9tpI": {
     "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
+  },
+  "o24MzT": {
+    "defaultMessage": "Unable to get bookmarks"
   },
   "o2uuHu": {
     "defaultMessage": "12 hour clock"

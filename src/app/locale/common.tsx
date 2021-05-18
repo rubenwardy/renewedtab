@@ -1,6 +1,6 @@
 import { defineMessages } from "react-intl";
 
-const schemaMessages = defineMessages({
+export const schemaMessages = defineMessages({
 	url: {
 		defaultMessage: "URL",
 	},
@@ -54,4 +54,10 @@ const schemaMessages = defineMessages({
 	}
 });
 
-export default schemaMessages;
+
+export const errorMessages = defineMessages({
+	no_network: {
+		defaultMessage: "Unable to connect to the Internet",
+	},
+
+});

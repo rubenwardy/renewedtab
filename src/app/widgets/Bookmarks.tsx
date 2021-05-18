@@ -26,6 +26,10 @@ const messages = defineMessages({
 	includeFolders: {
 		defaultMessage: "Include folders as sections",
 	},
+
+	errFetchBookmarks: {
+		defaultMessage: "Unable to get bookmarks",
+	},
 });
 
 interface BookmarksProps {
@@ -60,7 +64,7 @@ async function getBookmarks(includeFolders: boolean): Promise<Link[]> {
 
 	const bookmarks = await tryGetSubTree("1") ?? await tryGetSubTree("toolbar_____");
 	if (!bookmarks) {
-		throw new Error("Unable to get bookmarks");
+		throw messages.errFetchBookmarks;
 	}
 
 	addAllChildren(bookmarks.children!);

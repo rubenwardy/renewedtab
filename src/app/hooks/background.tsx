@@ -1,4 +1,4 @@
-import schemaMessages from "app/locale/common";
+import { schemaMessages } from "app/locale/common";
 import { storage } from "app/Storage";
 import { useState } from "react";
 import { defineMessages, MessageDescriptor } from "react-intl";

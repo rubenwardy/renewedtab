@@ -1,4 +1,5 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
+import { errorMessages } from "app/locale/common";
 import { IntlShape, useIntl } from "react-intl";
 import { usePromise } from "./promises";
 
@@ -26,7 +27,7 @@ async function fetchCheckCors(intl: IntlShape, request: Request,
 					e.message.includes("Failed to fetch"))) {
 			await checkHostPermission(intl, request.url);
 
-			throw new Error("Unable to connect to the Internet");
+			throw errorMessages.no_network;
 		}
 		throw e;
 	}
@@ -59,7 +60,9 @@ async function fetchXML(intl: IntlShape, url: string) {
 
 	const str = await response.text();
 	if (!response.ok) {
-		throw new Error(`HTTP request failed, ${response.status} ${response.statusText}`);
+		throw intl.formatMessage({
+			defaultMessage: "HTTP request failed, {code} {msg}."
+		}, { code: response.status, msg: response.statusText });
 	}
 
 	const xml = new window.DOMParser().parseFromString(str, "text/xml");

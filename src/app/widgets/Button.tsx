@@ -1,4 +1,4 @@
-import schemaMessages from 'app/locale/common';
+import { schemaMessages } from 'app/locale/common';
 import Color from 'app/utils/Color';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';

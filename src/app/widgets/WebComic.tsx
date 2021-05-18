@@ -4,7 +4,7 @@ import Schema, { AutocompleteList, type } from 'app/utils/Schema';
 import { useFeed } from 'app/hooks/feeds';
 import { WidgetProps } from 'app/Widget';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
-import schemaMessages from 'app/locale/common';
+import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';

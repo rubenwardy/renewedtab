@@ -590,5 +590,14 @@
   },
   "rAuRqW": {
     "defaultMessage": "Translations are provided by the community."
+  },
+  "a09vzt": {
+    "defaultMessage": "HTTP request failed, {code} {msg}."
+  },
+  "ekW/+6": {
+    "defaultMessage": "Unable to connect to the Internet"
+  },
+  "o24MzT": {
+    "defaultMessage": "Unable to get bookmarks"
   }
 }
