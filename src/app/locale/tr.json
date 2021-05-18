@@ -437,45 +437,45 @@
     "defaultMessage": "Renewed Tab hakkında"
   },
   "D3idYv": {
-    "defaultMessage": "Settings"
+    "defaultMessage": "Ayarlar"
   },
   "PHutSR": {
-    "defaultMessage": "Opacity"
+    "defaultMessage": "Opaklık"
   },
   "QqE4JC": {
-    "defaultMessage": "Missing feed URL."
+    "defaultMessage": "Besleme URL'i eksik."
   },
   "QrihTZ": {
-    "defaultMessage": "Friday"
+    "defaultMessage": "Cuma"
   },
   "T4VxQN": {
-    "defaultMessage": "Loading…"
+    "defaultMessage": "Yükleniyor…"
   },
   "U2Qnh7": {
-    "defaultMessage": "Image",
+    "defaultMessage": "Görüntü",
     "description": "Image background mode"
   },
   "WKiXhX": {
-    "defaultMessage": "Color",
+    "defaultMessage": "Renk",
     "description": "Color background mode"
   },
   "WMNHPh": {
-    "defaultMessage": "Saturday"
+    "defaultMessage": "Cumartesi"
   },
   "XITVvp": {
-    "defaultMessage": "Show panel background"
+    "defaultMessage": "Panel arkaplanını göster"
   },
   "YAgYL6": {
-    "defaultMessage": "Tuesday"
+    "defaultMessage": "Salı"
   },
   "azMsfM": {
-    "defaultMessage": "Monday"
+    "defaultMessage": "Pazartesi"
   },
   "lUdRdE": {
-    "defaultMessage": "Error: {msg}"
+    "defaultMessage": "Hata: {msg}"
   },
   "lYJGY5": {
-    "defaultMessage": "Image URL",
+    "defaultMessage": "Görüntü URL'i",
     "description": "Image URL background mode"
   },
   "lkJAu6": {
@@ -483,47 +483,47 @@
     "description": "Unsplash background mode"
   },
   "lxblgl": {
-    "defaultMessage": "Wednesday"
+    "defaultMessage": "Çarşamba"
   },
   "mJR06P": {
-    "defaultMessage": "Sunday"
+    "defaultMessage": "Pazar"
   },
   "qAhUUO": {
-    "defaultMessage": "Thursday"
+    "defaultMessage": "Perşembe"
   },
   "qCcwo3": {
-    "defaultMessage": "Links"
+    "defaultMessage": "Linkler"
   },
   "ycaP+t": {
-    "defaultMessage": "Auto",
+    "defaultMessage": "Otomatik",
     "description": "Auto background mode"
   },
   "/dtDqf": {
-    "defaultMessage": "Notes",
+    "defaultMessage": "Notlar",
     "description": "Notes Widget"
   },
   "5CFbLI": {
-    "defaultMessage": "Greeting",
+    "defaultMessage": "Karşılama",
     "description": "Gretting Widget"
   },
   "7OH6mh": {
-    "defaultMessage": "Image",
+    "defaultMessage": "Görüntü",
     "description": "Image Widget"
   },
   "CmRs9p": {
-    "defaultMessage": "Search",
+    "defaultMessage": "Arama",
     "description": "Search Widget"
   },
   "G6WG/N": {
-    "defaultMessage": "Invisible",
+    "defaultMessage": "Görünmez",
     "description": "Invisible Widget"
   },
   "Lxc1x4": {
-    "defaultMessage": "Clock",
+    "defaultMessage": "Saat",
     "description": "Clock Widget"
   },
   "MeEElY": {
-    "defaultMessage": "Age",
+    "defaultMessage": "Yaş",
     "description": "Age Widget"
   },
   "S3njcM": {
@@ -531,43 +531,43 @@
     "description": "IFrame Widget"
   },
   "SAo61B": {
-    "defaultMessage": "Bookmarks",
+    "defaultMessage": "Yer İmleri",
     "description": "Bookmarks Widget"
   },
   "SG4UJU": {
-    "defaultMessage": "Button",
+    "defaultMessage": "Buton",
     "description": "Button Widget"
   },
   "TUnCKb": {
-    "defaultMessage": "Text",
+    "defaultMessage": "Yazı",
     "description": "Text Widget"
   },
   "Wv6Hyh": {
-    "defaultMessage": "HelpAbout",
+    "defaultMessage": "YardımHakkında",
     "description": "HelpAbout Widget"
   },
   "XsTD4Q": {
-    "defaultMessage": "Todo List",
+    "defaultMessage": "Yapılacaklar Listesi",
     "description": "Todo List Widget"
   },
   "ZZIlU9": {
-    "defaultMessage": "Daily Goal",
+    "defaultMessage": "Günlük Hedef",
     "description": "Daily Goal Widget"
   },
   "dGu5JQ": {
-    "defaultMessage": "Feed",
+    "defaultMessage": "Besleme",
     "description": "Feed Widget"
   },
   "gSjZfg": {
-    "defaultMessage": "Links",
+    "defaultMessage": "Linkler",
     "description": "Links Widget"
   },
   "p8GKKf": {
-    "defaultMessage": "Top Sites",
+    "defaultMessage": "Sık Kullanılan Siteler",
     "description": "Top Sites Widget"
   },
   "tyq8NB": {
-    "defaultMessage": "Weather",
+    "defaultMessage": "Hava Durumu",
     "description": "Weather Widget"
   },
   "ubO4zt": {
@@ -575,32 +575,32 @@
     "description": "Web Comic Widget"
   },
   "x59fh0": {
-    "defaultMessage": "Space Flights",
+    "defaultMessage": "Uzay Uçuşları",
     "description": "Space Flights Widget"
   },
   "or/+Da": {
-    "defaultMessage": "Styling",
+    "defaultMessage": "Biçimleme",
     "description": "Subheading for per-widget styling properties"
   },
   "Q1mwPp": {
-    "defaultMessage": "Consider <a>contributing or adding your language</a>."
+    "defaultMessage": "<a>Kendi dilinizi eklemeyi veya desteklemeyi</a> düşünebilirsiniz."
   },
   "rAuRqW": {
-    "defaultMessage": "Translations are provided by the community."
+    "defaultMessage": "Çeviriler topluluk tarafından sağlanmıştır."
   },
   "a09vzt": {
-    "defaultMessage": "HTTP request failed, {code} {msg}."
+    "defaultMessage": "HTTP isteği başarısız oldu, {code} {msg}."
   },
   "ekW/+6": {
-    "defaultMessage": "Unable to connect to the Internet"
+    "defaultMessage": "İnternete bağlanılamıyor"
   },
   "o24MzT": {
-    "defaultMessage": "Unable to get bookmarks"
+    "defaultMessage": "Yer imleri alınamıyor"
   },
   "LeB+DB": {
-    "defaultMessage": "Enable custom icons"
+    "defaultMessage": "Özel ikonlar kullan"
   },
   "oepT0O": {
-    "defaultMessage": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
+    "defaultMessage": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır."
   }
 }
