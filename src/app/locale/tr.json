@@ -95,9 +95,6 @@
   "B9mB91": {
     "defaultMessage": "Görüntü URL'i"
   },
-  "Ba+GF/": {
-    "defaultMessage": "<a>Kendi dilinizde destek eklemeyi</a> düşünebilirsiniz"
-  },
   "CExMi4": {
     "defaultMessage": "İyi akşamlar"
   },
@@ -587,5 +584,11 @@
   "or/+Da": {
     "defaultMessage": "Styling",
     "description": "Subheading for per-widget styling properties"
+  },
+  "Q1mwPp": {
+    "defaultMessage": "Consider <a>contributing or adding your language</a>."
+  },
+  "rAuRqW": {
+    "defaultMessage": "Translations are provided by the community."
   }
 }

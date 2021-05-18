@@ -31,7 +31,13 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				</select>
 				<p className="text-muted">
 					<FormattedMessage
-						defaultMessage="Consider <a>adding support for your language</a>."
+						defaultMessage="Translations are provided by the community."
+						values={{
+							a: (chunk: any) => (
+								<a href="https://renewedtab.rubenwardy.com/translations/">{chunk}</a>)
+						}} /><br />
+					<FormattedMessage
+						defaultMessage="Consider <a>contributing or adding your language</a>."
 						values={{
 							a: (chunk: any) => (
 								<a href="https://renewedtab.rubenwardy.com/translations/">{chunk}</a>)

@@ -107,9 +107,6 @@
   "B9mB91": {
     "defaultMessage": "Image URL"
   },
-  "Ba+GF/": {
-    "defaultMessage": "Consider <a>adding support for your language</a>."
-  },
   "CExMi4": {
     "defaultMessage": "Good evening"
   },
@@ -236,6 +233,9 @@
   },
   "PuZCei": {
     "defaultMessage": "Leave blank to use feed's title"
+  },
+  "Q1mwPp": {
+    "defaultMessage": "Consider <a>contributing or adding your language</a>."
   },
   "QqE4JC": {
     "defaultMessage": "Missing feed URL."
@@ -489,6 +489,9 @@
   },
   "qzFcWI": {
     "defaultMessage": "Primary Color"
+  },
+  "rAuRqW": {
+    "defaultMessage": "Translations are provided by the community."
   },
   "rPjMRD": {
     "defaultMessage": "{mode} Options"
