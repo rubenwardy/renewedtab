@@ -1,4 +1,4 @@
-import LinkBox, { LinkSchema, LinkBoxProps } from 'app/components/LinkBox';
+import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema } from 'app/components/LinkBox';
 import Schema, { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
@@ -19,6 +19,10 @@ const messages = defineMessages({
 
 	links: {
 		defaultMessage: "Links",
+	},
+
+	enableCustomIcons: {
+		defaultMessage: "Enable custom icons",
 	},
 
 	useWebsiteIcons: {
@@ -76,15 +80,18 @@ Links.initialProps = {
 	]
 };
 
-Links.schema = (_widget: Widget<LinkBoxProps>) => {
+Links.schema = (widget: Widget<LinkBoxProps>) => {
+	const linkSchema = widget.props.enableCustomIcons ? FullLinkSchema : LinkSchema;
 	if (typeof browser !== "undefined") {
 		return {
-			links: type.array(LinkSchema, messages.links),
+			links: type.array(linkSchema, messages.links),
+			enableCustomIcons: type.boolean(messages.enableCustomIcons),
 			useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
 		} as Schema;
 	} else {
 		return {
-			links: type.array(LinkSchema, messages.links),
+			enableCustomIcons: type.boolean(messages.enableCustomIcons),
+			links: type.array(linkSchema, messages.links),
 		} as Schema;
 	}
 }

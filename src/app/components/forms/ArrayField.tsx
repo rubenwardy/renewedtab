@@ -168,5 +168,7 @@ export default function ArrayField(props: FieldProps<any[]>) {
 					<FormattedMessage
 							defaultMessage="Add" />
 				</a>}
+
+			<div className="clear-both" />
 		</>);
 }

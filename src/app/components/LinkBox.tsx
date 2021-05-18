@@ -30,9 +30,15 @@ export interface Link {
 
 export const LinkSchema : Schema = {
 	title: type.string(schemaMessages.title),
+	url: type.url(schemaMessages.url, messages.urlHint),
+};
+
+export const FullLinkSchema : Schema = {
+	title: type.string(schemaMessages.title),
 	icon: type.url(schemaMessages.icon, messages.iconHint),
 	url: type.url(schemaMessages.url, messages.urlHint),
 };
+
 
 
 interface IconProps {
@@ -69,6 +75,7 @@ export interface LinkBoxProps {
 	useWebsiteIcons?: boolean;
 	defaultIcon?: string;
 	errorIcon?: string;
+	enableCustomIcons?: boolean;
 }
 
 
