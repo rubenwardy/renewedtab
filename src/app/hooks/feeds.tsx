@@ -26,7 +26,12 @@ function getImage(html?: string): ([string, string] | undefined) {
 		return undefined;
 	}
 
-	return [ img.getAttribute("src")!, img.getAttribute("alt") ?? ""];
+	let src = img.getAttribute("src")!;
+	if (src.startsWith("//")) {
+		src = "https://" + src.slice(2);
+	}
+
+	return [ src, img.getAttribute("alt") ?? ""];
 }
 
 function parseFeed(root: Element): Feed | null {
