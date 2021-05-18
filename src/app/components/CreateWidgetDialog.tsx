@@ -22,7 +22,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	const intl = useIntl();
 
 	let widgets = widgetTypes
-		.filter(([_, widget]) => isBrowser || widget.isBrowserOnly !== true)
+		.filter(([, widget]) => isBrowser || widget.isBrowserOnly !== true)
 		.map(([key, widget]) => (
 			<li key={key}>
 				<a onClick={() => select(key)}>
@@ -36,8 +36,8 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 
 	if (!isBrowser) {
 		widgets = widgets.concat(widgetTypes
-			.filter(([_, widget]) => widget.isBrowserOnly === true)
-			.map(([key, _widget]) => (
+			.filter(([, widget]) => widget.isBrowserOnly === true)
+			.map(([key,]) => (
 				<li key={key} className="text text-muted">
 					{key}
 					<span className="ml-1">

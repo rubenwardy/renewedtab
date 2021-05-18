@@ -11,7 +11,7 @@ const messages = defineMessages({
 	},
 });
 
-export default function ImportExport(_props: any) {
+export default function ImportExport() {
 	async function handleReset() {
 		await storage.clear();
 		location.reload();
@@ -19,7 +19,7 @@ export default function ImportExport(_props: any) {
 
 	async function getStoredData(): Promise<string> {
 		const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
-		for (let key in data) {
+		for (const key in data) {
 			if (key.startsWith("large-")) {
 				data[key] = undefined;
 			}
@@ -31,7 +31,7 @@ export default function ImportExport(_props: any) {
 	async function handleImport(file: File) {
 		const json = new TextDecoder("utf-8").decode(await file.arrayBuffer());
 		const data = JSON.parse(json);
-		for (let [key, value] of Object.entries(data)) {
+		for (const [key, value] of Object.entries(data)) {
 			await storage.set(key, value);
 		}
 

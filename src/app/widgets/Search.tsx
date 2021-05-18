@@ -55,9 +55,9 @@ declare namespace browser.search {
 		favIconUrl?: string;
 	}
 
-	function get(): Promise<SearchEngine[]>;
-	function search(props: any): void;
-	function query(props: any): void;
+	function get(): Promise<SearchEngine[]>; // eslint-disable-line
+	function search(props: any): void; // eslint-disable-line
+	function query(props: any): void; // eslint-disable-line
 }
 
 declare namespace browser.tabs {
@@ -65,7 +65,7 @@ declare namespace browser.tabs {
 		id?: number;
 	}
 
-	function getCurrent(): Promise<Tab>;
+	function getCurrent(): Promise<Tab>; // eslint-disable-line
 }
 
 

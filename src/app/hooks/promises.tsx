@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
  */
 export function runPromise<T>(func: () => Promise<T>,
 		then: (value: T) => void, reject: (reason: any) => void,
-		dependents?: any[]) {
+		dependents?: any[]): void {
 	useEffect(() => {
 		let cancelled = false;
 

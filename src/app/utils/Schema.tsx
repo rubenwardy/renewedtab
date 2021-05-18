@@ -55,12 +55,12 @@ export namespace type {
 	export const number = makeTypeFunc("number");
 	export const json = makeTypeFunc("json");
 
-	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor) => ({
+	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor): SchemaEntry => ({
 		type: "unit_number",
 		label: label,
 		hint: hint,
 		unit: unit,
-	} as SchemaEntry);
+	});
 
 	/**
 	 * Date entry only, no time
@@ -89,7 +89,8 @@ export namespace type {
 	/**
 	 * enumType: The TypeScript enum object
 	 */
-	export const selectEnum = (enumType: any, label: MessageDescriptor, hint?: MessageDescriptor) => ({
+	export const selectEnum = (enumType: any, // eslint-disable-line
+			label: MessageDescriptor, hint?: MessageDescriptor): SchemaEntry => ({
 		type: enumType,
 		label: label,
 		hint: hint,
@@ -101,7 +102,8 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	export const array = (subschema: Schema, label: MessageDescriptor, hint?: MessageDescriptor) => ({
+	export const array = (subschema: Schema, label: MessageDescriptor,
+			hint?: MessageDescriptor): SchemaEntry => ({
 		type: "array",
 		subschema: subschema,
 		label: label,
@@ -114,7 +116,8 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	 export const unorderedArray = (subschema: Schema, label: MessageDescriptor, hint?: MessageDescriptor) => ({
+	 export const unorderedArray = (subschema: Schema, label: MessageDescriptor,
+			hint?: MessageDescriptor): SchemaEntry => ({
 		type: "unordered_array",
 		subschema: subschema,
 		label: label,

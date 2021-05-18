@@ -18,7 +18,7 @@ type JSONValues = { [key: string]: any } | any[] | string | number | boolean | n
  * @param anyObj Something to convert
  */
 
-export function toTypedJSON(anyObj: any): JSONValues {
+export function toTypedJSON(anyObj: any): JSONValues {  // eslint-disable-line
 	if (anyObj == null) {
 		return null;
 	} else if (Array.isArray(anyObj)) {
@@ -39,7 +39,7 @@ export function toTypedJSON(anyObj: any): JSONValues {
 		const obj = anyObj as { [key: string]: any };
 		const out: { [key: string]: any } = {};
 
-		for (let key in obj) {
+		for (const key in obj) {
 			out[key] = toTypedJSON(obj[key]);
 		}
 
@@ -74,7 +74,7 @@ export function fromTypedJSON(anyObj: JSONValues): any {
 			}
 		} else {
 			const out: { [key: string]: any } = {};
-			for (let key in obj) {
+			for (const key in obj) {
 				out[key] = fromTypedJSON(obj[key]);
 			}
 			return out;

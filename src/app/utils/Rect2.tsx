@@ -76,7 +76,7 @@ export class Rect2 {
 	}
 
 	intersects(b: Rect2): boolean {
-		const a = this;
+		const a = this; // eslint-disable-line
 		return a.left < b.right &&
 			b.left < a.right &&
 			a.top < b.bottom &&
@@ -86,4 +86,4 @@ export class Rect2 {
 	toString(): string {
 		return `${this.minPos.toString()} to ${this.maxPos.toString()}`;
 	}
-};
+}

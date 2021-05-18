@@ -29,7 +29,7 @@ export default class WidgetLayouter {
 					return pos;
 				}
 			}
-		};
+		}
 	}
 
 	add(widget: Widget<any>) {

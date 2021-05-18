@@ -39,7 +39,7 @@ async function fetchIcon(url: string): Promise<string> {
 
 	let topScore = -1;
 	let topIcon : (Element | null) = null;
-	for (let icon of icons.values()) {
+	for (const icon of icons.values()) {
 		const sizes = icon.getAttribute("sizes")?.split("x") ?? [];
 		const score = sizes.map((x) => parseInt(x))
 			.reduce((acc, x) => acc + x, 0);

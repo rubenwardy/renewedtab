@@ -2,7 +2,7 @@ import React from 'react';
 import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema from 'app/utils/Schema';
-import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import Panel from 'app/components/Panel';
 import { WidgetProps } from 'app/Widget';
 import ErrorView from 'app/components/ErrorView';

@@ -3,7 +3,7 @@ import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { Location, type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
-import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';

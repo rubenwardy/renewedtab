@@ -95,9 +95,7 @@ class DelegateStorage implements IStorage {
 	constructor(private delegate: IStorage, private prefix: string) {}
 
 	async getAll(): Promise<{ [key: string]: any; }> {
-		const data = await this.delegate.getAll();
-		return Object.entries(data)
-			.filter(([key, _value]) => key.startsWith(this.prefix));
+		throw new Error("Unimplemented");
 	}
 
 	async get<T>(key: string): Promise<T | null> {

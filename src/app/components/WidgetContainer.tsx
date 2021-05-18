@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getSchemaForWidget, defaultThemeSchema, WidgetProps, getThemeSchemaForWidget } from "../Widget";
+import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../Widget";
 import Modal from "./Modal";
 import { Form } from "./forms";
 import { ErrorBoundary } from "./ErrorBoundary";

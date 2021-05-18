@@ -31,7 +31,7 @@ export function HostURLFIeld(props: FieldProps<string>) {
 	}
 
 	const intl = useIntl();
-	const [autocomplete, _] = props.schemaEntry.autocomplete
+	const [autocomplete, ] = props.schemaEntry.autocomplete
 			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
 			: [ null, null ];
 
@@ -74,7 +74,7 @@ export function HostAllField(props: FieldProps<boolean>) {
 		origins: ["*://*/"],
 	};
 
-	const [needsPermission, _error] =
+	const [needsPermission,] =
 		usePromise(async () => ! await browser.permissions.contains(permissions),
 				[forceUpdate]);
 

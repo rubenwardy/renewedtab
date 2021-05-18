@@ -30,7 +30,7 @@ export default function Modal(props: ModalProps) {
 			if (e.key == "Escape") {
 				props.onClose()
 			}
-		};
+		}
 
 		window.addEventListener('keydown', close);
 		return () => window.removeEventListener('keydown', close);

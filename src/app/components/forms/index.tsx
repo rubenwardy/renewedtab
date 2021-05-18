@@ -22,7 +22,7 @@ import { ColorField, ColorPairField } from "./ColorFields";
 
 function isEnumType(x: any) {
 	const keys = new Set(Object.getOwnPropertyNames(x));
-	for (let key of keys) {
+	for (const key of keys) {
 		if (!keys.has(x[key].toString())) {
 			return false;
 		}

@@ -1,13 +1,15 @@
 import { MessageFormatElement } from "react-intl";
 
-const locales : { [key: string]: Record<string, MessageFormatElement[]> } = {
+type Translation = Record<string, MessageFormatElement[]>;
+
+const locales : { [key: string]: Translation } = {
 	"en": require("./compiled/en.json"),
 	"tr": require("./compiled/tr.json"),
 };
 
-for (let lang in locales) {
+for (const lang in locales) {
 	if (lang != "en") {
-		for (let [key, value] of Object.entries(locales["en"])) {
+		for (const [key, value] of Object.entries(locales["en"])) {
 			if (typeof locales[lang][key] === "undefined") {
 				locales[lang][key] = value;
 			}
@@ -15,19 +17,19 @@ for (let lang in locales) {
 	}
 }
 
-export default function getTranslation(locale: string) {
+export default function getTranslation(locale: string): Translation {
 	return locales[locale] ?? locales.en;
 }
 
-export function getUserLocale() {
+export function getUserLocale(): string {
 	const langs = navigator.languages ? navigator.languages : [navigator.language];
-	for (let lang of langs) {
+	for (const lang of langs) {
 		if (locales[lang]) {
 			return lang;
 		}
 	}
 
-	for (let lang of langs) {
+	for (const lang of langs) {
 		const idx = lang.indexOf("-");
 		if (idx && locales[lang.substring(0, idx)]) {
 			return lang;

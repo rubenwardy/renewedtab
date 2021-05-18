@@ -42,7 +42,7 @@ export default function ImageUploadField(props: FieldProps<string>) {
 			await largeStorage.remove(props.value);
 		}
 
-		let id = `image-${uuid()}`;
+		const id = `image-${uuid()}`;
 		const data = await readFileAsDataURL(file);
 		await largeStorage.set(id, {
 			filename: file.name,

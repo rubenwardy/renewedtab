@@ -2,7 +2,7 @@ import React from "react";
 import { FormattedMessage } from "react-intl";
 
 
-export default function AboutSettings(_props: any) {
+export default function AboutSettings() {
 	return (
 		<div className="modal-body">
 			<h2>

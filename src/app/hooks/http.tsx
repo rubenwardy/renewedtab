@@ -92,11 +92,11 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
  * @param {any[]} dependents - A list of dependent variables for the URL.
  * @return {[response, error]]} - Response and error
  */
-export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promise<T> {
+export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promise<T> { // eslint-disable-line
 	const url = new URL(config.API_URL);
 	url.pathname = (url.pathname + path).replace(/\/\//g, "/");
 	Object.entries(args).forEach(([key, value]) => {
-		url.searchParams.set(key.toString(), (value as Object).toString());
+		url.searchParams.set(key.toString(), (value as any).toString());
 	})
 
 	return fetchJSON(intl, url.toString());
@@ -111,7 +111,8 @@ export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promi
  * @param {any[]} dependents - A list of dependent variables for the URL.
  * @return {[response, error]]} - Response and error
  */
-export function useAPI<T>(path: string, args: any, dependents?: any[]): [(T | null), (string | null)] {
+export function useAPI<T>(path: string, args: any, // eslint-disable-line
+		dependents?: any[]): [(T | null), (string | null)] {
 	const intl = useIntl();
 	return usePromise(() => getAPI(intl, path, args), dependents);
 }

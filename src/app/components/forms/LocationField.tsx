@@ -1,7 +1,7 @@
 import { useAPI } from "app/hooks";
 import { Location } from "app/utils/Schema";
 import React, { useRef, useState } from "react";
-import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+import { defineMessages, FormattedMessage } from "react-intl";
 import { FieldProps } from ".";
 import ErrorView from "../ErrorView";
 

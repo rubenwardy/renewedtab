@@ -26,7 +26,7 @@ export class WidgetManager {
 		this.id_counter =
 			this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 
-		for (let widget of this.widgets) {
+		for (const widget of this.widgets) {
 			widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
 			widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
 
@@ -74,7 +74,7 @@ export class WidgetManager {
 	}
 
 	removeWidget(id: number) {
-		var i = this.widgets.length;
+		let i = this.widgets.length;
 		while (i--) {
 			if (this.widgets[i].id == id) {
 				this.widgets.splice(i, 1);

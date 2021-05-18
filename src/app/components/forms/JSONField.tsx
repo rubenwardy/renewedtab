@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { FieldProps } from ".";
 
-export default function JSONField(props: FieldProps<Object | any[]>) {
+export default function JSONField(props: FieldProps<any | any[]>) {
 	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
 		if (props.onChange) {
 			props.onChange(JSON.parse(e.target.value));

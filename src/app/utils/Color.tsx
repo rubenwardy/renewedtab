@@ -32,7 +32,7 @@ export default class Color {
 				return null;
 			}
 
-			const [_, r, g, b, a] = matches!;
+			const [ , r, g, b, a] = matches!;
 			return new Color(parseInt(r), parseInt(g), parseInt(b), parseInt(a));
 		}
 

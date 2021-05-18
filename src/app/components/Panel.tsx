@@ -21,7 +21,7 @@ export interface PanelProps extends WidgetTheme {
 
 
 export default function Panel(props: PanelProps) {
-	let className = [];
+	const className = [];
 	if (props.showPanelBG) {
 		className.push("panel");
 		if (props.flush) {

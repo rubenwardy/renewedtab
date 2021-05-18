@@ -4,7 +4,7 @@ import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
 import Schema from "app/utils/Schema";
 import { useForceUpdate } from "app/hooks";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 interface RowProps extends FormProps {
 	idx: number;

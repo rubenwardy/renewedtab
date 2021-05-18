@@ -1,6 +1,6 @@
 import { SchemaEntry } from "app/utils/Schema";
 import React from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 import { makeField } from ".";
 
 

@@ -6,7 +6,7 @@ export * from "./storage";
 export * from "./background";
 
 
-export function useForceUpdate() {
-	const [_, setForce] = useState({});
+export function useForceUpdate(): () => void {
+	const [, setForce] = useState({});
 	return () => setForce({});
 }

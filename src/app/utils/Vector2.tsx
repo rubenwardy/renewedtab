@@ -50,7 +50,7 @@ export class Vector2 {
 		return V(Math.max(this.x, other.x), Math.max(this.y, other.y));
 	}
 
-	apply(func: (x: number) => number) {
+	apply(func: (x: number) => number): Vector2 {
 		return V(func(this.x), func(this.y));
 	}
 
@@ -75,7 +75,7 @@ export class Vector2 {
 		return this.x + this.y * 10000;
 	}
 
-	equals(other: Vector2) {
+	equals(other: Vector2): boolean {
 		return this.x == other.x && this.y == other.y;
 	}
 
