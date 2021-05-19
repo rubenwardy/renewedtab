@@ -116,3 +116,22 @@
 	width: 100%;
 	height: 100%;
 }
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.col {
+	display: block;
+	flex-grow: 1;
+}
+
+.col-auto {
+	display: block;
+	flex-shrink: 0;
+}
+
+.one-line {
+	@include line_clamp(1);
+}

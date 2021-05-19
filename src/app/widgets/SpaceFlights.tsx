@@ -86,9 +86,15 @@ export default function SpaceFlights(widget: WidgetProps<any>) {
 	const rows = data.map(launch => (
 		<li key={launch.id}>
 			<a href={launch.link}>
-				{launch.name}<br />
-				<span className="text-muted">{launch.provider}</span>
-				<span className="float-right text-muted">{getDate(launch)}</span>
+				{launch.name}
+				<div className="row">
+					<span className="col one-line text-muted">
+						{launch.provider}
+					</span>
+					<span className="col-auto float-right text-muted">
+						{getDate(launch)}
+					</span>
+				</div>
 			</a>
 		</li>));
 
