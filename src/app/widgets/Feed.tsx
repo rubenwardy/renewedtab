@@ -1,7 +1,7 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { AutocompleteList, type } from 'app/utils/Schema';
-import { Feed, useFeed } from 'app/hooks/feeds';
+import { useFeed } from 'app/hooks/feeds';
 import { Widget, WidgetProps } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
