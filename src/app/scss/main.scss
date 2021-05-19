@@ -3,8 +3,10 @@
 	--font-size: 100%
 	--panel-blur: 12px;
 	--panel-opacity: 0.5;
-	--color-primary: #007DB8;
-	--color-primary-lighter: #06aed5;
+	--color-primary-dark: #007DB8;
+	--color-primary-dark-highlight: #06aed5;
+	--color-primary-light: #67cee5;
+	--color-primary-light-highlight: #96e7fa;
 }
 
 html, body, #app {
@@ -29,12 +31,12 @@ h1 {
 
 a, .link {
 	cursor: pointer;
-	color: var(--color-primary-lighter);
+	color: var(--color-primary-light);
 	text-decoration: none;
 	transition: filter 0.1s ease-in-out;
 
 	&:not(.btn):hover {
-		filter: brightness(1.2);
+		color: var(--color-primary-light-highlight);
 		text-decoration: underline;
 	}
 }

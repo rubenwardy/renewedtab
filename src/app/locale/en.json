@@ -172,9 +172,6 @@
   "KFe74G": {
     "defaultMessage": "Reset everything"
   },
-  "KKmoGl": {
-    "defaultMessage": "You may need to reload the page to see changes take affect."
-  },
   "LeB+DB": {
     "defaultMessage": "Enable custom icons"
   },
@@ -248,9 +245,6 @@
   },
   "RUl5Gc": {
     "defaultMessage": "Display an image, optionally making it a link"
-  },
-  "RtfJfe": {
-    "defaultMessage": "Reload page"
   },
   "Rw51mJ": {
     "defaultMessage": "Powered by <a>OpenStreetMap</a>."

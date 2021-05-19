@@ -19,7 +19,7 @@
 	}
 
 	&.active {
-		color: var(--color-primary);
+		color: var(--color-primary-dark);
 	}
 }
 
@@ -38,12 +38,12 @@
 }
 
 .btn-primary {
-	background-color: var(--color-primary);
-	border-color: var(--color-primary);
+	background-color: var(--color-primary-dark);
+	border-color: var(--color-primary-dark);
 
 	&:hover {
-		background-color: var(--color-primary-lighter);
-		border-color: var(--color-primary-lighter);
+		background-color: var(--color-primary-dark-highlight);
+		border-color: var(--color-primary-dark-highlight);
 	}
 }
 
