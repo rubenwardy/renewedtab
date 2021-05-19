@@ -11,10 +11,6 @@ const messages = defineMessages({
 		defaultMessage: "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes.",
 	},
 
-	requiresReload: {
-		defaultMessage: "You may need to reload the page to see changes take affect.",
-	},
-
 	font: {
 		defaultMessage: "Font",
 	},
@@ -91,15 +87,9 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 				<FormattedMessage {...messages.experimental}
 					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
 			</p>
-			<p className="text-muted">
-				<FormattedMessage {...messages.requiresReload} />
-			</p>
 			<p>
 				<a className="btn btn-secondary" onClick={resetTheme}>
 					<FormattedMessage defaultMessage="Reset theme to default" />
-				</a>
-				<a className="btn btn-secondary" onClick={() => location.reload()}>
-					<FormattedMessage defaultMessage="Reload page" />
 				</a>
 			</p>
 			<Form values={theme} schema={getThemeSchema()}

@@ -1,6 +1,7 @@
 import { IStorage, largeStorage, storage } from "app/Storage";
 import debounce from "app/utils/debounce";
 import { useMemo, useState } from "react";
+import { useForceUpdate } from ".";
 import { runPromise } from "./promises";
 
 
@@ -9,6 +10,9 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 	if (enableDebounce === undefined) {
 		enableDebounce = true;
 	}
+
+	// For table values
+	const forceUpdate = useForceUpdate();
 
 	const [value, setValue] = useState<T | null>(null);
 
@@ -27,6 +31,7 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 			backing.set(key, val)
 		}
 		setValue(val);
+		forceUpdate();
 	}
 
 	return [value, updateValue];
