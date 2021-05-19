@@ -60,9 +60,13 @@ async function fetchXML(intl: IntlShape, url: string) {
 
 	const str = await response.text();
 	if (!response.ok) {
-		throw intl.formatMessage({
-			defaultMessage: "HTTP request failed, {code} {msg}."
-		}, { code: response.status, msg: response.statusText });
+		if (response.headers.get("content-type")?.startsWith("text/html")) {
+			throw intl.formatMessage({
+				defaultMessage: "HTTP request failed, {code} {msg}."
+			}, { code: response.status, msg: response.statusText });
+		} else {
+			throw str;
+		}
 	}
 
 	const xml = new window.DOMParser().parseFromString(str, "text/xml");

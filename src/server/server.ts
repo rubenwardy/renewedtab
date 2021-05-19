@@ -43,10 +43,14 @@ app.use((_req, res, next) => {
 	next();
 });
 
+function writeClientError(res: express.Response, msg: string) {
+	res.status(400).type("text").send(msg);
+}
+
 
 app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.url) {
-		res.status(400).send("Missing URL");
+		writeClientError(res, "Missing URL");
 		return;
 	}
 
@@ -55,14 +59,14 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 		const result = await handleProxy(url);
 		res.status(result.status).type(result.contentType).send(result.text);
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
 
 app.get("/api/weather/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.long || !req.query.lat) {
-		res.status(400).send("Missing location");
+		writeClientError(res, "Missing location");
 		return;
 	}
 
@@ -71,21 +75,21 @@ app.get("/api/weather/", async (req: express.Request, res: express.Response) => 
 			Number.parseFloat(req.query.lat as string),
 			Number.parseFloat(req.query.long as string)));
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
 
 app.get("/api/geocode/", async (req: express.Request, res: express.Response) => {
 	if (!req.query.q) {
-		res.status(400).send("Missing query");
+		writeClientError(res, "Missing query");
 		return;
 	}
 
 	try {
 		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
@@ -94,7 +98,7 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response)
 	try {
 		res.json(await getBackground());
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
@@ -105,7 +109,7 @@ app.post("/api/background/vote/", async (req: express.Request, res: express.Resp
 		const background = req.body.background;
 		const isPositive = req.body.is_positive;
 		if (background?.id == undefined || isPositive === undefined) {
-			res.status(400).send("Missing background.id or is_positive");
+			writeClientError(res, "Missing background.id or is_positive");
 			return;
 		}
 
@@ -117,7 +121,7 @@ app.post("/api/background/vote/", async (req: express.Request, res: express.Resp
 
 		res.json({ success: true });
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
@@ -127,18 +131,18 @@ app.get("/api/unsplash/", async (req: express.Request, res: express.Response) =>
 	try {
 		const collection = req.query.collection as (string | undefined);
 		if (!collection) {
-			res.status(400).send("Missing collection ID");
+			writeClientError(res, "Missing collection ID");
 			return;
 		}
 
 		if (!reCollectionID.test(collection)) {
-			res.status(400).send("Invalid collection ID");
+			writeClientError(res, "Invalid collection ID");
 			return;
 		}
 
 		res.json(await getImageFromUnsplash(collection));
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
@@ -173,7 +177,7 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 
 		res.json(launches);
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 
@@ -181,7 +185,7 @@ const feedbackStream = fs.createWriteStream("feedback.txt", { flags: "a" });
 app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
 	try {
 		if (!req.body.event) {
-			res.status(400).send("Missing event");
+			writeClientError(res, "Missing event");
 			return;
 		}
 
@@ -219,7 +223,7 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 			res.json({ success: true });
 		}
 	} catch (ex) {
-		res.status(400).send(ex.message);
+		writeClientError(res, ex.message);
 	}
 });
 

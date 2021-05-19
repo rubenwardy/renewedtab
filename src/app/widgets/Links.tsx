@@ -90,8 +90,8 @@ Links.schema = (widget: Widget<LinkBoxProps>) => {
 		} as Schema;
 	} else {
 		return {
-			enableCustomIcons: type.boolean(messages.enableCustomIcons),
 			links: type.array(linkSchema, messages.links),
+			enableCustomIcons: type.boolean(messages.enableCustomIcons),
 		} as Schema;
 	}
 }
