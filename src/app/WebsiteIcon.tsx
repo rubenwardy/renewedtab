@@ -71,6 +71,16 @@ export function getWebsiteIcon(url: string): Promise<string> {
 	return cache.get(key)!;
 }
 
+
+export async function getWebsiteIconOrNull(url: string): Promise<(string | undefined)> {
+	try {
+		return await getWebsiteIcon(url);
+	} catch (e) {
+		return undefined;
+	}
+}
+
+
 export function clearWebsiteIcons() {
 	cache.clear();
 }

@@ -1,9 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { defineMessages } from 'react-intl';
-
 import { usePromise } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
-import { getWebsiteIcon } from 'app/WebsiteIcon';
+import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
 import { schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetTheme } from 'app/Widget';
@@ -18,7 +17,8 @@ const messages = defineMessages({
 	urlHint: {
 		defaultMessage: "Leave blank to make heading",
 	},
-})
+});
+
 
 export interface Link {
 	id: string; //< used by React for keys.
@@ -33,12 +33,12 @@ export const LinkSchema : Schema = {
 	url: type.url(schemaMessages.url, messages.urlHint),
 };
 
+
 export const FullLinkSchema : Schema = {
 	title: type.string(schemaMessages.title),
 	icon: type.url(schemaMessages.icon, messages.iconHint),
 	url: type.url(schemaMessages.url, messages.urlHint),
 };
-
 
 
 interface IconProps {
@@ -47,6 +47,7 @@ interface IconProps {
 	defaultIcon?: string;
 	errorIcon?: string;
 }
+
 
 function Icon(props: IconProps) {
 	const [errored, setErrored] = useState(false);
@@ -79,9 +80,10 @@ export interface LinkBoxProps {
 }
 
 
-function getAllIcons(sites: Link[]): Promise<string[]> {
-	return Promise.all(sites.map((site) => getWebsiteIcon(site.url)));
+function getAllIcons(sites: Link[]): Promise<(string | undefined)[]> {
+	return Promise.all(sites.map((site) => getWebsiteIconOrNull(site.url)));
 }
+
 
 export default function LinkBox(props: LinkBoxProps)  {
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
@@ -93,7 +95,9 @@ export default function LinkBox(props: LinkBoxProps)  {
 		const [icons] = usePromise(() => getAllIcons(sites ?? []), [links]);
 		if (icons) {
 			icons.forEach((icon, i) => {
-				sites[i].icon = icon;
+				if (icon) {
+					sites[i].icon = icon;
+				}
 			});
 		}
 	}
