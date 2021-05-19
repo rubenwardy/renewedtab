@@ -53,7 +53,7 @@
 			z-index: 2;
 
 			img {
-				filter: brightness(1.05);
+				filter: brightness(1.05), drop-shadow(3px 3px 3px rgba(15, 15, 15, 0.2));
 			}
 		}
 
