@@ -227,6 +227,15 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 	}
 });
 
+function compareString(a: string, b: string): number {
+	if (a < b) {
+		return -1;
+	}
+	if (a > b) {
+		return 1;
+	}
+	return 0;
+}
 
 function readAutocompleteFromFile(filename: string) {
 	return fs.readFileSync(`src/server/data/${filename}.csv`)
@@ -235,15 +244,7 @@ function readAutocompleteFromFile(filename: string) {
 		.map(x => x.split(","))
 		.filter(x => x.length == 2)
 		.map(([label, value]) => ({ label: label.trim(), value: value.trim() }))
-		.sort((a, b) => {
-			if (a.label < b.label) {
-				return -1;
-			}
-			if (a.label > b.label) {
-				return 1;
-			}
-			return 0;
-		});
+		.sort((a, b) => compareString(a.label, b.label));
 }
 
 

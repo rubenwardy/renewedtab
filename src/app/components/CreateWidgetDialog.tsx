@@ -1,3 +1,4 @@
+import { compareString } from "app/utils/string";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetManager } from "../WidgetManager";
@@ -18,28 +19,34 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 
 	const isBrowser = typeof browser !== "undefined";
 
-	const widgetTypes = Object.entries(WidgetTypes).sort();
 	const intl = useIntl();
+	const widgetTypes = Object.entries(WidgetTypes)
+			.map(([key, widget]) => ({
+				key,
+				title: intl.formatMessage(widget.title),
+				description: intl.formatMessage(widget.description),
+				isBrowserOnly: widget.isBrowserOnly,
+			})).sort((a, b) => compareString(a.title, b.title));
 
 	let widgets = widgetTypes
-		.filter(([, widget]) => isBrowser || widget.isBrowserOnly !== true)
-		.map(([key, widget]) => (
-			<li key={key}>
-				<a onClick={() => select(key)}>
-					<FormattedMessage {...widget.title} />
+		.filter((widget) => isBrowser || widget.isBrowserOnly !== true)
+		.map((widget) => (
+			<li key={widget.key}>
+				<a onClick={() => select(widget.key)}>
+					{widget.title}
 					<span className="text-muted ml-1">
 						&nbsp;
-						<FormattedMessage {...widget.description} />
+						{widget.description}
 					</span>
 				</a>
 			</li>));
 
 	if (!isBrowser) {
 		widgets = widgets.concat(widgetTypes
-			.filter(([, widget]) => widget.isBrowserOnly === true)
-			.map(([key,]) => (
-				<li key={key} className="text text-muted">
-					{key}
+			.filter((widget) => widget.isBrowserOnly === true)
+			.map((widget) => (
+				<li key={widget.key} className="text text-muted">
+					{widget.key}
 					<span className="ml-1">
 						&nbsp;
 						<FormattedMessage
