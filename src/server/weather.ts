@@ -1,10 +1,11 @@
+import { WeatherInfo } from "common/api/weather";
 import fetchCatch, { Request } from "./http";
-import { IS_DEBUG, serverConfig, UA_DEFAULT } from "./server";
+import { IS_DEBUG, serverConfig, UA_DEFAULT } from ".";
 
 const OPEN_WEATHER_MAP_API_KEY =
 	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
 
-function parseWeatherInfo(info: any): any {
+function parseWeatherInfo(info: any): WeatherInfo {
 	function unixToDate(unix: number): Date {
 		return new Date((unix + info.timezone_offset) * 1000);
 	}

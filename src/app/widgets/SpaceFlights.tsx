@@ -6,6 +6,7 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 import Panel from 'app/components/Panel';
 import { WidgetProps } from 'app/Widget';
 import ErrorView from 'app/components/ErrorView';
+import SpaceLaunch from 'common/api/SpaceLaunch';
 
 
 const messages = defineMessages({
@@ -27,17 +28,6 @@ const messages = defineMessages({
 	},
 });
 
-
-interface SpaceLaunch {
-	id: number;
-	name: string;
-	link: string;
-	provider: string;
-	vehicle: string;
-	win_open: string | null;
-	win_close: string | null;
-	date_str: string;
-}
 
 function getOrdinal(num: number): string {
 	const dec = Math.floor(num / 10);

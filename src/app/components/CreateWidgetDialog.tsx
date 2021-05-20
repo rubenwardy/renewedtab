@@ -1,4 +1,4 @@
-import { compareString } from "app/utils/string";
+import { compareString } from "common/utils/string";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetManager } from "../WidgetManager";

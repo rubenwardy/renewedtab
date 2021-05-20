@@ -26,7 +26,7 @@ echo "Old version: $old_version"
 echo "Creating $type release..."
 tag=$(npm -no-git-tag-version version ${type})
 version=${tag:1}
-sed -i "s/\/$old_version/\/$version/g" src/server/server.ts
+sed -i "s/\/$old_version/\/$version/g" src/server/index.ts
 sed -i "s/\"$old_version\"/\"$version\"/g" src/webext/manifest.json
 
 git add .

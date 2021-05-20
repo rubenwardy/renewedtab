@@ -1,5 +1,5 @@
 import fetchCatch, { Request } from "./http";
-import { IS_DEBUG, serverConfig, UA_PROXY } from "./server";
+import { IS_DEBUG, serverConfig, UA_PROXY } from ".";
 
 const PROXY_ALLOWED_HOSTS: string[] = serverConfig.PROXY_ALLOWED_HOSTS ?? [
 	"feeds.bbci.co.uk",

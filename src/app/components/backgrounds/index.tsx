@@ -2,20 +2,6 @@ import { BackgroundConfig, BackgroundMode } from "app/hooks/background";
 import React, { CSSProperties } from "react";
 
 
-export interface BackgroundInfo {
-	id: string;
-	title?: string;
-	color?: string;
-	url: string;
-	author: string;
-	site: string;
-	links: {
-		photo: string;
-		author: string;
-		site: string;
-	};
-}
-
 export interface BackgroundProps {
 	background: BackgroundConfig | null;
 	setWidgetsHidden?: (value: boolean) => void;

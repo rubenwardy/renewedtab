@@ -1,5 +1,6 @@
 import fetchCatch, { Request } from "./http";
-import { OWNER_EMAIL, UA_DEFAULT } from "./server";
+import { OWNER_EMAIL, UA_DEFAULT } from ".";
+import { Location } from "common/api/weather";
 
 interface OSMLocation {
 	lat: string;
@@ -7,21 +8,15 @@ interface OSMLocation {
 	display_name: string;
 }
 
-interface Location {
-	name: string;
-	latitude: number;
-	longitude: number;
-}
-
 const cache = new Map<string, Location[]>();
 
-export async function getCoordsFromQuery(query: string) {
+export async function getCoordsFromQuery(query: string): Promise<Location[]> {
 	if (!OWNER_EMAIL || !OWNER_EMAIL.includes("@")) {
 		throw new Error("Geocoding API disabled as the server owner hasn't configured OWNER_EMAIL.")
 	}
 
 	if (cache.has(query)) {
-		return cache.get(query);
+		return cache.get(query) as Location[];
 	}
 
 	const url = new URL("https://nominatim.openstreetmap.org/search");

@@ -1,20 +1,6 @@
-import { IS_DEBUG } from "../server";
+import { BackgroundInfo } from "common/api/backgrounds";
+import { IS_DEBUG } from "..";
 import getImageFromUnsplash from "./unsplash";
-
-export interface BackgroundInfo {
-	id: string;
-	title?: string;
-	color?: string;
-	url: string;
-	author: string;
-	site: string;
-	links: {
-		photo: string;
-		author: string;
-		site: string;
-	};
-}
-
 
 let cache : BackgroundInfo[] | null = null;
 

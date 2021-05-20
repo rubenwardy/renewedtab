@@ -1,7 +1,7 @@
 import { useDelay } from "app/hooks/delay";
+import { BackgroundInfo } from "common/api/backgrounds";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
-import { BackgroundInfo } from ".";
 
 
 const messages = defineMessages({

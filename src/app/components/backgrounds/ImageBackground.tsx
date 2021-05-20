@@ -5,7 +5,7 @@ import { BackgroundProps } from ".";
 import { FileInfo } from "../forms/ImageUploadField";
 
 
-export default function ImagehBackground(props: BackgroundProps) {
+export default function ImageBackground(props: BackgroundProps) {
 	const id = props.background!.values.image;
 	const [file] = usePromise(() => largeStorage.get<FileInfo>(id), [id]);
 

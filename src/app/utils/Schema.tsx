@@ -124,10 +124,3 @@ export namespace type {
 		hint: hint,
 	});
 }
-
-
-export interface Location {
-	name: string;
-	latitude: number;
-	longitude: number;
-}

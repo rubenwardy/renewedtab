@@ -10,7 +10,7 @@
 		"build:server": "tsc --outDir dist/server --project tsconfig.server.json",
 		"start": "concurrently \"npm run start:app\" \"npm run start:server\" ",
 		"start:app": "npm run trans:compile && concurrently \"webpack --watch\" \"live-server dist/webext/app --port=8085\"",
-		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server.js\"",
+		"start:server": "concurrently \"tsc --preserveWatchOutput --watch --outDir dist/server --project tsconfig.server.json\" \"NODE_PATH=dist/server nodemon dist/server/server/index.js\"",
 		"start:firefox": "npm run trans:compile && concurrently \"webpack --watch\" \"web-ext run -t firefox-desktop -s ./dist/webext/ -i app/manifest.json -i app/index.html \" \"npm run start:server\"",
 		"start:chrome": "npm run trans:compile && concurrently \"webpack --watch\" \"web-ext run -t chromium -s ./dist/webext/ -i app/manifest.json -i app/index.html\" \"npm run start:server\"",
 		"package:webext": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -n renewedtab.zip",

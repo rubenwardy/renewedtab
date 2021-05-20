@@ -1,6 +1,6 @@
+import { BackgroundInfo } from "common/api/backgrounds";
 import fetchCatch, { Request } from "../http";
-import { BackgroundInfo } from ".";
-import { serverConfig, UA_DEFAULT } from "../server";
+import { serverConfig, UA_DEFAULT } from "..";
 
 const UNSPLASH_ACCESS_KEY =
 	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;

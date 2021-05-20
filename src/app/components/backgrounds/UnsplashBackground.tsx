@@ -1,6 +1,7 @@
 import { useAPI } from "app/hooks";
+import { BackgroundInfo } from "common/api/backgrounds";
 import React, { CSSProperties } from "react";
-import { BackgroundInfo, BackgroundProps } from ".";
+import { BackgroundProps } from ".";
 import { Credits } from "./Credits";
 
 export default function UnsplashBackground(props: BackgroundProps) {

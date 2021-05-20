@@ -1,12 +1,13 @@
 import React from 'react';
 import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema, { Location, type } from 'app/utils/Schema';
+import Schema, { type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
 import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
+import { Location, TemperatureUnit, WeatherForecast, WeatherInfo } from 'common/api/weather';
 
 
 const messages = defineMessages({
@@ -44,19 +45,6 @@ const dayNames = defineMessages({
 }) as { [num: number]: MessageDescriptor };
 
 
-enum TemperatureUnit {
-	Celsius,
-	Fahrenheit // :'(
-}
-
-interface WeatherForecast {
-	dayOfWeek: number;
-	icon?: string,
-	minTemp: number;
-	maxTemp: number;
-	sunrise: string;
-	sunset: string;
-}
 
 interface WeatherForecastProps extends WeatherForecast {
 	renderTemp: (celsius: number) => string;
@@ -82,12 +70,6 @@ function WeatherForecast(props: WeatherForecastProps) {
 				{props.renderTemp(props.minTemp)} {props.renderTemp(props.maxTemp)}
 			</span>
 		</div>);
-}
-
-
-interface WeatherInfo {
-	current: { icon?: string, temp: number };
-	forecast: WeatherForecast[];
 }
 
 

@@ -1,9 +1,8 @@
 {
 	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"baseUrl": "src/server"
-	},
-	"include": [
-		"src/server"
+	"exclude": [
+		"src/app",
+		"src/webext"
 	]
 }
+//

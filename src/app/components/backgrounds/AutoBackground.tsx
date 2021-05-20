@@ -1,7 +1,8 @@
 import { useAPI, useStorage } from "app/hooks";
 import React, { CSSProperties } from "react";
 import { Credits } from "./Credits";
-import { BackgroundInfo, BackgroundProps } from ".";
+import { BackgroundProps } from ".";
+import { BackgroundInfo } from "common/api/backgrounds";
 
 
 function reportVote(info: BackgroundInfo, isPositive: boolean) {

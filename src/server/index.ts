@@ -27,6 +27,8 @@ import { getBackground } from "./backgrounds";
 import { handleProxy } from "./proxy";
 import { getCoordsFromQuery } from "./geocode";
 import getImageFromUnsplash from "./backgrounds/unsplash";
+import { compareString } from "common/utils/string";
+import SpaceLaunch from "common/api/SpaceLaunch";
 
 const app = express();
 
@@ -164,7 +166,7 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 		// Stupid API keeps changing
 		const result = json.response?.result ?? json.result;
 
-		const launches = result.map((launch: any) => ({
+		const launches: SpaceLaunch[] = result.map((launch: any) => ({
 			id: launch.id,
 			name: launch.name,
 			provider: launch.provider?.name,
@@ -227,15 +229,6 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 	}
 });
 
-function compareString(a: string, b: string): number {
-	if (a < b) {
-		return -1;
-	}
-	if (a > b) {
-		return 1;
-	}
-	return 0;
-}
 
 function readAutocompleteFromFile(filename: string) {
 	return fs.readFileSync(`src/server/data/${filename}.csv`)
