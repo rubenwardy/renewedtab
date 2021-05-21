@@ -20,7 +20,7 @@ type JSONValues = { [key: string]: any } | any[] | string | number | boolean | n
 
 export function toTypedJSON(anyObj: any): JSONValues {  // eslint-disable-line
 	if (anyObj == null) {
-		return null;
+		return anyObj;
 	} else if (Array.isArray(anyObj)) {
 		return (anyObj as any[]).map(x => toTypedJSON(x));
 	} else if (anyObj instanceof Date) {

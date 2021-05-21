@@ -60,7 +60,7 @@ Notes.onLoaded = async (widget: Widget<any>) => {
 		const value = await storage.get(widget.props.storageKey);
 		if (typeof value == "string") {
 			widget.props.notes = value;
-			widget.props.storageKey = undefined;
+			delete widget.props.storageKey;
 		}
 	}
 }

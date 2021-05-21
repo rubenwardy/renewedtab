@@ -21,7 +21,7 @@ while ((item = dir.readSync()) !== null) {
 
 		for (let key in current) {
 			if (!english.hasOwnProperty(key)) {
-				current[key] = undefined;
+				delete current[key];
 			}
 		}
 

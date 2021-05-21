@@ -112,7 +112,7 @@ Links.onLoaded = async (widget: Widget<any>) => {
 	if (typeof widget.props.useIconBar !== "undefined") {
 		widget.theme.useIconBar = widget.props.useIconBar;
 		widget.theme.showPanelBG = !widget.props.useIconBar;
-		widget.props.useIconBar = undefined;
+		delete widget.props.useIconBar;
 	}
 }
 

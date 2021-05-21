@@ -21,7 +21,7 @@ export default function ImportExport() {
 		const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
 		for (const key in data) {
 			if (key.startsWith("large-")) {
-				data[key] = undefined;
+				delete data[key];
 			}
 		}
 
