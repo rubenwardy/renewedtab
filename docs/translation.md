@@ -2,7 +2,7 @@
 
 Please note that the source text will change over time, meaning that
 translations will break and need to be updated. You're under no obligation
-to do this, just don't get upset if translations become incomplete.
+to do this, just don't get annoyed if translations become incomplete over time :)
 
 
 ## Overview
@@ -37,6 +37,10 @@ Translations for the Firefox and Chrome stores can be found at
 `en.html` is the source template. You should copy this file when creating a new
 language.
 
+Please note that you're not expected to translate everything. Translating
+the store page would be great, as it helps with user adoption, but certainly
+isn't required!
+
 
 ## Guides
 
@@ -46,17 +50,18 @@ language.
 1. Go to `src/app/locale/`.
 2. Copy `en.json` to `LANG.json`.
 3. Copy `store/en.html` to `store/LANG.html`.
-4. Add `LANG.json` to `locales` in `src/app/locale/index.tsx`.
+4. Add `LANG.json` to `locales` in `src/app/locale/index.tsx`
+   (optional, I can do this).
 3. See Editing a language.
 
 ### Editing a language
 
-In-app text:
+In-app text (this is the priority):
 
 1. Open up `src/app/locale/LANG.json` in a text editor.
 2. Edit the values of `defaultMessage` keys.
 
-Firefox/Chrome text:
+Firefox/Chrome store text (optional, but would be great):
 
 1. Open up `src/app/locale/store/LANG.md` in a text editor.
 2. Edit entire content, making sure to keep HTML tags.
