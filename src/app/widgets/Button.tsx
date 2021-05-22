@@ -63,5 +63,5 @@ Button.initialTheme = {
 	showPanelBG: false,
 	useIconBar: false,
 	color: "#007DB8",
-	opacity: 100,
+	opacity: 40,
 } as WidgetTheme;
