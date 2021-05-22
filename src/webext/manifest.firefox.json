@@ -13,6 +13,9 @@
 	"chrome_url_overrides" : {
 		"newtab": "app/webext.html"
 	},
+	"chrome_settings_overrides": {
+		"homepage": "app/webext.html"
+	},
 	"permissions": [
 		"storage",
 		"search"

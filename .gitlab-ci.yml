@@ -30,11 +30,12 @@ webext:
   interruptible: true
   script:
     - npm run package:webext
-    - mv web-ext-artifacts/renewedtab.zip renewedtab.zip
+    - mv web-ext-artifacts/*.zip .
   artifacts:
     expire_in: 1 week
     paths:
-      - renewedtab.zip
+      - chrome.zip
+      - firefox.zip
 
 pages:
   stage: deploy
@@ -58,6 +59,6 @@ pages:
 #     - JWT=$(node utils/make_jwt.js $FIREFOX_JWT_ISSUER $FIREFOX_JWT_SECRET)
 #     - >
 #       curl "https://addons.mozilla.org/api/v4/addons/${FIREFOX_EXTENSION_ID}/versions/${VERSION}/" \
-#         -g -XPUT --form "upload=@renewedtab.zip" -H "Authorization: JWT ${JWT}"
+#         -g -XPUT --form "upload=@firefox.zip" -H "Authorization: JWT ${JWT}"
 #   only:
 #     - tags
