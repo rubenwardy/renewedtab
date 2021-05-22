@@ -1,8 +1,9 @@
 import Panel from "app/components/Panel";
+import { schemaMessages } from "app/locale/common";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetProps, WidgetTheme } from "app/Widget";
-import React from "react";
+import { themeMessages, Widget, WidgetProps, WidgetTheme } from "app/Widget";
+import React, { CSSProperties } from "react";
 import { defineMessages, FormattedTime } from "react-intl";
 
 
@@ -73,4 +74,17 @@ Clock.defaultSize = new Vector2(15, 2);
 
 Clock.initialTheme = {
 	showPanelBG: false,
+	textColor: "#ffffff",
 } as WidgetTheme;
+
+Clock.themeSchema = {
+	showPanelBG: type.boolean(themeMessages.showPanelBG),
+	textColor: type.color(schemaMessages.textColor),
+} as Schema;
+
+
+Clock.onLoaded = async (widget: Widget<any>) => {
+	if (typeof widget.theme.textColor === "undefined") {
+		widget.theme.textColor = "#ffffff";
+	}
+};

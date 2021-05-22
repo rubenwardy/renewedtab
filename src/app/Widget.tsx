@@ -11,6 +11,7 @@ export interface WidgetTheme {
 	showPanelBG: boolean;
 	useIconBar?: boolean;
 	color?: string;
+	textColor?: string;
 	opacity?: number;
 }
 
@@ -149,5 +150,6 @@ export function getInitialTheme(type: WidgetType<any>): WidgetTheme {
 		showPanelBG: true,
 		useIconBar: false,
 		color: undefined,
+		textColor: undefined,
 	}
 }

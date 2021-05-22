@@ -1,5 +1,5 @@
 import { WidgetTheme } from "app/Widget";
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 
 
 export interface PanelProps extends WidgetTheme {
@@ -17,10 +17,17 @@ export interface PanelProps extends WidgetTheme {
 	 * CSS classes to use when the panel bg is hidden
 	 */
 	invisClassName?: string;
+
+	style?: CSSProperties;
 }
 
 
 export default function Panel(props: PanelProps) {
+	const style = props.style ?? {};
+	if (props.textColor) {
+		style.color = style.color ?? props.textColor;
+	}
+
 	const className = [];
 	if (props.showPanelBG) {
 		className.push("panel");
@@ -40,7 +47,7 @@ export default function Panel(props: PanelProps) {
 	}
 
 	return (
-		<div className={className.join(" ")}>
+		<div className={className.join(" ")} style={style}>
 			{props.children}
 		</div>);
 }
