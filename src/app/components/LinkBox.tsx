@@ -23,7 +23,7 @@ const messages = defineMessages({
 export interface Link {
 	id: string; //< used by React for keys.
 	title: string;
-	icon: string;
+	icon?: string;
 	url: string;
 }
 
@@ -104,7 +104,7 @@ export default function LinkBox(props: LinkBoxProps)  {
 
 	const linkElements = links.map(link => {
 		const requiresIcons = useIconBar && link.url.trim() != "";
-		const icon = (
+		const icon = link.icon && (
 			<Icon icon={link.icon} requiresIcons={requiresIcons}
 				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
 
