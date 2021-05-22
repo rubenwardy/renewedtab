@@ -83,19 +83,19 @@ export interface WidgetProps<T> extends Widget<T> {
 }
 
 
-const messages = defineMessages({
+export const themeMessages = defineMessages({
 	showPanelBG: {
 		defaultMessage: "Show panel background",
 	},
 });
 
 export const defaultThemeSchema: Schema = {
-	showPanelBG: type.boolean(messages.showPanelBG),
+	showPanelBG: type.boolean(themeMessages.showPanelBG),
 };
 
 
 export const defaultLinksThemeSchema: Schema = {
-	showPanelBG: type.boolean(messages.showPanelBG),
+	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	useIconBar: type.boolean(schemaMessages.useIconBar),
 };
 

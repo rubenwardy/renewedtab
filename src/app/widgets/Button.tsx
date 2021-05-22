@@ -31,7 +31,11 @@ export default function Button(props: WidgetProps<ButtonProps>)  {
 		"--color-button-lighter": color.lighten(1.3).rgba,
 	};
 
-	return (<a href={props.props.url} className="btn btn-custom middle-center" style={style}>{props.props.text}</a>);
+	return (
+		<a href={props.props.url}
+				className="btn btn-custom btn-blur middle-center" style={style}>
+			{props.props.text}
+		</a>);
 }
 
 

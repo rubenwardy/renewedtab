@@ -1,0 +1,72 @@
+
+ul.links {
+	display: block;
+	margin: 0;
+	list-style: none;
+	padding: 0;
+
+	li {
+		display: block;
+		margin: 0;
+		list-style: none;
+		padding: 0;
+
+		.icon {
+			display: inline-block;
+			margin: 0 0.5rem 0 0;
+			object-fit: cover;
+			max-height: 18px;
+			vertical-align: middle;
+		}
+
+		&.section {
+			display: block;
+			padding: 0.4rem 0.8rem 0.2rem 0.8rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+			color: white;
+			opacity: 0.5;
+
+			&:first-child {
+				padding-top: 0.8rem;
+			}
+		}
+
+		&.text {
+			display: block;
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			font-size: 1.171875rem;
+			line-height: 1.5;
+		}
+
+		a {
+			display: block;
+			padding: 0.4rem 0.8rem;
+			color: rgba(255, 255, 255, 0.9);
+			text-decoration: none;
+			transition: color 0.2s ease-in-out,
+					background-color 0.2s ease-in-out;
+
+			&:hover {
+				color: white;
+				background: rgba(255, 255, 255, 0.1);
+				text-decoration: none;
+			}
+		}
+	}
+
+	&.large {
+		li.section {
+			padding: 0.5rem 1rem 0.2rem 1rem;
+			font-size: 0.9rem;
+			line-height: 1.5;
+		}
+
+		a {
+			padding: 0.5rem 1rem;
+			font-size: 1.171875rem;
+			line-height: 1.5;
+		}
+	}
+}
