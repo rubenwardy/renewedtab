@@ -4,7 +4,7 @@ import { FieldProps } from ".";
 
 export function UnitNumberField(props: FieldProps<number>) {
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		if (props.onChange && parseFloat(e.target.value)) {
+		if (props.onChange && !isNaN(parseFloat(e.target.value))) {
 			props.onChange(parseFloat(e.target.value));
 		}
 	}
