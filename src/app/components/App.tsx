@@ -15,7 +15,12 @@ import ReviewRequester from "./ReviewRequester";
 const widgetManager = new WidgetManager();
 
 export default function App() {
-	usePromise(() => widgetManager.load(), []);
+	const [loadingRes,] = usePromise(async () => {
+		await widgetManager.load();
+		return true;
+	}, []);
+
+	const loaded = loadingRes != null;
 
 	const [actualLocale, setLocale] = useStorage<string>("locale", getUserLocale());
 	const locale = actualLocale ?? "en"
@@ -53,7 +58,8 @@ export default function App() {
 						background={background} setBackground={setBackground}
 						theme={theme} setTheme={setTheme}
 						locale={locale} setLocale={setLocale} />
-				<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />
+				{loaded &&
+					<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />}
 
 				<ReviewRequester />
 

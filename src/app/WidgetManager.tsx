@@ -28,11 +28,11 @@ export class WidgetManager {
 
 		for (const widget of this.widgets) {
 			widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
-			widget.size = widget.size || WidgetTypes[widget.type].defaultSize;
+			widget.size = widget.size ?? WidgetTypes[widget.type].defaultSize;
 
 			const widgetType = WidgetTypes[widget.type];
 
-			if (typeof widget.theme === "undefined") {
+			if (widget.theme == undefined) {
 				widget.theme = deepCopy(getInitialTheme(widgetType));
 			}
 
