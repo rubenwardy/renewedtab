@@ -1,6 +1,6 @@
 {
 	"name": "renewedtab",
-	"version": "1.4.1",
+	"version": "1.5.0",
 	"description": "A customisable home page for your web browser",
 	"main": "webpack.config.js",
 	"sideEffects": false,
