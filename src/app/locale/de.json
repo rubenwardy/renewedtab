@@ -1,1 +1,6 @@
-{}
+{
+    "+GMx80": {
+        "message": "Keine Orte gefunden",
+        "description": "Location form field: error"
+    }
+}
