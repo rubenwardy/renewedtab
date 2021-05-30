@@ -1,6 +1,6 @@
 {
     "3ZfhWo": {
-        "message": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz"
+        "message": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz."
     },
     "3aaibf": {
         "message": "Araç ekle"
@@ -433,7 +433,7 @@
         "description": "Form has no fields"
     },
     "0feb3b": {
-        "message": "İsteğe bağlı, resmi link haline getirir.",
+        "message": "İsteğe bağlı, resmi link haline getirir",
         "description": "Image widget: Form field hint (Link)"
     },
     "jSHZmX": {
