@@ -1,600 +1,604 @@
 {
   "/dtDqf": {
-    "defaultMessage": "Notes",
-    "description": "Notes Widget"
+    "description": "Notes Widget",
+    "message": "Notes"
   },
   "0mqoSv": {
-    "defaultMessage": "Loading feed..."
+    "message": "Loading feed..."
   },
   "1Ajc0a": {
-    "defaultMessage": "Reminds you about a daily goal"
+    "message": "Reminds you about a daily goal"
   },
   "1QiItI": {
-    "defaultMessage": "Leave blank to make heading"
+    "message": "Leave blank to make heading"
   },
   "1e9zwh": {
-    "defaultMessage": "Link URL"
+    "message": "Link URL"
   },
   "1iEPTM": {
-    "defaultMessage": "General"
+    "message": "General"
   },
   "1wIgYC": {
-    "defaultMessage": "You can change the name by clicking it on the widget"
+    "message": "You can change the name by clicking it on the widget"
   },
   "2/2yg+": {
-    "defaultMessage": "Add"
+    "message": "Add"
   },
   "2IFGap": {
-    "defaultMessage": "Donate"
+    "message": "Donate"
   },
   "2zQ/Df": {
-    "defaultMessage": "Birth date"
+    "message": "Birth date"
   },
   "3ZfhWo": {
-    "defaultMessage": "Permission needed to access {host}. Edit this widget to grant it."
+    "message": "Permission needed to access {host}. Edit this widget to grant it."
   },
   "3aaibf": {
-    "defaultMessage": "Add Widget"
+    "message": "Add Widget"
   },
   "3zkgWw": {
-    "defaultMessage": "Images are stored locally on your browser, and never uploaded"
+    "message": "Images are stored locally on your browser, and never uploaded"
   },
   "47FYwb": {
-    "defaultMessage": "Cancel"
+    "message": "Cancel"
   },
   "4NtnV1": {
-    "defaultMessage": "Help for new users of Renewed Tab"
+    "message": "Help for new users of Renewed Tab"
   },
   "4VY8UE": {
-    "defaultMessage": "Used for primary buttons and links"
+    "message": "Used for primary buttons and links"
   },
   "4WrgwI": {
-    "defaultMessage": "Nothing here"
+    "message": "Nothing here"
   },
   "4syC1B": {
-    "defaultMessage": "Help and Requests"
+    "message": "Help and Requests"
   },
   "4wtLvc": {
-    "defaultMessage": "What's your goal for today?"
+    "message": "What's your goal for today?"
   },
   "50XVmf": {
-    "defaultMessage": "No images found on feed"
+    "message": "No images found on feed"
   },
   "5CFbLI": {
-    "defaultMessage": "Greeting",
-    "description": "Gretting Widget"
+    "description": "Gretting Widget",
+    "message": "Greeting"
   },
   "6VamZD": {
-    "defaultMessage": "Powered by RocketLaunch.Live"
+    "message": "Powered by RocketLaunch.Live"
   },
   "6mHlh1": {
-    "defaultMessage": "Grant permission to access top sites"
+    "message": "Grant permission to access top sites"
   },
   "7OH6mh": {
-    "defaultMessage": "Image",
-    "description": "Image Widget"
+    "description": "Image Widget",
+    "message": "Image"
   },
   "8J0Bhj": {
-    "defaultMessage": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+    "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
   },
   "8S+esS": {
-    "defaultMessage": "Renewed Tab Help and Tips"
+    "message": "Renewed Tab Help and Tips"
   },
   "8bdazr": {
-    "defaultMessage": "Greets you"
+    "message": "Greets you"
   },
   "9+2gJZ": {
-    "defaultMessage": "This widget requires the browser extension version."
+    "message": "This widget requires the browser extension version."
   },
   "9EQuAK": {
-    "defaultMessage": "About and Help"
+    "message": "About and Help"
   },
   "9XUYQt": {
-    "defaultMessage": "Import"
+    "message": "Import"
   },
   "9a9+ww": {
-    "defaultMessage": "Title"
+    "message": "Title"
   },
   "9bmERx": {
-    "defaultMessage": "An image from a URL"
+    "message": "An image from a URL"
   },
   "A3jj9z": {
-    "defaultMessage": "Font"
+    "message": "Font"
   },
   "Ae/0CS": {
-    "defaultMessage": "center, top, or bottom"
+    "message": "center, top, or bottom"
   },
   "B9mB91": {
-    "defaultMessage": "Image URL"
+    "message": "Image URL"
   },
   "CExMi4": {
-    "defaultMessage": "Good evening"
+    "message": "Good evening"
   },
   "CLm56q": {
-    "defaultMessage": "Panel Blur Radius"
+    "message": "Panel Blur Radius"
   },
   "CRRVsD": {
-    "defaultMessage": "Please select a location"
+    "message": "Please select a location"
   },
   "CmRs9p": {
-    "defaultMessage": "Search",
-    "description": "Search Widget"
+    "description": "Search Widget",
+    "message": "Search"
   },
   "CshCZY": {
-    "defaultMessage": "Background Type"
+    "message": "Background Type"
   },
   "D3idYv": {
-    "defaultMessage": "Settings"
+    "message": "Settings"
   },
   "DbkCFr": {
-    "defaultMessage": "Create a new todo item"
+    "message": "Create a new todo item"
   },
   "EHTHzJ": {
-    "defaultMessage": "Search engine name"
+    "message": "Search engine name"
   },
   "EP5E9y": {
-    "defaultMessage": "Collection ID. Found in the URL, example: 42576559"
+    "message": "Collection ID. Found in the URL, example: 42576559"
   },
   "G6WG/N": {
-    "defaultMessage": "Invisible",
-    "description": "Invisible Widget"
+    "description": "Invisible Widget",
+    "message": "Invisible"
+  },
+  "GWRKVT": {
+    "description": "Form field label",
+    "message": "Text Color"
   },
   "GqPEp+": {
-    "defaultMessage": "Requires browser extension version"
+    "message": "Requires browser extension version"
   },
   "GxevlG": {
-    "defaultMessage": "Optional, URL to image (18px recommended)"
+    "message": "Optional, URL to image (18px recommended)"
   },
   "HFMAre": {
-    "defaultMessage": "Display as icons"
+    "message": "Display as icons"
   },
   "HGSt8N": {
-    "defaultMessage": "Choose an image"
+    "message": "Choose an image"
   },
   "HPZ0pC": {
-    "defaultMessage": "Shows nothing, useful for layouting purposes"
+    "message": "Shows nothing, useful for layouting purposes"
   },
   "I9KXpO": {
-    "defaultMessage": "Location needed. Click edit to add it."
+    "message": "Location needed. Click edit to add it."
   },
   "IgzvjY": {
-    "defaultMessage": "Filter Articles"
+    "message": "Filter Articles"
   },
   "JU5H2h": {
-    "defaultMessage": "Temperature Unit"
+    "message": "Temperature Unit"
   },
   "JkLHGw": {
-    "defaultMessage": "Website"
+    "message": "Website"
   },
   "K3r6DQ": {
-    "defaultMessage": "Delete"
+    "message": "Delete"
   },
   "KFe74G": {
-    "defaultMessage": "Reset everything"
+    "message": "Reset everything"
   },
   "LeB+DB": {
-    "defaultMessage": "Enable custom icons"
+    "message": "Enable custom icons"
   },
   "Lxc1x4": {
-    "defaultMessage": "Clock",
-    "description": "Clock Widget"
+    "description": "Clock Widget",
+    "message": "Clock"
   },
   "M81yvY": {
-    "defaultMessage": "Nothing to edit."
+    "message": "Nothing to edit."
   },
   "MeEElY": {
-    "defaultMessage": "Age",
-    "description": "Age Widget"
+    "description": "Age Widget",
+    "message": "Age"
   },
   "Mee7wz": {
-    "defaultMessage": "Optional, makes image a link"
+    "message": "Optional, makes image a link"
   },
   "N/7Stk": {
-    "defaultMessage": "Created by <a>rubenwardy</a>."
+    "message": "Created by <a>rubenwardy</a>."
   },
   "N3HgMZ": {
-    "defaultMessage": "Also take a look at settings (the cog)."
+    "message": "Also take a look at settings (the cog)."
   },
   "N5qakN": {
-    "defaultMessage": "Track to do list items"
+    "message": "Track to do list items"
   },
   "Necq3a": {
-    "defaultMessage": "Links, with support for headings and icons"
+    "message": "Links, with support for headings and icons"
   },
   "Nw66w+": {
-    "defaultMessage": "Powered by OpenWeatherMap.org"
+    "message": "Powered by OpenWeatherMap.org"
   },
   "O0rXuF": {
-    "defaultMessage": "Shows top sites"
+    "message": "Shows top sites"
   },
   "OJ6oXo": {
-    "defaultMessage": "You can change the goal by clicking it on the widget"
+    "message": "You can change the goal by clicking it on the widget"
   },
   "OkRzUA": {
-    "defaultMessage": "Shows a webpage"
+    "message": "Shows a webpage"
   },
   "PD6In8": {
-    "defaultMessage": "Never show again"
+    "message": "Never show again"
   },
   "PHutSR": {
-    "defaultMessage": "Opacity"
+    "message": "Opacity"
   },
   "PM6qZ7": {
-    "defaultMessage": "Show seconds"
+    "message": "Show seconds"
   },
   "Pe0ogR": {
-    "defaultMessage": "Theme"
+    "message": "Theme"
   },
   "Ptdy4D": {
-    "defaultMessage": "States your current age with way too much precision"
+    "message": "States your current age with way too much precision"
   },
   "PuZCei": {
-    "defaultMessage": "Leave blank to use feed's title"
+    "message": "Leave blank to use feed's title"
   },
   "Q1mwPp": {
-    "defaultMessage": "Consider <a>contributing or adding your language</a>."
+    "message": "Consider <a>contributing or adding your language</a>."
   },
   "QqE4JC": {
-    "defaultMessage": "Missing feed URL."
+    "message": "Missing feed URL."
   },
   "QrihTZ": {
-    "defaultMessage": "Friday"
+    "message": "Friday"
   },
   "RQ+k9r": {
-    "defaultMessage": "A list of upcoming space launches, powered by RocketLaunch.Live"
+    "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
   },
   "RUl5Gc": {
-    "defaultMessage": "Display an image, optionally making it a link"
+    "message": "Display an image, optionally making it a link"
   },
   "Rw51mJ": {
-    "defaultMessage": "Powered by <a>OpenStreetMap</a>."
+    "message": "Powered by <a>OpenStreetMap</a>."
   },
   "S3njcM": {
-    "defaultMessage": "IFrame",
-    "description": "IFrame Widget"
+    "description": "IFrame Widget",
+    "message": "IFrame"
   },
   "SAo61B": {
-    "defaultMessage": "Bookmarks",
-    "description": "Bookmarks Widget"
+    "description": "Bookmarks Widget",
+    "message": "Bookmarks"
   },
   "SG4UJU": {
-    "defaultMessage": "Button",
-    "description": "Button Widget"
+    "description": "Button Widget",
+    "message": "Button"
   },
   "SQJLG3": {
-    "defaultMessage": "Click \"Add widget\" in the bottom of the screen to add a widget."
+    "message": "Click \"Add widget\" in the bottom of the screen to add a widget."
   },
   "SVwJTM": {
-    "defaultMessage": "Export"
+    "message": "Export"
   },
   "SfgURe": {
-    "defaultMessage": "No locations found"
+    "message": "No locations found"
   },
   "T/wBPw": {
-    "defaultMessage": "Remove {type}"
+    "message": "Remove {type}"
   },
   "T4VxQN": {
-    "defaultMessage": "Loading…"
+    "message": "Loading…"
   },
   "TUnCKb": {
-    "defaultMessage": "Text",
-    "description": "Text Widget"
+    "description": "Text Widget",
+    "message": "Text"
   },
   "TkgCJ9": {
-    "defaultMessage": "You can get help or request a feature using the link below."
+    "message": "You can get help or request a feature using the link below."
   },
   "U2Qnh7": {
-    "defaultMessage": "Image",
-    "description": "Image background mode"
+    "description": "Image background mode",
+    "message": "Image"
   },
   "U6qGuO": {
-    "defaultMessage": "Position"
+    "message": "Position"
   },
   "UP4EUm": {
-    "defaultMessage": "Click items to edit them"
+    "message": "Click items to edit them"
   },
   "VNlygV": {
-    "defaultMessage": "Any font name installed on your computer"
+    "message": "Any font name installed on your computer"
   },
   "WKiXhX": {
-    "defaultMessage": "Color",
-    "description": "Color background mode"
+    "description": "Color background mode",
+    "message": "Color"
   },
   "WMNHPh": {
-    "defaultMessage": "Saturday"
+    "message": "Saturday"
   },
   "WQeyl4": {
-    "defaultMessage": "Grant permission to access bookmarks"
+    "message": "Grant permission to access bookmarks"
   },
   "WZjKFf": {
-    "defaultMessage": "Warning: this may contain personal data, if any was entered into widget settings."
+    "message": "Warning: this may contain personal data, if any was entered into widget settings."
   },
   "Wv6Hyh": {
-    "defaultMessage": "HelpAbout",
-    "description": "HelpAbout Widget"
+    "description": "HelpAbout Widget",
+    "message": "HelpAbout"
   },
   "WxuQ8x": {
-    "defaultMessage": "A single color"
+    "message": "A single color"
   },
   "X6ciR9": {
-    "defaultMessage": "To move, edit, or delete a widget, use the handle that appears in the top-right of the widget. To resize, use the drag handle in the bottom-right."
+    "message": "To move, edit, or delete a widget, use the handle that appears in the top-right of the widget. To resize, use the drag handle in the bottom-right."
   },
   "XITVvp": {
-    "defaultMessage": "Show panel background"
+    "message": "Show panel background"
   },
   "XQZA8e": {
-    "defaultMessage": "Background"
+    "message": "Background"
   },
   "XsTD4Q": {
-    "defaultMessage": "Todo List",
-    "description": "Todo List Widget"
+    "description": "Todo List Widget",
+    "message": "Todo List"
   },
   "YAgYL6": {
-    "defaultMessage": "Tuesday"
+    "message": "Tuesday"
   },
   "YqlpSM": {
-    "defaultMessage": "You are <b>{age}</b>"
+    "message": "You are <b>{age}</b>"
   },
   "Yudtqh": {
-    "defaultMessage": "Panel Background Darkness"
+    "message": "Panel Background Darkness"
   },
   "Z2/hH0": {
-    "defaultMessage": "Image: {filename}"
+    "message": "Image: {filename}"
   },
   "ZZIlU9": {
-    "defaultMessage": "Daily Goal",
-    "description": "Daily Goal Widget"
+    "description": "Daily Goal Widget",
+    "message": "Daily Goal"
   },
   "a09vzt": {
-    "defaultMessage": "HTTP request failed, {code} {msg}."
+    "message": "HTTP request failed, {code} {msg}."
   },
   "aA8bDw": {
-    "defaultMessage": "Text"
+    "message": "Text"
   },
   "ajnDv2": {
-    "defaultMessage": "Enter notes here"
+    "message": "Enter notes here"
   },
   "azMsfM": {
-    "defaultMessage": "Monday"
+    "message": "Monday"
   },
   "bN0iM4": {
-    "defaultMessage": "Found a bug, or have a request?"
+    "message": "Found a bug, or have a request?"
   },
   "bQFsdR": {
-    "defaultMessage": "Grant permission to access {host}"
+    "message": "Grant permission to access {host}"
   },
   "bRP0Dg": {
-    "defaultMessage": "Search box to your favourite search engine"
+    "message": "Search box to your favourite search engine"
   },
   "bWjdfa": {
-    "defaultMessage": "URL"
+    "message": "URL"
   },
   "cR7nCG": {
-    "defaultMessage": "Reset theme to default"
+    "message": "Reset theme to default"
   },
   "cy8B6K": {
-    "defaultMessage": "Import / Export"
+    "message": "Import / Export"
   },
   "dGu5JQ": {
-    "defaultMessage": "Feed",
-    "description": "Feed Widget"
+    "description": "Feed Widget",
+    "message": "Feed"
   },
   "egigiF": {
-    "defaultMessage": "Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs."
+    "message": "Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs."
   },
   "ekIjqh": {
-    "defaultMessage": "Grant permission to access all websites"
+    "message": "Grant permission to access all websites"
   },
   "ekW/+6": {
-    "defaultMessage": "Unable to connect to the Internet"
+    "message": "Unable to connect to the Internet"
   },
   "gSjZfg": {
-    "defaultMessage": "Links",
-    "description": "Links Widget"
+    "description": "Links Widget",
+    "message": "Links"
   },
   "gjBiyj": {
-    "defaultMessage": "Loading..."
+    "message": "Loading..."
   },
   "h/ftND": {
-    "defaultMessage": "Choose a file"
+    "message": "Choose a file"
   },
   "hktZIl": {
-    "defaultMessage": "Shows the time"
+    "message": "Shows the time"
   },
   "iH2AHA": {
-    "defaultMessage": "<a>Open source</a>, licensed under GPLv3+."
+    "message": "<a>Open source</a>, licensed under GPLv3+."
   },
   "iU5dhE": {
-    "defaultMessage": "Check out the <a>Help and FAQ page</a> to see common questions and to get in contact."
+    "message": "Check out the <a>Help and FAQ page</a> to see common questions and to get in contact."
   },
   "iZNw+V": {
-    "defaultMessage": "Good afternoon"
+    "message": "Good afternoon"
   },
   "ibhC3l": {
-    "defaultMessage": "Like Renewed Tab? Consider donating to cover costs and help support development."
+    "message": "Like Renewed Tab? Consider donating to cover costs and help support development."
   },
   "ihn9EZ": {
-    "defaultMessage": "Good morning"
+    "message": "Good morning"
   },
   "j1jRSI": {
-    "defaultMessage": "An editable text area for notes"
+    "message": "An editable text area for notes"
   },
   "j7BbFE": {
-    "defaultMessage": "Unsplash collection"
+    "message": "Unsplash collection"
   },
   "jKD1tT": {
-    "defaultMessage": "Like",
-    "description": "Like background"
+    "description": "Like background",
+    "message": "Like"
   },
   "kAEQyV": {
-    "defaultMessage": "OK"
+    "message": "OK"
   },
   "kk4TVW": {
-    "defaultMessage": "Icon"
+    "message": "Icon"
   },
   "krty63": {
-    "defaultMessage": "Need help?"
+    "message": "Need help?"
   },
   "lU5v+P": {
-    "defaultMessage": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
+    "message": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
   },
   "lUdRdE": {
-    "defaultMessage": "Error: {msg}"
+    "message": "Error: {msg}"
   },
   "lYJGY5": {
-    "defaultMessage": "Image URL",
-    "description": "Image URL background mode"
+    "description": "Image URL background mode",
+    "message": "Image URL"
   },
   "lkJAu6": {
-    "defaultMessage": "Unsplash",
-    "description": "Unsplash background mode"
+    "description": "Unsplash background mode",
+    "message": "Unsplash"
   },
   "lq7eF/": {
-    "defaultMessage": "Show a message"
+    "message": "Show a message"
   },
   "lxblgl": {
-    "defaultMessage": "Wednesday"
+    "message": "Wednesday"
   },
   "mJR06P": {
-    "defaultMessage": "Sunday"
+    "message": "Sunday"
   },
   "mY9tpI": {
-    "defaultMessage": "Error loading feed. Make sure it is an RSS or Atom feed."
+    "message": "Error loading feed. Make sure it is an RSS or Atom feed."
   },
   "o24MzT": {
-    "defaultMessage": "Unable to get bookmarks"
+    "message": "Unable to get bookmarks"
   },
   "o2uuHu": {
-    "defaultMessage": "12 hour clock"
+    "message": "12 hour clock"
   },
   "oepT0O": {
-    "defaultMessage": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
+    "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
   },
   "or/+Da": {
-    "defaultMessage": "Styling",
-    "description": "Subheading for per-widget styling properties"
+    "description": "Subheading for per-widget styling properties",
+    "message": "Styling"
   },
   "or8yqP": {
-    "defaultMessage": "Random curated backgrounds"
+    "message": "Random curated backgrounds"
   },
   "p8GKKf": {
-    "defaultMessage": "Top Sites",
-    "description": "Top Sites Widget"
+    "description": "Top Sites Widget",
+    "message": "Top Sites"
   },
   "pPi9TQ": {
-    "defaultMessage": "Loading flights..."
+    "message": "Loading flights..."
   },
   "qAhUUO": {
-    "defaultMessage": "Thursday"
+    "message": "Thursday"
   },
   "qCcwo3": {
-    "defaultMessage": "Links"
+    "message": "Links"
   },
   "qX503y": {
-    "defaultMessage": "Random image from an Unsplash collection"
+    "message": "Random image from an Unsplash collection"
   },
   "qzFcWI": {
-    "defaultMessage": "Primary Color"
+    "message": "Primary Color"
   },
   "rAuRqW": {
-    "defaultMessage": "Translations are provided by the community."
+    "message": "Translations are provided by the community."
   },
   "rPjMRD": {
-    "defaultMessage": "{mode} Options"
+    "message": "{mode} Options"
   },
   "rvirM2": {
-    "defaultMessage": "Location"
+    "message": "Location"
   },
   "sRTzEd": {
-    "defaultMessage": "name"
+    "message": "name"
   },
   "tPuTXu": {
-    "defaultMessage": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
+    "message": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
   },
   "translation_credits": {
-    "defaultMessage": "",
-    "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+    "description": "Credit the translators: LANGUAGE translation by YOUR NAME",
+    "message": ""
   },
   "tyq8NB": {
-    "defaultMessage": "Weather",
-    "description": "Weather Widget"
+    "description": "Weather Widget",
+    "message": "Weather"
   },
   "tzWexR": {
-    "defaultMessage": "Shows your bookmarks"
+    "message": "Shows your bookmarks"
   },
   "uCwc2+": {
-    "defaultMessage": "Selected {name} at {latitude} by {longitude}."
+    "message": "Selected {name} at {latitude} by {longitude}."
   },
   "uMhpKe": {
-    "defaultMessage": "Color"
+    "message": "Color"
   },
   "uN6slI": {
-    "defaultMessage": "Use browser's default search engine"
+    "message": "Use browser's default search engine"
   },
   "uRYRJh": {
-    "defaultMessage": "Edit {type}"
+    "message": "Edit {type}"
   },
   "ubO4zt": {
-    "defaultMessage": "Web Comic",
-    "description": "Web Comic Widget"
+    "description": "Web Comic Widget",
+    "message": "Web Comic"
   },
   "ueVsqa": {
-    "defaultMessage": "Use a custom image"
+    "message": "Use a custom image"
   },
   "wOMXgK": {
-    "defaultMessage": "Font Scaling"
+    "message": "Font Scaling"
   },
   "wogY8a": {
-    "defaultMessage": "Create Widget"
+    "message": "Create Widget"
   },
   "wr7JBR": {
-    "defaultMessage": "Use icons from websites (favicons)"
+    "message": "Use icons from websites (favicons)"
   },
   "wubRXu": {
-    "defaultMessage": "Search with {name}"
+    "message": "Search with {name}"
   },
   "x59fh0": {
-    "defaultMessage": "Space Flights",
-    "description": "Space Flights Widget"
+    "description": "Space Flights Widget",
+    "message": "Space Flights"
   },
   "x7IPhN": {
-    "defaultMessage": "Include folders as sections"
+    "message": "Include folders as sections"
   },
   "xaOK72": {
-    "defaultMessage": "Shows an Atom or RSS feed"
+    "message": "Shows an Atom or RSS feed"
   },
   "xmcVZ0": {
-    "defaultMessage": "Search"
+    "message": "Search"
   },
   "y/bmsG": {
-    "defaultMessage": "Allow"
+    "message": "Allow"
   },
   "y1Z3or": {
-    "defaultMessage": "Language"
+    "message": "Language"
   },
   "yNe5MS": {
-    "defaultMessage": "Current and forecasted weather"
+    "message": "Current and forecasted weather"
   },
   "ySmliM": {
-    "defaultMessage": "URL to an Atom or RSS feed"
+    "message": "URL to an Atom or RSS feed"
   },
   "yYM0Bg": {
-    "defaultMessage": "Loading results..."
+    "message": "Loading results..."
   },
   "ycaP+t": {
-    "defaultMessage": "Auto",
-    "description": "Auto background mode"
+    "description": "Auto background mode",
+    "message": "Auto"
   },
   "yfgoZf": {
-    "defaultMessage": "Discord / Matrix chats"
+    "message": "Discord / Matrix chats"
   },
   "yi8bIC": {
-    "defaultMessage": "A link button"
+    "message": "A link button"
   },
   "ykNa5O": {
-    "defaultMessage": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
+    "message": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
   },
   "z7UTSa": {
-    "defaultMessage": "About Renewed Tab"
+    "message": "About Renewed Tab"
   }
 }

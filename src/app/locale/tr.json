@@ -1,600 +1,604 @@
 {
   "0mqoSv": {
-    "defaultMessage": "Besleme yükleniyor..."
+    "message": "Besleme yükleniyor..."
   },
   "1Ajc0a": {
-    "defaultMessage": "Günlük bir hedefinizi hatırlatır"
+    "message": "Günlük bir hedefinizi hatırlatır"
   },
   "1QiItI": {
-    "defaultMessage": "Heading oluşturmak için boş bırakın"
+    "message": "Heading oluşturmak için boş bırakın"
   },
   "1e9zwh": {
-    "defaultMessage": "Link URL'i"
+    "message": "Link URL'i"
   },
   "1iEPTM": {
-    "defaultMessage": "Genel"
+    "message": "Genel"
   },
   "1wIgYC": {
-    "defaultMessage": "Araç içinde tıklayarak ismi değiştirebilirsiniz"
+    "message": "Araç içinde tıklayarak ismi değiştirebilirsiniz"
   },
   "2/2yg+": {
-    "defaultMessage": "Ekle"
+    "message": "Ekle"
   },
   "2IFGap": {
-    "defaultMessage": "Bağış yap"
+    "message": "Bağış yap"
   },
   "2zQ/Df": {
-    "defaultMessage": "Doğum tarihi"
+    "message": "Doğum tarihi"
   },
   "3ZfhWo": {
-    "defaultMessage": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz"
+    "message": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz"
   },
   "3aaibf": {
-    "defaultMessage": "Araç ekle"
+    "message": "Araç ekle"
   },
   "3zkgWw": {
-    "defaultMessage": "Görüntüler tarayıcınızda yerel olarak saklanır, asla internete yüklenmez"
+    "message": "Görüntüler tarayıcınızda yerel olarak saklanır, asla internete yüklenmez"
   },
   "47FYwb": {
-    "defaultMessage": "İptal"
+    "message": "İptal"
   },
   "4NtnV1": {
-    "defaultMessage": "Renewed Tab'in yeni kullanıcıları için yardım"
+    "message": "Renewed Tab'in yeni kullanıcıları için yardım"
   },
   "4VY8UE": {
-    "defaultMessage": "Ana butonlar ve linkler için kullanılır"
+    "message": "Ana butonlar ve linkler için kullanılır"
   },
   "4WrgwI": {
-    "defaultMessage": "Burada bir şey yok"
+    "message": "Burada bir şey yok"
   },
   "4syC1B": {
-    "defaultMessage": "Yardım ve İstekler"
+    "message": "Yardım ve İstekler"
   },
   "4wtLvc": {
-    "defaultMessage": "Bugünkü hedefiniz nedir?"
+    "message": "Bugünkü hedefiniz nedir?"
   },
   "50XVmf": {
-    "defaultMessage": "Beslemede görüntü bulunamadı"
+    "message": "Beslemede görüntü bulunamadı"
   },
   "6VamZD": {
-    "defaultMessage": "RocketLaunch.Live ile çalışır"
+    "message": "RocketLaunch.Live ile çalışır"
   },
   "6mHlh1": {
-    "defaultMessage": "Sık kullanılan sitelerinize erişmek için izin verin"
+    "message": "Sık kullanılan sitelerinize erişmek için izin verin"
   },
   "8J0Bhj": {
-    "defaultMessage": "<a>Renewed Tab</a>'e hoş geldiniz: araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası."
+    "message": "<a>Renewed Tab</a>'e hoş geldiniz: araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası."
   },
   "8S+esS": {
-    "defaultMessage": "Renewed Tab Yardım ve İpuçları"
+    "message": "Renewed Tab Yardım ve İpuçları"
   },
   "8bdazr": {
-    "defaultMessage": "Sizi selamlar"
+    "message": "Sizi selamlar"
   },
   "9+2gJZ": {
-    "defaultMessage": "Bu araç tarayıcı uzantı versiyonuna ihtiyaç duyar."
+    "message": "Bu araç tarayıcı uzantı versiyonuna ihtiyaç duyar."
   },
   "9EQuAK": {
-    "defaultMessage": "Hakkında ve Yardım"
+    "message": "Hakkında ve Yardım"
   },
   "9XUYQt": {
-    "defaultMessage": "Dışarıdan yükle"
+    "message": "Dışarıdan yükle"
   },
   "9a9+ww": {
-    "defaultMessage": "Başlık"
+    "message": "Başlık"
   },
   "9bmERx": {
-    "defaultMessage": "Bir URL'den görüntü"
+    "message": "Bir URL'den görüntü"
   },
   "A3jj9z": {
-    "defaultMessage": "Yazı tipi"
+    "message": "Yazı tipi"
   },
   "Ae/0CS": {
-    "defaultMessage": "orta, üst, veya alt"
+    "message": "orta, üst, veya alt"
   },
   "B9mB91": {
-    "defaultMessage": "Görüntü URL'i"
+    "message": "Görüntü URL'i"
   },
   "CExMi4": {
-    "defaultMessage": "İyi akşamlar"
+    "message": "İyi akşamlar"
   },
   "CLm56q": {
-    "defaultMessage": "Panel Bulanıklık Yarıçapı"
+    "message": "Panel Bulanıklık Yarıçapı"
   },
   "CRRVsD": {
-    "defaultMessage": "Lütfen bir konum seçin"
+    "message": "Lütfen bir konum seçin"
   },
   "CshCZY": {
-    "defaultMessage": "Arkaplan Tipi"
+    "message": "Arkaplan Tipi"
   },
   "DbkCFr": {
-    "defaultMessage": "Yeni bir yapılacak hatırlatması yarat"
+    "message": "Yeni bir yapılacak hatırlatması yarat"
   },
   "EHTHzJ": {
-    "defaultMessage": "Arama motoru ismi"
+    "message": "Arama motoru ismi"
   },
   "EP5E9y": {
-    "defaultMessage": "Koleksiyon kodu. URL'de bulabilirsiniz, örnek: 42576559"
+    "message": "Koleksiyon kodu. URL'de bulabilirsiniz, örnek: 42576559"
   },
   "GqPEp+": {
-    "defaultMessage": "Tarayıcı uzantı versiyonuna ihtiyaç duyar"
+    "message": "Tarayıcı uzantı versiyonuna ihtiyaç duyar"
   },
   "GxevlG": {
-    "defaultMessage": "İsteğe bağlı, URL'den görüntü (18px önerilir)"
+    "message": "İsteğe bağlı, URL'den görüntü (18px önerilir)"
   },
   "HFMAre": {
-    "defaultMessage": "İkonlar olarak göster"
+    "message": "İkonlar olarak göster"
   },
   "HGSt8N": {
-    "defaultMessage": "Bir görüntü seç"
+    "message": "Bir görüntü seç"
   },
   "HPZ0pC": {
-    "defaultMessage": "Bir şey göstermez, yerleşim için kullanılır"
+    "message": "Bir şey göstermez, yerleşim için kullanılır"
   },
   "I9KXpO": {
-    "defaultMessage": "Konum gerekli. Düzenle'ye tıklayarak ekleyin."
+    "message": "Konum gerekli. Düzenle'ye tıklayarak ekleyin."
   },
   "IgzvjY": {
-    "defaultMessage": "Makaleleri Filtrele"
+    "message": "Makaleleri Filtrele"
   },
   "JU5H2h": {
-    "defaultMessage": "Sıcaklık Birimi"
+    "message": "Sıcaklık Birimi"
   },
   "JkLHGw": {
-    "defaultMessage": "İnternet sitesi"
+    "message": "İnternet sitesi"
   },
   "K3r6DQ": {
-    "defaultMessage": "Sil"
+    "message": "Sil"
   },
   "KFe74G": {
-    "defaultMessage": "Her şeyi sıfırla"
+    "message": "Her şeyi sıfırla"
   },
   "M81yvY": {
-    "defaultMessage": "Düzenlenecek bir şey yok."
+    "message": "Düzenlenecek bir şey yok."
   },
   "Mee7wz": {
-    "defaultMessage": "İsteğe bağlı, resmi link haline getirir."
+    "message": "İsteğe bağlı, resmi link haline getirir."
   },
   "N/7Stk": {
-    "defaultMessage": "<a>rubenwardy</a> tarafından yaratılmıştır."
+    "message": "<a>rubenwardy</a> tarafından yaratılmıştır."
   },
   "N3HgMZ": {
-    "defaultMessage": "Bir de ayarlara bakın (çark)."
+    "message": "Bir de ayarlara bakın (çark)."
   },
   "N5qakN": {
-    "defaultMessage": "Yapılacaklar listesi ögelerini takip edin"
+    "message": "Yapılacaklar listesi ögelerini takip edin"
   },
   "Necq3a": {
-    "defaultMessage": "Linkler. Heading ve ikon desteği de vardır"
+    "message": "Linkler. Heading ve ikon desteği de vardır"
   },
   "Nw66w+": {
-    "defaultMessage": "OpenWeatherMap.org ile çalışır"
+    "message": "OpenWeatherMap.org ile çalışır"
   },
   "O0rXuF": {
-    "defaultMessage": "Sık kullanılan sitelerinizi gösterir"
+    "message": "Sık kullanılan sitelerinizi gösterir"
   },
   "OJ6oXo": {
-    "defaultMessage": "Araca tıklayarak hedefinizi değiştirebilirsiniz"
+    "message": "Araca tıklayarak hedefinizi değiştirebilirsiniz"
   },
   "OkRzUA": {
-    "defaultMessage": "Bir internet sayfası gösterir"
+    "message": "Bir internet sayfası gösterir"
   },
   "PD6In8": {
-    "defaultMessage": "Bir daha gösterme"
+    "message": "Bir daha gösterme"
   },
   "PM6qZ7": {
-    "defaultMessage": "Saniye göster"
+    "message": "Saniye göster"
   },
   "Pe0ogR": {
-    "defaultMessage": "Tema"
+    "message": "Tema"
   },
   "Ptdy4D": {
-    "defaultMessage": "Şu anki yaşınızı gereğinden fazla hassasiyetle gösterir"
+    "message": "Şu anki yaşınızı gereğinden fazla hassasiyetle gösterir"
   },
   "PuZCei": {
-    "defaultMessage": "Beslemenin başlığını kullanmak için boş bırakın"
+    "message": "Beslemenin başlığını kullanmak için boş bırakın"
   },
   "RQ+k9r": {
-    "defaultMessage": "Yakında gerçekleşecek uzay uçuşlarının bir listesi, RocketLaunch.Live ile çalışır"
+    "message": "Yakında gerçekleşecek uzay uçuşlarının bir listesi, RocketLaunch.Live ile çalışır"
   },
   "RUl5Gc": {
-    "defaultMessage": "Bir görüntü göster, isteğe bağlı olarak link de yapılabilir"
+    "message": "Bir görüntü göster, isteğe bağlı olarak link de yapılabilir"
   },
   "Rw51mJ": {
-    "defaultMessage": "<a>OpenStreetMap</a> ile çalışır."
+    "message": "<a>OpenStreetMap</a> ile çalışır."
   },
   "SQJLG3": {
-    "defaultMessage": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
+    "message": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
   },
   "SVwJTM": {
-    "defaultMessage": "Dışarı gönder"
+    "message": "Dışarı gönder"
   },
   "SfgURe": {
-    "defaultMessage": "Konum bulunamadı"
+    "message": "Konum bulunamadı"
   },
   "T/wBPw": {
-    "defaultMessage": "{type} aracını kaldır"
+    "message": "{type} aracını kaldır"
   },
   "TkgCJ9": {
-    "defaultMessage": "Aşağıdaki linki kullanarak yardım alabilir veya bir özellik talep edebilirsiniz."
+    "message": "Aşağıdaki linki kullanarak yardım alabilir veya bir özellik talep edebilirsiniz."
   },
   "U6qGuO": {
-    "defaultMessage": "Pozisyon"
+    "message": "Pozisyon"
   },
   "UP4EUm": {
-    "defaultMessage": "Ögelere tıklayarak onları düzenleyebilirsiniz"
+    "message": "Ögelere tıklayarak onları düzenleyebilirsiniz"
   },
   "VNlygV": {
-    "defaultMessage": "Bilgisayarınızda kurulu olan bir yazı tipi ismi"
+    "message": "Bilgisayarınızda kurulu olan bir yazı tipi ismi"
   },
   "WQeyl4": {
-    "defaultMessage": "Yer işaretlerine erişmek için izin verin"
+    "message": "Yer işaretlerine erişmek için izin verin"
   },
   "WZjKFf": {
-    "defaultMessage": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
+    "message": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
   },
   "WxuQ8x": {
-    "defaultMessage": "Tek bir renk"
+    "message": "Tek bir renk"
   },
   "X6ciR9": {
-    "defaultMessage": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sağ üst tarafında çıkan tuşları kullanın. Boyutunu değiştirmek için, sağ alttaki tuşu kullanın."
+    "message": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sağ üst tarafında çıkan tuşları kullanın. Boyutunu değiştirmek için, sağ alttaki tuşu kullanın."
   },
   "XQZA8e": {
-    "defaultMessage": "Arkaplan"
+    "message": "Arkaplan"
   },
   "YqlpSM": {
-    "defaultMessage": "<b>{age}</b> yaşındasınız"
+    "message": "<b>{age}</b> yaşındasınız"
   },
   "Yudtqh": {
-    "defaultMessage": "Panel Arkaplan Koyuluğu"
+    "message": "Panel Arkaplan Koyuluğu"
   },
   "Z2/hH0": {
-    "defaultMessage": "Görüntü: {filename}"
+    "message": "Görüntü: {filename}"
   },
   "aA8bDw": {
-    "defaultMessage": "Yazı"
+    "message": "Yazı"
   },
   "ajnDv2": {
-    "defaultMessage": "Buraya not yazın"
+    "message": "Buraya not yazın"
   },
   "bN0iM4": {
-    "defaultMessage": "Bir hata mı buldunuz? Bir isteğiniz mi var?"
+    "message": "Bir hata mı buldunuz? Bir isteğiniz mi var?"
   },
   "bQFsdR": {
-    "defaultMessage": "{host}'a erişmek için izin verin"
+    "message": "{host}'a erişmek için izin verin"
   },
   "bRP0Dg": {
-    "defaultMessage": "En sevdiğiniz arama motoru için bir arama çubuğu"
+    "message": "En sevdiğiniz arama motoru için bir arama çubuğu"
   },
   "bWjdfa": {
-    "defaultMessage": "URL"
+    "message": "URL"
   },
   "cR7nCG": {
-    "defaultMessage": "Temayı varsayılana sıfırla"
+    "message": "Temayı varsayılana sıfırla"
   },
   "cy8B6K": {
-    "defaultMessage": "Dışarıdan yükle / Dışarı gönder"
+    "message": "Dışarıdan yükle / Dışarı gönder"
   },
   "egigiF": {
-    "defaultMessage": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
+    "message": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
   },
   "ekIjqh": {
-    "defaultMessage": "Bütün internet sitelerine erişmek için izin verin"
+    "message": "Bütün internet sitelerine erişmek için izin verin"
   },
   "gjBiyj": {
-    "defaultMessage": "Yükleniyor..."
+    "message": "Yükleniyor..."
   },
   "h/ftND": {
-    "defaultMessage": "Bir dosya seçin"
+    "message": "Bir dosya seçin"
   },
   "hktZIl": {
-    "defaultMessage": "Zamanı gösterir"
+    "message": "Zamanı gösterir"
   },
   "iH2AHA": {
-    "defaultMessage": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
+    "message": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
   },
   "iU5dhE": {
-    "defaultMessage": "<a>Yardım ve SSS sayfası</a>nı inceleyerek sıkça sorulan soruları görebilir, iletişime geçebilirsiniz."
+    "message": "<a>Yardım ve SSS sayfası</a>nı inceleyerek sıkça sorulan soruları görebilir, iletişime geçebilirsiniz."
   },
   "iZNw+V": {
-    "defaultMessage": "Tünaydın"
+    "message": "Tünaydın"
   },
   "ibhC3l": {
-    "defaultMessage": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
+    "message": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
   },
   "ihn9EZ": {
-    "defaultMessage": "Günaydın"
+    "message": "Günaydın"
   },
   "j1jRSI": {
-    "defaultMessage": "Notlar için düzenlenebilir bir metin kutusu"
+    "message": "Notlar için düzenlenebilir bir metin kutusu"
   },
   "j7BbFE": {
-    "defaultMessage": "Unsplash koleksiyonu"
+    "message": "Unsplash koleksiyonu"
   },
   "jKD1tT": {
-    "defaultMessage": "Beğen",
+    "message": "Beğen",
     "description": "Arkaplanı beğen"
   },
   "kAEQyV": {
-    "defaultMessage": "Tamam"
+    "message": "Tamam"
   },
   "kk4TVW": {
-    "defaultMessage": "İkon"
+    "message": "İkon"
   },
   "krty63": {
-    "defaultMessage": "Yardım mı lazım?"
+    "message": "Yardım mı lazım?"
   },
   "lU5v+P": {
-    "defaultMessage": "Aşağıdaki ayarlar <b>deneyseldir</b>; yani bu ayarları değiştirirken çeşitli hatalar ve acayip şeylerle karşılaşabilirsiniz, ve güncellemeler temalarınızı bozabilir."
+    "message": "Aşağıdaki ayarlar <b>deneyseldir</b>; yani bu ayarları değiştirirken çeşitli hatalar ve acayip şeylerle karşılaşabilirsiniz, ve güncellemeler temalarınızı bozabilir."
   },
   "lq7eF/": {
-    "defaultMessage": "Bir mesaj göster"
+    "message": "Bir mesaj göster"
   },
   "mY9tpI": {
-    "defaultMessage": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
+    "message": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
   },
   "o2uuHu": {
-    "defaultMessage": "12 saatlik saat"
+    "message": "12 saatlik saat"
   },
   "or8yqP": {
-    "defaultMessage": "Elle seçilmiş rastgele arkaplanlar"
+    "message": "Elle seçilmiş rastgele arkaplanlar"
   },
   "pPi9TQ": {
-    "defaultMessage": "Uçuşlar yükleniyor..."
+    "message": "Uçuşlar yükleniyor..."
   },
   "qX503y": {
-    "defaultMessage": "Bir Unsplash koleksiyonundan rastgele bir görüntü"
+    "message": "Bir Unsplash koleksiyonundan rastgele bir görüntü"
   },
   "qzFcWI": {
-    "defaultMessage": "Ana Renk"
+    "message": "Ana Renk"
   },
   "rPjMRD": {
-    "defaultMessage": "{mode} Ayarları"
+    "message": "{mode} Ayarları"
   },
   "rvirM2": {
-    "defaultMessage": "Konum"
+    "message": "Konum"
   },
   "sRTzEd": {
-    "defaultMessage": "isim"
+    "message": "isim"
   },
   "tPuTXu": {
-    "defaultMessage": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir."
+    "message": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir."
   },
   "translation_credits": {
-    "defaultMessage": "Doğucan Gelbal tarafından Türkçeye çevrilmiştir.",
+    "message": "Doğucan Gelbal tarafından Türkçeye çevrilmiştir.",
     "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
   },
   "tzWexR": {
-    "defaultMessage": "Yer işaretlerinizi gösterir"
+    "message": "Yer işaretlerinizi gösterir"
   },
   "uCwc2+": {
-    "defaultMessage": "{latitude}'e {longitude} konumundaki {name} seçildi."
+    "message": "{latitude}'e {longitude} konumundaki {name} seçildi."
   },
   "uMhpKe": {
-    "defaultMessage": "Renk"
+    "message": "Renk"
   },
   "uN6slI": {
-    "defaultMessage": "Tarayıcının varsayılan arama motorunu kullan"
+    "message": "Tarayıcının varsayılan arama motorunu kullan"
   },
   "uRYRJh": {
-    "defaultMessage": "{type} aracını düzenle"
+    "message": "{type} aracını düzenle"
   },
   "ueVsqa": {
-    "defaultMessage": "Özel bir görüntü kullan"
+    "message": "Özel bir görüntü kullan"
   },
   "wOMXgK": {
-    "defaultMessage": "Yazı Tipi Boyutlama"
+    "message": "Yazı Tipi Boyutlama"
   },
   "wogY8a": {
-    "defaultMessage": "Araç Yarat"
+    "message": "Araç Yarat"
   },
   "wr7JBR": {
-    "defaultMessage": "İnternet sitelerinden ikon kullan (favicon)"
+    "message": "İnternet sitelerinden ikon kullan (favicon)"
   },
   "wubRXu": {
-    "defaultMessage": "{name} ile ara"
+    "message": "{name} ile ara"
   },
   "x7IPhN": {
-    "defaultMessage": "Klasörleri bölme olarak göster"
+    "message": "Klasörleri bölme olarak göster"
   },
   "xaOK72": {
-    "defaultMessage": "Bir Atom veya RSS beslemesini gösterir"
+    "message": "Bir Atom veya RSS beslemesini gösterir"
   },
   "xmcVZ0": {
-    "defaultMessage": "Ara"
+    "message": "Ara"
   },
   "y/bmsG": {
-    "defaultMessage": "İzin ver"
+    "message": "İzin ver"
   },
   "y1Z3or": {
-    "defaultMessage": "Dil"
+    "message": "Dil"
   },
   "yNe5MS": {
-    "defaultMessage": "Şu anki ve tahmin edilen hava durumları"
+    "message": "Şu anki ve tahmin edilen hava durumları"
   },
   "ySmliM": {
-    "defaultMessage": "Bir Atom veya RSS beslemesi URL'i"
+    "message": "Bir Atom veya RSS beslemesi URL'i"
   },
   "yYM0Bg": {
-    "defaultMessage": "Sonuçlar yükleniyor..."
+    "message": "Sonuçlar yükleniyor..."
   },
   "yfgoZf": {
-    "defaultMessage": "Discord / Matrix odaları"
+    "message": "Discord / Matrix odaları"
   },
   "yi8bIC": {
-    "defaultMessage": "Bir link butonu"
+    "message": "Bir link butonu"
   },
   "ykNa5O": {
-    "defaultMessage": "Font-Awesome'a ikonlar için, React'e arayüz için, WebPack'e buildler için teşekkürler."
+    "message": "Font-Awesome'a ikonlar için, React'e arayüz için, WebPack'e buildler için teşekkürler."
   },
   "z7UTSa": {
-    "defaultMessage": "Renewed Tab hakkında"
+    "message": "Renewed Tab hakkında"
   },
   "D3idYv": {
-    "defaultMessage": "Ayarlar"
+    "message": "Ayarlar"
   },
   "PHutSR": {
-    "defaultMessage": "Opaklık"
+    "message": "Opaklık"
   },
   "QqE4JC": {
-    "defaultMessage": "Besleme URL'i eksik."
+    "message": "Besleme URL'i eksik."
   },
   "QrihTZ": {
-    "defaultMessage": "Cuma"
+    "message": "Cuma"
   },
   "T4VxQN": {
-    "defaultMessage": "Yükleniyor…"
+    "message": "Yükleniyor…"
   },
   "U2Qnh7": {
-    "defaultMessage": "Görüntü",
+    "message": "Görüntü",
     "description": "Image background mode"
   },
   "WKiXhX": {
-    "defaultMessage": "Renk",
+    "message": "Renk",
     "description": "Color background mode"
   },
   "WMNHPh": {
-    "defaultMessage": "Cumartesi"
+    "message": "Cumartesi"
   },
   "XITVvp": {
-    "defaultMessage": "Panel arkaplanını göster"
+    "message": "Panel arkaplanını göster"
   },
   "YAgYL6": {
-    "defaultMessage": "Salı"
+    "message": "Salı"
   },
   "azMsfM": {
-    "defaultMessage": "Pazartesi"
+    "message": "Pazartesi"
   },
   "lUdRdE": {
-    "defaultMessage": "Hata: {msg}"
+    "message": "Hata: {msg}"
   },
   "lYJGY5": {
-    "defaultMessage": "Görüntü URL'i",
+    "message": "Görüntü URL'i",
     "description": "Image URL background mode"
   },
   "lkJAu6": {
-    "defaultMessage": "Unsplash",
+    "message": "Unsplash",
     "description": "Unsplash background mode"
   },
   "lxblgl": {
-    "defaultMessage": "Çarşamba"
+    "message": "Çarşamba"
   },
   "mJR06P": {
-    "defaultMessage": "Pazar"
+    "message": "Pazar"
   },
   "qAhUUO": {
-    "defaultMessage": "Perşembe"
+    "message": "Perşembe"
   },
   "qCcwo3": {
-    "defaultMessage": "Linkler"
+    "message": "Linkler"
   },
   "ycaP+t": {
-    "defaultMessage": "Otomatik",
+    "message": "Otomatik",
     "description": "Auto background mode"
   },
   "/dtDqf": {
-    "defaultMessage": "Notlar",
+    "message": "Notlar",
     "description": "Notes Widget"
   },
   "5CFbLI": {
-    "defaultMessage": "Karşılama",
+    "message": "Karşılama",
     "description": "Gretting Widget"
   },
   "7OH6mh": {
-    "defaultMessage": "Görüntü",
+    "message": "Görüntü",
     "description": "Image Widget"
   },
   "CmRs9p": {
-    "defaultMessage": "Arama",
+    "message": "Arama",
     "description": "Search Widget"
   },
   "G6WG/N": {
-    "defaultMessage": "Görünmez",
+    "message": "Görünmez",
     "description": "Invisible Widget"
   },
   "Lxc1x4": {
-    "defaultMessage": "Saat",
+    "message": "Saat",
     "description": "Clock Widget"
   },
   "MeEElY": {
-    "defaultMessage": "Yaş",
+    "message": "Yaş",
     "description": "Age Widget"
   },
   "S3njcM": {
-    "defaultMessage": "IFrame",
+    "message": "IFrame",
     "description": "IFrame Widget"
   },
   "SAo61B": {
-    "defaultMessage": "Yer İmleri",
+    "message": "Yer İmleri",
     "description": "Bookmarks Widget"
   },
   "SG4UJU": {
-    "defaultMessage": "Buton",
+    "message": "Buton",
     "description": "Button Widget"
   },
   "TUnCKb": {
-    "defaultMessage": "Yazı",
+    "message": "Yazı",
     "description": "Text Widget"
   },
   "Wv6Hyh": {
-    "defaultMessage": "YardımHakkında",
+    "message": "YardımHakkında",
     "description": "HelpAbout Widget"
   },
   "XsTD4Q": {
-    "defaultMessage": "Yapılacaklar Listesi",
+    "message": "Yapılacaklar Listesi",
     "description": "Todo List Widget"
   },
   "ZZIlU9": {
-    "defaultMessage": "Günlük Hedef",
+    "message": "Günlük Hedef",
     "description": "Daily Goal Widget"
   },
   "dGu5JQ": {
-    "defaultMessage": "Besleme",
+    "message": "Besleme",
     "description": "Feed Widget"
   },
   "gSjZfg": {
-    "defaultMessage": "Linkler",
+    "message": "Linkler",
     "description": "Links Widget"
   },
   "p8GKKf": {
-    "defaultMessage": "Sık Kullanılan Siteler",
+    "message": "Sık Kullanılan Siteler",
     "description": "Top Sites Widget"
   },
   "tyq8NB": {
-    "defaultMessage": "Hava Durumu",
+    "message": "Hava Durumu",
     "description": "Weather Widget"
   },
   "ubO4zt": {
-    "defaultMessage": "Web Comic",
+    "message": "Web Comic",
     "description": "Web Comic Widget"
   },
   "x59fh0": {
-    "defaultMessage": "Uzay Uçuşları",
+    "message": "Uzay Uçuşları",
     "description": "Space Flights Widget"
   },
   "or/+Da": {
-    "defaultMessage": "Biçimleme",
+    "message": "Biçimleme",
     "description": "Subheading for per-widget styling properties"
   },
   "Q1mwPp": {
-    "defaultMessage": "<a>Kendi dilinizi eklemeyi veya desteklemeyi</a> düşünebilirsiniz."
+    "message": "<a>Kendi dilinizi eklemeyi veya desteklemeyi</a> düşünebilirsiniz."
   },
   "rAuRqW": {
-    "defaultMessage": "Çeviriler topluluk tarafından sağlanmıştır."
+    "message": "Çeviriler topluluk tarafından sağlanmıştır."
   },
   "a09vzt": {
-    "defaultMessage": "HTTP isteği başarısız oldu, {code} {msg}."
+    "message": "HTTP isteği başarısız oldu, {code} {msg}."
   },
   "ekW/+6": {
-    "defaultMessage": "İnternete bağlanılamıyor"
+    "message": "İnternete bağlanılamıyor"
   },
   "o24MzT": {
-    "defaultMessage": "Yer imleri alınamıyor"
+    "message": "Yer imleri alınamıyor"
   },
   "LeB+DB": {
-    "defaultMessage": "Özel ikonlar kullan"
+    "message": "Özel ikonlar kullan"
   },
   "oepT0O": {
-    "defaultMessage": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır."
+    "message": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır."
+  },
+  "GWRKVT": {
+    "message": "Text Color",
+    "description": "Form field label"
   }
 }
