@@ -5,39 +5,48 @@ import React, { useMemo } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import { Form } from "../forms";
 import { ColorPair } from "../forms/ColorFields";
+import { tabTitles, SettingsTab } from "./SettingsDialog";
 
 
 const messages = defineMessages({
 	experimental: {
 		defaultMessage: "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes.",
+		description: "Theme settings",
 	},
 
 	font: {
 		defaultMessage: "Font",
+		description: "Theme settings: form field label",
 	},
 
 	fontHint: {
 		defaultMessage: "Any font name installed on your computer",
+		description: "Theme settings: form field hint (Font)",
 	},
 
 	fontScaling: {
 		defaultMessage: "Font Scaling",
+		description: "Theme settings: form field label",
 	},
 
 	panelBlurRadius: {
 		defaultMessage: "Panel Blur Radius",
+		description: "Theme settings: form field label",
 	},
 
 	panelOpacity: {
 		defaultMessage: "Panel Background Darkness",
+		description: "Theme settings: form field label",
 	},
 
 	colorPrimary: {
 		defaultMessage: "Primary Color",
+		description: "Theme settings: form field label",
 	},
 
 	colorPrimaryHint: {
 		defaultMessage: "Used for primary buttons and links",
+		description: "Theme settings: form field hint (Primary Color)",
 	},
 });
 
@@ -82,7 +91,7 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 	return (
 		<div className="modal-body">
 			<h2>
-				<FormattedMessage defaultMessage="Theme" />
+				<FormattedMessage {...tabTitles[SettingsTab.Theme]} />
 			</h2>
 			<p className="text-muted">
 				<FormattedMessage {...messages.experimental}

@@ -12,10 +12,12 @@ import Panel from './Panel';
 const messages = defineMessages({
 	iconHint: {
 		defaultMessage: "Optional, URL to image (18px recommended)",
+		description: "Links widget, form field hint (Icon)",
 	},
 
 	urlHint: {
 		defaultMessage: "Leave blank to make heading",
+		description: "Links widget, form field hint (Link URL)",
 	},
 });
 

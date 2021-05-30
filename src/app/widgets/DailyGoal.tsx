@@ -16,14 +16,17 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Reminds you about a daily goal",
+		description: "Daily Goal widget description",
 	},
 
 	editHint: {
 		defaultMessage: "You can change the goal by clicking it on the widget",
+		description: "Daily Goal widget: edit modal hint"
 	},
 
 	placeholder: {
 		defaultMessage: "What's your goal for today?",
+		description: "Daily Goal prompt",
 	},
 });
 

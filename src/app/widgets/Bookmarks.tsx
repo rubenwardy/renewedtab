@@ -17,6 +17,7 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Shows your bookmarks",
+		description: "Bookmarks widget description",
 	},
 
 	permissionLabel: {
@@ -25,10 +26,12 @@ const messages = defineMessages({
 
 	includeFolders: {
 		defaultMessage: "Include folders as sections",
+		description: "Bookmarks widget: form field label",
 	},
 
 	errFetchBookmarks: {
 		defaultMessage: "Unable to get bookmarks",
+		description: "Bookmarks widget: error message",
 	},
 });
 

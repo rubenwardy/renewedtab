@@ -16,10 +16,12 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "An editable text area for notes",
+		description: "Notes widget description",
 	},
 
 	placeholder: {
 		defaultMessage: "Enter notes here",
+		description: "Notes widget: prompt",
 	},
 });
 

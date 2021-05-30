@@ -12,6 +12,7 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Shows nothing, useful for layouting purposes",
+		description: "Invisible widget description",
 	},
 })
 

@@ -17,10 +17,12 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Shows top sites",
+		description: "Top Sites widget: description",
 	},
 
 	permissionLabel: {
 		defaultMessage: "Grant permission to access top sites",
+		description: "Top Sites widget: permission request",
 	},
 });
 

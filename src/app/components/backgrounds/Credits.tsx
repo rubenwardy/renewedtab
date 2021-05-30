@@ -6,12 +6,13 @@ import { defineMessages, useIntl } from "react-intl";
 
 const messages = defineMessages({
 	like: {
-		description: "Like background",
 		defaultMessage: "Like",
+		description: "Background credits vote",
 	},
 
 	block: {
 		defaultMessage: "Never show again",
+		description: "Background credits vote",
 	},
 });
 

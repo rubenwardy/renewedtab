@@ -3,6 +3,7 @@ import { storage } from "app/Storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useRef } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+import { tabTitles, SettingsTab } from "./SettingsDialog";
 
 
 const messages = defineMessages({
@@ -50,8 +51,7 @@ export default function ImportExport() {
 	return (
 		<div className="modal-body">
 			<h3>
-				<FormattedMessage
-						defaultMessage="Import / Export" />
+				<FormattedMessage {...tabTitles[SettingsTab.ImportExport]} />
 			</h3>
 			<p>
 				<FormattedMessage

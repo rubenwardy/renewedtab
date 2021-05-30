@@ -18,10 +18,12 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Shows an Atom or RSS feed",
+		description: "Feed widget description",
 	},
 
 	titleHint: {
 		defaultMessage: "Leave blank to use feed's title",
+		description: "Feed widget: form field hint (Title)",
 	},
 
 	loading: {
@@ -30,14 +32,17 @@ const messages = defineMessages({
 
 	filters: {
 		defaultMessage: "Filter Articles",
+		description: "Feed widget: form field label",
 	},
 
 	filtersHint: {
 		defaultMessage: "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters.",
+		description: "Feed widget: form field hint (Filters)",
 	},
 
 	isAllowed: {
 		defaultMessage: "Allow",
+		description: "Feed widget: filter allow checkbox label",
 	},
 });
 

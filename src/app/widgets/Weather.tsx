@@ -18,18 +18,22 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Current and forecasted weather",
+		description: "Weather widget description"
 	},
 
 	editHint: {
 		defaultMessage: "Powered by OpenWeatherMap.org",
+		description: "Weather widget: edit modal hint",
 	},
 
 	locationNeeded: {
 		defaultMessage: "Location needed. Click edit to add it.",
+		description: "Weather widget: location needed error",
 	},
 
 	temperatureUnit: {
 		defaultMessage: "Temperature Unit",
+		description: "Weather widget: form field label",
 	}
 });
 

@@ -128,7 +128,8 @@ export default function ArrayField(props: FieldProps<any[]>) {
 						<i className="fas fa-plus mr-2" />
 
 						<FormattedMessage
-								defaultMessage="Add" />
+								defaultMessage="Add"
+								description="Add array table row" />
 					</a>
 					<div className="clear-both" />
 				</>)}
@@ -153,7 +154,8 @@ export default function ArrayField(props: FieldProps<any[]>) {
 						<tr>
 							<td className="text-muted text-center" colSpan={headers.length + (isOrdered ? 2 : 1)}>
 								<FormattedMessage
-									defaultMessage="Nothing here" />
+									defaultMessage="Nothing here"
+									description="Shown when array table form field has no rows" />
 							</td>
 						</tr>
 					)}
@@ -166,7 +168,8 @@ export default function ArrayField(props: FieldProps<any[]>) {
 					<i className="fas fa-plus mr-2" />
 
 					<FormattedMessage
-							defaultMessage="Add" />
+							defaultMessage="Add"
+							description="Add array table row" />
 				</a>}
 
 			<div className="clear-both" />

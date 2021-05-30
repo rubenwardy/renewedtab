@@ -15,6 +15,7 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Show a message",
+		description: "Text widget description"
 	},
 });
 

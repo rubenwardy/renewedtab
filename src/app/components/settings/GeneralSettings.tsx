@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { FormattedMessage } from "react-intl";
+import { tabTitles, SettingsTab } from "./SettingsDialog";
 
 export interface GeneralSettingsProps {
 	locale: string;
@@ -19,7 +20,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 	return (
 		<div className="modal-body">
 			<h2>
-				<FormattedMessage defaultMessage="General" />
+				<FormattedMessage {...tabTitles[SettingsTab.General]} />
 			</h2>
 			<div className="field">
 				<label htmlFor="locale">

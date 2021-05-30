@@ -9,19 +9,22 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 const messages = defineMessages({
 	title: {
 		defaultMessage: "Age",
-		description: "Age Widget",
+		description: "Age widget",
 	},
 
 	description: {
 		defaultMessage: "States your current age with way too much precision",
+		description: "Age widget description",
 	},
 
 	birth_date: {
 		defaultMessage: "Birth date",
+		description: "Age widget: form field label",
 	},
 
 	current_age: {
-		defaultMessage: "You are <b>{age}</b>"
+		defaultMessage: "You are <b>{age}</b>",
+		description: "Age widget text",
 	},
 });
 

@@ -15,14 +15,12 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Display an image, optionally making it a link",
-	},
-
-	imageUrl: {
-		defaultMessage: "Image URL",
+		description: "Image widget description",
 	},
 
 	linkHint: {
 		defaultMessage: "Optional, makes image a link",
+		description: "Image widget: Form field hint (Link)",
 	},
 });
 
@@ -53,7 +51,7 @@ Image.initialProps = {
 };
 
 Image.schema = {
-	image_url: type.string(messages.imageUrl),
+	image_url: type.string(schemaMessages.imageUrl),
 	link: type.url(schemaMessages.linkUrl, messages.linkHint),
 } as Schema;
 

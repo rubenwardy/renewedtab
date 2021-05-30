@@ -12,6 +12,7 @@ const messages = defineMessages({
 
 	selected: {
 		defaultMessage: "Selected {name} at {latitude} by {longitude}.",
+		description: "Location field",
 	},
 })
 
@@ -25,7 +26,8 @@ export function LocationQuery(props: { query: string, onSelect: (loc: Location) 
 		return (
 			<p className="text-muted">
 				<FormattedMessage
-						defaultMessage="No locations found" />
+						defaultMessage="No locations found"
+						description="Location form field: error" />
 			</p>);
 
 	}
@@ -79,7 +81,8 @@ export default function LocationField(props: FieldProps<Location>) {
 		location_after = (
 			<p className="text-muted">
 				<FormattedMessage
-						defaultMessage="Please select a location" />
+						defaultMessage="Please select a location"
+						description="Location form field: prompt" />
 			</p>);
 	}
 
@@ -89,7 +92,8 @@ export default function LocationField(props: FieldProps<Location>) {
 				<input type="text" ref={ref} name={props.name} defaultValue={value.name} />
 				<a className="btn btn-primary" onClick={handleSearch}>
 					<FormattedMessage
-							defaultMessage="Search" />
+							defaultMessage="Search"
+							description="Location form field: search" />
 				</a>
 			</div>
 			{location_after}

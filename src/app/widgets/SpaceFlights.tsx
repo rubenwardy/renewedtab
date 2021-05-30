@@ -17,10 +17,12 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "A list of upcoming space launches, powered by RocketLaunch.Live",
+		description: "SpaceFlights widget description",
 	},
 
 	editHint: {
 		defaultMessage: "Powered by RocketLaunch.Live",
+		description: "SpaceFlights widget: edit modal hint",
 	},
 
 	loadingFlights: {

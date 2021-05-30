@@ -53,7 +53,8 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 			<h3 className="mt-4">
 				<FormattedMessage
 						defaultMessage="{mode} Options"
-						values={{mode: modeName}} />
+						values={{mode: modeName}}
+						description="Background mode options" />
 			</h3>
 			<Form
 					values={props.background.values}

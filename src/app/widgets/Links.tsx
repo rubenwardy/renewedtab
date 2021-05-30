@@ -15,18 +15,22 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Links, with support for headings and icons",
+		description: "Links widget description",
 	},
 
 	links: {
 		defaultMessage: "Links",
+		description: "Links widget: form field label",
 	},
 
 	enableCustomIcons: {
 		defaultMessage: "Enable custom icons",
+		description: "Links widget: form field label",
 	},
 
 	useWebsiteIcons: {
 		defaultMessage: "Use icons from websites (favicons)",
+		description: "Links widget: form field label",
 	},
 });
 

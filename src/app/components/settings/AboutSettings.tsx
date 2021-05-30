@@ -51,12 +51,14 @@ export default function AboutSettings() {
 					<i className="fas fa-globe-europe mr-1" />
 
 					<FormattedMessage
-							defaultMessage="Website" />
+							defaultMessage="Website"
+							description="Renewed Tab website" />
 				</a>
 				<a className="btn btn-primary"
 						href="https://renewedtab.rubenwardy.com/donate/">
 					<FormattedMessage
-							defaultMessage="Donate" />
+							defaultMessage="Donate"
+							description="Renewed Tab donation link" />
 				</a>
 				<a className="btn btn-secondary"
 						href="https://renewedtab.rubenwardy.com/community/">

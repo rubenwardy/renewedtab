@@ -41,7 +41,8 @@ export default function Form(props: FormProps) {
 		inner.push(
 			<p className="text-muted" key="none">
 				<FormattedMessage
-						defaultMessage="Nothing to edit." />
+						defaultMessage="Nothing to edit."
+						description="Form has no fields" />
 			</p>);
 	}
 

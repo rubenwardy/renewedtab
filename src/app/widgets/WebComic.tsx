@@ -18,10 +18,7 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Shows the most recent image from an Atom or RSS feed, useful for WebComics.",
-	},
-
-	titleHint: {
-		defaultMessage: "Leave blank to use feed's title",
+		description: "Web Comic widget description",
 	},
 
 	loading: {
@@ -29,7 +26,8 @@ const messages = defineMessages({
 	},
 
 	noImages: {
-		defaultMessage: "No images found on feed"
+		defaultMessage: "No images found on feed",
+		description: "Web Comic widget: no images found error",
 	}
 });
 

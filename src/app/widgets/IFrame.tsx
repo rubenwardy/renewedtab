@@ -15,6 +15,7 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Shows a webpage",
+		description: "IFrame widget description",
 	},
 });
 

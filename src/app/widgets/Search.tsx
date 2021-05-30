@@ -16,26 +16,27 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Search box to your favourite search engine",
-	},
-
-	placeholder: {
-		defaultMessage: "Enter notes here",
+		description: "Search widget description",
 	},
 
 	searchTitle: {
 		defaultMessage: "Search engine name",
+		description: "Search widget: form field label",
 	},
 
 	useBrowserDefault: {
 		defaultMessage: "Use browser's default search engine",
+		description: "Search widget: form field label",
 	},
 
 	searchWith: {
 		defaultMessage: "Search with {name}",
+		description: "Search widget: searchbox placeholder text, when search engine name is known",
 	},
 
 	search: {
 		defaultMessage: "Search",
+		description: "Search widget: searchbox placeholder text, when search engine name is unknown",
 	},
 });
 

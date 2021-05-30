@@ -15,6 +15,7 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "A link button",
+		description: "Button widget description",
 	},
 });
 

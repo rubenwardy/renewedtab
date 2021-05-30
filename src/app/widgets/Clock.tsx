@@ -3,7 +3,7 @@ import { schemaMessages } from "app/locale/common";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { themeMessages, Widget, WidgetProps, WidgetTheme } from "app/Widget";
-import React, { CSSProperties } from "react";
+import React from "react";
 import { defineMessages, FormattedTime } from "react-intl";
 
 

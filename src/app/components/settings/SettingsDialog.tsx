@@ -8,7 +8,7 @@ import { ThemeSettings, ThemeSettingsProps } from "./ThemeSettings";
 import GeneralSettings, { GeneralSettingsProps } from "./GeneralSettings";
 
 
-enum SettingsTab {
+export enum SettingsTab {
 	General,
 	Background,
 	Theme,
@@ -19,25 +19,30 @@ enum SettingsTab {
 
 declare type SettingsTabType = keyof typeof SettingsTab;
 
-const tabTitles = defineMessages({
+export const tabTitles = defineMessages({
 	[SettingsTab.General]: {
 		defaultMessage: "General",
+		description: "Settings tab",
 	},
 
 	[SettingsTab.Background]: {
 		defaultMessage: "Background",
+		description: "Settings tab",
 	},
 
 	[SettingsTab.Theme]: {
 		defaultMessage: "Theme",
+		description: "Settings tab",
 	},
 
 	[SettingsTab.ImportExport]: {
 		defaultMessage: "Import / Export",
+		description: "Settings tab",
 	},
 
 	[SettingsTab.About]: {
 		defaultMessage: "About and Help",
+		description: "Settings tab",
 	},
 });
 

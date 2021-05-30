@@ -11,31 +11,37 @@ import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from "re
 const messages = defineMessages({
 	title: {
 		defaultMessage: "Greeting",
-		description: "Gretting Widget",
+		description: "Greeting Widget",
 	},
 
 	description: {
 		defaultMessage: "Greets you",
+		description: "Greeting widget description",
 	},
 
 	editHint: {
 		defaultMessage: "You can change the name by clicking it on the widget",
+		description: "Greeting widget: edit modal hint",
 	},
 
 	morning: {
 		defaultMessage: "Good morning",
+		description: "Greeting widget: greeting, before 12 noon",
 	},
 
 	afternoon: {
 		defaultMessage: "Good afternoon",
+		description: "Greeting widget: greeting, from 12 noon to 4pm",
 	},
 
 	evening: {
 		defaultMessage: "Good evening",
+		description: "Greeting widget: greeting, after 4pm",
 	},
 
 	name: {
 		defaultMessage: "name",
+		description: "Greeting widget: name prompt",
 	},
 });
 

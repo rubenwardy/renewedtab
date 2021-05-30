@@ -9,18 +9,22 @@ import { runPromise } from "./promises";
 const messages = defineMessages({
 	position: {
 		defaultMessage: "Position",
+		description: "Backgroud settings: form field label",
 	},
 
 	positionHint: {
 		defaultMessage: "center, top, or bottom",
+		description: "Backgroud settings: form field hint (Position)",
 	},
 
 	collection: {
 		defaultMessage: "Unsplash collection",
+		description: "Backgroud settings: form field label",
 	},
 
 	collectionHint: {
 		defaultMessage: "Collection ID. Found in the URL, example: 42576559",
+		description: "Backgroud settings: form field hint (Unsplash Collection)",
 	},
 });
 
@@ -65,22 +69,27 @@ const bgTitles = defineMessages({
 const bgDescriptions = defineMessages({
 	[BackgroundMode.Auto]: {
 		defaultMessage: "Random curated backgrounds",
+		description: "Backgroud mode description",
 	},
 
 	[BackgroundMode.Color]: {
 		defaultMessage: "A single color",
+		description: "Backgroud mode description",
 	},
 
 	[BackgroundMode.Image]: {
 		defaultMessage: "Use a custom image",
+		description: "Backgroud mode description",
 	},
 
 	[BackgroundMode.ImageUrl]: {
 		defaultMessage: "An image from a URL",
+		description: "Backgroud mode description",
 	},
 
 	[BackgroundMode.Unsplash]: {
 		defaultMessage: "Random image from an Unsplash collection",
+		description: "Backgroud mode description",
 	},
 });
 

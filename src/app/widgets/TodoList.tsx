@@ -17,14 +17,17 @@ const messages = defineMessages({
 
 	description: {
 		defaultMessage: "Track to do list items",
+		description: "Todo List widget: description",
 	},
 
 	editHint: {
 		defaultMessage: "Click items to edit them",
+		description: "Todo List widget: edit modal hint",
 	},
 
 	placeholder: {
 		defaultMessage: "Create a new todo item",
+		description: "Todo List widget: prompt",
 	},
 });
 

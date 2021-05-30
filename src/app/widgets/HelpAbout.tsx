@@ -13,10 +13,12 @@ const messages = defineMessages({
 
 	heading: {
 		defaultMessage: "Renewed Tab Help and Tips",
+		description: "HelpAbout widget heading",
 	},
 
 	description: {
 		defaultMessage: "Help for new users of Renewed Tab",
+		description: "HelpAbout widget description",
 	},
 });
 
