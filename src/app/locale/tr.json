@@ -596,9 +596,5 @@
   },
   "oepT0O": {
     "message": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır."
-  },
-  "GWRKVT": {
-    "message": "Text Color",
-    "description": "Form field label"
   }
 }

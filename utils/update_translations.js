@@ -25,12 +25,6 @@ while ((item = dir.readSync()) !== null) {
 			}
 		}
 
-		for (let key in english) {
-			if (!current.hasOwnProperty(key)) {
-				current[key] = english[key];
-			}
-		}
-
 		writeJSON(path, current);
 	}
 }
