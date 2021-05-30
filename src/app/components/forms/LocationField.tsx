@@ -6,10 +6,6 @@ import ErrorView from "../ErrorView";
 import { Location } from "common/api/weather";
 
 const messages = defineMessages({
-	loading: {
-		defaultMessage: "Loading results...",
-	},
-
 	selected: {
 		defaultMessage: "Selected {name} at {latitude} by {longitude}.",
 		description: "Location field",

@@ -26,17 +26,19 @@ const removedEntries = Object.entries(englishOld)
 const insertedEntries = Object.entries(english)
 	.filter(([key,]) => englishOld[key] == undefined);
 
-removedEntries.forEach(([oldKey, oldValue]) => {
-	const [newKey, newValue] = insertedEntries
-		.find(([, value2]) => value2.message == oldValue.message);
-	if (newValue) {
-		console.log(`Detected renamed translation: ${oldKey} to ${newKey}`);
-		updateMap.set(oldKey, {
-			key: newKey,
-			description: newValue.description
-		});
-	}
-});
+if (removedEntries.length > 0 && insertedEntries.length > 0) {
+	removedEntries.forEach(([oldKey, oldValue]) => {
+		const [newKey, newValue] = insertedEntries
+			.find(([, value2]) => value2.message == oldValue.message);
+		if (newValue) {
+			console.log(`Detected renamed translation: ${oldKey} to ${newKey}`);
+			updateMap.set(oldKey, {
+				key: newKey,
+				description: newValue.description
+			});
+		}
+	});
+}
 
 
 const dir = fs.opendirSync('src/app/locale');

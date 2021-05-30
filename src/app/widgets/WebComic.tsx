@@ -21,10 +21,6 @@ const messages = defineMessages({
 		description: "Web Comic widget description",
 	},
 
-	loading: {
-		defaultMessage: "Loading feed...",
-	},
-
 	noImages: {
 		defaultMessage: "No images found on feed",
 		description: "Web Comic widget: no images found error",

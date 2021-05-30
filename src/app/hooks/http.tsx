@@ -1,5 +1,5 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
-import { errorMessages } from "app/locale/common";
+import { miscMessages } from "app/locale/common";
 import { IntlShape, useIntl } from "react-intl";
 import { usePromise } from "./promises";
 
@@ -27,7 +27,7 @@ async function fetchCheckCors(intl: IntlShape, request: Request,
 					e.message.includes("Failed to fetch"))) {
 			await checkHostPermission(intl, request.url);
 
-			throw errorMessages.no_network;
+			throw miscMessages.no_network;
 		}
 		throw e;
 	}

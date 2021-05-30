@@ -26,10 +26,6 @@ const messages = defineMessages({
 		description: "Feed widget: form field hint (Title)",
 	},
 
-	loading: {
-		defaultMessage: "Loading feed...",
-	},
-
 	filters: {
 		defaultMessage: "Filter Articles",
 		description: "Feed widget: form field label",

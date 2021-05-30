@@ -24,10 +24,6 @@ const messages = defineMessages({
 		defaultMessage: "Powered by RocketLaunch.Live",
 		description: "SpaceFlights widget: edit modal hint",
 	},
-
-	loadingFlights: {
-		defaultMessage: "Loading flights...",
-	},
 });
 
 

@@ -1,3 +1,4 @@
+import { miscMessages } from "app/locale/common";
 import React from "react";
 import { FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
 
@@ -28,8 +29,7 @@ export default function ErrorView(props: ErrorViewProps) {
 		if (props.loading === true) {
 			return (
 				<div className="panel text-muted">
-					<FormattedMessage
-							defaultMessage="Loading…" />
+					<FormattedMessage {...miscMessages.loading} />
 				</div>);
 		} else {
 			return (<></>);

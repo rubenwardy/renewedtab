@@ -1,699 +1,687 @@
 {
-  "0mqoSv": {
-    "message": "Besleme yükleniyor..."
-  },
-  "3ZfhWo": {
-    "message": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz"
-  },
-  "3aaibf": {
-    "message": "Araç ekle"
-  },
-  "47FYwb": {
-    "message": "İptal"
-  },
-  "4syC1B": {
-    "message": "Yardım ve İstekler"
-  },
-  "8J0Bhj": {
-    "message": "<a>Renewed Tab</a>'e hoş geldiniz: araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası."
-  },
-  "9+2gJZ": {
-    "message": "Bu araç tarayıcı uzantı versiyonuna ihtiyaç duyar."
-  },
-  "9XUYQt": {
-    "message": "Dışarıdan yükle"
-  },
-  "CshCZY": {
-    "message": "Arkaplan Tipi"
-  },
-  "GqPEp+": {
-    "message": "Tarayıcı uzantı versiyonuna ihtiyaç duyar"
-  },
-  "K3r6DQ": {
-    "message": "Sil"
-  },
-  "KFe74G": {
-    "message": "Her şeyi sıfırla"
-  },
-  "N/7Stk": {
-    "message": "<a>rubenwardy</a> tarafından yaratılmıştır."
-  },
-  "N3HgMZ": {
-    "message": "Bir de ayarlara bakın (çark)."
-  },
-  "PM6qZ7": {
-    "message": "Saniye göster"
-  },
-  "Rw51mJ": {
-    "message": "<a>OpenStreetMap</a> ile çalışır."
-  },
-  "SQJLG3": {
-    "message": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
-  },
-  "SVwJTM": {
-    "message": "Dışarı gönder"
-  },
-  "T/wBPw": {
-    "message": "{type} aracını kaldır"
-  },
-  "TkgCJ9": {
-    "message": "Aşağıdaki linki kullanarak yardım alabilir veya bir özellik talep edebilirsiniz."
-  },
-  "WQeyl4": {
-    "message": "Yer işaretlerine erişmek için izin verin"
-  },
-  "WZjKFf": {
-    "message": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
-  },
-  "X6ciR9": {
-    "message": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sağ üst tarafında çıkan tuşları kullanın. Boyutunu değiştirmek için, sağ alttaki tuşu kullanın."
-  },
-  "Z2/hH0": {
-    "message": "Görüntü: {filename}"
-  },
-  "bN0iM4": {
-    "message": "Bir hata mı buldunuz? Bir isteğiniz mi var?"
-  },
-  "bQFsdR": {
-    "message": "{host}'a erişmek için izin verin"
-  },
-  "cR7nCG": {
-    "message": "Temayı varsayılana sıfırla"
-  },
-  "egigiF": {
-    "message": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
-  },
-  "ekIjqh": {
-    "message": "Bütün internet sitelerine erişmek için izin verin"
-  },
-  "gjBiyj": {
-    "message": "Yükleniyor..."
-  },
-  "h/ftND": {
-    "message": "Bir dosya seçin"
-  },
-  "hktZIl": {
-    "message": "Zamanı gösterir"
-  },
-  "iH2AHA": {
-    "message": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
-  },
-  "iU5dhE": {
-    "message": "<a>Yardım ve SSS sayfası</a>nı inceleyerek sıkça sorulan soruları görebilir, iletişime geçebilirsiniz."
-  },
-  "ibhC3l": {
-    "message": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
-  },
-  "kAEQyV": {
-    "message": "Tamam"
-  },
-  "krty63": {
-    "message": "Yardım mı lazım?"
-  },
-  "mY9tpI": {
-    "message": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
-  },
-  "o2uuHu": {
-    "message": "12 saatlik saat"
-  },
-  "pPi9TQ": {
-    "message": "Uçuşlar yükleniyor..."
-  },
-  "translation_credits": {
-    "message": "Doğucan Gelbal tarafından Türkçeye çevrilmiştir.",
-    "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
-  },
-  "uRYRJh": {
-    "message": "{type} aracını düzenle"
-  },
-  "wogY8a": {
-    "message": "Araç Yarat"
-  },
-  "y1Z3or": {
-    "message": "Dil"
-  },
-  "yYM0Bg": {
-    "message": "Sonuçlar yükleniyor..."
-  },
-  "yfgoZf": {
-    "message": "Discord / Matrix odaları"
-  },
-  "ykNa5O": {
-    "message": "Font-Awesome'a ikonlar için, React'e arayüz için, WebPack'e buildler için teşekkürler."
-  },
-  "z7UTSa": {
-    "message": "Renewed Tab hakkında"
-  },
-  "D3idYv": {
-    "message": "Ayarlar"
-  },
-  "QqE4JC": {
-    "message": "Besleme URL'i eksik."
-  },
-  "QrihTZ": {
-    "message": "Cuma"
-  },
-  "T4VxQN": {
-    "message": "Yükleniyor…"
-  },
-  "U2Qnh7": {
-    "message": "Görüntü",
-    "description": "Image background mode"
-  },
-  "WKiXhX": {
-    "message": "Renk",
-    "description": "Color background mode"
-  },
-  "WMNHPh": {
-    "message": "Cumartesi"
-  },
-  "XITVvp": {
-    "message": "Panel arkaplanını göster"
-  },
-  "YAgYL6": {
-    "message": "Salı"
-  },
-  "azMsfM": {
-    "message": "Pazartesi"
-  },
-  "lUdRdE": {
-    "message": "Hata: {msg}"
-  },
-  "lYJGY5": {
-    "message": "Görüntü URL'i",
-    "description": "Image URL background mode"
-  },
-  "lkJAu6": {
-    "message": "Unsplash",
-    "description": "Unsplash background mode"
-  },
-  "lxblgl": {
-    "message": "Çarşamba"
-  },
-  "mJR06P": {
-    "message": "Pazar"
-  },
-  "qAhUUO": {
-    "message": "Perşembe"
-  },
-  "ycaP+t": {
-    "message": "Otomatik",
-    "description": "Auto background mode"
-  },
-  "/dtDqf": {
-    "message": "Notlar",
-    "description": "Notes Widget"
-  },
-  "7OH6mh": {
-    "message": "Görüntü",
-    "description": "Image Widget"
-  },
-  "CmRs9p": {
-    "message": "Arama",
-    "description": "Search Widget"
-  },
-  "G6WG/N": {
-    "message": "Görünmez",
-    "description": "Invisible Widget"
-  },
-  "Lxc1x4": {
-    "message": "Saat",
-    "description": "Clock Widget"
-  },
-  "S3njcM": {
-    "message": "IFrame",
-    "description": "IFrame Widget"
-  },
-  "SAo61B": {
-    "message": "Yer İmleri",
-    "description": "Bookmarks Widget"
-  },
-  "SG4UJU": {
-    "message": "Buton",
-    "description": "Button Widget"
-  },
-  "TUnCKb": {
-    "message": "Yazı",
-    "description": "Text Widget"
-  },
-  "Wv6Hyh": {
-    "message": "YardımHakkında",
-    "description": "HelpAbout Widget"
-  },
-  "XsTD4Q": {
-    "message": "Yapılacaklar Listesi",
-    "description": "Todo List Widget"
-  },
-  "ZZIlU9": {
-    "message": "Günlük Hedef",
-    "description": "Daily Goal Widget"
-  },
-  "dGu5JQ": {
-    "message": "Besleme",
-    "description": "Feed Widget"
-  },
-  "gSjZfg": {
-    "message": "Linkler",
-    "description": "Links Widget"
-  },
-  "p8GKKf": {
-    "message": "Sık Kullanılan Siteler",
-    "description": "Top Sites Widget"
-  },
-  "tyq8NB": {
-    "message": "Hava Durumu",
-    "description": "Weather Widget"
-  },
-  "ubO4zt": {
-    "message": "Web Comic",
-    "description": "Web Comic Widget"
-  },
-  "x59fh0": {
-    "message": "Uzay Uçuşları",
-    "description": "Space Flights Widget"
-  },
-  "or/+Da": {
-    "message": "Biçimleme",
-    "description": "Subheading for per-widget styling properties"
-  },
-  "Q1mwPp": {
-    "message": "<a>Kendi dilinizi eklemeyi veya desteklemeyi</a> düşünebilirsiniz."
-  },
-  "rAuRqW": {
-    "message": "Çeviriler topluluk tarafından sağlanmıştır."
-  },
-  "a09vzt": {
-    "message": "HTTP isteği başarısız oldu, {code} {msg}."
-  },
-  "ekW/+6": {
-    "message": "İnternete bağlanılamıyor"
-  },
-  "ao/AFQ": {
-    "message": "Günlük bir hedefinizi hatırlatır",
-    "description": "Daily Goal widget description"
-  },
-  "H00a0q": {
-    "message": "Heading oluşturmak için boş bırakın",
-    "description": "Links widget, form field hint (Link URL)"
-  },
-  "xtOPHp": {
-    "message": "Link URL'i",
-    "description": "Form field label"
-  },
-  "X18x9m": {
-    "message": "Genel",
-    "description": "Settings tab"
-  },
-  "OBJta4": {
-    "message": "Araç içinde tıklayarak ismi değiştirebilirsiniz",
-    "description": "Greeting widget: edit modal hint"
-  },
-  "1ehGkM": {
-    "message": "Ekle",
-    "description": "Add array table row"
-  },
-  "fz43UJ": {
-    "message": "Bağış yap",
-    "description": "Renewed Tab donation link"
-  },
-  "K8s82y": {
-    "message": "Doğum tarihi",
-    "description": "Age widget: form field label"
-  },
-  "4UpnpD": {
-    "message": "Görüntüler tarayıcınızda yerel olarak saklanır, asla internete yüklenmez",
-    "description": "Form field hint (Image)"
-  },
-  "ZduoYO": {
-    "message": "Renewed Tab'in yeni kullanıcıları için yardım",
-    "description": "HelpAbout widget description"
-  },
-  "zsdRww": {
-    "message": "Ana butonlar ve linkler için kullanılır",
-    "description": "Theme settings: form field hint (Primary Color)"
-  },
-  "VPDVTF": {
-    "message": "Burada bir şey yok",
-    "description": "Shown when array table form field has no rows"
-  },
-  "X5OoHJ": {
-    "message": "Bugünkü hedefiniz nedir?",
-    "description": "Daily Goal prompt"
-  },
-  "pHo6u+": {
-    "message": "Beslemede görüntü bulunamadı",
-    "description": "Web Comic widget: no images found error"
-  },
-  "hZZSzJ": {
-    "message": "RocketLaunch.Live ile çalışır",
-    "description": "SpaceFlights widget: edit modal hint"
-  },
-  "p7+m8N": {
-    "message": "Sık kullanılan sitelerinize erişmek için izin verin",
-    "description": "Top Sites widget: permission request"
-  },
-  "7RSFb4": {
-    "message": "Renewed Tab Yardım ve İpuçları",
-    "description": "HelpAbout widget heading"
-  },
-  "xvXMaZ": {
-    "message": "Sizi selamlar",
-    "description": "Greeting widget description"
-  },
-  "Wi0G88": {
-    "message": "Hakkında ve Yardım",
-    "description": "Settings tab"
-  },
-  "sPl3nI": {
-    "message": "Başlık",
-    "description": "Form field label"
-  },
-  "wr0l0L": {
-    "message": "Bir URL'den görüntü",
-    "description": "Backgroud mode description"
-  },
-  "fWK68w": {
-    "message": "Yazı tipi",
-    "description": "Theme settings: form field label"
-  },
-  "VkW6D1": {
-    "message": "orta, üst, veya alt",
-    "description": "Backgroud settings: form field hint (Position)"
-  },
-  "Kzo9ZH": {
-    "message": "Görüntü URL'i",
-    "description": "Form field label"
-  },
-  "py0oht": {
-    "message": "İyi akşamlar",
-    "description": "Greeting widget: greeting, after 4pm"
-  },
-  "YYoBQn": {
-    "message": "Panel Bulanıklık Yarıçapı",
-    "description": "Theme settings: form field label"
-  },
-  "GXkv/F": {
-    "message": "Lütfen bir konum seçin",
-    "description": "Location form field: prompt"
-  },
-  "aaxFkJ": {
-    "message": "Yeni bir yapılacak hatırlatması yarat",
-    "description": "Todo List widget: prompt"
-  },
-  "3Nw7b0": {
-    "message": "Arama motoru ismi",
-    "description": "Search widget: form field label"
-  },
-  "zKofmb": {
-    "message": "Koleksiyon kodu. URL'de bulabilirsiniz, örnek: 42576559",
-    "description": "Backgroud settings: form field hint (Unsplash Collection)"
-  },
-  "sYvWWw": {
-    "message": "İsteğe bağlı, URL'den görüntü (18px önerilir)",
-    "description": "Links widget, form field hint (Icon)"
-  },
-  "wZq5vc": {
-    "message": "İkonlar olarak göster",
-    "description": "Form field label"
-  },
-  "dIwFS5": {
-    "message": "Bir görüntü seç",
-    "description": "Form field label"
-  },
-  "3vh5vd": {
-    "message": "Bir şey göstermez, yerleşim için kullanılır",
-    "description": "Invisible widget description"
-  },
-  "fW8Xpd": {
-    "message": "Konum gerekli. Düzenle'ye tıklayarak ekleyin.",
-    "description": "Weather widget: location needed error"
-  },
-  "rb3Zy8": {
-    "message": "Makaleleri Filtrele",
-    "description": "Feed widget: form field label"
-  },
-  "5DCxT+": {
-    "message": "Sıcaklık Birimi",
-    "description": "Weather widget: form field label"
-  },
-  "3/EBw0": {
-    "message": "İnternet sitesi",
-    "description": "Renewed Tab website"
-  },
-  "l8+Uwz": {
-    "message": "Düzenlenecek bir şey yok.",
-    "description": "Form has no fields"
-  },
-  "0feb3b": {
-    "message": "İsteğe bağlı, resmi link haline getirir.",
-    "description": "Image widget: Form field hint (Link)"
-  },
-  "jSHZmX": {
-    "message": "Yapılacaklar listesi ögelerini takip edin",
-    "description": "Todo List widget: description"
-  },
-  "sx01dA": {
-    "message": "Linkler. Heading ve ikon desteği de vardır",
-    "description": "Links widget description"
-  },
-  "xy7dL3": {
-    "message": "OpenWeatherMap.org ile çalışır",
-    "description": "Weather widget: edit modal hint"
-  },
-  "KyDwm3": {
-    "message": "Sık kullanılan sitelerinizi gösterir",
-    "description": "Top Sites widget: description"
-  },
-  "lwUV0r": {
-    "message": "Araca tıklayarak hedefinizi değiştirebilirsiniz",
-    "description": "Daily Goal widget: edit modal hint"
-  },
-  "V1EIOe": {
-    "message": "Bir internet sayfası gösterir",
-    "description": "IFrame widget description"
-  },
-  "zfsplE": {
-    "message": "Bir daha gösterme",
-    "description": "Background credits vote"
-  },
-  "irdBm2": {
-    "message": "Tema",
-    "description": "Settings tab"
-  },
-  "+oSH/F": {
-    "message": "Şu anki yaşınızı gereğinden fazla hassasiyetle gösterir",
-    "description": "Age widget description"
-  },
-  "ktmuOE": {
-    "message": "Beslemenin başlığını kullanmak için boş bırakın",
-    "description": "Feed widget: form field hint (Title)"
-  },
-  "AgU+/t": {
-    "message": "Yakında gerçekleşecek uzay uçuşlarının bir listesi, RocketLaunch.Live ile çalışır",
-    "description": "SpaceFlights widget description"
-  },
-  "D0+wcK": {
-    "message": "Bir görüntü göster, isteğe bağlı olarak link de yapılabilir",
-    "description": "Image widget description"
-  },
-  "+GMx80": {
-    "message": "Konum bulunamadı",
-    "description": "Location form field: error"
-  },
-  "gEYo49": {
-    "message": "Pozisyon",
-    "description": "Backgroud settings: form field label"
-  },
-  "/iBdV1": {
-    "message": "Ögelere tıklayarak onları düzenleyebilirsiniz",
-    "description": "Todo List widget: edit modal hint"
-  },
-  "GSox4d": {
-    "message": "Bilgisayarınızda kurulu olan bir yazı tipi ismi",
-    "description": "Theme settings: form field hint (Font)"
-  },
-  "RZqASt": {
-    "message": "Tek bir renk",
-    "description": "Backgroud mode description"
-  },
-  "JvOSvX": {
-    "message": "Arkaplan",
-    "description": "Settings tab"
-  },
-  "27lljH": {
-    "message": "<b>{age}</b> yaşındasınız",
-    "description": "Age widget text"
-  },
-  "qCsSqt": {
-    "message": "Panel Arkaplan Koyuluğu",
-    "description": "Theme settings: form field label"
-  },
-  "ShQneX": {
-    "message": "Yazı",
-    "description": "Form field label"
-  },
-  "amHvKE": {
-    "message": "Buraya not yazın",
-    "description": "Notes widget: prompt"
-  },
-  "y2OItK": {
-    "message": "En sevdiğiniz arama motoru için bir arama çubuğu",
-    "description": "Search widget description"
-  },
-  "VjDvbL": {
-    "message": "URL",
-    "description": "Form field label"
-  },
-  "J91edI": {
-    "message": "Dışarıdan yükle / Dışarı gönder",
-    "description": "Settings tab"
-  },
-  "18X7au": {
-    "message": "Tünaydın",
-    "description": "Greeting widget: greeting, from 12 noon to 4pm"
-  },
-  "dLthbh": {
-    "message": "Günaydın",
-    "description": "Greeting widget: greeting, before 12 noon"
-  },
-  "oDog89": {
-    "message": "Notlar için düzenlenebilir bir metin kutusu",
-    "description": "Notes widget description"
-  },
-  "qoEZRi": {
-    "message": "Unsplash koleksiyonu",
-    "description": "Backgroud settings: form field label"
-  },
-  "iFxzUm": {
-    "message": "Beğen",
-    "description": "Background credits vote"
-  },
-  "0hxZWu": {
-    "message": "İkon",
-    "description": "Form field label"
-  },
-  "FHzdXg": {
-    "message": "Aşağıdaki ayarlar <b>deneyseldir</b>; yani bu ayarları değiştirirken çeşitli hatalar ve acayip şeylerle karşılaşabilirsiniz, ve güncellemeler temalarınızı bozabilir.",
-    "description": "Theme settings"
-  },
-  "ZUZeuR": {
-    "message": "Bir mesaj göster",
-    "description": "Text widget description"
-  },
-  "Z79HMN": {
-    "message": "Elle seçilmiş rastgele arkaplanlar",
-    "description": "Backgroud mode description"
-  },
-  "4F+2K3": {
-    "message": "Bir Unsplash koleksiyonundan rastgele bir görüntü",
-    "description": "Backgroud mode description"
-  },
-  "8xVVb5": {
-    "message": "Ana Renk",
-    "description": "Theme settings: form field label"
-  },
-  "qYVXqA": {
-    "message": "{mode} Ayarları",
-    "description": "Background mode options"
-  },
-  "XrQEPN": {
-    "message": "Konum",
-    "description": "Form field label"
-  },
-  "oJnbwn": {
-    "message": "isim",
-    "description": "Greeting widget: name prompt"
-  },
-  "vS2rQE": {
-    "message": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir.",
-    "description": "Feed widget: form field hint (Filters)"
-  },
-  "cSF2y1": {
-    "message": "Yer işaretlerinizi gösterir",
-    "description": "Bookmarks widget description"
-  },
-  "YQnxUP": {
-    "message": "{latitude}'e {longitude} konumundaki {name} seçildi.",
-    "description": "Location field"
-  },
-  "OQHLB5": {
-    "message": "Renk",
-    "description": "Form field label"
-  },
-  "ZRWjTk": {
-    "message": "Tarayıcının varsayılan arama motorunu kullan",
-    "description": "Search widget: form field label"
-  },
-  "pVrtrA": {
-    "message": "Özel bir görüntü kullan",
-    "description": "Backgroud mode description"
-  },
-  "LfHpBk": {
-    "message": "Yazı Tipi Boyutlama",
-    "description": "Theme settings: form field label"
-  },
-  "eXkpJi": {
-    "message": "İnternet sitelerinden ikon kullan (favicon)",
-    "description": "Links widget: form field label"
-  },
-  "YS5zRT": {
-    "message": "{name} ile ara",
-    "description": "Search widget: searchbox placeholder text, when search engine name is known"
-  },
-  "MN3prI": {
-    "message": "Klasörleri bölme olarak göster",
-    "description": "Bookmarks widget: form field label"
-  },
-  "ba9jts": {
-    "message": "Bir Atom veya RSS beslemesini gösterir",
-    "description": "Feed widget description"
-  },
-  "nGSwtl": {
-    "message": "Ara",
-    "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
-  },
-  "IhKDXS": {
-    "message": "İzin ver",
-    "description": "Feed widget: filter allow checkbox label"
-  },
-  "y8o0oA": {
-    "message": "Şu anki ve tahmin edilen hava durumları",
-    "description": "Weather widget description"
-  },
-  "cL6y1P": {
-    "message": "Bir Atom veya RSS beslemesi URL'i",
-    "description": "Form field hint (Feed URL)"
-  },
-  "Bl74xq": {
-    "message": "Bir link butonu",
-    "description": "Button widget description"
-  },
-  "1s5GYl": {
-    "message": "Opaklık",
-    "description": "Form field label"
-  },
-  "kueLs9": {
-    "message": "Linkler",
-    "description": "Links widget: form field label"
-  },
-  "2efE5y": {
-    "message": "Karşılama",
-    "description": "Greeting Widget"
-  },
-  "WF5DKA": {
-    "message": "Yaş",
-    "description": "Age widget"
-  },
-  "6pdO6i": {
-    "message": "Yer imleri alınamıyor",
-    "description": "Bookmarks widget: error message"
-  },
-  "xtl3ls": {
-    "message": "Özel ikonlar kullan",
-    "description": "Links widget: form field label"
-  },
-  "DJRqNI": {
-    "message": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır.",
-    "description": "Web Comic widget description"
-  }
+    "3ZfhWo": {
+        "message": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz"
+    },
+    "3aaibf": {
+        "message": "Araç ekle"
+    },
+    "47FYwb": {
+        "message": "İptal"
+    },
+    "4syC1B": {
+        "message": "Yardım ve İstekler"
+    },
+    "8J0Bhj": {
+        "message": "<a>Renewed Tab</a>'e hoş geldiniz: araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası."
+    },
+    "9+2gJZ": {
+        "message": "Bu araç tarayıcı uzantı versiyonuna ihtiyaç duyar."
+    },
+    "9XUYQt": {
+        "message": "Dışarıdan yükle"
+    },
+    "CshCZY": {
+        "message": "Arkaplan Tipi"
+    },
+    "GqPEp+": {
+        "message": "Tarayıcı uzantı versiyonuna ihtiyaç duyar"
+    },
+    "K3r6DQ": {
+        "message": "Sil"
+    },
+    "KFe74G": {
+        "message": "Her şeyi sıfırla"
+    },
+    "N/7Stk": {
+        "message": "<a>rubenwardy</a> tarafından yaratılmıştır."
+    },
+    "N3HgMZ": {
+        "message": "Bir de ayarlara bakın (çark)."
+    },
+    "PM6qZ7": {
+        "message": "Saniye göster"
+    },
+    "Rw51mJ": {
+        "message": "<a>OpenStreetMap</a> ile çalışır."
+    },
+    "SQJLG3": {
+        "message": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
+    },
+    "SVwJTM": {
+        "message": "Dışarı gönder"
+    },
+    "T/wBPw": {
+        "message": "{type} aracını kaldır"
+    },
+    "TkgCJ9": {
+        "message": "Aşağıdaki linki kullanarak yardım alabilir veya bir özellik talep edebilirsiniz."
+    },
+    "WQeyl4": {
+        "message": "Yer işaretlerine erişmek için izin verin"
+    },
+    "WZjKFf": {
+        "message": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
+    },
+    "X6ciR9": {
+        "message": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sağ üst tarafında çıkan tuşları kullanın. Boyutunu değiştirmek için, sağ alttaki tuşu kullanın."
+    },
+    "Z2/hH0": {
+        "message": "Görüntü: {filename}"
+    },
+    "bN0iM4": {
+        "message": "Bir hata mı buldunuz? Bir isteğiniz mi var?"
+    },
+    "bQFsdR": {
+        "message": "{host}'a erişmek için izin verin"
+    },
+    "cR7nCG": {
+        "message": "Temayı varsayılana sıfırla"
+    },
+    "egigiF": {
+        "message": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
+    },
+    "ekIjqh": {
+        "message": "Bütün internet sitelerine erişmek için izin verin"
+    },
+    "h/ftND": {
+        "message": "Bir dosya seçin"
+    },
+    "hktZIl": {
+        "message": "Zamanı gösterir"
+    },
+    "iH2AHA": {
+        "message": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
+    },
+    "iU5dhE": {
+        "message": "<a>Yardım ve SSS sayfası</a>nı inceleyerek sıkça sorulan soruları görebilir, iletişime geçebilirsiniz."
+    },
+    "ibhC3l": {
+        "message": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
+    },
+    "kAEQyV": {
+        "message": "Tamam"
+    },
+    "krty63": {
+        "message": "Yardım mı lazım?"
+    },
+    "mY9tpI": {
+        "message": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
+    },
+    "o2uuHu": {
+        "message": "12 saatlik saat"
+    },
+    "translation_credits": {
+        "message": "Doğucan Gelbal tarafından Türkçeye çevrilmiştir.",
+        "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+    },
+    "uRYRJh": {
+        "message": "{type} aracını düzenle"
+    },
+    "wogY8a": {
+        "message": "Araç Yarat"
+    },
+    "y1Z3or": {
+        "message": "Dil"
+    },
+    "yfgoZf": {
+        "message": "Discord / Matrix odaları"
+    },
+    "ykNa5O": {
+        "message": "Font-Awesome'a ikonlar için, React'e arayüz için, WebPack'e buildler için teşekkürler."
+    },
+    "z7UTSa": {
+        "message": "Renewed Tab hakkında"
+    },
+    "D3idYv": {
+        "message": "Ayarlar"
+    },
+    "QqE4JC": {
+        "message": "Besleme URL'i eksik."
+    },
+    "QrihTZ": {
+        "message": "Cuma"
+    },
+    "T4VxQN": {
+        "message": "Yükleniyor…"
+    },
+    "U2Qnh7": {
+        "message": "Görüntü",
+        "description": "Image background mode"
+    },
+    "WKiXhX": {
+        "message": "Renk",
+        "description": "Color background mode"
+    },
+    "WMNHPh": {
+        "message": "Cumartesi"
+    },
+    "XITVvp": {
+        "message": "Panel arkaplanını göster"
+    },
+    "YAgYL6": {
+        "message": "Salı"
+    },
+    "azMsfM": {
+        "message": "Pazartesi"
+    },
+    "lUdRdE": {
+        "message": "Hata: {msg}"
+    },
+    "lYJGY5": {
+        "message": "Görüntü URL'i",
+        "description": "Image URL background mode"
+    },
+    "lkJAu6": {
+        "message": "Unsplash",
+        "description": "Unsplash background mode"
+    },
+    "lxblgl": {
+        "message": "Çarşamba"
+    },
+    "mJR06P": {
+        "message": "Pazar"
+    },
+    "qAhUUO": {
+        "message": "Perşembe"
+    },
+    "ycaP+t": {
+        "message": "Otomatik",
+        "description": "Auto background mode"
+    },
+    "/dtDqf": {
+        "message": "Notlar",
+        "description": "Notes Widget"
+    },
+    "7OH6mh": {
+        "message": "Görüntü",
+        "description": "Image Widget"
+    },
+    "CmRs9p": {
+        "message": "Arama",
+        "description": "Search Widget"
+    },
+    "G6WG/N": {
+        "message": "Görünmez",
+        "description": "Invisible Widget"
+    },
+    "Lxc1x4": {
+        "message": "Saat",
+        "description": "Clock Widget"
+    },
+    "S3njcM": {
+        "message": "IFrame",
+        "description": "IFrame Widget"
+    },
+    "SAo61B": {
+        "message": "Yer İmleri",
+        "description": "Bookmarks Widget"
+    },
+    "SG4UJU": {
+        "message": "Buton",
+        "description": "Button Widget"
+    },
+    "TUnCKb": {
+        "message": "Yazı",
+        "description": "Text Widget"
+    },
+    "Wv6Hyh": {
+        "message": "YardımHakkında",
+        "description": "HelpAbout Widget"
+    },
+    "XsTD4Q": {
+        "message": "Yapılacaklar Listesi",
+        "description": "Todo List Widget"
+    },
+    "ZZIlU9": {
+        "message": "Günlük Hedef",
+        "description": "Daily Goal Widget"
+    },
+    "dGu5JQ": {
+        "message": "Besleme",
+        "description": "Feed Widget"
+    },
+    "gSjZfg": {
+        "message": "Linkler",
+        "description": "Links Widget"
+    },
+    "p8GKKf": {
+        "message": "Sık Kullanılan Siteler",
+        "description": "Top Sites Widget"
+    },
+    "tyq8NB": {
+        "message": "Hava Durumu",
+        "description": "Weather Widget"
+    },
+    "ubO4zt": {
+        "message": "Web Comic",
+        "description": "Web Comic Widget"
+    },
+    "x59fh0": {
+        "message": "Uzay Uçuşları",
+        "description": "Space Flights Widget"
+    },
+    "or/+Da": {
+        "message": "Biçimleme",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "Q1mwPp": {
+        "message": "<a>Kendi dilinizi eklemeyi veya desteklemeyi</a> düşünebilirsiniz."
+    },
+    "rAuRqW": {
+        "message": "Çeviriler topluluk tarafından sağlanmıştır."
+    },
+    "a09vzt": {
+        "message": "HTTP isteği başarısız oldu, {code} {msg}."
+    },
+    "ekW/+6": {
+        "message": "İnternete bağlanılamıyor"
+    },
+    "ao/AFQ": {
+        "message": "Günlük bir hedefinizi hatırlatır",
+        "description": "Daily Goal widget description"
+    },
+    "H00a0q": {
+        "message": "Heading oluşturmak için boş bırakın",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "xtOPHp": {
+        "message": "Link URL'i",
+        "description": "Form field label"
+    },
+    "X18x9m": {
+        "message": "Genel",
+        "description": "Settings tab"
+    },
+    "OBJta4": {
+        "message": "Araç içinde tıklayarak ismi değiştirebilirsiniz",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "1ehGkM": {
+        "message": "Ekle",
+        "description": "Add array table row"
+    },
+    "fz43UJ": {
+        "message": "Bağış yap",
+        "description": "Renewed Tab donation link"
+    },
+    "K8s82y": {
+        "message": "Doğum tarihi",
+        "description": "Age widget: form field label"
+    },
+    "4UpnpD": {
+        "message": "Görüntüler tarayıcınızda yerel olarak saklanır, asla internete yüklenmez",
+        "description": "Form field hint (Image)"
+    },
+    "ZduoYO": {
+        "message": "Renewed Tab'in yeni kullanıcıları için yardım",
+        "description": "HelpAbout widget description"
+    },
+    "zsdRww": {
+        "message": "Ana butonlar ve linkler için kullanılır",
+        "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "VPDVTF": {
+        "message": "Burada bir şey yok",
+        "description": "Shown when array table form field has no rows"
+    },
+    "X5OoHJ": {
+        "message": "Bugünkü hedefiniz nedir?",
+        "description": "Daily Goal prompt"
+    },
+    "pHo6u+": {
+        "message": "Beslemede görüntü bulunamadı",
+        "description": "Web Comic widget: no images found error"
+    },
+    "hZZSzJ": {
+        "message": "RocketLaunch.Live ile çalışır",
+        "description": "SpaceFlights widget: edit modal hint"
+    },
+    "p7+m8N": {
+        "message": "Sık kullanılan sitelerinize erişmek için izin verin",
+        "description": "Top Sites widget: permission request"
+    },
+    "7RSFb4": {
+        "message": "Renewed Tab Yardım ve İpuçları",
+        "description": "HelpAbout widget heading"
+    },
+    "xvXMaZ": {
+        "message": "Sizi selamlar",
+        "description": "Greeting widget description"
+    },
+    "Wi0G88": {
+        "message": "Hakkında ve Yardım",
+        "description": "Settings tab"
+    },
+    "sPl3nI": {
+        "message": "Başlık",
+        "description": "Form field label"
+    },
+    "wr0l0L": {
+        "message": "Bir URL'den görüntü",
+        "description": "Backgroud mode description"
+    },
+    "fWK68w": {
+        "message": "Yazı tipi",
+        "description": "Theme settings: form field label"
+    },
+    "VkW6D1": {
+        "message": "orta, üst, veya alt",
+        "description": "Backgroud settings: form field hint (Position)"
+    },
+    "Kzo9ZH": {
+        "message": "Görüntü URL'i",
+        "description": "Form field label"
+    },
+    "py0oht": {
+        "message": "İyi akşamlar",
+        "description": "Greeting widget: greeting, after 4pm"
+    },
+    "YYoBQn": {
+        "message": "Panel Bulanıklık Yarıçapı",
+        "description": "Theme settings: form field label"
+    },
+    "GXkv/F": {
+        "message": "Lütfen bir konum seçin",
+        "description": "Location form field: prompt"
+    },
+    "aaxFkJ": {
+        "message": "Yeni bir yapılacak hatırlatması yarat",
+        "description": "Todo List widget: prompt"
+    },
+    "3Nw7b0": {
+        "message": "Arama motoru ismi",
+        "description": "Search widget: form field label"
+    },
+    "zKofmb": {
+        "message": "Koleksiyon kodu. URL'de bulabilirsiniz, örnek: 42576559",
+        "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    },
+    "sYvWWw": {
+        "message": "İsteğe bağlı, URL'den görüntü (18px önerilir)",
+        "description": "Links widget, form field hint (Icon)"
+    },
+    "wZq5vc": {
+        "message": "İkonlar olarak göster",
+        "description": "Form field label"
+    },
+    "dIwFS5": {
+        "message": "Bir görüntü seç",
+        "description": "Form field label"
+    },
+    "3vh5vd": {
+        "message": "Bir şey göstermez, yerleşim için kullanılır",
+        "description": "Invisible widget description"
+    },
+    "fW8Xpd": {
+        "message": "Konum gerekli. Düzenle'ye tıklayarak ekleyin.",
+        "description": "Weather widget: location needed error"
+    },
+    "rb3Zy8": {
+        "message": "Makaleleri Filtrele",
+        "description": "Feed widget: form field label"
+    },
+    "5DCxT+": {
+        "message": "Sıcaklık Birimi",
+        "description": "Weather widget: form field label"
+    },
+    "3/EBw0": {
+        "message": "İnternet sitesi",
+        "description": "Renewed Tab website"
+    },
+    "l8+Uwz": {
+        "message": "Düzenlenecek bir şey yok.",
+        "description": "Form has no fields"
+    },
+    "0feb3b": {
+        "message": "İsteğe bağlı, resmi link haline getirir.",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "jSHZmX": {
+        "message": "Yapılacaklar listesi ögelerini takip edin",
+        "description": "Todo List widget: description"
+    },
+    "sx01dA": {
+        "message": "Linkler. Heading ve ikon desteği de vardır",
+        "description": "Links widget description"
+    },
+    "xy7dL3": {
+        "message": "OpenWeatherMap.org ile çalışır",
+        "description": "Weather widget: edit modal hint"
+    },
+    "KyDwm3": {
+        "message": "Sık kullanılan sitelerinizi gösterir",
+        "description": "Top Sites widget: description"
+    },
+    "lwUV0r": {
+        "message": "Araca tıklayarak hedefinizi değiştirebilirsiniz",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "V1EIOe": {
+        "message": "Bir internet sayfası gösterir",
+        "description": "IFrame widget description"
+    },
+    "zfsplE": {
+        "message": "Bir daha gösterme",
+        "description": "Background credits vote"
+    },
+    "irdBm2": {
+        "message": "Tema",
+        "description": "Settings tab"
+    },
+    "+oSH/F": {
+        "message": "Şu anki yaşınızı gereğinden fazla hassasiyetle gösterir",
+        "description": "Age widget description"
+    },
+    "ktmuOE": {
+        "message": "Beslemenin başlığını kullanmak için boş bırakın",
+        "description": "Feed widget: form field hint (Title)"
+    },
+    "AgU+/t": {
+        "message": "Yakında gerçekleşecek uzay uçuşlarının bir listesi, RocketLaunch.Live ile çalışır",
+        "description": "SpaceFlights widget description"
+    },
+    "D0+wcK": {
+        "message": "Bir görüntü göster, isteğe bağlı olarak link de yapılabilir",
+        "description": "Image widget description"
+    },
+    "+GMx80": {
+        "message": "Konum bulunamadı",
+        "description": "Location form field: error"
+    },
+    "gEYo49": {
+        "message": "Pozisyon",
+        "description": "Backgroud settings: form field label"
+    },
+    "/iBdV1": {
+        "message": "Ögelere tıklayarak onları düzenleyebilirsiniz",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "GSox4d": {
+        "message": "Bilgisayarınızda kurulu olan bir yazı tipi ismi",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "RZqASt": {
+        "message": "Tek bir renk",
+        "description": "Backgroud mode description"
+    },
+    "JvOSvX": {
+        "message": "Arkaplan",
+        "description": "Settings tab"
+    },
+    "27lljH": {
+        "message": "<b>{age}</b> yaşındasınız",
+        "description": "Age widget text"
+    },
+    "qCsSqt": {
+        "message": "Panel Arkaplan Koyuluğu",
+        "description": "Theme settings: form field label"
+    },
+    "ShQneX": {
+        "message": "Yazı",
+        "description": "Form field label"
+    },
+    "amHvKE": {
+        "message": "Buraya not yazın",
+        "description": "Notes widget: prompt"
+    },
+    "y2OItK": {
+        "message": "En sevdiğiniz arama motoru için bir arama çubuğu",
+        "description": "Search widget description"
+    },
+    "VjDvbL": {
+        "message": "URL",
+        "description": "Form field label"
+    },
+    "J91edI": {
+        "message": "Dışarıdan yükle / Dışarı gönder",
+        "description": "Settings tab"
+    },
+    "18X7au": {
+        "message": "Tünaydın",
+        "description": "Greeting widget: greeting, from 12 noon to 4pm"
+    },
+    "dLthbh": {
+        "message": "Günaydın",
+        "description": "Greeting widget: greeting, before 12 noon"
+    },
+    "oDog89": {
+        "message": "Notlar için düzenlenebilir bir metin kutusu",
+        "description": "Notes widget description"
+    },
+    "qoEZRi": {
+        "message": "Unsplash koleksiyonu",
+        "description": "Backgroud settings: form field label"
+    },
+    "iFxzUm": {
+        "message": "Beğen",
+        "description": "Background credits vote"
+    },
+    "0hxZWu": {
+        "message": "İkon",
+        "description": "Form field label"
+    },
+    "FHzdXg": {
+        "message": "Aşağıdaki ayarlar <b>deneyseldir</b>; yani bu ayarları değiştirirken çeşitli hatalar ve acayip şeylerle karşılaşabilirsiniz, ve güncellemeler temalarınızı bozabilir.",
+        "description": "Theme settings"
+    },
+    "ZUZeuR": {
+        "message": "Bir mesaj göster",
+        "description": "Text widget description"
+    },
+    "Z79HMN": {
+        "message": "Elle seçilmiş rastgele arkaplanlar",
+        "description": "Backgroud mode description"
+    },
+    "4F+2K3": {
+        "message": "Bir Unsplash koleksiyonundan rastgele bir görüntü",
+        "description": "Backgroud mode description"
+    },
+    "8xVVb5": {
+        "message": "Ana Renk",
+        "description": "Theme settings: form field label"
+    },
+    "qYVXqA": {
+        "message": "{mode} Ayarları",
+        "description": "Background mode options"
+    },
+    "XrQEPN": {
+        "message": "Konum",
+        "description": "Form field label"
+    },
+    "oJnbwn": {
+        "message": "isim",
+        "description": "Greeting widget: name prompt"
+    },
+    "vS2rQE": {
+        "message": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir.",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "cSF2y1": {
+        "message": "Yer işaretlerinizi gösterir",
+        "description": "Bookmarks widget description"
+    },
+    "YQnxUP": {
+        "message": "{latitude}'e {longitude} konumundaki {name} seçildi.",
+        "description": "Location field"
+    },
+    "OQHLB5": {
+        "message": "Renk",
+        "description": "Form field label"
+    },
+    "ZRWjTk": {
+        "message": "Tarayıcının varsayılan arama motorunu kullan",
+        "description": "Search widget: form field label"
+    },
+    "pVrtrA": {
+        "message": "Özel bir görüntü kullan",
+        "description": "Backgroud mode description"
+    },
+    "LfHpBk": {
+        "message": "Yazı Tipi Boyutlama",
+        "description": "Theme settings: form field label"
+    },
+    "eXkpJi": {
+        "message": "İnternet sitelerinden ikon kullan (favicon)",
+        "description": "Links widget: form field label"
+    },
+    "YS5zRT": {
+        "message": "{name} ile ara",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "MN3prI": {
+        "message": "Klasörleri bölme olarak göster",
+        "description": "Bookmarks widget: form field label"
+    },
+    "ba9jts": {
+        "message": "Bir Atom veya RSS beslemesini gösterir",
+        "description": "Feed widget description"
+    },
+    "nGSwtl": {
+        "message": "Ara",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "IhKDXS": {
+        "message": "İzin ver",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "y8o0oA": {
+        "message": "Şu anki ve tahmin edilen hava durumları",
+        "description": "Weather widget description"
+    },
+    "cL6y1P": {
+        "message": "Bir Atom veya RSS beslemesi URL'i",
+        "description": "Form field hint (Feed URL)"
+    },
+    "Bl74xq": {
+        "message": "Bir link butonu",
+        "description": "Button widget description"
+    },
+    "1s5GYl": {
+        "message": "Opaklık",
+        "description": "Form field label"
+    },
+    "kueLs9": {
+        "message": "Linkler",
+        "description": "Links widget: form field label"
+    },
+    "2efE5y": {
+        "message": "Karşılama",
+        "description": "Greeting Widget"
+    },
+    "WF5DKA": {
+        "message": "Yaş",
+        "description": "Age widget"
+    },
+    "6pdO6i": {
+        "message": "Yer imleri alınamıyor",
+        "description": "Bookmarks widget: error message"
+    },
+    "xtl3ls": {
+        "message": "Özel ikonlar kullan",
+        "description": "Links widget: form field label"
+    },
+    "DJRqNI": {
+        "message": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır.",
+        "description": "Web Comic widget description"
+    }
 }

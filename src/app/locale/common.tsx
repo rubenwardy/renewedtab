@@ -73,8 +73,12 @@ export const schemaMessages = defineMessages({
 });
 
 
-export const errorMessages = defineMessages({
+export const miscMessages = defineMessages({
 	no_network: {
 		defaultMessage: "Unable to connect to the Internet",
+	},
+
+	loading: {
+		defaultMessage: "Loading…",
 	},
 });

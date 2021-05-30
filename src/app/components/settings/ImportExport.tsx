@@ -1,16 +1,11 @@
 import { usePromise } from "app/hooks";
+import { miscMessages } from "app/locale/common";
 import { storage } from "app/Storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useRef } from "react";
-import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { tabTitles, SettingsTab } from "./SettingsDialog";
 
-
-const messages = defineMessages({
-	loading: {
-		defaultMessage: "Loading...",
-	},
-});
 
 export default function ImportExport() {
 	async function handleReset() {
@@ -59,7 +54,7 @@ export default function ImportExport() {
 							if any was entered into widget settings." />
 			</p>
 			<textarea className="stored" readOnly
-				value={data ?? (error ? error.toString() : intl.formatMessage(messages.loading))} />
+				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
 			<p>
