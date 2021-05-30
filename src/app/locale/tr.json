@@ -683,5 +683,9 @@
     "DJRqNI": {
         "message": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır.",
         "description": "Web Comic widget description"
+    },
+    "ofl4Ui": {
+        "message": "Ara",
+        "description": "Location form field: search"
     }
 }
