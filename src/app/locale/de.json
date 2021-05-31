@@ -2,5 +2,112 @@
     "+GMx80": {
         "message": "Keine Orte gefunden",
         "description": "Location form field: error"
+    },
+    "+oSH/F": {
+        "message": "Gibt ihr aktuelles alter in wesentlich zu hoher Präzision an",
+        "description": "Age widget description"
+    },
+    "/dtDqf": {
+        "message": "Notizen",
+        "description": "Notes Widget"
+    },
+    "1ehGkM": {
+        "message": "Hinzufügen",
+        "description": "Add array table row"
+    },
+    "1s5GYl": {
+        "message": "Durchsichtigkeit",
+        "description": "Form field label"
+    },
+    "27lljH": {
+        "message": "Sie sind <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2efE5y": {
+        "message": "Gruß",
+        "description": "Greeting Widget"
+    },
+    "3/EBw0": {
+        "message": "Webseite",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Suchanbietername",
+        "description": "Search widget: form field label"
+    },
+    "3aaibf": {
+        "message": "Widget hinzufügen"
+    },
+    "3vh5vd": {
+        "message": "Zeigt nichts, nützlich für Anordnung",
+        "description": "Invisible widget description"
+    },
+    "47FYwb": {
+        "message": "Abbrechen"
+    },
+    "4F+2K3": {
+        "message": "Zufälliges Bild einer Unsplash Sammlung",
+        "description": "Backgroud mode description"
+    },
+    "4UpnpD": {
+        "message": "Bilder werden lokal in ihrem Browser gespeichert und nie hochgeladen",
+        "description": "Form field hint (Image)"
+    },
+    "4syC1B": {
+        "message": "Hilfe und Anfragen"
+    },
+    "5DCxT+": {
+        "message": "Temperatureinheit",
+        "description": "Weather widget: form field label"
+    },
+    "6pdO6i": {
+        "message": "Kann Lesezeichen nicht abrufen",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "Bild",
+        "description": "Image Widget"
+    },
+    "8J0Bhj": {
+        "message": "Wilkommen bei <a>Renewed Tab</a>: einer einrichtbaren „Neuer Tab“ Seite, mit Widgets und schönen Hintergründen."
+    },
+    "8xVVb5": {
+        "message": "Primäre Farbe",
+        "description": "Theme settings: form field label"
+    },
+    "CmRs9p": {
+        "message": "Suchen",
+        "description": "Search Widget"
+    },
+    "D3idYv": {
+        "message": "Einstellungen"
+    },
+    "/iBdV1": {
+        "message": "Klicke auf Elemente um sie zu bearbeiten",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "3ZfhWo": {
+        "message": "Berechtigung benötigt um auf {host} zuzugreifen. Bearbeiten sie dieses Widget um sie zu erteilen."
+    },
+    "7RSFb4": {
+        "message": "Renewed Tab Hilfe und Tipps",
+        "description": "HelpAbout widget heading"
+    },
+    "9XUYQt": {
+        "message": "Importieren"
+    },
+    "CshCZY": {
+        "message": "Hintergrund Typ"
+    },
+    "DJRqNI": {
+        "message": "Zeigt das neueste Bild von einem Atom oder RSS Feed, nützlich für WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "FHzdXg": {
+        "message": "Die folgenden Einstellungen sind <b>experimentell</b>; das heißt das sie Fehler und seltsames Verhalten hervorrufen können, wenn sie sie ändern und Aktualisierungen könnten ihre Themes kaputt machen.",
+        "description": "Theme settings"
+    },
+    "9+2gJZ": {
+        "message": "Dieses Widget benötigt die Browsererweiterungsversion."
     }
 }
