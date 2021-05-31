@@ -7,7 +7,7 @@ import Background from "./backgrounds";
 import { useBackground, usePromise, useStorage } from "app/hooks";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { FormattedMessage, IntlProvider } from "react-intl";
-import getTranslation, { getUserLocale } from "app/locale";
+import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
 

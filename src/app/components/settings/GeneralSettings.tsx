@@ -1,3 +1,4 @@
+import { getLanguages } from "app/locale";
 import React, { ChangeEvent } from "react";
 import { FormattedMessage } from "react-intl";
 import { tabTitles, SettingsTab } from "./SettingsDialog";
@@ -27,8 +28,8 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 					<FormattedMessage defaultMessage="Language" />
 				</label>
 				<select value={props.locale} onChange={onChange}>
-					<option key="en" value="en">English (en)</option>
-					<option key="tr" value="tr">Türkçe (tr)</option>
+					{Object.entries(getLanguages()).map(([key, title]) =>
+						<option key={key} value={key}>{title}</option>)}
 				</select>
 				<p className="text-muted">
 					<FormattedMessage

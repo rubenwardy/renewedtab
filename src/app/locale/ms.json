@@ -1,4 +1,8 @@
 {
+    "2VPa4j": {
+        "description": "The name of the current language, to be used in the settings dialog",
+        "message": "Malay"
+    },
     "+GMx80": {
         "message": "Tiada lokasi dijumpai",
         "description": "Location form field: error"
