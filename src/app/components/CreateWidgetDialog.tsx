@@ -46,7 +46,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 			.filter((widget) => widget.isBrowserOnly === true)
 			.map((widget) => (
 				<li key={widget.key} className="text text-muted">
-					{widget.key}
+					{widget.title}
 					<span className="ml-1">
 						&nbsp;
 						<FormattedMessage
