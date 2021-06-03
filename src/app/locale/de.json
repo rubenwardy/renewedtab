@@ -1,7 +1,7 @@
 {
     "2VPa4j": {
-        "description": "The name of the current language, to be used in the settings dialog",
-        "message": "Deutsch"
+        "message": "Deutsch",
+        "description": "The name of the current language, to be used in the settings dialog"
     },
     "+GMx80": {
         "message": "Keine Orte gefunden",
@@ -108,10 +108,98 @@
         "description": "Web Comic widget description"
     },
     "FHzdXg": {
-        "message": "Die folgenden Einstellungen sind <b>experimentell</b>; das heißt das sie Fehler und seltsames Verhalten hervorrufen können, wenn sie sie ändern und Aktualisierungen könnten ihre Themes kaputt machen.",
+        "message": "Die folgenden Einstellungen sind <b>experimentell</b>; das heißt das sie Fehler und seltsames Verhalten hervorrufen können, wenn falls sie diese ändern und Aktualisierungen könnten ihre Themes kaputt machen.",
         "description": "Theme settings"
     },
     "9+2gJZ": {
         "message": "Dieses Widget benötigt die Browsererweiterungsversion."
+    },
+    "0feb3b": {
+        "message": "Optional, macht das Bild zu einem Link",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Symbol",
+        "description": "Form field label"
+    },
+    "18X7au": {
+        "message": "Guten Tag",
+        "description": "Greeting widget: greeting, from 12 noon to 4pm"
+    },
+    "AgU+/t": {
+        "message": "Eine Liste der bevorstehenden Weltraumstarts, betrieben durch RocketLaunch.Live",
+        "description": "SpaceFlights widget description"
+    },
+    "D0+wcK": {
+        "message": "Ein Bild anzeigen und es optional mit einem Link versehen",
+        "description": "Image widget description"
+    },
+    "G6WG/N": {
+        "message": "nicht sichtbar",
+        "description": "Invisible Widget"
+    },
+    "GWRKVT": {
+        "message": "Textfarbe",
+        "description": "Form field label"
+    },
+    "GXkv/F": {
+        "message": "Bitte wählen sie einen Standort",
+        "description": "Location form field: prompt"
+    },
+    "GqPEp+": {
+        "message": "Benötigt die Browser-Erweiterungsversion"
+    },
+    "H00a0q": {
+        "message": "Leer lassen um eine Überschrift zu erstellen",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "IhKDXS": {
+        "message": "erlauben",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "J91edI": {
+        "message": "Importieren / Exportieren",
+        "description": "Settings tab"
+    },
+    "JvOSvX": {
+        "message": "Hintergrund",
+        "description": "Settings tab"
+    },
+    "K3r6DQ": {
+        "message": "löschen"
+    },
+    "GSox4d": {
+        "message": "Eine beliebige Schriftart, die auf dem Computer installiert ist",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "Kzo9ZH": {
+        "message": "Bild-URL",
+        "description": "Form field label"
+    },
+    "LfHpBk": {
+        "message": "Schriftart-Skalierung",
+        "description": "Theme settings: form field label"
+    },
+    "Lxc1x4": {
+        "message": "Uhr",
+        "description": "Clock Widget"
+    },
+    "MN3prI": {
+        "message": "Ordner als Abschnitte miteinbeziehen",
+        "description": "Bookmarks widget: form field label"
+    },
+    "N/7Stk": {
+        "message": "Erstellt von <a>rubenwardy</a>."
+    },
+    "KyDwm3": {
+        "message": "Zeigt die beliebtesten Webseiten an",
+        "description": "Top Sites widget: description"
+    },
+    "K8s82y": {
+        "message": "Geburtsdatum",
+        "description": "Age widget: form field label"
+    },
+    "KFe74G": {
+        "message": "Alles zurücksetzen"
     }
 }
