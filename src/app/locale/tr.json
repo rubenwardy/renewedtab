@@ -1,7 +1,7 @@
 {
     "2VPa4j": {
-        "description": "The name of the current language, to be used in the settings dialog",
-        "message": "Türkçe"
+        "message": "Türkçe",
+        "description": "The name of the current language, to be used in the settings dialog"
     },
     "3ZfhWo": {
         "message": "{host}'a erişmek için izin gerekiyor. Bu aracı düzenleyerek izin verebilirsiniz."
@@ -541,7 +541,7 @@
         "description": "Settings tab"
     },
     "18X7au": {
-        "message": "Tünaydın",
+        "message": "İyi günler",
         "description": "Greeting widget: greeting, from 12 noon to 4pm"
     },
     "dLthbh": {
@@ -691,5 +691,9 @@
     "ofl4Ui": {
         "message": "Ara",
         "description": "Location form field: search"
+    },
+    "GWRKVT": {
+        "message": "Yazı rengi",
+        "description": "Form field label"
     }
 }
