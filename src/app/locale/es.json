@@ -2,5 +2,65 @@
     "2VPa4j": {
         "message": "Español",
         "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "/dtDqf": {
+        "message": "Notas",
+        "description": "Notes Widget"
+    },
+    "1ehGkM": {
+        "message": "Añadir",
+        "description": "Add array table row"
+    },
+    "0hxZWu": {
+        "message": "Icono",
+        "description": "Form field label"
+    },
+    "18X7au": {
+        "message": "Buenas tardes",
+        "description": "Greeting widget: greeting, from 12 noon to 4pm"
+    },
+    "7OH6mh": {
+        "message": "Imagen",
+        "description": "Image Widget"
+    },
+    "CmRs9p": {
+        "message": "Buscar",
+        "description": "Search Widget"
+    },
+    "G6WG/N": {
+        "message": "Invisible",
+        "description": "Invisible Widget"
+    },
+    "y1Z3or": {
+        "message": "Idioma"
+    },
+    "47FYwb": {
+        "message": "Cancelar"
+    },
+    "qAhUUO": {
+        "message": "Jueves"
+    },
+    "nGSwtl": {
+        "message": "Buscar",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "ofl4Ui": {
+        "message": "Buscar",
+        "description": "Location form field: search"
+    },
+    "irdBm2": {
+        "message": "Tema",
+        "description": "Settings tab"
+    },
+    "kAEQyV": {
+        "message": "OK"
+    },
+    "fz43UJ": {
+        "message": "Donar",
+        "description": "Renewed Tab donation link"
+    },
+    "sPl3nI": {
+        "message": "Título",
+        "description": "Form field label"
     }
 }
