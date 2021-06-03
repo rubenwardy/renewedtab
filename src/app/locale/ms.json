@@ -1,7 +1,7 @@
 {
     "2VPa4j": {
-        "description": "The name of the current language, to be used in the settings dialog",
-        "message": "Malay"
+        "message": "Bahasa Melayu",
+        "description": "The name of the current language, to be used in the settings dialog"
     },
     "+GMx80": {
         "message": "Tiada lokasi dijumpai",
@@ -54,7 +54,7 @@
         "description": "Age widget text"
     },
     "2efE5y": {
-        "message": "Selamat sejahtera",
+        "message": "Kata Sapaan",
         "description": "Greeting Widget"
     },
     "3/EBw0": {
@@ -181,7 +181,7 @@
         "message": "Tetapan"
     },
     "DJRqNI": {
-        "message": "Tunjukkan imej terbaru daripada suapan Atom atau RSS, berguna untuk WebComics.",
+        "message": "Tunjukkan imej terbaru daripada suapan Atom atau RSS, berguna untuk Komik Sesawang.",
         "description": "Web Comic widget description"
     },
     "FHzdXg": {
@@ -383,7 +383,7 @@
         "message": "Imej: {filename}"
     },
     "Z79HMN": {
-        "message": "Latar belakang diuruskan secara rawak",
+        "message": "Latar belakang diberikan secara rawak",
         "description": "Backgroud mode description"
     },
     "ZRWjTk": {
@@ -626,7 +626,7 @@
         "message": "Edit {type}"
     },
     "ubO4zt": {
-        "message": "Web Comic",
+        "message": "Komik Sesawang",
         "description": "Web Comic Widget"
     },
     "vS2rQE": {
@@ -645,7 +645,7 @@
         "description": "Backgroud mode description"
     },
     "x59fh0": {
-        "message": "Penerbangan Angkasa",
+        "message": "Pelancaran Angkasa",
         "description": "Space Flights Widget"
     },
     "xtOPHp": {
