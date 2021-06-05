@@ -55,13 +55,13 @@ Links.initialProps = {
 			id: uuid(),
 			title: "Website",
 			icon: "",
-			url: "https://renewedtab.rubenwardy.com/"
+			url: "https://renewedtab.com/"
 		},
 		{
 			id: uuid(),
 			title: "Donate",
 			icon: "",
-			url: "https://renewedtab.rubenwardy.com/donate/"
+			url: "https://renewedtab.com/donate/"
 		},
 		{
 			id: uuid(),

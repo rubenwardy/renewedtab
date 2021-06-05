@@ -32,7 +32,7 @@ export default function HelpAbout(widget: WidgetProps<any>) {
 				<FormattedMessage
 					defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
 					values={{
-						a: (chunk: any) => (<a href="https://renewedtab.rubenwardy.com">{chunk}</a>)
+						a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
 					}} />
 			</p>
 			<p>
@@ -57,7 +57,7 @@ export default function HelpAbout(widget: WidgetProps<any>) {
 				<FormattedMessage
 					defaultMessage="Check out the <a>Help and FAQ page</a> to see common questions and to get in contact."
 					values={{
-						a: (chunk: any) => (<a href="https://renewedtab.rubenwardy.com/help/">{chunk}</a>)
+						a: (chunk: any) => (<a href="https://renewedtab.com/help/">{chunk}</a>)
 					}} />
 			</p>
 		</Panel>);

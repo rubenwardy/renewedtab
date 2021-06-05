@@ -1,6 +1,6 @@
 {
-	"API_URL": "https://renewedtab.rubenwardy.com/api/",
-	"PROXY_URL": "https://renewedtab.rubenwardy.com/proxy/",
+	"API_URL": "https://renewedtab.com/api/",
+	"PROXY_URL": "https://renewedtab.com/proxy/",
 	"OPEN_WEATHER_MAP_API_KEY": "",
 	"UNSPLASH_ACCESS_KEY": "",
 	"OWNER_EMAIL": "your@email.com",

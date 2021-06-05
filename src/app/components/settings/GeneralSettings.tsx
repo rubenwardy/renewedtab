@@ -36,13 +36,13 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						defaultMessage="Translations are provided by the community."
 						values={{
 							a: (chunk: any) => (
-								<a href="https://renewedtab.rubenwardy.com/translations/">{chunk}</a>)
+								<a href="https://renewedtab.com/translations/">{chunk}</a>)
 						}} /><br />
 					<FormattedMessage
 						defaultMessage="Consider <a>contributing or adding your language</a>."
 						values={{
 							a: (chunk: any) => (
-								<a href="https://renewedtab.rubenwardy.com/translations/">{chunk}</a>)
+								<a href="https://renewedtab.com/translations/">{chunk}</a>)
 						}} />
 				</p>
 			</div>

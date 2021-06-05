@@ -12,7 +12,7 @@ export default function AboutSettings() {
 				<FormattedMessage
 					defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
 					values={{
-						a: (chunk: any) => (<a href="https://renewedtab.rubenwardy.com">{chunk}</a>)
+						a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
 					}} />
 			</p>
 			<p>
@@ -47,7 +47,7 @@ export default function AboutSettings() {
 			</p>
 			<p>
 				<a className="btn btn-primary"
-						href="https://renewedtab.rubenwardy.com/">
+						href="https://renewedtab.com/">
 					<i className="fas fa-globe-europe mr-1" />
 
 					<FormattedMessage
@@ -55,13 +55,13 @@ export default function AboutSettings() {
 							description="Renewed Tab website" />
 				</a>
 				<a className="btn btn-primary"
-						href="https://renewedtab.rubenwardy.com/donate/">
+						href="https://renewedtab.com/donate/">
 					<FormattedMessage
 							defaultMessage="Donate"
 							description="Renewed Tab donation link" />
 				</a>
 				<a className="btn btn-secondary"
-						href="https://renewedtab.rubenwardy.com/community/">
+						href="https://renewedtab.com/community/">
 					<FormattedMessage
 							defaultMessage="Discord / Matrix chats" />
 				</a>
@@ -77,7 +77,7 @@ export default function AboutSettings() {
 			</p>
 			<p>
 				<a className="btn btn-primary"
-						href="https://renewedtab.rubenwardy.com/help/">
+						href="https://renewedtab.com/help/">
 					<FormattedMessage
 							defaultMessage="Help and Requests" />
 				</a>

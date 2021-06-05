@@ -10,7 +10,7 @@ function ReviewRequesterImpl(props: { onDone: () => void }) {
 
 	const reviewButtons: AlertButton[] = [
 		{ text: "Review", url: storeURL ?? undefined },
-		{ text: "Help", url: "https://renewedtab.rubenwardy.com/help/" },
+		{ text: "Help", url: "https://renewedtab.com/help/" },
 		{ text: "Feedback", url: feedbackURL ?? undefined },
 		{ text: "Dismiss", icon: "fa-times" },
 	];
