@@ -17,7 +17,7 @@ export function useFeed(url: string, dependents?: any[]): [Feed | undefined, any
 		return [undefined, error];
 	}
 
-	const feed = parseFeed(data.children[0]);
+	const feed = parseFeed(data.children[0], (s, l) => new window.DOMParser().parseFromString(s, l as any));
 	if (!feed) {
 		return [undefined,
 				intl.formatMessage({

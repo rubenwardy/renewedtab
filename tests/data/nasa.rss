@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xml:base="http://www.nasa.gov/" xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:media="http://search.yahoo.com/mrss/">
+	<channel>
+		<title>NASA Image of the Day</title>
+		<description>The latest NASA &quot;Image of the Day&quot; image.</description>
+		<link>http://www.nasa.gov/</link>
+		<atom:link rel="self" href="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" />
+		<language>en-us</language>
+		<managingEditor>yvette.smith-1@nasa.gov</managingEditor>
+		<webMaster>brian.dunbar@nasa.gov</webMaster>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<item>
+			<title>Detecting X-Rays From Uranus</title>
+			<link>http://www.nasa.gov/image-feature/detecting-x-rays-from-uranus</link>
+			<description>Astronomers have detected X-rays from Uranus for the first time, using NASA’s Chandra X-ray
+				Observatory, as shown in this image from March 2021.</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/uranus_lg.jpeg" length="1135972"
+				type="image/jpeg" />
+			<guid isPermaLink="false">http://www.nasa.gov/image-feature/detecting-x-rays-from-uranus</guid>
+			<pubDate>Fri, 04 Jun 2021 09:17 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+		<item>
+			<title>Administrator Bill Nelson Gives His First State of NASA Address</title>
+			<link>http://www.nasa.gov/image-feature/administrator-bill-nelson-gives-his-first-state-of-nasa-address
+			</link>
+			<description>​NASA Administrator Bill Nelson talks to the agency’s workforce during his first State of NASA
+				event Wednesday, June 2, 2021.</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/51221294498_8a0636de32_o.jpeg"
+				length="3861753" type="image/jpeg" />
+			<guid isPermaLink="false">
+				http://www.nasa.gov/image-feature/administrator-bill-nelson-gives-his-first-state-of-nasa-address</guid>
+			<pubDate>Thu, 03 Jun 2021 08:29 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+		<item>
+			<title>Andres Almeida, NASA Digital Strategist</title>
+			<link>http://www.nasa.gov/image-feature/andres-almeida-nasa-digital-strategist</link>
+			<description>When NASA digital strategist Andres Almeida joined Twitter in 2009, one of the first accounts
+				he followed was NASA.</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/48798050788_d867ee3825_o.jpg"
+				length="2089126" type="image/jpeg" />
+			<guid isPermaLink="false">http://www.nasa.gov/image-feature/andres-almeida-nasa-digital-strategist</guid>
+			<pubDate>Wed, 02 Jun 2021 10:12 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+		<item>
+			<title>Accretion Disk of Black Hole Glows in New Simulation</title>
+			<link>http://www.nasa.gov/image-feature/accretion-disk-of-black-hole-glows-in-new-simulation</link>
+			<description>This visualization of supercomputer data shows the X-ray glow of the inner accretion disc of a
+				black hole.</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/blackholexray.png" length="866957"
+				type="image/png" />
+			<guid isPermaLink="false">
+				http://www.nasa.gov/image-feature/accretion-disk-of-black-hole-glows-in-new-simulation</guid>
+			<pubDate>Tue, 01 Jun 2021 08:17 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+		<item>
+			<title>Hubble Captures a Captivating Spiral</title>
+			<link>http://www.nasa.gov/image-feature/goddard/2021/hubble-captures-a-captivating-spiral</link>
+			<description>This image shows the spiral galaxy NGC 5037, in the constellation of Virgo.</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/potw2121a.jpg" length="3431622"
+				type="image/jpeg" />
+			<guid isPermaLink="false">
+				http://www.nasa.gov/image-feature/goddard/2021/hubble-captures-a-captivating-spiral</guid>
+			<pubDate>Fri, 28 May 2021 08:45 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+		<item>
+			<title>Magnetized Threads Weave Spectacular Galactic Tapestry</title>
+			<link>
+			http://www.nasa.gov/mission_pages/chandra/images/magnetized-threads-weave-spectacular-galactic-tapestry.html
+			</link>
+			<description>Threads of superheated gas and magnetic fields are weaving a tapestry of energy at the center
+				of the Milky Way galaxy. A new image of this new cosmic masterpiece was made using a giant mosaic of
+				data from NASA&#039;s Chandra X-ray Observatory and the MeerKAT radio telescope in South Africa.
+			</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/gcenter-2021.jpg" length="6473097"
+				type="image/jpeg" />
+			<guid isPermaLink="false">
+				http://www.nasa.gov/mission_pages/chandra/images/magnetized-threads-weave-spectacular-galactic-tapestry.html
+			</guid>
+			<pubDate>Thu, 27 May 2021 08:00 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+		<item>
+			<title>Squids and Other Research Heading to the Station. Yes, Squids!</title>
+			<link>http://www.nasa.gov/image-feature/squids-and-other-research-heading-to-the-station-yes-squids</link>
+			<description>In just over a week, these tiny squids will head to space along with many other scientific
+				experiments aboard SpaceX’s 22nd cargo resupply mission to the station.</description>
+			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/02_babysquid_008.jpg"
+				length="257265" type="image/jpeg" />
+			<guid isPermaLink="false">
+				http://www.nasa.gov/image-feature/squids-and-other-research-heading-to-the-station-yes-squids</guid>
+			<pubDate>Wed, 26 May 2021 08:36 EDT</pubDate>
+			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>xkcd.com</title>
+	<link href="https://xkcd.com/" rel="alternate">
+	</link>
+	<id>https://xkcd.com/</id>
+	<updated>2021-06-04T00:00:00Z</updated>
+	<entry>
+		<title>Fuzzy Blob</title>
+		<link href="https://xkcd.com/2472/" rel="alternate">
+		</link>
+		<updated>2021-06-04T00:00:00Z</updated>
+		<id>https://xkcd.com/2472/</id>
+		<summary type="html">&lt;img src="https://imgs.xkcd.com/comics/fuzzy_blob.png" title="If there's no dome, how do
+			you explain the irregularities the board discovered in the zoning permits issued in that area!?" alt="If
+			there's no dome, how do you explain the irregularities the board discovered in the zoning permits issued in
+			that area!?" /&gt;</summary>
+	</entry>
+	<entry>
+		<title>Hippo Attacks</title>
+		<link href="https://xkcd.com/2471/" rel="alternate">
+		</link>
+		<updated>2021-06-02T00:00:00Z</updated>
+		<id>https://xkcd.com/2471/</id>
+		<summary type="html">&lt;img src="https://imgs.xkcd.com/comics/hippo_attacks.png" title="It's cool how, when
+			there's a number lots of people are curious about, but which isn't easy to measure, some random guess will
+			get cited everywhere and become the universally quoted value. Unrelatedly, did you know there are 850
+			trillion waves in the ocean?" alt="It's cool how, when there's a number lots of people are curious about,
+			but which isn't easy to measure, some random guess will get cited everywhere and become the universally
+			quoted value. Unrelatedly, did you know there are 850 trillion waves in the ocean?" /&gt;</summary>
+	</entry>
+	<entry>
+		<title>Next Slide Please</title>
+		<link href="https://xkcd.com/2470/" rel="alternate">
+		</link>
+		<updated>2021-05-31T00:00:00Z</updated>
+		<id>https://xkcd.com/2470/</id>
+		<summary type="html">&lt;img src="https://imgs.xkcd.com/comics/next_slide_please.png" title="&amp;quot;I have
+			nothing to offer but blood--next slide, please--toil--next slide, please--tears, and--next slide,
+			please--sweat.&amp;quot;" alt="&amp;quot;I have nothing to offer but blood--next slide, please--toil--next
+			slide, please--tears, and--next slide, please--sweat.&amp;quot;" /&gt;</summary>
+	</entry>
+	<entry>
+		<title>Astronomy Status Board</title>
+		<link href="https://xkcd.com/2469/" rel="alternate">
+		</link>
+		<updated>2021-05-28T00:00:00Z</updated>
+		<id>https://xkcd.com/2469/</id>
+		<summary type="html">&lt;img src="https://imgs.xkcd.com/comics/astronomy_status_board.png" title="Junior
+			astronomers hate getting put on board update duty, but someone's gotta make sure that stuff is still up
+			there." alt="Junior astronomers hate getting put on board update duty, but someone's gotta make sure that
+			stuff is still up there." /&gt;</summary>
+	</entry>
+</feed>
