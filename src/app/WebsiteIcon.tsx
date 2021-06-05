@@ -3,7 +3,7 @@ import { cacheStorage } from "./Storage";
 
 interface CachedIcon {
 	url: string;
-	lastUsed: Date;
+	fetchedAt: Date;
 }
 
 
@@ -12,19 +12,7 @@ function getDomain(url: string): string {
 }
 
 
-async function fetchIcon(url: string): Promise<string> {
-	const key = new URL(url).hostname;
-	if (cacheStorage) {
-		const value = await cacheStorage.get<CachedIcon>(key)
-		if (value) {
-			console.log(`Loaded favicon for ${key} from cache`);
-
-			value.lastUsed = new Date();
-			await cacheStorage.set(key, value);
-			return value.url;
-		}
-	}
-
+async function fetchIconURL(url: string): Promise<string> {
 	const response = await fetch(new Request(url, {
 		method: "GET",
 		headers: {
@@ -50,19 +38,54 @@ async function fetchIcon(url: string): Promise<string> {
 	}
 
 	const ret = new URL(topIcon?.getAttribute("href") ?? "/favicon.ico", url);
+	return ret.toString();
+}
+
+
+function blobToDataURL(blob: Blob): Promise<string> {
+	return new Promise((resolve) => {
+		const reader = new FileReader();
+		reader.onload = (e: any) => {
+			resolve(e.target.result);
+		}
+		reader.readAsDataURL(blob);
+	})
+}
+
+
+async function fetchIcon(url: string): Promise<string> {
+	const key = "icon-" + new URL(url).hostname;
+	if (cacheStorage) {
+		const value = await cacheStorage.get<CachedIcon>(key);
+		if (value) {
+			console.log(`Loaded favicon for ${key} from cache`);
+			await cacheStorage.set(key, value);
+			return value.url;
+		}
+	}
+
+	const iconUrl = await fetchIconURL(url);
+	const response = await fetch(new Request(iconUrl, {
+		method: "GET",
+		headers: {
+			"Accept": "image/*",
+		},
+	}));
+
+	const blob = await response.blob();
+	const data = await blobToDataURL(blob);
 	await cacheStorage.set(key, {
-		url: ret.toString(),
-		lastUsed: new Date(),
+		url: data,
+		fetchedAt: new Date(),
 	});
 
-	console.log(`Fetched favicon from ${key}`);
-	return ret.toString();
+	return data;
 }
 
 
 const cache = new Map<string, Promise<string>>();
 
-export function getWebsiteIcon(url: string): Promise<string> {
+function getWebsiteIcon(url: string): Promise<string> {
 	const key = getDomain(url);
 	if (!cache.has(key)) {
 		cache.set(key, fetchIcon(url));
@@ -76,6 +99,7 @@ export async function getWebsiteIconOrNull(url: string): Promise<(string | undef
 	try {
 		return await getWebsiteIcon(url);
 	} catch (e) {
+		console.error(e);
 		return undefined;
 	}
 }

@@ -25,7 +25,7 @@ const messages = defineMessages({
 export interface Link {
 	id: string; //< used by React for keys.
 	title: string;
-	icon?: string;
+	icon?: string | Promise<string | undefined>;
 	url: string;
 }
 
@@ -44,7 +44,7 @@ export const FullLinkSchema : Schema = {
 
 
 interface IconProps {
-	icon: string;
+	icon: string | Promise<string | undefined>;
 	requiresIcons: boolean;
 	defaultIcon?: string;
 	errorIcon?: string;
@@ -54,19 +54,23 @@ interface IconProps {
 function Icon(props: IconProps) {
 	const [errored, setErrored] = useState(false);
 
-	if (!props.requiresIcons && props.icon.length == 0) {
+	const [icon,] = usePromise(async () => {
+		if (props.icon instanceof Promise) {
+			return await props.icon;
+		} else {
+			return props.icon;
+		}
+	}, [props.icon])
+
+	if (!props.requiresIcons && (!icon || icon.length == 0)) {
 		return null;
 	} else if (errored) {
-		console.log("Error icon");
 		return (<span><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
-	} else if (props.icon.includes("/")) {
-		console.log("URL icon");
-		return (<img className="icon" src={props.icon} onError={() => setErrored(true)} />);
-	} else if (props.icon.startsWith("fa-")) {
-		console.log("FA icon");
-		return (<span><i className={`fas ${props.icon} icon`} /></span>);
+	} else if (icon && icon.includes("/")) {
+		return (<img className="icon" src={icon} onError={() => setErrored(true)} />);
+	} else if (icon && icon.startsWith("fa-")) {
+		return (<span><i className={`fas ${icon} icon`} /></span>);
 	} else {
-		console.log("Placeholder icon");
 		return (<span><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
 	}
 }
@@ -82,26 +86,16 @@ export interface LinkBoxProps {
 }
 
 
-function getAllIcons(sites: Link[]): Promise<(string | undefined)[]> {
-	return Promise.all(sites.map((site) => getWebsiteIconOrNull(site.url)));
-}
-
-
 export default function LinkBox(props: LinkBoxProps)  {
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 
 	const links = useMemo<Link[]>(() => deepCopy(props.links), [props.links]);
 	if (props.useWebsiteIcons == true && typeof browser !== "undefined") {
-		const sites = useMemo(
-			() => links.filter(link => link.url.length > 0 && link.icon == ""), [links]);
-		const [icons] = usePromise(() => getAllIcons(sites ?? []), [links]);
-		if (icons) {
-			icons.forEach((icon, i) => {
-				if (icon) {
-					sites[i].icon = icon;
-				}
+		links
+			.filter(link => link.url.length > 0 && link.icon == "")
+			.forEach(link => {
+				link.icon = getWebsiteIconOrNull(link.url);
 			});
-		}
 	}
 
 	const linkElements = links.map(link => {
