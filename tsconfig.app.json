@@ -4,6 +4,7 @@
 		"module": "ES2015"
 	},
 	"exclude": [
-		"src/server"
+		"src/server",
+		"tests"
 	]
 }

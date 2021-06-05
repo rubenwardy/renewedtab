@@ -2,7 +2,8 @@
 	"extends": "./tsconfig.json",
 	"exclude": [
 		"src/app",
-		"src/webext"
+		"src/webext",
+		"tests"
 	]
 }
 //

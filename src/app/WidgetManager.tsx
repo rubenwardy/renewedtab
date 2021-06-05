@@ -1,4 +1,4 @@
-import { storage } from "./Storage";
+import { IStorage } from "./Storage";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
 import { getInitialTheme, Widget } from "./Widget";
@@ -13,10 +13,10 @@ export class WidgetManager {
 
 	widgets: (Widget<any>)[] = [];
 
-	constructor() {}
+	constructor(private storage: IStorage) {}
 
 	async load() {
-		const json = await storage.get<Widget<any>[]>("widgets");
+		const json = await this.storage.get<Widget<any>[]>("widgets");
 		if (!json) {
 			this.resetToDefault();
 			return;
@@ -43,7 +43,7 @@ export class WidgetManager {
 	}
 
 	save() {
-		storage.set("widgets", this.widgets);
+		this.storage.set("widgets", this.widgets);
 	}
 
 	resetToDefault() {
@@ -52,11 +52,11 @@ export class WidgetManager {
 			"HelpAbout", "Weather", "Feed", "Notes"].forEach(this.createWidget.bind(this));
 	}
 
-	createWidget(type: string) {
+	createWidget<T>(type: string): Widget<T> {
 		this.id_counter++;
 
 		const widget_type = WidgetTypes[type];
-		const widget = {
+		const widget: Widget<T> = {
 			id: this.id_counter,
 			type: type,
 			position: undefined,
@@ -71,6 +71,8 @@ export class WidgetManager {
 		}
 
 		this.save();
+
+		return widget;
 	}
 
 	removeWidget(id: number) {

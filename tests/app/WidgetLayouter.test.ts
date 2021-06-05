@@ -36,7 +36,10 @@ describe("WidgetLayouter", function() {
 			type: "Type",
 			position: V(1, 1),
 			size: V(3, 3),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		layouter.resolveAll([widget]);
@@ -52,21 +55,30 @@ describe("WidgetLayouter", function() {
 			id: 1,
 			type: "Type",
 			size: V(3, 3),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		const widget2 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			size: V(15, 2),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		const widget3 : Widget<any> = {
 			id: 1,
 			type: "Type",
 			size: V(3, 3),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		layouter.resolveAll([widget1, widget2, widget3]);
@@ -86,7 +98,10 @@ describe("WidgetLayouter", function() {
 			id: 1,
 			type: "Type",
 			size: V(3, 3),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		const widget2 : Widget<any> = {
@@ -94,7 +109,10 @@ describe("WidgetLayouter", function() {
 			type: "Type",
 			position: V(0, 0),
 			size: V(15, 2),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		const widget3 : Widget<any> = {
@@ -102,7 +120,10 @@ describe("WidgetLayouter", function() {
 			type: "Type",
 			position: V(3, 0),
 			size: V(3, 3),
-			props: {}
+			props: {},
+			theme: {
+				showPanelBG: false
+			}
 		};
 
 		layouter.resolveAll([widget1, widget2, widget3]);

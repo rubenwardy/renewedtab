@@ -3,14 +3,13 @@ import { miscMessages } from "app/locale/common";
 import { IntlShape, useIntl } from "react-intl";
 import { usePromise } from "./promises";
 
-const proxy_url = config.PROXY_URL;
 
 function makeProxy(url: string) {
 	if (typeof browser !== 'undefined') {
 		console.log("Detected running as webext");
 		return url;
 	} else {
-		const ret = new URL(proxy_url);
+		const ret = new URL(config.PROXY_URL);
 		ret.searchParams.set("url", url);
 		return ret.toString();
 	}

@@ -10,9 +10,10 @@ import { FormattedMessage, IntlProvider } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
+import { storage } from "app/Storage";
 
 
-const widgetManager = new WidgetManager();
+const widgetManager = new WidgetManager(storage);
 
 export default function App() {
 	const [loadingRes,] = usePromise(async () => {

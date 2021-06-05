@@ -1,14 +1,3 @@
-interface Config {
-	API_URL: string;
-	PROXY_URL: string;
-	PROXY_ALLOWED_HOSTS: string[];
-}
-
-declare global {
-	const config: Config;
-	const app_version: string;
-}
-
 import React from "react";
 import { render } from "react-dom";
 import App from "./components/App";

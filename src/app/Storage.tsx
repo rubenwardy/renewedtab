@@ -119,7 +119,7 @@ class DelegateStorage implements IStorage {
 }
 
 
-if (typeof browser === 'undefined' &&
+if (typeof browser === 'undefined' && typeof navigator !== "undefined" &&
 		navigator.storage && navigator.storage.persist) {
 	navigator.storage.persist()
 		.then((isPersisted) =>
