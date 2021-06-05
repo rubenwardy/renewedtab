@@ -3,5 +3,5 @@ interface Config {
 	PROXY_URL: string;
 }
 
-declare var config: Config;
+declare let config: Config;
 declare const app_version: string;

@@ -37,7 +37,7 @@ for (const lang in locales) {
  */
 export function getLanguages() {
 	const ret: { [key: string]: string } = {};
-	for (let key in locales) {
+	for (const key in locales) {
 		const text = locales[key][languageName.id!] as any;
 		if (text) {
 			ret[key] = `${text[0].value} (${key})`;
