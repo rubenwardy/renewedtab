@@ -78,7 +78,6 @@ function WeatherForecast(props: WeatherForecastProps) {
 
 
 interface WeatherProps {
-	url: string;
 	location: Location;
 	unit: TemperatureUnit;
 }
@@ -114,9 +113,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 
 	return (
 		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow-hard">
-			<h2 className="col-span-3">
-				<a href={props.url}>{props.location.name}</a>
-			</h2>
+			<h2 className="col-span-3">{props.location.name}</h2>
 			<div className="col-span-3 large">
 				{makeIconElement(info.current.icon)}
 				{renderTemp(info.current.temp)}
@@ -132,7 +129,6 @@ Weather.description = messages.description;
 Weather.editHint = messages.editHint;
 
 Weather.initialProps = {
-	url: "https://www.bbc.co.uk/weather/2654675",
 	location: {
 		name: "Bristol",
 		latitude: 51.454514,
@@ -143,7 +139,6 @@ Weather.initialProps = {
 
 
 Weather.schema = {
-	url: type.url(schemaMessages.linkUrl),
 	location: type.location(schemaMessages.location),
 	unit: type.selectEnum(TemperatureUnit, messages.temperatureUnit),
 } as Schema;
