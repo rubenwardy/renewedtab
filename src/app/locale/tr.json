@@ -604,10 +604,6 @@
         "message": "Yer işaretlerinizi gösterir",
         "description": "Bookmarks widget description"
     },
-    "YQnxUP": {
-        "message": "{latitude}'e {longitude} konumundaki {name} seçildi.",
-        "description": "Location field"
-    },
     "OQHLB5": {
         "message": "Renk",
         "description": "Form field label"

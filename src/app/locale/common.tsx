@@ -81,4 +81,16 @@ export const miscMessages = defineMessages({
 	loading: {
 		defaultMessage: "Loading…",
 	},
+
+	edit: {
+		defaultMessage: "Edit",
+	},
+
+	ok: {
+		defaultMessage: "OK",
+	},
+
+	cancel: {
+		defaultMessage: "Cancel",
+	},
 });

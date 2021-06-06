@@ -6,6 +6,7 @@ export interface ModalProps {
 	isOpen: boolean;
 	onClose: () => void;
 	children: ReactNode[] | ReactNode;
+	lighterBg?: boolean;
 }
 
 export default function Modal(props: ModalProps) {
@@ -49,8 +50,10 @@ export default function Modal(props: ModalProps) {
 		setDidClickBegin(false);
 	}
 
+	const bgClasses = "modal-bg " + (props.lighterBg ? "modal-bg-lighter" : "");
+
 	return ReactDOM.createPortal((
-		<aside className="modal-bg" onMouseDown={handleMouseDown}
+		<aside className={bgClasses} onMouseDown={handleMouseDown}
 				onMouseUp={handleMouseUp} style={style}>
 			<div className="panel flush modal"
 					onMouseDown={(e) => e.stopPropagation()}

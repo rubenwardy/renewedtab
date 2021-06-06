@@ -5,6 +5,7 @@ import { Form } from "./forms";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { useForceUpdate } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
+import { miscMessages } from "app/locale/common";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -55,7 +56,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						onChange={onChange} />
 
 				<a className="btn btn-secondary" onClick={props.onClose}>
-					<FormattedMessage defaultMessage="OK" />
+					<FormattedMessage {...miscMessages.ok} />
 				</a>
 			</div>
 		</Modal>);

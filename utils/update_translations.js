@@ -10,7 +10,7 @@ function readJSON(path) {
 }
 
 function writeJSON(path, data) {
-	fs.writeFileSync(path, JSON.stringify(data, null, 2));
+	fs.writeFileSync(path, JSON.stringify(data, null, 4) + "\n");
 }
 
 execSync("git show HEAD:src/app/locale/en.json > /tmp/en.json");
@@ -21,16 +21,17 @@ const english = readJSON("src/app/locale/en.json");
 const updateMap = new Map();
 
 const removedEntries = Object.entries(englishOld)
-	.filter(([key,]) => english[key] == undefined);
+	.filter(([key,]) => english[key] == undefined) ?? [];
 
 const insertedEntries = Object.entries(english)
-	.filter(([key,]) => englishOld[key] == undefined);
+	.filter(([key,]) => englishOld[key] == undefined) ?? [];
 
 if (removedEntries.length > 0 && insertedEntries.length > 0) {
 	removedEntries.forEach(([oldKey, oldValue]) => {
-		const [newKey, newValue] = insertedEntries
+		const newPair = insertedEntries
 			.find(([, value2]) => value2.message == oldValue.message);
-		if (newValue) {
+		if (newPair) {
+			const [newKey, newValue] = newPair;
 			console.log(`Detected renamed translation: ${oldKey} to ${newKey}`);
 			updateMap.set(oldKey, {
 				key: newKey,

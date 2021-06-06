@@ -1,18 +1,27 @@
 import { useAPI } from "app/hooks";
-import React, { useRef, useState } from "react";
-import { defineMessages, FormattedMessage } from "react-intl";
+import React, { useRef, useState, KeyboardEvent } from "react";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import ErrorView from "../ErrorView";
 import { Location } from "common/api/weather";
+import Modal from "../Modal";
+import { miscMessages } from "app/locale/common";
+
 
 const messages = defineMessages({
-	selected: {
-		defaultMessage: "Selected {name} at {latitude} by {longitude}.",
+	modalTitle: {
+		defaultMessage: "Choose Location",
 		description: "Location field",
 	},
-})
 
-export function LocationQuery(props: { query: string, onSelect: (loc: Location) => void }) {
+	search: {
+		defaultMessage: "Search",
+		description: "Location form field: search",
+	},
+});
+
+
+function LocationQuery(props: { query: string, onSelect: (loc: Location) => void }) {
 	const [info, error] = useAPI<Location[]>("geocode/", { q: props.query }, [props.query]);
 	if (!info) {
 		return (<ErrorView error={error} loading={true} panel={false} />);
@@ -25,7 +34,6 @@ export function LocationQuery(props: { query: string, onSelect: (loc: Location) 
 						defaultMessage="No locations found"
 						description="Location form field: error" />
 			</p>);
-
 	}
 
 	const items = info.map(location => (
@@ -33,13 +41,19 @@ export function LocationQuery(props: { query: string, onSelect: (loc: Location) 
 			<a onClick={() => props.onSelect(location)}>{location.name}</a>
 		</li>));
 
-	return (<ul className="links">{items}</ul>);
+	return (<ul className="links large">{items}</ul>);
 }
 
-export default function LocationField(props: FieldProps<Location>) {
+
+interface LocationModalProps {
+	accept: (location: Location) => void;
+	cancel: () => void;
+}
+
+
+function LocationModal(props: LocationModalProps) {
 	const ref = useRef<HTMLInputElement>(null);
-	const [query, setQuery] = useState<string | null>(null);
-	const [value, setValue] = useState<Location>(props.value ?? {});
+	const [query, setQuery] = useState<string>("");
 
 	function handleSearch() {
 		if (!ref.current) {
@@ -47,58 +61,98 @@ export default function LocationField(props: FieldProps<Location>) {
 		}
 
 		const value = ref.current.value;
-		if (value.length > 5) {
+		if (value.length > 0) {
 			setQuery(value);
 		}
 	}
 
-	function handleSelect(location: Location) {
-		if (props.onChange) {
-			location.name = query ?? location.name;
-			props.onChange(location);
-			setQuery(null);
-			setValue(location);
+	function onKeyPress(e: KeyboardEvent<HTMLInputElement>) {
+		if (e.key == "Enter") {
+			handleSearch();
 		}
 	}
 
-	let location_after : JSX.Element | undefined;
-	if (query) {
-		location_after = (<LocationQuery query={query} onSelect={handleSelect} />);
-	} else if (props.value) {
-		location_after = (
-			<p>
-				<FormattedMessage {...messages.selected} values={{
-						name: value.name,
-						latitude: value.latitude,
-						longitude: value.longitude,
-					}} />
-			</p>);
+	function handleSelect(location: Location) {
+		location.name = query;
+		props.accept(location);
+	}
+
+	const intl = useIntl();
+	return (
+		<Modal title={intl.formatMessage(messages.modalTitle)}
+				isOpen={true} onClose={props.cancel} lighterBg={true}>
+			<div className="modal-body">
+				<div className="field-group mt-1">
+					<input type="text" ref={ref} autoFocus={true}
+						onKeyPress={onKeyPress} />
+					<a className="btn btn-primary" onClick={handleSearch}>
+						<FormattedMessage {...messages.search} />
+					</a>
+				</div>
+				<p className="text-muted">
+					<FormattedMessage
+						defaultMessage="Try including the country name/initials." />
+				</p>
+				{query != "" &&
+					<LocationQuery query={query} onSelect={handleSelect} />}
+				<p className="text-muted">
+					<FormattedMessage
+						defaultMessage="Powered by <a>OpenStreetMap</a>."
+						values={{
+							a: (chunk: any) => (<a href="https://www.openstreetmap.org/">{chunk}</a>)
+						}} />
+				</p>
+				<a className="btn btn-secondary" onClick={props.cancel}>
+					<FormattedMessage {...miscMessages.cancel} />
+				</a>
+			</div>
+		</Modal>);
+}
+
+
+export default function LocationField(props: FieldProps<Location>) {
+	const [isModalOpen, setModalOpen] = useState(false);
+	const [value, setValue] = useState<Location>(props.value);
+
+	function handleSelect(location: Location) {
+		if (props.onChange) {
+			props.onChange(location);
+		}
+		setModalOpen(false);
+		setValue(location);
+	}
+
+	let info: any;
+	if (value) {
+		info = (
+			<FormattedMessage
+				defaultMessage="{name} <i>at {latitude} by {longitude}</i>"
+				values={{
+					i: (chunk: any) => (<span className="text-muted">{chunk}</span>),
+					...value }} />);
 	} else {
-		location_after = (
-			<p className="text-muted">
-				<FormattedMessage
-						defaultMessage="Please select a location"
-						description="Location form field: prompt" />
-			</p>);
+		info = (
+			<FormattedMessage
+				defaultMessage="Please select a location"
+				description="Location form field: prompt" />);
 	}
 
 	return (
 		<>
 			<div className="field-group">
-				<input type="text" ref={ref} name={props.name} defaultValue={value.name} />
-				<a className="btn btn-primary" onClick={handleSearch}>
-					<FormattedMessage
-							defaultMessage="Search"
-							description="Location form field: search" />
+				<div className="fake-input">
+					<div className="vertical-middle">
+						<div>{info}</div>
+					</div>
+				</div>
+				<a className="btn btn-primary" onClick={() => setModalOpen(true)}>
+					<FormattedMessage {...miscMessages.edit} />
 				</a>
 			</div>
-			{location_after}
-			<p className="text-muted">
-				<FormattedMessage
-					defaultMessage="Powered by <a>OpenStreetMap</a>."
-					values={{
-						a: (chunk: any) => (<a href="https://www.openstreetmap.org/">{chunk}</a>)
-					}} />
-			</p>
+
+			{isModalOpen &&
+				<LocationModal
+					accept={handleSelect}
+					cancel={() => setModalOpen(false)} />}
 		</>);
 }

@@ -367,10 +367,6 @@
     "YAgYL6": {
         "message": "Selasa"
     },
-    "YQnxUP": {
-        "message": "Telah pilih {name} di {latitude}, {longitude}.",
-        "description": "Location field"
-    },
     "YS5zRT": {
         "message": "Gelintar menggunakan {name}",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"

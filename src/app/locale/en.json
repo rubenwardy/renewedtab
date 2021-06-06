@@ -39,6 +39,9 @@
         "description": "Age widget text",
         "message": "You are <b>{age}</b>"
     },
+    "2Trf+2": {
+        "message": "Try including the country name/initials."
+    },
     "2VPa4j": {
         "description": "The name of the current language, to be used in the settings dialog",
         "message": "English"
@@ -111,6 +114,9 @@
     "AgU+/t": {
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
+    },
+    "Arl9MZ": {
+        "message": "{name} <i>at {latitude} by {longitude}</i>"
     },
     "Bl74xq": {
         "description": "Button widget description",
@@ -340,10 +346,6 @@
     },
     "YAgYL6": {
         "message": "Tuesday"
-    },
-    "YQnxUP": {
-        "description": "Location field",
-        "message": "Selected {name} at {latitude} by {longitude}."
     },
     "YS5zRT": {
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
@@ -629,6 +631,9 @@
         "description": "Feed widget: form field hint (Filters)",
         "message": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
     },
+    "wEQDC6": {
+        "message": "Edit"
+    },
     "wZq5vc": {
         "description": "Form field label",
         "message": "Display as icons"
@@ -639,6 +644,10 @@
     "wr0l0L": {
         "description": "Backgroud mode description",
         "message": "An image from a URL"
+    },
+    "wwQ6Va": {
+        "description": "Location field",
+        "message": "Choose Location"
     },
     "x59fh0": {
         "description": "Space Flights Widget",
