@@ -167,6 +167,10 @@
         "description": "Links widget, form field hint (Link URL)",
         "message": "Leave blank to make heading"
     },
+    "Ibm90j": {
+        "description": "Clock widget: edit hint",
+        "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
+    },
     "IhKDXS": {
         "description": "Feed widget: filter allow checkbox label",
         "message": "Allow"

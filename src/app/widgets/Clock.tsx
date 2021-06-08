@@ -17,6 +17,11 @@ const messages = defineMessages({
 		defaultMessage: "Shows the time",
 	},
 
+	editHint: {
+		defaultMessage: "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings.",
+		description: "Clock widget: edit hint",
+	},
+
 	showSeconds: {
 		defaultMessage: "Show seconds",
 	},
@@ -59,6 +64,7 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 
 Clock.title = messages.title;
 Clock.description = messages.description;
+Clock.editHint = messages.editHint;
 
 Clock.initialProps = {
 	showSeconds: false,
