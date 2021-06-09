@@ -1,7 +1,7 @@
-import { useForceUpdate, usePromise } from "app/hooks";
+import { useCache, useForceUpdate, usePromise } from "app/hooks";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
 import React, { ChangeEvent, useState } from "react";
-import { defineMessages, useIntl } from "react-intl";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import RequestHostPermission from "../RequestHostPermission";
 import RequestPermission from "../RequestPermission";
@@ -11,10 +11,22 @@ const messages = defineMessages({
 	grantAll: {
 		defaultMessage: "Grant permission to access all websites",
 	},
+
+	suggestURL: {
+		defaultMessage: "Suggest URL be added to default suggestions",
+		description: "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+	},
+
+	suggestHelpText: {
+		defaultMessage: "This will automatically send the URL to the Renewed Tab developers. They may then choose to add it to the suggestions for all users.",
+		description: "Host URL field: help text for suggest URL button"
+	},
 });
+
 
 export function HostURLFIeld(props: FieldProps<string>) {
 	const [value, setValue] = useState<string>(props.value);
+	const [submittedUrls, setSubmittedUrls] = useCache<{ [key: string]: boolean}>("submittedUrls", {});
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		if (props.onChange) {
@@ -35,6 +47,31 @@ export function HostURLFIeld(props: FieldProps<string>) {
 			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
 			: [ null, null ];
 
+	const showSubmitURL = autocomplete && value && value.length > 4 &&
+		submittedUrls && submittedUrls[value] != true &&
+		!autocomplete.some(suggestion => value == suggestion.value);
+
+	function submitURLToSuggestions() {
+		const url = new URL(config.API_URL);
+		url.pathname = (url.pathname + "autocomplete/").replace(/\/\//g, "/");
+
+		fetch(new Request(url.toString(), {
+			method: "POST",
+			cache: "no-cache",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				url: value,
+			}),
+		})).catch(console.error);
+
+		setSubmittedUrls({
+			[value]: true,
+			...submittedUrls
+		});
+	}
+
 	return (
 		<>
 			<input type="url" name={props.name} defaultValue={props.value}
@@ -48,6 +85,15 @@ export function HostURLFIeld(props: FieldProps<string>) {
 				</datalist>}
 
 			<RequestHostPermission host={host} />
+
+			{showSubmitURL &&
+				<p>
+					<a onClick={submitURLToSuggestions}>
+						<FormattedMessage {...messages.suggestURL} />
+					</a>
+					<i className="fas fa-question-circle ml-2"
+						title={intl.formatMessage(messages.suggestHelpText)}></i>
+				</p>}
 		</>);
 }
 

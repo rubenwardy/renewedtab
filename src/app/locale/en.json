@@ -98,6 +98,10 @@
         "description": "HelpAbout widget heading",
         "message": "Renewed Tab Help and Tips"
     },
+    "7bfD9/": {
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
+        "message": "Suggest URL be added to default suggestions"
+    },
     "8J0Bhj": {
         "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
     },
@@ -300,6 +304,10 @@
     "VkW6D1": {
         "description": "Backgroud settings: form field hint (Position)",
         "message": "center, top, or bottom"
+    },
+    "VxE3S8": {
+        "description": "Host URL field: help text for suggest URL button",
+        "message": "This will automatically send the URL to the Renewed Tab developers. They may then choose to add it to the suggestions for all users."
     },
     "WF5DKA": {
         "description": "Age widget",

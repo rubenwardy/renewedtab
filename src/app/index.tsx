@@ -12,11 +12,12 @@ render(
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
 	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock,
-	faLockOpen } from '@fortawesome/free-solid-svg-icons'
+	faLockOpen, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 import { getFeedbackURL } from "./utils/webext";
 
 library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
-	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock, faLockOpen);
+	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock, faLockOpen,
+	faQuestionCircle);
 dom.watch();
 
 

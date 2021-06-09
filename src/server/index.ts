@@ -250,6 +250,41 @@ app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) 
 	res.json(webcomics);
 });
 
+app.post("/api/autocomplete/", async (req: express.Request, res: express.Response) => {
+	try {
+		if (!req.body.url) {
+			writeClientError(res, "Missing URL");
+			return;
+		}
+		if (!DISCORD_WEBHOOK) {
+			writeClientError(res, "Server doesn't have suggestions enabled, missing DISCORD_WEBHOOK");
+			return;
+		}
+
+		const content = `
+			**URL Suggestion**
+			Url: ${req.body.url}
+		`;
+
+		await fetchCatch(new Request(DISCORD_WEBHOOK, {
+			method: "POST",
+			timeout: 10000,
+			headers: {
+				"User-Agent": UA_DEFAULT,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				content: content.replace(/\t/g, "").substr(0, 2000)
+			}),
+		}));
+
+		res.json({ success: true });
+	} catch (ex) {
+		writeClientError(res, ex.message);
+	}
+});
+
+
 
 app.listen(PORT, () => {
 	console.log(`⚡️[server]: Server is running in ${IS_DEBUG ? "debug" : "prod"} at http://localhost:${PORT}`);
