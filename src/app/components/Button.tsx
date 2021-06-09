@@ -1,4 +1,5 @@
 import { MessageDescriptor } from "@formatjs/intl";
+import { mergeClasses } from "app/utils";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -8,7 +9,6 @@ export enum ButtonVariant {
 	Primary,
 	Secondary,
 	Danger,
-	Highlight,
 }
 
 
@@ -29,24 +29,24 @@ interface ButtonProps {
 export default function Button(props: ButtonProps) {
 	const Tag = props.href ? "a" : "button";
 
-	const className = [ "btn" ];
-	if (props.small) {
-		className.push("btn-sm");
-	}
-
 	const variant = props.variant ?? ButtonVariant.Primary;
 	const variantName = ButtonVariant[variant]!.toString().toLowerCase();
-	className.push(`btn-${variantName}`);
-	if (props.active) {
-		className.push("active");
-	}
+
+	const className = mergeClasses(
+			"btn",
+			props.small && "btn-sm",
+			`btn-${variantName}`,
+			props.active && "active",
+			props.className);
+
 
 	const label = props.label && (props.label.defaultMessage
 		? <FormattedMessage {...props.label} />
 		: props.label);
 
+
 	return (
-		<Tag {...props} className={className.join(" ") + " " + props.className ?? ""}>
+		<Tag {...props} className={className}>
 			{props.icon &&
 				(<i className={`${props.icon} ${label && "mr-2"}`} />)}
 			{label}
