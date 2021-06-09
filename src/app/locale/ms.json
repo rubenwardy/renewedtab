@@ -691,5 +691,22 @@
     "zsdRww": {
         "message": "Digunakan untuk butang dan pautan utama",
         "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "wEQDC6": {
+        "message": "Edit"
+    },
+    "wwQ6Va": {
+        "message": "Pilih Lokasi",
+        "description": "Location field"
+    },
+    "2Trf+2": {
+        "message": "Cuba sertakan huruf awal/nama penuh negara."
+    },
+    "Arl9MZ": {
+        "message": "{name} <i>di {latitude}, {longitude}</i>"
+    },
+    "Ibm90j": {
+        "message": "Masa dipaparkan berdasarkan zon waktu sistem anda. Jika masa dipaparkan salah, sila pastikan zon waktu ditetapkan dengan betul di tetapan pelayar dan komputer anda.",
+        "description": "Clock widget: edit hint"
     }
 }
