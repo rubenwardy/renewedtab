@@ -91,7 +91,7 @@ function LocationModal(props: LocationModalProps) {
 				</div>
 				<p className="text-muted">
 					<FormattedMessage
-						defaultMessage="Try including the country name/initials." />
+						defaultMessage="Try including the country name or initials." />
 				</p>
 				{query != "" &&
 					<LocationQuery query={query} onSelect={handleSelect} />}
@@ -128,7 +128,7 @@ export default function LocationField(props: FieldProps<Location>) {
 			<FormattedMessage
 				defaultMessage="<b>{name}</b> at {latitude} by {longitude}"
 				values={{
-					b: (chunk: any) => (<span className="text-normal">{chunk}</span>),
+					b: (chunk: any) => (<strong className="text-normal">{chunk}</strong>),
 					...value }} />);
 	} else {
 		info = (

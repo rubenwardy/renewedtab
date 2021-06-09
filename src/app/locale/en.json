@@ -39,9 +39,6 @@
         "description": "Age widget text",
         "message": "You are <b>{age}</b>"
     },
-    "2Trf+2": {
-        "message": "Try including the country name/initials."
-    },
     "2VPa4j": {
         "description": "The name of the current language, to be used in the settings dialog",
         "message": "English"
@@ -392,6 +389,9 @@
     },
     "a09vzt": {
         "message": "HTTP request failed, {code} {msg}."
+    },
+    "a0L2KE": {
+        "message": "Try including the country name or initials."
     },
     "aaxFkJ": {
         "description": "Todo List widget: prompt",

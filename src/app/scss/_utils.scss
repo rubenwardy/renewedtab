@@ -62,13 +62,14 @@
 .text-muted {
 	color: rgba(255, 255, 255, 0.5);
 
-	b, strong{
+	b:not(.text-normal), strong:not(.text-normal) {
 		color: rgba(255, 255, 255, 0.65);
 	}
 }
 
 .text-normal, .text-normal b, .text-normal strong {
 	color: #eee;
+	font-weight: normal;
 }
 
 .text-shadow-soft, .text-shadow-soft input {
