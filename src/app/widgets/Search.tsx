@@ -114,7 +114,7 @@ export default function Search(widget: WidgetProps<SearchProps>) {
 		}
 
 		const placeholder = name
-			? intl.formatMessage(messages.searchWith, { name: props.searchTitle })
+			? intl.formatMessage(messages.searchWith, { name: name })
 			: intl.formatMessage(messages.search);
 
 		return (
