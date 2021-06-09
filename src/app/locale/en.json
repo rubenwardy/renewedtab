@@ -115,9 +115,6 @@
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
     },
-    "Arl9MZ": {
-        "message": "{name} <i>at {latitude} by {longitude}</i>"
-    },
     "Bl74xq": {
         "description": "Button widget description",
         "message": "A link button"
@@ -192,6 +189,9 @@
     },
     "KFe74G": {
         "message": "Reset everything"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> at {latitude} by {longitude}"
     },
     "KyDwm3": {
         "description": "Top Sites widget: description",

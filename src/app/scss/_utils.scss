@@ -67,6 +67,10 @@
 	}
 }
 
+.text-normal, .text-normal b, .text-normal strong {
+	color: #eee;
+}
+
 .text-shadow-soft, .text-shadow-soft input {
 	text-shadow: 0 0 1em rgba(15, 15, 15, 0.4), 3px 3px 3px rgba(15, 15, 15, 0.2);
 

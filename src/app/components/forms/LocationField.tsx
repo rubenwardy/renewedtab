@@ -126,9 +126,9 @@ export default function LocationField(props: FieldProps<Location>) {
 	if (value) {
 		info = (
 			<FormattedMessage
-				defaultMessage="{name} <i>at {latitude} by {longitude}</i>"
+				defaultMessage="<b>{name}</b> at {latitude} by {longitude}"
 				values={{
-					i: (chunk: any) => (<span className="text-muted">{chunk}</span>),
+					b: (chunk: any) => (<span className="text-normal">{chunk}</span>),
 					...value }} />);
 	} else {
 		info = (
@@ -142,7 +142,7 @@ export default function LocationField(props: FieldProps<Location>) {
 			<div className="field-group">
 				<div className="fake-input">
 					<div className="vertical-middle">
-						<div>{info}</div>
+						<div className="text-muted">{info}</div>
 					</div>
 				</div>
 				<a className="btn btn-primary" onClick={() => setModalOpen(true)}>
