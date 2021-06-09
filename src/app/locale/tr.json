@@ -691,5 +691,30 @@
     "GWRKVT": {
         "message": "Yazı rengi",
         "description": "Form field label"
+    },
+    "wEQDC6": {
+        "message": "Düzenle"
+    },
+    "Ibm90j": {
+        "message": "Saat sisteminizin saat dilimine göre gösterilir. Saat yanlışsa bilgisayar ve tarayıcı ayarlarından saat diliminizin doğru ayarlandığına emin olun.",
+        "description": "Clock widget: edit hint"
+    },
+    "7bfD9/": {
+        "message": "URL'in varsayılan önerilere eklenmesini öner",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "KsX2fE": {
+        "message": "{latitude}' {longitude} konumundaki <b>{name}</b>"
+    },
+    "VxE3S8": {
+        "message": "Bu, URL'i Renewed Tab geliştiricilerine gönderir. Geliştiriciler bunu bütün kullanıcılara öneri olarak ekleyebilirler.",
+        "description": "Host URL field: help text for suggest URL button"
+    },
+    "wwQ6Va": {
+        "message": "Konum Seç",
+        "description": "Location field"
+    },
+    "2Trf+2": {
+        "message": "Ülke ismi/baş harflerini eklemeyi deneyin."
     }
 }
