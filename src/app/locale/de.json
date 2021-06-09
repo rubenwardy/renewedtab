@@ -15,10 +15,6 @@
         "message": "Notizen",
         "description": "Notes Widget"
     },
-    "1ehGkM": {
-        "message": "Hinzufügen",
-        "description": "Add array table row"
-    },
     "1s5GYl": {
         "message": "Durchsichtigkeit",
         "description": "Form field label"
@@ -96,9 +92,6 @@
     "7RSFb4": {
         "message": "Renewed Tab Hilfe und Tipps",
         "description": "HelpAbout widget heading"
-    },
-    "9XUYQt": {
-        "message": "Importieren"
     },
     "CshCZY": {
         "message": "Hintergrund Typ"
@@ -199,7 +192,15 @@
         "message": "Geburtsdatum",
         "description": "Age widget: form field label"
     },
-    "KFe74G": {
-        "message": "Alles zurücksetzen"
+    "2/2yg+": {
+        "message": "Hinzufügen"
+    },
+    "ziyAdj": {
+        "message": "Importieren",
+        "description": "Import / export settings, import"
+    },
+    "adRrk3": {
+        "message": "Alles zurücksetzen",
+        "description": "Import / export settings, reset"
     }
 }

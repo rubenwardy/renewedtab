@@ -6,6 +6,7 @@ import ErrorView from "../ErrorView";
 import { Location } from "common/api/weather";
 import Modal from "../Modal";
 import { miscMessages } from "app/locale/common";
+import Button, { ButtonVariant } from "../Button";
 
 
 const messages = defineMessages({
@@ -85,9 +86,7 @@ function LocationModal(props: LocationModalProps) {
 				<div className="field-group mt-1">
 					<input type="text" ref={ref} autoFocus={true}
 						onKeyPress={onKeyPress} />
-					<a className="btn btn-primary" onClick={handleSearch}>
-						<FormattedMessage {...messages.search} />
-					</a>
+					<Button onClick={handleSearch} label={messages.search} />
 				</div>
 				<p className="text-muted">
 					<FormattedMessage
@@ -102,9 +101,8 @@ function LocationModal(props: LocationModalProps) {
 							a: (chunk: any) => (<a href="https://www.openstreetmap.org/">{chunk}</a>)
 						}} />
 				</p>
-				<a className="btn btn-secondary" onClick={props.cancel}>
-					<FormattedMessage {...miscMessages.cancel} />
-				</a>
+				<Button variant={ButtonVariant.Secondary} onClick={props.cancel}
+					label={miscMessages.cancel} />
 			</div>
 		</Modal>);
 }
@@ -145,9 +143,7 @@ export default function LocationField(props: FieldProps<Location>) {
 						<div className="text-muted">{info}</div>
 					</div>
 				</div>
-				<a className="btn btn-primary" onClick={() => setModalOpen(true)}>
-					<FormattedMessage {...miscMessages.edit} />
-				</a>
+				<Button onClick={() => setModalOpen(true)} label={miscMessages.edit} />
 			</div>
 
 			{isModalOpen &&

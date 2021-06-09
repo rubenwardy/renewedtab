@@ -7,10 +7,6 @@
         "message": "Notas",
         "description": "Notes Widget"
     },
-    "1ehGkM": {
-        "message": "Añadir",
-        "description": "Add array table row"
-    },
     "0hxZWu": {
         "message": "Icono",
         "description": "Form field label"
@@ -62,5 +58,8 @@
     "sPl3nI": {
         "message": "Título",
         "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Añadir"
     }
 }

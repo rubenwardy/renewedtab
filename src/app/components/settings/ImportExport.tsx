@@ -3,8 +3,27 @@ import { miscMessages } from "app/locale/common";
 import { storage } from "app/Storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useRef } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
+import Button, { ButtonVariant } from "../Button";
 import { tabTitles, SettingsTab } from "./SettingsDialog";
+
+
+const messages = defineMessages({
+	reset: {
+		defaultMessage: "Reset everything",
+		description: "Import / export settings, reset",
+	},
+
+	import: {
+		defaultMessage: "Import",
+		description: "Import / export settings, import",
+	},
+
+	export: {
+		defaultMessage: "Export",
+		description: "Import / export settings, export",
+	},
+})
 
 
 export default function ImportExport() {
@@ -57,21 +76,11 @@ export default function ImportExport() {
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
-			<p>
-				<a className="btn btn-danger" onClick={handleReset}>
-					<FormattedMessage
-							defaultMessage="Reset everything" />
-				</a>
-				<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>
-					<FormattedMessage
-							defaultMessage="Import" />
-				</a>
-				<a className="btn btn-primary ml-2"
-						href={`data:text/plain;base64,${encode(data ?? "")}`}
-						download="renewedtab.json">
-					<FormattedMessage
-							defaultMessage="Export" />
-				</a>
+			<p className="button-set">
+				<Button variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
+				<Button onClick={() => ref.current?.click()} label={messages.import} />
+				<Button href={`data:text/plain;base64,${encode(data ?? "")}`}
+						download="renewedtab.json" label={messages.export} />
 			</p>
 		</div>);
 }

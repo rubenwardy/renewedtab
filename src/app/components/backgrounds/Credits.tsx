@@ -2,6 +2,7 @@ import { useDelay } from "app/hooks/delay";
 import { BackgroundInfo } from "common/api/backgrounds";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
+import Button, { ButtonVariant } from "../Button";
 
 
 const messages = defineMessages({
@@ -50,18 +51,18 @@ export function Credits(props: CreditProps) {
 				<a href={props.info.links.site} className="mr-2">{props.info.site}</a>
 
 				{props.onLike &&
-					<a onClick={() => props.onLike!(props.info)}
-							className={`btn btn-sm ${props.isPositive === true && "active"}`}
-							title={intl.formatMessage(messages.like)}>
-						<i className="fas fa-thumbs-up" />
-					</a>}
+					<Button onClick={() => props.onLike!(props.info)}
+							variant={ButtonVariant.None} small={true}
+							active={props.isPositive === true}
+							title={intl.formatMessage(messages.like)}
+							icon="fas fa-thumbs-up" />}
 
 				{props.onBlock &&
-					<a onClick={() => props.onBlock!(props.info)}
-							className={`btn btn-sm ${props.isPositive === false && "active"}`}
-							title={intl.formatMessage(messages.block)}>
-						<i className="fas fa-ban" />
-					</a>}
+					<Button onClick={() => props.onBlock!(props.info)}
+							variant={ButtonVariant.None} small={true}
+							active={props.isPositive === false}
+							title={intl.formatMessage(messages.block)}
+							icon="fas fa-ban"  />}
 			</div>);
 	} else {
 		return (

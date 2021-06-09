@@ -41,10 +41,6 @@
         "message": "Selamat petang",
         "description": "Greeting widget: greeting, from 12 noon to 4pm"
     },
-    "1ehGkM": {
-        "message": "Tambah",
-        "description": "Add array table row"
-    },
     "1s5GYl": {
         "message": "Kelegapan",
         "description": "Form field label"
@@ -145,18 +141,12 @@
         "message": "Cipta item tugasan baharu",
         "description": "Todo List widget: prompt"
     },
-    "KFe74G": {
-        "message": "Tetapkan semula segalanya"
-    },
     "ba9jts": {
         "message": "Tunjukkan suapan Atom atau RSS",
         "description": "Feed widget description"
     },
     "9+2gJZ": {
         "message": "Widget ini memerlukan versi sambungan pelayar."
-    },
-    "9XUYQt": {
-        "message": "Import"
     },
     "AgU+/t": {
         "message": "Senarai pelancaran angkasa yang akan datang, disediakan oleh RocketLaunch.Live",
@@ -286,9 +276,6 @@
     "SG4UJU": {
         "message": "Butang",
         "description": "Button Widget"
-    },
-    "SVwJTM": {
-        "message": "Eksport"
     },
     "ShQneX": {
         "message": "Teks",
@@ -705,5 +692,20 @@
     },
     "KsX2fE": {
         "message": "<b>{name}</b> di {latitude}, {longitude}"
+    },
+    "2/2yg+": {
+        "message": "Tambah"
+    },
+    "adRrk3": {
+        "message": "Tetapkan semula segalanya",
+        "description": "Import / export settings, reset"
+    },
+    "ziyAdj": {
+        "message": "Import",
+        "description": "Import / export settings, import"
+    },
+    "olBVPS": {
+        "message": "Eksport",
+        "description": "Import / export settings, export"
     }
 }

@@ -59,9 +59,9 @@ export default function Modal(props: ModalProps) {
 					onMouseDown={(e) => e.stopPropagation()}
 					onMouseUp={(e) => e.stopPropagation()}>
 				<h2 className="modal-header">
-					<a className="btn modal-close" onClick={props.onClose}>
+					<button className="btn modal-close" onClick={props.onClose}>
 						<i className="fas fa-times" />
-					</a>
+					</button>
 					{props.title}
 				</h2>
 				{props.children}

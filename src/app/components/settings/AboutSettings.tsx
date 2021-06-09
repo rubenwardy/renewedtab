@@ -1,5 +1,27 @@
 import React from "react";
-import { FormattedMessage } from "react-intl";
+import { defineMessages, FormattedMessage } from "react-intl";
+import Button from "../Button";
+
+
+const messages = defineMessages({
+	website: {
+		defaultMessage: "Website",
+		description: "Renewed Tab website",
+	},
+
+	donate: {
+		defaultMessage: "Donate",
+		description: "Renewed Tab donation link",
+	},
+
+	community: {
+		defaultMessage: "Discord / Matrix chats"
+	},
+
+	help_requests: {
+		defaultMessage: "Help and Requests",
+	},
+})
 
 
 export default function AboutSettings() {
@@ -46,25 +68,14 @@ export default function AboutSettings() {
 						defaultMessage="Like Renewed Tab? Consider donating to cover costs and help support development." />
 			</p>
 			<p>
-				<a className="btn btn-primary"
-						href="https://renewedtab.com/">
-					<i className="fas fa-globe-europe mr-1" />
+				<Button href="https://renewedtab.com/" icon="fas fa-globe-europe"
+					label={messages.website} />
 
-					<FormattedMessage
-							defaultMessage="Website"
-							description="Renewed Tab website" />
-				</a>
-				<a className="btn btn-primary"
-						href="https://renewedtab.com/donate/">
-					<FormattedMessage
-							defaultMessage="Donate"
-							description="Renewed Tab donation link" />
-				</a>
-				<a className="btn btn-secondary"
-						href="https://renewedtab.com/community/">
-					<FormattedMessage
-							defaultMessage="Discord / Matrix chats" />
-				</a>
+				<Button href="https://renewedtab.com/donate/"
+					label={messages.donate} />
+
+				<Button href="https://renewedtab.com/community/"
+					label={messages.community} />
 			</p>
 
 			<h3 className="mt-4">
@@ -76,11 +87,8 @@ export default function AboutSettings() {
 						defaultMessage="You can get help or request a feature using the link below." />
 			</p>
 			<p>
-				<a className="btn btn-primary"
-						href="https://renewedtab.com/help/">
-					<FormattedMessage
-							defaultMessage="Help and Requests" />
-				</a>
+				<Button href="https://renewedtab.com/help/"
+						label={messages.help_requests} />
 			</p>
 		</div>);
 }

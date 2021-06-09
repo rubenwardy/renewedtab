@@ -5,6 +5,8 @@ import uuid from "app/utils/uuid";
 import Schema from "app/utils/Schema";
 import { useForceUpdate } from "app/hooks";
 import { FormattedMessage } from "react-intl";
+import Button, { ButtonVariant } from "../Button";
+import { miscMessages } from "app/locale/common";
 
 interface RowProps extends FormProps {
 	idx: number;
@@ -19,25 +21,19 @@ function ArrayRow(props: RowProps) {
 			{props.onMove && (
 				<td>
 					{props.idx > 0 &&
-						<a className="btn btn-sm"
-								onClick={() => props.onMove!(true)}>
-							<i className="fas fa-caret-up" />
-						</a>}
+						<Button small={true} variant={ButtonVariant.None}
+							icon="fas fa-caret-up" onClick={() => props.onMove!(true)} />}
 
 					{!props.isLast &&
-						<a className="btn btn-sm"
-								onClick={() => props.onMove!(false)}>
-							<i className="fas fa-caret-down" />
-						</a>}
+						<Button small={true} variant={ButtonVariant.None}
+							icon="fas fa-caret-down" onClick={() => props.onMove!(false)} />}
 				</td>)}
 
 			<Form {...props} table={true} />
 
 			<td>
-				<a className="btn btn-sm btn-danger"
-						onClick={props.onDelete}>
-					<i className="fas fa-trash" />
-				</a>
+				<Button small={true} variant={ButtonVariant.Danger}
+					icon="fas fa-trash" onClick={props.onDelete} />
 			</td>
 		</tr>);
 }
@@ -123,14 +119,9 @@ export default function ArrayField(props: FieldProps<any[]>) {
 		<>
 			{isOrdered && (
 				<>
-					<a className="float-right btn btn-sm btn-primary"
-							onClick={() => handleAdd(true)}>
-						<i className="fas fa-plus mr-2" />
+					<Button small={true} icon="fas fa-plus" className="float-right"
+						label={miscMessages.add} onClick={() => handleAdd(true)} />
 
-						<FormattedMessage
-								defaultMessage="Add"
-								description="Add array table row" />
-					</a>
 					<div className="clear-both" />
 				</>)}
 
@@ -163,14 +154,8 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			</table>
 
 			{(rows.length > 0 || !isOrdered) &&
-				<a className="float-right mt-3 btn btn-sm btn-primary"
-						onClick={() => handleAdd(false)}>
-					<i className="fas fa-plus mr-2" />
-
-					<FormattedMessage
-							defaultMessage="Add"
-							description="Add array table row" />
-				</a>}
+				<Button small={true} icon="fas fa-plus" className="float-right"
+					label={miscMessages.add} onClick={() => handleAdd(false)} />}
 
 			<div className="clear-both" />
 		</>);

@@ -21,9 +21,6 @@
     "9+2gJZ": {
         "message": "Bu araç tarayıcı uzantı versiyonuna ihtiyaç duyar."
     },
-    "9XUYQt": {
-        "message": "Dışarıdan yükle"
-    },
     "CshCZY": {
         "message": "Arkaplan Tipi"
     },
@@ -32,9 +29,6 @@
     },
     "K3r6DQ": {
         "message": "Sil"
-    },
-    "KFe74G": {
-        "message": "Her şeyi sıfırla"
     },
     "N/7Stk": {
         "message": "<a>rubenwardy</a> tarafından yaratılmıştır."
@@ -50,9 +44,6 @@
     },
     "SQJLG3": {
         "message": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
-    },
-    "SVwJTM": {
-        "message": "Dışarı gönder"
     },
     "T/wBPw": {
         "message": "{type} aracını kaldır"
@@ -299,10 +290,6 @@
     "OBJta4": {
         "message": "Araç içinde tıklayarak ismi değiştirebilirsiniz",
         "description": "Greeting widget: edit modal hint"
-    },
-    "1ehGkM": {
-        "message": "Ekle",
-        "description": "Add array table row"
     },
     "fz43UJ": {
         "message": "Bağış yap",
@@ -713,5 +700,20 @@
     "wwQ6Va": {
         "message": "Konum Seç",
         "description": "Location field"
+    },
+    "ziyAdj": {
+        "message": "Dışarıdan yükle",
+        "description": "Import / export settings, import"
+    },
+    "adRrk3": {
+        "message": "Her şeyi sıfırla",
+        "description": "Import / export settings, reset"
+    },
+    "olBVPS": {
+        "message": "Dışarı gönder",
+        "description": "Import / export settings, export"
+    },
+    "2/2yg+": {
+        "message": "Ekle"
     }
 }

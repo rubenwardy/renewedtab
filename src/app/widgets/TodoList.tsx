@@ -1,4 +1,5 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
+import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
 import { useWidgetProp } from "app/hooks/widget";
 import Schema from "app/utils/Schema";
@@ -66,9 +67,9 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 			<input type="checkbox" checked={props.item.completed} onChange={onChecked} />
 			<AutoWidthInput onChange={onTextChanged} value={props.item.text ?? ""}
 					onFinished={onFinished} minWidth="50%" />
-			<a onClick={() => props.delete()} className="btn btn-sm">
-				<i className="fas fa-times" />
-			</a>
+			<Button small={true} icon="fas fa-times"
+					variant={ButtonVariant.None}
+					onClick={props.delete} />
 		</li>);
 }
 

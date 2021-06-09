@@ -6,6 +6,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 import { useForceUpdate } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
+import Button, { ButtonVariant } from "./Button";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -55,9 +56,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						schema={themeSchema}
 						onChange={onChange} />
 
-				<a className="btn btn-secondary" onClick={props.onClose}>
-					<FormattedMessage {...miscMessages.ok} />
-				</a>
+				<Button variant={ButtonVariant.Secondary} onClick={props.onClose} label={miscMessages.ok} />
 			</div>
 		</Modal>);
 }
@@ -71,12 +70,8 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	return (
 		<Modal title={title} isOpen={true} {...props}>
 			<p className="modal-body">
-				<a className="btn btn-danger" onClick={props.remove}>
-					<FormattedMessage defaultMessage="Delete" />
-				</a>
-				<a className="btn btn-secondary" onClick={props.onClose}>
-					<FormattedMessage defaultMessage="Cancel" />
-				</a>
+				<Button variant={ButtonVariant.Danger} onClick={props.remove} label={miscMessages.delete} />
+				<Button variant={ButtonVariant.Secondary} onClick={props.onClose} label={miscMessages.cancel} />
 			</p>
 		</Modal>);
 }

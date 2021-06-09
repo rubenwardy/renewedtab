@@ -86,11 +86,23 @@ export const miscMessages = defineMessages({
 		defaultMessage: "Edit",
 	},
 
+	add: {
+		defaultMessage: "Add",
+	},
+
 	ok: {
 		defaultMessage: "OK",
 	},
 
+	delete: {
+		defaultMessage: "Delete",
+	},
+
 	cancel: {
 		defaultMessage: "Cancel",
+	},
+
+	chooseAFile: {
+		defaultMessage: "Choose a file",
 	},
 });

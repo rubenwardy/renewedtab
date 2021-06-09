@@ -1,9 +1,11 @@
 import { useLargeStorage } from "app/hooks";
+import { miscMessages } from "app/locale/common";
 import { largeStorage } from "app/Storage";
 import uuid from "app/utils/uuid";
 import React, { useRef } from "react";
 import { FormattedMessage } from "react-intl";
 import { FieldProps } from ".";
+import Button from "../Button";
 
 
 function readFileAsDataURL(file: File) {
@@ -68,10 +70,7 @@ export default function ImageUploadField(props: FieldProps<string>) {
 							values={{ filename: file.filename }} />
 				</p>}
 
-			<a className="btn btn-primary ml-2" onClick={() => ref.current?.click()}>
-				<FormattedMessage
-						defaultMessage="Choose a file" />
-			</a>
-
+			<Button onClick={() => ref.current?.click()}
+				label={miscMessages.chooseAFile} />
 		</>);
 }

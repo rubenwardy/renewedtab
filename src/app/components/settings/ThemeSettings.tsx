@@ -3,6 +3,7 @@ import Color from "app/utils/Color";
 import Schema, { type } from "app/utils/Schema";
 import React, { useMemo } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
+import Button, { ButtonVariant } from "../Button";
 import { Form } from "../forms";
 import { ColorPair } from "../forms/ColorFields";
 import { tabTitles, SettingsTab } from "./SettingsDialog";
@@ -12,6 +13,10 @@ const messages = defineMessages({
 	experimental: {
 		defaultMessage: "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes.",
 		description: "Theme settings",
+	},
+
+	resetTheme: {
+		defaultMessage: "Reset theme to default",
 	},
 
 	font: {
@@ -98,9 +103,8 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
 			</p>
 			<p>
-				<a className="btn btn-secondary" onClick={resetTheme}>
-					<FormattedMessage defaultMessage="Reset theme to default" />
-				</a>
+				<Button variant={ButtonVariant.Secondary} onClick={resetTheme}
+					label={messages.resetTheme} />
 			</p>
 			<Form values={theme} schema={getThemeSchema()}
 						onChange={handleOnChange} />

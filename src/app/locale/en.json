@@ -27,13 +27,12 @@
         "description": "Greeting widget: greeting, from 12 noon to 4pm",
         "message": "Good afternoon"
     },
-    "1ehGkM": {
-        "description": "Add array table row",
-        "message": "Add"
-    },
     "1s5GYl": {
         "description": "Form field label",
         "message": "Opacity"
+    },
+    "2/2yg+": {
+        "message": "Add"
     },
     "27lljH": {
         "description": "Age widget text",
@@ -108,9 +107,6 @@
     },
     "9+2gJZ": {
         "message": "This widget requires the browser extension version."
-    },
-    "9XUYQt": {
-        "message": "Import"
     },
     "AgU+/t": {
         "description": "SpaceFlights widget description",
@@ -188,9 +184,6 @@
         "description": "Age widget: form field label",
         "message": "Birth date"
     },
-    "KFe74G": {
-        "message": "Reset everything"
-    },
     "KsX2fE": {
         "message": "<b>{name}</b> at {latitude} by {longitude}"
     },
@@ -261,9 +254,6 @@
     },
     "SQJLG3": {
         "message": "Click \"Add widget\" in the bottom of the screen to add a widget."
-    },
-    "SVwJTM": {
-        "message": "Export"
     },
     "ShQneX": {
         "description": "Form field label",
@@ -396,6 +386,10 @@
     "aaxFkJ": {
         "description": "Todo List widget: prompt",
         "message": "Create a new todo item"
+    },
+    "adRrk3": {
+        "description": "Import / export settings, reset",
+        "message": "Reset everything"
     },
     "amHvKE": {
         "description": "Notes widget: prompt",
@@ -566,6 +560,10 @@
         "description": "Location form field: search",
         "message": "Search"
     },
+    "olBVPS": {
+        "description": "Import / export settings, export",
+        "message": "Export"
+    },
     "or/+Da": {
         "description": "Subheading for per-widget styling properties",
         "message": "Styling"
@@ -712,6 +710,10 @@
     "zfsplE": {
         "description": "Background credits vote",
         "message": "Never show again"
+    },
+    "ziyAdj": {
+        "description": "Import / export settings, import",
+        "message": "Import"
     },
     "zsdRww": {
         "description": "Theme settings: form field hint (Primary Color)",

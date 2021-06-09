@@ -1,4 +1,5 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
+import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
 import { useWidgetProp } from "app/hooks/widget";
 import Schema from "app/utils/Schema";
@@ -68,9 +69,9 @@ export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 						placeholder={intl.formatMessage(messages.placeholder)} />
 
 				{goal &&
-					(<a onClick={() => setGoal(undefined)} className="btn btn-sm ml-2">
-						<i className="fas fa-times" />
-					</a>)}
+					(<Button small={true} className="ml-2" icon="fas fa-times"
+							variant={ButtonVariant.None}
+							onClick={() => setGoal(undefined)} />)}
 			</div>
 		</Panel>);
 }
