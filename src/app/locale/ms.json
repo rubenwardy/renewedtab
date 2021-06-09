@@ -708,5 +708,8 @@
     "Ibm90j": {
         "message": "Masa dipaparkan berdasarkan zon waktu sistem anda. Jika masa dipaparkan salah, sila pastikan zon waktu ditetapkan dengan betul di tetapan pelayar dan komputer anda.",
         "description": "Clock widget: edit hint"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> di {latitude}, {longitude}"
     }
 }
