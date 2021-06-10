@@ -44,9 +44,14 @@ export default function Button(props: ButtonProps) {
 		? <FormattedMessage {...props.label} />
 		: props.label);
 
-
+	const props2 = { ...props };
+	delete props2.small;
+	delete props2.variant;
+	delete props2.active;
+	delete props2.icon;
+	delete props2.label;
 	return (
-		<Tag {...props} className={className}>
+		<Tag {...props2} className={className}>
 			{props.icon &&
 				(<i className={`${props.icon} ${label && "mr-2"}`} />)}
 			{label}
