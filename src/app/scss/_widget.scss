@@ -278,3 +278,30 @@ main > .widget {
 	box-sizing: border-box;
 	margin: 0;
 }
+
+.quote {
+	flex-direction: column;
+
+	.quote-text {
+		font-size: 120%;
+		color: #eee;
+	}
+
+	.quote-info {
+		margin-top: 0.75em;
+		font-size: 90%;
+		opacity: 0.8;
+
+		a {
+			display: inline-block;
+			margin-left: 2em;
+			font-size: 90%;
+			color: white;
+			opacity: 0.5;
+		}
+	}
+}
+
+.quote:hover .quote-info a {
+	opacity: 0.65;
+}

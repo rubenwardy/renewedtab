@@ -29,6 +29,7 @@ import { getCoordsFromQuery } from "./geocode";
 import getImageFromUnsplash from "./backgrounds/unsplash";
 import { compareString } from "common/utils/string";
 import SpaceLaunch from "common/api/SpaceLaunch";
+import { getQuote, getQuoteCategories } from "./quotes";
 
 const app = express();
 
@@ -284,6 +285,38 @@ app.post("/api/autocomplete/", async (req: express.Request, res: express.Respons
 	}
 });
 
+
+app.get("/api/quote-categories/", async (req: express.Request, res: express.Response) => {
+	try {
+		const quoteCategories = await getQuoteCategories();
+
+		res.json(quoteCategories);
+	} catch (ex) {
+		writeClientError(res, ex.message);
+	}
+});
+
+
+app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
+	try {
+		let categories: (string[] | undefined);
+
+		const queryArg = req.query.categories;
+		if (queryArg instanceof Array) {
+			categories = queryArg as string[];
+		} else if (typeof queryArg == "string") {
+			categories = [ queryArg as string ];
+		} else {
+			categories = (await getQuoteCategories()).map(x => x.id);
+		}
+
+		const category = categories[Math.floor(Math.random() * categories.length)];
+		const quote = await getQuote(category);
+		res.json(quote);
+	} catch (ex) {
+		writeClientError(res, ex.message);
+	}
+});
 
 
 app.listen(PORT, () => {

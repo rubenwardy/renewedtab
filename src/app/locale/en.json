@@ -54,6 +54,10 @@
         "description": "Search widget: form field label",
         "message": "Search engine name"
     },
+    "3XS/zh": {
+        "description": "Quotes Widget description",
+        "message": "Shows a random inspirational or famous"
+    },
     "3ZfhWo": {
         "message": "Permission needed to access {host}. Edit this widget to grant it."
     },
@@ -81,6 +85,10 @@
     "5DCxT+": {
         "description": "Weather widget: form field label",
         "message": "Temperature Unit"
+    },
+    "6MDM6D": {
+        "description": "Quotes Widget",
+        "message": "Quotes"
     },
     "6pdO6i": {
         "description": "Bookmarks widget: error message",
@@ -183,6 +191,10 @@
     "K8s82y": {
         "description": "Age widget: form field label",
         "message": "Birth date"
+    },
+    "KhM0zv": {
+        "description": "Daily Goal widget: edit modal hint",
+        "message": "Quotes are sourced from external sources, and are not reviewed by Renewed Tab."
     },
     "KsX2fE": {
         "message": "<b>{name}</b> at {latitude} by {longitude}"

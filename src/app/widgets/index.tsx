@@ -14,6 +14,7 @@ import Invisible from "./Invisible";
 import Text from "./Text";
 import Links from "./Links";
 import Notes from "./Notes";
+import Quotes from "./Quotes";
 import Search from "./Search";
 import SpaceFlights from "./SpaceFlights";
 import TodoList from "./TodoList";
@@ -35,6 +36,7 @@ export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	Links,
 	Notes,
 	Feed,
+	Quotes,
 	Search,
 	SpaceFlights,
 	Text,

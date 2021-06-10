@@ -117,7 +117,7 @@ export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promi
 export function useAPI<T>(path: string, args: any, // eslint-disable-line
 		dependents?: any[]): [(T | null), (string | null)] {
 	const intl = useIntl();
-	return usePromise(() => getAPI(intl, path, args), dependents);
+	return usePromise(() => getAPI(intl, path, args), dependents ?? []);
 }
 
 
@@ -130,5 +130,5 @@ export function useAPI<T>(path: string, args: any, // eslint-disable-line
  */
 export function useXML(url: string, dependents?: any[]): [(Document | null), (string | null)] {
 	const intl = useIntl();
-	return usePromise(() => fetchXML(intl, makeProxy(url)), dependents);
+	return usePromise(() => fetchXML(intl, makeProxy(url)), dependents ?? []);
 }
