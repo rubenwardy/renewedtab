@@ -707,5 +707,8 @@
     "olBVPS": {
         "message": "Eksport",
         "description": "Import / export settings, export"
+    },
+    "a0L2KE": {
+        "message": "Cuba sertakan huruf awal/nama penuh negara."
     }
 }
