@@ -709,6 +709,14 @@
         "description": "Import / export settings, export"
     },
     "a0L2KE": {
-        "message": "Cuba sertakan huruf awal/nama penuh negara."
+        "message": "Cuba sertakan huruf awal atau nama penuh negara."
+    },
+    "7bfD9/": {
+        "message": "Cadangkan URL untuk ditambah ke himpunan cadangan",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "VxE3S8": {
+        "message": "Ini akan hantar URL yang anda cadangkan secara automatik kepada pembangun Renewed Tab. Mereka akan putuskan sama ada ia akan ditambah sebagai cadangan untuk semua pengguna atau tidak.",
+        "description": "Host URL field: help text for suggest URL button"
     }
 }
