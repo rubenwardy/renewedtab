@@ -5,6 +5,7 @@
 	"description": "A customisable New Tab page, with widgets and beautiful backgrounds",
 	"author": "rubenwardy",
 	"homepage_url": "https://renewedtab.com/",
+	"offline_enabled": true,
 	"icons": {
 		"32": "icon-32.png",
 		"48": "icon-48.png",
