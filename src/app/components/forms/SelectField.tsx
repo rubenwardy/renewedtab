@@ -7,6 +7,7 @@ export default function SelectField(props: FieldProps<any>) {
 	const [value, setValue] = useState(props.value);
 
 	function handleChanged(newMode: any) {
+		console.log("SET", newMode);
 		if (props.onChange) {
 			props.onChange(getValue(newMode));
 			setValue(getValue(newMode));

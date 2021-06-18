@@ -158,6 +158,10 @@
         "description": "Location form field: prompt",
         "message": "Please select a location"
     },
+    "GcxpZV": {
+        "description": "Clock widget: date style form field label",
+        "message": "Date style"
+    },
     "GqPEp+": {
         "message": "Requires browser extension version"
     },
@@ -231,6 +235,10 @@
     },
     "PM6qZ7": {
         "message": "Show seconds"
+    },
+    "PYJFvz": {
+        "description": "Form field label, list of categories. Used by Quotes widget",
+        "message": "Categories"
     },
     "Q1mwPp": {
         "message": "Consider <a>contributing or adding your language</a>."

@@ -305,3 +305,19 @@ main > .widget {
 .quote:hover .quote-info a {
 	opacity: 0.65;
 }
+
+.widget-clock {
+	.time, .date {
+		display: block;
+		text-align: center;
+		margin: 0;
+	}
+
+	.time {
+		font-size: 64pt;
+	}
+
+	.date {
+		font-size: 20pt;
+	}
+}
