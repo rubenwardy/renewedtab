@@ -29,6 +29,10 @@ export function HostURLFIeld(props: FieldProps<string>) {
 	const [submittedUrls, setSubmittedUrls] = useCache<{ [key: string]: boolean}>("submittedUrls", {});
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (!e.target.checkValidity()) {
+			return;
+		}
+
 		if (props.onChange) {
 			props.onChange(e.target.value);
 		}
