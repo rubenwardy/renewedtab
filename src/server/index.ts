@@ -307,12 +307,12 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 		} else if (typeof queryArg == "string") {
 			categories = [ queryArg as string ];
 		} else {
-			categories = (await getQuoteCategories()).map(x => x.id);
+			categories = [ "inspire", "life", "love", "funny" ];
 		}
 
 		const category = categories[Math.floor(Math.random() * categories.length)];
 		const quote = await getQuote(category);
-		res.json(quote);
+		res.json({ ...quote, category: category });
 	} catch (ex) {
 		writeClientError(res, ex.message);
 	}

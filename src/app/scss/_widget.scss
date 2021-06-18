@@ -283,14 +283,14 @@ main > .widget {
 	flex-direction: column;
 
 	.quote-text {
-		font-size: 120%;
-		color: #eee;
+		font-size: 140%;
 	}
 
 	.quote-info {
 		margin-top: 0.75em;
 		font-size: 90%;
 		opacity: 0.8;
+		color: #eee;
 
 		a {
 			display: inline-block;

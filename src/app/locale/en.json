@@ -54,10 +54,6 @@
         "description": "Search widget: form field label",
         "message": "Search engine name"
     },
-    "3XS/zh": {
-        "description": "Quotes Widget description",
-        "message": "Shows a random inspirational or famous"
-    },
     "3ZfhWo": {
         "message": "Permission needed to access {host}. Edit this widget to grant it."
     },
@@ -652,6 +648,10 @@
     "vS2rQE": {
         "description": "Feed widget: form field hint (Filters)",
         "message": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
+    },
+    "vVnypL": {
+        "description": "Quotes Widget description",
+        "message": "Shows a random quote, with categories"
     },
     "wEQDC6": {
         "message": "Edit"

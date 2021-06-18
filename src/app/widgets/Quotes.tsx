@@ -1,9 +1,10 @@
 import ErrorView from "app/components/ErrorView";
 import Panel from "app/components/Panel";
 import { useAPI } from "app/hooks";
-import Schema from "app/utils/Schema";
+import { schemaMessages } from "app/locale/common";
+import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetProps, WidgetTheme } from "app/Widget";
+import { themeMessages, WidgetProps, WidgetTheme } from "app/Widget";
 import { Quote } from "common/api/quotes";
 import React from "react";
 import { defineMessages } from "react-intl";
@@ -16,7 +17,7 @@ const messages = defineMessages({
 	},
 
 	description: {
-		defaultMessage: "Shows a random inspirational or famous",
+		defaultMessage: "Shows a random quote, with categories",
 		description: "Quotes Widget description",
 	},
 
@@ -58,8 +59,14 @@ Quotes.description = messages.description;
 Quotes.editHint = messages.editHint;
 Quotes.initialProps = {};
 Quotes.schema = {} as Schema;
-Quotes.defaultSize = new Vector2(15, 1);
+Quotes.defaultSize = new Vector2(15, 2);
 
 Quotes.initialTheme = {
 	showPanelBG: false,
+	textColor: "#ffffff",
 } as WidgetTheme;
+
+Quotes.themeSchema = {
+	showPanelBG: type.boolean(themeMessages.showPanelBG),
+	textColor: type.color(schemaMessages.textColor),
+} as Schema;
