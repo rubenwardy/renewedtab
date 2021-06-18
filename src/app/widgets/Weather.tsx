@@ -34,7 +34,17 @@ const messages = defineMessages({
 	temperatureUnit: {
 		defaultMessage: "Temperature Unit",
 		description: "Weather widget: form field label",
-	}
+	},
+
+	[TemperatureUnit.Celsius]: {
+		defaultMessage: "Celsius",
+		description: "Weather widget: Celsius unit",
+	},
+
+	[TemperatureUnit.Fahrenheit]: {
+		defaultMessage: "Fahrenheit",
+		description: "Weather widget: Fahrenheit unit",
+	},
 });
 
 
@@ -140,7 +150,7 @@ Weather.initialProps = {
 
 Weather.schema = {
 	location: type.location(schemaMessages.location),
-	unit: type.selectEnum(TemperatureUnit, messages.temperatureUnit),
+	unit: type.selectEnum(TemperatureUnit, messages, messages.temperatureUnit),
 } as Schema;
 
 Weather.defaultSize = new Vector2(5, 3);

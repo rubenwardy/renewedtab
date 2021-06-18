@@ -7,6 +7,10 @@
         "description": "Age widget description",
         "message": "States your current age with way too much precision"
     },
+    "/LQ9WU": {
+        "description": "Clock widget: date style type",
+        "message": "Medium"
+    },
     "/dtDqf": {
         "description": "Notes Widget",
         "message": "Notes"
@@ -78,6 +82,10 @@
     "4syC1B": {
         "message": "Help and Requests"
     },
+    "56hSCM": {
+        "description": "Clock widget: date style type",
+        "message": "Long"
+    },
     "5DCxT+": {
         "description": "Weather widget: form field label",
         "message": "Temperature Unit"
@@ -137,6 +145,10 @@
     "DJRqNI": {
         "description": "Web Comic widget description",
         "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
+    },
+    "Dk7Khi": {
+        "description": "Weather widget: Fahrenheit unit",
+        "message": "Fahrenheit"
     },
     "FHzdXg": {
         "description": "Theme settings",
@@ -230,6 +242,10 @@
         "description": "Bookmarks widget: form field label",
         "message": "Include folders as sections"
     },
+    "Mihrhf": {
+        "description": "Clock widget: date style type, not shown",
+        "message": "None"
+    },
     "N/7Stk": {
         "message": "Created by <a>rubenwardy</a>."
     },
@@ -310,6 +326,10 @@
     "V1EIOe": {
         "description": "IFrame widget description",
         "message": "Shows a webpage"
+    },
+    "VGhm86": {
+        "description": "Clock widget: date style type",
+        "message": "Short"
     },
     "VPDVTF": {
         "description": "Shown when array table form field has no rows",
@@ -573,6 +593,10 @@
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
         "message": "Search"
     },
+    "nnaWVi": {
+        "description": "Weather widget: Celsius unit",
+        "message": "Celsius"
+    },
     "o2uuHu": {
         "message": "12 hour clock"
     },
@@ -649,6 +673,10 @@
     "sx01dA": {
         "description": "Links widget description",
         "message": "Links, with support for headings and icons"
+    },
+    "tR8dMS": {
+        "description": "Clock widget: date style type",
+        "message": "Full"
     },
     "translation_credits": {
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME",

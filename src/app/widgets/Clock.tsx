@@ -7,6 +7,15 @@ import React from "react";
 import { defineMessages, FormattedDate, FormattedTime } from "react-intl";
 
 
+enum DateStyle {
+	None,
+	Full,
+	Long,
+	Medium,
+	Short,
+}
+
+
 const messages = defineMessages({
 	title: {
 		defaultMessage: "Clock",
@@ -33,17 +42,33 @@ const messages = defineMessages({
 	showDate: {
 		defaultMessage: "Date style",
 		description: "Clock widget: date style form field label",
-	}
+	},
+
+	[DateStyle.None]: {
+		defaultMessage: "None",
+		description: "Clock widget: date style type, not shown",
+	},
+
+	[DateStyle.Full]: {
+		defaultMessage: "Full",
+		description: "Clock widget: date style type",
+	},
+
+	[DateStyle.Long]: {
+		defaultMessage: "Long",
+		description: "Clock widget: date style type",
+	},
+
+	[DateStyle.Medium]: {
+		defaultMessage: "Medium",
+		description: "Clock widget: date style type",
+	},
+
+	[DateStyle.Short]: {
+		defaultMessage: "Short",
+		description: "Clock widget: date style type",
+	},
 });
-
-
-enum DateStyle {
-	None,
-	Full,
-	Long,
-	Medium,
-	Short,
-}
 
 
 interface ClockProps {
@@ -104,7 +129,7 @@ Clock.initialProps = {
 Clock.schema = {
 	showSeconds: type.boolean(messages.showSeconds),
 	hour12: type.boolean(messages.hour12),
-	dateStyle: type.selectEnum(DateStyle, messages.showDate),
+	dateStyle: type.selectEnum(DateStyle, messages, messages.showDate),
 } as Schema;
 
 Clock.defaultSize = new Vector2(15, 2);

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useIntl } from "react-intl";
 import { Radio, RadioGroup } from "react-radio-group";
 import { FieldProps } from ".";
 
 export default function SelectField(props: FieldProps<any>) {
 	const Enum: any = props.type;
 	const [value, setValue] = useState(props.value);
+	const intl = useIntl();
 
 	function handleChanged(newMode: any) {
 		console.log("SET", newMode);
@@ -15,10 +17,16 @@ export default function SelectField(props: FieldProps<any>) {
 	}
 
 	function getString(x: any): string {
-		if (typeof(x) == "string") {
-			return x;
+		let id = x;
+		if (typeof(id) == "string") {
+			id = Enum[x];
+		}
+
+		const descriptor = props.schemaEntry.messages && props.schemaEntry.messages[id];
+		if (descriptor) {
+			return intl.formatMessage(descriptor);
 		} else {
-			return Enum[x];
+			return Enum[id];
 		}
 	}
 

@@ -8,11 +8,15 @@ export type Type = JSType | "host_url" | "host_all" | "location" |
 
 
 export type AutocompleteList = {label: string, value: string};
+type Messages = {
+	[key in (string | number)]: MessageDescriptor;
+};
 
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema;
 	label: MessageDescriptor;
+	messages?: Messages;
 	hint?: MessageDescriptor;
 	unit?: string;
 	autocomplete?: (intl: IntlShape) => Promise<AutocompleteList[]>;
@@ -89,9 +93,10 @@ export namespace type {
 	/**
 	 * enumType: The TypeScript enum object
 	 */
-	export const selectEnum = (enumType: any, // eslint-disable-line
+	export const selectEnum = (enumType: any, messages: Messages, // eslint-disable-line
 			label: MessageDescriptor, hint?: MessageDescriptor): SchemaEntry => ({
 		type: enumType,
+		messages: messages,
 		label: label,
 		hint: hint,
 	});
