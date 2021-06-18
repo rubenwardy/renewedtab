@@ -69,7 +69,12 @@ export const schemaMessages = defineMessages({
 	opacity: {
 		defaultMessage: "Opacity",
 		description: "Form field label",
-	}
+	},
+
+	categories: {
+		defaultMessage: "Categories",
+		description: "Form field label, list of categories. Used by Quotes widget"
+	},
 });
 
 

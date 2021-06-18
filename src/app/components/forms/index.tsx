@@ -19,6 +19,7 @@ import ImageUploadField from "./ImageUploadField";
 import { HostAllField, HostURLFIeld } from "./HostPermFields";
 import { UnitNumberField } from "./NumberField";
 import { ColorField, ColorPairField } from "./ColorFields";
+import QuoteCategoriesField from "./QuoteCategoriesField";
 
 function isEnumType(x: any) {
 	const keys = new Set(Object.getOwnPropertyNames(x));
@@ -60,6 +61,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return ImageUploadField;
 	} else if (type == "textarea") {
 		return TextAreaField;
+	} else if (type == "quote_categories") {
+		return QuoteCategoriesField;
 	} else {
 		return TextField;
 	}

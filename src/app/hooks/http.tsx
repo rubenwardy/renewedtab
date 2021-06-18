@@ -99,7 +99,13 @@ export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promi
 	const url = new URL(config.API_URL);
 	url.pathname = (url.pathname + path).replace(/\/\//g, "/");
 	Object.entries(args).forEach(([key, value]) => {
-		url.searchParams.set(key.toString(), (value as any).toString());
+		if (value instanceof Array) {
+			value.forEach(single => {
+				url.searchParams.append(key.toString(), (single as any).toString());
+			});
+		} else {
+			url.searchParams.set(key.toString(), (value as any).toString());
+		}
 	})
 
 	return fetchJSON(intl, url.toString());

@@ -28,8 +28,17 @@ const messages = defineMessages({
 });
 
 
-export default function Quotes(widget: WidgetProps<any>) {
-	const [quotes, error] = useAPI<Quote[]>("quotes/", {}, []);
+interface QuotesProps {
+	categories: { [key: string]: boolean };
+}
+
+
+export default function Quotes(widget: WidgetProps<QuotesProps>) {
+	const categories = Object.entries(widget.props.categories)
+		.filter(([, value]) => value)
+		.map(([key,]) => key);
+
+	const [quotes, error] = useAPI<Quote[]>("quotes/", { categories }, []);
 	if (!quotes) {
 		return (<ErrorView error={error} loading={false} />);
 	}
@@ -57,8 +66,20 @@ export default function Quotes(widget: WidgetProps<any>) {
 Quotes.title = messages.title;
 Quotes.description = messages.description;
 Quotes.editHint = messages.editHint;
-Quotes.initialProps = {};
-Quotes.schema = {} as Schema;
+
+Quotes.initialProps = {
+	categories: {
+		"inspire": true,
+		"life": true,
+		"love": true,
+		"funny": true
+	}
+} as QuotesProps;
+
+Quotes.schema = {
+	categories: type.quoteCategories(schemaMessages.categories),
+} as Schema;
+
 Quotes.defaultSize = new Vector2(15, 2);
 
 Quotes.initialTheme = {

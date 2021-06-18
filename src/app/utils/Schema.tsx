@@ -4,7 +4,7 @@ import { IntlShape } from "react-intl";
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
-	"color" | "color_pair" | "image" | "unit_number" | "textarea";
+	"color" | "color_pair" | "image" | "unit_number" | "textarea" | "quote_categories";
 
 
 export type AutocompleteList = {label: string, value: string};
@@ -123,4 +123,6 @@ export namespace type {
 		label: label,
 		hint: hint,
 	});
+
+	export const quoteCategories = makeTypeFunc("quote_categories");
 }
