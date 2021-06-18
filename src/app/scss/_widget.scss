@@ -10,6 +10,8 @@
 
 		display: flex;
 		flex-flow: row;
+		align-items: center;
+
 		padding: 0;
 		margin: 0;
 
@@ -24,10 +26,13 @@
 		.widget-title {
 			margin: 0;
 			padding: 0.2rem 1rem 0.2rem 0.8rem;
-			vertical-align: middle;
 			display: inline-block;
 			flex: 1;
 			cursor: move;
+
+			.fa-grip-vertical {
+				opacity: 0.4;
+			}
 		}
 
 		.collapsed {
