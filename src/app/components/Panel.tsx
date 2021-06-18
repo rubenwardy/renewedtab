@@ -39,7 +39,7 @@ export default function Panel(props: PanelProps) {
 		}
 	} else {
 		className.push("panel-invis");
-		className.push(props.invisClassName ?? "text-shadow-hard");
+		className.push(props.invisClassName ?? "text-shadow");
 	}
 
 	if (props.scrolling !== false) {

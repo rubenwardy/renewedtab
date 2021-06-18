@@ -64,7 +64,7 @@ export default function App() {
 
 				<ReviewRequester />
 
-				<footer className="text-shadow-soft">
+				<footer className="text-shadow">
 					{isLocked && (
 						<a onClick={() => setIsLocked(false)} tabIndex={0}>
 							<i className={"large fas mr-1 " +

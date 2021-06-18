@@ -42,7 +42,7 @@ export function Credits(props: CreditProps) {
 		const title = (props.info.title && props.info.title.length > 0)
 				? props.info.title : "Photo";
 		return (
-			<div className="credits text-shadow-soft"
+			<div className="credits text-shadow"
 					onMouseEnter={startOnHover}
 					onMouseLeave={onMouseLeave}>
 				<a className="title" href={props.info.links.photo}>{title}</a>
@@ -66,7 +66,7 @@ export function Credits(props: CreditProps) {
 			</div>);
 	} else {
 		return (
-			<div className="credits text-shadow-soft"
+			<div className="credits text-shadow"
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}>
 				<a href={props.info.links.photo}>

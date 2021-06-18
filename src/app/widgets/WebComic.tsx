@@ -46,7 +46,7 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 
 	const title = article.title;
 	return (
-		<Panel {...widget.theme} className="image-caption" invisClassName="image-caption text-shadow-hard">
+		<Panel {...widget.theme} className="image-caption" invisClassName="image-caption text-shadow">
 			<a href={article.link} title={article.alt ?? ""}>
 				<img src={article.image} alt={article.alt ?? ""} />
 			</a>

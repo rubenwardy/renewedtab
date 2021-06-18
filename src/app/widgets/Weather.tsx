@@ -112,7 +112,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 			(<WeatherForecast key={forecast.dayOfWeek} renderTemp={renderTemp} {...forecast} />));
 
 	return (
-		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow-hard">
+		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow">
 			<h2 className="col-span-3">{props.location.name}</h2>
 			<div className="col-span-3 large">
 				{makeIconElement(info.current.icon)}
