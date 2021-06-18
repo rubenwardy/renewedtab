@@ -3,20 +3,21 @@
 
 	.widget-strip {
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: -30px;
+		left: 0;
 
 		max-height: 30px;
 
 		display: flex;
 		flex-flow: row;
 		align-items: center;
+		visibility: collapse;
 
 		padding: 0;
 		margin: 0;
 
 		z-index: 100;
-		border-radius: 0 0.25rem 0 0.25rem;
+		border-radius: 0.25rem 0.25rem 0 0;
 		transition: opacity 0.15s ease-in-out;
 		opacity: 0;
 		user-select: none;
@@ -31,16 +32,8 @@
 			cursor: move;
 
 			.fa-grip-vertical {
-				opacity: 0.4;
+				opacity: 0.3;
 			}
-		}
-
-		.collapsed {
-			padding: 0.2rem 1rem 0.2rem 0.8rem;
-		}
-
-		> *:not(.collapsed) {
-			display: none;
 		}
 	}
 
@@ -103,8 +96,17 @@
 	}
 }
 
+
+@supports (backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)) {
+	.widget .widget-strip {
+		background: none;
+		backdrop-filter: brightness(calc(100% - var(--panel-opacity) / 1.666666667))
+				contrast(110%) saturate(140%) blur(var(--panel-blur));
+	}
+}
+
 .unlocked .widget {
-	&:hover{
+	&:hover {
 		border: 2px dashed rgba(15, 15, 15, 0.3);
 		margin: -2px;
 
@@ -117,7 +119,8 @@
 		}
 
 		.widget-strip {
-			opacity: 0.5;
+			opacity: 0.8;
+			visibility: visible;
 		}
 	}
 

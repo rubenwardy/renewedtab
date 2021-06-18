@@ -99,9 +99,8 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		return (
 			<>
 				<div className="widget-strip">
-					<i className="collapsed fas fa-ellipsis-h" />
 					<span className="widget-title">
-						<i className="fas fa-grip-vertical mr-2" />
+						<i className="fas fa-grip-vertical mr-3" />
 						<FormattedMessage {...props.child.title} />
 					</span>
 					<span className="widget-btns">
@@ -121,9 +120,8 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 	return (
 		<>
 			<div className="widget-strip">
-				<i className="collapsed fas fa-ellipsis-h" />
 				<span className="widget-title">
-					<i className="fas fa-grip-vertical mr-2" />
+					<i className="fas fa-grip-vertical mr-3" />
 					<FormattedMessage {...props.child.title} />
 				</span>
 				<span className="widget-btns">

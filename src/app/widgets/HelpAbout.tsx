@@ -45,7 +45,7 @@ export default function HelpAbout(widget: WidgetProps<any>) {
 			<p>
 				<FormattedMessage
 					defaultMessage=
-						"To move, edit, or delete a widget, use the handle that appears in the top-right of the widget. To resize, use the drag handle in the bottom-right." />
+						"To move, edit, or delete a widget, use the handle that appears in the top-left of the widget. To resize, use the drag handle in the bottom-right." />
 			</p>
 			<p>
 				<FormattedMessage
