@@ -10,8 +10,8 @@ export default function SelectField(props: FieldProps<any>) {
 		console.log("SET", newMode);
 		if (props.onChange) {
 			props.onChange(getValue(newMode));
-			setValue(getValue(newMode));
 		}
+		setValue(getValue(newMode));
 	}
 
 	function getString(x: any): string {
@@ -30,16 +30,31 @@ export default function SelectField(props: FieldProps<any>) {
 		}
 	}
 
-	const radioModes =
-		Object.keys(props.type)
-			.filter(value => isNaN(Number(value)))
-			.map(x => (
-				<div className="field" key={getValue(x)}>
-					<Radio value={getValue(x)} /> {getString(x)}
-				</div>));
+	const enumValues = Object.keys(props.type)
+		.filter(value => isNaN(Number(value)));
 
-	return (
-		<RadioGroup name="mode" selectedValue={getValue(value)} onChange={handleChanged}>
-			{radioModes}
-		</RadioGroup>);
+
+	if (enumValues.length < 3) {
+		const radioModes =
+			enumValues
+				.map(x => (
+					<div className="field" key={getValue(x)}>
+						<Radio value={getValue(x)} /> {getString(x)}
+					</div>));
+		return (
+			<RadioGroup name="mode" selectedValue={getValue(value)} onChange={handleChanged}>
+				{radioModes}
+			</RadioGroup>);
+	} else {
+		const radioModes =
+			enumValues
+				.map(x => (
+					<option className="field" key={getValue(x)} value={getValue(x)}>
+						{getString(x)}
+					</option>));
+		return (
+			<select name="mode" value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
+				{radioModes}
+			</select>);
+	}
 }
