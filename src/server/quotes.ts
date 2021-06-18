@@ -8,35 +8,35 @@ export async function getQuoteCategories(): Promise<QuoteCategory[]> {
 	return [
 		{
 			"id": "inspire",
-			"text": "Inspiring Quote of the day"
+			"text": "Inspiring"
 		},
 		{
 			"id": "management",
-			"text": "Management Quote of the day"
+			"text": "Management"
 		},
 		{
 			"id": "sports",
-			"text": "Sports Quote of the day"
+			"text": "Sports"
 		},
 		{
 			"id": "life",
-			"text": "Quote of the day about life"
+			"text": "Life"
 		},
 		{
 			"id": "funny",
-			"text": "Funny Quote of the day"
+			"text": "Funny"
 		},
 		{
 			"id": "love",
-			"text": "Quote of the day about Love"
+			"text": "Love"
 		},
 		{
 			"id": "art",
-			"text": "Art quote of the day "
+			"text": "Art"
 		},
 		{
 			"id": "students",
-			"text": "Quote of the day for students"
+			"text": "For students"
 		}
 	] as QuoteCategory[];
 }
