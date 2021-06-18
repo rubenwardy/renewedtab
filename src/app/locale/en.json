@@ -180,6 +180,10 @@
         "description": "Feed widget: filter allow checkbox label",
         "message": "Allow"
     },
+    "IqLwUL": {
+        "description": "Widget grid: form label for grid spacing",
+        "message": "Grid Spacing"
+    },
     "J91edI": {
         "description": "Settings tab",
         "message": "Import / Export"
@@ -187,6 +191,10 @@
     "JvOSvX": {
         "description": "Settings tab",
         "message": "Background"
+    },
+    "JzanJ8": {
+        "description": "Widget grid: form label for grid columns",
+        "message": "Grid Columns"
     },
     "K3r6DQ": {
         "message": "Delete"
@@ -245,6 +253,10 @@
     },
     "Q1mwPp": {
         "message": "Consider <a>contributing or adding your language</a>."
+    },
+    "Q5Myqt": {
+        "description": "Widget grid: form hint for grid columns",
+        "message": "Number of columns in the widget grid. Each column is roughly 50px plus spacing, so with 15px spacing, the maximum a 1080p window should have is 30 columns."
     },
     "QqE4JC": {
         "message": "Missing feed URL."
@@ -682,6 +694,10 @@
     "x59fh0": {
         "description": "Space Flights Widget",
         "message": "Space Flights"
+    },
+    "xR87uK": {
+        "description": "Widget grid: form hint for grid spacing",
+        "message": "The spacing between widgets, in pixels."
     },
     "xtOPHp": {
         "description": "Form field label",

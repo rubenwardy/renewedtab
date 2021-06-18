@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { WidgetManager } from "app/WidgetManager";
 import CreateWidgetDialog from "./CreateWidgetDialog";
-import WidgetGrid from "./WidgetGrid";
+import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGrid";
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { useBackground, usePromise, useStorage } from "app/hooks";
@@ -26,13 +26,17 @@ export default function App() {
 	const [actualLocale, setLocale] = useStorage<string>("locale", getUserLocale());
 	const locale = actualLocale ?? "en"
 	const messages = getTranslation(locale);
-
 	const [background, setBackground] = useBackground();
 	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
 	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
+	const [actualGridSettings, setGridSettings] =
+		useStorage<WidgetGridSettings>("grid_settings", { ...defaultGridSettings });
+
+	const gridSettings: WidgetGridSettings =
+		{ ...defaultGridSettings, ...actualGridSettings };
 
 	if (theme) {
 		applyTheme(theme);
@@ -58,9 +62,10 @@ export default function App() {
 						onClose={() => setSettingsOpen(false)}
 						background={background} setBackground={setBackground}
 						theme={theme} setTheme={setTheme}
-						locale={locale} setLocale={setLocale} />
-				{loaded &&
-					<WidgetGrid wm={widgetManager} isLocked={isLocked ?? false} />}
+						locale={locale} setLocale={setLocale}
+						grid={gridSettings ?? undefined} setGrid={setGridSettings} />
+				{loaded && gridSettings &&
+					<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
 
 				<ReviewRequester />
 

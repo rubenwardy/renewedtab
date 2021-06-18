@@ -1,11 +1,17 @@
 import { getLanguages } from "app/locale";
 import React, { ChangeEvent } from "react";
 import { FormattedMessage } from "react-intl";
+import { Form } from "../forms";
+import { gridSettingsSchema, WidgetGridSettings } from "../WidgetGrid";
 import { tabTitles, SettingsTab } from "./SettingsDialog";
+
 
 export interface GeneralSettingsProps {
 	locale: string;
 	setLocale: (locale: string) => void;
+
+	grid?: WidgetGridSettings;
+	setGrid: (grid: WidgetGridSettings) => void;
 }
 
 
@@ -16,6 +22,11 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 		if (locale) {
 			props.setLocale(locale);
 		}
+	}
+
+	function handleSetGridValue(key: string, val: any) {
+		(props.grid as any)[key] = val;
+		props.setGrid({ ...props.grid! });
 	}
 
 	return (
@@ -46,5 +57,9 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						}} />
 				</p>
 			</div>
+			<Form
+				values={props.grid!}
+				schema={gridSettingsSchema}
+				onChange={handleSetGridValue} />
 		</div>);
 }

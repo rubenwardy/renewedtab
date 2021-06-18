@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { CSSProperties, useEffect, useRef, useState } from "react";
 import { WidgetContainer } from "./WidgetContainer";
 import { WidgetManager } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
@@ -8,14 +8,45 @@ import { Vector2 } from "app/utils/Vector2";
 import GridLayout, { Layout } from "react-grid-layout";
 import { useForceUpdate } from "app/hooks";
 import { WidgetProps } from "app/Widget";
+import Schema, { type } from "app/utils/Schema";
+import { defineMessages } from "react-intl";
 
 
-interface WidgetContainerProps {
+export interface WidgetGridSettings {
+	columns: number;
+	spacing: number;
+}
+
+
+const messages = defineMessages({
+	columnsLabel: {
+		defaultMessage: "Grid Columns",
+		description: "Widget grid: form label for grid columns",
+	},
+
+	columnsHint: {
+		defaultMessage: "Number of columns in the widget grid. Each column is roughly 50px plus spacing, so with 15px spacing, the maximum a 1080p window should have is 30 columns.",
+		description: "Widget grid: form hint for grid columns",
+	},
+
+	spacingLabel: {
+		defaultMessage: "Grid Spacing",
+		description: "Widget grid: form label for grid spacing",
+	},
+
+	spacingHint: {
+		defaultMessage: "The spacing between widgets, in pixels.",
+		description: "Widget grid: form hint for grid spacing",
+	},
+});
+
+
+interface WidgetGridProps extends WidgetGridSettings {
 	wm: WidgetManager;
 	isLocked: boolean;
 }
 
-export default function WidgetGrid(props: WidgetContainerProps) {
+export default function WidgetGrid(props: WidgetGridProps) {
 	const widgetManager = props.wm;
 	const [gridClassNames, setGridClassNames] = useState("layout");
 	const forceUpdate = useForceUpdate();
@@ -30,8 +61,10 @@ export default function WidgetGrid(props: WidgetContainerProps) {
 		forceUpdate();
 	}
 
+	const gridColumns = props.columns;
 
-	const layouter = new WidgetLayouter(new Vector2(15, 12));
+
+	const layouter = new WidgetLayouter(new Vector2(gridColumns, 12));
 	layouter.resolveAll(widgetManager.widgets);
 
 	widgetManager.widgets.sort((a, b) =>
@@ -94,14 +127,33 @@ export default function WidgetGrid(props: WidgetContainerProps) {
 	}
 
 
+	const cellSize = 50;
+	const cellSpacing = props.spacing;
+	const gridWidth = gridColumns*(cellSize+cellSpacing);
+	const mainStyle: CSSProperties = {
+		width: gridWidth
+	};
+
 	return (
-		<main ref={mainRef} className={isScrolling ? "scrolling" : undefined}>
+		<main ref={mainRef} className={isScrolling ? "scrolling" : undefined} style={mainStyle}>
 			<GridLayout className={gridClassNames}
 					isDraggable={!props.isLocked} isResizable={!props.isLocked}
 					layout={layout} onLayoutChange={onLayoutChange}
-					cols={15} rowHeight={50} margin={[16, 16]} width={974}
+					cols={gridColumns} rowHeight={cellSize}
+					margin={[cellSpacing, cellSpacing]}
+					width={gridWidth}
 					draggableHandle=".widget-title">
 				{widgets}
 			</GridLayout>
 		</main>);
 }
+
+export const gridSettingsSchema: Schema = {
+	columns: type.number(messages.columnsLabel, messages.columnsHint),
+	spacing: type.unit_number(messages.spacingLabel, "px", messages.spacingHint),
+};
+
+export const defaultGridSettings: WidgetGridSettings = {
+	columns: 15,
+	spacing: 15,
+};
