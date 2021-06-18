@@ -49,6 +49,7 @@ export function HostURLFIeld(props: FieldProps<string>) {
 
 	const showSubmitURL = autocomplete && value && value.length > 4 &&
 		submittedUrls && submittedUrls[value] != true &&
+		!value.startsWith("file://") &&
 		!autocomplete.some(suggestion => value == suggestion.value);
 
 	function submitURLToSuggestions() {
