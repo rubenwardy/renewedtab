@@ -1,5 +1,6 @@
 import Panel from "app/components/Panel";
 import { schemaMessages } from "app/locale/common";
+import { enumToValue } from "app/utils/enum";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { themeMessages, Widget, WidgetProps, WidgetTheme } from "app/Widget";
@@ -91,8 +92,7 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 		};
 	});
 
-	const dateStyle = typeof props.dateStyle == "string"
-			? props.dateStyle : DateStyle[props.dateStyle];
+	const dateStyle = enumToValue(DateStyle, props.dateStyle);
 
 	return (
 		<Panel {...widget.theme} scrolling={false}>
@@ -106,10 +106,10 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 							hourCycle={props.hour12 ? "h12" : "h23"} />
 					</span>
 					<span className="date">
-						{props.dateStyle != undefined && props.dateStyle != DateStyle.None &&
+						{dateStyle != undefined && dateStyle != DateStyle.None &&
 							<FormattedDate
 								value={time}
-								dateStyle={dateStyle.toLowerCase() as any} />}
+								dateStyle={DateStyle[dateStyle].toLowerCase() as any} />}
 					</span>
 				</div>
 			</div>

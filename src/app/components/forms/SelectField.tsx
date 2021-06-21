@@ -1,3 +1,4 @@
+import { enumToValue } from "app/utils/enum";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
 import { Radio, RadioGroup } from "react-radio-group";
@@ -17,10 +18,7 @@ export default function SelectField(props: FieldProps<any>) {
 	}
 
 	function getString(x: any): string {
-		let id = x;
-		if (typeof(id) == "string") {
-			id = Enum[x];
-		}
+		const id = enumToValue(Enum, x);
 
 		const descriptor = props.schemaEntry.messages && props.schemaEntry.messages[id];
 		if (descriptor) {
