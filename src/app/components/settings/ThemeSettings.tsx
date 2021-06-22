@@ -53,6 +53,21 @@ const messages = defineMessages({
 		defaultMessage: "Used for primary buttons and links",
 		description: "Theme settings: form field hint (Primary Color)",
 	},
+
+	customCSS: {
+		defaultMessage: "Custom CSS",
+		description: "Theme settings: form field label",
+	},
+
+	customCSSHint: {
+		defaultMessage: "Please note: this is an experimental feature and CSS selectors may break in future releases.",
+		description: "Theme settings: form field hint (Custom CSS)",
+	},
+
+	customCSSLink: {
+		defaultMessage: "CSS documentation",
+		description: "Theme settings: link to CSS docs",
+	},
 });
 
 
@@ -62,6 +77,7 @@ export interface ThemeConfig {
 	panelBlurRadius?: number;
 	panelOpacity?: number;
 	colorPrimaryPair?: ColorPair;
+	customCSS?: string;
 }
 
 const defaults: ThemeConfig = {
@@ -70,6 +86,7 @@ const defaults: ThemeConfig = {
 	panelBlurRadius: 12,
 	panelOpacity: 50,
 	colorPrimaryPair: { one: "#007DB8", two: "#67cee5" },
+	customCSS: undefined,
 };
 
 
@@ -107,7 +124,12 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 					label={messages.resetTheme} />
 			</p>
 			<Form values={theme} schema={getThemeSchema()}
-						onChange={handleOnChange} />
+				onChange={handleOnChange} />
+			<p>
+				<Button href="https://renewedtab.com/help/css/" target="_blank"
+					variant={ButtonVariant.Secondary}
+					label={messages.customCSSLink} />
+			</p>
 		</div>);
 }
 
@@ -123,6 +145,7 @@ function getThemeSchema(): Schema {
 			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px"),
 			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
 			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
+			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
 		};
 	} else {
 		return {
@@ -130,6 +153,7 @@ function getThemeSchema(): Schema {
 			fontScaling: type.unit_number(messages.fontScaling, "%"),
 			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
 			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
+			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
 		};
 	}
 }
@@ -152,4 +176,12 @@ export function applyTheme(theme: ThemeConfig) {
 	style.setProperty("--color-primary-dark-highlight", colorPrimaryDark.lighten(1.3).hex);
 	style.setProperty("--color-primary-light", colorPrimaryLight.hex);
 	style.setProperty("--color-primary-light-highlight", colorPrimaryLight!.lighten(1.3).hex);
+
+	let customStyles = document.getElementById("custom-css");
+	if (!customStyles) {
+		customStyles = document.createElement("style");
+		customStyles.id = "custom-css";
+		document.body.appendChild(customStyles);
+	}
+	customStyles.textContent = theme.customCSS ?? "";
 }

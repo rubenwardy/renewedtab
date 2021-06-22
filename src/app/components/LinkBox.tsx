@@ -105,8 +105,10 @@ export default function LinkBox(props: LinkBoxProps)  {
 				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
 
 		if (link.url.trim() != "") {
+			const domain = new URL(link.url).hostname;
 			return (
-				<li key={link.id}>
+				<li key={link.id} data-hostname={domain} data-url={link.url}
+						data-title={link.title} data-icon={link.icon}>
 					<a href={link.url}>
 						{icon}
 						<span className="title">{link.title}</span>
@@ -114,7 +116,8 @@ export default function LinkBox(props: LinkBoxProps)  {
 				</li>);
 		} else {
 			return (
-				<li key={link.id} className="section">
+				<li key={link.id} className="section"
+						data-title={link.title} data-icon={link.icon}>
 					{icon}
 					<span className="title">{link.title}</span>
 				</li>);
