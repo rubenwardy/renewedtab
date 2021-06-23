@@ -57,9 +57,6 @@
     "WZjKFf": {
         "message": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
     },
-    "X6ciR9": {
-        "message": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sağ üst tarafında çıkan tuşları kullanın. Boyutunu değiştirmek için, sağ alttaki tuşu kullanın."
-    },
     "Z2/hH0": {
         "message": "Görüntü: {filename}"
     },
@@ -718,10 +715,6 @@
     },
     "a0L2KE": {
         "message": "Ülke ismini veya baş harflerini eklemeyi deneyin."
-    },
-    "3XS/zh": {
-        "message": "Rastgele bir ilham verici veya ünlü söz gösterir",
-        "description": "Quotes Widget description"
     },
     "6MDM6D": {
         "message": "Ünlü sözler",

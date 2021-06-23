@@ -126,9 +126,6 @@
     "mY9tpI": {
         "message": "Ralat memuatkan suapan. Pastikan ia suapan RSS atau Atom."
     },
-    "X6ciR9": {
-        "message": "Untuk pindah, edit, atau padam widget, gunakan pemegang yang muncul di bucu kanan atas widget. Untuk mengubah saiz, gunakan pemegang seret di bucu kanan bawah."
-    },
     "zKofmb": {
         "message": "ID himpunan. Boleh dijumpai dalam URL, contoh: 42576559",
         "description": "Backgroud settings: form field hint (Unsplash Collection)"
@@ -718,10 +715,6 @@
     "VxE3S8": {
         "message": "Ini akan hantar URL yang anda cadangkan secara automatik kepada pembangun Renewed Tab. Mereka akan putuskan sama ada ia akan ditambah sebagai cadangan untuk semua pengguna atau tidak.",
         "description": "Host URL field: help text for suggest URL button"
-    },
-    "3XS/zh": {
-        "message": "Tunjukkan petikan inspirasi atau petikan terkenal secara rawak",
-        "description": "Quotes Widget description"
     },
     "6MDM6D": {
         "message": "Petikan",
