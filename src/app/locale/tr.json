@@ -794,5 +794,9 @@
     "QBZZBG": {
         "message": "Lütfen unutmayın: bu deneysel bir özelliktir ve CSS seçenekleri gelecek sürümlerde bozulabilir.",
         "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "ZeZlbR": {
+        "message": "Renkli butonun opaklığını ayarlar",
+        "description": "Button widget: form field hint (Opacity)"
     }
 }
