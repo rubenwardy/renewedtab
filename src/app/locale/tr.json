@@ -718,5 +718,88 @@
     },
     "a0L2KE": {
         "message": "Ülke ismini veya baş harflerini eklemeyi deneyin."
+    },
+    "3XS/zh": {
+        "message": "Rastgele bir ilham verici veya ünlü söz gösterir",
+        "description": "Quotes Widget description"
+    },
+    "6MDM6D": {
+        "message": "Ünlü sözler",
+        "description": "Quotes Widget"
+    },
+    "KhM0zv": {
+        "message": "Ünlü sözler harici kaynaklar tarafından sağlanır ve Renewed Tab tarafından incelenmemişlerdir.",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "FpOu7z": {
+        "message": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sol üstünde beliren kısmı kullanın. Boyutlandırmak için sağ alttaki kısmı sürükleyin."
+    },
+    "GcxpZV": {
+        "message": "Tarih biçimi",
+        "description": "Clock widget: date style form field label"
+    },
+    "JzanJ8": {
+        "message": "Izgara Sütunları",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "IqLwUL": {
+        "message": "Izgara Boşluğu",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "PYJFvz": {
+        "message": "Kategori",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "/LQ9WU": {
+        "message": "Orta",
+        "description": "Clock widget: date style type"
+    },
+    "56hSCM": {
+        "message": "Uzun",
+        "description": "Clock widget: date style type"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "Mihrhf": {
+        "message": "Yok",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "Q5Myqt": {
+        "message": "Araç alanındaki sütunların sayısı. Her sütun yaklaşık 50px artı boşluktan oluşur, yani 15px boşlukla, 1080p bir pencerede en fazla 30 sütun bulunmalıdır.",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "VGhm86": {
+        "message": "Kısa",
+        "description": "Clock widget: date style type"
+    },
+    "nnaWVi": {
+        "message": "Celsius",
+        "description": "Weather widget: Celsius unit"
+    },
+    "tR8dMS": {
+        "message": "Tam",
+        "description": "Clock widget: date style type"
+    },
+    "vVnypL": {
+        "message": "Kategorilere ayrılmış olarak rastgele bir ünlü söz gösterir",
+        "description": "Quotes Widget description"
+    },
+    "xR87uK": {
+        "message": "Araçlar arasındaki boşluk, piksel cinsinden.",
+        "description": "Widget grid: form hint for grid spacing"
+    },
+    "5mVcg9": {
+        "message": "Özel CSS",
+        "description": "Theme settings: form field label"
+    },
+    "JihbEV": {
+        "message": "CSS dokümantasyonu",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "QBZZBG": {
+        "message": "Lütfen unutmayın: bu deneysel bir özelliktir ve CSS seçenekleri gelecek sürümlerde bozulabilir.",
+        "description": "Theme settings: form field hint (Custom CSS)"
     }
 }
