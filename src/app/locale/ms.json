@@ -718,5 +718,92 @@
     "VxE3S8": {
         "message": "Ini akan hantar URL yang anda cadangkan secara automatik kepada pembangun Renewed Tab. Mereka akan putuskan sama ada ia akan ditambah sebagai cadangan untuk semua pengguna atau tidak.",
         "description": "Host URL field: help text for suggest URL button"
+    },
+    "3XS/zh": {
+        "message": "Tunjukkan petikan inspirasi atau petikan terkenal secara rawak",
+        "description": "Quotes Widget description"
+    },
+    "6MDM6D": {
+        "message": "Petikan",
+        "description": "Quotes Widget"
+    },
+    "KhM0zv": {
+        "message": "Petikan diambil daripada sumber luaran, dan tidak diperiksa oleh Renewed Tab.",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "PYJFvz": {
+        "message": "Kategori",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "Q5Myqt": {
+        "message": "Jumlah jalur dalam grid widget. Setiap lajur bersaiz lebih kurang 50px tambah penjarakan, jadi dengan penjarakan 15px, jumlah lajur maksimum yang sepatutnya bagi tetingkap 1080p ialah 30 lajur.",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "FpOu7z": {
+        "message": "Untuk pindah, edit, atau padam suatu widget, gunakan pemegang yang muncul di bucu atas kiri widget. Untuk mengubah saiz, gunakan pemegang seret di bucu bawah kanan."
+    },
+    "GcxpZV": {
+        "message": "Gaya tarikh",
+        "description": "Clock widget: date style form field label"
+    },
+    "IqLwUL": {
+        "message": "Penjarakan Grid",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "JzanJ8": {
+        "message": "Lajur Grid",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "vVnypL": {
+        "message": "Menunjukkan petikan secara rawak, dengan kategori",
+        "description": "Quotes Widget description"
+    },
+    "xR87uK": {
+        "message": "Penjarakan di antara widget-widget, dalam unit piksel.",
+        "description": "Widget grid: form hint for grid spacing"
+    },
+    "/LQ9WU": {
+        "message": "Sederhana",
+        "description": "Clock widget: date style type"
+    },
+    "56hSCM": {
+        "message": "Panjang",
+        "description": "Clock widget: date style type"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "Mihrhf": {
+        "message": "Tiada",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "VGhm86": {
+        "message": "Pendek",
+        "description": "Clock widget: date style type"
+    },
+    "nnaWVi": {
+        "message": "Celsius",
+        "description": "Weather widget: Celsius unit"
+    },
+    "tR8dMS": {
+        "message": "Penuh",
+        "description": "Clock widget: date style type"
+    },
+    "5mVcg9": {
+        "message": "CSS Tersuai",
+        "description": "Theme settings: form field label"
+    },
+    "JihbEV": {
+        "message": "Pendokumenan CSS",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "QBZZBG": {
+        "message": "Ambil perhatian: sifat ini dalam uji kaji dan pemilih CSS mungkin putus dalam terbitan masa hadapan.",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "ZeZlbR": {
+        "message": "Menetapkan kelegapan bagi warna untuk butang berwarna sedikit",
+        "description": "Button widget: form field hint (Opacity)"
     }
 }
