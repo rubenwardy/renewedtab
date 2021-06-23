@@ -8,8 +8,9 @@
 	background: transparent;
 	border: 1px solid transparent;
 	color: white;
-	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: color 0.15s ease-in-out, filter 0.15s ease-in-out,
+		background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+		box-shadow 0.15s ease-in-out;
 	cursor: pointer;
 
 	&:hover {
@@ -55,6 +56,10 @@
 		background-color: var(--color-button-lighter);
 		border-color: var(--color-button-lighter);
 	}
+}
+
+.btn-brighten:hover {
+	filter: brightness(1.2);
 }
 
 .btn-blur {

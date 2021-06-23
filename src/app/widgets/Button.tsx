@@ -1,8 +1,9 @@
 import { schemaMessages } from 'app/locale/common';
+import { clampNumber, mergeClasses } from 'app/utils';
 import Color from 'app/utils/Color';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps, WidgetTheme } from 'app/Widget';
+import { themeMessages, WidgetProps, WidgetTheme } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -17,6 +18,11 @@ const messages = defineMessages({
 		defaultMessage: "A link button",
 		description: "Button widget description",
 	},
+
+	tintOpacityHint: {
+		defaultMessage: "Sets the opacity of the button tinted color",
+		description: "Button widget: form field hint (Opacity)",
+	},
 });
 
 interface ButtonProps {
@@ -26,15 +32,18 @@ interface ButtonProps {
 
 export default function Button(props: WidgetProps<ButtonProps>)  {
 	const color = Color.fromString(props.theme.color ?? "") ?? Color.fromString("#007DB8")!;
-	color.a = Math.min(100, Math.max(0, props.theme.opacity ?? 100)) / 100;
+	color.a = clampNumber(props.theme.opacity ?? 100, 0, 100) / 100;
 	const style: any = {
 		"--color-button": color.rgba,
-		"--color-button-lighter": color.lighten(1.3).rgba,
+		"--color-button-lighter": color.rgba,
 	};
 
+	const className = mergeClasses(
+			"btn btn-custom middle-center btn-brighten",
+			(props.theme.showPanelBG !== false) && "btn-blur");
+
 	return (
-		<a href={props.props.url}
-				className="btn btn-custom btn-blur middle-center" style={style}>
+		<a href={props.props.url} style={style} className={className}>
 			{props.props.text}
 		</a>);
 }
@@ -56,12 +65,13 @@ Button.schema = {
 Button.defaultSize = new Vector2(5, 1);
 
 Button.themeSchema = {
+	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	color: type.color(schemaMessages.color),
-	opacity: type.unit_number(schemaMessages.opacity, "%"),
+	opacity: type.unit_number(schemaMessages.opacity, "%", messages.tintOpacityHint),
 };
 
 Button.initialTheme = {
-	showPanelBG: false,
+	showPanelBG: true,
 	useIconBar: false,
 	color: "#007DB8",
 	opacity: 40,

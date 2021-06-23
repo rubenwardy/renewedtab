@@ -437,6 +437,10 @@
         "description": "HelpAbout widget description",
         "message": "Help for new users of Renewed Tab"
     },
+    "ZeZlbR": {
+        "description": "Button widget: form field hint (Opacity)",
+        "message": "Sets the opacity of the button tinted color"
+    },
     "a09vzt": {
         "message": "HTTP request failed, {code} {msg}."
     },
