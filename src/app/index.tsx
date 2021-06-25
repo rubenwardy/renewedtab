@@ -3,6 +3,19 @@ import { render } from "react-dom";
 import App from "./components/App";
 import "./scss/main.scss";
 
+import * as Sentry from "@sentry/react";
+import { Integrations } from "@sentry/tracing";
+
+Sentry.init({
+	enabled: config.SENTRY_DSN !== undefined,
+	dsn: config.SENTRY_DSN,
+	integrations: [new Integrations.BrowserTracing()],
+
+	debug: is_debug,
+	environment: is_debug ? "debug" : "production",
+	release: `renewedtab@${app_version}`,
+});
+
 render(
   <App />,
   document.getElementById("app")

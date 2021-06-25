@@ -13,9 +13,12 @@ const dest = path.resolve(__dirname, "dist/webext/app");
 const configFile = path.resolve(__dirname, "config.json");
 function getConfig() {
 	const config = JSON.parse(fs.readFileSync(configFile).toString());
+	config.SENTRY_DSN = process.env.SENTRY_DSN ?? config.SENTRY_DSN;
+
 	return {
 		API_URL: JSON.stringify(config.API_URL),
 		PROXY_URL: JSON.stringify(config.PROXY_URL),
+		SENTRY_DSN: JSON.stringify(config.SENTRY_DSN)
 	};
 }
 
@@ -26,9 +29,10 @@ console.log(`Webpack is building in ${mode}`);
 module.exports = {
 	mode: mode,
 	entry: "./src/app/index",
-	devtool: isProd ? undefined : "source-map",
+	devtool: "source-map",
 	plugins: [
 		new webpack.DefinePlugin({
+			is_debug: !isProd,
 			app_version: JSON.stringify(package_json.version),
 			config: getConfig(),
 		}),

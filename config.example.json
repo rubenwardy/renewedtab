@@ -4,6 +4,7 @@
 	"OPEN_WEATHER_MAP_API_KEY": "",
 	"UNSPLASH_ACCESS_KEY": "",
 	"OWNER_EMAIL": "your@email.com",
+	"SENTRY_DSN": "",
 	"PROXY_ALLOWED_HOSTS": [
 		"feeds.bbci.co.uk",
 		"fdo.rocketlaunch.live",
