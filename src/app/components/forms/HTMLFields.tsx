@@ -51,5 +51,5 @@ export function TextAreaField(props: FieldProps<string>) {
 
 	return (
 		<textarea name={props.name} defaultValue={props.value}
-				onChange={handleChange} />);
+				onChange={handleChange} className="fullwidth" />);
 }

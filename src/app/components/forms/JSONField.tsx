@@ -11,5 +11,5 @@ export default function JSONField(props: FieldProps<any | any[]>) {
 	return (
 		<textarea name={props.name}
 			defaultValue={JSON.stringify(props.value)}
-			onChange={handleChange} />);
+			onChange={handleChange} className="fullwidth" />);
 }

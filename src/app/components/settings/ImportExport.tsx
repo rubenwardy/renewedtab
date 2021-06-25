@@ -72,7 +72,7 @@ export default function ImportExport() {
 						defaultMessage="Warning: this may contain personal data,
 							if any was entered into widget settings." />
 			</p>
-			<textarea className="stored" readOnly
+			<textarea className="fullwidth" readOnly
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
