@@ -70,8 +70,10 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	return (
 		<Modal title={title} isOpen={true} {...props}>
 			<p className="modal-body">
-				<Button variant={ButtonVariant.Danger} onClick={props.remove} label={miscMessages.delete} />
-				<Button variant={ButtonVariant.Secondary} onClick={props.onClose} label={miscMessages.cancel} />
+				<Button variant={ButtonVariant.Danger} autoFocus={true}
+					onClick={props.remove} label={miscMessages.delete} />
+				<Button variant={ButtonVariant.Secondary}
+					onClick={props.onClose} label={miscMessages.cancel} />
 			</p>
 		</Modal>);
 }
