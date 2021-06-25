@@ -8,7 +8,7 @@ import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';
-import UserError from 'common/UserError';
+import UserError from 'app/utils/UserError';
 
 
 const messages = defineMessages({

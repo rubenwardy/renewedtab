@@ -1,6 +1,6 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
-import UserError from "common/UserError";
+import UserError from "app/utils/UserError";
 import { IntlShape, useIntl } from "react-intl";
 import { usePromise } from "./promises";
 

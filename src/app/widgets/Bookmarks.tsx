@@ -5,7 +5,7 @@ import { useForceUpdate, usePromise } from 'app/hooks';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
-import UserError from 'common/UserError';
+import UserError from 'app/utils/UserError';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 

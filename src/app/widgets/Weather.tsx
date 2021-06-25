@@ -8,7 +8,7 @@ import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
 import { Location, TemperatureUnit, WeatherForecast, WeatherInfo } from 'common/api/weather';
-import UserError from 'common/UserError';
+import UserError from 'app/utils/UserError';
 
 
 const messages = defineMessages({

@@ -1,5 +1,5 @@
 import { runPromise } from "app/hooks";
-import UserError from "common/UserError";
+import UserError from "app/utils/UserError";
 import React, { useState } from "react";
 import { IntlShape, useIntl } from "react-intl";
 import RequestPermission from "./RequestPermission";

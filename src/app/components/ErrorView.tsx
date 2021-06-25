@@ -2,7 +2,7 @@ import { miscMessages } from "app/locale/common";
 import React, { Fragment } from "react";
 import { FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
 import * as Sentry from "@sentry/react";
-import UserError from "common/UserError";
+import UserError from "app/utils/UserError";
 
 interface ErrorViewProps {
 	/**
