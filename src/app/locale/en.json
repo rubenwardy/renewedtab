@@ -188,6 +188,10 @@
         "description": "Links widget, form field hint (Link URL)",
         "message": "Leave blank to make heading"
     },
+    "I48yxw": {
+        "description": "General settings: privacy",
+        "message": "Privacy"
+    },
     "Ibm90j": {
         "description": "Clock widget: edit hint",
         "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
@@ -285,6 +289,10 @@
     "QBZZBG": {
         "description": "Theme settings: form field hint (Custom CSS)",
         "message": "Please note: this is an experimental feature and CSS selectors may break in future releases."
+    },
+    "QcExtH": {
+        "description": "General settings: privacy policy button",
+        "message": "Privacy Policy"
     },
     "QqE4JC": {
         "message": "Missing feed URL."
@@ -462,6 +470,10 @@
     "ao/AFQ": {
         "description": "Daily Goal widget description",
         "message": "Reminds you about a daily goal"
+    },
+    "as6rZ1": {
+        "description": "General settings: enable sentry",
+        "message": "Enable crash reporting (using Sentry)"
     },
     "azMsfM": {
         "message": "Monday"

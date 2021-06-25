@@ -2,9 +2,10 @@
 	margin: 0 0 0.9em 0;
 }
 
-label:not(.inline) {
+.label, label:not(.inline) {
 	display: block;
 	margin: 0.5em 0;
+	font-weight: normal;
 }
 
 input:not(.invisible):not([type="radio"]):not([type="checkbox"]):not([type="color"]),

@@ -20,6 +20,10 @@ Sentry.init({
 			return null;
 		}
 
+		if (localStorage.getItem("_sentry-opt-out") == "yes") {
+			return null;
+		}
+
 		return event;
 	}
 });
