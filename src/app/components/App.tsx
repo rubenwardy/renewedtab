@@ -32,11 +32,8 @@ export default function App() {
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
 	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
-	const [actualGridSettings, setGridSettings] =
+	const [gridSettings, setGridSettings] =
 		useStorage<WidgetGridSettings>("grid_settings", { ...defaultGridSettings });
-
-	const gridSettings: WidgetGridSettings =
-		{ ...defaultGridSettings, ...actualGridSettings };
 
 	if (theme) {
 		applyTheme(theme);
