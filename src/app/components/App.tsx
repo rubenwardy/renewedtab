@@ -5,12 +5,12 @@ import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGri
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { useBackground, usePromise, useStorage } from "app/hooks";
-import { ErrorBoundary } from "./ErrorBoundary";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
 import { storage } from "app/Storage";
+import * as Sentry from "@sentry/react";
 
 
 const widgetManager = new WidgetManager(storage);
@@ -52,9 +52,9 @@ export default function App() {
 	return (
 		<IntlProvider locale={locale} defaultLocale="en" messages={messages}>
 			<div className={classes.join(" ")}>
-				<ErrorBoundary errorChild={() => (<div id="background"></div>)}>
+				<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 					<Background background={background} setWidgetsHidden={setWidgetsHidden} />
-				</ErrorBoundary>
+				</Sentry.ErrorBoundary>
 				<CreateWidgetDialog isOpen={createIsOpen}
 						manager={widgetManager}
 						onClose={() => setCreateOpen(false)} />

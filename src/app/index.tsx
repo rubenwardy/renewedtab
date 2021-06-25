@@ -14,6 +14,14 @@ Sentry.init({
 	debug: is_debug,
 	environment: is_debug ? "debug" : "production",
 	release: `renewedtab@${app_version}`,
+
+	beforeSend(event) {
+		if ((event.exception?.values ?? []).some(x => x.type == "UserError")) {
+			return null;
+		}
+
+		return event;
+	}
 });
 
 render(

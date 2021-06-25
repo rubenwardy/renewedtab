@@ -1,4 +1,5 @@
 import { runPromise } from "app/hooks";
+import UserError from "common/UserError";
 import React, { useState } from "react";
 import { IntlShape, useIntl } from "react-intl";
 import RequestPermission from "./RequestPermission";
@@ -20,9 +21,9 @@ export async function needsHostPermission(host: string): Promise<boolean> {
 export async function checkHostPermission(intl: IntlShape, url: string) {
 	const host = new URL(url).host;
 	if (await needsHostPermission(host)) {
-		throw intl.formatMessage({
+		throw new UserError(intl.formatMessage({
 			defaultMessage: "Permission needed to access {host}. Edit this widget to grant it."
-		}, { host: host });
+		}, { host: host }));
 	}
 }
 

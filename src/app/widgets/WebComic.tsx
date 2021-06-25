@@ -8,6 +8,7 @@ import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';
+import UserError from 'common/UserError';
 
 
 const messages = defineMessages({
@@ -41,7 +42,7 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 
 	const article = feed.articles[0];
 	if (article?.image == undefined) {
-		return (<ErrorView error={messages.noImages} />);
+		return (<ErrorView error={new UserError(messages.noImages)} />);
 	}
 
 	const title = article.title;

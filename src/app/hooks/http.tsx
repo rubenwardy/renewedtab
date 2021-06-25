@@ -1,5 +1,6 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
+import UserError from "common/UserError";
 import { IntlShape, useIntl } from "react-intl";
 import { usePromise } from "./promises";
 
@@ -26,7 +27,7 @@ async function fetchCheckCors(intl: IntlShape, request: Request,
 					e.message.includes("Failed to fetch"))) {
 			await checkHostPermission(intl, request.url);
 
-			throw miscMessages.no_network;
+			throw new UserError(miscMessages.no_network);
 		}
 		throw e;
 	}
@@ -42,7 +43,7 @@ async function fetchJSON(intl: IntlShape, url: string) {
 	}));
 
 	if (!response.ok) {
-		throw await response.text();
+		throw new UserError(await response.text());
 	}
 
 	return await response.json();
@@ -60,11 +61,11 @@ async function fetchXML(intl: IntlShape, url: string) {
 	const str = await response.text();
 	if (!response.ok) {
 		if (response.headers.get("content-type")?.startsWith("text/html")) {
-			throw intl.formatMessage({
+			throw new UserError(intl.formatMessage({
 				defaultMessage: "HTTP request failed, {code} {msg}."
-			}, { code: response.status, msg: response.statusText });
+			}, { code: response.status, msg: response.statusText }));
 		} else {
-			throw str;
+			throw new UserError(str);
 		}
 	}
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../Widget";
 import Modal from "./Modal";
 import { Form } from "./forms";
-import { ErrorBoundary } from "./ErrorBoundary";
+import { ErrorBoundary } from "./ErrorView";
 import { useForceUpdate } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";

@@ -8,6 +8,7 @@ import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
 import { Location, TemperatureUnit, WeatherForecast, WeatherInfo } from 'common/api/weather';
+import UserError from 'common/UserError';
 
 
 const messages = defineMessages({
@@ -96,7 +97,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
 
 	if (!props.location) {
-		return (<ErrorView error={messages.locationNeeded} />);
+		return (<ErrorView error={new UserError(messages.locationNeeded)} />);
 	}
 
 	const unit = props.unit ?? TemperatureUnit.Celsius;

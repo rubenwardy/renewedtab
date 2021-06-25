@@ -5,6 +5,7 @@ import { useForceUpdate, usePromise } from 'app/hooks';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
+import UserError from 'common/UserError';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -67,7 +68,7 @@ async function getBookmarks(includeFolders: boolean): Promise<Link[]> {
 
 	const bookmarks = await tryGetSubTree("1") ?? await tryGetSubTree("toolbar_____");
 	if (!bookmarks) {
-		throw messages.errFetchBookmarks;
+		throw new UserError(messages.errFetchBookmarks);
 	}
 
 	addAllChildren(bookmarks.children!);

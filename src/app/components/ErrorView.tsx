@@ -1,12 +1,14 @@
 import { miscMessages } from "app/locale/common";
-import React from "react";
+import React, { Fragment } from "react";
 import { FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
+import * as Sentry from "@sentry/react";
+import UserError from "common/UserError";
 
 interface ErrorViewProps {
 	/**
 	 * The error message
 	 */
-	error?: string | MessageDescriptor | Error | null;
+	error?: string | Error | UserError | null;
 
 	/**
 	 * Whether to show loading if error is undefined/null
@@ -37,16 +39,10 @@ export default function ErrorView(props: ErrorViewProps) {
 	}
 
 	let msg = props.error;
-
-	if (typeof msg == "object" && (
-			typeof (msg as any).defaultMessage !== "undefined" ||
-			typeof (msg as any).id !== "undefined")) {
-		msg = intl.formatMessage(msg as MessageDescriptor);
+	if (msg instanceof UserError && msg.messageDescriptor) {
+		msg = intl.formatMessage(msg.messageDescriptor);
 	} else if (msg instanceof Error) {
-		msg = msg.toString();
-		if (msg.startsWith("Error:")) {
-			msg = msg.slice(6);
-		}
+		msg = msg.message;
 	}
 
 	return (
@@ -56,3 +52,8 @@ export default function ErrorView(props: ErrorViewProps) {
 					values={{ msg: msg }} />
 		</div>);
 }
+
+
+export const ErrorBoundary = Sentry.withErrorBoundary(Fragment, {
+	fallback: ({error}) => (<ErrorView error={error} />)
+});
