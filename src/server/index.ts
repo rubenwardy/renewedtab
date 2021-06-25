@@ -195,8 +195,18 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 		feedbackStream.write(JSON.stringify(req.body) + "\n\n");
 
 		if (DISCORD_WEBHOOK) {
+			let comments = req.body.comments;
+
+			const extraIds = [ "missing_features", "difficult", "buggy" ];
+			for (let id of extraIds) {
+				const value = req.body[`extra-${id}`];
+				if (value && value != "") {
+					comments += `\n\n${id}:\n${value}`;
+				}
+			}
+
 			const reasons = (typeof req.body.reason === "string") ? [ req.body.reason ] : req.body.reason;
-			const content = `
+			let content = `
 				**Feedback**
 				Event: ${req.body.event}
 				Info: ${req.body.version ? "v" + req.body.version : ""} / ${req.body.browser} / ${req.body.platform}
@@ -204,8 +214,11 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 				         ${req.body.other_reason}` : ""}
 				${req.body.email ? `Email: ${req.body.email}` : ""}
 
-				${req.body.comments}
+				${comments}
 			`;
+
+			// Only allow at most two new lines in a row, ignoring whitespace
+			content = content.replace(/\n\s*\n/g, "\n\n");
 
 			await fetchCatch(new Request(DISCORD_WEBHOOK, {
 				method: "POST",
@@ -221,7 +234,7 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 		}
 
 		if (req.query.r) {
-			res.redirect("https://renewedtab.com");
+			res.redirect("https://renewedtab.com/feedback/thanks/");
 		} else {
 			res.json({ success: true });
 		}
