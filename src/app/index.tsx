@@ -9,7 +9,11 @@ import { Integrations } from "@sentry/tracing";
 Sentry.init({
 	enabled: config.SENTRY_DSN !== undefined,
 	dsn: config.SENTRY_DSN,
-	integrations: [new Integrations.BrowserTracing()],
+	integrations: [
+		new Integrations.BrowserTracing({
+			tracingOrigins: [new URL(config.API_URL).host],
+		})
+	],
 
 	debug: is_debug,
 	environment: is_debug ? "debug" : "production",
