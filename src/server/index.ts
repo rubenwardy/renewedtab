@@ -1,6 +1,8 @@
 import express from "express";
 import fs from "fs";
 import fetchCatch, { Request } from "./http";
+import * as Sentry from "@sentry/node";
+import * as Tracing from "@sentry/tracing";
 
 
 // Settings
@@ -18,6 +20,7 @@ export const OWNER_EMAIL = process.env.OWNER_EMAIL ?? serverConfig.OWNER_EMAIL;
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK ?? serverConfig.DISCORD_WEBHOOK;
 export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.7.0; +https://renewedtab.com/)";
 export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.7.0; +https://renewedtab.com/)";
+const SENTRY_DSN = process.env.SENTRY_DSN;
 
 
 // App
@@ -33,6 +36,17 @@ import { getQuote, getQuoteCategories } from "./quotes";
 
 const app = express();
 
+Sentry.init({
+	enabled: SENTRY_DSN != undefined,
+	dsn: SENTRY_DSN,
+	integrations: [
+		new Sentry.Integrations.Http({ tracing: true }),
+		new Tracing.Integrations.Express({ app }),
+	],
+});
+
+app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -331,6 +345,7 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 	}
 });
 
+app.use(Sentry.Handlers.errorHandler());
 
 app.listen(PORT, () => {
 	console.log(`⚡️[server]: Server is running in ${IS_DEBUG ? "debug" : "prod"} at http://localhost:${PORT}`);
