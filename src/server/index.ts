@@ -198,7 +198,7 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 			let comments = req.body.comments;
 
 			const extraIds = [ "missing_features", "difficult", "buggy" ];
-			for (let id of extraIds) {
+			for (const id of extraIds) {
 				const value = req.body[`extra-${id}`];
 				if (value && value != "") {
 					comments += `\n\n${id}:\n${value}`;
