@@ -798,5 +798,17 @@
     "ZeZlbR": {
         "message": "Menetapkan kelegapan bagi warna untuk butang berwarna sedikit",
         "description": "Button widget: form field hint (Opacity)"
+    },
+    "I48yxw": {
+        "message": "Privasi",
+        "description": "General settings: privacy"
+    },
+    "QcExtH": {
+        "message": "Polisi Privasi",
+        "description": "General settings: privacy policy button"
+    },
+    "as6rZ1": {
+        "message": "Dayakan pelaporan runtuhan (menggunakan Sentry)",
+        "description": "General settings: enable sentry"
     }
 }
