@@ -20,16 +20,40 @@ Sentry.init({
 	release: `renewedtab@${app_version}`,
 
 	beforeSend(event) {
+		// Drop expected UserError exceptions
 		if ((event.exception?.values ?? []).some(x => x.type == "UserError")) {
 			return null;
 		}
 
+		// Read opt-out setting from localStorage
+		// (localStorage is used because it is synchronous)
 		if (localStorage.getItem("_sentry-opt-out") == "yes") {
 			return null;
 		}
 
 		return event;
-	}
+	},
+
+	beforeBreadcrumb(crumb) {
+		if (crumb.type !== "http") {
+			return crumb;
+		}
+
+		try {
+			const url = new URL(crumb.data!.url);
+			for (const key of [ "lat", "long" ]) {
+				if (url.searchParams.has(key)) {
+					url.searchParams.set(key, "*****");
+				}
+			}
+
+			crumb.data!.url = url.toString();
+		} catch (e) {
+			console.error(e);
+		}
+
+		return crumb;
+	},
 });
 
 render(
