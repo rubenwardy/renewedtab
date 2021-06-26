@@ -1,0 +1,222 @@
+{
+    "+GMx80": {
+        "message": "Aucune positions trouvée",
+        "description": "Location form field: error"
+    },
+    "/LQ9WU": {
+        "message": "Moyen",
+        "description": "Clock widget: date style type"
+    },
+    "/dtDqf": {
+        "message": "Notes",
+        "description": "Notes Widget"
+    },
+    "/iBdV1": {
+        "message": "Cliquez sur les objets pour les modifier",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "0feb3b": {
+        "message": "Faire d'un lien une image. Optionnel",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Icône",
+        "description": "Form field label"
+    },
+    "18X7au": {
+        "message": "Bonne après-midi",
+        "description": "Greeting widget: greeting, from 12 noon to 4pm"
+    },
+    "1s5GYl": {
+        "message": "Opacité",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Ajouter"
+    },
+    "27lljH": {
+        "message": "Vous avez <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2VPa4j": {
+        "message": "Français",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "2efE5y": {
+        "message": "Salutation",
+        "description": "Greeting Widget"
+    },
+    "3/EBw0": {
+        "message": "Site Web",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Moteur de recherche",
+        "description": "Search widget: form field label"
+    },
+    "3aaibf": {
+        "message": "Ajouter un widget"
+    },
+    "3vh5vd": {
+        "message": "Conteneur vide, utile pour du positionnement",
+        "description": "Invisible widget description"
+    },
+    "47FYwb": {
+        "message": "Annuler"
+    },
+    "4F+2K3": {
+        "message": "Image aléatoire d'une collection Unsplash",
+        "description": "Backgroud mode description"
+    },
+    "4UpnpD": {
+        "message": "Les images sont stockées localement sur votre navigateur, et jamais importées",
+        "description": "Form field hint (Image)"
+    },
+    "4syC1B": {
+        "message": "Support et demandes"
+    },
+    "56hSCM": {
+        "message": "Long",
+        "description": "Clock widget: date style type"
+    },
+    "5DCxT+": {
+        "message": "Unité de température",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "CSS personnalisé",
+        "description": "Theme settings: form field label"
+    },
+    "6MDM6D": {
+        "message": "Citations",
+        "description": "Quotes Widget"
+    },
+    "+oSH/F": {
+        "message": "Indique votre âge bien trop précisément",
+        "description": "Age widget description"
+    },
+    "3ZfhWo": {
+        "message": "Permission requise pour l'accès {host}. Modifier ce widget pour l'autoriser."
+    },
+    "6pdO6i": {
+        "message": "Échec lors de la récupération des favoris",
+        "description": "Bookmarks widget: error message"
+    },
+    "7RSFb4": {
+        "message": "Renewed Tab | Aide et astuces",
+        "description": "HelpAbout widget heading"
+    },
+    "7OH6mh": {
+        "message": "",
+        "description": "Image Widget"
+    },
+    "8J0Bhj": {
+        "message": "<a>Renewed Tab</a> : une page de démarrage personnalisable avec des widgets et de magnifiques fonds d'écran."
+    },
+    "8xVVb5": {
+        "message": "Couleur principale",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "Ce widget requiert la dernière version de l'extension."
+    },
+    "AgU+/t": {
+        "message": "Liste des prochains vols spatiaux, par RocketLaunch.Live",
+        "description": "SpaceFlights widget description"
+    },
+    "Bl74xq": {
+        "message": "Un bouton-lien",
+        "description": "Button widget description"
+    },
+    "CmRs9p": {
+        "message": "Rechercher",
+        "description": "Search Widget"
+    },
+    "CshCZY": {
+        "message": "Type de fond d'écran"
+    },
+    "D0+wcK": {
+        "message": "Afficher une image, et la transformer en lien, optionnellement",
+        "description": "Image widget description"
+    },
+    "D3idYv": {
+        "message": "Paramètres"
+    },
+    "DJRqNI": {
+        "message": "Affiche l'image la plus récente d'un fil Atom ou RSS, utile pour les WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "FHzdXg": {
+        "message": "Ces paramètres sont <b>expérimentaux</b> ; vous pourriez faire face à des bogues où des comportemens anormaux en les modifiants. Les mises à jour pourraient également affecter vos thèmes.",
+        "description": "Theme settings"
+    },
+    "FpOu7z": {
+        "message": "Pour déplacer, modifier ou supprimer un widget, utilisez les boutons en haut à gauche du widget. Pour redimensionner, utilisez la poignée en bas à droite."
+    },
+    "G6WG/N": {
+        "message": "Invisible",
+        "description": "Invisible Widget"
+    },
+    "GSox4d": {
+        "message": "Nom d'une police installée sur votre système",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "GWRKVT": {
+        "message": "Couleur du texte",
+        "description": "Form field label"
+    },
+    "GXkv/F": {
+        "message": "Choisir une position",
+        "description": "Location form field: prompt"
+    },
+    "GcxpZV": {
+        "message": "Style de date",
+        "description": "Clock widget: date style form field label"
+    },
+    "GqPEp+": {
+        "message": "Requiert la dernière version de l'extension"
+    },
+    "H00a0q": {
+        "message": "Laisser vide pour en faire un en-tête",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "IhKDXS": {
+        "message": "Autoriser",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "IqLwUL": {
+        "message": "Espacement de la grille",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "JvOSvX": {
+        "message": "Fond d'écran",
+        "description": "Settings tab"
+    },
+    "J91edI": {
+        "message": "Importer / Exporter",
+        "description": "Settings tab"
+    },
+    "JihbEV": {
+        "message": "Documentation CSS",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "JzanJ8": {
+        "message": "Colonnes de la grille",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "K3r6DQ": {
+        "message": "Supprimer"
+    },
+    "K8s82y": {
+        "message": "Date de naissance",
+        "description": "Age widget: form field label"
+    },
+    "KhM0zv": {
+        "message": "Les citations proviennent de sources externes, et ne sont pas revues par Renewed Tab.",
+        "description": "Daily Goal widget: edit modal hint"
+    }
+}
