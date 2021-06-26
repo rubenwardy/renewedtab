@@ -17,7 +17,7 @@ function getReviewURL(browserName: string): string {
 
 
 export async function getInstallInfo(): Promise<InstallInfo> {
-	const ret: InstallInfo = { extensionVersion: app_version };
+	const ret: InstallInfo = { extensionVersion: app_version.version };
 
 	try {
 		const platform = await browser.runtime.getPlatformInfo();
@@ -60,7 +60,7 @@ export function getFeedbackURLFromInfo(info: InstallInfo, path: string): string 
 		}
 	}
 
-	url.searchParams.set("version", app_version);
+	url.searchParams.set("version", app_version.version);
 
 	return url.toString();
 }

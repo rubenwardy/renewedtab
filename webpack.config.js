@@ -5,7 +5,10 @@ const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const formatjs = require("@formatjs/ts-transformer");
-const package_json = require('./package.json');
+const {GitRevisionPlugin} = require('git-revision-webpack-plugin');
+const gitRevisionPlugin = new GitRevisionPlugin({
+	lightweightTags: true,
+});
 
 const isProd = process.env.NODE_ENV === "production";
 const dest = path.resolve(__dirname, "dist/webext/app");
@@ -32,8 +35,12 @@ module.exports = {
 	devtool: "source-map",
 	plugins: [
 		new webpack.DefinePlugin({
-			is_debug: !isProd,
-			app_version: JSON.stringify(package_json.version),
+			app_version: {
+				version: JSON.stringify(gitRevisionPlugin.version()),
+				is_debug: !isProd,
+				commit: JSON.stringify(gitRevisionPlugin.commithash()),
+				environment: JSON.stringify(gitRevisionPlugin.version().includes("-") ? "development" : "production"),
+			},
 			config: getConfig(),
 		}),
 		new CopyPlugin({

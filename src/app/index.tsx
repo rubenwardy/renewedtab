@@ -15,9 +15,9 @@ Sentry.init({
 		})
 	],
 
-	debug: is_debug,
-	environment: is_debug ? "debug" : "production",
-	release: `renewedtab@${app_version}`,
+	debug: app_version.is_debug,
+	environment: app_version.environment,
+	release: `renewedtab@${app_version.version}`,
 
 	beforeSend(event) {
 		// Drop expected UserError exceptions
