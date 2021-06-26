@@ -1,6 +1,6 @@
 import { BackgroundConfig, BackgroundMode, BackgroundModeType, getTitleForMode, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
 import React from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import { Radio, RadioGroup } from "react-radio-group";
 import { Form } from "../forms";
 
@@ -11,6 +11,8 @@ export interface BackgroundSettingsProps {
 }
 
 export default function BackgroundSettings(props: BackgroundSettingsProps) {
+	const intl = useIntl();
+
 	if (!props.background) {
 		return (<div className="modal-body">Loading...</div>);
 	}
@@ -40,6 +42,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 	}
 
 	const modeName = BackgroundMode[props.background.mode];
+	const translatedTitle = intl.formatMessage(getTitleForMode(props.background.mode));
 
 	return (
 		<div className="modal-body">
@@ -53,7 +56,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 			<h3 className="mt-4">
 				<FormattedMessage
 						defaultMessage="{mode} Options"
-						values={{mode: modeName}}
+						values={{mode: translatedTitle}}
 						description="Background mode options" />
 			</h3>
 			<Form
