@@ -18,8 +18,8 @@ export const serverConfig = (function() {
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
 export const OWNER_EMAIL = process.env.OWNER_EMAIL ?? serverConfig.OWNER_EMAIL;
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK ?? serverConfig.DISCORD_WEBHOOK;
-export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.7.0; +https://renewedtab.com/)";
-export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.7.0; +https://renewedtab.com/)";
+export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.8.0; +https://renewedtab.com/)";
+export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.8.0; +https://renewedtab.com/)";
 const SENTRY_DSN = process.env.SENTRY_DSN;
 
 
