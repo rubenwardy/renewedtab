@@ -47,7 +47,7 @@ export default function AboutSettings() {
 				<FormattedMessage
 						defaultMessage="<a>Open source</a>, licensed under GPLv3+."
 						values={{
-							a: (chunk: any) => (<a href="https://gitlab.com/rubenwardy/renewedtab/">{chunk}</a>)
+							a: (chunk: any) => (<a href="https://gitlab.com/renewedtab/renewedtab/">{chunk}</a>)
 						}} />
 			</p>
 			<p>

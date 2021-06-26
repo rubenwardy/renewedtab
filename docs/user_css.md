@@ -26,7 +26,7 @@ The Inspect element tool is very useful to find out the classes and IDs used to
 reference a particular element.
 
 You may also find the
-[source SCSS code](https://gitlab.com/rubenwardy/renewedtab/-/tree/master/src/app/scss)
+[source SCSS code](https://gitlab.com/renewedtab/renewedtab/-/tree/master/src/app/scss)
 useful. (SCSS is a superset language that compiles to CSS.)
 
 ## Examples

@@ -25,14 +25,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@gitlab.com/rubenwardy/renewedtab.git"
+		"url": "git+ssh://git@gitlab.com/renewedtab/renewedtab.git"
 	},
 	"author": "rubenwardy",
 	"license": "GPLv3+",
 	"bugs": {
-		"url": "https://gitlab.com/rubenwardy/renewedtab/issues"
+		"url": "https://gitlab.com/renewedtab/renewedtab/issues"
 	},
-	"homepage": "https://gitlab.com/rubenwardy/renewedtab#readme",
+	"homepage": "https://gitlab.com/renewedtab/renewedtab#readme",
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",

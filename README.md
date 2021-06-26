@@ -1,6 +1,6 @@
 # Renewed Tab
 
-[![pipeline status](https://gitlab.com/rubenwardy/renewedtab/badges/master/pipeline.svg)](https://gitlab.com/rubenwardy/renewedtab/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://web.renewedtab.com/)
+[![pipeline status](https://gitlab.com/renewedtab/renewedtab/badges/master/pipeline.svg)](https://gitlab.com/renewedtab/renewedtab/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://web.renewedtab.com/)
 
 A clean web browser "New Tab" / "Home page" page, created using TypeScript and React.
 
