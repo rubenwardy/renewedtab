@@ -798,5 +798,17 @@
     "ZeZlbR": {
         "message": "Renkli butonun opaklığını ayarlar",
         "description": "Button widget: form field hint (Opacity)"
+    },
+    "I48yxw": {
+        "message": "Gizlilik",
+        "description": "General settings: privacy"
+    },
+    "QcExtH": {
+        "message": "Gizlilik Politikası",
+        "description": "General settings: privacy policy button"
+    },
+    "as6rZ1": {
+        "message": "Hata raporlamayı etkinleştir (Sentry kullanır)",
+        "description": "General settings: enable sentry"
     }
 }
