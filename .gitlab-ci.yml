@@ -15,6 +15,7 @@ variables:
 before_script: &before_script
   - NODE_ENV=debug npm install
   - cp config.example.json config.json
+  - PATH=$(npm bin):$PATH
 
 test:
   stage: test
@@ -80,6 +81,32 @@ pages:
       - public
   only:
     - tags
+
+
+sentry:
+  stage: deploy
+  dependencies: ["webext"]
+  interruptible: false
+  before_script:
+    - *before_script
+    - npm install @sentry/cli
+  script:
+    - mkdir -p dist/webext
+    - mv chrome.zip dist/webext/chrome.zip
+    - pushd dist/webext && unzip chrome.zip && popd
+    - mv main.js.map dist/webext/app/main.js.map
+    - sentry-cli releases new ${VERSION}
+    - sentry-cli releases set-commits --auto $VERSION
+    - sentry-cli releases deploys ${VERSION} new -e production
+    - sentry-cli releases files ${VERSION} upload-sourcemaps --ext ts --ext js --ext tsx --ext map src dist --url-prefix "~/app"
+    - sentry-cli releases finalize ${VERSION}
+  variables:
+    VERSION: "renewedtab@$CI_COMMIT_TAG"
+    SENTRY_ORG: "renewedtab"
+    SENTRY_PROJECT: "renewedtab"
+  only:
+    - tags
+
 
 # firefox:
 #   stage: deploy
