@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, KeyboardEvent } from "react";
 import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../Widget";
 import Modal from "./Modal";
 import { Form } from "./forms";
@@ -118,9 +118,22 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 			</>);
 	}
 
+	function onKeyPress(e: KeyboardEvent<HTMLInputElement>) {
+		const currentElement = document.activeElement;
+		if (currentElement?.nodeName == "INPUT") {
+			return;
+		}
+
+		if (e.key == "e") {
+			setMode(WidgetMode.Edit);
+		} else if (e.key == "Delete" || e.key == "d") {
+			setMode(WidgetMode.Delete);
+		}
+	}
+
 	const Child = props.child;
 	return (
-		<>
+		<div className="widget-inner" onKeyPress={onKeyPress}>
 			<div className="widget-strip">
 				<span className="widget-title">
 					<i className="fas fa-grip-vertical mr-3" />
@@ -138,5 +151,5 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 			<ErrorBoundary>
 				<Child {...props} />
 			</ErrorBoundary>
-		</>);
+		</div>);
 }
