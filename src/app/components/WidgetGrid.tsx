@@ -131,7 +131,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 	const cellSpacing = props.spacing;
 	const gridWidth = gridColumns*(cellSize+cellSpacing);
 	const mainStyle: CSSProperties = {
-		width: gridWidth
+		width: Math.ceil(gridWidth / 2) * 2
 	};
 
 	return (
