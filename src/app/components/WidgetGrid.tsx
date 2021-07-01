@@ -88,19 +88,6 @@ export default function WidgetGrid(props: WidgetGridProps) {
 			</div>);
 	});
 
-
-	const [isScrolling, setIsScrolling] = useState(false);
-	const mainRef = useRef<HTMLElement>(null);
-	function updateIsScrolling() {
-		if (mainRef.current) {
-			const shouldBeScrolling = mainRef.current.clientHeight > window.innerHeight * 0.8;
-			if (isScrolling != shouldBeScrolling) {
-				setIsScrolling(shouldBeScrolling);
-			}
-		}
-	}
-	useEffect(() => updateIsScrolling);
-
 	const layout : Layout[] = widgetManager.widgets.map(widget => ({
 		i: widget.id.toString(),
 		x: widget.position?.x ?? 0,
@@ -122,7 +109,6 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		});
 
 		widgetManager.save();
-		updateIsScrolling();
 		forceUpdate();
 	}
 
@@ -135,16 +121,18 @@ export default function WidgetGrid(props: WidgetGridProps) {
 	};
 
 	return (
-		<main ref={mainRef} className={isScrolling ? "scrolling" : undefined} style={mainStyle}>
-			<GridLayout className={gridClassNames}
-					isDraggable={!props.isLocked} isResizable={!props.isLocked}
-					layout={layout} onLayoutChange={onLayoutChange}
-					cols={gridColumns} rowHeight={cellSize}
-					margin={[cellSpacing, cellSpacing]}
-					width={gridWidth}
-					draggableHandle=".widget-title">
-				{widgets}
-			</GridLayout>
+		<main>
+			<div className='scroll-wrap'>
+				<GridLayout className={gridClassNames} style={mainStyle}
+						isDraggable={!props.isLocked} isResizable={!props.isLocked}
+						layout={layout} onLayoutChange={onLayoutChange}
+						cols={gridColumns} rowHeight={cellSize}
+						margin={[cellSpacing, cellSpacing]}
+						width={gridWidth}
+						draggableHandle=".widget-title">
+					{widgets}
+				</GridLayout>
+			</div>
 		</main>);
 }
 
