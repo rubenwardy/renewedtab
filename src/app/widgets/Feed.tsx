@@ -75,7 +75,8 @@ export default function Feed(widget: WidgetProps<FeedProps>) {
 	const rows = feed.articles
 		.filter(article => {
 			const title = article.title.toLowerCase();
-			return allowFilters.every(filter => title.includes(filter)) &&
+			return article.link &&
+					allowFilters.every(filter => title.includes(filter)) &&
 					!blockFilters.some(filter => title.includes(filter));
 		})
 		.map(article => (

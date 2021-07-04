@@ -1,6 +1,6 @@
 export interface Article {
 	title: string;
-	link: string;
+	link?: string;
 	image?: string;
 	alt?: string;
 }
@@ -53,7 +53,7 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 			const img = getImage(el, parseXML);
 			articles.push({
 				title: escapeHTMLtoText(el.querySelector("title")!.textContent!, parseXML).trim(),
-				link: el.querySelector("link")!.textContent!.trim(),
+				link: el.querySelector("link")?.textContent?.trim() ?? undefined,
 				image: img && img[0],
 				alt: img && img[1],
 			});
@@ -69,7 +69,7 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 			const img = getImage(el, parseXML);
 			articles.push({
 				title: escapeHTMLtoText(el.querySelector("title")!.textContent!, parseXML).trim(),
-				link: el.querySelector("link")!.getAttribute("href")!.trim(),
+				link: el.querySelector("link")?.getAttribute("href")?.trim(),
 				image: img && img[0],
 				alt: img && img[1],
 			});
@@ -77,7 +77,7 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 
 		return {
 			title: root.getElementsByTagName("title")[0]?.textContent ?? undefined,
-			link: root.querySelector("link")!.getAttribute("href")!,
+			link: root.querySelector("link")?.getAttribute("href") ?? undefined,
 			articles: articles
 		};
 	} else {
