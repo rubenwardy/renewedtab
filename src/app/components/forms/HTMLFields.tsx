@@ -31,6 +31,10 @@ export function DateField(props: FieldProps<Date>) {
 
 export function URLField(props: FieldProps<string>) {
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+		if (!e.target.checkValidity()) {
+			return;
+		}
+
 		if (props.onChange) {
 			props.onChange(e.target.value);
 		}
