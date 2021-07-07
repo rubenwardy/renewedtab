@@ -120,7 +120,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 
 	function onKeyPress(e: KeyboardEvent<HTMLInputElement>) {
 		const currentElement = document.activeElement;
-		if (currentElement?.nodeName == "INPUT") {
+		if (currentElement?.nodeName == "INPUT" || currentElement?.nodeName == "TEXTAREA") {
 			return;
 		}
 
