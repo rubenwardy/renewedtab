@@ -2,6 +2,7 @@ import { Quote, QuoteCategory } from "common/api/quotes";
 import { UA_DEFAULT } from "server";
 import { makeKeyCache } from "./cache";
 import fetchCatch, { Request } from "./http";
+import { notifyUpstreamRequest } from "./metrics";
 
 
 export async function getQuoteCategories(): Promise<QuoteCategory[]> {
@@ -43,6 +44,8 @@ export async function getQuoteCategories(): Promise<QuoteCategory[]> {
 
 
 async function fetchQuotes(category: string): Promise<Quote[]> {
+	notifyUpstreamRequest("Quotes.rest");
+
 	const url = new URL("https://quotes.rest/qod");
 	url.searchParams.set("category", category);
 	console.log(url.toString())

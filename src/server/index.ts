@@ -66,7 +66,7 @@ function writeClientError(res: express.Response, msg: string) {
 }
 
 
-import { promRegister, notifyAPICall } from "./metrics";
+import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
 
 app.get('/metrics', async (req, res) => {
 	try {
@@ -86,7 +86,7 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 		return;
 	}
 
-	notifyAPICall("proxy");
+	notifyAPIRequest("proxy");
 
 	try {
 		const url = new URL(req.query.url as string);
@@ -104,7 +104,7 @@ app.get("/api/weather/", async (req: express.Request, res: express.Response) => 
 		return;
 	}
 
-	notifyAPICall("weather");
+	notifyAPIRequest("weather");
 
 	try {
 		res.json(await getWeatherInfo(
@@ -122,7 +122,7 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 		return;
 	}
 
-	notifyAPICall("geocode");
+	notifyAPIRequest("geocode");
 
 	try {
 		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
@@ -133,7 +133,7 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 
 
 app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
-	notifyAPICall("background");
+	notifyAPIRequest("background");
 
 	try {
 		res.json(await getBackground());
@@ -145,7 +145,7 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response)
 
 const backgroundVoteStream = fs.createWriteStream("votes.csv", { flags: "a" });
 app.post("/api/background/vote/", async (req: express.Request, res: express.Response) => {
-	notifyAPICall("vote");
+	notifyAPIRequest("vote");
 
 	try {
 		const background = req.body.background;
@@ -170,7 +170,7 @@ app.post("/api/background/vote/", async (req: express.Request, res: express.Resp
 
 const reCollectionID = /^[0-9]+$/;
 app.get("/api/unsplash/", async (req: express.Request, res: express.Response) => {
-	notifyAPICall("unsplash");
+	notifyAPIRequest("unsplash");
 
 	try {
 		const collection = req.query.collection as (string | undefined);
@@ -192,7 +192,8 @@ app.get("/api/unsplash/", async (req: express.Request, res: express.Response) =>
 
 
 app.get("/api/space-flights/", async (_req: express.Request, res: express.Response) => {
-	notifyAPICall("spaceflights");
+	notifyAPIRequest("spaceflights");
+	notifyUpstreamRequest("RocketLaunch.live");
 
 	try {
 		const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {
@@ -229,7 +230,7 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 
 const feedbackStream = fs.createWriteStream("feedback.txt", { flags: "a" });
 app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
-	notifyAPICall("feedback");
+	notifyAPIRequest("feedback");
 
 	try {
 		if (!req.body.event) {
@@ -264,6 +265,8 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 
 			// Only allow at most two new lines in a row, ignoring whitespace
 			content = content.replace(/\n\s*\n/g, "\n\n");
+
+			notifyUpstreamRequest("Discord.com");
 
 			await fetchCatch(new Request(DISCORD_WEBHOOK, {
 				method: "POST",
@@ -303,16 +306,16 @@ function readAutocompleteFromFile(filename: string) {
 const feeds = readAutocompleteFromFile("feeds");
 const webcomics = readAutocompleteFromFile("webcomics");
 app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
-	notifyAPICall("feeds");
+	notifyAPIRequest("feeds");
 	res.json(feeds);
 });
 app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) => {
-	notifyAPICall("webcomic");
+	notifyAPIRequest("webcomic");
 	res.json(webcomics);
 });
 
 app.post("/api/autocomplete/", async (req: express.Request, res: express.Response) => {
-	notifyAPICall("autocomplete_suggestion");
+	notifyAPIRequest("autocomplete_suggestion");
 	try {
 		if (!req.body.url) {
 			writeClientError(res, "Missing URL");
@@ -327,6 +330,8 @@ app.post("/api/autocomplete/", async (req: express.Request, res: express.Respons
 			**URL Suggestion**
 			Url: ${req.body.url}
 		`;
+
+		notifyUpstreamRequest("Discord.com");
 
 		await fetchCatch(new Request(DISCORD_WEBHOOK, {
 			method: "POST",
@@ -348,7 +353,7 @@ app.post("/api/autocomplete/", async (req: express.Request, res: express.Respons
 
 
 app.get("/api/quote-categories/", async (req: express.Request, res: express.Response) => {
-	notifyAPICall("quote-categories");
+	notifyAPIRequest("quote-categories");
 	try {
 		const quoteCategories = await getQuoteCategories();
 
@@ -360,7 +365,7 @@ app.get("/api/quote-categories/", async (req: express.Request, res: express.Resp
 
 
 app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
-	notifyAPICall("quotes");
+	notifyAPIRequest("quotes");
 	try {
 		let categories: (string[] | undefined);
 

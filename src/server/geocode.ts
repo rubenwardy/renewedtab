@@ -1,6 +1,7 @@
 import fetchCatch, { Request } from "./http";
 import { OWNER_EMAIL, UA_DEFAULT } from ".";
 import { Location } from "common/api/weather";
+import { notifyUpstreamRequest } from "./metrics";
 
 interface OSMLocation {
 	lat: string;
@@ -24,6 +25,8 @@ export async function getCoordsFromQuery(query: string): Promise<Location[]> {
 	url.searchParams.set("format", "jsonv2");
 	url.searchParams.set("email", OWNER_EMAIL);
 	url.searchParams.set("limit", "5");
+
+	notifyUpstreamRequest("OpenStreetMap.org");
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",

@@ -1,6 +1,7 @@
 import { WeatherInfo } from "common/api/weather";
 import fetchCatch, { Request } from "./http";
 import { IS_DEBUG, serverConfig, UA_DEFAULT } from ".";
+import { notifyUpstreamRequest } from "./metrics";
 
 const OPEN_WEATHER_MAP_API_KEY =
 	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
@@ -59,6 +60,8 @@ export async function getWeatherInfo(lat: number, long: number): Promise<any> {
 	if (cache.has(key)) {
 		return cache.get(key);
 	}
+
+	notifyUpstreamRequest("OpenWeatherMap.org");
 
 	const url = new URL("https://api.openweathermap.org/data/2.5/onecall");
 	url.searchParams.set("lon", long.toString());

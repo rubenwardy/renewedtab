@@ -1,6 +1,7 @@
 import { BackgroundInfo } from "common/api/backgrounds";
 import fetchCatch, { Request } from "../http";
 import { serverConfig, UA_DEFAULT } from "..";
+import { notifyUpstreamRequest } from "server/metrics";
 
 const UNSPLASH_ACCESS_KEY =
 	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;
@@ -21,6 +22,8 @@ export default async function getImageFromUnsplash(collection: string): Promise<
 
 	const url = new URL("https://api.unsplash.com/photos/random");
 	url.searchParams.set("collections", collection);
+
+	notifyUpstreamRequest("Unsplash.com");
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
