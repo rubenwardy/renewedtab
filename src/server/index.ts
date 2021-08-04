@@ -60,9 +60,24 @@ app.use((_req, res, next) => {
 	next();
 });
 
+
 function writeClientError(res: express.Response, msg: string) {
 	res.status(400).type("text").send(msg);
 }
+
+
+import { promRegister, notifyAPICall } from "./metrics";
+
+app.get('/metrics', async (req, res) => {
+	try {
+		const metrics = await promRegister.metrics();
+		res.set('Content-Type', promRegister.contentType);
+		res.send(metrics);
+	} catch (ex) {
+		res.statusCode = 500;
+		res.send(ex.message);
+	}
+});
 
 
 app.get("/proxy/", async (req: express.Request, res: express.Response) => {
@@ -70,6 +85,8 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 		writeClientError(res, "Missing URL");
 		return;
 	}
+
+	notifyAPICall("proxy");
 
 	try {
 		const url = new URL(req.query.url as string);
@@ -87,6 +104,8 @@ app.get("/api/weather/", async (req: express.Request, res: express.Response) => 
 		return;
 	}
 
+	notifyAPICall("weather");
+
 	try {
 		res.json(await getWeatherInfo(
 			Number.parseFloat(req.query.lat as string),
@@ -103,6 +122,8 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 		return;
 	}
 
+	notifyAPICall("geocode");
+
 	try {
 		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
 	} catch (ex) {
@@ -112,6 +133,8 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 
 
 app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
+	notifyAPICall("background");
+
 	try {
 		res.json(await getBackground());
 	} catch (ex) {
@@ -122,6 +145,8 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response)
 
 const backgroundVoteStream = fs.createWriteStream("votes.csv", { flags: "a" });
 app.post("/api/background/vote/", async (req: express.Request, res: express.Response) => {
+	notifyAPICall("vote");
+
 	try {
 		const background = req.body.background;
 		const isPositive = req.body.is_positive;
@@ -145,6 +170,8 @@ app.post("/api/background/vote/", async (req: express.Request, res: express.Resp
 
 const reCollectionID = /^[0-9]+$/;
 app.get("/api/unsplash/", async (req: express.Request, res: express.Response) => {
+	notifyAPICall("unsplash");
+
 	try {
 		const collection = req.query.collection as (string | undefined);
 		if (!collection) {
@@ -165,6 +192,8 @@ app.get("/api/unsplash/", async (req: express.Request, res: express.Response) =>
 
 
 app.get("/api/space-flights/", async (_req: express.Request, res: express.Response) => {
+	notifyAPICall("spaceflights");
+
 	try {
 		const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {
 			method: "GET",
@@ -200,6 +229,8 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 
 const feedbackStream = fs.createWriteStream("feedback.txt", { flags: "a" });
 app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
+	notifyAPICall("feedback");
+
 	try {
 		if (!req.body.event) {
 			writeClientError(res, "Missing event");
@@ -272,13 +303,16 @@ function readAutocompleteFromFile(filename: string) {
 const feeds = readAutocompleteFromFile("feeds");
 const webcomics = readAutocompleteFromFile("webcomics");
 app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
+	notifyAPICall("feeds");
 	res.json(feeds);
 });
 app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) => {
+	notifyAPICall("webcomic");
 	res.json(webcomics);
 });
 
 app.post("/api/autocomplete/", async (req: express.Request, res: express.Response) => {
+	notifyAPICall("autocomplete_suggestion");
 	try {
 		if (!req.body.url) {
 			writeClientError(res, "Missing URL");
@@ -314,6 +348,7 @@ app.post("/api/autocomplete/", async (req: express.Request, res: express.Respons
 
 
 app.get("/api/quote-categories/", async (req: express.Request, res: express.Response) => {
+	notifyAPICall("quote-categories");
 	try {
 		const quoteCategories = await getQuoteCategories();
 
@@ -325,6 +360,7 @@ app.get("/api/quote-categories/", async (req: express.Request, res: express.Resp
 
 
 app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
+	notifyAPICall("quotes");
 	try {
 		let categories: (string[] | undefined);
 
