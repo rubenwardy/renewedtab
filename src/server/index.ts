@@ -306,16 +306,16 @@ function readAutocompleteFromFile(filename: string) {
 const feeds = readAutocompleteFromFile("feeds");
 const webcomics = readAutocompleteFromFile("webcomics");
 app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("feeds");
+	notifyAPIRequest("autocomplete:feeds");
 	res.json(feeds);
 });
 app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("webcomic");
+	notifyAPIRequest("autocomplete:webcomic");
 	res.json(webcomics);
 });
 
 app.post("/api/autocomplete/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("autocomplete_suggestion");
+	notifyAPIRequest("autocomplete:suggest");
 	try {
 		if (!req.body.url) {
 			writeClientError(res, "Missing URL");
