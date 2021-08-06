@@ -1,4 +1,4 @@
-import React, { CSSProperties, useEffect, useRef, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import { WidgetContainer } from "./WidgetContainer";
 import { WidgetManager } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";

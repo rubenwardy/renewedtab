@@ -14,15 +14,20 @@ export interface IStorage {
 
 
 class WebExtStorage implements IStorage {
-	private readonly store : any;
+	private readonly store: any;
+	private readonly values: Promise<{ [key: string]: any }>;
 
 	constructor() {
-		this.store = browser.storage.local;
+		this.store = browser.storage.sync;
+
+		const actualGetAll =
+			async () => fromTypedJSON(await this.store.get());
+		this.values = actualGetAll();
 	}
 
 	async getAll(): Promise<{ [key: string]: any }> {
 		console.log(`[Storage] Get All`);
-		return fromTypedJSON(await this.store.get());
+		return await this.values;
 	}
 
 	async get<T>(key: string): Promise<T | null> {
@@ -31,22 +36,30 @@ class WebExtStorage implements IStorage {
 		}
 
 		console.log(`[Storage] Get ${key}`);
-		const ret = fromTypedJSON(await this.store.get(key));
-		return ret ? ret[key] : null;
+		const values = await this.values;
+		return values ? values[key] : null;
 	}
 
 	async set<T>(key: string, value: T): Promise<void> {
 		console.log(`[Storage] Set ${key}`);
+
+		const jsonValue = toTypedJSON(value);
+		const values = await this.values;
+		values[key] = jsonValue;
 		await this.store.set({
-			[key]: toTypedJSON(value)
+			[key]: jsonValue
 		});
 	}
 
 	async remove(key: string): Promise<void> {
+		const values = await this.values;
+		delete values[key];
 		await this.store.remove(key);
 	}
 
 	async clear(): Promise<void> {
+		const values = await this.values;
+		Object.keys(values).forEach(key => delete values[key]);
 		await this.store.clear();
 	}
 }

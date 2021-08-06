@@ -1,6 +1,6 @@
 import { miscMessages } from "app/locale/common";
 import React, { Fragment } from "react";
-import { FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import * as Sentry from "@sentry/react";
 import UserError from "app/utils/UserError";
 
