@@ -8,6 +8,7 @@ import DailyGoal from "./DailyGoal";
 import Feed from "./Feed";
 import Greeting from "./Greeting";
 import HelpAbout from "./HelpAbout";
+import HTML from "./HTML";
 import IFrame from "./IFrame";
 import Image from "./Image";
 import Invisible from "./Invisible";
@@ -31,6 +32,7 @@ export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	Feed,
 	Greeting,
 	HelpAbout,
+	HTML,
 	IFrame,
 	Image,
 	Invisible,

@@ -336,6 +336,10 @@
         "description": "Text Widget",
         "message": "Text"
     },
+    "TZknEV": {
+        "description": "HTML widget: form field hint (HTML)",
+        "message": "Be careful with what you paste here. An attacker could get you to paste code here that steals things the extension has access to - such as browser history and top sites."
+    },
     "TkgCJ9": {
         "message": "You can get help or request a feature using the link below."
     },
@@ -421,6 +425,10 @@
     "YYoBQn": {
         "description": "Theme settings: form field label",
         "message": "Panel Blur Radius"
+    },
+    "YuNOET": {
+        "description": "HTML widget: form field label",
+        "message": "HTML"
     },
     "Z2/hH0": {
         "message": "Image: {filename}"
@@ -617,6 +625,10 @@
     "mY9tpI": {
         "message": "Error loading feed. Make sure it is an RSS or Atom feed."
     },
+    "mv9TrH": {
+        "description": "HTML Widget",
+        "message": "HTML"
+    },
     "nGSwtl": {
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
         "message": "Search"
@@ -791,6 +803,10 @@
     },
     "ykNa5O": {
         "message": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
+    },
+    "ywSKRt": {
+        "description": "HTML widget description",
+        "message": "Custom HTML"
     },
     "z7UTSa": {
         "message": "About Renewed Tab"
