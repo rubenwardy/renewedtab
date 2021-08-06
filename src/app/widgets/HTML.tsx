@@ -1,8 +1,7 @@
 import Panel from 'app/components/Panel';
-import { schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps, WidgetTheme } from 'app/Widget';
+import { WidgetProps } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
