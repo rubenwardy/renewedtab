@@ -19,7 +19,7 @@ export class WidgetManager {
 	async load() {
 		const json = await this.storage.get<Widget<any>[]>("widgets");
 		if (!json) {
-			this.resetToDefault();
+			this.widgets = [];
 			return;
 		}
 
@@ -74,12 +74,6 @@ export class WidgetManager {
 			this.storage.remove(`widget-${id}`);
 			this.storedIds.delete(id);
 		});
-	}
-
-	resetToDefault() {
-		this.widgets = [];
-		["Clock", "Greeting", "Search", "Age", "Links",
-			"HelpAbout", "Weather", "Feed", "Notes"].forEach(this.createWidget.bind(this));
 	}
 
 	createWidget<T>(type: string): Widget<T> {

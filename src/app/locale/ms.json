@@ -90,10 +90,6 @@
         "message": "Imej",
         "description": "Image Widget"
     },
-    "7RSFb4": {
-        "message": "Bantuan dan Petua Renewed Tab",
-        "description": "HelpAbout widget heading"
-    },
     "8xVVb5": {
         "message": "Warna Utama",
         "description": "Theme settings: form field label"
@@ -105,12 +101,6 @@
     "fW8Xpd": {
         "message": "Lokasi diperlukan. Klik pada edit untuk menambahnya.",
         "description": "Weather widget: location needed error"
-    },
-    "SQJLG3": {
-        "message": "Klik \"Tambah widget\" di bahagian bawah skrin untuk menambah widget."
-    },
-    "iU5dhE": {
-        "message": "Lihat <a>halaman Bantuan dan Soalan Lazim</a> untuk melihat soalan sering ditanya dan untuk berhubung."
     },
     "V1EIOe": {
         "message": "Tunjukkan halaman sesawang",
@@ -236,9 +226,6 @@
     "N/7Stk": {
         "message": "Dicipta oleh <a>rubenwardy</a>."
     },
-    "N3HgMZ": {
-        "message": "Lihat juga tetapan (gigi roda)."
-    },
     "OQHLB5": {
         "message": "Warna",
         "description": "Form field label"
@@ -325,10 +312,6 @@
         "message": "Perihal dan Bantuan",
         "description": "Settings tab"
     },
-    "Wv6Hyh": {
-        "message": "BantuPerihal",
-        "description": "HelpAbout Widget"
-    },
     "X18x9m": {
         "message": "Umum",
         "description": "Settings tab"
@@ -374,10 +357,6 @@
         "message": "Tunjukkan mesej",
         "description": "Text widget description"
     },
-    "ZduoYO": {
-        "message": "Bantuan untuk pengguna Renewed Tab yang baharu",
-        "description": "HelpAbout widget description"
-    },
     "a09vzt": {
         "message": "Permintaan HTTP gagal, {code} {msg}."
     },
@@ -391,9 +370,6 @@
     },
     "azMsfM": {
         "message": "Isnin"
-    },
-    "bN0iM4": {
-        "message": "Jumpa pepijat, atau ada permintaan?"
     },
     "bQFsdR": {
         "message": "Berikan kebenaran untuk mencapai {host}"
@@ -476,9 +452,6 @@
     },
     "kAEQyV": {
         "message": "OK"
-    },
-    "krty63": {
-        "message": "Perlukan bantuan?"
     },
     "ktmuOE": {
         "message": "Biarkan kosong untuk menggunakan tajuk suapan",
@@ -731,9 +704,6 @@
     "Q5Myqt": {
         "message": "Jumlah jalur dalam grid widget. Setiap lajur bersaiz lebih kurang 50px tambah penjarakan, jadi dengan penjarakan 15px, jumlah lajur maksimum yang sepatutnya bagi tetingkap 1080p ialah 30 lajur.",
         "description": "Widget grid: form hint for grid columns"
-    },
-    "FpOu7z": {
-        "message": "Untuk pindah, edit, atau padam suatu widget, gunakan pemegang yang muncul di bucu atas kiri widget. Untuk mengubah saiz, gunakan pemegang seret di bucu bawah kanan."
     },
     "GcxpZV": {
         "message": "Gaya tarikh",

@@ -1,0 +1,39 @@
+{
+	"widgets": [
+		{
+			"id": 1,
+			"type": "Clock",
+			"theme": {
+				"showPanelBG": false,
+				"textColor": "#ffffff"
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 0
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 2
+			}
+		},
+		{
+			"id": 2,
+			"type": "Greeting",
+			"theme": {
+				"showPanelBG": false
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 2
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 1
+			}
+		}
+	]
+}

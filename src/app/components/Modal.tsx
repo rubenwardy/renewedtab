@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 export interface ModalProps {
 	title: string;
 	isOpen: boolean;
-	onClose: () => void;
+	onClose?: () => void;
 	children: ReactNode[] | ReactNode;
 	lighterBg?: boolean;
 }
@@ -28,7 +28,7 @@ export default function Modal(props: ModalProps) {
 
 	useEffect(() => {
 		function close(e: KeyboardEvent) {
-			if (e.key == "Escape") {
+			if (e.key == "Escape" && props.onClose) {
 				props.onClose()
 			}
 		}
@@ -44,7 +44,7 @@ export default function Modal(props: ModalProps) {
 	}
 
 	function handleMouseUp() {
-		if (didClickBegin) {
+		if (didClickBegin && props.onClose) {
 			props.onClose();
 		}
 		setDidClickBegin(false);
@@ -59,9 +59,10 @@ export default function Modal(props: ModalProps) {
 					onMouseDown={(e) => e.stopPropagation()}
 					onMouseUp={(e) => e.stopPropagation()}>
 				<h2 className="modal-header">
-					<button className="btn modal-close" onClick={props.onClose}>
-						<i className="fas fa-times" />
-					</button>
+					{props.onClose && (
+						<button className="btn modal-close" onClick={props.onClose}>
+							<i className="fas fa-times" />
+						</button>)}
 					{props.title}
 				</h2>
 				{props.children}

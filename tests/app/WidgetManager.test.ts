@@ -9,7 +9,7 @@ describe("WidgetManager::create", () => {
 		const storage = new DummyStorage();
 		const wm = new WidgetManager(storage);
 		await wm.load();
-		expect(wm.widgets.length).to.equal(9);
+		expect(wm.widgets.length).to.equal(0);
 	});
 
 	it("copiesProps", async () => {

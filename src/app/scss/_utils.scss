@@ -1,3 +1,7 @@
+.w-100 {
+	width: 100% !important;
+}
+
 .ml-0, .mx-0 {
 	margin-left: 0 !important;
 }
@@ -34,7 +38,7 @@
 
 
 .mt-0, .my-0 {
-	margin-top: 0 !important !important;
+	margin-top: 0 !important;
 }
 
 .mt-1, .my-1 {
@@ -57,6 +61,23 @@
 .mb-0 {
 	margin-bottom: 0 !important;
 }
+
+.mb-1, .my-1 {
+	margin-bottom: 0.25rem !important;
+}
+
+.mb-2, .my-2 {
+	margin-bottom: 0.5rem !important;
+}
+
+.mb-3, .my-3 {
+	margin-bottom: 0.75rem !important;
+}
+
+.mb-4, .my-4 {
+	margin-bottom: 2rem !important;
+}
+
 
 
 .text-muted {
@@ -89,6 +110,10 @@
 	text-align: center;
 }
 
+.text-right {
+	text-align: right;
+}
+
 .vertical-middle {
 	display: flex;
 	align-items: center;
@@ -119,6 +144,10 @@
 	flex-direction: row;
 }
 
+.row-gap {
+	gap: 2rem;
+}
+
 .col {
 	display: block;
 	flex-grow: 1;
@@ -127,6 +156,30 @@
 .col-auto {
 	display: block;
 	flex-shrink: 0;
+}
+
+.col-1 {
+	flex-basis: 8.33%;
+}
+
+.col-2 {
+	flex-basis: 16.66%;
+}
+
+.one-half {
+	flex-basis: 50%;
+}
+
+.one-third {
+	flex-basis: 33.33%;
+}
+
+.two-thirds {
+	flex-basis: 66.66%;
+}
+
+.align-items-center {
+	align-items: center;
 }
 
 .one-line {

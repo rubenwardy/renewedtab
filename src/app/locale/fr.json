@@ -102,10 +102,6 @@
         "message": "Échec lors de la récupération des favoris",
         "description": "Bookmarks widget: error message"
     },
-    "7RSFb4": {
-        "message": "Renewed Tab | Aide et astuces",
-        "description": "HelpAbout widget heading"
-    },
     "7OH6mh": {
         "message": "",
         "description": "Image Widget"
@@ -153,9 +149,6 @@
     "FHzdXg": {
         "message": "Ces paramètres sont <b>expérimentaux</b> ; vous pourriez faire face à des bogues où des comportemens anormaux en les modifiants. Les mises à jour pourraient également affecter vos thèmes.",
         "description": "Theme settings"
-    },
-    "FpOu7z": {
-        "message": "Pour déplacer, modifier ou supprimer un widget, utilisez les boutons en haut à gauche du widget. Pour redimensionner, utilisez la poignée en bas à droite."
     },
     "G6WG/N": {
         "message": "Invisible",

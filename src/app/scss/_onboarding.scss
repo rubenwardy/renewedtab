@@ -1,0 +1,121 @@
+.carousel {
+	display: flex !important;
+	justify-content: center;
+	align-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		list-style: none;
+		margin: 0.3rem;
+		border-radius: 0.25rem;
+		padding: 0.25rem;
+		transition: transform 200ms ease, background-color 200ms ease;
+		background-color: rgba(255, 255, 255, 0.4);
+
+		&.active {
+			background-color: rgba(255, 255, 255, 0.6);
+			transform: scale(1.1, 1.1);
+		}
+	}
+}
+
+.onboarding {
+	&.modal-body {
+		h3 {
+			font-size: 140%;
+			font-weight: bold;
+		}
+
+		p:not(.text-muted) {
+			font-size: 130%;
+			line-height: 1.2;
+		}
+	}
+
+	.features h3 {
+		margin-top: 0;
+	}
+
+	p svg {
+		margin: 0 5px;
+	}
+
+	.fake-resizable-handle {
+		display: inline-block;
+		width: 16px;
+		box-sizing: border-box;
+		padding: 0;
+		text-align: center;
+	}
+
+	.fake-resizable-handle::after {
+		display: inline-block;
+		content: "";
+		width: 5px;
+		height: 5px;
+		border-right: 2px solid rgba(0, 0, 0, 0.4);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+		border-color: rgba(255,255,255,1) !important;
+	}
+}
+
+.presets {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	min-width: 750px;
+
+	li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li a {
+		display: block;
+		border-radius: 0.25rem;
+		background: rgba(200, 200, 200, 0.05);
+		border: 1px solid #1e1e1e;
+		color: #eee;
+		overflow: hidden;
+		transition: transform 200ms ease;
+
+		&:hover {
+			color: white;
+			text-decoration: none;
+			transform: scale(1.05, 1.05);
+			z-index: 2;
+		}
+
+		.preset-preview {
+			padding-top: 61.8%;
+			position: relative;
+
+			img {
+				display: block;
+				height: auto;
+				object-fit: cover;
+				bottom: 0;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 100%;
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		.preset-title {
+			padding: 0.25rem 0.5rem;
+			text-align: center;
+			font-size: 120%;
+		}
+	}
+}

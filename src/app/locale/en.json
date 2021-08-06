@@ -31,6 +31,10 @@
         "description": "Greeting widget: greeting, from 12 noon to 4pm",
         "message": "Good afternoon"
     },
+    "1eIr8H": {
+        "description": "Onboarding: preset hint",
+        "message": "You can add (<add></add>) or remove (<remove></remove>) widgets afterwards, or change settings (<cog></cog>) as desired."
+    },
     "1s5GYl": {
         "description": "Form field label",
         "message": "Opacity"
@@ -106,10 +110,6 @@
         "description": "Image Widget",
         "message": "Image"
     },
-    "7RSFb4": {
-        "description": "HelpAbout widget heading",
-        "message": "Renewed Tab Help and Tips"
-    },
     "7bfD9/": {
         "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
         "message": "Suggest URL be added to default suggestions"
@@ -128,9 +128,16 @@
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
     },
+    "BJYZgx": {
+        "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
+    },
     "Bl74xq": {
         "description": "Button widget description",
         "message": "A link button"
+    },
+    "CNpJaZ": {
+        "description": "Preset: focus",
+        "message": "Focus"
     },
     "CmRs9p": {
         "description": "Search Widget",
@@ -146,6 +153,10 @@
     "D3idYv": {
         "message": "Settings"
     },
+    "D4M6tn": {
+        "description": "Onboarding modal: title",
+        "message": "Welcome to Renewed Tab"
+    },
     "DJRqNI": {
         "description": "Web Comic widget description",
         "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
@@ -157,9 +168,6 @@
     "FHzdXg": {
         "description": "Theme settings",
         "message": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
-    },
-    "FpOu7z": {
-        "message": "To move, edit, or delete a widget, use the handle that appears in the top-left of the widget. To resize, use the drag handle in the bottom-right."
     },
     "G6WG/N": {
         "description": "Invisible Widget",
@@ -254,15 +262,15 @@
         "description": "Bookmarks widget: form field label",
         "message": "Include folders as sections"
     },
+    "MiIvsP": {
+        "message": "You can add, move, resize, and configure widgets on a grid using intuitive controls."
+    },
     "Mihrhf": {
         "description": "Clock widget: date style type, not shown",
         "message": "None"
     },
     "N/7Stk": {
         "message": "Created by <a>rubenwardy</a>."
-    },
-    "N3HgMZ": {
-        "message": "Also take a look at settings (the cog)."
     },
     "OBJta4": {
         "description": "Greeting widget: edit modal hint",
@@ -300,6 +308,9 @@
     "QrihTZ": {
         "message": "Friday"
     },
+    "RCe+DS": {
+        "message": "Drag and Drop Widgets"
+    },
     "RZqASt": {
         "description": "Backgroud mode description",
         "message": "A single color"
@@ -318,9 +329,6 @@
     "SG4UJU": {
         "description": "Button Widget",
         "message": "Button"
-    },
-    "SQJLG3": {
-        "message": "Click \"Add widget\" in the bottom of the screen to add a widget."
     },
     "ShQneX": {
         "description": "Form field label",
@@ -392,10 +400,6 @@
         "description": "Settings tab",
         "message": "About and Help"
     },
-    "Wv6Hyh": {
-        "description": "HelpAbout Widget",
-        "message": "HelpAbout"
-    },
     "X18x9m": {
         "description": "Settings tab",
         "message": "General"
@@ -449,10 +453,6 @@
         "description": "Daily Goal Widget",
         "message": "Daily Goal"
     },
-    "ZduoYO": {
-        "description": "HelpAbout widget description",
-        "message": "Help for new users of Renewed Tab"
-    },
     "ZeZlbR": {
         "description": "Button widget: form field hint (Opacity)",
         "message": "Sets the opacity of the button tinted color"
@@ -485,9 +485,6 @@
     },
     "azMsfM": {
         "message": "Monday"
-    },
-    "bN0iM4": {
-        "message": "Found a bug, or have a request?"
     },
     "bQFsdR": {
         "message": "Grant permission to access {host}"
@@ -532,6 +529,10 @@
     "ekW/+6": {
         "message": "Unable to connect to the Internet"
     },
+    "fTATFb": {
+        "description": "Onboarding: presets title",
+        "message": "Choose a Preset"
+    },
     "fW8Xpd": {
         "description": "Weather widget: location needed error",
         "message": "Location needed. Click edit to add it."
@@ -569,9 +570,6 @@
     "iH2AHA": {
         "message": "<a>Open source</a>, licensed under GPLv3+."
     },
-    "iU5dhE": {
-        "message": "Check out the <a>Help and FAQ page</a> to see common questions and to get in contact."
-    },
     "ibhC3l": {
         "message": "Like Renewed Tab? Consider donating to cover costs and help support development."
     },
@@ -585,9 +583,6 @@
     },
     "kAEQyV": {
         "message": "OK"
-    },
-    "krty63": {
-        "message": "Need help?"
     },
     "ktmuOE": {
         "description": "Feed widget: form field hint (Title)",
@@ -660,6 +655,10 @@
         "description": "Subheading for per-widget styling properties",
         "message": "Styling"
     },
+    "orfyBH": {
+        "description": "Onboarding: preset hint",
+        "message": "Presets only change the widgets you start with."
+    },
     "p7+m8N": {
         "description": "Top Sites widget: permission request",
         "message": "Grant permission to access top sites"
@@ -675,6 +674,10 @@
     "pVrtrA": {
         "description": "Backgroud mode description",
         "message": "Use a custom image"
+    },
+    "pbEMNj": {
+        "description": "Onboarding page: previous button",
+        "message": "Previous"
     },
     "py0oht": {
         "description": "Greeting widget: greeting, after 4pm",
@@ -732,6 +735,10 @@
     "ubO4zt": {
         "description": "Web Comic Widget",
         "message": "Web Comic"
+    },
+    "uzT59w": {
+        "description": "Preset: Grid",
+        "message": "Grid"
     },
     "vS2rQE": {
         "description": "Feed widget: form field hint (Filters)",
@@ -803,6 +810,10 @@
     },
     "ykNa5O": {
         "message": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
+    },
+    "yvWbz6": {
+        "description": "Onboarding page: next button",
+        "message": "Next"
     },
     "ywSKRt": {
         "description": "HTML widget description",

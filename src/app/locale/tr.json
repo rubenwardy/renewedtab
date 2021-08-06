@@ -33,17 +33,11 @@
     "N/7Stk": {
         "message": "<a>rubenwardy</a> tarafından yaratılmıştır."
     },
-    "N3HgMZ": {
-        "message": "Bir de ayarlara bakın (çark)."
-    },
     "PM6qZ7": {
         "message": "Saniye göster"
     },
     "Rw51mJ": {
         "message": "<a>OpenStreetMap</a> ile çalışır."
-    },
-    "SQJLG3": {
-        "message": "Bir araç eklemek için sayfanın altından \"Araç ekle\" butonuna tıklayın."
     },
     "T/wBPw": {
         "message": "{type} aracını kaldır"
@@ -59,9 +53,6 @@
     },
     "Z2/hH0": {
         "message": "Görüntü: {filename}"
-    },
-    "bN0iM4": {
-        "message": "Bir hata mı buldunuz? Bir isteğiniz mi var?"
     },
     "bQFsdR": {
         "message": "{host}'a erişmek için izin verin"
@@ -84,17 +75,11 @@
     "iH2AHA": {
         "message": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
     },
-    "iU5dhE": {
-        "message": "<a>Yardım ve SSS sayfası</a>nı inceleyerek sıkça sorulan soruları görebilir, iletişime geçebilirsiniz."
-    },
     "ibhC3l": {
         "message": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
     },
     "kAEQyV": {
         "message": "Tamam"
-    },
-    "krty63": {
-        "message": "Yardım mı lazım?"
     },
     "mY9tpI": {
         "message": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
@@ -216,10 +201,6 @@
         "message": "Yazı",
         "description": "Text Widget"
     },
-    "Wv6Hyh": {
-        "message": "YardımHakkında",
-        "description": "HelpAbout Widget"
-    },
     "XsTD4Q": {
         "message": "Yapılacaklar Listesi",
         "description": "Todo List Widget"
@@ -300,10 +281,6 @@
         "message": "Görüntüler tarayıcınızda yerel olarak saklanır, asla internete yüklenmez",
         "description": "Form field hint (Image)"
     },
-    "ZduoYO": {
-        "message": "Renewed Tab'in yeni kullanıcıları için yardım",
-        "description": "HelpAbout widget description"
-    },
     "zsdRww": {
         "message": "Ana butonlar ve linkler için kullanılır",
         "description": "Theme settings: form field hint (Primary Color)"
@@ -327,10 +304,6 @@
     "p7+m8N": {
         "message": "Sık kullanılan sitelerinize erişmek için izin verin",
         "description": "Top Sites widget: permission request"
-    },
-    "7RSFb4": {
-        "message": "Renewed Tab Yardım ve İpuçları",
-        "description": "HelpAbout widget heading"
     },
     "xvXMaZ": {
         "message": "Sizi selamlar",
@@ -723,9 +696,6 @@
     "KhM0zv": {
         "message": "Ünlü sözler harici kaynaklar tarafından sağlanır ve Renewed Tab tarafından incelenmemişlerdir.",
         "description": "Daily Goal widget: edit modal hint"
-    },
-    "FpOu7z": {
-        "message": "Bir aracı hareket ettirmek, düzenlemek, veya silmek için aracın sol üstünde beliren kısmı kullanın. Boyutlandırmak için sağ alttaki kısmı sürükleyin."
     },
     "GcxpZV": {
         "message": "Tarih biçimi",

@@ -4,13 +4,14 @@ import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGrid";
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
-import { useBackground, usePromise, useStorage } from "app/hooks";
+import { useBackground, useForceUpdate, usePromise, useStorage } from "app/hooks";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
 import { storage } from "app/Storage";
 import * as Sentry from "@sentry/react";
+import Onboarding from "./onboarding";
 
 
 const widgetManager = new WidgetManager(storage);
@@ -32,8 +33,10 @@ export default function App() {
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
 	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
-	const [gridSettings, setGridSettings] =
-		useStorage<WidgetGridSettings>("grid_settings", { ...defaultGridSettings });
+	const [gridSettings, setGridSettings] = useStorage<WidgetGridSettings>(
+		"grid_settings", { ...defaultGridSettings });
+	const onboardingIsOpen = loaded && widgetManager.widgets.length == 0;
+	const onboardingForceUpdate = useForceUpdate();
 
 	if (theme) {
 		applyTheme(theme);
@@ -52,10 +55,12 @@ export default function App() {
 				<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 					<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 				</Sentry.ErrorBoundary>
-				<CreateWidgetDialog isOpen={createIsOpen}
+				<CreateWidgetDialog
+						isOpen={createIsOpen}
 						manager={widgetManager}
 						onClose={() => setCreateOpen(false)} />
-				<SettingsDialog isOpen={settingsIsOpen}
+				<SettingsDialog
+						isOpen={settingsIsOpen}
 						onClose={() => setSettingsOpen(false)}
 						background={background} setBackground={setBackground}
 						theme={theme} setTheme={setTheme}
@@ -63,7 +68,11 @@ export default function App() {
 						grid={gridSettings ?? undefined} setGrid={setGridSettings} />
 				{loaded && gridSettings &&
 					<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
-
+				{onboardingIsOpen && (
+					<Onboarding
+							isOpen={onboardingIsOpen}
+							onClose={onboardingForceUpdate}
+							manager={widgetManager} />)}
 				<ReviewRequester />
 
 				<footer className="text-shadow">
