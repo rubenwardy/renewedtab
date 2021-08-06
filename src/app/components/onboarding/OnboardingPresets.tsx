@@ -30,7 +30,7 @@ function Preset(props: PresetProps) {
 }
 
 
-const presets: Preset[] = [
+export const presets: Preset[] = [
 	{
 		label: defineMessage({
 			defaultMessage: "Focus",
@@ -52,15 +52,7 @@ const presets: Preset[] = [
 
 export default function OnboardingPresets(props: OnboardingPageProps) {
 	function applyPreset(preset: Preset) {
-		preset.widgets.forEach(widgetData => {
-			const widget = props.manager.createWidget(widgetData.type);
-			widget.position = widgetData.position ?? undefined;
-			widget.size = widgetData.size ?? widget.size;
-			widget.props = widgetData.props
-				? { ...widgetData.props } : widget.props;
-			widget.theme = widgetData.theme
-				? { ...widgetData.theme } : widget.theme;
-		});
+		props.manager.createFromArray(preset.widgets);
 		props.onDone();
 	}
 

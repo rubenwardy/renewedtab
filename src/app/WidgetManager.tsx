@@ -108,4 +108,17 @@ export class WidgetManager {
 		}
 		this.save();
 	}
+
+	createFromArray(widgets: any[]): Widget<any>[] {
+		return widgets.map(widgetData => {
+			const widget = this.createWidget(widgetData.type);
+			widget.position = widgetData.position ?? undefined;
+			widget.size = widgetData.size ?? widget.size;
+			widget.props = widgetData.props
+				? { ...widgetData.props } : widget.props;
+			widget.theme = widgetData.theme
+				? { ...widgetData.theme } : widget.theme;
+			return widget;
+		});
+	}
 }

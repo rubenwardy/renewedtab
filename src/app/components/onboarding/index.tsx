@@ -3,7 +3,7 @@ import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 import Carousel from "../Carousel";
 import Modal from "../Modal";
-import OnboardingPresets from "./OnboardingPresets";
+import OnboardingPresets, { presets } from "./OnboardingPresets";
 import OnboardingWelcome from "./OnboardingWelcome";
 
 
@@ -28,8 +28,15 @@ export interface OnboardingPageProps {
 
 export default function Onboarding(props: OnboardingProps) {
 	const intl = useIntl();
+
+	function applyGridPreset() {
+		props.manager.createFromArray(presets[1].widgets);
+		props.onClose();
+	}
+
 	return (
-		<Modal title={intl.formatMessage(messages.title)} {...props} onClose={undefined}>
+		<Modal title={intl.formatMessage(messages.title)} {...props}
+				onClose={applyGridPreset}>
 			<Carousel>
 				<OnboardingWelcome />
 				<OnboardingPresets onDone={props.onClose} manager={props.manager} />
