@@ -780,5 +780,62 @@
     "as6rZ1": {
         "message": "Dayakan pelaporan runtuhan (menggunakan Sentry)",
         "description": "General settings: enable sentry"
+    },
+    "fTATFb": {
+        "message": "Pilih Praset",
+        "description": "Onboarding: presets title"
+    },
+    "orfyBH": {
+        "message": "Praset hanya tukar widget permulaan anda.",
+        "description": "Onboarding: preset hint"
+    },
+    "yvWbz6": {
+        "message": "Seterusnya",
+        "description": "Onboarding page: next button"
+    },
+    "1eIr8H": {
+        "message": "Anda boleh tambah (<add></add>) atau buang (<remove></remove>) widget selepas ini, atau tukar tetapan (<cog></cog>) yang diinginkan.",
+        "description": "Onboarding: preset hint"
+    },
+    "CNpJaZ": {
+        "message": "Tumpuan",
+        "description": "Preset: focus"
+    },
+    "D4M6tn": {
+        "message": "Selamat Datang ke Renewed Tab",
+        "description": "Onboarding modal: title"
+    },
+    "BJYZgx": {
+        "message": "Guna pemegang pindah (<move></move>) dan pemegang saiz (<resize></resize>)."
+    },
+    "uzT59w": {
+        "message": "Grid",
+        "description": "Preset: Grid"
+    },
+    "MiIvsP": {
+        "message": "Anda boleh tambah, pindah, tukar saiz, dan tetapkan widget atas grid menggunakan kawalan intuitif."
+    },
+    "RCe+DS": {
+        "message": "Widget Tarik dan Lepas"
+    },
+    "TZknEV": {
+        "message": "Hati-hati dengan apa anda tampal di sini. Penyerang boleh yakinkan anda untuk menampal kod di sini yang mampu mencuri apa yang sambungan ini boleh capai - seperti sejarah pelayar dan tapak teratas.",
+        "description": "HTML widget: form field hint (HTML)"
+    },
+    "YuNOET": {
+        "message": "HTML",
+        "description": "HTML widget: form field label"
+    },
+    "mv9TrH": {
+        "message": "HTML",
+        "description": "HTML Widget"
+    },
+    "pbEMNj": {
+        "message": "Sebelumnya",
+        "description": "Onboarding page: previous button"
+    },
+    "ywSKRt": {
+        "message": "HTML Tersuai",
+        "description": "HTML widget description"
     }
 }
