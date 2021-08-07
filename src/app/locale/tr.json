@@ -780,5 +780,86 @@
     "as6rZ1": {
         "message": "Hata raporlamayı etkinleştir (Sentry kullanır)",
         "description": "General settings: enable sentry"
+    },
+    "BJYZgx": {
+        "message": "Hareket düğmesi (<move></move>) ve boyut değiştirme düğmesini (<resize></resize>) kullanın."
+    },
+    "MiIvsP": {
+        "message": "Anlaşılabilir kontrolleri kullanarak ızgaraya araç ekleyebilir, araçları hareket ettirebilir, boyutlandırabilir ve ayarlayabilirsiniz."
+    },
+    "TZknEV": {
+        "message": "Buraya ne yapıştırdığınıza dikkat edin. Bir saldırgan sizden buraya bu uzantının erişebildiği şeyleri çalabilecek bir kod yapıştırmanızı isteyebilir - örneğin tarayıcı geçmişi ve sık kullanılan siteler.",
+        "description": "HTML widget: form field hint (HTML)"
+    },
+    "YuNOET": {
+        "message": "HTML",
+        "description": "HTML widget: form field label"
+    },
+    "fTATFb": {
+        "message": "Bir Ön Ayar Seçin",
+        "description": "Onboarding: presets title"
+    },
+    "uzT59w": {
+        "message": "Izgara",
+        "description": "Preset: Grid"
+    },
+    "1eIr8H": {
+        "message": "Sonradan araç ekleyip (<add></add>) kaldırabilirsiniz (<remove></remove>), veya ayarları istediğiniz gibi değiştirebilirsiniz (<cog></cog>).",
+        "description": "Onboarding: preset hint"
+    },
+    "CNpJaZ": {
+        "message": "Odak",
+        "description": "Preset: focus"
+    },
+    "D4M6tn": {
+        "message": "Renewed Tab'e hoş geldiniz",
+        "description": "Onboarding modal: title"
+    },
+    "RCe+DS": {
+        "message": "Araçları Sürükle ve Bırak"
+    },
+    "mv9TrH": {
+        "message": "HTML",
+        "description": "HTML Widget"
+    },
+    "orfyBH": {
+        "message": "Ön ayarlar sadece başlangıçta görünecek araçları değiştirir.",
+        "description": "Onboarding: preset hint"
+    },
+    "pbEMNj": {
+        "message": "Geri",
+        "description": "Onboarding page: previous button"
+    },
+    "yvWbz6": {
+        "message": "İleri",
+        "description": "Onboarding page: next button"
+    },
+    "ywSKRt": {
+        "message": "Özel HTML",
+        "description": "HTML widget description"
+    },
+    "gAZqVl": {
+        "message": "Daha sonra araç ekleyip (<add></add>) kaldırabilirsiniz (<remove></remove>), veya ayarları istediğiniz gibi değiştirebilirsiniz (<cog></cog>).",
+        "description": "Onboarding: preset hint"
+    },
+    "7WzZxn": {
+        "message": "Bir saat ve arama çubuğuyla başlayın",
+        "description": "Preset: focus description"
+    },
+    "FEUbOi": {
+        "message": "Haberler, hava durumu, ve daha fazlasıyla başlayın",
+        "description": "Preset: grid description"
+    },
+    "L6nTur": {
+        "message": "Bir Başlangıç Noktası Seçin",
+        "description": "Onboarding: presets title"
+    },
+    "YXvgwa": {
+        "message": "Günlük hedefler ve ünlü sözlerle başlayın",
+        "description": "Preset: focus description"
+    },
+    "yUJ5MA": {
+        "message": "Hedefler",
+        "description": "Preset: goals"
     }
 }
