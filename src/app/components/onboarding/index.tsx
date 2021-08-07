@@ -3,6 +3,7 @@ import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 import Carousel from "../Carousel";
 import Modal from "../Modal";
+import OnboardingHelp from "./OnboardingHelp";
 import OnboardingPresets, { presets } from "./OnboardingPresets";
 import OnboardingWelcome from "./OnboardingWelcome";
 
@@ -16,13 +17,19 @@ const messages = defineMessages({
 
 interface OnboardingProps {
 	isOpen: boolean;
-	manager: WidgetManager;
 	onClose: () => void;
+
+	locale: string;
+	setLocale: (locale: string) => void;
+	manager: WidgetManager;
 }
 
 export interface OnboardingPageProps {
-	manager: WidgetManager;
 	onDone: () => void;
+
+	locale: string;
+	setLocale: (locale: string) => void;
+	manager: WidgetManager;
 }
 
 
@@ -34,12 +41,18 @@ export default function Onboarding(props: OnboardingProps) {
 		props.onClose();
 	}
 
+	const pageProps = {
+		...props,
+		onDone: props.onClose,
+	};
+
 	return (
 		<Modal title={intl.formatMessage(messages.title)} {...props}
-				onClose={applyGridPreset}>
+				onClose={undefined}>
 			<Carousel>
-				<OnboardingWelcome />
-				<OnboardingPresets onDone={props.onClose} manager={props.manager} />
+				<OnboardingWelcome {...pageProps} />
+				<OnboardingHelp />
+				<OnboardingPresets {...pageProps} />
 			</Carousel>
 		</Modal>);
 }

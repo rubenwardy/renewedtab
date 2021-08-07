@@ -72,6 +72,7 @@ export default function App() {
 					<Onboarding
 							isOpen={onboardingIsOpen}
 							onClose={onboardingForceUpdate}
+							locale={locale} setLocale={setLocale}
 							manager={widgetManager} />)}
 				<ReviewRequester />
 

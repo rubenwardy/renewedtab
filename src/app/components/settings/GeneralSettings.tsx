@@ -57,6 +57,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 			</h2>
 			<div className="field">
 				<label htmlFor="locale">
+					<i className="fas fa-language mr-2" />
 					<FormattedMessage defaultMessage="Language" />
 				</label>
 				<select value={props.locale} onChange={onLocaleChange}>

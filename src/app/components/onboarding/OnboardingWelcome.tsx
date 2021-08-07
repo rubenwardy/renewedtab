@@ -1,32 +1,56 @@
-import React from "react";
+import { getLanguages } from "app/locale";
+import React, { ChangeEvent } from "react";
 import { FormattedMessage } from "react-intl";
+import { OnboardingPageProps } from ".";
 
-export default function OnboardingWelcome() {
+
+export default function OnboardingWelcome(props: OnboardingPageProps) {
+	function onLocaleChange(e: ChangeEvent<HTMLSelectElement>) {
+		const selectedIndex = e.target.options.selectedIndex;
+		const locale = e.target.options[selectedIndex].getAttribute("value");
+		if (locale) {
+			props.setLocale(locale);
+		}
+	}
+
 	return (
 		<div className="modal-body onboarding">
-			<div className="row row-gap my- features">
+			<div className="row row-gap features">
 				<div className="one-half">
-					<img className="w-100" src="onboarding_widgets.png" />
+					<img className="w-100" src="icon.svg" />
 				</div>
 				<div className="one-half">
-					<h3>
+					<p className="mt-0 mb-4">
 						<FormattedMessage
-							defaultMessage="Drag and Drop Widgets" />
-					</h3>
-					<p>
-						<FormattedMessage
-							defaultMessage=
-								"You can add, move, resize, and configure widgets on a grid using intuitive controls." />
+								defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+								values={{
+									a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
+								}} />
 					</p>
-					<p>
-						<FormattedMessage
-							defaultMessage=
-								"Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
-							values={{
-								move: () => <i className="fas fa-grip-vertical" />,
-								resize: () => <span className="fake-resizable-handle" />,
-							}} />
-					</p>
+					<div className="field mt-4">
+						<label htmlFor="locale">
+							<i className="fas fa-language mr-2" />
+							<FormattedMessage defaultMessage="Language" />
+						</label>
+						<select value={props.locale} onChange={onLocaleChange}>
+							{Object.entries(getLanguages()).map(([key, title]) =>
+								<option key={key} value={key}>{title}</option>)}
+						</select>
+						<p className="text-muted">
+							<FormattedMessage
+								defaultMessage="Translations are provided by the community."
+								values={{
+									a: (chunk: any) => (
+										<a href="https://renewedtab.com/translations/">{chunk}</a>)
+								}} /><br />
+							<FormattedMessage
+								defaultMessage="Consider <a>contributing or adding your language</a>."
+								values={{
+									a: (chunk: any) => (
+										<a href="https://renewedtab.com/translations/">{chunk}</a>)
+								}} />
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>);
