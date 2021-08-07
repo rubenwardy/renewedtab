@@ -5,7 +5,8 @@ import { OnboardingPageProps } from ".";
 
 
 interface Preset {
-	label: MessageDescriptor;
+	title: MessageDescriptor;
+	description: MessageDescriptor;
 	preview: string;
 	widgets: any[];
 }
@@ -22,7 +23,10 @@ function Preset(props: PresetProps) {
 					<img src={props.preview} />
 				</div>
 				<div className="preset-title">
-					<FormattedMessage {...props.label} />
+					<FormattedMessage {...props.title} />
+				</div>
+				<div className="preset-description">
+					<FormattedMessage {...props.description} />
 				</div>
 			</a>
 		</li>
@@ -32,20 +36,40 @@ function Preset(props: PresetProps) {
 
 export const presets: Preset[] = [
 	{
-		label: defineMessage({
+		title: defineMessage({
 			defaultMessage: "Focus",
 			description: "Preset: focus",
+		}),
+		description: defineMessage({
+			defaultMessage: "Start with a clock and a search bar",
+			description: "Preset: focus description",
 		}),
 		preview: "onboarding_preset_focus.png",
 		widgets: fromTypedJSON(require("./presets/focus.json")).widgets,
 	},
 	{
-		label: defineMessage({
+		title: defineMessage({
 			defaultMessage: "Grid",
 			description: "Preset: Grid",
 		}),
+		description: defineMessage({
+			defaultMessage: "Start with the news, weather, and more",
+			description: "Preset: grid description",
+		}),
 		preview: "onboarding_preset_grid.png",
 		widgets: fromTypedJSON(require("./presets/grid.json")).widgets,
+	},
+	{
+		title: defineMessage({
+			defaultMessage: "Goals",
+			description: "Preset: goals",
+		}),
+		description: defineMessage({
+			defaultMessage: "Start with daily goals and inspirational quotes",
+			description: "Preset: focus description",
+		}),
+		preview: "onboarding_preset_goals.png",
+		widgets: fromTypedJSON(require("./presets/goals.json")).widgets,
 	},
 ];
 
@@ -60,23 +84,17 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 		<div className="modal-body onboarding">
 			<h3>
 				<FormattedMessage
-					defaultMessage="Choose a Preset"
+					defaultMessage="Choose a Starting Point"
 					description="Onboarding: presets title" />
 			</h3>
 			<ul className="presets">
 				{presets.map(preset => (
-					<Preset key={(preset.label as any).id} {...preset}
+					<Preset key={(preset.title as any).id} {...preset}
 						onClick={() => applyPreset(preset)} />))}
 			</ul>
 			<p className="text-muted mt-4">
 				<FormattedMessage
-					defaultMessage="Presets only change the widgets you start with."
-					description="Onboarding: preset hint" />
-
-				&nbsp;
-
-				<FormattedMessage
-					defaultMessage="You can add (<add></add>) or remove (<remove></remove>) widgets afterwards, or change settings (<cog></cog>) as desired."
+					defaultMessage="You can add (<add></add>) or remove (<remove></remove>) widgets later, or change settings (<cog></cog>) as desired."
 					description="Onboarding: preset hint"
 					values={{
 						add: () => <i className="fas fa-plus" />,

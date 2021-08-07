@@ -19,19 +19,20 @@
 			}
 		},
 		{
-			"id": 2,
-			"type": "Greeting",
+			"id": 3,
+			"type": "Search",
 			"theme": {
-				"showPanelBG": false
+				"showPanelBG": true,
+				"useIconBar": false
 			},
 			"position": {
 				"__type__": "vec2",
-				"x": 0,
+				"x": 2,
 				"y": 2
 			},
 			"size": {
 				"__type__": "vec2",
-				"x": 15,
+				"x": 11,
 				"y": 1
 			}
 		}

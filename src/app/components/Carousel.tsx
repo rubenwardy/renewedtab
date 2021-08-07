@@ -39,8 +39,9 @@ export default function Carousel(props: CarouselProps) {
 			{props.children[page]}
 			<div className="modal-body row align-items-center mt-3">
 				<div className="col-2">
-					<Button variant={ButtonVariant.None} onClick={prevPage}
-						label={messages.previous} />
+					{page != 0 && (
+						<Button variant={ButtonVariant.None} onClick={prevPage}
+							label={messages.previous} />)}
 				</div>
 				<ul className="col text-center carousel">
 					{props.children.map((x, i) => (

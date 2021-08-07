@@ -1,0 +1,125 @@
+{
+	"widgets": [
+		{
+			"id": 7,
+			"type": "Invisible",
+			"theme": {
+				"showPanelBG": false
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 0
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 2
+			}
+		},
+		{
+			"id": 1,
+			"type": "Clock",
+			"theme": {
+				"showPanelBG": false,
+				"textColor": "#ffffff"
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 2
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 2
+			}
+		},
+		{
+			"id": 2,
+			"type": "Greeting",
+			"theme": {
+				"showPanelBG": false
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 4
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 1
+			}
+		},
+		{
+			"id": 6,
+			"type": "Invisible",
+			"theme": {
+				"showPanelBG": false
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 5
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 1
+			}
+		},
+		{
+			"id": 3,
+			"type": "DailyGoal",
+			"theme": {
+				"showPanelBG": false
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 6
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 1
+			}
+		},
+		{
+			"id": 5,
+			"type": "Invisible",
+			"theme": {
+				"showPanelBG": false
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 7
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 1
+			}
+		},
+		{
+			"id": 4,
+			"type": "Quotes",
+			"theme": {
+				"showPanelBG": false,
+				"textColor": "#ffffff"
+			},
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 8
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 2
+			}
+		}
+	]
+}

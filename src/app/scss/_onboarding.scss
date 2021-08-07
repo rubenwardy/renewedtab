@@ -67,7 +67,7 @@
 	margin: 0;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
 	min-width: 750px;
 
@@ -81,7 +81,6 @@
 		display: block;
 		border-radius: 0.25rem;
 		background: rgba(200, 200, 200, 0.05);
-		border: 1px solid #1e1e1e;
 		color: #eee;
 		overflow: hidden;
 		transition: transform 200ms ease;
@@ -94,7 +93,7 @@
 		}
 
 		.preset-preview {
-			padding-top: 61.8%;
+			padding-top: 56.25%;
 			position: relative;
 
 			img {
@@ -116,6 +115,14 @@
 			padding: 0.25rem 0.5rem;
 			text-align: center;
 			font-size: 120%;
+			color: white;
+		}
+
+		.preset-description {
+			padding: 0.25rem 0.5rem;
+			text-align: center;
+			font-size: 100%;
+			color: #999;
 		}
 	}
 }
