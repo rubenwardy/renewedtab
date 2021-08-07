@@ -198,5 +198,334 @@
     "adRrk3": {
         "message": "Alles zurücksetzen",
         "description": "Import / export settings, reset"
+    },
+    "VjDvbL": {
+        "message": "URL",
+        "description": "Form field label"
+    },
+    "WF5DKA": {
+        "message": "Alter",
+        "description": "Age widget"
+    },
+    "WKiXhX": {
+        "message": "Farbe",
+        "description": "Color background mode"
+    },
+    "WMNHPh": {
+        "message": "Samstag"
+    },
+    "Wi0G88": {
+        "message": "Über und Hilfe",
+        "description": "Settings tab"
+    },
+    "YS5zRT": {
+        "message": "Suche mit {name}",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "ShQneX": {
+        "message": "Text",
+        "description": "Form field label"
+    },
+    "T4VxQN": {
+        "message": "Lade…"
+    },
+    "TUnCKb": {
+        "message": "Text",
+        "description": "Text Widget"
+    },
+    "U2Qnh7": {
+        "message": "Bild",
+        "description": "Image background mode"
+    },
+    "Wv6Hyh": {
+        "message": "HilfeÜber",
+        "description": "HelpAbout Widget"
+    },
+    "dGu5JQ": {
+        "message": "Feed",
+        "description": "Feed Widget"
+    },
+    "dIwFS5": {
+        "message": "Wählen Sie ein Bild",
+        "description": "Form field label"
+    },
+    "dLthbh": {
+        "message": "Guten Morgen",
+        "description": "Greeting widget: greeting, before 12 noon"
+    },
+    "eXkpJi": {
+        "message": "Benutze Icon von Webseiten (favicons)",
+        "description": "Links widget: form field label"
+    },
+    "cSF2y1": {
+        "message": "Zeigt die Lesezeichen",
+        "description": "Bookmarks widget description"
+    },
+    "X5OoHJ": {
+        "message": "Was ist das Ziel für heute?",
+        "description": "Daily Goal prompt"
+    },
+    "XITVvp": {
+        "message": "Zeige Elementhintergrund"
+    },
+    "Z2/hH0": {
+        "message": "Bild: {filename}"
+    },
+    "amHvKE": {
+        "message": "Notizen hier eingeben",
+        "description": "Notes widget: prompt"
+    },
+    "JzanJ8": {
+        "message": "Gitter Spalten",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "PM6qZ7": {
+        "message": "Zeige Sekunden"
+    },
+    "PYJFvz": {
+        "message": "Kategorien",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "QrihTZ": {
+        "message": "Freitag"
+    },
+    "QqE4JC": {
+        "message": "Fehlende Feed URL."
+    },
+    "azMsfM": {
+        "message": "Montag"
+    },
+    "bN0iM4": {
+        "message": "Fehler gefunden oder eine Anregung?"
+    },
+    "ba9jts": {
+        "message": "Zeigt einen Atom oder RSS Feed",
+        "description": "Feed widget description"
+    },
+    "cL6y1P": {
+        "message": "URL zu einem Atom oder RSS Feed",
+        "description": "Form field hint (Feed URL)"
+    },
+    "egigiF": {
+        "message": "Danke an Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live für ihre Anwendungsschnittstellen."
+    },
+    "OQHLB5": {
+        "message": "Farbe",
+        "description": "Form field label"
+    },
+    "QcExtH": {
+        "message": "Datenschutzerkärung",
+        "description": "General settings: privacy policy button"
+    },
+    "RZqASt": {
+        "message": "Eine einzige Farbe",
+        "description": "Backgroud mode description"
+    },
+    "SAo61B": {
+        "message": "Lesezeichen",
+        "description": "Bookmarks Widget"
+    },
+    "VGhm86": {
+        "message": "Kurz",
+        "description": "Clock widget: date style type"
+    },
+    "VPDVTF": {
+        "message": "Nichts hier",
+        "description": "Shown when array table form field has no rows"
+    },
+    "X18x9m": {
+        "message": "Generell",
+        "description": "Settings tab"
+    },
+    "XrQEPN": {
+        "message": "Ort",
+        "description": "Form field label"
+    },
+    "XsTD4Q": {
+        "message": "ToDo Liste",
+        "description": "Todo List Widget"
+    },
+    "YAgYL6": {
+        "message": "Dienstag"
+    },
+    "ZRWjTk": {
+        "message": "Benutze die Standardsuchmaschine des Browsers",
+        "description": "Search widget: form field label"
+    },
+    "ZZIlU9": {
+        "message": "Tägliches Ziel",
+        "description": "Daily Goal Widget"
+    },
+    "ZduoYO": {
+        "message": "Hilfe für neue Benutzer von Renewed Tab",
+        "description": "HelpAbout widget description"
+    },
+    "a09vzt": {
+        "message": "HTTP Anfrage gescheitert, {code} {msg}."
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "I48yxw": {
+        "message": "Datenschutz",
+        "description": "General settings: privacy"
+    },
+    "IqLwUL": {
+        "message": "Gitterabstände",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "JihbEV": {
+        "message": "CSS Dokumentation",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "KhM0zv": {
+        "message": "Zitate kommen von externen Quellen und werden nicht von Renewed Tab überprüft.",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "OBJta4": {
+        "message": "Der Name kann durch klicken auf das Widget geändert werden",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "SQJLG3": {
+        "message": "Klicken Sie \"Widget hinzufügen\" am unteren ende des Bildschirms um ein Widget hinzuzufügen."
+    },
+    "V1EIOe": {
+        "message": "Zeigt eine Webseite",
+        "description": "IFrame widget description"
+    },
+    "ZUZeuR": {
+        "message": "Zeigt eine Nachricht",
+        "description": "Text widget description"
+    },
+    "aaxFkJ": {
+        "message": "Erstelle eine neue Aufgabe",
+        "description": "Todo List widget: prompt"
+    },
+    "ao/AFQ": {
+        "message": "Erinnert an ein Ziel für den Tag",
+        "description": "Daily Goal widget description"
+    },
+    "as6rZ1": {
+        "message": "Aktiviere Absturzberichte (mittels Sentry)",
+        "description": "General settings: enable sentry"
+    },
+    "fWK68w": {
+        "message": "Schriftart",
+        "description": "Theme settings: form field label"
+    },
+    "fz43UJ": {
+        "message": "Spenden",
+        "description": "Renewed Tab donation link"
+    },
+    "gEYo49": {
+        "message": "Position",
+        "description": "Backgroud settings: form field label"
+    },
+    "gSjZfg": {
+        "message": "Links",
+        "description": "Links Widget"
+    },
+    "hZZSzJ": {
+        "message": "Bereitgestellt durch RocketLaunch.Live",
+        "description": "SpaceFlights widget: edit modal hint"
+    },
+    "WQeyl4": {
+        "message": "Erlaubnis erteilen, auf die Lesezeichen zuzugreifen"
+    },
+    "WZjKFf": {
+        "message": "Achtung: dies kann personenbezogene Daten enthalten, wenn welche in die Widgeteinstellungen eingetragen wurden."
+    },
+    "Ibm90j": {
+        "message": "Die Zeit wird auf Basis der Systemzeitzone angezeigt. Falls die Zeit falsch ist, stellen sie sicher, dass die Zeitzone korrekt in den Computer- und Browsereinstellungen gesetzt ist.",
+        "description": "Clock widget: edit hint"
+    },
+    "T/wBPw": {
+        "message": "Entferne {type}"
+    },
+    "TkgCJ9": {
+        "message": "Sie können Hilfe bekommen oder eine Funktion vorschlagen unter dem nachfolgenden Link."
+    },
+    "iH2AHA": {
+        "message": "<a>Quellenoffen</a>, lizensiert unter GPLv3+."
+    },
+    "cR7nCG": {
+        "message": "Setze Thema auf Standard zurück"
+    },
+    "6MDM6D": {
+        "message": "Zitate",
+        "description": "Quotes Widget"
+    },
+    "N3HgMZ": {
+        "message": "Schauen sie auch nach den Einstellungen. (das Zahnrad)."
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> an {latitude} und {longitude}"
+    },
+    "GcxpZV": {
+        "message": "Datumsstil",
+        "description": "Clock widget: date style form field label"
+    },
+    "Q1mwPp": {
+        "message": "Überlegen sie sich <a>ihre Sprache zu verbessern oder hinzuzufügen</a>."
+    },
+    "Rw51mJ": {
+        "message": "Zur Verfügung gestellt durch <a>OpenStreetMap</a>."
+    },
+    "S3njcM": {
+        "message": "IFrame",
+        "description": "IFrame Widget"
+    },
+    "/LQ9WU": {
+        "message": "Mittel",
+        "description": "Clock widget: date style type"
+    },
+    "56hSCM": {
+        "message": "Lang",
+        "description": "Clock widget: date style type"
+    },
+    "Mihrhf": {
+        "message": "Keins",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "bQFsdR": {
+        "message": "Erteile Erlaubnis auf {host} zuzugreifen"
+    },
+    "QBZZBG": {
+        "message": "Bitte beachten: dies ist ein experimentelles Feature und CSS Selektoren können sich in zukünftigen Releases ändern.",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "SG4UJU": {
+        "message": "Knopf",
+        "description": "Button Widget"
+    },
+    "VxE3S8": {
+        "message": "Dies wird die URL automatisch an die Renewed Tab Entwickler senden. Die können sich dann entscheiden es zu den Vorschlägen für alle Benutzer hinzuzufügen.",
+        "description": "Host URL field: help text for suggest URL button"
+    },
+    "Z79HMN": {
+        "message": "Zufällige kuratierte Hintergründe",
+        "description": "Backgroud mode description"
+    },
+    "h/ftND": {
+        "message": "Wählen sie eine Datei"
+    },
+    "hktZIl": {
+        "message": "Zeigt die Zeit"
+    },
+    "ekIjqh": {
+        "message": "Erteile Erlaubnis auf alle Webseiten zuzugreifen"
+    },
+    "5mVcg9": {
+        "message": "Eigenes CSS",
+        "description": "Theme settings: form field label"
+    },
+    "7bfD9/": {
+        "message": "Vorschlag die URL zu den standard Vorschlägen hinzuzufügen",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "Bl74xq": {
+        "message": "Ein Link Knopf",
+        "description": "Button widget description"
     }
 }
