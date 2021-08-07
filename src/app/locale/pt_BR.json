@@ -55,7 +55,7 @@
         "description": "Location form field: error"
     },
     "27lljH": {
-        "message": "Sua idade <b>{idade}</b>",
+        "message": "Sua idade <b>{age}</b>",
         "description": "Age widget text"
     },
     "3ZfhWo": {
@@ -107,7 +107,7 @@
         "description": "Preset: focus description"
     },
     "8J0Bhj": {
-        "message": "Bem-vindo à <a> Guia renovada </a>: uma página nova guia personalizável, com widgets e belos planos de fundo."
+        "message": "Bem-vindo à <a>Renewed Tab</a>: uma página nova guia personalizável, com widgets e belos planos de fundo."
     },
     "8xVVb5": {
         "message": "Cor Primaria",
@@ -154,7 +154,7 @@
         "message": "Configurações"
     },
     "D4M6tn": {
-        "message": "Bem-vindo à guia renovada",
+        "message": "Bem-vindo à Renewed Tab",
         "description": "Onboarding modal: title"
     },
     "GXkv/F": {
@@ -166,7 +166,7 @@
         "description": "Web Comic widget description"
     },
     "Dk7Khi": {
-        "message": "",
+        "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
     },
     "FEUbOi": {
@@ -425,7 +425,7 @@
         "description": "HTML widget: form field label"
     },
     "Z2/hH0": {
-        "message": "Imagem: {nome do arquivo}"
+        "message": "Imagem: {filename}"
     },
     "ZRWjTk": {
         "message": "Use o mecanismo de pesquisa padrão do navegador",
@@ -833,7 +833,7 @@
         "message": "Agradecimentos a Font-Awesome para ícones, React for UI e WebPack para builds."
     },
     "ubO4zt": {
-        "message": "",
+        "message": "Web Comic",
         "description": "Web Comic Widget"
     },
     "xy7dL3": {
