@@ -61,5 +61,9 @@
     },
     "2/2yg+": {
         "message": "Añadir"
+    },
+    "+GMx80": {
+        "message": "No se encontraron ubicaciones",
+        "description": "Location form field: error"
     }
 }
