@@ -5,9 +5,9 @@ type Translation = Record<string, MessageFormatElement[]>;
 
 const locales : { [key: string]: Translation } = {
 	"en": require("./compiled/en.json"),
-	// "es": require("./compiled/es.json"),
-	// "de": require("./compiled/de.json"),
 	"ms": require("./compiled/ms.json"),
+	"pt": require("./compiled/pt.json"),
+	"pt-br": require("./compiled/pt_BR.json"),
 	"tr": require("./compiled/tr.json"),
 };
 
@@ -70,7 +70,7 @@ export function getUserLocale(): string {
 
 	// Find exact matches, eg: es-mx
 	for (const lang of langs) {
-		if (locales[lang]) {
+		if (locales[lang.toLowerCase()]) {
 			return lang;
 		}
 	}
@@ -78,7 +78,7 @@ export function getUserLocale(): string {
 	// Find matches to canonical language, eg: es-mx -> es
 	for (const lang of langs) {
 		const idx = lang.indexOf("-");
-		if (idx && locales[lang.substring(0, idx)]) {
+		if (idx && locales[lang.substring(0, idx).toLowerCase()]) {
 			return lang;
 		}
 	}
