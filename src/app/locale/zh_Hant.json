@@ -1,0 +1,228 @@
+{
+    "2efE5y": {
+        "message": "您好",
+        "description": "Greeting Widget"
+    },
+    "3/EBw0": {
+        "message": "網站",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "搜尋引擎名稱",
+        "description": "Search widget: form field label"
+    },
+    "3ZfhWo": {
+        "message": "需要額外授權以訪問 {host}。編輯這個部件以授權。"
+    },
+    "3aaibf": {
+        "message": "加入部件"
+    },
+    "4UpnpD": {
+        "message": "圖片會被保存在您的瀏覽器中，永遠不會被上載",
+        "description": "Form field hint (Image)"
+    },
+    "4syC1B": {
+        "message": "幫助和請求"
+    },
+    "5DCxT+": {
+        "message": "溫度部件",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "自定CSS",
+        "description": "Theme settings: form field label"
+    },
+    "6MDM6D": {
+        "message": "每日一句",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "無法得知書籤",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "圖片",
+        "description": "Image Widget"
+    },
+    "8J0Bhj": {
+        "message": "歡迎來到 <a>Renewed Tab</a>：一個可自定的新分頁頁面，擁有小工具和美麗的背景。"
+    },
+    "8xVVb5": {
+        "message": "主要顏色",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "這個部件只在瀏覽器版中提供。"
+    },
+    "Bl74xq": {
+        "message": "一個連結按鍵",
+        "description": "Button widget description"
+    },
+    "CmRs9p": {
+        "message": "搜尋",
+        "description": "Search Widget"
+    },
+    "CshCZY": {
+        "message": "背景種類"
+    },
+    "D3idYv": {
+        "message": "設定"
+    },
+    "FpOu7z": {
+        "message": "如果要移動、編輯或移除一個部件，使用在左上角的功能條。如果要更改大小，使用在右下角的拖動按鍵。"
+    },
+    "G6WG/N": {
+        "message": "佔位符",
+        "description": "Invisible Widget"
+    },
+    "GSox4d": {
+        "message": "任何已在電腦上安裝的字形",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "GWRKVT": {
+        "message": "字體顏色",
+        "description": "Form field label"
+    },
+    "GXkv/F": {
+        "message": "請選擇一個地點",
+        "description": "Location form field: prompt"
+    },
+    "GqPEp+": {
+        "message": "需要瀏覽器附加套件版"
+    },
+    "H00a0q": {
+        "message": "留空以制作標題",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "I48yxw": {
+        "message": "私隱",
+        "description": "General settings: privacy"
+    },
+    "IhKDXS": {
+        "message": "允許",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "J91edI": {
+        "message": "匯入/匯出",
+        "description": "Settings tab"
+    },
+    "JihbEV": {
+        "message": "CSS文檔",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "JvOSvX": {
+        "message": "背景",
+        "description": "Settings tab"
+    },
+    "K8s82y": {
+        "message": "生日",
+        "description": "Age widget: form field label"
+    },
+    "Kzo9ZH": {
+        "message": "圖片網址",
+        "description": "Form field label"
+    },
+    "Lxc1x4": {
+        "message": "時鍾",
+        "description": "Clock Widget"
+    },
+    "N/7Stk": {
+        "message": "由 <a>rubenwardy</a> 建立。"
+    },
+    "18X7au": {
+        "message": "午安",
+        "description": "Greeting widget: greeting, from 12 noon to 4pm"
+    },
+    "3vh5vd": {
+        "message": "不顯示任何東西，適合作爲排版用部件",
+        "description": "Invisible widget description"
+    },
+    "47FYwb": {
+        "message": "取消"
+    },
+    "4F+2K3": {
+        "message": "從Unsplash中隨機選出一張圖片",
+        "description": "Backgroud mode description"
+    },
+    "7RSFb4": {
+        "message": "Renewed Tab 幫助和提示",
+        "description": "HelpAbout widget heading"
+    },
+    "D0+wcK": {
+        "message": "顯示一個圖片，並（可選的）把它變成一個連結",
+        "description": "Image widget description"
+    },
+    "Dk7Khi": {
+        "message": "華氏",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "FHzdXg": {
+        "message": "以下設定是<b>實驗性的</b>；意味着您可能在修改他們時遇到臭蟲和奇怪的事情，也可能因升級而破壞您的主題。",
+        "description": "Theme settings"
+    },
+    "K3r6DQ": {
+        "message": "刪除"
+    },
+    "KhM0zv": {
+        "message": "每日一句由第三方提供，並未被 Renewed Tab 團隊審核。",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "+GMx80": {
+        "message": "找不到地點",
+        "description": "Location form field: error"
+    },
+    "/dtDqf": {
+        "message": "筆記",
+        "description": "Notes Widget"
+    },
+    "/iBdV1": {
+        "message": "點擊元件以編輯",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "0feb3b": {
+        "message": "可選，把圖像變成一個連結",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "圖示",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "加入"
+    },
+    "27lljH": {
+        "message": "你<b>{age}</b>歲了",
+        "description": "Age widget text"
+    },
+    "2VPa4j": {
+        "message": "英文",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "56hSCM": {
+        "message": "長",
+        "description": "Clock widget: date style type"
+    },
+    "GcxpZV": {
+        "message": "資料形態",
+        "description": "Clock widget: date style form field label"
+    },
+    "Mihrhf": {
+        "message": "沒有",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "OBJta4": {
+        "message": "您可以通過點擊這個部件來更改您的名稱",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "OQHLB5": {
+        "message": "顏色",
+        "description": "Form field label"
+    },
+    "PM6qZ7": {
+        "message": "顯示秒"
+    },
+    "PYJFvz": {
+        "message": "分類",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    }
+}
