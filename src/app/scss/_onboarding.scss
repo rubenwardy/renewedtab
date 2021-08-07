@@ -17,13 +17,15 @@
 
 		&.active {
 			background-color: rgba(255, 255, 255, 0.6);
-			transform: scale(1.1, 1.1);
+			transform: scale(1.2, 1.2);
 		}
 	}
 }
 
 .onboarding {
 	&.modal-body {
+		min-height: 355px;
+
 		h3 {
 			font-size: 140%;
 			font-weight: bold;
@@ -33,6 +35,15 @@
 			font-size: 130%;
 			line-height: 1.2;
 		}
+	}
+
+	.features {
+		min-height: 355px;
+	}
+
+	.features .icon {
+		background: rgba(200, 200, 200, 0.03);
+		border-radius: 0.25rem;
 	}
 
 	.features h3 {

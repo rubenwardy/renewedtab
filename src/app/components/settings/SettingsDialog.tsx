@@ -88,7 +88,8 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 	const Tab = getComponentForTab(currentTab);
 
 	return (
-		<Modal title={intl.formatMessage({ defaultMessage: "Settings "})} {...props}>
+		<Modal title={intl.formatMessage({ defaultMessage: "Settings "})}
+				wide={true} {...props}>
 			<div className="modal-flex">
 				<nav>
 					{tabs}

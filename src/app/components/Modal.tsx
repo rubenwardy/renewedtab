@@ -1,3 +1,4 @@
+import { mergeClasses } from "app/utils";
 import React, { CSSProperties, ReactNode, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -7,6 +8,7 @@ export interface ModalProps {
 	onClose?: () => void;
 	children: ReactNode[] | ReactNode;
 	lighterBg?: boolean;
+	wide?: boolean;
 }
 
 export default function Modal(props: ModalProps) {
@@ -50,12 +52,14 @@ export default function Modal(props: ModalProps) {
 		setDidClickBegin(false);
 	}
 
-	const bgClasses = "modal-bg " + (props.lighterBg ? "modal-bg-lighter" : "");
+	const bgClasses = mergeClasses("modal-bg",
+		props.lighterBg && "modal-bg-lighter");
 
 	return ReactDOM.createPortal((
 		<aside className={bgClasses} onMouseDown={handleMouseDown}
 				onMouseUp={handleMouseUp} style={style}>
-			<div className="panel flush modal"
+			<div className={mergeClasses("panel flush modal",
+						props.wide === true && "modal-wide")}
 					onMouseDown={(e) => e.stopPropagation()}
 					onMouseUp={(e) => e.stopPropagation()}>
 				<h2 className="modal-header">

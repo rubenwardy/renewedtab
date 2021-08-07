@@ -36,6 +36,8 @@ export interface OnboardingPageProps {
 export default function Onboarding(props: OnboardingProps) {
 	const intl = useIntl();
 
+	// TODO: decide whether it should be possible to skip onboarding
+	// eslint-disable-next-line  @typescript-eslint/no-unused-vars
 	function applyGridPreset() {
 		props.manager.createFromArray(presets[1].widgets);
 		props.onClose();
@@ -48,7 +50,7 @@ export default function Onboarding(props: OnboardingProps) {
 
 	return (
 		<Modal title={intl.formatMessage(messages.title)} {...props}
-				onClose={undefined}>
+				wide={true} onClose={undefined}>
 			<Carousel>
 				<OnboardingWelcome {...pageProps} />
 				<OnboardingHelp />

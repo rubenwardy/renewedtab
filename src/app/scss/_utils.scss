@@ -2,6 +2,10 @@
 	width: 100% !important;
 }
 
+.w-50 {
+	width: 50% !important;
+}
+
 .ml-0, .mx-0 {
 	margin-left: 0 !important;
 }
@@ -58,7 +62,7 @@
 }
 
 
-.mb-0 {
+.mb-0, .my-0 {
 	margin-bottom: 0 !important;
 }
 
@@ -128,6 +132,10 @@
 	height: 100%;
 }
 
+.row > .middle-center, .row > .vertical-middle {
+	height: auto;
+}
+
 .clear-both {
 	clear: both;
 }
@@ -146,6 +154,10 @@
 
 .row-gap {
 	gap: 2rem;
+}
+
+.row-vertical {
+	flex-direction: column;
 }
 
 .col {

@@ -16,40 +16,42 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 	return (
 		<div className="modal-body onboarding">
 			<div className="row row-gap features">
-				<div className="one-half">
-					<img className="w-100" src="icon.svg" />
+				<div className="one-half middle-center iconx">
+					<img className="w-50" src="icon.svg" />
 				</div>
-				<div className="one-half">
-					<p className="mt-0 mb-4">
-						<FormattedMessage
-								defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
-								values={{
-									a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
-								}} />
-					</p>
-					<div className="field mt-4">
-						<label htmlFor="locale">
-							<i className="fas fa-language mr-2" />
-							<FormattedMessage defaultMessage="Language" />
-						</label>
-						<select value={props.locale} onChange={onLocaleChange}>
-							{Object.entries(getLanguages()).map(([key, title]) =>
-								<option key={key} value={key}>{title}</option>)}
-						</select>
-						<p className="text-muted">
+				<div className="one-half middle-center">
+					<div>
+						<p className="mt-0 mb-4">
 							<FormattedMessage
-								defaultMessage="Translations are provided by the community."
-								values={{
-									a: (chunk: any) => (
-										<a href="https://renewedtab.com/translations/">{chunk}</a>)
-								}} /><br />
-							<FormattedMessage
-								defaultMessage="Consider <a>contributing or adding your language</a>."
-								values={{
-									a: (chunk: any) => (
-										<a href="https://renewedtab.com/translations/">{chunk}</a>)
-								}} />
+									defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+									values={{
+										a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
+									}} />
 						</p>
+						<div className="field mt-4">
+							<label htmlFor="locale">
+								<i className="fas fa-language mr-2" />
+								<FormattedMessage defaultMessage="Language" />
+							</label>
+							<select value={props.locale} onChange={onLocaleChange}>
+								{Object.entries(getLanguages()).map(([key, title]) =>
+									<option key={key} value={key}>{title}</option>)}
+							</select>
+							<p className="text-muted">
+								<FormattedMessage
+									defaultMessage="Translations are provided by the community."
+									values={{
+										a: (chunk: any) => (
+											<a href="https://renewedtab.com/translations/">{chunk}</a>)
+									}} /><br />
+								<FormattedMessage
+									defaultMessage="Consider <a>contributing or adding your language</a>."
+									values={{
+										a: (chunk: any) => (
+											<a href="https://renewedtab.com/translations/">{chunk}</a>)
+									}} />
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
