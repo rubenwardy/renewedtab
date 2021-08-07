@@ -68,9 +68,6 @@
     "D3idYv": {
         "message": "設定"
     },
-    "FpOu7z": {
-        "message": "如果要移動、編輯或移除一個部件，使用在左上角的功能條。如果要更改大小，使用在右下角的拖動按鍵。"
-    },
     "G6WG/N": {
         "message": "佔位符",
         "description": "Invisible Widget"
@@ -143,10 +140,6 @@
     "4F+2K3": {
         "message": "從Unsplash中隨機選出一張圖片",
         "description": "Backgroud mode description"
-    },
-    "7RSFb4": {
-        "message": "Renewed Tab 幫助和提示",
-        "description": "HelpAbout widget heading"
     },
     "D0+wcK": {
         "message": "顯示一個圖片，並（可選的）把它變成一個連結",

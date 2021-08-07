@@ -224,10 +224,6 @@
         "message": "Nombre de colonnes dans la grille de widgets. Chaque colonne mesure environ 50 pixels, plus l'espacement. Donc avec un espacement de 15 pixels, le maximum d'une fenêtre 1080p devrait être de 30 colonnes.",
         "description": "Widget grid: form hint for grid columns"
     },
-    "ZduoYO": {
-        "message": "Aide pour les nouveaux utilisateurs de Renewed Tab",
-        "description": "HelpAbout widget description"
-    },
     "Kzo9ZH": {
         "message": "URL de l'image",
         "description": "Form field label"
@@ -272,9 +268,6 @@
     "QqE4JC": {
         "message": "URL de flux manquante."
     },
-    "N3HgMZ": {
-        "message": "Jetez également un œil aux paramètres (roue dentelée)."
-    },
     "ShQneX": {
         "message": "Texte",
         "description": "Form field label"
@@ -310,9 +303,6 @@
     "SG4UJU": {
         "message": "Bouton",
         "description": "Button Widget"
-    },
-    "SQJLG3": {
-        "message": "Cliquez sur \"Ajouter un widget\" en bas de l'écran pour ajouter un widget."
     },
     "TkgCJ9": {
         "message": "Vous pouvez obtenir de l'aide ou demander une fonctionnalité en utilisant le lien ci-dessous."
@@ -358,10 +348,6 @@
     "Wi0G88": {
         "message": "À propos et aide",
         "description": "Settings tab"
-    },
-    "Wv6Hyh": {
-        "message": "Aide sur",
-        "description": "HelpAbout Widget"
     },
     "X18x9m": {
         "message": "Général",
@@ -476,9 +462,6 @@
     },
     "ekIjqh": {
         "message": "Accorder l'autorisation d'accéder à tous les sites Web"
-    },
-    "bN0iM4": {
-        "message": "Vous avez trouvé un bug ou vous avez une demande ?"
     },
     "ekW/+6": {
         "message": "Connexion Internet impossible"

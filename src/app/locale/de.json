@@ -237,10 +237,6 @@
         "message": "Bild",
         "description": "Image background mode"
     },
-    "Wv6Hyh": {
-        "message": "HilfeÜber",
-        "description": "HelpAbout Widget"
-    },
     "dGu5JQ": {
         "message": "Feed",
         "description": "Feed Widget"
@@ -294,9 +290,6 @@
     },
     "azMsfM": {
         "message": "Montag"
-    },
-    "bN0iM4": {
-        "message": "Fehler gefunden oder eine Anregung?"
     },
     "ba9jts": {
         "message": "Zeigt einen Atom oder RSS Feed",
@@ -356,10 +349,6 @@
         "message": "Tägliches Ziel",
         "description": "Daily Goal Widget"
     },
-    "ZduoYO": {
-        "message": "Hilfe für neue Benutzer von Renewed Tab",
-        "description": "HelpAbout widget description"
-    },
     "a09vzt": {
         "message": "HTTP Anfrage gescheitert, {code} {msg}."
     },
@@ -386,9 +375,6 @@
     "OBJta4": {
         "message": "Der Name kann durch klicken auf das Widget geändert werden",
         "description": "Greeting widget: edit modal hint"
-    },
-    "SQJLG3": {
-        "message": "Klicken Sie \"Widget hinzufügen\" am unteren ende des Bildschirms um ein Widget hinzuzufügen."
     },
     "V1EIOe": {
         "message": "Zeigt eine Webseite",
@@ -455,9 +441,6 @@
     "6MDM6D": {
         "message": "Zitate",
         "description": "Quotes Widget"
-    },
-    "N3HgMZ": {
-        "message": "Schauen sie auch nach den Einstellungen. (das Zahnrad)."
     },
     "KsX2fE": {
         "message": "<b>{name}</b> an {latitude} und {longitude}"
