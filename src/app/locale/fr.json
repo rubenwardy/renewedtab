@@ -1,6 +1,6 @@
 {
     "+GMx80": {
-        "message": "Aucune positions trouvée",
+        "message": "Aucune position trouvée",
         "description": "Location form field: error"
     },
     "/LQ9WU": {
@@ -24,7 +24,7 @@
         "description": "Form field label"
     },
     "18X7au": {
-        "message": "Bonne après-midi",
+        "message": "Bon après-midi",
         "description": "Greeting widget: greeting, from 12 noon to 4pm"
     },
     "1s5GYl": {
@@ -43,7 +43,7 @@
         "description": "The name of the current language, to be used in the settings dialog"
     },
     "2efE5y": {
-        "message": "Salutation",
+        "message": "Salutations",
         "description": "Greeting Widget"
     },
     "3/EBw0": {
@@ -69,7 +69,7 @@
         "description": "Backgroud mode description"
     },
     "4UpnpD": {
-        "message": "Les images sont stockées localement sur votre navigateur, et jamais importées",
+        "message": "Les images sont stockées localement sur votre navigateur, et jamais téléversées",
         "description": "Form field hint (Image)"
     },
     "4syC1B": {
@@ -107,7 +107,7 @@
         "description": "Image Widget"
     },
     "8J0Bhj": {
-        "message": "<a>Renewed Tab</a> : une page de démarrage personnalisable avec des widgets et de magnifiques fonds d'écran."
+        "message": "Bienvenue à <a>Renewed Tab</a>  : une page Nouvel onglet personnalisable avec des widgets et de magnifiques fonds d'écran."
     },
     "8xVVb5": {
         "message": "Couleur principale",
@@ -211,5 +211,314 @@
     "KhM0zv": {
         "message": "Les citations proviennent de sources externes, et ne sont pas revues par Renewed Tab.",
         "description": "Daily Goal widget: edit modal hint"
+    },
+    "OBJta4": {
+        "message": "Vous pouvez changer le nom en le cliquant dans le widget",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "Z79HMN": {
+        "message": "Arrière-plans choisis au hasard",
+        "description": "Backgroud mode description"
+    },
+    "Q5Myqt": {
+        "message": "Nombre de colonnes dans la grille de widgets. Chaque colonne mesure environ 50 pixels, plus l'espacement. Donc avec un espacement de 15 pixels, le maximum d'une fenêtre 1080p devrait être de 30 colonnes.",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "ZduoYO": {
+        "message": "Aide pour les nouveaux utilisateurs de Renewed Tab",
+        "description": "HelpAbout widget description"
+    },
+    "Kzo9ZH": {
+        "message": "URL de l'image",
+        "description": "Form field label"
+    },
+    "KyDwm3": {
+        "message": "Affiche les meilleurs sites",
+        "description": "Top Sites widget: description"
+    },
+    "Lxc1x4": {
+        "message": "Horloge",
+        "description": "Clock Widget"
+    },
+    "Mihrhf": {
+        "message": "Aucun",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "N/7Stk": {
+        "message": "Créé par <a>rubenwardy</a>."
+    },
+    "LfHpBk": {
+        "message": "Mise à l'échelle des polices",
+        "description": "Theme settings: form field label"
+    },
+    "OQHLB5": {
+        "message": "Couleur",
+        "description": "Form field label"
+    },
+    "PM6qZ7": {
+        "message": "Afficher les secondes"
+    },
+    "PYJFvz": {
+        "message": "Catégories",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "Q1mwPp": {
+        "message": "Envisagez de <a>contribuer ou d'ajouter votre langue</a>."
+    },
+    "QBZZBG": {
+        "message": "Remarque : il s'agit d'une fonctionnalité expérimentale et les sélecteurs CSS peuvent se briser dans les prochaines versions.",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "QqE4JC": {
+        "message": "URL de flux manquante."
+    },
+    "N3HgMZ": {
+        "message": "Jetez également un œil aux paramètres (roue dentelée)."
+    },
+    "ShQneX": {
+        "message": "Texte",
+        "description": "Form field label"
+    },
+    "T/wBPw": {
+        "message": "Supprimer {type}"
+    },
+    "RZqASt": {
+        "message": "Une seule couleur",
+        "description": "Backgroud mode description"
+    },
+    "T4VxQN": {
+        "message": "Chargement…"
+    },
+    "TUnCKb": {
+        "message": "Texte",
+        "description": "Text Widget"
+    },
+    "QrihTZ": {
+        "message": "vendredi"
+    },
+    "Rw51mJ": {
+        "message": "Propulsé par <a>OpenStreetMap</a>."
+    },
+    "S3njcM": {
+        "message": "IFrame",
+        "description": "IFrame Widget"
+    },
+    "SAo61B": {
+        "message": "Favoris",
+        "description": "Bookmarks Widget"
+    },
+    "SG4UJU": {
+        "message": "Bouton",
+        "description": "Button Widget"
+    },
+    "SQJLG3": {
+        "message": "Cliquez sur \"Ajouter un widget\" en bas de l'écran pour ajouter un widget."
+    },
+    "TkgCJ9": {
+        "message": "Vous pouvez obtenir de l'aide ou demander une fonctionnalité en utilisant le lien ci-dessous."
+    },
+    "U2Qnh7": {
+        "message": "Image",
+        "description": "Image background mode"
+    },
+    "V1EIOe": {
+        "message": "Affiche une page Web",
+        "description": "IFrame widget description"
+    },
+    "VGhm86": {
+        "message": "Court",
+        "description": "Clock widget: date style type"
+    },
+    "VPDVTF": {
+        "message": "Rien ici",
+        "description": "Shown when array table form field has no rows"
+    },
+    "VjDvbL": {
+        "message": "URL",
+        "description": "Form field label"
+    },
+    "VkW6D1": {
+        "message": "centre, haut ou bas",
+        "description": "Backgroud settings: form field hint (Position)"
+    },
+    "WF5DKA": {
+        "message": "Âge",
+        "description": "Age widget"
+    },
+    "WKiXhX": {
+        "message": "Couleur",
+        "description": "Color background mode"
+    },
+    "WMNHPh": {
+        "message": "samedi"
+    },
+    "WZjKFf": {
+        "message": "Attention : cela peut contenir des données personnelles, si elles ont été saisies dans les paramètres du widget."
+    },
+    "Wi0G88": {
+        "message": "À propos et aide",
+        "description": "Settings tab"
+    },
+    "Wv6Hyh": {
+        "message": "Aide sur",
+        "description": "HelpAbout Widget"
+    },
+    "X18x9m": {
+        "message": "Général",
+        "description": "Settings tab"
+    },
+    "WQeyl4": {
+        "message": "Accorder l'autorisation d'accéder aux favoris"
+    },
+    "XrQEPN": {
+        "message": "Position",
+        "description": "Form field label"
+    },
+    "XsTD4Q": {
+        "message": "Liste de choses à faire",
+        "description": "Todo List Widget"
+    },
+    "YAgYL6": {
+        "message": "mardi"
+    },
+    "YS5zRT": {
+        "message": "Rechercher avec {nom}",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "YYoBQn": {
+        "message": "Rayon de flou du panneau",
+        "description": "Theme settings: form field label"
+    },
+    "Z2/hH0": {
+        "message": "Image : {filename}"
+    },
+    "ZRWjTk": {
+        "message": "Utiliser le moteur de recherche par défaut du navigateur",
+        "description": "Search widget: form field label"
+    },
+    "ZUZeuR": {
+        "message": "Afficher un message",
+        "description": "Text widget description"
+    },
+    "ZZIlU9": {
+        "message": "Objectif quotidien",
+        "description": "Daily Goal Widget"
+    },
+    "X5OoHJ": {
+        "message": "Quel est votre objectif aujourd'hui ?",
+        "description": "Daily Goal prompt"
+    },
+    "a0L2KE": {
+        "message": "Essayez d'inclure le nom du pays ou ses initiales."
+    },
+    "aaxFkJ": {
+        "message": "Créer un nouvel élément à faire",
+        "description": "Todo List widget: prompt"
+    },
+    "ZeZlbR": {
+        "message": "Définit l'opacité de la couleur teintée du bouton",
+        "description": "Button widget: form field hint (Opacity)"
+    },
+    "a09vzt": {
+        "message": "Échec de la requête HTTP, {code} {msg}."
+    },
+    "adRrk3": {
+        "message": "Tout réinitialiser",
+        "description": "Import / export settings, reset"
+    },
+    "amHvKE": {
+        "message": "Entrez les notes ici",
+        "description": "Notes widget: prompt"
+    },
+    "ao/AFQ": {
+        "message": "Vous rappelle un objectif quotidien",
+        "description": "Daily Goal widget description"
+    },
+    "azMsfM": {
+        "message": "lundi"
+    },
+    "bQFsdR": {
+        "message": "Accorder l'autorisation d'accéder à {hôte}"
+    },
+    "ba9jts": {
+        "message": "Affiche un flux Atom ou RSS",
+        "description": "Feed widget description"
+    },
+    "cL6y1P": {
+        "message": "URL vers un flux Atom ou RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "cR7nCG": {
+        "message": "Réinitialiser le thème par défaut"
+    },
+    "cSF2y1": {
+        "message": "Affiche vos favoris",
+        "description": "Bookmarks widget description"
+    },
+    "dGu5JQ": {
+        "message": "Flux",
+        "description": "Feed Widget"
+    },
+    "dIwFS5": {
+        "message": "Choisissez une image",
+        "description": "Form field label"
+    },
+    "dLthbh": {
+        "message": "Bonjour",
+        "description": "Greeting widget: greeting, before 12 noon"
+    },
+    "eXkpJi": {
+        "message": "Utiliser les icônes des sites Web (favicons)",
+        "description": "Links widget: form field label"
+    },
+    "egigiF": {
+        "message": "Merci à Unsplash, OpenStreetMap, OpenWeatherMap et RocketLaunch.Live pour leurs API."
+    },
+    "ekIjqh": {
+        "message": "Accorder l'autorisation d'accéder à tous les sites Web"
+    },
+    "bN0iM4": {
+        "message": "Vous avez trouvé un bug ou vous avez une demande ?"
+    },
+    "ekW/+6": {
+        "message": "Connexion Internet impossible"
+    },
+    "VxE3S8": {
+        "message": "Cela enverra automatiquement l'URL aux développeurs de Renewed Tab. Ils peuvent ensuite choisir de l'ajouter aux suggestions pour tous les utilisateurs.",
+        "description": "Host URL field: help text for suggest URL button"
+    },
+    "XITVvp": {
+        "message": "Afficher l'arrière-plan du panneau"
+    },
+    "zfsplE": {
+        "message": "Ne plus afficher",
+        "description": "Background credits vote"
+    },
+    "as6rZ1": {
+        "message": "Activer les rapports de plantage (à l'aide de Sentry)",
+        "description": "General settings: enable sentry"
+    },
+    "QcExtH": {
+        "message": "Politique de confidentialité",
+        "description": "General settings: privacy policy button"
+    },
+    "I48yxw": {
+        "message": "Confidentialité",
+        "description": "General settings: privacy"
+    },
+    "Ibm90j": {
+        "message": "L'heure est basée sur le fuseau horaire de votre système. Si l'heure est incorrecte, assurez-vous que le fuseau horaire est correctement défini dans les paramètres de votre ordinateur et de votre navigateur.",
+        "description": "Clock widget: edit hint"
+    },
+    "MN3prI": {
+        "message": "Inclure les dossiers en tant que sections",
+        "description": "Bookmarks widget: form field label"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> à {latitude} par {longitude}"
+    },
+    "7bfD9/": {
+        "message": "Proposer une URL à ajouter à la liste des suggestions par défaut",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
     }
 }
