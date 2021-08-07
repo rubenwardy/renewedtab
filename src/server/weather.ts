@@ -1,7 +1,8 @@
 import { WeatherInfo } from "common/api/weather";
 import fetchCatch, { Request } from "./http";
-import { IS_DEBUG, serverConfig, UA_DEFAULT } from ".";
+import { serverConfig, UA_DEFAULT } from ".";
 import { notifyUpstreamRequest } from "./metrics";
+import { makeKeyCache } from "./cache";
 
 const OPEN_WEATHER_MAP_API_KEY =
 	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
@@ -48,19 +49,7 @@ function parseWeatherInfo(info: any): WeatherInfo {
 }
 
 
-const cache = new Map<string, any>();
-if (!IS_DEBUG) {
-	setInterval(() => {
-		cache.clear();
-	}, 15 * 60 * 1000);
-}
-
-export async function getWeatherInfo(lat: number, long: number): Promise<any> {
-	const key = `${lat.toFixed(5)},${long.toFixed(5)}`;
-	if (cache.has(key)) {
-		return cache.get(key);
-	}
-
+async function fetchWeatherInfo(lat: number, long: number): Promise<any> {
 	notifyUpstreamRequest("OpenWeatherMap.org");
 
 	const url = new URL("https://api.openweathermap.org/data/2.5/onecall");
@@ -86,7 +75,10 @@ export async function getWeatherInfo(lat: number, long: number): Promise<any> {
 		}
 	}
 
-	const ret = parseWeatherInfo(json);
-	cache.set(key, ret);
-	return ret;
+	return parseWeatherInfo(json);
 }
+
+
+export const getWeatherInfo: (lat: number, long: number) => Promise<any>
+	= makeKeyCache(fetchWeatherInfo, 3 * 60,
+		(lat, long) => `${lat.toFixed(3)},${long.toFixed(3)}`)

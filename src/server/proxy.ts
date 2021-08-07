@@ -1,5 +1,6 @@
 import fetchCatch, { Request } from "./http";
-import { IS_DEBUG, serverConfig, UA_PROXY } from ".";
+import { serverConfig, UA_PROXY } from ".";
+import { makeKeyCache } from "./cache";
 
 const PROXY_ALLOWED_HOSTS: string[] = serverConfig.PROXY_ALLOWED_HOSTS ?? [
 	"feeds.bbci.co.uk",
@@ -14,14 +15,6 @@ export interface Result {
 }
 
 
-const cache = new Map<string, Result>();
-if (!IS_DEBUG) {
-	setInterval(() => {
-		cache.clear();
-	}, 15 * 60 * 1000);
-}
-
-
 function checkProxyURL(url: URL) {
 	const hostAllowed = PROXY_ALLOWED_HOSTS.some(other =>
 		url.hostname == other || url.hostname.endsWith("." + other));
@@ -33,13 +26,8 @@ function checkProxyURL(url: URL) {
 }
 
 
-export async function handleProxy(url: URL): Promise<Result> {
+async function fetchProxy(url: URL): Promise<Result> {
 	checkProxyURL(url);
-
-	const key = url.toString();
-	if (cache.has(key)) {
-		return cache.get(key)!;
-	}
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
@@ -65,6 +53,9 @@ export async function handleProxy(url: URL): Promise<Result> {
 		contentType: response.headers.get("Content-Type") ?? "text/plain",
 	};
 
-	cache.set(key, retval);
 	return retval;
 }
+
+
+export const handleProxy: (url: URL) => Promise<Result>
+	= makeKeyCache(fetchProxy, 15);
