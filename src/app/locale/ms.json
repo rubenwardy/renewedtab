@@ -781,10 +781,6 @@
         "message": "Dayakan pelaporan runtuhan (menggunakan Sentry)",
         "description": "General settings: enable sentry"
     },
-    "fTATFb": {
-        "message": "Pilih Praset",
-        "description": "Onboarding: presets title"
-    },
     "orfyBH": {
         "message": "Praset hanya tukar widget permulaan anda.",
         "description": "Onboarding: preset hint"
@@ -792,10 +788,6 @@
     "yvWbz6": {
         "message": "Seterusnya",
         "description": "Onboarding page: next button"
-    },
-    "1eIr8H": {
-        "message": "Anda boleh tambah (<add></add>) atau buang (<remove></remove>) widget selepas ini, atau tukar tetapan (<cog></cog>) yang diinginkan.",
-        "description": "Onboarding: preset hint"
     },
     "CNpJaZ": {
         "message": "Tumpuan",

@@ -795,17 +795,9 @@
         "message": "HTML",
         "description": "HTML widget: form field label"
     },
-    "fTATFb": {
-        "message": "Bir Ön Ayar Seçin",
-        "description": "Onboarding: presets title"
-    },
     "uzT59w": {
         "message": "Izgara",
         "description": "Preset: Grid"
-    },
-    "1eIr8H": {
-        "message": "Sonradan araç ekleyip (<add></add>) kaldırabilirsiniz (<remove></remove>), veya ayarları istediğiniz gibi değiştirebilirsiniz (<cog></cog>).",
-        "description": "Onboarding: preset hint"
     },
     "CNpJaZ": {
         "message": "Odak",
@@ -821,10 +813,6 @@
     "mv9TrH": {
         "message": "HTML",
         "description": "HTML Widget"
-    },
-    "orfyBH": {
-        "message": "Ön ayarlar sadece başlangıçta görünecek araçları değiştirir.",
-        "description": "Onboarding: preset hint"
     },
     "pbEMNj": {
         "message": "Geri",
