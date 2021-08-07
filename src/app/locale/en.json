@@ -31,10 +31,6 @@
         "description": "Greeting widget: greeting, from 12 noon to 4pm",
         "message": "Good afternoon"
     },
-    "1eIr8H": {
-        "description": "Onboarding: preset hint",
-        "message": "You can add (<add></add>) or remove (<remove></remove>) widgets afterwards, or change settings (<cog></cog>) as desired."
-    },
     "1s5GYl": {
         "description": "Form field label",
         "message": "Opacity"
@@ -110,6 +106,10 @@
         "description": "Image Widget",
         "message": "Image"
     },
+    "7WzZxn": {
+        "description": "Preset: focus description",
+        "message": "Start with a clock and a search bar"
+    },
     "7bfD9/": {
         "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
         "message": "Suggest URL be added to default suggestions"
@@ -164,6 +164,10 @@
     "Dk7Khi": {
         "description": "Weather widget: Fahrenheit unit",
         "message": "Fahrenheit"
+    },
+    "FEUbOi": {
+        "description": "Preset: grid description",
+        "message": "Start with the news, weather, and more"
     },
     "FHzdXg": {
         "description": "Theme settings",
@@ -249,6 +253,10 @@
     "Kzo9ZH": {
         "description": "Form field label",
         "message": "Image URL"
+    },
+    "L6nTur": {
+        "description": "Onboarding: presets title",
+        "message": "Choose a Starting Point"
     },
     "LfHpBk": {
         "description": "Theme settings: form field label",
@@ -426,6 +434,10 @@
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
         "message": "Search with {name}"
     },
+    "YXvgwa": {
+        "description": "Preset: focus description",
+        "message": "Start with daily goals and inspirational quotes"
+    },
     "YYoBQn": {
         "description": "Theme settings: form field label",
         "message": "Panel Blur Radius"
@@ -529,10 +541,6 @@
     "ekW/+6": {
         "message": "Unable to connect to the Internet"
     },
-    "fTATFb": {
-        "description": "Onboarding: presets title",
-        "message": "Choose a Preset"
-    },
     "fW8Xpd": {
         "description": "Weather widget: location needed error",
         "message": "Location needed. Click edit to add it."
@@ -544,6 +552,10 @@
     "fz43UJ": {
         "description": "Renewed Tab donation link",
         "message": "Donate"
+    },
+    "gAZqVl": {
+        "description": "Onboarding: preset hint",
+        "message": "You can add (<add></add>) or remove (<remove></remove>) widgets later, or change settings (<cog></cog>) as desired."
     },
     "gEYo49": {
         "description": "Backgroud settings: form field label",
@@ -654,10 +666,6 @@
     "or/+Da": {
         "description": "Subheading for per-widget styling properties",
         "message": "Styling"
-    },
-    "orfyBH": {
-        "description": "Onboarding: preset hint",
-        "message": "Presets only change the widgets you start with."
     },
     "p7+m8N": {
         "description": "Top Sites widget: permission request",
@@ -800,6 +808,10 @@
     "y8o0oA": {
         "description": "Weather widget description",
         "message": "Current and forecasted weather"
+    },
+    "yUJ5MA": {
+        "description": "Preset: goals",
+        "message": "Goals"
     },
     "ycaP+t": {
         "description": "Auto background mode",
