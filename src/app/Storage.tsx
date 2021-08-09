@@ -14,15 +14,53 @@ export interface IStorage {
 
 
 class WebExtStorage implements IStorage {
-	private readonly store: any;
 	private readonly values: Promise<{ [key: string]: any }>;
 
-	constructor() {
-		this.store = browser.storage.sync;
+	constructor(private readonly store: browser.storage.StorageArea) {
+		this.values = this.loadData();
+	}
 
-		const actualGetAll =
-			async () => fromTypedJSON(await this.store.get());
-		this.values = actualGetAll();
+	private async loadData() {
+		{
+			const data = fromTypedJSON(await this.store.get());
+			if (data.widgets != undefined) {
+				return data;
+			}
+		}
+
+		if (this.store === browser.storage.sync) {
+			const data = await browser.storage.local.get();
+			const widgets: any[] = (data.widgets ?? []) as any[];
+			if (widgets.length == 0) {
+				return;
+			}
+
+			console.log("Migrating to sync storage...");
+
+			const toSet: { [key: string]: any } = {};
+			Object.entries(data).forEach(([key, value]) => {
+				if (key !== "widgets" && !key.startsWith("large-")) {
+					toSet[key] = value;
+				}
+			});
+
+			toSet.widgets = widgets.map(widget => ({
+				id: widget.id,
+				type: widget.type,
+				theme: widget.theme,
+				position: widget.position,
+				size: widget.size,
+			}));
+
+			widgets.forEach(widget =>
+				toSet[`widget-${widget.id}`] = {
+					props: widget.props,
+				});
+
+			await browser.storage.sync.set(toSet);
+
+			return fromTypedJSON(await this.store.get());
+		}
 	}
 
 	async getAll(): Promise<{ [key: string]: any }> {
@@ -142,8 +180,9 @@ if (typeof browser === 'undefined' && typeof navigator !== "undefined" &&
 
 
 export const storage : IStorage =
-	(typeof browser !== 'undefined') ? new WebExtStorage() : new LocalStorage();
+	(typeof browser !== 'undefined') ? new WebExtStorage(browser.storage.sync) : new LocalStorage();
 
-export const largeStorage : IStorage = new DelegateStorage(storage, "large-");
+export const largeStorage : IStorage = new DelegateStorage(
+	(typeof browser !== 'undefined') ? new WebExtStorage(browser.storage.local) : new LocalStorage(), "large-");
 
 export const cacheStorage : IStorage = new DelegateStorage(new LocalStorage(), "_");

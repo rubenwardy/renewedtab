@@ -19,9 +19,6 @@
 			"id": "{166411f2-402a-4bca-a3da-38b795ec8007}"
 		}
 	},
-	"background": {
-		"scripts": ["migrations.js"]
-	},
 	"permissions": [
 		"storage",
 		"search"
