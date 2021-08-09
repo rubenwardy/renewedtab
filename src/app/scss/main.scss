@@ -59,8 +59,8 @@ footer, .credits {
 		text-decoration: none;
 
 		&:hover {
-			color: rgba(255, 255, 255, 1);
-			text-decoration: none;
+			color: rgba(255, 255, 255, 1) !important;
+			text-decoration: none !important;
 		}
 	}
 }
