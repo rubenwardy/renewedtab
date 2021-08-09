@@ -26,6 +26,36 @@ const messages = defineMessages({
 		defaultMessage: "Collection ID. Found in the URL, example: 42576559",
 		description: "Backgroud settings: form field hint (Unsplash Collection)",
 	},
+
+	brightness: {
+		defaultMessage: "Brightness",
+		description: "Backgroud settings: form field label",
+	},
+
+	brightnessDark: {
+		defaultMessage: "Brightness: Dark",
+		description: "Backgroud settings: form field label",
+	},
+
+	brightnessDarkHint: {
+		defaultMessage: "Change brightness of darker images",
+		description: "Backgroud settings: form field label (Brightness: Dark)",
+	},
+
+	brightnessLight: {
+		defaultMessage: "Brightness: Light",
+		description: "Backgroud settings: form field label",
+	},
+
+	brightnessLightHint: {
+		defaultMessage: "Change brightness of lighter images",
+		description: "Backgroud settings: form field label (Brightness: Light)",
+	},
+
+	blurRadius: {
+		defaultMessage: "Blur radius",
+		description: "Backgroud settings: form field label",
+	}
 });
 
 
@@ -99,8 +129,9 @@ function getSchemaForModeImpl(mode: BackgroundMode): Schema {
 	switch (mode) {
 	case BackgroundMode.Auto:
 		return {
-			brightness: type.unit_number(schemaMessages.brightness, "%"),
-			blur: type.unit_number(schemaMessages.blurRadius, "px"),
+			brightnessDark: type.unit_number(messages.brightnessDark, "%", messages.brightnessDarkHint),
+			brightnessLight: type.unit_number(messages.brightnessLight, "%", messages.brightnessLightHint),
+			blur: type.unit_number(messages.blurRadius, "px"),
 		};
 	case BackgroundMode.Color:
 		return {
@@ -109,21 +140,22 @@ function getSchemaForModeImpl(mode: BackgroundMode): Schema {
 	case BackgroundMode.Image:
 		return {
 			image: type.image(schemaMessages.image, schemaMessages.imageHint),
-			brightness: type.unit_number(schemaMessages.brightness, "%"),
-			blur: type.unit_number(schemaMessages.blurRadius, "px"),
+			brightnessDark: type.unit_number(messages.brightness, "%"),
+			blur: type.unit_number(messages.blurRadius, "px"),
 		};
 	case BackgroundMode.ImageUrl:
 		return {
 			url: type.url(schemaMessages.imageUrl),
 			position: type.string(messages.position, messages.positionHint),
-			brightness: type.unit_number(schemaMessages.brightness, "%"),
-			blur: type.unit_number(schemaMessages.blurRadius, "px"),
+			brightnessDark: type.unit_number(messages.brightness, "%"),
+			blur: type.unit_number(messages.blurRadius, "px"),
 		};
 	case BackgroundMode.Unsplash:
 		return {
 			collection: type.string(messages.collection, messages.collectionHint),
-			brightness: type.unit_number(schemaMessages.brightness, "%"),
-			blur: type.unit_number(schemaMessages.blurRadius, "px"),
+			brightnessDark: type.unit_number(messages.brightnessDark, "%", messages.brightnessDarkHint),
+			brightnessLight: type.unit_number(messages.brightnessLight, "%", messages.brightnessLightHint),
+			blur: type.unit_number(messages.blurRadius, "px"),
 		}
 	}
 }
@@ -146,7 +178,8 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 	switch (mode) {
 	case BackgroundMode.Auto:
 		return {
-			brightness: 100,
+			brightnessDark: 100,
+			brightnessLight: 80,
 			blur: 0,
 		};
 	case BackgroundMode.Color:
@@ -155,19 +188,20 @@ export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any }
 		};
 	case BackgroundMode.Image:
 		return {
-			brightness: 100,
+			brightnessDark: 100,
 			blur: 0,
 		};
 	case BackgroundMode.ImageUrl:
 		return {
 			url: "",
 			position: "bottom",
-			brightness: 100,
+			brightnessDark: 100,
 			blur: 0,
 		};
 	case BackgroundMode.Unsplash:
 		return {
-			brightness: 100,
+			brightnessDark: 100,
+			brightnessLight: 80,
 			blur: 0,
 		};
 	}

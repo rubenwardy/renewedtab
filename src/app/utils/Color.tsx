@@ -14,6 +14,10 @@ export default class Color {
 		return `rgba(${this.r}, ${this.g}, ${this.b}, ${this.a})`;
 	}
 
+	get luminance(): number {
+		return 0.2126*this.r + 0.7152*this.g + 0.0722*this.b;
+	}
+
 	lighten(v: number): Color {
 		return new Color(this.r * v, this.g * v, this.b * v, this.a);
 	}

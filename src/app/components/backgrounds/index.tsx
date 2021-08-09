@@ -1,5 +1,5 @@
-import { BackgroundConfig, BackgroundMode } from "app/hooks/background";
-import React, { CSSProperties } from "react";
+import { BackgroundConfig, BackgroundMode, getSchemaForMode } from "app/hooks/background";
+import React, { useMemo } from "react";
 import ActualBackground from "./ActualBackground";
 
 
@@ -14,10 +14,27 @@ import ImageBackground from "./ImageBackground";
 import UnsplashBackground from "./UnsplashBackground";
 
 
-export default function Background(props: BackgroundProps) {
-	const background = props.background;
+function getFilteredBg(background: (BackgroundConfig | null)): (BackgroundConfig | null) {
+	if (!background) {
+		return null;
+	}
 
-	const style: CSSProperties = {};
+	const schema = getSchemaForMode(background.mode);
+	const values: any = {};
+	Object.keys(schema).forEach(key => {
+		values[key] = background.values[key];
+	})
+
+	return {
+		mode: background.mode,
+		values: values,
+	};
+}
+
+
+export default function Background(props: BackgroundProps) {
+	const background = useMemo(() => getFilteredBg(props.background), [props.background])
+
 	if (background) {
 		switch (background.mode) {
 		case BackgroundMode.Auto:
@@ -27,20 +44,12 @@ export default function Background(props: BackgroundProps) {
 		case BackgroundMode.Image:
 			return (<ImageBackground {...props} />);
 		case BackgroundMode.ImageUrl:
-			style.backgroundColor = props.background!.values.color ?? "#336699";
-			style.backgroundImage = `url('${background.values.url}')`;
-			style.backgroundPosition = background.values.position;
-			style.filter = `brightness(${background.values.brightness ?? 100}%) blur(${background.values.blur ?? 0}px)`;
 			return (<ActualBackground
-					image={background.values.url}
-					color={background.values.color ?? "#336699"}
-					position={background.values.position}
-					brightness={background.values.brightness}
-					blur={background.values.blur} />);
+					{...background.values} image={background.values.url} color="#336699" />);
 		case BackgroundMode.Unsplash:
 			return (<UnsplashBackground {...props} />);
 		}
 	}
 
-	return (<div id="background" style={style} />);
+	return (<div id="background" />);
 }

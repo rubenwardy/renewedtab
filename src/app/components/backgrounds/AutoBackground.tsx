@@ -76,7 +76,7 @@ export default function AutoBackground(props: BackgroundProps) {
 	}
 
 	return (
-		<ActualBackground color={background.color} image={background.url}
-			credits={credits} brightness={values.brightness} blur={values.blur} />
+		<ActualBackground {...values}
+			color={background.color} image={background.url} credits={credits} />
 	)
 }

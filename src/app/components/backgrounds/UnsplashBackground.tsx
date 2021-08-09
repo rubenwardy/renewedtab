@@ -25,7 +25,12 @@ export default function UnsplashBackground(props: BackgroundProps) {
 	}
 
 	return (
-		<ActualBackground color={info.color} image={info.url}
-			credits={credits} brightness={values.brightness} blur={values.blur} />
+		<ActualBackground
+			color={info.color}
+			image={info.url}
+			credits={credits}
+			brightnessDark={values.brightnessDark}
+			brightnessLight={values.brightnessLight}
+			blur={values.blur} />
 	);
 }

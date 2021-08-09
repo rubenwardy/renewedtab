@@ -1,10 +1,12 @@
+import Color from "app/utils/Color";
 import React, { CSSProperties } from "react";
 import { CreditProps, Credits } from "./Credits";
 
 interface ActualBackgroundProps {
 	image?: string;
 	color?: string;
-	brightness?: number;
+	brightnessDark?: number;
+	brightnessLight?: number;
 	blur?: number;
 	credits?: CreditProps;
 	position?: string;
@@ -20,7 +22,14 @@ export default function ActualBackground(props: ActualBackgroundProps) {
 	}
 	if (props.image) {
 		style.backgroundImage = `url('${props.image}')`;
-		style.filter = `brightness(${props.brightness ?? 100}%)`;
+
+		const brightnessDark = props.brightnessDark ?? 100;
+		const brightnessLight = props.brightnessLight ?? brightnessDark;
+		const brightness =
+			(props.color && (Color.fromString(props.color)?.luminance ?? 0) > 128)
+				? brightnessLight : brightnessDark;
+
+		style.filter = `brightness(${brightness ?? 100}%)`;
 
 		if (props.blur && props.blur > 0) {
 			overlayStyle = {};

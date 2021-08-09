@@ -12,7 +12,6 @@ export default function ImageBackground(props: BackgroundProps) {
 	const [file] = usePromise(() => largeStorage.get<FileInfo>(id), [id]);
 
 	return (
-		<ActualBackground image={file?.data ?? ""}
-			brightness={values.brightness} blur={values.blur} />
+		<ActualBackground {...values} image={file?.data ?? ""} />
 	);
 }

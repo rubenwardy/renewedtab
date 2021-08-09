@@ -75,16 +75,6 @@ export const schemaMessages = defineMessages({
 		defaultMessage: "Categories",
 		description: "Form field label, list of categories. Used by Quotes widget"
 	},
-
-	brightness: {
-		defaultMessage: "Brightness",
-		description: "Form field label, brightness of image",
-	},
-
-	blurRadius: {
-		defaultMessage: "Blur radius",
-		description: "Form field label, blur radius"
-	}
 });
 
 

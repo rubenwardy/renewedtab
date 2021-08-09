@@ -401,10 +401,6 @@
     "WQeyl4": {
         "message": "Grant permission to access bookmarks"
     },
-    "WRfqRR": {
-        "description": "Form field label, brightness of image",
-        "message": "Brightness"
-    },
     "WZjKFf": {
         "message": "Warning: this may contain personal data, if any was entered into widget settings."
     },
@@ -502,6 +498,10 @@
     "azMsfM": {
         "message": "Monday"
     },
+    "b2Rs2F": {
+        "description": "Backgroud settings: form field label (Brightness: Light)",
+        "message": "Change brightness of lighter images"
+    },
     "bQFsdR": {
         "message": "Grant permission to access {host}"
     },
@@ -572,6 +572,10 @@
     "h/ftND": {
         "message": "Choose a file"
     },
+    "hUIQ7h": {
+        "description": "Backgroud settings: form field label",
+        "message": "Brightness"
+    },
     "hZZSzJ": {
         "description": "SpaceFlights widget: edit modal hint",
         "message": "Powered by RocketLaunch.Live"
@@ -600,13 +604,13 @@
     "kAEQyV": {
         "message": "OK"
     },
-    "kMy8qw": {
-        "description": "Form field label, blur radius",
-        "message": "Blur radius"
-    },
     "ktmuOE": {
         "description": "Feed widget: form field hint (Title)",
         "message": "Leave blank to use feed's title"
+    },
+    "ku7Ot7": {
+        "description": "Backgroud settings: form field label",
+        "message": "Brightness: Light"
     },
     "kueLs9": {
         "description": "Links widget: form field label",
@@ -636,6 +640,10 @@
     },
     "mJR06P": {
         "message": "Sunday"
+    },
+    "mSg5KK": {
+        "description": "Backgroud settings: form field label",
+        "message": "Brightness: Dark"
     },
     "mY9tpI": {
         "message": "Error loading feed. Make sure it is an RSS or Atom feed."
@@ -699,12 +707,20 @@
         "description": "Greeting widget: greeting, after 4pm",
         "message": "Good evening"
     },
+    "q4caWd": {
+        "description": "Backgroud settings: form field label",
+        "message": "Blur radius"
+    },
     "qAhUUO": {
         "message": "Thursday"
     },
     "qCsSqt": {
         "description": "Theme settings: form field label",
         "message": "Panel Background Darkness"
+    },
+    "qEk9AJ": {
+        "description": "Backgroud settings: form field label (Brightness: Dark)",
+        "message": "Change brightness of darker images"
     },
     "qYVXqA": {
         "description": "Background mode options",
