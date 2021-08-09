@@ -1,8 +1,8 @@
 import { useAPI, useStorage } from "app/hooks";
-import React, { CSSProperties } from "react";
-import { Credits } from "./Credits";
+import React from "react";
 import { BackgroundProps } from ".";
 import { BackgroundInfo } from "common/api/backgrounds";
+import ActualBackground from "./ActualBackground";
 
 
 function reportVote(info: BackgroundInfo, isPositive: boolean) {
@@ -44,39 +44,39 @@ function useAutoBackground(votes: { [id: string]: boolean }): [(BackgroundInfo |
 
 
 export default function AutoBackground(props: BackgroundProps) {
-	const style: CSSProperties = {};
-
 	const [votes_, setVotes] = useStorage<{ [id: string]: boolean }>("background_votes");
 	const votes = votes_ ?? {};
+	const values = props.background!.values;
 
-	const [background, error] = useAutoBackground(votes);
-	if (background) {
-		function handleBlock(info: BackgroundInfo) {
-			reportVote(info, false);
-			votes[info.id] = false;
-			setVotes(votes);
-		}
-
-		function handleLike(info: BackgroundInfo) {
-			reportVote(info, true);
-			votes[info.id] = true;
-			setVotes(votes);
-		}
-
-		if (background.color) {
-			style.backgroundColor = background.color;
-		}
-		style.backgroundImage = `url('${background.url}')`;
+	const [background] = useAutoBackground(votes);
+	if (!background) {
 		return (
-			<>
-				<div id="background" style={style} />
-				<Credits info={background} setIsHovered={props.setWidgetsHidden}
-					onBlock={handleBlock} onLike={handleLike} isPositive={votes[background.id]}  />
-			</>);
-	} else {
-		if (error) {
-			style.backgroundColor = props.background!.values.color ?? "#336699";
-		}
-		return (<div id="background" style={style} />);
+			<ActualBackground color={values.colour  ?? "#336699"}  />
+		);
 	}
+
+	function handleBlock(info: BackgroundInfo) {
+		reportVote(info, false);
+		votes[info.id] = false;
+		setVotes(votes);
+	}
+
+	function handleLike(info: BackgroundInfo) {
+		reportVote(info, true);
+		votes[info.id] = true;
+		setVotes(votes);
+	}
+
+	const credits = {
+		info: background,
+		setIsHovered: props.setWidgetsHidden,
+		onBlock: handleBlock,
+		onLike: handleLike,
+		isPositive: votes[background.id]
+	}
+
+	return (
+		<ActualBackground color={background.color} image={background.url}
+			credits={credits} brightness={values.brightness} blur={values.blur} />
+	)
 }

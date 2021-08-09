@@ -18,7 +18,7 @@ const messages = defineMessages({
 });
 
 
-interface CreditProps {
+export interface CreditProps {
 	info: BackgroundInfo;
 	setIsHovered?: (value: boolean) => void;
 

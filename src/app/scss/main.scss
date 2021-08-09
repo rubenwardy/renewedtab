@@ -123,14 +123,17 @@ main .scroll-wrap {
 	opacity: 0;
 }
 
-#background {
+#background, #background-overlay {
 	z-index: -2;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+}
 
+#background {
+	z-index: -3;
 	background-color: #111;
 	background-size: cover;
 	background-position: bottom;

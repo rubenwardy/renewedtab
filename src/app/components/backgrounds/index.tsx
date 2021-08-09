@@ -1,5 +1,6 @@
 import { BackgroundConfig, BackgroundMode } from "app/hooks/background";
 import React, { CSSProperties } from "react";
+import ActualBackground from "./ActualBackground";
 
 
 export interface BackgroundProps {
@@ -22,15 +23,20 @@ export default function Background(props: BackgroundProps) {
 		case BackgroundMode.Auto:
 			return (<AutoBackground {...props} />);
 		case BackgroundMode.Color:
-			style.backgroundColor = background.values.color ?? "#336699";
-			break;
+			return (<ActualBackground color={background.values.color ?? "#336699"} />);
 		case BackgroundMode.Image:
 			return (<ImageBackground {...props} />);
 		case BackgroundMode.ImageUrl:
 			style.backgroundColor = props.background!.values.color ?? "#336699";
 			style.backgroundImage = `url('${background.values.url}')`;
 			style.backgroundPosition = background.values.position;
-			break;
+			style.filter = `brightness(${background.values.brightness ?? 100}%) blur(${background.values.blur ?? 0}px)`;
+			return (<ActualBackground
+					image={background.values.url}
+					color={background.values.color ?? "#336699"}
+					position={background.values.position}
+					brightness={background.values.brightness}
+					blur={background.values.blur} />);
 		case BackgroundMode.Unsplash:
 			return (<UnsplashBackground {...props} />);
 		}

@@ -95,47 +95,81 @@ const bgDescriptions = defineMessages({
 
 export declare type BackgroundModeType = keyof typeof BackgroundMode;
 
-export function getSchemaForMode(mode: BackgroundMode): Schema {
+function getSchemaForModeImpl(mode: BackgroundMode): Schema {
 	switch (mode) {
 	case BackgroundMode.Auto:
-		return {};
+		return {
+			brightness: type.unit_number(schemaMessages.brightness, "%"),
+			blur: type.unit_number(schemaMessages.blurRadius, "px"),
+		};
 	case BackgroundMode.Color:
 		return {
-			color: type.color(schemaMessages.color)
+			color: type.color(schemaMessages.color),
 		};
 	case BackgroundMode.Image:
 		return {
 			image: type.image(schemaMessages.image, schemaMessages.imageHint),
+			brightness: type.unit_number(schemaMessages.brightness, "%"),
+			blur: type.unit_number(schemaMessages.blurRadius, "px"),
 		};
 	case BackgroundMode.ImageUrl:
 		return {
 			url: type.url(schemaMessages.imageUrl),
 			position: type.string(messages.position, messages.positionHint),
+			brightness: type.unit_number(schemaMessages.brightness, "%"),
+			blur: type.unit_number(schemaMessages.blurRadius, "px"),
 		};
 	case BackgroundMode.Unsplash:
 		return {
 			collection: type.string(messages.collection, messages.collectionHint),
+			brightness: type.unit_number(schemaMessages.brightness, "%"),
+			blur: type.unit_number(schemaMessages.blurRadius, "px"),
 		}
 	}
 }
 
+
+export function getSchemaForMode(mode: BackgroundMode): Schema {
+	const schema = getSchemaForModeImpl(mode);
+
+	const supportsBackdropFilter =
+		CSS.supports("backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)");
+	if (!supportsBackdropFilter) {
+		delete schema.blur;
+	}
+
+	return schema;
+}
+
+
 export function getDefaultsForMode(mode: BackgroundMode): { [key: string]: any } {
 	switch (mode) {
 	case BackgroundMode.Auto:
-		return {};
+		return {
+			brightness: 100,
+			blur: 0,
+		};
 	case BackgroundMode.Color:
 		return {
 			color: "#336699"
 		};
 	case BackgroundMode.Image:
-		return {};
+		return {
+			brightness: 100,
+			blur: 0,
+		};
 	case BackgroundMode.ImageUrl:
 		return {
 			url: "",
 			position: "bottom",
+			brightness: 100,
+			blur: 0,
 		};
 	case BackgroundMode.Unsplash:
-		return {};
+		return {
+			brightness: 100,
+			blur: 0,
+		};
 	}
 }
 
@@ -159,7 +193,7 @@ export async function getBackgroundConfig(): Promise<BackgroundConfig> {
 	if (!info) {
 		return {
 			mode: BackgroundMode.Auto,
-			values: {}
+			values: getDefaultsForMode(BackgroundMode.Auto),
 		}
 	}
 

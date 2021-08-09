@@ -401,6 +401,10 @@
     "WQeyl4": {
         "message": "Grant permission to access bookmarks"
     },
+    "WRfqRR": {
+        "description": "Form field label, brightness of image",
+        "message": "Brightness"
+    },
     "WZjKFf": {
         "message": "Warning: this may contain personal data, if any was entered into widget settings."
     },
@@ -595,6 +599,10 @@
     },
     "kAEQyV": {
         "message": "OK"
+    },
+    "kMy8qw": {
+        "description": "Form field label, blur radius",
+        "message": "Blur radius"
     },
     "ktmuOE": {
         "description": "Feed widget: form field hint (Title)",
