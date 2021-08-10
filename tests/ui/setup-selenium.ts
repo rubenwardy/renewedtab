@@ -1,18 +1,25 @@
-import webdriver, { By, until } from "selenium-webdriver";
+import webdriver from "selenium-webdriver";
 import firefox from "selenium-webdriver/firefox";
 import chrome from "selenium-webdriver/chrome";
+import { Command } from "selenium-webdriver/lib/command";
+import path from "path";
+
 import UITestUtils from "./UITestUtils";
 
 export let driver: webdriver.WebDriver;
 export let utils: UITestUtils;
 
 
-before(async () => {
+before(async function() {
+	this.timeout(30000);
+
+	const extensionPath = path.resolve("./dist/webext/");
+
 	const chromeOptions = new chrome.Options();
-	chromeOptions.addArguments("--load-extension=dist/webext/");
+	chromeOptions.addArguments(`--load-extension=${extensionPath}`);
 
 	driver = new webdriver.Builder()
-		.forBrowser("chrome")
+		.forBrowser("firefox")
 		.setChromeOptions(chromeOptions)
 		.build();
 	utils = new UITestUtils(driver);
@@ -20,8 +27,11 @@ before(async () => {
 	if (driver instanceof chrome.Driver) {
 		await driver.get("chrome://newtab/");
 	} else if (driver instanceof firefox.Driver) {
-		const ffdriver = driver as firefox.Driver;
-		await ffdriver.installAddon("web-ext-artifacts/firefox.zip", true);
+		const command = new Command("install addon")
+			.setParameter("path", extensionPath)
+			.setParameter("temporary", true);
+		await driver.execute(command);
+
 		await driver.switchTo().newWindow("tab");
 		await utils.sleep(1500);
 	} else {
