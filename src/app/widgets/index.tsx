@@ -21,6 +21,7 @@ import TodoList from "./TodoList";
 import TopSites from "./TopSites";
 import Weather from "./Weather";
 import WebComic from "./WebComic";
+import YearProgress from "./YearProgress";
 
 export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	Age,
@@ -44,4 +45,5 @@ export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	TopSites,
 	Weather,
 	WebComic,
+	YearProgress,
 };

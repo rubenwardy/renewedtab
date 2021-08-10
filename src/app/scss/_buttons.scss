@@ -62,7 +62,7 @@
 	filter: brightness(1.2);
 }
 
-.btn-blur {
+.blur {
 	box-shadow: 0px 4px 12px 0 HSL(243deg 62% 18% / 20%), 0px 2px 6px 0 HSL(243deg 62% 18% / 15%);
 	backdrop-filter: brightness(calc(100% - var(--panel-opacity) / 1.666666667))
 			contrast(110%) saturate(140%) blur(var(--panel-blur));

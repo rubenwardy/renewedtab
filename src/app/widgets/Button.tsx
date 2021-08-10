@@ -40,7 +40,7 @@ export default function Button(props: WidgetProps<ButtonProps>)  {
 
 	const className = mergeClasses(
 			"btn btn-custom middle-center btn-brighten",
-			(props.theme.showPanelBG !== false) && "btn-blur");
+			(props.theme.showPanelBG !== false) && "blur");
 
 	return (
 		<a href={props.props.url} style={style} className={className}>

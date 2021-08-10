@@ -114,6 +114,10 @@
         "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
         "message": "Suggest URL be added to default suggestions"
     },
+    "7wOM6+": {
+        "description": "Year Progress widget",
+        "message": "Year Progress"
+    },
     "8J0Bhj": {
         "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
     },
@@ -857,6 +861,10 @@
     },
     "z7UTSa": {
         "message": "About Renewed Tab"
+    },
+    "zEj0dg": {
+        "description": "Age widget description",
+        "message": "Shows the progress through the year as a progress bar"
     },
     "zKofmb": {
         "description": "Backgroud settings: form field hint (Unsplash Collection)",
