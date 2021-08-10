@@ -41,7 +41,7 @@ export const presets: Preset[] = [
 			description: "Preset: focus",
 		}),
 		description: defineMessage({
-			defaultMessage: "Start with a clock and a search bar",
+			defaultMessage: "Just a clock and a search bar",
 			description: "Preset: focus description",
 		}),
 		preview: "onboarding_preset_focus.png",
@@ -53,7 +53,7 @@ export const presets: Preset[] = [
 			description: "Preset: Grid",
 		}),
 		description: defineMessage({
-			defaultMessage: "Start with the news, weather, and more",
+			defaultMessage: "The news, weather, and more",
 			description: "Preset: grid description",
 		}),
 		preview: "onboarding_preset_grid.png",
@@ -65,7 +65,7 @@ export const presets: Preset[] = [
 			description: "Preset: goals",
 		}),
 		description: defineMessage({
-			defaultMessage: "Start with daily goals and inspirational quotes",
+			defaultMessage: "Daily goals and inspirational quotes",
 			description: "Preset: focus description",
 		}),
 		preview: "onboarding_preset_goals.png",

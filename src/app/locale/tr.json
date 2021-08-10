@@ -826,21 +826,9 @@
         "message": "Daha sonra araç ekleyip (<add></add>) kaldırabilirsiniz (<remove></remove>), veya ayarları istediğiniz gibi değiştirebilirsiniz (<cog></cog>).",
         "description": "Onboarding: preset hint"
     },
-    "7WzZxn": {
-        "message": "Bir saat ve arama çubuğuyla başlayın",
-        "description": "Preset: focus description"
-    },
-    "FEUbOi": {
-        "message": "Haberler, hava durumu, ve daha fazlasıyla başlayın",
-        "description": "Preset: grid description"
-    },
     "L6nTur": {
         "message": "Bir Başlangıç Noktası Seçin",
         "description": "Onboarding: presets title"
-    },
-    "YXvgwa": {
-        "message": "Günlük hedefler ve ünlü sözlerle başlayın",
-        "description": "Preset: focus description"
     },
     "yUJ5MA": {
         "message": "Hedefler",

@@ -822,25 +822,13 @@
         "message": "HTML Tersuai",
         "description": "HTML widget description"
     },
-    "7WzZxn": {
-        "message": "Mulakan dengan jam dan bar gelintar",
-        "description": "Preset: focus description"
-    },
     "gAZqVl": {
         "message": "Anda boleh tambah (<add></add>) atau buang (<remove></remove>) widget selepas ini, atau tukar tetapan (<cog></cog>) yang diinginkan.",
         "description": "Onboarding: preset hint"
     },
-    "FEUbOi": {
-        "message": "Mulakan dengan berita, cuaca, dan banyak lagi",
-        "description": "Preset: grid description"
-    },
     "L6nTur": {
         "message": "Pilih Titik Permulaan",
         "description": "Onboarding: presets title"
-    },
-    "YXvgwa": {
-        "message": "Mulakan dengan matlamat harian dan petikan ilham",
-        "description": "Preset: focus description"
     },
     "yUJ5MA": {
         "message": "Matlamat",

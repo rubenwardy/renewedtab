@@ -102,10 +102,6 @@
         "message": "Imagem",
         "description": "Image Widget"
     },
-    "7WzZxn": {
-        "message": "Comece com um relógio e uma barra de pesquisa",
-        "description": "Preset: focus description"
-    },
     "8J0Bhj": {
         "message": "Bem-vindo à <a>Renewed Tab</a>: uma página nova guia personalizável, com widgets e belos planos de fundo."
     },
@@ -168,10 +164,6 @@
     "Dk7Khi": {
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
-    },
-    "FEUbOi": {
-        "message": "Comece com notícias, previsão do tempo e muito mais",
-        "description": "Preset: grid description"
     },
     "FHzdXg": {
         "message": "As configurações a seguir são <b> experimentais </b>; isso significa que você pode encontrar bugs e estranhezas ao alterá-los, e as atualizações podem quebrar seus temas.",
@@ -411,10 +403,6 @@
     "YS5zRT": {
         "message": "Pesquise com {name}",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"
-    },
-    "YXvgwa": {
-        "message": "Comece com metas diárias e citações inspiradoras",
-        "description": "Preset: focus description"
     },
     "YYoBQn": {
         "message": "Raio de desfoque do painel",

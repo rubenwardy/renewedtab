@@ -27,6 +27,10 @@
         "description": "Form field label",
         "message": "Icon"
     },
+    "0l+aD2": {
+        "description": "Preset: focus description",
+        "message": "Daily goals and inspirational quotes"
+    },
     "18X7au": {
         "description": "Greeting widget: greeting, from 12 noon to 4pm",
         "message": "Good afternoon"
@@ -106,10 +110,6 @@
         "description": "Image Widget",
         "message": "Image"
     },
-    "7WzZxn": {
-        "description": "Preset: focus description",
-        "message": "Start with a clock and a search bar"
-    },
     "7bfD9/": {
         "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
         "message": "Suggest URL be added to default suggestions"
@@ -147,6 +147,10 @@
         "description": "Search Widget",
         "message": "Search"
     },
+    "Cq4JWx": {
+        "description": "Preset: grid description",
+        "message": "The news, weather, and more"
+    },
     "CshCZY": {
         "message": "Background Type"
     },
@@ -172,10 +176,6 @@
     "FCmJHd": {
         "description": "Feed widget description",
         "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
-    },
-    "FEUbOi": {
-        "description": "Preset: grid description",
-        "message": "Start with the news, weather, and more"
     },
     "FHzdXg": {
         "description": "Theme settings",
@@ -445,10 +445,6 @@
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
         "message": "Search with {name}"
     },
-    "YXvgwa": {
-        "description": "Preset: focus description",
-        "message": "Start with daily goals and inspirational quotes"
-    },
     "YYoBQn": {
         "description": "Theme settings: form field label",
         "message": "Panel Blur Radius"
@@ -571,6 +567,10 @@
     "gEYo49": {
         "description": "Backgroud settings: form field label",
         "message": "Position"
+    },
+    "gHzZEt": {
+        "description": "Preset: focus description",
+        "message": "Just a clock and a search bar"
     },
     "gSjZfg": {
         "description": "Links Widget",
