@@ -17,7 +17,7 @@ const messages = defineMessages({
 	},
 
 	description: {
-		defaultMessage: "Shows an Atom or RSS feed",
+		defaultMessage: "Shows an Atom or RSS feed, useful for following the news, websites, and blogs",
 		description: "Feed widget description",
 	},
 

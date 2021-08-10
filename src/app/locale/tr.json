@@ -589,10 +589,6 @@
         "message": "Klasörleri bölme olarak göster",
         "description": "Bookmarks widget: form field label"
     },
-    "ba9jts": {
-        "message": "Bir Atom veya RSS beslemesini gösterir",
-        "description": "Feed widget description"
-    },
     "nGSwtl": {
         "message": "Ara",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"

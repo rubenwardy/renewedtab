@@ -31,6 +31,10 @@
 		margin: 0;
 	}
 
+	> input[type="search"] {
+		border-radius: 0;
+	}
+
 	nav {
 		display: inline-block;
 

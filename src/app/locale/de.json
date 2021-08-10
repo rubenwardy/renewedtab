@@ -291,10 +291,6 @@
     "azMsfM": {
         "message": "Montag"
     },
-    "ba9jts": {
-        "message": "Zeigt einen Atom oder RSS Feed",
-        "description": "Feed widget description"
-    },
     "cL6y1P": {
         "message": "URL zu einem Atom oder RSS Feed",
         "description": "Form field hint (Feed URL)"

@@ -1,5 +1,5 @@
 import { compareString } from "common/utils/string";
-import React from "react";
+import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetManager } from "../WidgetManager";
 import { WidgetTypes } from "../widgets";
@@ -12,6 +12,9 @@ interface CreateWidgetDialogProps {
 }
 
 export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
+	const intl = useIntl();
+	const [query, setQuery] = useState("");
+
 	function select(key: string) {
 		props.manager.createWidget(key);
 		props.onClose();
@@ -19,14 +22,17 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 
 	const isBrowser = typeof browser !== "undefined";
 
-	const intl = useIntl();
 	const widgetTypes = Object.entries(WidgetTypes)
 			.map(([key, widget]) => ({
 				key,
 				title: intl.formatMessage(widget.title),
 				description: intl.formatMessage(widget.description),
 				isBrowserOnly: widget.isBrowserOnly,
-			})).sort((a, b) => compareString(a.title, b.title));
+			}))
+			.filter(widget => query == "" ||
+					widget.title.toLowerCase().includes(query.toLowerCase()) ||
+					widget.description.toLowerCase().includes(query.toLowerCase()))
+			.sort((a, b) => compareString(a.title, b.title));
 
 	let widgets = widgetTypes
 		.filter((widget) => isBrowser || widget.isBrowserOnly !== true)
@@ -55,11 +61,21 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 				</li>)));
 	}
 
+	const placeholder = intl.formatMessage({
+		defaultMessage: "Search widgets...",
+		description: "Create Widgets modal: search widgets placeholder"
+	})
+
 	return (
-		<Modal title={intl.formatMessage({ defaultMessage: "Create Widget" })}
-				{...props}>
+		<Modal title={intl.formatMessage({ defaultMessage: "Create Widget" })} wide={true}  {...props}>
+			<input type="search" placeholder={placeholder} autoFocus={true}
+				value={query} onChange={(e) => setQuery(e.target.value)} />
 			<ul className="links large">
 				{widgets}
+				{widgets.length == 0 && (
+					<li className="section">
+						<FormattedMessage defaultMessage="No matching widgets" />
+					</li>)}
 			</ul>
 		</Modal>);
 }

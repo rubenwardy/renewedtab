@@ -426,10 +426,6 @@
     "bQFsdR": {
         "message": "Accorder l'autorisation d'accéder à {hôte}"
     },
-    "ba9jts": {
-        "message": "Affiche un flux Atom ou RSS",
-        "description": "Feed widget description"
-    },
     "cL6y1P": {
         "message": "URL vers un flux Atom ou RSS",
         "description": "Form field hint (Feed URL)"

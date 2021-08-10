@@ -501,10 +501,6 @@
     "bQFsdR": {
         "message": "Conceda permissão para acessar {host}"
     },
-    "ba9jts": {
-        "message": "Mostra um feed Atom ou RSS",
-        "description": "Feed widget description"
-    },
     "cL6y1P": {
         "message": "URL para um feed Atom ou RSS",
         "description": "Form field hint (Feed URL)"

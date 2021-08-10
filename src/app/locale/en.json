@@ -169,6 +169,10 @@
         "description": "Weather widget: Fahrenheit unit",
         "message": "Fahrenheit"
     },
+    "FCmJHd": {
+        "description": "Feed widget description",
+        "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
+    },
     "FEUbOi": {
         "description": "Preset: grid description",
         "message": "Start with the news, weather, and more"
@@ -269,6 +273,9 @@
     "Lxc1x4": {
         "description": "Clock Widget",
         "message": "Clock"
+    },
+    "M8ugqX": {
+        "message": "No matching widgets"
     },
     "MN3prI": {
         "description": "Bookmarks widget: form field label",
@@ -508,10 +515,6 @@
     },
     "bQFsdR": {
         "message": "Grant permission to access {host}"
-    },
-    "ba9jts": {
-        "description": "Feed widget description",
-        "message": "Shows an Atom or RSS feed"
     },
     "cL6y1P": {
         "description": "Form field hint (Feed URL)",
@@ -783,6 +786,10 @@
     "vVnypL": {
         "description": "Quotes Widget description",
         "message": "Shows a random quote, with categories"
+    },
+    "vlumg9": {
+        "description": "Create Widgets modal: search widgets placeholder",
+        "message": "Search widgets..."
     },
     "wEQDC6": {
         "message": "Edit"
