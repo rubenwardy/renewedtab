@@ -33,13 +33,12 @@ before(async () => {
 beforeEach(async () => {
 	// Clear data and reload extension between each test
 	await driver.executeAsyncScript(`
+		const resolve = arguments[arguments.length - 1];
 		(async () => {
 			localStorage.clear();
 			await browser.storage.local.clear();
 			await browser.storage.sync.clear();
-
-			// Resolve():
-			arguments[arguments.length - 1]();
+			resolve();
 		})();
 	`);
 	await driver.navigate().refresh();

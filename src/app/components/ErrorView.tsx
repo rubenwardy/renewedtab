@@ -30,7 +30,7 @@ export default function ErrorView(props: ErrorViewProps) {
 	if (props.error == undefined) {
 		if (props.loading === true) {
 			return (
-				<div className="panel text-muted">
+				<div className="panel text-muted loading">
 					<FormattedMessage {...miscMessages.loading} />
 				</div>);
 		} else {
@@ -41,12 +41,14 @@ export default function ErrorView(props: ErrorViewProps) {
 	let msg = props.error;
 	if (msg instanceof UserError && msg.messageDescriptor) {
 		msg = intl.formatMessage(msg.messageDescriptor);
-	} else if (msg instanceof Error) {
-		msg = msg.message;
+	} else if (msg instanceof Error || typeof (msg as any).message != "undefined") {
+		msg = (msg as any).message;
+	} else if (typeof (msg as any).toString == "function") {
+		msg = msg.toString();
 	}
 
 	return (
-		<div className={`${props.panel !== false && "panel"} text-muted`}>
+		<div className={`${props.panel !== false && "panel"} text-muted error`}>
 			<FormattedMessage
 					defaultMessage="Error: {msg}"
 					values={{ msg: msg }} />
