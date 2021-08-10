@@ -40,7 +40,9 @@ export default function Carousel(props: CarouselProps) {
 			<div className="modal-body row align-items-center mt-3">
 				<div className="col-2">
 					{page != 0 && (
-						<Button variant={ButtonVariant.None} onClick={prevPage}
+						<Button className="carousel-prev"
+							variant={ButtonVariant.None}
+							onClick={prevPage}
 							label={messages.previous} />)}
 				</div>
 				<ul className="col text-center carousel">
@@ -50,7 +52,9 @@ export default function Carousel(props: CarouselProps) {
 				</ul>
 				<div className="col-2 text-right">
 					{page != props.children.length - 1 && (
-						<Button onClick={nextPage} label={messages.next} />)}
+						<Button className="carousel-next"
+							onClick={nextPage}
+							label={messages.next} />)}
 				</div>
 			</div></>);
 }
