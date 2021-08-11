@@ -1,6 +1,6 @@
 import { fetchFeed, getAPI } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
-import { AutocompleteList, type } from "app/utils/Schema";
+import { AutocompleteItem, type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
 import { ActualBackgroundProps, BackgroundCredit, BackgroundProvider } from ".";
 import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
@@ -44,8 +44,8 @@ export const FeedBG : BackgroundProvider<FeedBGProps> = {
 	title: messages.title,
 	description: messages.description,
 	schema: {
-		feedURL: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
-			() => getAPI<AutocompleteList[]>("feeds/background/", {})),
+		feedURL: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
+			() => getAPI<AutocompleteItem[]>("feeds/background/", {})),
 		randomiseFrom: type.number(messages.randomiseFrom, messages.randomiseFromHint, 1),
 		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages,
 			backgroundMessages.cacheExpiry, backgroundMessages.cacheExpiryHint),

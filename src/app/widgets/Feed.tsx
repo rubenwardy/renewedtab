@@ -1,6 +1,6 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema, { AutocompleteList, type } from 'app/utils/Schema';
+import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
 import { Widget, WidgetProps } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
@@ -126,8 +126,8 @@ const filterSchema: Schema = {
 
 Feed.schema = {
 	title: type.string(schemaMessages.title, messages.titleHint),
-	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
-			() => getAPI<AutocompleteList[]>("feeds/", {})),
+	url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
+			() => getAPI<AutocompleteItem[]>("feeds/", {})),
 	filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
 } as Schema;
 

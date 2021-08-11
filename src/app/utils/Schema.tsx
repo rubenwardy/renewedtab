@@ -3,13 +3,13 @@ import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { IntlShape } from "react-intl";
 
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "host_url" | "host_all" | "location" |
+export type Type = JSType | "url_feed" | "host_all" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
 	"color" | "color_pair" | "image" | "unit_number" | "textarea" |
 	"quote_categories" | "enum" | "select";
 
 
-export type AutocompleteList = {label: string, value: string};
+export type AutocompleteItem = {label: string, value: string};
 type Messages = {
 	[key in (string | number)]: MyMessageDescriptor;
 };
@@ -27,7 +27,7 @@ export interface SchemaEntry {
 	unit?: string;
 	min?: number;
 	max?: number;
-	autocomplete?: (intl: IntlShape) => Promise<AutocompleteList[]>;
+	autocomplete?: (intl: IntlShape) => Promise<AutocompleteItem[]>;
 }
 
 
@@ -92,7 +92,7 @@ export namespace type {
 	 * URL, but will ask the user to grant host permissions when using as
 	 * an extension and the URL is blocked by CORS.
 	 */
-	export const urlPerm = makeAutocompletedTypeFunc("host_url");
+	export const urlFeed = makeAutocompletedTypeFunc("url_feed");
 
 	export const color = makeTypeFunc("color");
 	export const colorPair = makeTypeFunc("color_pair");

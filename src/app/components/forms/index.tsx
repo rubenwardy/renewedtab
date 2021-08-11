@@ -17,7 +17,7 @@ import SelectField from "./SelectField";
 import EnumSelectField from "./EnumSelectField";
 import CheckboxField from "./CheckboxField";
 import ImageUploadField from "./ImageUploadField";
-import { HostAllField, HostURLFIeld } from "./HostPermFields";
+import { FeedURLField, HostAllField } from "./HostPermFields";
 import { NumberField, UnitNumberField } from "./NumberField";
 import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
@@ -38,8 +38,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return EnumSelectField;
 	} else if (type == "select") {
 		return SelectField;
-	} else if (type == "host_url") {
-		return HostURLFIeld;
+	} else if (type == "url_feed") {
+		return FeedURLField;
 	} else if (type == "host_all") {
 		return HostAllField;
 	} else if (type == "location") {

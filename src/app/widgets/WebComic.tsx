@@ -1,6 +1,6 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema, { AutocompleteList, type } from 'app/utils/Schema';
+import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
@@ -63,8 +63,8 @@ WebComic.initialProps = {
 };
 
 WebComic.schema = {
-	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
-			() => getAPI<AutocompleteList[]>("webcomics/", {})),
+	url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
+			() => getAPI<AutocompleteItem[]>("webcomics/", {})),
 } as Schema;
 
 WebComic.defaultSize = new Vector2(5, 4);

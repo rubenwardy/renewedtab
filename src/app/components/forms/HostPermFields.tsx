@@ -1,6 +1,7 @@
 import { useCache, useForceUpdate, usePromise } from "app/hooks";
+import { AutocompleteItem } from "app/utils/Schema";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
-import React, { FocusEvent, ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import RequestHostPermission from "../RequestHostPermission";
@@ -24,37 +25,15 @@ const messages = defineMessages({
 });
 
 
-export function HostURLFIeld(props: FieldProps<string>) {
-	const [value, setValue] = useState<string>(props.value);
-	useEffect(() => setValue(props.value), [props.value]);
-	const [submittedUrls, setSubmittedUrls] = useCache<{ [key: string]: boolean}>("submittedUrls", {});
-
-	function handleBlur(e: FocusEvent<HTMLInputElement>) {
-		if (!e.target.checkValidity()) {
-			return;
-		}
-
-		props.onChange(value);
-	}
-
-	let host = "";
-	try {
-		host = new URL(value).host;
-	} catch (e) {
-		// ignore
-	}
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function URLSubmitter(props: { url: string, autocomplete?: AutocompleteItem[] }) {
+	const value = props.url;
 	const intl = useIntl();
-	const [autocomplete, ] = props.schemaEntry.autocomplete
-			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
-			: [ null, null ];
-
-	const showSubmitURL = false;
-
-	/* autocomplete && value && value.length > 4 &&
+	const [submittedUrls, setSubmittedUrls] = useCache<{ [key: string]: boolean}>("submittedUrls", {});
+	const showSubmitURL = props.autocomplete && value && value.length > 4 &&
 		submittedUrls && submittedUrls[value] != true &&
 		!value.startsWith("file://") &&
-		!autocomplete.some(suggestion => value == suggestion.value); */
+		!props.autocomplete.some(suggestion => value == suggestion.value);
 
 	function submitURLToSuggestions() {
 		const url = new URL(config.API_URL);
@@ -77,6 +56,40 @@ export function HostURLFIeld(props: FieldProps<string>) {
 		});
 	}
 
+	return showSubmitURL ?
+		(<p className="mt-4">
+			<a onClick={submitURLToSuggestions}>
+				<FormattedMessage {...messages.suggestURL} />
+			</a>
+			<i className="fas fa-question-circle ml-2"
+				title={intl.formatMessage(messages.suggestHelpText)}></i>
+		</p>) : <></>
+}
+
+
+export function FeedURLField(props: FieldProps<string>) {
+	const [value, setValue] = useState<string>(props.value);
+
+	function handleBlur(e: ChangeEvent<HTMLInputElement>) {
+		if (!e.target.checkValidity()) {
+			return;
+		}
+
+		props.onChange(e.target.value);
+	}
+
+	let host = "";
+	try {
+		host = new URL(value).host;
+	} catch (e) {
+		// ignore
+	}
+
+	const intl = useIntl();
+	const [autocomplete, ] = props.schemaEntry.autocomplete
+			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
+			: [ null, null ];
+
 	return (
 		<>
 			<input type="url" name={props.name} value={value}
@@ -92,15 +105,7 @@ export function HostURLFIeld(props: FieldProps<string>) {
 				</datalist>}
 
 			<RequestHostPermission host={host} />
-
-			{showSubmitURL &&
-				<p className="mt-2">
-					<a onClick={submitURLToSuggestions}>
-						<FormattedMessage {...messages.suggestURL} />
-					</a>
-					<i className="fas fa-question-circle ml-2"
-						title={intl.formatMessage(messages.suggestHelpText)}></i>
-				</p>}
+			{/* <URLSubmitter url={value} autocomplete={autocomplete ?? undefined} /> */}
 		</>);
 }
 
