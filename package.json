@@ -23,7 +23,8 @@
 		"uitest-and-server": "start-server-and-test start:app http://127.0.0.1:8085 uitest",
 		"coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
 		"trans:extract": "formatjs extract 'src/app/**/*.ts*' --out-file src/app/locale/en.json --id-interpolation-pattern '[sha512:contenthash:base64:6]' --format utils/translation-format.js && node utils/update_translations.js",
-		"trans:compile": "node utils/compile_translations.js"
+		"trans:compile": "node utils/compile_translations.js",
+		"votes": "node utils/votes_report.js"
 	},
 	"repository": {
 		"type": "git",
