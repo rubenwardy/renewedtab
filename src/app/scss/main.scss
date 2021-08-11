@@ -140,16 +140,6 @@ main .scroll-wrap {
 	background-repeat: no-repeat;
 }
 
-meter {
-	background: rgba(10, 10, 10, 0.2);
-	border-radius: 0.25rem;
-
-	&::-moz-meter-bar, &::-webkit-meter-bar {
-		background: var(--color-primary-light);
-		border-radius: 0.25rem 0 0 0.25rem;
-	}
-}
-
 @media (max-width: 750px) {
 	html, body, #app {
 		height: auto;
@@ -178,6 +168,7 @@ meter {
 @import "panel";
 @import "widget";
 @import "fields";
+@import "meter";
 @import "alert.scss";
 @import "modal";
 @import "onboarding";

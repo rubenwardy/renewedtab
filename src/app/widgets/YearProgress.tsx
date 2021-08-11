@@ -1,6 +1,6 @@
+import Meter from 'app/components/Meter';
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
-import Color from 'app/utils/Color';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { themeMessages, WidgetProps, WidgetTheme } from 'app/Widget';
@@ -30,14 +30,10 @@ export default function YearProgress(widget: WidgetProps<any>) {
 	const oneDay = 1000 * 60 * 60 * 24;
 	const dayOfYear = Math.floor(diff / oneDay);
 
-	const style: any = {};
-	if (widget.theme.color && Color.fromString(widget.theme.color)) {
-		style["--color-primary-light"] = widget.theme.color;
-	}
-
 	return (
 		<Panel {...widget.theme} className="vertical-middle" invisClassName="vertical-middle">
-			<meter value={dayOfYear} min={0} max={365} className="w-100 blur" style={style} />
+			<Meter className="blur" color={widget.theme.color}
+				value={dayOfYear} max={365} />
 		</Panel>);
 }
 

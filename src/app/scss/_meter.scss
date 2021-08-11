@@ -1,0 +1,36 @@
+.meter {
+	width: 100%;
+	background: rgba(10, 10, 10, 0.2);
+	border-radius: 0.25rem;
+	height: 1.2rem;
+	position: relative;
+	overflow: hidden;
+	line-height: 0.8rem;
+	font-size: 0.8rem;
+
+	.bar {
+		display: block;
+		background-color: var(--color-primary-light);
+		border-radius: 0.25rem 0 0 0.25rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		overflow: hidden;
+		z-index: 0;
+	}
+
+	.label {
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		text-align: center;
+		padding: 0.2rem;
+		margin: 0;
+		white-space: nowrap;
+	}
+}
