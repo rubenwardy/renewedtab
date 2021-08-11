@@ -12,6 +12,9 @@ type Messages = {
 	[key in (string | number)]: MessageDescriptor;
 };
 
+// Used by image_upload type to have different objects with the same key
+export type ImageHandle = { key: string };
+
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema;

@@ -1,6 +1,7 @@
 import { useLargeStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { largeStorage } from "app/Storage";
+import { ImageHandle } from "app/utils/Schema";
 import uuid from "app/utils/uuid";
 import React, { useRef } from "react";
 import { FormattedMessage } from "react-intl";
@@ -35,16 +36,17 @@ export interface FileInfo {
 }
 
 
-export default function ImageUploadField(props: FieldProps<string>) {
-	const [file] = useLargeStorage<FileInfo>(props.value);
+export default function ImageUploadField(props: FieldProps<ImageHandle>) {
+	const [file] = useLargeStorage<FileInfo>(props.value?.key);
 	const ref = useRef<HTMLInputElement>(null);
+	const key: (string | undefined) = typeof props.value == "object" ? props.value?.key : props.value;
 
 	async function handleFile(file: File) {
-		if (props.value) {
-			await largeStorage.remove(props.value);
+		if (key) {
+			await largeStorage.remove(key);
 		}
 
-		const id = `image-${uuid()}`;
+		const id = key ?? `image-${uuid()}`;
 		const data = await readFileAsDataURL(file);
 		await largeStorage.set(id, {
 			filename: file.name,
@@ -52,8 +54,7 @@ export default function ImageUploadField(props: FieldProps<string>) {
 		});
 
 		if (props.onChange) {
-			console.log("On change");
-			props.onChange(id);
+			props.onChange({ key: id });
 		}
 	}
 
