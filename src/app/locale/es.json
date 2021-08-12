@@ -65,5 +65,84 @@
     "+GMx80": {
         "message": "No se encontraron ubicaciones",
         "description": "Location form field: error"
+    },
+    "6MDM6D": {
+        "message": "Citas",
+        "description": "Quotes Widget"
+    },
+    "BJYZgx": {
+        "message": "Utilice el controlador de movimiento (<move> </move>) y el controlador de cambio de tamaño (<resize> </resize>)."
+    },
+    "1s5GYl": {
+        "message": "Opacidad",
+        "description": "Form field label"
+    },
+    "+oSH/F": {
+        "message": "Dice tu edad  con demasiada precisión",
+        "description": "Age widget description"
+    },
+    "/iBdV1": {
+        "message": "Haga clic en los elementos para editarlos.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "Bl74xq": {
+        "message": "Un botón de enlace",
+        "description": "Button widget description"
+    },
+    "3aaibf": {
+        "message": "Agregar Widget"
+    },
+    "GXkv/F": {
+        "message": "Por favor seleccione una ubicación",
+        "description": "Location form field: prompt"
+    },
+    "I48yxw": {
+        "message": "Privacidad",
+        "description": "General settings: privacy"
+    },
+    "2efE5y": {
+        "message": "Saludo",
+        "description": "Greeting Widget"
+    },
+    "3/EBw0": {
+        "message": "Sitio web",
+        "description": "Renewed Tab website"
+    },
+    "K3r6DQ": {
+        "message": "Eliminar"
+    },
+    "8xVVb5": {
+        "message": "Color Primario",
+        "description": "Theme settings: form field label"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "/LQ9WU": {
+        "message": "Medio",
+        "description": "Clock widget: date style type"
+    },
+    "56hSCM": {
+        "message": "Largo",
+        "description": "Clock widget: date style type"
+    },
+    "IhKDXS": {
+        "message": "Permitir",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "GcxpZV": {
+        "message": "Estilo de datos",
+        "description": "Clock widget: date style form field label"
+    },
+    "CshCZY": {
+        "message": "Tipo de fondo"
+    },
+    "D3idYv": {
+        "message": "Ajustes"
+    },
+    "D4M6tn": {
+        "message": "Bienvenido a Renewed Tab",
+        "description": "Onboarding modal: title"
     }
 }
