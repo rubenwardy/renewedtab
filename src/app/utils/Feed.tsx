@@ -5,6 +5,11 @@ export interface Article {
 	alt?: string;
 }
 
+export enum FeedType {
+	Rss,
+	Atom,
+}
+
 export interface Feed {
 	title?: string;
 	link?: string;
