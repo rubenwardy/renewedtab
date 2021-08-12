@@ -91,10 +91,10 @@ sentry:
     - *before_script
     - npm install @sentry/cli
   script:
-    - mkdir -p dist/webext
-    - mv chrome.zip dist/webext/chrome.zip
-    - pushd dist/webext && unzip chrome.zip && popd
-    - mv main.js.map dist/webext/app/main.js.map
+    - mkdir -p dist
+    - mv chrome.zip dist/chrome.zip
+    - pushd dist && unzip chrome.zip && popd
+    - mv main.js.map dist/app/main.js.map
     - sentry-cli releases new ${VERSION}
     - sentry-cli releases set-commits --auto $VERSION
     - sentry-cli releases deploys ${VERSION} new -e production
