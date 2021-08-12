@@ -6,9 +6,15 @@ type Translation = Record<string, MessageFormatElement[]>;
 const locales : { [key: string]: Translation } = {
 	"en": require("./compiled/en.json"),
 	"ms": require("./compiled/ms.json"),
-	"pt": require("./compiled/pt.json"),
+	// "pt": require("./compiled/pt.json"),
 	"pt-br": require("./compiled/pt_BR.json"),
 	"tr": require("./compiled/tr.json"),
+};
+
+// Locales will automatically resolve to more generic locales (ie: es-MX to es),
+// but not the other way around.
+const localeAliases : { [key: string]: string } = {
+	"pt": "pt-br",
 };
 
 
@@ -66,20 +72,22 @@ export function getTranslation(locale: string): Translation {
  * @returns Locale string, to be used with getTranslation
  */
 export function getUserLocale(): string {
-	const langs = navigator.languages ? navigator.languages : [navigator.language];
+	const rawLangs = navigator.languages ? navigator.languages : [navigator.language];
+	const langs = rawLangs.map(lang => lang.toLowerCase());
 
-	// Find exact matches, eg: es-mx
 	for (const lang of langs) {
-		if (locales[lang.toLowerCase()]) {
-			return lang;
+		// Find exact matches, eg: es-mx
+		const langAliased = localeAliases[lang] ?? lang;
+		if (locales[langAliased]) {
+			return langAliased;
 		}
-	}
 
-	// Find matches to canonical language, eg: es-mx -> es
-	for (const lang of langs) {
+		// Find matches to higher-level/shorter language, eg: es-mx -> es
 		const idx = lang.indexOf("-");
-		if (idx && locales[lang.substring(0, idx).toLowerCase()]) {
-			return lang;
+		const shortLang = lang.substring(0, idx);
+		const shortLangAliased = localeAliases[shortLang] ?? shortLang;
+		if (idx && locales[shortLangAliased]) {
+			return shortLangAliased;
 		}
 	}
 
