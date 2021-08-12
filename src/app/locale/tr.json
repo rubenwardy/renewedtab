@@ -833,5 +833,60 @@
     "yUJ5MA": {
         "message": "Hedefler",
         "description": "Preset: goals"
+    },
+    "0l+aD2": {
+        "message": "Günlük hedefler ve ünlü sözler",
+        "description": "Preset: focus description"
+    },
+    "7wOM6+": {
+        "message": "Yıl İlerlemesi",
+        "description": "Year Progress widget"
+    },
+    "Cq4JWx": {
+        "message": "Haberler, hava durumu, ve daha fazlası",
+        "description": "Preset: grid description"
+    },
+    "FCmJHd": {
+        "message": "Bir Atom veya RSS beslemesi gösterir. Haberleri, siteleri ve blogları takip etmek için kullanılır",
+        "description": "Feed widget description"
+    },
+    "b2Rs2F": {
+        "message": "Açık renkli görüntülerin parlaklığını değiştirir",
+        "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "gHzZEt": {
+        "message": "Sadece bir saat ve arama çubuğu",
+        "description": "Preset: focus description"
+    },
+    "hUIQ7h": {
+        "message": "Parlaklık",
+        "description": "Backgroud settings: form field label"
+    },
+    "ku7Ot7": {
+        "message": "Parlaklık: Açık",
+        "description": "Backgroud settings: form field label"
+    },
+    "mSg5KK": {
+        "message": "Parlaklık: Koyu",
+        "description": "Backgroud settings: form field label"
+    },
+    "q4caWd": {
+        "message": "Bulanıklık genişliği",
+        "description": "Backgroud settings: form field label"
+    },
+    "vlumg9": {
+        "message": "Araç ara...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "zEj0dg": {
+        "message": "Yılın ilerlemesini bir ilerleme çubuğunda gösterir",
+        "description": "Age widget description"
+    },
+    "M8ugqX": {
+        "message": "Eşleşen araç yok"
+    },
+    "qEk9AJ": {
+        "message": "Koyu renkli görüntülerin parlaklığını değiştirir",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
     }
 }
