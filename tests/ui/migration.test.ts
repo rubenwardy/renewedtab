@@ -3,7 +3,7 @@ import { By } from "selenium-webdriver";
 import { driver, utils } from "./setup-selenium";
 
 
-describe("Migration", function() {
+describe.skip("Migration", function() {
 	this.timeout(30000);
 
 	it("migration to sync", async () => {

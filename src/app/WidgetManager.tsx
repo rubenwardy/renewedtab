@@ -12,7 +12,6 @@ export class WidgetManager {
 	private id_counter = 0;
 
 	widgets: (Widget<any>)[] = [];
-	storedIds = new Set<number>();
 
 	constructor(private storage: IStorage) {}
 
@@ -28,12 +27,6 @@ export class WidgetManager {
 			this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 
 		for (const widget of this.widgets) {
-			const extra: any = await this.storage.get(`widget-${widget.id}`);
-			if (extra) {
-				this.storedIds.add(widget.id);
-			}
-
-			widget.props = extra?.props ?? widget.props;
 			widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
 			widget.size = widget.size ?? WidgetTypes[widget.type].defaultSize;
 
@@ -50,30 +43,7 @@ export class WidgetManager {
 	}
 
 	save() {
-		this.storage.set("widgets", this.widgets.map(widget => (
-			{
-				id: widget.id,
-				type: widget.type,
-				theme: widget.theme,
-				position: widget.position,
-				size: widget.size,
-			}
-		)));
-
-		const notSeenIds = new Set<number>(this.storedIds);
-
-		this.widgets.forEach(widget => {
-			this.storage.set(`widget-${widget.id}`, {
-				props: widget.props,
-			});
-			this.storedIds.add(widget.id);
-			notSeenIds.delete(widget.id);
-		});
-
-		notSeenIds.forEach(id => {
-			this.storage.remove(`widget-${id}`);
-			this.storedIds.delete(id);
-		});
+		this.storage.set("widgets", this.widgets);
 	}
 
 	createWidget<T>(type: string): Widget<T> {
