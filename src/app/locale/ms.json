@@ -833,5 +833,60 @@
     "yUJ5MA": {
         "message": "Matlamat",
         "description": "Preset: goals"
+    },
+    "0l+aD2": {
+        "message": "Petikan ilham dan matlamat harian",
+        "description": "Preset: focus description"
+    },
+    "FCmJHd": {
+        "message": "Menunjukkan suapan RSS atau Atom, berguna untuk mengikuti berita, laman sesawang, dan blog",
+        "description": "Feed widget description"
+    },
+    "M8ugqX": {
+        "message": "Tiada widget dipadankan"
+    },
+    "vlumg9": {
+        "message": "Cari widget...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "7wOM6+": {
+        "message": "Kemajuan Tahun",
+        "description": "Year Progress widget"
+    },
+    "Cq4JWx": {
+        "message": "Berita, cuaca, dan banyak lagi",
+        "description": "Preset: grid description"
+    },
+    "b2Rs2F": {
+        "message": "Tukar kecerahan imej yang lebih terang",
+        "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "gHzZEt": {
+        "message": "Hanya ada jam dan bar gelintar",
+        "description": "Preset: focus description"
+    },
+    "hUIQ7h": {
+        "message": "Kecerahan",
+        "description": "Backgroud settings: form field label"
+    },
+    "ku7Ot7": {
+        "message": "Kecerahan: Terang",
+        "description": "Backgroud settings: form field label"
+    },
+    "mSg5KK": {
+        "message": "Kecerahan: Gelap",
+        "description": "Backgroud settings: form field label"
+    },
+    "q4caWd": {
+        "message": "Jejari kekaburan",
+        "description": "Backgroud settings: form field label"
+    },
+    "qEk9AJ": {
+        "message": "Tukar kecerahan imej yang lebih gelap",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "zEj0dg": {
+        "message": "Tunjukkan kemajuan dalam tahun sebagai bar kemajuan",
+        "description": "Age widget description"
     }
 }
