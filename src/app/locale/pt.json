@@ -833,5 +833,60 @@
     },
     "yfgoZf": {
         "message": "Discord E Matrix chats"
+    },
+    "Cq4JWx": {
+        "message": "Novidades, previsão do tempo e muito mais",
+        "description": "Preset: grid description"
+    },
+    "b2Rs2F": {
+        "message": "Alterar o brilho de imagens mais claras",
+        "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "ku7Ot7": {
+        "message": "Brilho: Claro",
+        "description": "Backgroud settings: form field label"
+    },
+    "vlumg9": {
+        "message": "Pesquisar widgets ...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "zEj0dg": {
+        "message": "Mostra o progresso ao longo do ano como uma barra de progresso",
+        "description": "Age widget description"
+    },
+    "gHzZEt": {
+        "message": "Apenas um relógio e uma barra de pesquisa",
+        "description": "Preset: focus description"
+    },
+    "hUIQ7h": {
+        "message": "Brilho",
+        "description": "Backgroud settings: form field label"
+    },
+    "mSg5KK": {
+        "message": "Brilho: Escuro",
+        "description": "Backgroud settings: form field label"
+    },
+    "q4caWd": {
+        "message": "Raio de desfoque",
+        "description": "Backgroud settings: form field label"
+    },
+    "qEk9AJ": {
+        "message": "Alterar o brilho de imagens mais escuras",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "0l+aD2": {
+        "message": "Metas diárias e citações inspiradoras",
+        "description": "Preset: focus description"
+    },
+    "7wOM6+": {
+        "message": "Progresso do ano",
+        "description": "Year Progress widget"
+    },
+    "FCmJHd": {
+        "message": "Mostra um feed Atom ou RSS, útil para acompanhar notícias, sites e blogs",
+        "description": "Feed widget description"
+    },
+    "M8ugqX": {
+        "message": "Nenhum widget correspondente"
     }
 }
