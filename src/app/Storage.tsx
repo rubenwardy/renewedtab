@@ -32,7 +32,7 @@ class WebExtStorage implements IStorage {
 			const data = await browser.storage.local.get();
 			const widgets: any[] = (data.widgets ?? []) as any[];
 			if (widgets.length == 0) {
-				return;
+				return {};
 			}
 
 			console.log("Migrating to sync storage...");
@@ -61,7 +61,11 @@ class WebExtStorage implements IStorage {
 
 			return fromTypedJSON(await this.store.get());
 		}
+
+		return {};
 	}
+
+
 
 	async getAll(): Promise<{ [key: string]: any }> {
 		console.log(`[Storage] Get All`);
