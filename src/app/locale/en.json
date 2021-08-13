@@ -83,6 +83,10 @@
         "description": "Form field hint (Image)",
         "message": "Images are stored locally on your browser, and never uploaded"
     },
+    "4dzBeG": {
+        "description": "Currencies widget: form field label",
+        "message": "From"
+    },
     "4syC1B": {
         "message": "Help and Requests"
     },
@@ -168,6 +172,10 @@
     "DJRqNI": {
         "description": "Web Comic widget description",
         "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
+    },
+    "Ddd3ZY": {
+        "description": "Currencies widget: form field label",
+        "message": "To"
     },
     "Dk7Khi": {
         "description": "Weather widget: Fahrenheit unit",
@@ -317,6 +325,10 @@
         "description": "Theme settings: form field hint (Custom CSS)",
         "message": "Please note: this is an experimental feature and CSS selectors may break in future releases."
     },
+    "QV6YlB": {
+        "description": "Currencies widget: form field label",
+        "message": "Exchange Rates"
+    },
     "QcExtH": {
         "description": "General settings: privacy policy button",
         "message": "Privacy Policy"
@@ -373,6 +385,10 @@
     "U2Qnh7": {
         "description": "Image background mode",
         "message": "Image"
+    },
+    "UgAgeT": {
+        "description": "Currencies widget: credit to data provider",
+        "message": "Powered by exchangerate.host"
     },
     "V1EIOe": {
         "description": "IFrame widget description",
@@ -481,6 +497,10 @@
     },
     "a0L2KE": {
         "message": "Try including the country name or initials."
+    },
+    "aXrD3p": {
+        "description": "Currencies widget",
+        "message": "Currencies"
     },
     "aaxFkJ": {
         "description": "Todo List widget: prompt",
@@ -698,6 +718,10 @@
         "description": "Top Sites Widget",
         "message": "Top Sites"
     },
+    "pG7wIz": {
+        "description": "Currencies widget description",
+        "message": "Shows exchange rates, supporting forex currencies and crypto (BitCoin etc)"
+    },
     "pHo6u+": {
         "description": "Web Comic widget: no images found error",
         "message": "No images found on feed"
@@ -743,6 +767,10 @@
     "rb3Zy8": {
         "description": "Feed widget: form field label",
         "message": "Filter Articles"
+    },
+    "rx+w+M": {
+        "description": "Currencies widget: error",
+        "message": "Unknown currency {currency}"
     },
     "sPl3nI": {
         "description": "Form field label",

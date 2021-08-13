@@ -33,6 +33,7 @@ import getImageFromUnsplash from "./backgrounds/unsplash";
 import { compareString } from "common/utils/string";
 import SpaceLaunch from "common/api/SpaceLaunch";
 import { getQuote, getQuoteCategories } from "./quotes";
+import { getCurrencies } from "./currencies";
 
 const app = express();
 
@@ -385,6 +386,18 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 		writeClientError(res, ex.message);
 	}
 });
+
+app.get("/api/currencies/", async (req: express.Request, res: express.Response) => {
+	notifyAPIRequest("currency");
+	try {
+		const base = req.query.base ?? "USD";
+		const result = await getCurrencies(base);
+		res.json(result);
+	} catch (ex) {
+		writeClientError(res, ex.message);
+	}
+});
+
 
 app.use(Sentry.Handlers.errorHandler());
 

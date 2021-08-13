@@ -4,6 +4,7 @@ import Age from "./Age";
 import Bookmarks from "./Bookmarks";
 import Button from "./Button";
 import Clock from "./Clock";
+import Currencies from "./Currencies";
 import DailyGoal from "./DailyGoal";
 import Feed from "./Feed";
 import Greeting from "./Greeting";
@@ -28,6 +29,7 @@ export const WidgetTypes: { [name: string]: WidgetType<any> } = {
 	Bookmarks,
 	Button,
 	Clock,
+	Currencies,
 	DailyGoal,
 	Feed,
 	Greeting,
