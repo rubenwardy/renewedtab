@@ -132,6 +132,10 @@
     "9+2gJZ": {
         "message": "This widget requires the browser extension version."
     },
+    "Abtyj/": {
+        "description": "Image upload error message",
+        "message": "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image."
+    },
     "AgU+/t": {
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"

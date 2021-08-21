@@ -4,7 +4,7 @@ import { largeStorage } from "app/Storage";
 import { ImageHandle } from "app/utils/Schema";
 import uuid from "app/utils/uuid";
 import React, { useRef } from "react";
-import { FormattedMessage } from "react-intl";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import Button from "../Button";
 
@@ -30,6 +30,14 @@ function readFileAsDataURL(file: File) {
 }
 
 
+const messages = defineMessages({
+	imageTooLarge: {
+		defaultMessage: "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image.",
+		description: "Image upload error message",
+	}
+});
+
+
 export interface FileInfo {
 	filename: string;
 	data: string;
@@ -39,6 +47,7 @@ export interface FileInfo {
 export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 	const [file] = useLargeStorage<FileInfo>(props.value?.key);
 	const ref = useRef<HTMLInputElement>(null);
+	const intl = useIntl();
 	const key: (string | undefined) = typeof props.value == "object" ? props.value?.key : props.value;
 
 	async function handleFile(file: File) {
@@ -46,8 +55,17 @@ export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 			await largeStorage.remove(key);
 		}
 
+		const dataSizeMB = file.size / 1024 / 1024;
+		if (dataSizeMB > 2) {
+			alert(intl.formatMessage(messages.imageTooLarge, {
+				dataSizeMB: dataSizeMB.toFixed(1),
+			}));
+			return;
+		}
+
 		const id = key ?? `image-${uuid()}`;
 		const data = await readFileAsDataURL(file);
+
 		await largeStorage.set(id, {
 			filename: file.name,
 			data: data,
