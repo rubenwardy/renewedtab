@@ -148,7 +148,7 @@ Search.initialProps = {
 	searchURL: "https://google.com/search",
 };
 
-Search.schema = (widget: Widget<SearchProps>) => {
+Search.schema = async (widget: Widget<SearchProps>) => {
 	if (!hasSearchAPI) {
 		return {
 			searchTitle: type.string(messages.searchTitle),

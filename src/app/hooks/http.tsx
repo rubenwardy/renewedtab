@@ -88,6 +88,28 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
 
 
 /**
+ * Bulds URL to API endpoind
+ *
+ * @param path API path
+ * @param args API args
+ */
+export function buildAPIURL(path: string, args?: Record<string, any>): URL {
+	const url = new URL(config.API_URL);
+	url.pathname = (url.pathname + path).replace(/\/\//g, "/");
+	Object.entries(args ?? {}).forEach(([key, value]) => {
+		if (value instanceof Array) {
+			value.forEach(single => {
+				url.searchParams.append(key.toString(), (single as any).toString());
+			});
+		} else {
+			url.searchParams.set(key.toString(), (value as any).toString());
+		}
+	});
+	return url;
+}
+
+
+/**
  * Downloads a JSON document from a URL.
  *
  * @param intl Intl
@@ -97,19 +119,7 @@ export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (strin
  * @return {[response, error]]} - Response and error
  */
 export async function getAPI<T>(intl: IntlShape, path: string, args: any): Promise<T> { // eslint-disable-line
-	const url = new URL(config.API_URL);
-	url.pathname = (url.pathname + path).replace(/\/\//g, "/");
-	Object.entries(args).forEach(([key, value]) => {
-		if (value instanceof Array) {
-			value.forEach(single => {
-				url.searchParams.append(key.toString(), (single as any).toString());
-			});
-		} else {
-			url.searchParams.set(key.toString(), (value as any).toString());
-		}
-	})
-
-	return fetchJSON(intl, url.toString());
+	return fetchJSON(intl, buildAPIURL(path, args).toString());
 }
 
 

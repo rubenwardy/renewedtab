@@ -1,11 +1,12 @@
 import ErrorView from 'app/components/ErrorView';
 import Panel from 'app/components/Panel';
-import { useAPI } from 'app/hooks';
+import { buildAPIURL, useAPI } from 'app/hooks';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps } from 'app/Widget';
 import { calculateExchangeRate, CurrencyInfo } from 'common/api/currencies';
-import React from 'react';
+import { compareString } from 'common/utils/string';
+import React, { useMemo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
 
@@ -53,14 +54,17 @@ interface CurrenciesProps {
 
 
 export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
-	const props = widget.props;
+	const rates = useMemo(
+		() => widget.props.rates.filter(rate => rate.from != "" && rate.to != ""),
+		[ widget.props.rates.length ]);
+
 	const intl = useIntl();
 	const [ currencies, error ] = useAPI<Record<string, CurrencyInfo>>(`/currencies/`, {}, []);
 	if (!currencies) {
 		return (<ErrorView error={error} loading={true} />)
 	}
 
-	for (const { from, to } of props.rates) {
+	for (const { from, to } of rates) {
 		if (!currencies[from]) {
 			const msg = intl.formatMessage(messages.unknownCurrency, { currency: from });
 			return (<ErrorView error={msg} />);
@@ -75,7 +79,7 @@ export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
 	return (
 		<Panel {...widget.theme}>
 			<div className="stats">
-				{props.rates.map(({from, to}) => (
+				{rates.map(({from, to}) => (
 					<div className="singlestat" key={`${from}-${to}`}>
 						<span className="title">
 							{`${from} 🠒 ${to}`}
@@ -100,13 +104,33 @@ Currencies.initialProps = {
 	]
 } as CurrenciesProps;
 
-const rateSchema: Schema = {
-	from: type.string(messages.from),
-	to: type.string(messages.to),
-};
 
-Currencies.schema = {
-	rates: type.array(rateSchema, messages.rates),
-} as Schema;
+Currencies.schema = async () => {
+	const url = buildAPIURL("/currencies/");
+	const response = await fetch(new Request(url.toString(), {
+		method: "GET",
+		headers: {
+			"Accept": "application/json",
+		},
+	}));
+
+	const json = await response.json() as Record<string, CurrencyInfo>;
+	const currencyOptions: Record<string, string> = {};
+	Object.entries(json)
+		.sort((a, b) => compareString(a[0], b[0]))
+		.forEach(([key, value]) => {
+			currencyOptions[key] = `${value.code}: ${value.description}`;
+		});
+
+	const rateSchema: Schema = {
+		from: type.select(currencyOptions, undefined, messages.from),
+		to: type.select(currencyOptions, undefined, messages.to),
+	};
+
+	return {
+		rates: type.array(rateSchema, messages.rates),
+	};
+}
+
 
 Currencies.defaultSize = new Vector2(5, 3);

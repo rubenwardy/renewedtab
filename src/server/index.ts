@@ -390,9 +390,7 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 app.get("/api/currencies/", async (req: express.Request, res: express.Response) => {
 	notifyAPIRequest("currency");
 	try {
-		const base = req.query.base ?? "USD";
-		const result = await getCurrencies(base);
-		res.json(result);
+		res.json(await getCurrencies());
 	} catch (ex) {
 		writeClientError(res, ex.message);
 	}

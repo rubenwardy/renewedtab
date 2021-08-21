@@ -28,7 +28,7 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	/**
 	 * Schema for the props, used to generate WidgetEditor forms.
 	 */
-	schema: Schema | ((widget: Widget<T>) => Schema);
+	schema: Schema | ((widget: Widget<T>) => Promise<Schema>);
 
 	/**
 	 * Description shown in Create Widget dialog.
@@ -108,9 +108,9 @@ export const defaultLinksThemeSchema: Schema = {
  * @param type Widget type
  * @returns schema
  */
-export function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>): Schema {
+export async function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>): Promise<Schema> {
 	if (typeof type.schema == "function") {
-		return type.schema(widget);
+		return await type.schema(widget);
 	} else {
 		return type.schema;
 	}

@@ -84,7 +84,7 @@ Links.initialProps = {
 	]
 };
 
-Links.schema = (widget: Widget<LinkBoxProps>) => {
+Links.schema = async (widget: Widget<LinkBoxProps>) => {
 	const linkSchema = widget.props.enableCustomIcons ? FullLinkSchema : LinkSchema;
 	if (typeof browser !== "undefined") {
 		return {

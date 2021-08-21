@@ -4,7 +4,8 @@ import { IntlShape } from "react-intl";
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
 export type Type = JSType | "host_url" | "host_all" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
-	"color" | "color_pair" | "image" | "unit_number" | "textarea" | "quote_categories";
+	"color" | "color_pair" | "image" | "unit_number" | "textarea" |
+	"quote_categories" | "enum" | "select";
 
 
 export type AutocompleteList = {label: string, value: string};
@@ -22,6 +23,7 @@ export interface SchemaEntry {
 	messages?: Messages;
 	hint?: MessageDescriptor;
 	unit?: string;
+	values?: any;
 	autocomplete?: (intl: IntlShape) => Promise<AutocompleteList[]>;
 }
 
@@ -38,17 +40,22 @@ export default interface Schema {
 
 function makeTypeFunc(type: Type) {
 	return (label: MessageDescriptor, hint?: MessageDescriptor) => ({
-		type: type,
-		label: label,
-		hint: hint,
+		type, label, hint,
 	});
 }
 
 function makeAutocompletedTypeFunc(type: Type) {
 	return (label: MessageDescriptor, hint?: MessageDescriptor,
-			autocomplete?: (intl: IntlShape) => Promise<{label: string, value: string}[]>) => (
-		{ type, label, hint, autocomplete }
-	);
+			autocomplete?: (intl: IntlShape) => Promise<{label: string, value: string}[]>) => ({
+		type, label, hint, autocomplete
+	});
+}
+
+function makeSelectFunc(type: Type) {
+	return (values: any, messages: (Messages | undefined),
+			label: MessageDescriptor, hint?: MessageDescriptor): SchemaEntry => ({
+		type, values, messages, label, hint,
+	});
 }
 
 
@@ -96,13 +103,12 @@ export namespace type {
 	/**
 	 * enumType: The TypeScript enum object
 	 */
-	export const selectEnum = (enumType: any, messages: Messages, // eslint-disable-line
-			label: MessageDescriptor, hint?: MessageDescriptor): SchemaEntry => ({
-		type: enumType,
-		messages: messages,
-		label: label,
-		hint: hint,
-	});
+	export const selectEnum = makeSelectFunc("enum");
+
+	/**
+	 * values: keys to labels
+	 */
+	export const select = makeSelectFunc("select");
 
 	/**
 	 * Note: the values in the array MUST have an `id` field which is set to a

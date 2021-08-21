@@ -2,8 +2,8 @@ import React, { useState, KeyboardEvent } from "react";
 import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../Widget";
 import Modal from "./Modal";
 import { Form } from "./forms";
-import { ErrorBoundary } from "./ErrorView";
-import { useForceUpdate } from "app/hooks";
+import ErrorView, { ErrorBoundary } from "./ErrorView";
+import { useForceUpdate, usePromise } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "./Button";
@@ -15,10 +15,14 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
-	const schema = getSchemaForWidget(props, props.child);
+	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child),
+			[props.type, props.id]);
 	const themeSchema = getThemeSchemaForWidget(props, props.child);
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
+	if (!schema) {
+		return (<ErrorView error={error} loading={true} />);
+	}
 
 	function onChange() {
 		if (typeof props.child.schema == "function") {

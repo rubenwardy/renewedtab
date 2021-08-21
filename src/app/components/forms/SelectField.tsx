@@ -1,66 +1,36 @@
-import { enumToValue } from "app/utils/enum";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
-import { Radio, RadioGroup } from "react-radio-group";
 import { FieldProps } from ".";
 
+
 export default function SelectField(props: FieldProps<any>) {
-	const Enum: any = props.type;
+	const options: Record<string, string> = props.schemaEntry.values;
 	const [value, setValue] = useState(props.value);
 	const intl = useIntl();
 
-	function handleChanged(newMode: any) {
-		console.log("SET", newMode);
+	function handleChanged(newMode: string) {
 		if (props.onChange) {
-			props.onChange(getValue(newMode));
+			props.onChange(newMode);
 		}
-		setValue(getValue(newMode));
+		setValue(newMode);
 	}
 
-	function getString(x: any): string {
-		const id = enumToValue(Enum, x);
-
-		const descriptor = props.schemaEntry.messages && props.schemaEntry.messages[id];
+	function getLabel(key: any) {
+		const descriptor = props.schemaEntry.messages && props.schemaEntry.messages[key];
 		if (descriptor) {
 			return intl.formatMessage(descriptor);
 		} else {
-			return Enum[id];
+			return options[key];
 		}
 	}
 
-	function getValue(x: any): any {
-		if (typeof(x) == "string") {
-			return Enum[x];
-		} else {
-			return x;
-		}
-	}
-
-	const enumValues = Object.keys(props.type)
-		.filter(value => isNaN(Number(value)));
-
-
-	if (enumValues.length < 3) {
-		const radioModes =
-			enumValues
-				.map(x => (
-					<div className="field" key={getValue(x)}>
-						<Radio value={getValue(x)} /> {getString(x)}
-					</div>));
-		return (
-			<RadioGroup name="mode" selectedValue={getValue(value)} onChange={handleChanged}>
-				{radioModes}
-			</RadioGroup>);
-	} else {
-		const radioModes =
-			enumValues
-				.map(x => (
-					<option className="field" key={getValue(x)} value={getValue(x)}>
-						{getString(x)}
-					</option>));
-		return (
-			<select name="mode" value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
-				{radioModes}
-			</select>);
-	}
+	const optionsView =
+		Object.entries(options).map(([key]) => (
+				<option className="field" key={key} value={key}>
+					{getLabel(key)}
+				</option>));
+	return (
+		<select name="mode" value={value} onChange={(e) => handleChanged(e.target.value)}>
+			{optionsView}
+		</select>);
 }

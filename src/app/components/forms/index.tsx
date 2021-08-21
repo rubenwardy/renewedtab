@@ -14,6 +14,7 @@ import JSONField from "./JSONField";
 import LocationField from "./LocationField";
 import ArrayField from "./ArrayField";
 import SelectField from "./SelectField";
+import EnumSelectField from "./EnumSelectField";
 import CheckboxField from "./CheckboxField";
 import ImageUploadField from "./ImageUploadField";
 import { HostAllField, HostURLFIeld } from "./HostPermFields";
@@ -21,16 +22,6 @@ import { UnitNumberField } from "./NumberField";
 import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
 
-function isEnumType(x: any) {
-	const keys = new Set(Object.getOwnPropertyNames(x));
-	for (const key of keys) {
-		if (!keys.has(x[key].toString())) {
-			return false;
-		}
-	}
-
-	return keys.size > 0;
-}
 
 export function makeField(type: Type): React.FC<FieldProps<any>> {
 	if (type == Date) {
@@ -41,7 +32,9 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return UnitNumberField;
 	} else if (type == "json") {
 		return JSONField;
-	} else if (typeof(type) == "object" && isEnumType(type)) {
+	} else if (type == "enum") {
+		return EnumSelectField;
+	} else if (type == "select") {
 		return SelectField;
 	} else if (type == "host_url") {
 		return HostURLFIeld;
