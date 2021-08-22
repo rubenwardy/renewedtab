@@ -5,6 +5,10 @@
 	white-space: nowrap;
 	border-collapse: collapse;
 
+	.btn {
+		margin: 0;
+	}
+
 	td, th {
 		box-sizing: border-box;
 		padding: 0.375rem;

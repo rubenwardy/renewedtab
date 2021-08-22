@@ -92,7 +92,7 @@ export function HostURLFIeld(props: FieldProps<string>) {
 			<RequestHostPermission host={host} />
 
 			{showSubmitURL &&
-				<p>
+				<p className="mt-2">
 					<a onClick={submitURLToSuggestions}>
 						<FormattedMessage {...messages.suggestURL} />
 					</a>

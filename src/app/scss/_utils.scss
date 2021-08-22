@@ -13,6 +13,10 @@
 $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 @for $i from 1 to 8 {
+	.m-#{$i - 1} {
+		margin: nth($margins, $i) !important;
+	}
+
 	.ml-#{$i - 1}, .mx-#{$i - 1} {
 		margin-left: nth($margins, $i) !important;
 	}
@@ -27,6 +31,26 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 	.mt-#{$i - 1}, .my-#{$i - 1} {
 		margin-top: nth($margins, $i) !important;
+	}
+
+	.p-#{$i - 1} {
+		padding: nth($margins, $i) !important;
+	}
+
+	.pl-#{$i - 1}, .px-#{$i - 1} {
+		padding-left: nth($margins, $i) !important;
+	}
+
+	.pr-#{$i - 1}, .px-#{$i - 1} {
+		padding-right: nth($margins, $i) !important;
+	}
+
+	.pb-#{$i - 1}, .py-#{$i - 1} {
+		padding-bottom: nth($margins, $i) !important;
+	}
+
+	.pt-#{$i - 1}, .py-#{$i - 1} {
+		padding-top: nth($margins, $i) !important;
 	}
 }
 

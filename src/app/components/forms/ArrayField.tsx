@@ -117,7 +117,7 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			{isOrdered && (
 				<>
 					<Button small={true} variant={ButtonVariant.Secondary}
-						icon="fas fa-plus" className="float-right"
+						icon="fas fa-plus" className="float-right mr-0"
 						label={miscMessages.add} onClick={() => handleAdd(true)} />
 
 					<div className="clear-both" />
@@ -148,7 +148,7 @@ export default function ArrayField(props: FieldProps<any[]>) {
 
 			{(rows.length > 0 || !isOrdered) &&
 				<Button small={true}  variant={ButtonVariant.Secondary}
-					icon="fas fa-plus" className="float-right"
+					icon="fas fa-plus" className="float-right mr-0"
 					label={miscMessages.add} onClick={() => handleAdd(false)} />}
 
 			<div className="clear-both" />

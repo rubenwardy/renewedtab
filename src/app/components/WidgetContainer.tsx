@@ -20,10 +20,19 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	const [forceKey, setForce] = useState({});
 	const forceUpdate = () => setForce({});
 
+	const title = intl.formatMessage(
+		{ defaultMessage: "Edit {type}" },
+		{ type: intl.formatMessage(props.child.title) });
+
 	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child, intl),
 			[props.type, props.id, forceKey]);
 	if (!schema) {
-		return (<ErrorView error={error} loading={true} />);
+		return (
+			<Modal title={title} isOpen={true} {...props}>
+				<div className="modal-body">
+					<ErrorView error={error} loading={true} />
+				</div>
+			</Modal>);
 	}
 
 	function onChange() {
@@ -33,10 +42,6 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 
 		props.save();
 	}
-
-	const title = intl.formatMessage(
-			{ defaultMessage: "Edit {type}" },
-			{ type: intl.formatMessage(props.child.title) });
 
 	const isWide = Object.values(schema).some(field => field.type == "array" || field.type == "unordered_array");
 
