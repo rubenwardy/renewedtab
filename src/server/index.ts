@@ -1,5 +1,6 @@
 import express from "express";
 import fs from "fs";
+import path from "path";
 import fetchCatch, { Request } from "./http";
 import * as Sentry from "@sentry/node";
 import * as Tracing from "@sentry/tracing";
@@ -21,6 +22,7 @@ const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK ?? serverConfig.DISCORD_WEBH
 export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.9.1; +https://renewedtab.com/)";
 export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.9.1; +https://renewedtab.com/)";
 const SENTRY_DSN = process.env.SENTRY_DSN;
+const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
 
 
 // App
@@ -144,7 +146,8 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response)
 });
 
 
-const backgroundVoteStream = fs.createWriteStream("votes.csv", { flags: "a" });
+const backgroundVoteStream = fs.createWriteStream(
+	path.resolve(SAVE_ROOT, "votes.csv"), { flags: "a" });
 app.post("/api/background/vote/", async (req: express.Request, res: express.Response) => {
 	notifyAPIRequest("vote");
 
@@ -229,7 +232,8 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 	}
 });
 
-const feedbackStream = fs.createWriteStream("feedback.txt", { flags: "a" });
+const feedbackStream = fs.createWriteStream(
+	path.resolve(SAVE_ROOT, "feedback.txt"), { flags: "a" });
 app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
 	notifyAPIRequest("feedback");
 

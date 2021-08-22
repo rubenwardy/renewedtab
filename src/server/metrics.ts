@@ -1,13 +1,21 @@
-import client from 'prom-client';
+import client from "prom-client";
 
 const collectDefaultMetrics = client.collectDefaultMetrics;
 export const promRegister = client.register;
 collectDefaultMetrics();
 
+new client.Gauge({
+	name: "nodejs_uptime",
+	help: "uptime in seconds",
+	collect() {
+	  this.set(process.uptime());
+	},
+  });
+
 
 const requestsCounter = new client.Counter({
-	name: 'renewedtab_requests',
-	help: 'renewedtab_requests',
+	name: "renewedtab_requests",
+	help: "renewedtab_requests",
 	labelNames: [ "endpoint" ],
 });
 
@@ -17,8 +25,8 @@ export function notifyAPIRequest(endpoint: string) {
 
 
 const upstreamCounter = new client.Counter({
-	name: 'renewedtab_upstream_requests',
-	help: 'renewedtab_upstream_requests',
+	name: "renewedtab_upstream_requests",
+	help: "renewedtab_upstream_requests",
 	labelNames: [ "upstream" ],
 });
 
