@@ -788,10 +788,6 @@
         "description": "Feed widget: form field label",
         "message": "Filter Articles"
     },
-    "rx+w+M": {
-        "description": "Currencies widget: error",
-        "message": "Unknown currency {currency}"
-    },
     "sPl3nI": {
         "description": "Form field label",
         "message": "Title"
@@ -887,6 +883,10 @@
     "y8o0oA": {
         "description": "Weather widget description",
         "message": "Current and forecasted weather"
+    },
+    "yO9MXI": {
+        "description": "Currencies widget: error",
+        "message": "Unknown currency '{currency}'"
     },
     "yUJ5MA": {
         "description": "Preset: goals",

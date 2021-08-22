@@ -42,7 +42,7 @@ const messages = defineMessages({
 	},
 
 	unknownCurrency: {
-		defaultMessage: "Unknown currency {currency}",
+		defaultMessage: "Unknown currency '{currency}'",
 		description: "Currencies widget: error",
 	},
 });
@@ -116,6 +116,7 @@ Currencies.schema = async () => {
 
 	const json = await response.json() as Record<string, CurrencyInfo>;
 	const currencyOptions: Record<string, string> = {};
+	currencyOptions[""] = "";
 	Object.entries(json)
 		.sort((a, b) => compareString(a[0], b[0]))
 		.forEach(([key, value]) => {
