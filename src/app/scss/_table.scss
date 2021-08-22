@@ -12,6 +12,10 @@
 		font-size: 100%;
 		text-align: center;
 		vertical-align: middle;
+
+		input:not([type="checkbox"]), select {
+			width: 100%;
+		}
 	}
 
 	thead {
