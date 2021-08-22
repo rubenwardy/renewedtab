@@ -6,7 +6,7 @@ import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { themeMessages, Widget, WidgetProps, WidgetTheme } from "app/Widget";
 import React from "react";
-import { defineMessages, FormattedDate, FormattedTime, IntlShape } from "react-intl";
+import { defineMessages, FormattedTime, IntlShape, useIntl } from "react-intl";
 
 
 enum DateStyle {
@@ -15,6 +15,7 @@ enum DateStyle {
 	Long,
 	Medium,
 	Short,
+	ISO,
 }
 
 
@@ -70,10 +71,28 @@ const dateStyleMessages = defineMessages({
 	},
 
 	[DateStyle.Short]: {
-		defaultMessage: "Shortened ({example})",
+		defaultMessage: "Numbers ({example})",
+		description: "Clock widget: date style type",
+	},
+
+	[DateStyle.ISO]: {
+		defaultMessage: "ISO ({example})",
 		description: "Clock widget: date style type",
 	},
 });
+
+
+function renderDate(intl: IntlShape, date: Date, dateStyle: DateStyle): string {
+	if (dateStyle == DateStyle.ISO) {
+		const month = (date.getMonth() + 1).toString().padStart(2, "0");
+		const day = (date.getDate()).toString().padStart(2, "0");
+		return `${date.getFullYear()}-${month}-${day}`;
+	} else {
+		return intl.formatDate(date, {
+			dateStyle: DateStyle[dateStyle].toLowerCase() as any
+		});
+	}
+}
 
 
 interface ClockProps {
@@ -85,6 +104,7 @@ interface ClockProps {
 export default function Clock(widget: WidgetProps<ClockProps>) {
 	const props = widget.props;
 	const [time, setTime] = React.useState<Date>(new Date());
+	const intl = useIntl();
 
 	React.useEffect(() => {
 		const timer = setInterval(() => {
@@ -111,9 +131,7 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 					</span>
 					<span className="date">
 						{dateStyle != undefined && dateStyle != DateStyle.None &&
-							<FormattedDate
-								value={time}
-								dateStyle={DateStyle[dateStyle].toLowerCase() as any} />}
+							renderDate(intl, time, dateStyle)}
 					</span>
 				</div>
 			</div>
@@ -139,9 +157,7 @@ Clock.schema = async (_widget: Widget<any>, intl: IntlShape) => {
 			dateStyleMessagesWithExamples[key] = {
 				...value,
 				values: {
-					example: intl.formatDate(new Date(), {
-						dateStyle: DateStyle[parseInt(key)].toLowerCase() as any
-					}),
+					example: renderDate(intl, new Date(), parseInt(key)),
 				}
 			} as MyMessageDescriptor;
 		});

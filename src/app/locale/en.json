@@ -240,10 +240,6 @@
         "description": "Theme settings: link to CSS docs",
         "message": "CSS documentation"
     },
-    "JkuifT": {
-        "description": "Clock widget: date style type",
-        "message": "Shortened ({example})"
-    },
     "JvOSvX": {
         "description": "Settings tab",
         "message": "Background"
@@ -302,6 +298,10 @@
     },
     "N/7Stk": {
         "message": "Created by <a>rubenwardy</a>."
+    },
+    "O8mt7g": {
+        "description": "Clock widget: date style type",
+        "message": "Numbers ({example})"
     },
     "OBJta4": {
         "description": "Greeting widget: edit modal hint",
@@ -690,6 +690,10 @@
     "mv9TrH": {
         "description": "HTML Widget",
         "message": "HTML"
+    },
+    "nF7bWj": {
+        "description": "Clock widget: date style type",
+        "message": "ISO ({example})"
     },
     "nGSwtl": {
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
