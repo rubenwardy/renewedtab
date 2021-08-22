@@ -48,4 +48,4 @@ async function fetchCoordsFromQuery(query: string): Promise<Location[]> {
 
 
 export const getCoordsFromQuery: (query: string) => Promise<Location[]>
-	= makeKeyCache(fetchCoordsFromQuery, 100000);
+	= makeKeyCache(fetchCoordsFromQuery, 0);

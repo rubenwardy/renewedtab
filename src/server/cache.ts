@@ -47,7 +47,7 @@ export function makeSingleCache<R>(func: AnyFunc<R>, timeout: number) {
 export function makeKeyCache<R>(func: AnyFunc<R>, timeout: number,
 		getKey: GetKeyFunc = (x) => x.toString()): AnyFunc<R> {
 	const cache = new Map<string, R>();
-	if (!IS_DEBUG) {
+	if (!IS_DEBUG && timeout != 0) {
 		setInterval(() => {
 			cache.clear();
 		}, timeout * 60 * 1000);
