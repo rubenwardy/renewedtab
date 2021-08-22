@@ -67,6 +67,10 @@
 		text-align: right;
 		padding: 1.25rem;
 		border-top: 1px solid rgba(30, 30, 30, 1);
+
+		&.buttons {
+			justify-content: right;
+		}
 	}
 
 	> input[type="search"] {

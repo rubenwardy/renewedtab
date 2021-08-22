@@ -83,7 +83,7 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 					defaultMessage="This will permanently delete this widget."
 					description="Delete widget modal message" />
 			</div>
-			<div className="modal-footer button-set">
+			<div className="modal-footer buttons">
 				<Button variant={ButtonVariant.Secondary}
 					onClick={props.onClose} label={miscMessages.cancel} />
 				<Button variant={ButtonVariant.Danger} autoFocus={true}

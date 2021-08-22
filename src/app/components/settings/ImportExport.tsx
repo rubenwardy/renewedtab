@@ -81,7 +81,7 @@ export default function ImportExport() {
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
-			<p className="button-set mt-4">
+			<p className="buttons mt-4">
 				<Button variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
 				<Button onClick={() => ref.current?.click()} label={messages.import} />
 				<Button href={`data:text/plain;base64,${encode(data ?? "")}`}

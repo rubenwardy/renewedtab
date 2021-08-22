@@ -102,8 +102,9 @@
 	}
 }
 
-.button-set {
-	.btn:not(:first-child) {
-		margin-left: 0.5rem;
-	}
+.buttons {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.25rem;
 }
