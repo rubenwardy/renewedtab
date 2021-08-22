@@ -3,7 +3,7 @@ import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../Wid
 import Modal from "./Modal";
 import { Form } from "./forms";
 import ErrorView, { ErrorBoundary } from "./ErrorView";
-import { useForceUpdate, usePromise } from "app/hooks";
+import { usePromise } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "./Button";
@@ -16,10 +16,12 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	const intl = useIntl();
-	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child, intl),
-			[props.type, props.id]);
 	const themeSchema = getThemeSchemaForWidget(props, props.child);
-	const forceUpdate = useForceUpdate();
+	const [forceKey, setForce] = useState({});
+	const forceUpdate = () => setForce({});
+
+	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child, intl),
+			[props.type, props.id, forceKey]);
 	if (!schema) {
 		return (<ErrorView error={error} loading={true} />);
 	}
