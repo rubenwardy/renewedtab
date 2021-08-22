@@ -314,10 +314,6 @@
         "message": "Lesezeichen",
         "description": "Bookmarks Widget"
     },
-    "VGhm86": {
-        "message": "Kurz",
-        "description": "Clock widget: date style type"
-    },
     "VPDVTF": {
         "message": "Nichts hier",
         "description": "Shown when array table form field has no rows"
@@ -454,14 +450,6 @@
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
-    },
-    "/LQ9WU": {
-        "message": "Mittel",
-        "description": "Clock widget: date style type"
-    },
-    "56hSCM": {
-        "message": "Lang",
-        "description": "Clock widget: date style type"
     },
     "Mihrhf": {
         "message": "Keins",

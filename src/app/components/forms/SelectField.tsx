@@ -1,3 +1,4 @@
+import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
 import { FieldProps } from ".";
@@ -18,7 +19,7 @@ export default function SelectField(props: FieldProps<any>) {
 	function getLabel(key: any) {
 		const descriptor = props.schemaEntry.messages && props.schemaEntry.messages[key];
 		if (descriptor) {
-			return intl.formatMessage(descriptor);
+			return myFormatMessage(intl, descriptor);
 		} else {
 			return options[key];
 		}

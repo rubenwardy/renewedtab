@@ -7,10 +7,6 @@
         "description": "Age widget description",
         "message": "States your current age with way too much precision"
     },
-    "/LQ9WU": {
-        "description": "Clock widget: date style type",
-        "message": "Medium"
-    },
     "/dtDqf": {
         "description": "Notes Widget",
         "message": "Notes"
@@ -89,10 +85,6 @@
     },
     "4syC1B": {
         "message": "Help and Requests"
-    },
-    "56hSCM": {
-        "description": "Clock widget: date style type",
-        "message": "Long"
     },
     "5DCxT+": {
         "description": "Weather widget: form field label",
@@ -224,6 +216,10 @@
         "description": "General settings: privacy",
         "message": "Privacy"
     },
+    "IbCXY9": {
+        "description": "Clock widget: date style type",
+        "message": "Standard ({example})"
+    },
     "Ibm90j": {
         "description": "Clock widget: edit hint",
         "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
@@ -243,6 +239,10 @@
     "JihbEV": {
         "description": "Theme settings: link to CSS docs",
         "message": "CSS documentation"
+    },
+    "JkuifT": {
+        "description": "Clock widget: date style type",
+        "message": "Shortened ({example})"
     },
     "JvOSvX": {
         "description": "Settings tab",
@@ -306,6 +306,10 @@
     "OBJta4": {
         "description": "Greeting widget: edit modal hint",
         "message": "You can change the name by clicking it on the widget"
+    },
+    "OPzczE": {
+        "description": "Clock widget: date style type",
+        "message": "Abbreviated ({example})"
     },
     "OQHLB5": {
         "description": "Form field label",
@@ -397,10 +401,6 @@
     "V1EIOe": {
         "description": "IFrame widget description",
         "message": "Shows a webpage"
-    },
-    "VGhm86": {
-        "description": "Clock widget: date style type",
-        "message": "Short"
     },
     "VPDVTF": {
         "description": "Shown when array table form field has no rows",
@@ -635,6 +635,10 @@
     "kAEQyV": {
         "message": "OK"
     },
+    "kF06lD": {
+        "description": "Clock widget: date style type",
+        "message": "Extended ({example})"
+    },
     "ktmuOE": {
         "description": "Feed widget: form field hint (Title)",
         "message": "Leave blank to use feed's title"
@@ -787,10 +791,6 @@
     "sx01dA": {
         "description": "Links widget description",
         "message": "Links, with support for headings and icons"
-    },
-    "tR8dMS": {
-        "description": "Clock widget: date style type",
-        "message": "Full"
     },
     "translation_credits": {
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME",

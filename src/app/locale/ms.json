@@ -721,14 +721,6 @@
         "message": "Penjarakan di antara widget-widget, dalam unit piksel.",
         "description": "Widget grid: form hint for grid spacing"
     },
-    "/LQ9WU": {
-        "message": "Sederhana",
-        "description": "Clock widget: date style type"
-    },
-    "56hSCM": {
-        "message": "Panjang",
-        "description": "Clock widget: date style type"
-    },
     "Dk7Khi": {
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
@@ -737,17 +729,9 @@
         "message": "Tiada",
         "description": "Clock widget: date style type, not shown"
     },
-    "VGhm86": {
-        "message": "Pendek",
-        "description": "Clock widget: date style type"
-    },
     "nnaWVi": {
         "message": "Celsius",
         "description": "Weather widget: Celsius unit"
-    },
-    "tR8dMS": {
-        "message": "Penuh",
-        "description": "Clock widget: date style type"
     },
     "5mVcg9": {
         "message": "CSS Tersuai",

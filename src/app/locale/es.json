@@ -119,14 +119,6 @@
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
     },
-    "/LQ9WU": {
-        "message": "Medio",
-        "description": "Clock widget: date style type"
-    },
-    "56hSCM": {
-        "message": "Largo",
-        "description": "Clock widget: date style type"
-    },
     "IhKDXS": {
         "message": "Permitir",
         "description": "Feed widget: filter allow checkbox label"

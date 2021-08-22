@@ -709,14 +709,6 @@
         "message": "Kategori",
         "description": "Form field label, list of categories. Used by Quotes widget"
     },
-    "/LQ9WU": {
-        "message": "Orta",
-        "description": "Clock widget: date style type"
-    },
-    "56hSCM": {
-        "message": "Uzun",
-        "description": "Clock widget: date style type"
-    },
     "Dk7Khi": {
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
@@ -729,17 +721,9 @@
         "message": "Araç alanındaki sütunların sayısı. Her sütun yaklaşık 50px artı boşluktan oluşur, yani 15px boşlukla, 1080p bir pencerede en fazla 30 sütun bulunmalıdır.",
         "description": "Widget grid: form hint for grid columns"
     },
-    "VGhm86": {
-        "message": "Kısa",
-        "description": "Clock widget: date style type"
-    },
     "nnaWVi": {
         "message": "Celsius",
         "description": "Weather widget: Celsius unit"
-    },
-    "tR8dMS": {
-        "message": "Tam",
-        "description": "Clock widget: date style type"
     },
     "vVnypL": {
         "message": "Kategorilere ayrılmış olarak rastgele bir ünlü söz gösterir",

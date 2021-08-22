@@ -1,5 +1,5 @@
 import { MessageDescriptor } from "@formatjs/intl";
-import { defineMessages } from "react-intl";
+import { defineMessages, IntlShape } from "react-intl";
 import { schemaMessages } from "./locale/common";
 import Schema, { type } from "./utils/Schema";
 import { Vector2 } from "./utils/Vector2";
@@ -28,7 +28,7 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	/**
 	 * Schema for the props, used to generate WidgetEditor forms.
 	 */
-	schema: Schema | ((widget: Widget<T>) => Promise<Schema>);
+	schema: Schema | ((widget: Widget<T>, intl: IntlShape) => Promise<Schema>);
 
 	/**
 	 * Description shown in Create Widget dialog.
@@ -108,9 +108,9 @@ export const defaultLinksThemeSchema: Schema = {
  * @param type Widget type
  * @returns schema
  */
-export async function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>): Promise<Schema> {
+export async function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>, intl: IntlShape): Promise<Schema> {
 	if (typeof type.schema == "function") {
-		return await type.schema(widget);
+		return await type.schema(widget, intl);
 	} else {
 		return type.schema;
 	}

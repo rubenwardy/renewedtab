@@ -15,11 +15,11 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
-	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child),
+	const intl = useIntl();
+	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child, intl),
 			[props.type, props.id]);
 	const themeSchema = getThemeSchemaForWidget(props, props.child);
 	const forceUpdate = useForceUpdate();
-	const intl = useIntl();
 	if (!schema) {
 		return (<ErrorView error={error} loading={true} />);
 	}

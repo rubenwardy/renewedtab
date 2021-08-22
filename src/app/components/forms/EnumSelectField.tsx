@@ -1,3 +1,4 @@
+import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import { enumToValue } from "app/utils/enum";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
@@ -21,7 +22,7 @@ export default function EnumSelectField(props: FieldProps<any>) {
 
 		const descriptor = props.schemaEntry.messages && props.schemaEntry.messages[id];
 		if (descriptor) {
-			return intl.formatMessage(descriptor);
+			return myFormatMessage(intl, descriptor);
 		} else {
 			return Enum[id];
 		}

@@ -3,10 +3,6 @@
         "message": "Afirma sua idade atual com muita precisão",
         "description": "Age widget description"
     },
-    "/LQ9WU": {
-        "message": "Média",
-        "description": "Clock widget: date style type"
-    },
     "/dtDqf": {
         "message": "Notas",
         "description": "Notes Widget"
@@ -77,10 +73,6 @@
     },
     "4syC1B": {
         "message": "Ajuda e pedidos"
-    },
-    "56hSCM": {
-        "message": "Longo",
-        "description": "Clock widget: date style type"
     },
     "5DCxT+": {
         "message": "Unidade de temperatura",
@@ -339,10 +331,6 @@
     "V1EIOe": {
         "message": "Mostrar Páginas da Web",
         "description": "IFrame widget description"
-    },
-    "VGhm86": {
-        "message": "Curto",
-        "description": "Clock widget: date style type"
     },
     "VPDVTF": {
         "message": "Nada Aqui",
@@ -682,10 +670,6 @@
     "sx01dA": {
         "message": "Links, com suporte para títulos e ícones",
         "description": "Links widget description"
-    },
-    "tR8dMS": {
-        "message": "Completo",
-        "description": "Clock widget: date style type"
     },
     "py0oht": {
         "message": "Boa noite",

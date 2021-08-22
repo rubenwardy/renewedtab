@@ -1,4 +1,5 @@
 import { MessageDescriptor } from "@formatjs/intl";
+import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { IntlShape } from "react-intl";
 
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
@@ -10,7 +11,7 @@ export type Type = JSType | "host_url" | "host_all" | "location" |
 
 export type AutocompleteList = {label: string, value: string};
 type Messages = {
-	[key in (string | number)]: MessageDescriptor;
+	[key in (string | number)]: MyMessageDescriptor;
 };
 
 // Used by image_upload type to have different objects with the same key

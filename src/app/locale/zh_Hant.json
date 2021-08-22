@@ -191,10 +191,6 @@
         "message": "英文",
         "description": "The name of the current language, to be used in the settings dialog"
     },
-    "56hSCM": {
-        "message": "長",
-        "description": "Clock widget: date style type"
-    },
     "GcxpZV": {
         "message": "資料形態",
         "description": "Clock widget: date style form field label"

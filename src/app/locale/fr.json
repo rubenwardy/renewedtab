@@ -3,10 +3,6 @@
         "message": "Aucune position trouvée",
         "description": "Location form field: error"
     },
-    "/LQ9WU": {
-        "message": "Moyen",
-        "description": "Clock widget: date style type"
-    },
     "/dtDqf": {
         "message": "Notes",
         "description": "Notes Widget"
@@ -74,10 +70,6 @@
     },
     "4syC1B": {
         "message": "Support et demandes"
-    },
-    "56hSCM": {
-        "message": "Long",
-        "description": "Clock widget: date style type"
     },
     "5DCxT+": {
         "message": "Unité de température",
@@ -314,10 +306,6 @@
     "V1EIOe": {
         "message": "Affiche une page Web",
         "description": "IFrame widget description"
-    },
-    "VGhm86": {
-        "message": "Court",
-        "description": "Clock widget: date style type"
     },
     "VPDVTF": {
         "message": "Rien ici",
