@@ -465,6 +465,10 @@
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
         "message": "Search with {name}"
     },
+    "YUXMxp": {
+        "description": "Delete widget modal message",
+        "message": "This will permanently delete this widget."
+    },
     "YYoBQn": {
         "description": "Theme settings: form field label",
         "message": "Panel Blur Radius"
@@ -697,6 +701,10 @@
     },
     "o2uuHu": {
         "message": "12 hour clock"
+    },
+    "oBl48o": {
+        "description": "Import / export settings, reset confirmation",
+        "message": "Are you sure you want to reset all data?"
     },
     "oDog89": {
         "description": "Notes widget description",

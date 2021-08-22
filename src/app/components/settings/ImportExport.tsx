@@ -22,44 +22,53 @@ const messages = defineMessages({
 		defaultMessage: "Export",
 		description: "Import / export settings, export",
 	},
-})
+
+	confirmReset: {
+		defaultMessage: "Are you sure you want to reset all data?",
+		description: "Import / export settings, reset confirmation",
+	},
+});
+
+
+async function getStoredData(): Promise<string> {
+	const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
+	for (const key in data) {
+		if (key.startsWith("large-")) {
+			delete data[key];
+		}
+	}
+
+	return JSON.stringify(data);
+}
+
+async function handleImport(file: File) {
+	const json = new TextDecoder("utf-8").decode(await file.arrayBuffer());
+	const data = JSON.parse(json);
+	for (const [key, value] of Object.entries(data)) {
+		await storage.set(key, value);
+	}
+
+	location.reload();
+}
+
+function encode(str: string) {
+	// Escapes needed to fix `#` in data.
+	return btoa(unescape(encodeURIComponent(str)));
+}
 
 
 export default function ImportExport() {
-	async function handleReset() {
-		await storage.clear();
-		location.reload();
-	}
-
-	async function getStoredData(): Promise<string> {
-		const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
-		for (const key in data) {
-			if (key.startsWith("large-")) {
-				delete data[key];
-			}
-		}
-
-		return JSON.stringify(data);
-	}
-
-	async function handleImport(file: File) {
-		const json = new TextDecoder("utf-8").decode(await file.arrayBuffer());
-		const data = JSON.parse(json);
-		for (const [key, value] of Object.entries(data)) {
-			await storage.set(key, value);
-		}
-
-		location.reload();
-	}
-
-	function encode(str: string) {
-		// Escapes needed to fix `#` in data.
-		return btoa(unescape(encodeURIComponent(str)));
-	}
-
 	const ref = useRef<HTMLInputElement>(null);
 	const [data, error] = usePromise(() => getStoredData(), []);
 	const intl = useIntl();
+
+	async function handleReset() {
+		const confirmReset = intl.formatMessage(messages.confirmReset);
+		if (confirm(confirmReset)) {
+			await storage.clear();
+			location.reload();
+		}
+	}
 
 	return (
 		<div className="modal-body">
