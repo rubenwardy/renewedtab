@@ -61,8 +61,9 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						values={props.theme}
 						schema={themeSchema}
 						onChange={onChange} />
-
-				<Button className="mt-5" onClick={props.onClose} label={miscMessages.ok} />
+			</div>
+			<div className="modal-footer">
+				<Button onClick={props.onClose} label={miscMessages.ok} />
 			</div>
 		</Modal>);
 }
@@ -75,12 +76,17 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 			{ type: props.type });
 	return (
 		<Modal title={title} isOpen={true} {...props}>
-			<p className="modal-body">
-				<Button variant={ButtonVariant.Danger} autoFocus={true}
-					onClick={props.remove} label={miscMessages.delete} />
+			<div className="modal-body">
+				<FormattedMessage
+					defaultMessage="This will permanently delete this widget."
+					description="Delete widget modal message" />
+			</div>
+			<div className="modal-footer button-set">
 				<Button variant={ButtonVariant.Secondary}
 					onClick={props.onClose} label={miscMessages.cancel} />
-			</p>
+				<Button variant={ButtonVariant.Danger} autoFocus={true}
+					onClick={props.remove} label={miscMessages.delete} />
+			</div>
 		</Modal>);
 }
 
