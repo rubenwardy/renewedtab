@@ -31,6 +31,10 @@
 		width: calc(100% - 10px);
 	}
 
+	.modal-header, .modal-footer {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
 	.modal-header {
 		display: flex;
 		flex-shrink: 0;
@@ -64,7 +68,6 @@
 	}
 
 	.modal-footer {
-		text-align: right;
 		padding: 1.25rem;
 		border-top: 1px solid rgba(30, 30, 30, 1);
 

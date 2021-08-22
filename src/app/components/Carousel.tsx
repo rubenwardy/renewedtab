@@ -37,7 +37,7 @@ export default function Carousel(props: CarouselProps) {
 	return (
 		<>
 			{props.children[page]}
-			<div className="modal-body row align-items-center mt-3">
+			<div className="modal-footer row align-items-center mt-3">
 				<div className="col-2">
 					{page != 0 && (
 						<Button className="carousel-prev"

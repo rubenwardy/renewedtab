@@ -64,7 +64,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						schema={themeSchema}
 						onChange={onChange} />
 			</div>
-			<div className="modal-footer">
+			<div className="modal-footer buttons">
 				<Button onClick={props.onClose} label={miscMessages.ok} />
 			</div>
 		</Modal>);
