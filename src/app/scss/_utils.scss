@@ -10,83 +10,25 @@
 	height: 100% !important;
 }
 
-.ml-0, .mx-0 {
-	margin-left: 0 !important;
+$margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
+
+@for $i from 1 to 8 {
+	.ml-#{$i - 1}, .mx-#{$i - 1} {
+		margin-left: nth($margins, $i) !important;
+	}
+
+	.mr-#{$i - 1}, .mx-#{$i - 1} {
+		margin-right: nth($margins, $i) !important;
+	}
+
+	.mb-#{$i - 1}, .my-#{$i - 1} {
+		margin-bottom: nth($margins, $i) !important;
+	}
+
+	.mt-#{$i - 1}, .my-#{$i - 1} {
+		margin-top: nth($margins, $i) !important;
+	}
 }
-
-.ml-1, .mx-1 {
-	margin-left: 0.25rem !important;
-}
-
-.ml-2, .mx-2 {
-	margin-left: 0.5rem !important;
-}
-
-.ml-3, .mx-3 {
-	margin-left: 0.75rem !important;
-}
-
-
-
-.mr-0, .mx-0 {
-	margin-right: 0 !important;
-}
-
-.mr-1, .mx-1 {
-	margin-right: 0.25rem !important;
-}
-
-.mr-2, .mx-2 {
-	margin-right: 0.5rem !important;
-}
-
-.mr-3, .mx-3 {
-	margin-right: 0.75rem !important;
-}
-
-
-.mt-0, .my-0 {
-	margin-top: 0 !important;
-}
-
-.mt-1, .my-1 {
-	margin-top: 0.25rem !important;
-}
-
-.mt-2, .my-2 {
-	margin-top: 0.5rem !important;
-}
-
-.mt-3, .my-3 {
-	margin-top: 0.75rem !important;
-}
-
-.mt-4, .my-4 {
-	margin-top: 2rem !important;
-}
-
-
-.mb-0, .my-0 {
-	margin-bottom: 0 !important;
-}
-
-.mb-1, .my-1 {
-	margin-bottom: 0.25rem !important;
-}
-
-.mb-2, .my-2 {
-	margin-bottom: 0.5rem !important;
-}
-
-.mb-3, .my-3 {
-	margin-bottom: 0.75rem !important;
-}
-
-.mb-4, .my-4 {
-	margin-bottom: 2rem !important;
-}
-
-
 
 .text-muted {
 	color: rgba(255, 255, 255, 0.5);

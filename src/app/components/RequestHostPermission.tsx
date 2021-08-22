@@ -50,7 +50,7 @@ export default function RequestHostPermission(props: RequestHostPermissionProps)
 				{ defaultMessage: "Grant permission to access {host}" },
 				{ host: props.host });
 		return (
-			<p>
+			<p className="my-4">
 				<RequestPermission permissions={makeHostPermission(props.host)}
 						label={label} onResult={() => setVisible(false)} />
 			</p>);

@@ -58,17 +58,16 @@ export default function Modal(props: ModalProps) {
 	return ReactDOM.createPortal((
 		<aside className={bgClasses} onMouseDown={handleMouseDown}
 				onMouseUp={handleMouseUp} style={style}>
-			<div className={mergeClasses("panel flush modal",
-						props.wide === true && "modal-wide")}
+			<div className={mergeClasses("flush modal", props.wide === true && "modal-wide")}
 					onMouseDown={(e) => e.stopPropagation()}
 					onMouseUp={(e) => e.stopPropagation()}>
-				<h2 className="modal-header">
+				<div className="modal-header">
+					<h2>{props.title}</h2>
 					{props.onClose && (
 						<button className="btn modal-close" onClick={props.onClose}>
 							<i className="fas fa-times" />
 						</button>)}
-					{props.title}
-				</h2>
+				</div>
 				{props.children}
 			</div>
 		</aside>

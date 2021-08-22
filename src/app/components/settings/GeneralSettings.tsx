@@ -4,7 +4,6 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { Form } from "../forms";
 import { gridSettingsSchema, WidgetGridSettings } from "../WidgetGrid";
-import { tabTitles, SettingsTab } from "./SettingsDialog";
 
 
 const messages = defineMessages({
@@ -52,9 +51,6 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 
 	return (
 		<div className="modal-body">
-			<h2>
-				<FormattedMessage {...tabTitles[SettingsTab.General]} />
-			</h2>
 			<div className="field">
 				<label htmlFor="locale">
 					<i className="fas fa-language mr-2" />
@@ -85,7 +81,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				schema={gridSettingsSchema}
 				onChange={handleSetGridValue} />
 
-			<h3 className="label">
+			<h3 className="label mt-6">
 				<FormattedMessage
 					defaultMessage="Privacy"
 					description="General settings: privacy" />
@@ -100,7 +96,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						defaultMessage="Enable crash reporting (using Sentry)"
 						description="General settings: enable sentry" />
 				</label>
-				<p>
+				<p className="mt-4">
 					<Button label={messages.privacyPolicy}
 						variant={ButtonVariant.Secondary} target="_blank"
 						href="https://renewedtab.com/privacy_policy/" />

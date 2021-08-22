@@ -8,7 +8,7 @@ describe("Onboarding", function() {
 
 	it("onboarding presets", async () => {
 		await utils.elementTextContains(
-			By.css("h2.modal-header"), "Welcome to Renewed Tab");
+			By.css(".modal-header h2"), "Welcome to Renewed Tab");
 
 		await utils.click(By.css(".carousel-next"));
 		await utils.elementTextContains(

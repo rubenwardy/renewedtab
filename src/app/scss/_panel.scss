@@ -40,8 +40,15 @@
 		margin-top: 0;
 	}
 
-	h2, h3, h4, h5 {
+	h2, h3 {
+		font-size: 110%;
+	}
+
+	h4, h5 {
 		font-size: 100%;
+	}
+
+	h2, h3, h4, h5 {
 		font-weight: bold;
 
 		a {

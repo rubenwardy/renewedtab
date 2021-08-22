@@ -36,8 +36,10 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 			{ defaultMessage: "Edit {type}" },
 			{ type: intl.formatMessage(props.child.title) });
 
+	const isWide = Object.values(schema).some(field => field.type == "array" || field.type == "unordered_array");
+
 	return (
-		<Modal title={title} isOpen={true} {...props}>
+		<Modal title={title} wide={isWide} isOpen={true} {...props}>
 			<div className="modal-body">
 				{props.child.editHint &&
 					<p className="text-muted">
@@ -49,7 +51,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						schema={schema}
 						onChange={onChange} />
 
-				<h2 className="mt-4">
+				<h2 className="mt-6">
 					<FormattedMessage
 						defaultMessage="Styling"
 						description="Subheading for per-widget styling properties" />
@@ -60,7 +62,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						schema={themeSchema}
 						onChange={onChange} />
 
-				<Button variant={ButtonVariant.Secondary} onClick={props.onClose} label={miscMessages.ok} />
+				<Button className="mt-5" onClick={props.onClose} label={miscMessages.ok} />
 			</div>
 		</Modal>);
 }

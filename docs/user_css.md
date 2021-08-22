@@ -16,8 +16,7 @@ Key classes and elements:
   `widget-$TYPE` classes, where type is the technical type name of the widget
   lowercased. For example: `widget widget-quotes`.
 * A `.panel` is a containing element that has a blurred semi-transparent
-  background. It is used to hold a widget's contents and also for modal dialogs.
-  (In the future, modals will probably use a different class.)
+  background. It is used to hold a widget's contents.
 * A `.panel-invis` contains a widget's contents without a panel background.
 
 ### Resources

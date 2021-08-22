@@ -27,9 +27,9 @@ const messages = defineMessages({
 export default function AboutSettings() {
 	return (
 		<div className="modal-body">
-			<h2>
+			<h3>
 				<FormattedMessage defaultMessage="About Renewed Tab" />
-			</h2>
+			</h3>
 			<p>
 				<FormattedMessage
 					defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
@@ -78,7 +78,7 @@ export default function AboutSettings() {
 					label={messages.community} />
 			</p>
 
-			<h3 className="mt-4">
+			<h3 className="mt-6">
 				<FormattedMessage
 						defaultMessage="Help and Requests" />
 			</h3>

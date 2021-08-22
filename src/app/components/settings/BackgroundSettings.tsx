@@ -46,10 +46,10 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 
 	return (
 		<div className="modal-body">
-			<h3>
+			<label htmlFor="mode">
 				<FormattedMessage
 						defaultMessage="Background Type" />
-			</h3>
+			</label>
 			<RadioGroup name="mode" selectedValue={modeName} onChange={handleModeChanged}>
 				{radioModes}
 			</RadioGroup>

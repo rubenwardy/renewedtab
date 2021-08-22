@@ -12,6 +12,7 @@
 		background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
 		box-shadow 0.15s ease-in-out;
 	cursor: pointer;
+	box-sizing: border-box;
 
 	&:hover {
 		color: white;
@@ -80,13 +81,13 @@
 }
 
 .btn-outline, .btn-secondary {
-	border-color: rgba(255, 255, 255, 0.5);
+	border-color: rgba(255, 255, 255, 0.2);
 	color: white;
 
 	&:hover {
 		color: white;
-		border-color: rgba(255, 255, 255, 0.6);
-		background: rgba(255, 255, 255, 0.25);
+		border-color: rgba(255, 255, 255, 0.25);
+		background: rgba(255, 255, 255, 0.075);
 	}
 }
 

@@ -9,7 +9,7 @@ describe.skip("Migration", function() {
 	it("migration to sync", async () => {
 		await utils.findElement(By.css(".onboarding"));
 		await utils.elementTextContains(
-			By.css("h2.modal-header"), "Welcome to Renewed Tab");
+			By.css(".modal-header h2"), "Welcome to Renewed Tab");
 
 		await driver.executeAsyncScript(`
 			const resolve = arguments[arguments.length - 1];

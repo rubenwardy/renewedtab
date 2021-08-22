@@ -88,7 +88,7 @@ function LocationModal(props: LocationModalProps) {
 						onKeyPress={onKeyPress} />
 					<Button onClick={handleSearch} label={messages.search} />
 				</div>
-				<p className="text-muted">
+				<p className="text-muted mt-2">
 					<FormattedMessage
 						defaultMessage="Try including the country name or initials." />
 				</p>

@@ -29,6 +29,10 @@ h1 {
 	margin: 0;
 }
 
+p {
+	margin: 0 0 1em 0;
+}
+
 a, .link {
 	cursor: pointer;
 	color: var(--color-primary-light);
@@ -178,6 +182,7 @@ main .scroll-wrap {
 @import "iconbar";
 @import "links";
 @import "todolist";
+@import "table";
 
 @import "~react-grid-layout/css/styles.css";
 @import "~react-resizable/css/styles.css";

@@ -98,12 +98,9 @@ export default function ArrayField(props: FieldProps<any[]>) {
 
 	const headers = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
 		<th key={key}>
-			<FormattedMessage {...type.label} />
+			<div className="header"><FormattedMessage {...type.label} /></div>
+			<div className="hint text-muted">{type.hint && <FormattedMessage {...type.hint} />}</div>
 		</th>));
-	const hints = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
-		<td key={key}>
-			{type.hint && <FormattedMessage {...type.hint} />}
-		</td>));
 
 	const isOrdered = props.type != "unordered_array";
 
@@ -119,23 +116,19 @@ export default function ArrayField(props: FieldProps<any[]>) {
 		<>
 			{isOrdered && (
 				<>
-					<Button small={true} icon="fas fa-plus" className="float-right"
+					<Button small={true} variant={ButtonVariant.Secondary}
+						icon="fas fa-plus" className="float-right"
 						label={miscMessages.add} onClick={() => handleAdd(true)} />
 
 					<div className="clear-both" />
 				</>)}
 
-			<table>
+			<table className="table">
 				<thead>
 					<tr>
-						{isOrdered && <td />}
+						{isOrdered && <th />}
 						{headers}
-						<td />
-					</tr>
-					<tr className="hint">
-						{isOrdered && <td />}
-						{hints}
-						<td />
+						<th />
 					</tr>
 				</thead>
 				<tbody>
@@ -154,7 +147,8 @@ export default function ArrayField(props: FieldProps<any[]>) {
 			</table>
 
 			{(rows.length > 0 || !isOrdered) &&
-				<Button small={true} icon="fas fa-plus" className="float-right"
+				<Button small={true}  variant={ButtonVariant.Secondary}
+					icon="fas fa-plus" className="float-right"
 					label={miscMessages.add} onClick={() => handleAdd(false)} />}
 
 			<div className="clear-both" />

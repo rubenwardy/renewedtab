@@ -6,7 +6,6 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { Form } from "../forms";
 import { ColorPair } from "../forms/ColorFields";
-import { tabTitles, SettingsTab } from "./SettingsDialog";
 
 
 const messages = defineMessages({
@@ -112,9 +111,6 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 
 	return (
 		<div className="modal-body">
-			<h2>
-				<FormattedMessage {...tabTitles[SettingsTab.Theme]} />
-			</h2>
 			<p className="text-muted">
 				<FormattedMessage {...messages.experimental}
 					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
@@ -125,11 +121,9 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 			</p>
 			<Form values={theme} schema={getThemeSchema()}
 				onChange={handleOnChange} />
-			<p>
-				<Button href="https://renewedtab.com/help/css/" target="_blank"
-					variant={ButtonVariant.Secondary}
-					label={messages.customCSSLink} />
-			</p>
+			<Button href="https://renewedtab.com/help/css/" target="_blank"
+				variant={ButtonVariant.Secondary}
+				label={messages.customCSSLink} />
 		</div>);
 }
 

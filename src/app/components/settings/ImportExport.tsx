@@ -5,7 +5,6 @@ import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useRef } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
-import { tabTitles, SettingsTab } from "./SettingsDialog";
 
 
 const messages = defineMessages({
@@ -64,9 +63,6 @@ export default function ImportExport() {
 
 	return (
 		<div className="modal-body">
-			<h3>
-				<FormattedMessage {...tabTitles[SettingsTab.ImportExport]} />
-			</h3>
 			<p>
 				<FormattedMessage
 						defaultMessage="Warning: this may contain personal data,
@@ -76,7 +72,7 @@ export default function ImportExport() {
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
-			<p className="button-set">
+			<p className="button-set mt-4">
 				<Button variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
 				<Button onClick={() => ref.current?.click()} label={messages.import} />
 				<Button href={`data:text/plain;base64,${encode(data ?? "")}`}

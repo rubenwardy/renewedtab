@@ -28,7 +28,7 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 										a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
 									}} />
 						</p>
-						<div className="field mt-4">
+						<div className="field mt-6">
 							<label htmlFor="locale">
 								<i className="fas fa-language mr-2" />
 								<FormattedMessage defaultMessage="Language" />
