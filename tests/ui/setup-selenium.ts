@@ -55,4 +55,7 @@ beforeEach(async () => {
 });
 
 
-after(() => driver.quit());
+after(async function() {
+	this.timeout(30000);
+	driver.quit();
+});
