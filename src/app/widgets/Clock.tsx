@@ -83,13 +83,18 @@ const dateStyleMessages = defineMessages({
 
 
 function renderDate(intl: IntlShape, date: Date, dateStyle: DateStyle): string {
+	const dateStyleString = DateStyle[dateStyle].toLowerCase() as any
 	if (dateStyle == DateStyle.ISO) {
 		const month = (date.getMonth() + 1).toString().padStart(2, "0");
 		const day = (date.getDate()).toString().padStart(2, "0");
 		return `${date.getFullYear()}-${month}-${day}`;
+	} else if (intl.locale == "en") {
+		return new Intl.DateTimeFormat(undefined, {
+			dateStyle: dateStyleString
+		} as any).format(date);
 	} else {
 		return intl.formatDate(date, {
-			dateStyle: DateStyle[dateStyle].toLowerCase() as any
+			dateStyle: dateStyleString,
 		});
 	}
 }
