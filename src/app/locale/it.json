@@ -1,0 +1,65 @@
+{
+    "+GMx80": {
+        "message": "Nessun luogo trovato",
+        "description": "Location form field: error"
+    },
+    "+oSH/F": {
+        "message": "Mostra la tua età attuale con fin troppa precisione",
+        "description": "Age widget description"
+    },
+    "0feb3b": {
+        "message": "Rende l'immagine un link (opzionale)",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Icona",
+        "description": "Form field label"
+    },
+    "/dtDqf": {
+        "message": "Appunti",
+        "description": "Notes Widget"
+    },
+    "/iBdV1": {
+        "message": "Clicca sugli oggetti per modificarli",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "0l+aD2": {
+        "message": "Obiettivi giornalieri e frasi motivanti",
+        "description": "Preset: focus description"
+    },
+    "18X7au": {
+        "message": "Buon pomeriggio",
+        "description": "Greeting widget: greeting, from 12 noon to 4pm"
+    },
+    "1s5GYl": {
+        "message": "Opacità",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Aggiungi"
+    },
+    "27lljH": {
+        "message": "Hai <b>{age}</b> anni",
+        "description": "Age widget text"
+    },
+    "2VPa4j": {
+        "message": "Italiano",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "/LQ9WU": {
+        "message": "Classico",
+        "description": "Clock widget: date style type"
+    },
+    "3/EBw0": {
+        "message": "Sito",
+        "description": "Renewed Tab website"
+    },
+    "2efE5y": {
+        "message": "Ciao",
+        "description": "Greeting Widget"
+    },
+    "3Nw7b0": {
+        "message": "Nome del motore di ricerca",
+        "description": "Search widget: form field label"
+    }
+}
