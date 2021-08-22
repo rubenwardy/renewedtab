@@ -20,7 +20,7 @@ input:not(.invisible):not([type="radio"]):not([type="checkbox"]):not([type="colo
 }
 
 input:not(.invisible), textarea:not(.invisible), select, .fake-input {
-	background: rgba(200, 200, 200, 0.1);
+	background: rgba(200, 200, 200, 0.075);
 	border: 1px solid rgba(200, 200, 200, 0.1);
 	border-radius: 0.25rem;
 	color: white;

@@ -80,14 +80,25 @@
 	}
 }
 
-.btn-outline, .btn-secondary {
+.btn-secondary {
+	background-color: #262626;
+	border-color: #262626;
+
+	&:hover {
+		background-color: #333;
+		border-color: #333;
+		color: white;
+	}
+}
+
+.btn-outline {
 	border-color: rgba(255, 255, 255, 0.2);
 	color: white;
 
 	&:hover {
-		color: white;
 		border-color: rgba(255, 255, 255, 0.25);
-		background: rgba(255, 255, 255, 0.075);
+		background-color: rgba(255, 255, 255, 0.075);
+		color: white;
 	}
 }
 

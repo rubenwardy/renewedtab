@@ -8,6 +8,7 @@ export enum ButtonVariant {
 	None,
 	Primary,
 	Secondary,
+	Outline,
 	Danger,
 }
 
