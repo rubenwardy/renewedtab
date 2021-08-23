@@ -78,11 +78,11 @@
         "description": "Form field label"
     },
     "+oSH/F": {
-        "message": "Dice tu edad  con demasiada precisión",
+        "message": "Dice tu edad con demasiada precisión",
         "description": "Age widget description"
     },
     "/iBdV1": {
-        "message": "Haga clic en los elementos para editarlos.",
+        "message": "Haga clic en los elementos para editarlos",
         "description": "Todo List widget: edit modal hint"
     },
     "Bl74xq": {
@@ -136,5 +136,50 @@
     "D4M6tn": {
         "message": "Bienvenido a Renewed Tab",
         "description": "Onboarding modal: title"
+    },
+    "ziyAdj": {
+        "message": "Importar",
+        "description": "Import / export settings, import"
+    },
+    "yUJ5MA": {
+        "message": "Metas",
+        "description": "Preset: goals"
+    },
+    "wEQDC6": {
+        "message": "Editar"
+    },
+    "vlumg9": {
+        "message": "Buscar widgets...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "tyq8NB": {
+        "message": "Clima",
+        "description": "Weather Widget"
+    },
+    "ycaP+t": {
+        "message": "Automático",
+        "description": "Auto background mode"
+    },
+    "z7UTSa": {
+        "message": "Sobre Renewed Tab"
+    },
+    "ywSKRt": {
+        "message": "HTML personalizado",
+        "description": "HTML widget description"
+    },
+    "yvWbz6": {
+        "message": "Siguiente",
+        "description": "Onboarding page: next button"
+    },
+    "wwQ6Va": {
+        "message": "Elegir la ubicación",
+        "description": "Location field"
+    },
+    "wogY8a": {
+        "message": "Crear widget"
+    },
+    "xvXMaZ": {
+        "message": "Te saluda",
+        "description": "Greeting widget description"
     }
 }
