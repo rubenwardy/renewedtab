@@ -114,7 +114,9 @@
 	&:hover {
 		border: 2px dashed rgba(15, 15, 15, 0.3);
 		margin: -2px;
+	}
 
+	&:hover, &.fake {
 		& > .widget-btns .btn {
 			color: white;
 		}
@@ -129,7 +131,7 @@
 		}
 	}
 
-	.widget-strip:hover {
+	.widget-strip:hover, &.fake .widget-strip {
 		.collapsed {
 			display: none;
 		}

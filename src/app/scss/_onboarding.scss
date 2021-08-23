@@ -71,6 +71,18 @@
 		border-bottom: 2px solid rgba(0, 0, 0, 0.4);
 		border-color: rgba(255,255,255,1) !important;
 	}
+
+	.features .unlocked {
+		background-image: linear-gradient(#007DB8, #093167);
+		border-radius: 0.5rem;
+		position: relative;
+
+		.widget {
+			width: 75%;
+			height: 65%;
+			margin-top: 2em;
+		}
+	}
 }
 
 .presets {

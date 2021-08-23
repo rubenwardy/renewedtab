@@ -25,7 +25,7 @@ const messages = defineMessages({
 	},
 });
 
-interface NotesProps {
+export interface NotesProps {
 	notes: string;
 }
 
