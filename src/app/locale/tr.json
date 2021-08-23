@@ -872,5 +872,73 @@
     "qEk9AJ": {
         "message": "Koyu renkli görüntülerin parlaklığını değiştirir",
         "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "Ddd3ZY": {
+        "message": "Bu birime",
+        "description": "Currencies widget: form field label"
+    },
+    "oBl48o": {
+        "message": "Bütün verinizi sıfırlamak istediğinizden emin misiniz?",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "rx+w+M": {
+        "message": "Bilinmeyen para birimi {currency}",
+        "description": "Currencies widget: error"
+    },
+    "Abtyj/": {
+        "message": "Resim 2MB'den büyük({dataSizeMB}MB). Daha kısa yükleme süreleri için daha küçük bir resim kullanın.",
+        "description": "Image upload error message"
+    },
+    "YUXMxp": {
+        "message": "Bu araç kalıcı olarak silinecektir.",
+        "description": "Delete widget modal message"
+    },
+    "pG7wIz": {
+        "message": "Döviz kurlarını gösterir, forex birimleri ve kripto (BitCoin vb.) desteği vardır",
+        "description": "Currencies widget description"
+    },
+    "aXrD3p": {
+        "message": "Para birimleri",
+        "description": "Currencies widget"
+    },
+    "IbCXY9": {
+        "message": "Standart ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "QV6YlB": {
+        "message": "Döviz Kurları",
+        "description": "Currencies widget: form field label"
+    },
+    "UgAgeT": {
+        "message": "exchangerate.host ile çalışır",
+        "description": "Currencies widget: credit to data provider"
+    },
+    "kF06lD": {
+        "message": "Uzun ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "JkuifT": {
+        "message": "Kısa ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "OPzczE": {
+        "message": "Kısaltmalı ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "4dzBeG": {
+        "message": "Bu birimden",
+        "description": "Currencies widget: form field label"
+    },
+    "nF7bWj": {
+        "message": "ISO ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "yO9MXI": {
+        "message": "Bilinmeyen para birimi '{currency}'",
+        "description": "Currencies widget: error"
+    },
+    "O8mt7g": {
+        "message": "Sayılar ({example})",
+        "description": "Clock widget: date style type"
     }
 }
