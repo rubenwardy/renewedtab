@@ -872,5 +872,73 @@
     "zEj0dg": {
         "message": "Tunjukkan kemajuan dalam tahun sebagai bar kemajuan",
         "description": "Age widget description"
+    },
+    "rx+w+M": {
+        "message": "Mata wang tidak diketahui {currency}",
+        "description": "Currencies widget: error"
+    },
+    "Ddd3ZY": {
+        "message": "Kepada",
+        "description": "Currencies widget: form field label"
+    },
+    "YUXMxp": {
+        "message": "Ini akan memadam widget ini secara kekal.",
+        "description": "Delete widget modal message"
+    },
+    "aXrD3p": {
+        "message": "Mata Wang",
+        "description": "Currencies widget"
+    },
+    "oBl48o": {
+        "message": "Adakah anda pasti anda ingin tetapkan semula kesemua data?",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "pG7wIz": {
+        "message": "Tunjukkan kadar pertukaran, menyokong mata wang forex dan kripto (BitCoin dll)",
+        "description": "Currencies widget description"
+    },
+    "Abtyj/": {
+        "message": "Imej lebih besar daripada 2MB ({dataSizeMB}MB). Untuk masa pemuatan lebih bagus, anda patut gunakan imej lebih kecil.",
+        "description": "Image upload error message"
+    },
+    "IbCXY9": {
+        "message": "Piawai ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "JkuifT": {
+        "message": "Pendek ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "OPzczE": {
+        "message": "Singkat ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "QV6YlB": {
+        "message": "Kadar Pertukaran",
+        "description": "Currencies widget: form field label"
+    },
+    "UgAgeT": {
+        "message": "Dikuasakan oleh exchangerate.host",
+        "description": "Currencies widget: credit to data provider"
+    },
+    "kF06lD": {
+        "message": "Panjang ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "4dzBeG": {
+        "message": "Daripada",
+        "description": "Currencies widget: form field label"
+    },
+    "O8mt7g": {
+        "message": "Nombor ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "nF7bWj": {
+        "message": "ISO ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "yO9MXI": {
+        "message": "Mata wang tidak diketahui '{currency}'",
+        "description": "Currencies widget: error"
     }
 }
