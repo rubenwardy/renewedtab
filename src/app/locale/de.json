@@ -142,10 +142,6 @@
         "message": "Leer lassen um eine Überschrift zu erstellen",
         "description": "Links widget, form field hint (Link URL)"
     },
-    "IhKDXS": {
-        "message": "erlauben",
-        "description": "Feed widget: filter allow checkbox label"
-    },
     "J91edI": {
         "message": "Importieren / Exportieren",
         "description": "Settings tab"

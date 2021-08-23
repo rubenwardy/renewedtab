@@ -553,10 +553,6 @@
         "message": "isim",
         "description": "Greeting widget: name prompt"
     },
-    "vS2rQE": {
-        "message": "Bir makale en az bir 'İzin ver' filtresiyle eşleşiyorsa, ve diğer filtrelerden hiçbiriyle eşleşmiyorsa gösterilir.",
-        "description": "Feed widget: form field hint (Filters)"
-    },
     "cSF2y1": {
         "message": "Yer işaretlerinizi gösterir",
         "description": "Bookmarks widget description"
@@ -592,10 +588,6 @@
     "nGSwtl": {
         "message": "Ara",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
-    },
-    "IhKDXS": {
-        "message": "İzin ver",
-        "description": "Feed widget: filter allow checkbox label"
     },
     "y8o0oA": {
         "message": "Şu anki ve tahmin edilen hava durumları",
@@ -884,10 +876,6 @@
     "Abtyj/": {
         "message": "Resim 2MB'den büyük({dataSizeMB}MB). Daha kısa yükleme süreleri için daha küçük bir resim kullanın.",
         "description": "Image upload error message"
-    },
-    "YUXMxp": {
-        "message": "Bu araç kalıcı olarak silinecektir.",
-        "description": "Delete widget modal message"
     },
     "pG7wIz": {
         "message": "Döviz kurlarını gösterir, forex birimleri ve kripto (BitCoin vb.) desteği vardır",

@@ -130,10 +130,6 @@
         "message": "Puoi aggiungere (<add></add>) o rimuovere (<remove></remove>) widget più avanti, o cambiare le impostazioni (<cog></cog>) come desideri.",
         "description": "Onboarding: preset hint"
     },
-    "YUXMxp": {
-        "message": "Ciò cancellerà permanentemente questo widget.",
-        "description": "Delete widget modal message"
-    },
     "ZUZeuR": {
         "message": "Mostra un messaggio",
         "description": "Text widget description"
@@ -402,10 +398,6 @@
     "uzT59w": {
         "message": "Griglia",
         "description": "Preset: Grid"
-    },
-    "vS2rQE": {
-        "message": "Un articolo verrà mostrato se combacia almeno con uno dei filtri permessi, e non appare in nessuno di quelli negati.",
-        "description": "Feed widget: form field hint (Filters)"
     },
     "vVnypL": {
         "message": "Mostra una citazione casuale, con più categorie tra cui scegliere",
@@ -875,10 +867,6 @@
     "Ibm90j": {
         "message": "L'ora si basa sul fuso orario del tuo sistema. Se risultasse errata, assicurati che il fuso orario nelle impostazioni del computer e del browser sia impostato correttamente.",
         "description": "Clock widget: edit hint"
-    },
-    "IhKDXS": {
-        "message": "Permetti",
-        "description": "Feed widget: filter allow checkbox label"
     },
     "IqLwUL": {
         "message": "Spaziatura Griglia",

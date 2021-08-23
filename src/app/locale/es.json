@@ -119,10 +119,6 @@
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
     },
-    "IhKDXS": {
-        "message": "Permitir",
-        "description": "Feed widget: filter allow checkbox label"
-    },
     "GcxpZV": {
         "message": "Estilo de datos",
         "description": "Clock widget: date style form field label"

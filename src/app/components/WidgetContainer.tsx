@@ -80,12 +80,12 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	const intl = useIntl();
 	const title = intl.formatMessage(
 			{ defaultMessage: "Remove {type}" },
-			{ type: props.type });
+			{ type: intl.formatMessage(props.child.title) });
 	return (
 		<Modal title={title} isOpen={true} {...props}>
 			<div className="modal-body">
 				<FormattedMessage
-					defaultMessage="This will permanently delete this widget."
+					defaultMessage="Are you sure you want to permanently remove this widget?"
 					description="Delete widget modal message" />
 			</div>
 			<div className="modal-footer buttons">

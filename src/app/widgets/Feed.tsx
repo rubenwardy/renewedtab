@@ -32,20 +32,30 @@ const messages = defineMessages({
 	},
 
 	filtersHint: {
-		defaultMessage: "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters.",
+		defaultMessage: "An article will be shown if it matches at least one 'Show' filter (if any), and no 'Hide' filters.",
 		description: "Feed widget: form field hint (Filters)",
 	},
 
 	isAllowed: {
-		defaultMessage: "Allow",
+		defaultMessage: "Show / Hide",
+		description: "Feed widget filter allow label",
+	},
+
+	show: {
+		defaultMessage: "Show",
 		description: "Feed widget: filter allow checkbox label",
 	},
+
+	hide: {
+		defaultMessage: "Hide",
+		description: "Feed widget: filter show checkbox label",
+	}
 });
 
 
 interface Filter {
 	id: string; //< required for React
-	isAllowed: boolean;
+	isAllowed: (boolean | string);
 	text: string;
 }
 
@@ -65,18 +75,19 @@ export default function Feed(widget: WidgetProps<FeedProps>) {
 	}
 
 	const allowFilters = props.filters
-		.filter(filter => filter.isAllowed)
+		.filter(filter => filter.isAllowed === true || filter.isAllowed == "true")
 		.map(filter => filter.text.toLowerCase());
 
 	const blockFilters = props.filters
-		.filter(filter => !filter.isAllowed)
+		.filter(filter => !(filter.isAllowed === true || filter.isAllowed == "true"))
 		.map(filter => filter.text.toLowerCase());
 
 	const rows = feed.articles
 		.filter(article => {
 			const title = article.title.toLowerCase();
 			return article.link &&
-					allowFilters.every(filter => title.includes(filter)) &&
+					(allowFilters.length == 0 ||
+						allowFilters.some(filter => title.includes(filter))) &&
 					!blockFilters.some(filter => title.includes(filter));
 		})
 		.map(article => (
@@ -109,7 +120,8 @@ Feed.initialProps = {
 
 
 const filterSchema: Schema = {
-	isAllowed: type.boolean(messages.isAllowed),
+	isAllowed: type.select({ false: "Hide", true: "Allow" },
+		{ false: messages.hide, true: messages.show }, messages.isAllowed),
 	text: type.string(schemaMessages.text),
 };
 

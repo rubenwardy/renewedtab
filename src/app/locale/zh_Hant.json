@@ -95,10 +95,6 @@
         "message": "私隱",
         "description": "General settings: privacy"
     },
-    "IhKDXS": {
-        "message": "允許",
-        "description": "Feed widget: filter allow checkbox label"
-    },
     "J91edI": {
         "message": "匯入/匯出",
         "description": "Settings tab"

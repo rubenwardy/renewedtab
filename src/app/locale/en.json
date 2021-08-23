@@ -15,6 +15,10 @@
         "description": "Todo List widget: edit modal hint",
         "message": "Click items to edit them"
     },
+    "0PsF7Z": {
+        "description": "Delete widget modal message",
+        "message": "Are you sure you want to permanently remove this widget?"
+    },
     "0feb3b": {
         "description": "Image widget: Form field hint (Link)",
         "message": "Optional, makes image a link"
@@ -67,6 +71,10 @@
     "3vh5vd": {
         "description": "Invisible widget description",
         "message": "Shows nothing, useful for layouting purposes"
+    },
+    "3vjl5Q": {
+        "description": "Feed widget filter allow label",
+        "message": "Show / Hide"
     },
     "47FYwb": {
         "message": "Cancel"
@@ -224,10 +232,6 @@
         "description": "Clock widget: edit hint",
         "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
     },
-    "IhKDXS": {
-        "description": "Feed widget: filter allow checkbox label",
-        "message": "Allow"
-    },
     "IqLwUL": {
         "description": "Widget grid: form label for grid spacing",
         "message": "Grid Spacing"
@@ -379,6 +383,10 @@
     "T4VxQN": {
         "message": "Loading…"
     },
+    "TIEfOV": {
+        "description": "Feed widget: form field hint (Filters)",
+        "message": "An article will be shown if it matches at least one 'Show' filter (if any), and no 'Hide' filters."
+    },
     "TUnCKb": {
         "description": "Text Widget",
         "message": "Text"
@@ -464,10 +472,6 @@
     "YS5zRT": {
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
         "message": "Search with {name}"
-    },
-    "YUXMxp": {
-        "description": "Delete widget modal message",
-        "message": "This will permanently delete this widget."
     },
     "YYoBQn": {
         "description": "Theme settings: form field label",
@@ -819,10 +823,6 @@
         "description": "Preset: Grid",
         "message": "Grid"
     },
-    "vS2rQE": {
-        "description": "Feed widget: form field hint (Filters)",
-        "message": "An article will be shown if it matches at least one 'Allow'ed filter, and none of the other filters."
-    },
     "vVnypL": {
         "description": "Quotes Widget description",
         "message": "Shows a random quote, with categories"
@@ -892,6 +892,10 @@
         "description": "Preset: goals",
         "message": "Goals"
     },
+    "yY7Rve": {
+        "description": "Feed widget: filter show checkbox label",
+        "message": "Hide"
+    },
     "ycaP+t": {
         "description": "Auto background mode",
         "message": "Auto"
@@ -928,6 +932,10 @@
     "ziyAdj": {
         "description": "Import / export settings, import",
         "message": "Import"
+    },
+    "zo4ZQa": {
+        "description": "Feed widget: filter allow checkbox label",
+        "message": "Show"
     },
     "zsdRww": {
         "description": "Theme settings: form field hint (Primary Color)",

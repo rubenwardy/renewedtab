@@ -184,10 +184,6 @@
         "message": "Tinggalkan kosong untuk jadikan pengepala",
         "description": "Links widget, form field hint (Link URL)"
     },
-    "IhKDXS": {
-        "message": "Benarkan",
-        "description": "Feed widget: filter allow checkbox label"
-    },
     "J91edI": {
         "message": "Import / Eksport",
         "description": "Settings tab"
@@ -578,10 +574,6 @@
         "message": "Komik Sesawang",
         "description": "Web Comic Widget"
     },
-    "vS2rQE": {
-        "message": "Rencana akan ditunjukkan jika ia padan dengan sekurang-kurangnya satu penapis 'Dibenarkan', dan tidak padan dengan mana-mana penapis lain.",
-        "description": "Feed widget: form field hint (Filters)"
-    },
     "wZq5vc": {
         "message": "Paparkan sebagai ikon",
         "description": "Form field label"
@@ -876,10 +868,6 @@
     "Ddd3ZY": {
         "message": "Kepada",
         "description": "Currencies widget: form field label"
-    },
-    "YUXMxp": {
-        "message": "Ini akan memadam widget ini secara kekal.",
-        "description": "Delete widget modal message"
     },
     "aXrD3p": {
         "message": "Mata Wang",

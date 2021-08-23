@@ -192,10 +192,6 @@
         "message": "A hora é baseada no fuso horário do seu sistema. Se a hora estiver errada, verifique se o fuso horário está definido corretamente nas configurações do computador e do navegador.",
         "description": "Clock widget: edit hint"
     },
-    "IhKDXS": {
-        "message": "Permitir",
-        "description": "Feed widget: filter allow checkbox label"
-    },
     "IqLwUL": {
         "message": "Espaçamento de grade",
         "description": "Widget grid: form label for grid spacing"
@@ -792,10 +788,6 @@
     "uzT59w": {
         "message": "Grade",
         "description": "Preset: Grid"
-    },
-    "vS2rQE": {
-        "message": "Um artigo será mostrado se corresponder a pelo menos um filtro 'Permitido' e nenhum dos outros filtros.",
-        "description": "Feed widget: form field hint (Filters)"
     },
     "ykNa5O": {
         "message": "Agradecimentos a Font-Awesome para ícones, React for UI e WebPack para builds."
