@@ -51,10 +51,12 @@ export function HostURLFIeld(props: FieldProps<string>) {
 			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
 			: [ null, null ];
 
-	const showSubmitURL = autocomplete && value && value.length > 4 &&
+	const showSubmitURL = false;
+
+	/* autocomplete && value && value.length > 4 &&
 		submittedUrls && submittedUrls[value] != true &&
 		!value.startsWith("file://") &&
-		!autocomplete.some(suggestion => value == suggestion.value);
+		!autocomplete.some(suggestion => value == suggestion.value); */
 
 	function submitURLToSuggestions() {
 		const url = new URL(config.API_URL);
