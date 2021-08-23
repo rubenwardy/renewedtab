@@ -873,10 +873,6 @@
         "message": "Tunjukkan kemajuan dalam tahun sebagai bar kemajuan",
         "description": "Age widget description"
     },
-    "rx+w+M": {
-        "message": "Mata wang tidak diketahui {currency}",
-        "description": "Currencies widget: error"
-    },
     "Ddd3ZY": {
         "message": "Kepada",
         "description": "Currencies widget: form field label"
@@ -903,10 +899,6 @@
     },
     "IbCXY9": {
         "message": "Piawai ({example})",
-        "description": "Clock widget: date style type"
-    },
-    "JkuifT": {
-        "message": "Pendek ({example})",
         "description": "Clock widget: date style type"
     },
     "OPzczE": {
