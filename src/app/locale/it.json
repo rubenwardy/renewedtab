@@ -924,5 +924,21 @@
     "0PsF7Z": {
         "message": "Vuoi davvero rimuovere permanentemente questo widget?",
         "description": "Delete widget modal message"
+    },
+    "3vjl5Q": {
+        "message": "Mostra / Nascondi",
+        "description": "Feed widget filter allow label"
+    },
+    "TIEfOV": {
+        "message": "Un articolo verrà mostrato se combacia con almeno un filtro 'Mostra', e non appare in nessuno dei 'Nascondi'.",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "yY7Rve": {
+        "message": "Nascondi",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "zo4ZQa": {
+        "message": "Mostra",
+        "description": "Feed widget: filter allow checkbox label"
     }
 }
