@@ -113,16 +113,21 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	const ref = useRef<HTMLDivElement>(null);
 	const [fontSize, setFontSize] = useState<number | undefined>(undefined);
 
+	function updateFontSize() {
+		if (ref.current) {
+			const desiredHeight = ref.current.clientHeight * 0.9;
+			const widthToHeight = ref.current.clientWidth / 2.5;
+			setFontSize(Math.min(desiredHeight, widthToHeight));
+		}
+	}
+
 	React.useEffect(() => {
 		const timer = setInterval(() => {
 			setTime(new Date());
-
-			if (ref.current) {
-				const desiredHeight = ref.current.clientHeight * 0.9;
-				const widthToHeight = ref.current.clientWidth / 2.5;
-				setFontSize(Math.min(desiredHeight, widthToHeight));
-			}
+			updateFontSize();
 		}, 500);
+
+		updateFontSize();
 
 		return () => {
 			clearInterval(timer);
