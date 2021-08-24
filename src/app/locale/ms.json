@@ -920,5 +920,25 @@
     "yO9MXI": {
         "message": "Mata wang tidak diketahui '{currency}'",
         "description": "Currencies widget: error"
+    },
+    "yY7Rve": {
+        "message": "Sembunyi",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "0PsF7Z": {
+        "message": "Adakah anda pasti anda ingin buang widget ini secara kekal?",
+        "description": "Delete widget modal message"
+    },
+    "3vjl5Q": {
+        "message": "Tunjuk / Sembunyi",
+        "description": "Feed widget filter allow label"
+    },
+    "TIEfOV": {
+        "message": "Rencana dipaparkan sekiranya sepadan dengan paling kurang satu tapisan 'Tunjuk' (jika ada), dan tiada tapisan 'Sembunyi'.",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "zo4ZQa": {
+        "message": "Tunjuk",
+        "description": "Feed widget: filter allow checkbox label"
     }
 }
