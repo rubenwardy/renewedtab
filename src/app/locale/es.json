@@ -194,7 +194,7 @@
         "message": "Chats de Discord / Matrix"
     },
     "27lljH": {
-        "message": "Tienes <b> {age} </b> años",
+        "message": "Tienes <b>{age}</b> años",
         "description": "Age widget text"
     },
     "Lxc1x4": {
@@ -236,7 +236,7 @@
         "description": "Age widget: form field label"
     },
     "KsX2fE": {
-        "message": "<b> {name} </b> en {latitude} por {longitude}"
+        "message": "<b>{name}</b> en {latitude} por {longitude}"
     },
     "Kzo9ZH": {
         "message": "URL de la imagen",

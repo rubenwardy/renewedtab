@@ -882,7 +882,7 @@
         "description": "Clock widget: date style type"
     },
     "nF7bWj": {
-        "message": "Iso ({example})",
+        "message": "ISO ({example})",
         "description": "Clock widget: date style type"
     },
     "yO9MXI": {
@@ -914,7 +914,7 @@
         "description": "Feed widget filter allow label"
     },
     "Ddd3ZY": {
-        "message": "para",
+        "message": "Para",
         "description": "Currencies widget: form field label"
     },
     "O8mt7g": {
@@ -922,7 +922,7 @@
         "description": "Clock widget: date style type"
     },
     "UgAgeT": {
-        "message": "Desenvolvido por exchangegerate.host",
+        "message": "Desenvolvido por exchangerate.host",
         "description": "Currencies widget: credit to data provider"
     },
     "pG7wIz": {
