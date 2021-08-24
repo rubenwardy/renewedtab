@@ -854,7 +854,7 @@
         "description": "Backgroud settings: form field label"
     },
     "rAuRqW": {
-        "message": "Le traduzioni sono fornite dalla comunità."
+        "message": "Le traduzioni sono opera della comunità."
     },
     "I48yxw": {
         "message": "Privacy",
@@ -877,7 +877,7 @@
         "description": "Widget grid: form label for grid columns"
     },
     "K3r6DQ": {
-        "message": "Cancella"
+        "message": "Rimuovi"
     },
     "K8s82y": {
         "message": "Data di nascita",
@@ -900,7 +900,7 @@
         "description": "Daily Goal widget: edit modal hint"
     },
     "MiIvsP": {
-        "message": "Puoi aggiungere, muovere, ridimensionare e configurare i widget su una griglia usando controlli intuitivi."
+        "message": "Puoi aggiungere, spostare, ridimensionare e configurare i widget su una griglia usando controlli intuitivi."
     },
     "Mihrhf": {
         "message": "Nessuno",
@@ -920,5 +920,9 @@
     "OQHLB5": {
         "message": "Colore",
         "description": "Form field label"
+    },
+    "0PsF7Z": {
+        "message": "Vuoi davvero rimuovere permanentemente questo widget?",
+        "description": "Delete widget modal message"
     }
 }
