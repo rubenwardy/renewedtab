@@ -65,6 +65,12 @@ Links.initialProps = {
 		},
 		{
 			id: uuid(),
+			title: "@RenewedTab on Twitter",
+			icon: "",
+			url: "https://twitter.com/RenewedTab/"
+		},
+		{
+			id: uuid(),
 			title: "rubenwardy",
 			icon: "",
 			url: "",
@@ -100,7 +106,7 @@ Links.schema = async (widget: Widget<LinkBoxProps>) => {
 	}
 }
 
-Links.defaultSize = new Vector2(5, 4);
+Links.defaultSize = new Vector2(5, 5);
 
 Links.onLoaded = async (widget: Widget<any>) => {
 	if (widget.props.sections && !widget.props.links) {
