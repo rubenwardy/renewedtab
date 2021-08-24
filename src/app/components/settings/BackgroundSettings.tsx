@@ -21,7 +21,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 		Object.keys(BackgroundMode)
 			.filter(value => isNaN(Number(value)))
 			.map(x => (
-				<div className="field" key={x}>
+				<div key={x}>
 					<Radio value={x} />
 					<FormattedMessage
 							{...getTitleForMode(BackgroundMode[x as BackgroundModeType])} />:&nbsp;
@@ -50,7 +50,8 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 				<FormattedMessage
 						defaultMessage="Background Type" />
 			</label>
-			<RadioGroup name="mode" selectedValue={modeName} onChange={handleModeChanged}>
+			<RadioGroup name="mode" selectedValue={modeName}
+					onChange={handleModeChanged} className="radios field">
 				{radioModes}
 			</RadioGroup>
 			<h3 className="mt-4">

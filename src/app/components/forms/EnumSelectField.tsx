@@ -41,11 +41,12 @@ export default function EnumSelectField(props: FieldProps<any>) {
 		const radioModes =
 			enumValues
 				.map(x => (
-					<div className="field" key={getValue(x)}>
+					<div key={getValue(x)}>
 						<Radio value={getValue(x)} /> {getString(x)}
 					</div>));
 		return (
-			<RadioGroup name="mode" selectedValue={getValue(value)} onChange={handleChanged}>
+			<RadioGroup name="mode" selectedValue={getValue(value)}
+					onChange={handleChanged} className="radios">
 				{radioModes}
 			</RadioGroup>);
 	} else {

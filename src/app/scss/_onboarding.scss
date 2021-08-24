@@ -76,6 +76,7 @@
 		background-image: linear-gradient(#007DB8, #093167);
 		border-radius: 0.5rem;
 		position: relative;
+		pointer-events: none;
 
 		.widget {
 			width: 75%;

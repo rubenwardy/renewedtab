@@ -30,8 +30,8 @@ describe("WidgetManager::create", () => {
 
 		const widget1 = wm.createWidget<LinkBoxProps>("Links");
 		const widget2 = wm.createWidget<LinkBoxProps>("Links");
-		expect(widget1.props.links.length).to.equal(6);
-		expect(widget2.props.links.length).to.equal(6);
+		expect(widget1.props.links.length).to.equal(7);
+		expect(widget2.props.links.length).to.equal(7);
 
 		widget1.props.links.push({
 			id: "123",
@@ -39,8 +39,8 @@ describe("WidgetManager::create", () => {
 			url: "url",
 		});
 
-		expect(widget1.props.links.length).to.equal(7);
-		expect(widget2.props.links.length).to.equal(6);
+		expect(widget1.props.links.length).to.equal(8);
+		expect(widget2.props.links.length).to.equal(7);
 	});
 
 	it("copiesTheme", async () => {

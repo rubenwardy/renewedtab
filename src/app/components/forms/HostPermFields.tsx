@@ -139,7 +139,7 @@ export function HostAllField(props: FieldProps<boolean>) {
 			</label>
 
 			{needsPermission && value && (
-				<p>
+				<p className="mt-2">
 					<RequestPermission permissions={permissions}
 						label={intl.formatMessage(messages.grantAll)}
 						onResult={onResult} />

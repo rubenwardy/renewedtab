@@ -76,6 +76,11 @@ export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
 		}
 	}
 
+	function renderExchangeRate(from: string, to: string) {
+		const rate = calculateExchangeRate(currencies!, from.toUpperCase(), to.toUpperCase());
+		return rate.toFixed(rate > 1 ? 2 : 6);
+	}
+
 	return (
 		<Panel {...widget.theme}>
 			<div className="stats">
@@ -85,7 +90,7 @@ export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
 							{`${from} 🠒 ${to}`}
 						</span>
 						<span className="value">
-							{calculateExchangeRate(currencies, from.toUpperCase(), to.toUpperCase()).toFixed(2)}
+							{renderExchangeRate(from, to)}
 						</span>
 					</div>))}
 			</div>
