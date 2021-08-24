@@ -1,7 +1,7 @@
 
 import webdriver, { By, until, WebElement } from "selenium-webdriver";
 
-type ElementOrSelector = By | WebElement;
+export type ElementOrSelector = By | WebElement;
 
 const TIMEOUT = 5000;
 
@@ -17,6 +17,12 @@ export default class UITestUtils {
 		await btn.click();
 	}
 
+	async clickInside(element: ElementOrSelector, selector: By) {
+		const resolved = await this.resolveElement(element);
+		const btn = await resolved.findElement(selector);
+		await btn.click();
+	}
+
 	async elementTextContains(selector: ElementOrSelector, value: string): Promise<void> {
 		const element = await this.resolveElement(selector);
 		await this.driver.wait(until.elementTextContains(element, value), TIMEOUT);
@@ -28,6 +34,15 @@ export default class UITestUtils {
 			(await this.driver.findElements(selector)).length == 0;
 
 		await this.driver.wait(impl, TIMEOUT);
+	}
+
+	async count(selector: By): Promise<number> {
+		return (await this.driver.findElements(selector)).length
+	}
+
+	async countInside(element: ElementOrSelector, selector: By): Promise<number> {
+		const resolved = await this.resolveElement(element);
+		return (await resolved.findElements(selector)).length;
 	}
 
 	sleep(ms: number): Promise<void> {

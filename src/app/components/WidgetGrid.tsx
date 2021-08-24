@@ -81,7 +81,8 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		};
 
 		return (
-			<div key={widget.id} className={`widget widget-${widget.type.toLowerCase()}`}>
+			<div key={widget.id} className={`widget widget-${widget.type.toLowerCase()}`}
+					data-widget-id={props.id}>
 				<ErrorBoundary>
 					<WidgetContainer {...props} />
 				</ErrorBoundary>

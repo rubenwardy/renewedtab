@@ -159,10 +159,10 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 					<FormattedMessage {...props.child.title} />
 				</span>
 				<span className="widget-btns">
-					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
+					<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>
 						<i className="fas fa-trash" />
 					</a>
-					<a className="btn" onClick={() => setMode(WidgetMode.Edit)}>
+					<a className="btn widget-edit" onClick={() => setMode(WidgetMode.Edit)}>
 						<i className="fas fa-pen" />
 					</a>
 				</span>

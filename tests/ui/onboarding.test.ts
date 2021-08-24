@@ -24,6 +24,6 @@ describe("Onboarding", function() {
 
 		await utils.sleep(1000);
 
-		expect((await driver.findElements(By.css(".widget"))).length).to.eq(2);
+		expect(await utils.count(By.className("widget"))).to.eq(2);
 	});
 });

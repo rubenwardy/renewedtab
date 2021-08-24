@@ -19,7 +19,7 @@ before(async function() {
 	chromeOptions.addArguments(`--load-extension=${extensionPath}`);
 
 	driver = new webdriver.Builder()
-		.forBrowser("firefox")
+		.forBrowser("chrome")
 		.setChromeOptions(chromeOptions)
 		.build();
 	utils = new UITestUtils(driver);
