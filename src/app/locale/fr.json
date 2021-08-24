@@ -483,5 +483,81 @@
     "7bfD9/": {
         "message": "Proposer une URL à ajouter à la liste des suggestions par défaut",
         "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "Abtyj/": {
+        "message": "L'image est supérieure à 2 MB ({dataSizeMB}MB). Pour accélérer le chargement, vous pouvez utiliser une image plus petite.",
+        "description": "Image upload error message"
+    },
+    "FCmJHd": {
+        "message": "Montrer un fil Atom ou RSS, utile pour suivre les actualités, sites web et blogs",
+        "description": "Feed widget description"
+    },
+    "L6nTur": {
+        "message": "Choisissez un point de départ",
+        "description": "Onboarding: presets title"
+    },
+    "M8ugqX": {
+        "message": "Pas de widgets coïncidant"
+    },
+    "MiIvsP": {
+        "message": "Vous pouvez ajouter, déplacer, redimensionner et configurer les widgets sur la grille avec des contrôles intuitifs."
+    },
+    "O8mt7g": {
+        "message": "Nombres ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "4dzBeG": {
+        "message": "De",
+        "description": "Currencies widget: form field label"
+    },
+    "OPzczE": {
+        "message": "Abrégé ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "QV6YlB": {
+        "message": "Taux de change",
+        "description": "Currencies widget: form field label"
+    },
+    "BJYZgx": {
+        "message": "Utiliser le mouvement (<move></move>) et le redimensionnement (<resize></resize>)."
+    },
+    "D4M6tn": {
+        "message": "Bienvenue sur Renewed Tab",
+        "description": "Onboarding modal: title"
+    },
+    "0PsF7Z": {
+        "message": "Êtes-vous d'enlever définitivement ce composant ?",
+        "description": "Delete widget modal message"
+    },
+    "0l+aD2": {
+        "message": "Objectifs quotidiens et citations inspiratrices.",
+        "description": "Preset: focus description"
+    },
+    "3vjl5Q": {
+        "message": "Afficher / Cacher",
+        "description": "Feed widget filter allow label"
+    },
+    "7wOM6+": {
+        "message": "Progression annuelle",
+        "description": "Year Progress widget"
+    },
+    "CNpJaZ": {
+        "message": "Attention",
+        "description": "Preset: focus"
+    },
+    "Cq4JWx": {
+        "message": "Les actualités, la météo et plus",
+        "description": "Preset: grid description"
+    },
+    "Ddd3ZY": {
+        "message": "À",
+        "description": "Currencies widget: form field label"
+    },
+    "IbCXY9": {
+        "message": "Standard ({exemple})",
+        "description": "Clock widget: date style type"
+    },
+    "RCe+DS": {
+        "message": "Glisser-déposer les widgets"
     }
 }
