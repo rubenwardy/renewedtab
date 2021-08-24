@@ -920,5 +920,25 @@
     "O8mt7g": {
         "message": "Sayılar ({example})",
         "description": "Clock widget: date style type"
+    },
+    "0PsF7Z": {
+        "message": "Bu aracı kalıcı olarak kaldırmak istediğinizden emin misiniz?",
+        "description": "Delete widget modal message"
+    },
+    "3vjl5Q": {
+        "message": "Göster / Gizle",
+        "description": "Feed widget filter allow label"
+    },
+    "yY7Rve": {
+        "message": "Gizle",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "zo4ZQa": {
+        "message": "Göster",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "TIEfOV": {
+        "message": "Bir makale var olan en az bir \"Göster\" filtresine dahilse ve hiçbir \"Gizle\" filtresine dahil değilse gösterilir.",
+        "description": "Feed widget: form field hint (Filters)"
     }
 }
