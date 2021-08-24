@@ -864,5 +864,81 @@
     },
     "M8ugqX": {
         "message": "Nenhum widget correspondente"
+    },
+    "0PsF7Z": {
+        "message": "Tem certeza de que deseja remover este widget permanentemente?",
+        "description": "Delete widget modal message"
+    },
+    "IbCXY9": {
+        "message": "Padrão ({exemplo})",
+        "description": "Clock widget: date style type"
+    },
+    "TIEfOV": {
+        "message": "Um artigo será mostrado se corresponder a pelo menos um filtro 'Mostrar' (se houver) e nenhum filtro 'Ocultar'.",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "kF06lD": {
+        "message": "Estendido ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "nF7bWj": {
+        "message": "Iso ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "yO9MXI": {
+        "message": "Moeda desconhecida '{currency}'",
+        "description": "Currencies widget: error"
+    },
+    "Abtyj/": {
+        "message": "A imagem tem mais de 2 MB ({dataSizeMB} MB). Para obter melhores tempos de carregamento, você deve usar uma imagem menor.",
+        "description": "Image upload error message"
+    },
+    "QV6YlB": {
+        "message": "Taxas de câmbio",
+        "description": "Currencies widget: form field label"
+    },
+    "aXrD3p": {
+        "message": "Moedas",
+        "description": "Currencies widget"
+    },
+    "oBl48o": {
+        "message": "Tem certeza de que deseja redefinir todos os dados?",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "OPzczE": {
+        "message": "Abreviação ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "3vjl5Q": {
+        "message": "Mostrar/Esconder",
+        "description": "Feed widget filter allow label"
+    },
+    "Ddd3ZY": {
+        "message": "para",
+        "description": "Currencies widget: form field label"
+    },
+    "O8mt7g": {
+        "message": "Números ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "UgAgeT": {
+        "message": "Desenvolvido por exchangegerate.host",
+        "description": "Currencies widget: credit to data provider"
+    },
+    "pG7wIz": {
+        "message": "Mostra taxas de câmbio, com suporte para moedas forex e criptografia (BitCoin etc)",
+        "description": "Currencies widget description"
+    },
+    "yY7Rve": {
+        "message": "Esconder",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "zo4ZQa": {
+        "message": "Mostrar",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "4dzBeG": {
+        "message": "De",
+        "description": "Currencies widget: form field label"
     }
 }
