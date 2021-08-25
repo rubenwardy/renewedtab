@@ -42,7 +42,7 @@ const messages = defineMessages({
 	},
 
 	unknownCurrency: {
-		defaultMessage: "Unknown currency '{currency}'",
+		defaultMessage: "Unknown currency ''{currency}''",
 		description: "Currencies widget: error",
 	},
 });
@@ -71,7 +71,7 @@ export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
 		}
 
 		if (!currencies[to]) {
-			const msg = intl.formatMessage(messages.unknownCurrency, { currency: from });
+			const msg = intl.formatMessage(messages.unknownCurrency, { currency: to });
 			return (<ErrorView error={msg} />);
 		}
 	}
