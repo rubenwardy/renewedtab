@@ -224,7 +224,12 @@ export interface BackgroundConfig {
 
 export async function getBackgroundConfig(): Promise<BackgroundConfig> {
 	const info : BackgroundConfig | null = await storage.get("background");
-	if (!info) {
+	if (info) {
+		info.values = {
+			...getDefaultsForMode(info.mode),
+			...info.values
+		};
+	} else {
 		return {
 			mode: BackgroundMode.Auto,
 			values: getDefaultsForMode(BackgroundMode.Auto),
@@ -245,7 +250,10 @@ export function useBackground(): [(BackgroundConfig | null), (info: BackgroundCo
 
 	function updateValue(val: BackgroundConfig) {
 		const copy = { ...val };
-		copy.values = Object.assign({}, getDefaultsForMode(copy.mode), copy.values);
+		copy.values = {
+			...getDefaultsForMode(copy.mode),
+			...copy.values
+		};
 
 		updateBackgroundConfig(copy);
 		setValue(copy);
