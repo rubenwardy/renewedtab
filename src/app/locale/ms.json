@@ -616,10 +616,6 @@
         "message": "Cuaca semasa dan ramalan",
         "description": "Weather widget description"
     },
-    "ycaP+t": {
-        "message": "Auto",
-        "description": "Auto background mode"
-    },
     "yfgoZf": {
         "message": "Sembang Discord / Matrix"
     },

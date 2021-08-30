@@ -1,7 +1,7 @@
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import Schema from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
-import { AutoBG } from "./AutoBG";
+import { CuratedBG } from "./CuratedBG";
 import { ColorBG } from "./ColorBG";
 import { FeedBG } from "./FeedBG";
 import { ImageBG } from "./ImageBG";
@@ -39,7 +39,7 @@ export interface BackgroundProvider<T> {
 
 
 export const backgroundProviders: Record<string, BackgroundProvider<any>> = {
-	"Auto": AutoBG,
+	"Curated": CuratedBG,
 	"Color": ColorBG,
 	"Image": ImageBG,
 	"ImageUrl": ImageUrlBG,
@@ -53,7 +53,7 @@ export const backgroundProviders: Record<string, BackgroundProvider<any>> = {
  * of legacy settings.
  */
 const legacyAliases = [
-	"Auto",
+	"Curated",
 	"Color",
 	"Image",
 	"ImageUrl",

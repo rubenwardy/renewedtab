@@ -370,6 +370,10 @@
         "description": "Backgroud mode description",
         "message": "A single color"
     },
+    "RhyKzC": {
+        "description": "Curated background mode",
+        "message": "Curated"
+    },
     "Rw51mJ": {
         "message": "Powered by <a>OpenStreetMap</a>."
     },
@@ -934,10 +938,6 @@
     "yY7Rve": {
         "description": "Feed widget: filter show checkbox label",
         "message": "Hide"
-    },
-    "ycaP+t": {
-        "description": "Auto background mode",
-        "message": "Auto"
     },
     "yfgoZf": {
         "message": "Discord / Matrix chats"

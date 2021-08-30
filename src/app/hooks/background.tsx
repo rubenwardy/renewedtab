@@ -22,10 +22,10 @@ export async function getBackgroundConfig(): Promise<BackgroundConfig> {
 		}
 	}
 
-	const provider = getBackgroundProvider<any>("Auto");
+	const provider = getBackgroundProvider<any>("Curated");
 	return {
-		mode: "Auto",
-		values: provider!.defaultValues,
+		mode: "Curated",
+		values: { ...provider!.defaultValues },
 	}
 }
 

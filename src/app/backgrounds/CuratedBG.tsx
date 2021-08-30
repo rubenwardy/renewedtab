@@ -9,8 +9,8 @@ import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages
 
 const messages = defineMessages({
 	title: {
-		defaultMessage: "Auto",
-		description: "Auto background mode",
+		defaultMessage: "Curated",
+		description: "Curated background mode",
 	},
 
 	description: {
@@ -35,7 +35,7 @@ async function getBackgroundInfo(votes: Record<string, boolean>): Promise<(Backg
 }
 
 
-interface AutoBGProps {
+interface CuratedBGProps {
 	cacheExpiry: CacheExpiry,
 	brightnessDark: number;
 	brightnessLight: number;
@@ -43,8 +43,8 @@ interface AutoBGProps {
 }
 
 
-export const AutoBG : BackgroundProvider<AutoBGProps> = {
-	id: "Auto",
+export const CuratedBG : BackgroundProvider<CuratedBGProps> = {
+	id: "Curated",
 	title: messages.title,
 	description: messages.description,
 	schema: {
@@ -61,7 +61,7 @@ export const AutoBG : BackgroundProvider<AutoBGProps> = {
 	},
 	enableCaching: true,
 
-	async get(values: AutoBGProps): Promise<ActualBackgroundProps> {
+	async get(values: CuratedBGProps): Promise<ActualBackgroundProps> {
 		const votes = await storage.get<Record<string, boolean>>("background_votes") ?? {};
 		const backgroundInfo = await getBackgroundInfo(votes);
 		if (!backgroundInfo) {
