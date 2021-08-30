@@ -1,4 +1,4 @@
-import { backgroundProviders, getBackgroundProvider } from "app/backgrounds";
+import { backgroundProviders, getBackgroundProvider, getSchemaForProvider } from "app/backgrounds";
 import { BackgroundConfig } from "app/hooks/background";
 import { myFormatMessage, MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React from "react";
@@ -61,7 +61,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 			</h3>
 			<Form
 					values={props.background.values}
-					schema={selectedProvider.schema}
+					schema={getSchemaForProvider(selectedProvider.id)}
 					onChange={handleSetValue} />
 		</div>);
 }

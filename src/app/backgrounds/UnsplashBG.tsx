@@ -1,4 +1,4 @@
-import { getAPI } from "app/hooks";
+import { fetchBinaryAsDataURL, getAPI } from "app/hooks";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
@@ -44,25 +44,29 @@ export const UnsplashBG : BackgroundProvider<UnsplashBGProps> = {
 		blur: 0,
 	},
 
+	getCacheKey: (values) => `Unsplash:${values.collection}`,
+
 	async get(values: UnsplashBGProps): Promise<ActualBackgroundProps> {
 		if (values.collection == "") {
 			return {};
 		}
 
-		const background = await getAPI<BackgroundInfo>("unsplash/",
+		const backgroundInfo = await getAPI<BackgroundInfo>("unsplash/",
 			{ collection: values.collection });
-		if (!background) {
+		if (!backgroundInfo) {
 			return {};
 		}
 
+		const dataURL = await fetchBinaryAsDataURL(backgroundInfo.url);
+
 		const credits = {
-			info: background,
+			info: backgroundInfo,
 		};
 
 		return {
 			...values,
-			image: background.url,
-			color: background.color,
+			image: dataURL,
+			color: backgroundInfo.color,
 			credits: credits,
 		};
 	}

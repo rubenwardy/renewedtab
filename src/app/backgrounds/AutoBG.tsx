@@ -1,4 +1,4 @@
-import { getAPI } from "app/hooks";
+import { fetchBinaryAsDataURL, getAPI } from "app/hooks";
 import { storage } from "app/Storage";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
@@ -19,7 +19,7 @@ const messages = defineMessages({
 	},
 });
 
-async function getBackground(votes: Record<string, boolean>): Promise<(BackgroundInfo | undefined)> {
+async function getBackgroundInfo(votes: Record<string, boolean>): Promise<(BackgroundInfo | undefined)> {
 	const backgrounds = await getAPI<BackgroundInfo[]>("background/", {});
 	if (backgrounds && backgrounds.length > 0) {
 		for (let i = 0; i < backgrounds.length; i++) {
@@ -57,22 +57,26 @@ export const AutoBG : BackgroundProvider<AutoBGProps> = {
 		blur: 0,
 	},
 
+	getCacheKey: () => `Auto:`,
+
 	async get(values: AutoBGProps): Promise<ActualBackgroundProps> {
 		const votes = await storage.get<Record<string, boolean>>("background_votes") ?? {};
-		const background = await getBackground(votes);
-		if (!background) {
+		const backgroundInfo = await getBackgroundInfo(votes);
+		if (!backgroundInfo) {
 			return {};
 		}
 
+		const dataURL = await fetchBinaryAsDataURL(backgroundInfo.url);
+
 		const credits: CreditProps = {
-			info: background,
+			info: backgroundInfo,
 			enableVoting: true,
 		};
 
 		return {
 			...values,
-			image: background.url,
-			color: background.color,
+			image: dataURL,
+			color: backgroundInfo.color,
 			credits: credits,
 		};
 	}

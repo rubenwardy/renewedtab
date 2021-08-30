@@ -1,33 +1,13 @@
 import { useLargeStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { largeStorage } from "app/Storage";
+import { readBlobAsDataURL } from "app/utils/blob";
 import { ImageHandle } from "app/utils/Schema";
 import uuid from "app/utils/uuid";
 import React, { useRef } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import Button from "../Button";
-
-
-function readFileAsDataURL(file: File) {
-	return new Promise<string>((resolve, reject) => {
-		const reader = new FileReader();
-		reader.addEventListener("load", function () {
-			if (reader.result) {
-				if (reader.result instanceof ArrayBuffer) {
-					const chars = new Uint16Array(reader.result as ArrayBuffer);
-					resolve(String.fromCharCode.apply(null, chars as any));
-				} else {
-					resolve(reader.result);
-				}
-			} else {
-				reject("No result");
-			}
-		}, false);
-
-		reader.readAsDataURL(file);
-	});
-}
 
 
 const messages = defineMessages({
@@ -64,7 +44,7 @@ export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 		}
 
 		const id = key ?? `image-${uuid()}`;
-		const data = await readFileAsDataURL(file);
+		const data = await readBlobAsDataURL(file);
 
 		await largeStorage.set(id, {
 			filename: file.name,

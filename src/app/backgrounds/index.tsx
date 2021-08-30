@@ -2,10 +2,10 @@ import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import Schema from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { AutoBG } from "./AutoBG";
-import { ColorBG } from "./Color";
-import { ImageBG } from "./Image";
+import { ColorBG } from "./ColorBG";
+import { ImageBG } from "./ImageBG";
 import { ImageUrlBG } from "./ImageUrlBG";
-import { UnsplashBG } from "./Unsplash";
+import { UnsplashBG } from "./UnsplashBG";
 
 
 export interface CreditProps {
@@ -33,6 +33,7 @@ export interface BackgroundProvider<T> {
 	defaultValues: T;
 
 	get: (values: T) => Promise<ActualBackgroundProps>;
+	getCacheKey?: (values: T) => string;
 }
 
 

@@ -1,6 +1,7 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
+import { readBlobAsDataURL } from "app/utils/blob";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
 import { usePromise } from "./promises";
@@ -148,4 +149,26 @@ export function useAPI<T>(path: string, args: any, // eslint-disable-line
  */
 export function useXML(url: string, dependents?: any[]): [(Document | null), (string | null)] {
 	return usePromise(() => fetchXML(makeProxy(url)), dependents ?? []);
+}
+
+
+/**
+ * Downloads binary file as Data URL
+ *
+ * @param url URL to fetch
+ */
+export async function fetchBinaryAsDataURL(url: string): Promise<string> {
+	const response = await fetchCheckCors(new Request(url, {
+		method: "GET",
+		headers: {
+			"Accept": "application/json",
+		}
+	}));
+
+	if (!response.ok) {
+		throw new UserError(await response.text());
+	}
+
+	const blob = await response.blob();
+	return await readBlobAsDataURL(blob);
 }
