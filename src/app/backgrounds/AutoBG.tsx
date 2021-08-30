@@ -56,8 +56,7 @@ export const AutoBG : BackgroundProvider<AutoBGProps> = {
 		brightnessLight: 80,
 		blur: 0,
 	},
-
-	getCacheKey: () => `Auto:`,
+	enableCaching: true,
 
 	async get(values: AutoBGProps): Promise<ActualBackgroundProps> {
 		const votes = await storage.get<Record<string, boolean>>("background_votes") ?? {};

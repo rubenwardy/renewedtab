@@ -44,7 +44,7 @@ export const UnsplashBG : BackgroundProvider<UnsplashBGProps> = {
 		blur: 0,
 	},
 
-	getCacheKey: (values) => `Unsplash:${values.collection}`,
+	enableCaching: true,
 
 	async get(values: UnsplashBGProps): Promise<ActualBackgroundProps> {
 		if (values.collection == "") {

@@ -31,9 +31,8 @@ export interface BackgroundProvider<T> {
 	description: MyMessageDescriptor;
 	schema: Schema;
 	defaultValues: T;
-
+	enableCaching?: boolean;
 	get: (values: T) => Promise<ActualBackgroundProps>;
-	getCacheKey?: (values: T) => string;
 }
 
 

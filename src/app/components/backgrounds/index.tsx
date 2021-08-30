@@ -41,8 +41,8 @@ export default function Background(props: BackgroundProps) {
 	const [actualBgLoaded] = usePromise(() => provider.get(values), [provider, values, force]);
 
 	useEffect(() => {
-		if (provider.getCacheKey) {
-			const key = provider.getCacheKey(values);
+		if (provider.enableCaching) {
+			const key = `${provider.id}:${JSON.stringify(toTypedJSON(values))}`;
 			if (!actualBg) {
 				const cachedJson = window.localStorage.getItem("_bg-cache");
 				const cached: (BackgroundCache | undefined) = cachedJson ? fromTypedJSON(JSON.parse(cachedJson)) : undefined;
@@ -69,7 +69,7 @@ export default function Background(props: BackgroundProps) {
 			}
 		}
 
-		if (actualBgLoaded && (!provider.getCacheKey || !actualBg)) {
+		if (actualBgLoaded && (!provider.enableCaching || !actualBg)) {
 			console.log("Setting background from provider");
 			setActualBg(actualBgLoaded);
 		}
@@ -82,7 +82,7 @@ export default function Background(props: BackgroundProps) {
 	if (actualBg.credits) {
 		actualBg.credits.setIsHovered = props.setWidgetsHidden;
 		actualBg.credits.onVoted = () => {
-			if (provider.getCacheKey) {
+			if (provider.enableCaching) {
 				window.localStorage.removeItem("_bg-cache");
 			}
 			setActualBg(undefined);
