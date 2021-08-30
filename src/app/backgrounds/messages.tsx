@@ -50,5 +50,34 @@ export const backgroundMessages = defineMessages({
 	blurRadius: {
 		defaultMessage: "Blur radius",
 		description: "Backgroud settings: form field label",
-	}
+	},
+
+	cacheExpiry: {
+		defaultMessage: "Show a new photo",
+		description: "Backgroud settings: form field label",
+	},
+});
+
+
+export enum CacheExpiry {
+	Minutes15,
+	Hourly,
+	Daily,
+}
+
+export const cacheExpiryMessages = defineMessages({
+	[CacheExpiry.Minutes15]: {
+		defaultMessage: "Every 15 minutes",
+		description: "Background expiry dropdown",
+	},
+
+	[CacheExpiry.Hourly]: {
+		defaultMessage: "Once an hour",
+		description: "Background expiry dropdown",
+	},
+
+	[CacheExpiry.Daily]: {
+		defaultMessage: "Once a day",
+		description: "Background expiry dropdown",
+	},
 });

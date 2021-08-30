@@ -3,7 +3,7 @@ import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
 import { ActualBackgroundProps, BackgroundProvider } from ".";
-import { backgroundMessages } from "./messages";
+import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 
 const messages = defineMessages({
@@ -20,6 +20,7 @@ const messages = defineMessages({
 
 
 interface UnsplashBGProps {
+	cacheExpiry: CacheExpiry,
 	collection: string;
 	brightnessDark: number;
 	brightnessLight: number;
@@ -33,11 +34,13 @@ export const UnsplashBG : BackgroundProvider<UnsplashBGProps> = {
 	description: messages.description,
 	schema: {
 		collection: type.string(backgroundMessages.collection, backgroundMessages.collectionHint),
+		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages, backgroundMessages.cacheExpiry),
 		brightnessDark: type.unit_number(backgroundMessages.brightnessDark, "%", backgroundMessages.brightnessDarkHint),
 		brightnessLight: type.unit_number(backgroundMessages.brightnessLight, "%", backgroundMessages.brightnessLightHint),
 		blur: type.unit_number(backgroundMessages.blurRadius, "px"),
 	},
 	defaultValues: {
+		cacheExpiry: CacheExpiry.Minutes15,
 		collection: "",
 		brightnessDark: 100,
 		brightnessLight: 80,

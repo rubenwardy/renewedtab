@@ -45,7 +45,7 @@ export default function EnumSelectField(props: FieldProps<any>) {
 						<Radio value={getValue(x)} /> {getString(x)}
 					</div>));
 		return (
-			<RadioGroup name="mode" selectedValue={getValue(value)}
+			<RadioGroup name={props.name} selectedValue={getValue(value)}
 					onChange={handleChanged} className="radios">
 				{radioModes}
 			</RadioGroup>);
@@ -57,7 +57,7 @@ export default function EnumSelectField(props: FieldProps<any>) {
 						{getString(x)}
 					</option>));
 		return (
-			<select name="mode" value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
+			<select name={props.name} value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
 				{radioModes}
 			</select>);
 	}

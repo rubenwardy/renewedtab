@@ -4,7 +4,7 @@ import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
 import { ActualBackgroundProps, BackgroundProvider, CreditProps } from ".";
-import { backgroundMessages } from "./messages";
+import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 
 const messages = defineMessages({
@@ -36,6 +36,7 @@ async function getBackgroundInfo(votes: Record<string, boolean>): Promise<(Backg
 
 
 interface AutoBGProps {
+	cacheExpiry: CacheExpiry,
 	brightnessDark: number;
 	brightnessLight: number;
 	blur: number;
@@ -47,11 +48,13 @@ export const AutoBG : BackgroundProvider<AutoBGProps> = {
 	title: messages.title,
 	description: messages.description,
 	schema: {
+		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages, backgroundMessages.cacheExpiry),
 		brightnessDark: type.unit_number(backgroundMessages.brightnessDark, "%", backgroundMessages.brightnessDarkHint),
 		brightnessLight: type.unit_number(backgroundMessages.brightnessLight, "%", backgroundMessages.brightnessLightHint),
 		blur: type.unit_number(backgroundMessages.blurRadius, "px"),
 	},
 	defaultValues: {
+		cacheExpiry: CacheExpiry.Minutes15,
 		brightnessDark: 100,
 		brightnessLight: 80,
 		blur: 0,
