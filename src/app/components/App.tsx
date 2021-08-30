@@ -4,7 +4,7 @@ import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGrid";
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
-import { useBackground, useForceUpdate, usePromise, useStorage } from "app/hooks";
+import { useForceUpdate, usePromise, useStorage } from "app/hooks";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
@@ -12,6 +12,7 @@ import ReviewRequester from "./ReviewRequester";
 import { storage } from "app/Storage";
 import * as Sentry from "@sentry/react";
 import Onboarding from "./onboarding";
+import { useBackground } from "app/hooks/background";
 
 
 const widgetManager = new WidgetManager(storage);

@@ -1,8 +1,15 @@
 import { runPromise } from "app/hooks";
+import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import UserError from "app/utils/UserError";
 import React, { useState } from "react";
-import { IntlShape, useIntl } from "react-intl";
+import { defineMessages, useIntl } from "react-intl";
 import RequestPermission from "./RequestPermission";
+
+const messages = defineMessages({
+	hostPermissionNeeded :{
+		defaultMessage: "Permission needed to access {host}. Edit this widget to grant it."
+	}
+})
 
 function makeHostPermission(host: string): any {
 	return {
@@ -18,12 +25,10 @@ export async function needsHostPermission(host: string): Promise<boolean> {
 	return !(await browser.permissions.contains(makeHostPermission(host)));
 }
 
-export async function checkHostPermission(intl: IntlShape, url: string) {
+export async function checkHostPermission( url: string) {
 	const host = new URL(url).host;
 	if (await needsHostPermission(host)) {
-		throw new UserError(intl.formatMessage({
-			defaultMessage: "Permission needed to access {host}. Edit this widget to grant it."
-		}, { host: host }));
+		throw new UserError(bindValuesToDescriptor(messages.hostPermissionNeeded, { host: host }));
 	}
 }
 

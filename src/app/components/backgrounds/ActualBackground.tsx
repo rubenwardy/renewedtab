@@ -1,16 +1,7 @@
+import { ActualBackgroundProps } from "app/backgrounds";
 import Color from "app/utils/Color";
 import React, { CSSProperties } from "react";
-import { CreditProps, Credits } from "./Credits";
-
-interface ActualBackgroundProps {
-	image?: string;
-	color?: string;
-	brightnessDark?: number;
-	brightnessLight?: number;
-	blur?: number;
-	credits?: CreditProps;
-	position?: string;
-}
+import { Credits } from "./Credits";
 
 
 export default function ActualBackground(props: ActualBackgroundProps) {

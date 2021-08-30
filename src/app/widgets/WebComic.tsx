@@ -65,7 +65,7 @@ WebComic.initialProps = {
 
 WebComic.schema = {
 	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
-			(intl) => getAPI<AutocompleteList[]>(intl, "webcomics/", {})),
+			() => getAPI<AutocompleteList[]>("webcomics/", {})),
 } as Schema;
 
 WebComic.defaultSize = new Vector2(5, 4);

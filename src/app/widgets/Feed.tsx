@@ -128,7 +128,7 @@ const filterSchema: Schema = {
 Feed.schema = {
 	title: type.string(schemaMessages.title, messages.titleHint),
 	url: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
-			(intl) => getAPI<AutocompleteList[]>(intl, "feeds/", {})),
+			() => getAPI<AutocompleteList[]>("feeds/", {})),
 	filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
 } as Schema;
 

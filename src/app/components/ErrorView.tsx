@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import * as Sentry from "@sentry/react";
 import UserError from "app/utils/UserError";
+import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 
 interface ErrorViewProps {
 	/**
@@ -40,7 +41,7 @@ export default function ErrorView(props: ErrorViewProps) {
 
 	let msg = props.error;
 	if (msg instanceof UserError && msg.messageDescriptor) {
-		msg = intl.formatMessage(msg.messageDescriptor);
+		msg = myFormatMessage(intl, msg.messageDescriptor);
 	} else if (msg instanceof Error || typeof (msg as any).message != "undefined") {
 		msg = (msg as any).message;
 	} else if (typeof (msg as any).toString == "function") {

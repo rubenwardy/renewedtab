@@ -1,5 +1,7 @@
-import { BackgroundConfig, BackgroundMode, getSchemaForMode } from "app/hooks/background";
-import React, { useMemo } from "react";
+import { ActualBackgroundProps, getBackgroundProvider } from "app/backgrounds";
+import { usePromise } from "app/hooks";
+import { BackgroundConfig } from "app/hooks/background";
+import React from "react";
 import ActualBackground from "./ActualBackground";
 
 
@@ -9,47 +11,33 @@ export interface BackgroundProps {
 }
 
 
-import AutoBackground from "./AutoBackground";
-import ImageBackground from "./ImageBackground";
-import UnsplashBackground from "./UnsplashBackground";
-
-
-function getFilteredBg(background: (BackgroundConfig | null)): (BackgroundConfig | null) {
-	if (!background) {
+async function loadBackground(bg: (BackgroundConfig | null)): Promise<ActualBackgroundProps | null> {
+	if (!bg) {
 		return null;
 	}
 
-	const schema = getSchemaForMode(background.mode);
+	const provider = getBackgroundProvider(bg.mode);
+	if (!provider) {
+		return null;
+	}
+
 	const values: any = {};
-	Object.keys(schema).forEach(key => {
-		values[key] = background.values[key];
+	Object.keys(provider.schema).forEach(key => {
+		values[key] = bg.values[key];
 	})
 
-	return {
-		mode: background.mode,
-		values: values,
-	};
+	return await provider.get(values);
 }
 
 
 export default function Background(props: BackgroundProps) {
-	const background = useMemo(() => getFilteredBg(props.background), [props.background])
-
-	if (background) {
-		switch (background.mode) {
-		case BackgroundMode.Auto:
-			return (<AutoBackground {...props} />);
-		case BackgroundMode.Color:
-			return (<ActualBackground color={background.values.color ?? "#336699"} />);
-		case BackgroundMode.Image:
-			return (<ImageBackground {...props} />);
-		case BackgroundMode.ImageUrl:
-			return (<ActualBackground
-					{...background.values} image={background.values.url} color="#336699" />);
-		case BackgroundMode.Unsplash:
-			return (<UnsplashBackground {...props} />);
+	const [actualBg] = usePromise(() => loadBackground(props.background), [props.background]);
+	if (actualBg) {
+		if (actualBg.credits) {
+			actualBg.credits.setIsHovered = props.setWidgetsHidden;
 		}
+		return (<ActualBackground {...actualBg} />);
+	} else {
+		return (<div id="background" />);
 	}
-
-	return (<div id="background" />);
 }

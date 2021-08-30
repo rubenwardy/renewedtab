@@ -1,4 +1,6 @@
-import { BackgroundConfig, BackgroundMode, BackgroundModeType, getTitleForMode, getDescriptionForMode, getSchemaForMode } from "app/hooks/background";
+import { backgroundProviders, getBackgroundProvider } from "app/backgrounds";
+import { BackgroundConfig } from "app/hooks/background";
+import { myFormatMessage, MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Radio, RadioGroup } from "react-radio-group";
@@ -18,21 +20,18 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 	}
 
 	const radioModes =
-		Object.keys(BackgroundMode)
-			.filter(value => isNaN(Number(value)))
-			.map(x => (
-				<div key={x}>
-					<Radio value={x} />
-					<FormattedMessage
-							{...getTitleForMode(BackgroundMode[x as BackgroundModeType])} />:&nbsp;
+		Object.entries(backgroundProviders)
+			.map(([key, provider]) => (
+				<div key={key}>
+					<Radio value={key} />
+					<MyFormattedMessage message={provider.title} />:&nbsp;
 					<span className="text-muted">
-						<FormattedMessage
-								{...getDescriptionForMode(BackgroundMode[x as BackgroundModeType])} />
+						<MyFormattedMessage message={provider.description} />
 					</span>
 				</div>));
 
 	function handleModeChanged(newMode: string) {
-		props.background!.mode = BackgroundMode[newMode as BackgroundModeType];
+		props.background!.mode = newMode;
 		props.setBackground(props.background!);
 	}
 
@@ -41,16 +40,16 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 		props.setBackground(props.background!);
 	}
 
-	const modeName = BackgroundMode[props.background.mode];
-	const translatedTitle = intl.formatMessage(getTitleForMode(props.background.mode));
 
+	const selectedProvider = getBackgroundProvider(props.background.mode)!;
+	const translatedTitle = myFormatMessage(intl, selectedProvider.title);
 	return (
 		<div className="modal-body">
 			<label htmlFor="mode">
 				<FormattedMessage
 						defaultMessage="Background Type" />
 			</label>
-			<RadioGroup name="mode" selectedValue={modeName}
+			<RadioGroup name="mode" selectedValue={props.background.mode}
 					onChange={handleModeChanged} className="radios field">
 				{radioModes}
 			</RadioGroup>
@@ -62,7 +61,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 			</h3>
 			<Form
 					values={props.background.values}
-					schema={getSchemaForMode(props.background.mode)}
+					schema={selectedProvider.schema}
 					onChange={handleSetValue} />
 		</div>);
 }
