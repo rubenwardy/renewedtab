@@ -917,10 +917,6 @@
         "message": "ISO ({example})",
         "description": "Clock widget: date style type"
     },
-    "yO9MXI": {
-        "message": "Mata wang tidak diketahui '{currency}'",
-        "description": "Currencies widget: error"
-    },
     "yY7Rve": {
         "message": "Sembunyi",
         "description": "Feed widget: filter show checkbox label"

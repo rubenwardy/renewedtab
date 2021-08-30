@@ -1,5 +1,6 @@
 import { backgroundProviders, getBackgroundProvider, getSchemaForProvider } from "app/backgrounds";
 import { BackgroundConfig } from "app/hooks/background";
+import { miscMessages } from "app/locale/common";
 import { myFormatMessage, MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -19,16 +20,23 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 		return (<div className="modal-body">Loading...</div>);
 	}
 
+	const isBrowser = typeof browser !== "undefined";
+
 	const radioModes =
 		Object.entries(backgroundProviders)
-			.map(([key, provider]) => (
-				<div key={key}>
-					<Radio value={key} />
-					<MyFormattedMessage message={provider.title} />:&nbsp;
-					<span className="text-muted">
-						<MyFormattedMessage message={provider.description} />
-					</span>
-				</div>));
+			.map(([key, provider]) => {
+				const isDisabled = !isBrowser && provider.isBrowserOnly;
+
+				return (
+					<div key={key}>
+						<Radio value={key} disabled={isDisabled} />
+						<MyFormattedMessage message={provider.title} />:&nbsp;
+						<span className="text-muted">
+							<MyFormattedMessage
+								message={isDisabled ? miscMessages.requiresBrowserVersion : provider.description} />
+						</span>
+					</div>);
+			});
 
 	function handleModeChanged(newMode: string) {
 		props.background!.mode = newMode;

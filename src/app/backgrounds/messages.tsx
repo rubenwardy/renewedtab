@@ -56,6 +56,11 @@ export const backgroundMessages = defineMessages({
 		defaultMessage: "Show a new photo",
 		description: "Backgroud settings: form field label",
 	},
+
+	cacheExpiryHint: {
+		defaultMessage: "Depending on your settings, the same photo may be chosen",
+		description: "Background settings: form field hint (Show a new photo)",
+	},
 });
 
 

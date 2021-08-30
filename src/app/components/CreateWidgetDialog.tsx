@@ -1,3 +1,4 @@
+import { miscMessages } from "app/locale/common";
 import { compareString } from "common/utils/string";
 import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
@@ -55,8 +56,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 					{widget.title}
 					<span className="ml-1">
 						&nbsp;
-						<FormattedMessage
-								defaultMessage="Requires browser extension version" />
+						<FormattedMessage {...miscMessages.requiresBrowserVersion} />
 					</span>
 				</li>)));
 	}

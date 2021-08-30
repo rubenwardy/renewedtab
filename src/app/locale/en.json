@@ -3,6 +3,10 @@
         "description": "Location form field: error",
         "message": "No locations found"
     },
+    "+TYXj6": {
+        "description": "SpaceFlights widget: today and time",
+        "message": "Today, {time}"
+    },
     "+oSH/F": {
         "description": "Age widget description",
         "message": "States your current age with way too much precision"
@@ -140,6 +144,10 @@
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
     },
+    "B0kbsm": {
+        "description": "Unsplash background mode",
+        "message": "Feed"
+    },
     "BJYZgx": {
         "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
     },
@@ -219,6 +227,10 @@
     "H00a0q": {
         "description": "Links widget, form field hint (Link URL)",
         "message": "Leave blank to make heading"
+    },
+    "HPLtg4": {
+        "description": "Currencies widget: error",
+        "message": "Unknown currency ''{currency}''"
     },
     "I48yxw": {
         "description": "General settings: privacy",
@@ -373,6 +385,10 @@
         "description": "Button Widget",
         "message": "Button"
     },
+    "Sfrm5w": {
+        "description": "Background expiry dropdown",
+        "message": "Once an hour"
+    },
     "ShQneX": {
         "description": "Form field label",
         "message": "Text"
@@ -386,6 +402,10 @@
     "TIEfOV": {
         "description": "Feed widget: form field hint (Filters)",
         "message": "An article will be shown if it matches at least one 'Show' filter (if any), and no 'Hide' filters."
+    },
+    "TS11GJ": {
+        "description": "Backgroud mode description",
+        "message": "Random image from an Atom or RSS feed"
     },
     "TUnCKb": {
         "description": "Text Widget",
@@ -457,6 +477,10 @@
     },
     "XITVvp": {
         "message": "Show panel background"
+    },
+    "XV4mnl": {
+        "description": "Background settings: form field hint (Show a new photo)",
+        "message": "Depending on your settings, the same photo may be chosen"
     },
     "XrQEPN": {
         "description": "Form field label",
@@ -544,6 +568,14 @@
     "bQFsdR": {
         "message": "Grant permission to access {host}"
     },
+    "biJNV5": {
+        "description": "Backgroud settings: form field label",
+        "message": "Show a new photo"
+    },
+    "cF0LvQ": {
+        "description": "Background expiry dropdown",
+        "message": "Once a day"
+    },
     "cL6y1P": {
         "description": "Form field hint (Feed URL)",
         "message": "URL to an Atom or RSS feed"
@@ -554,6 +586,10 @@
     "cSF2y1": {
         "description": "Bookmarks widget description",
         "message": "Shows your bookmarks"
+    },
+    "d7dHsn": {
+        "description": "Background expiry dropdown",
+        "message": "Every 15 minutes"
     },
     "dGu5JQ": {
         "description": "Feed Widget",
@@ -608,6 +644,9 @@
         "description": "Links Widget",
         "message": "Links"
     },
+    "gYM9cf": {
+        "message": "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image"
+    },
     "h/ftND": {
         "message": "Choose a file"
     },
@@ -631,6 +670,10 @@
     },
     "ibhC3l": {
         "message": "Like Renewed Tab? Consider donating to cover costs and help support development."
+    },
+    "ip0uRu": {
+        "description": "Feed background mode: randomise checkbox",
+        "message": "Limit images"
     },
     "irdBm2": {
         "description": "Settings tab",
@@ -883,10 +926,6 @@
     "y8o0oA": {
         "description": "Weather widget description",
         "message": "Current and forecasted weather"
-    },
-    "yO9MXI": {
-        "description": "Currencies widget: error",
-        "message": "Unknown currency '{currency}'"
     },
     "yUJ5MA": {
         "description": "Preset: goals",

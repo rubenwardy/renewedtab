@@ -110,4 +110,8 @@ export const miscMessages = defineMessages({
 	chooseAFile: {
 		defaultMessage: "Choose a file",
 	},
+
+	requiresBrowserVersion: {
+		defaultMessage: "Requires browser extension version",
+	},
 });

@@ -913,10 +913,6 @@
         "message": "ISO ({example})",
         "description": "Clock widget: date style type"
     },
-    "yO9MXI": {
-        "message": "Bilinmeyen para birimi '{currency}'",
-        "description": "Currencies widget: error"
-    },
     "O8mt7g": {
         "message": "Sayılar ({example})",
         "description": "Clock widget: date style type"

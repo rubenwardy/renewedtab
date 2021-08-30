@@ -885,10 +885,6 @@
         "message": "ISO ({example})",
         "description": "Clock widget: date style type"
     },
-    "yO9MXI": {
-        "message": "Moeda desconhecida '{currency}'",
-        "description": "Currencies widget: error"
-    },
     "Abtyj/": {
         "message": "A imagem tem mais de 2 MB ({dataSizeMB} MB). Para obter melhores tempos de carregamento, você deve usar uma imagem menor.",
         "description": "Image upload error message"

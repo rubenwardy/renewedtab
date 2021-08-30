@@ -5,7 +5,8 @@ import { makeKeyCache } from "./cache";
 const PROXY_ALLOWED_HOSTS: string[] = serverConfig.PROXY_ALLOWED_HOSTS ?? [
 	"feeds.bbci.co.uk",
 	"fdo.rocketlaunch.live",
-	"theregister.com"
+	"theregister.com",
+	"www.nasa.gov",
 ];
 
 export interface Result {

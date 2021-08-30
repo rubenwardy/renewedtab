@@ -514,10 +514,6 @@
         "message": "Numerico ({esempio})",
         "description": "Clock widget: date style type"
     },
-    "yO9MXI": {
-        "message": "Valuta sconosciuta '{currency}'",
-        "description": "Currencies widget: error"
-    },
     "yUJ5MA": {
         "message": "Obiettivi",
         "description": "Preset: goals"

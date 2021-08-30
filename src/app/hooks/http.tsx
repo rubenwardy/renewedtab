@@ -2,6 +2,7 @@ import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { readBlobAsDataURL } from "app/utils/blob";
+import { Feed, parseFeed } from "app/utils/Feed";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
 import { usePromise } from "./promises";
@@ -10,6 +11,14 @@ import { usePromise } from "./promises";
 const messages = defineMessages({
 	httpRequestFailed: {
 		defaultMessage: "HTTP request failed, {code} {msg}.",
+	},
+
+	missingFeedURL: {
+		defaultMessage: "Missing feed URL.",
+	},
+
+	errorLoadingFeed: {
+		defaultMessage: "Error loading feed. Make sure it is an RSS or Atom feed.",
 	},
 })
 
@@ -158,7 +167,7 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
  * @param url URL to fetch
  */
 export async function fetchBinaryAsDataURL(url: string): Promise<string> {
-	const response = await fetchCheckCors(new Request(url, {
+	const response = await fetchCheckCors(new Request(makeProxy(url), {
 		method: "GET",
 		headers: {
 			"Accept": "application/json",
@@ -171,4 +180,24 @@ export async function fetchBinaryAsDataURL(url: string): Promise<string> {
 
 	const blob = await response.blob();
 	return await readBlobAsDataURL(blob);
+}
+
+
+export async function fetchFeed(url: string): Promise<Feed> {
+	if (!url) {
+		throw new UserError(messages.missingFeedURL);
+	}
+
+	const data = await fetchXML(makeProxy(url));
+
+	const feed = parseFeed(data.children[0], (s, l) => new window.DOMParser().parseFromString(s, l as any));
+	if (!feed) {
+		throw new UserError(messages.errorLoadingFeed);
+	}
+
+	return feed;
+}
+
+export function useFeed(url: string, dependents?: any[]): [Feed | null, any] {
+	return usePromise(() => fetchFeed(url), dependents ?? []);
 }

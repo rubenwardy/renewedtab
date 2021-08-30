@@ -1,12 +1,11 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { AutocompleteList, type } from 'app/utils/Schema';
-import { useFeed } from 'app/hooks/feeds';
 import { WidgetProps } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
-import { getAPI } from 'app/hooks/http';
+import { getAPI, useFeed } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';
 import UserError from 'app/utils/UserError';
 

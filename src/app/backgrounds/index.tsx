@@ -3,6 +3,7 @@ import Schema from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { AutoBG } from "./AutoBG";
 import { ColorBG } from "./ColorBG";
+import { FeedBG } from "./FeedBG";
 import { ImageBG } from "./ImageBG";
 import { ImageUrlBG } from "./ImageUrlBG";
 import { UnsplashBG } from "./UnsplashBG";
@@ -31,6 +32,7 @@ export interface BackgroundProvider<T> {
 	description: MyMessageDescriptor;
 	schema: Schema;
 	defaultValues: T;
+	isBrowserOnly?: boolean;
 	enableCaching?: boolean;
 	get: (values: T) => Promise<ActualBackgroundProps>;
 }
@@ -42,6 +44,7 @@ export const backgroundProviders: Record<string, BackgroundProvider<any>> = {
 	"Image": ImageBG,
 	"ImageUrl": ImageUrlBG,
 	"Unsplash": UnsplashBG,
+	"Feed": FeedBG,
 };
 
 
