@@ -262,7 +262,7 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response) =
 				Event: ${req.body.event}
 				Info: ${req.body.version ? "v" + req.body.version : ""} / ${req.body.browser} / ${req.body.platform}
 				${reasons ? `Reasons: ${reasons.join(", ")}
-				         ${req.body.other_reason}` : ""}
+						${req.body.other_reason}` : ""}
 				${req.body.email ? `Email: ${req.body.email}` : ""}
 
 				${comments}

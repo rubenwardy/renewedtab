@@ -1,5 +1,5 @@
 import { ActualBackgroundProps, getBackgroundProvider } from "app/backgrounds";
-import { usePromise } from "app/hooks";
+import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
 import React from "react";
 import ActualBackground from "./ActualBackground";
@@ -31,10 +31,14 @@ async function loadBackground(bg: (BackgroundConfig | null)): Promise<ActualBack
 
 
 export default function Background(props: BackgroundProps) {
-	const [actualBg] = usePromise(() => loadBackground(props.background), [props.background]);
+	const [force, forceUpdate] = useForceUpdateValue();
+	const [actualBg] = usePromise(
+		() => loadBackground(props.background),
+		[props.background, force]);
 	if (actualBg) {
 		if (actualBg.credits) {
 			actualBg.credits.setIsHovered = props.setWidgetsHidden;
+			actualBg.credits.onVoted = () => forceUpdate();
 		}
 		return (<ActualBackground {...actualBg} />);
 	} else {

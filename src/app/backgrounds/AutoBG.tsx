@@ -3,7 +3,7 @@ import { storage } from "app/Storage";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundProvider } from ".";
+import { ActualBackgroundProps, BackgroundProvider, CreditProps } from ".";
 import { backgroundMessages } from "./messages";
 
 
@@ -64,10 +64,10 @@ export const AutoBG : BackgroundProvider<AutoBGProps> = {
 			return {};
 		}
 
-		const credits = {
+		const credits: CreditProps = {
 			info: background,
-			isPositive: votes[background.id]
-		}
+			enableVoting: true,
+		};
 
 		return {
 			...values,

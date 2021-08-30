@@ -2,7 +2,7 @@ import React from "react";
 import { FormattedMessage, IntlShape, MessageDescriptor } from "react-intl";
 
 export interface MessageWithValue extends MessageDescriptor {
-    values?: Record<string, any>;
+	values?: Record<string, any>;
 }
 
 export type MyMessageDescriptor = MessageWithValue | MessageWithValue[];

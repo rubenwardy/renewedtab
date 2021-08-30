@@ -1,5 +1,7 @@
 import { CreditProps } from "app/backgrounds";
+import { useStorage } from "app/hooks";
 import { useDelay } from "app/hooks/delay";
+import { BackgroundInfo } from "common/api/backgrounds";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
@@ -18,6 +20,65 @@ const messages = defineMessages({
 });
 
 
+function reportVote(info: BackgroundInfo, isPositive: boolean) {
+	const url = new URL(config.API_URL);
+	url.pathname = (url.pathname + "background/vote/").replace(/\/\//g, "/");
+
+	fetch(new Request(url.toString(), {
+		method: "POST",
+		cache: "no-cache",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			background: {
+				id: info.id,
+				url: info.links.photo,
+			},
+			is_positive: isPositive,
+		}),
+	})).catch(console.error);
+}
+
+
+function CreditsVote(props: CreditProps) {
+	const intl = useIntl();
+	const [votes, setVotes] = useStorage<Record<string, boolean>>("background_votes", {}, false);
+	const isPositive: (boolean | undefined) = votes?.[props.info.id] ?? undefined;
+
+	function handleClick(isPositive: boolean) {
+		if (votes?.[props.info.id] !== isPositive) {
+			reportVote(props.info, isPositive);
+		}
+
+		setVotes({
+			...votes,
+			[props.info.id]: isPositive,
+		});
+
+		if (props.onVoted) {
+			props.onVoted();
+		}
+	}
+
+
+	return (
+		<>
+			<Button onClick={() => handleClick(true)}
+					variant={ButtonVariant.None} small={true}
+					active={isPositive === true}
+					title={intl.formatMessage(messages.like)}
+					icon="fas fa-thumbs-up" />
+
+			<Button onClick={() => handleClick(false)}
+					variant={ButtonVariant.None} small={true}
+					active={isPositive === false}
+					title={intl.formatMessage(messages.block)}
+					icon="fas fa-ban" />
+		</>);
+}
+
+
 export function Credits(props: CreditProps) {
 	const setIsHovered = props.setIsHovered ?? (() => {});
 	const [startOnHover, cancelOnHover] = useDelay(setIsHovered, 200, true);
@@ -26,8 +87,6 @@ export function Credits(props: CreditProps) {
 		cancelOnHover();
 		setIsHovered(false);
 	}
-
-	const intl = useIntl();
 
 	if (props.info.links.author || props.info.links.site) {
 		const title = (props.info.title && props.info.title.length > 0)
@@ -41,19 +100,7 @@ export function Credits(props: CreditProps) {
 				&nbsp;/&nbsp;
 				<a href={props.info.links.site} className="mr-2">{props.info.site}</a>
 
-				{props.onLike &&
-					<Button onClick={() => props.onLike!(props.info)}
-							variant={ButtonVariant.None} small={true}
-							active={props.isPositive === true}
-							title={intl.formatMessage(messages.like)}
-							icon="fas fa-thumbs-up" />}
-
-				{props.onBlock &&
-					<Button onClick={() => props.onBlock!(props.info)}
-							variant={ButtonVariant.None} small={true}
-							active={props.isPositive === false}
-							title={intl.formatMessage(messages.block)}
-							icon="fas fa-ban"  />}
+				{props.enableVoting && <CreditsVote {...props} />}
 			</div>);
 	} else {
 		return (

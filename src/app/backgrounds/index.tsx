@@ -10,11 +10,9 @@ import { UnsplashBG } from "./Unsplash";
 
 export interface CreditProps {
 	info: BackgroundInfo;
+	enableVoting?: boolean;
 	setIsHovered?: (value: boolean) => void;
-
-	isPositive?: boolean;
-	onLike?: (info: BackgroundInfo) => void;
-	onBlock?: (info: BackgroundInfo) => void;
+	onVoted?: () => void;
 }
 
 export interface ActualBackgroundProps {
