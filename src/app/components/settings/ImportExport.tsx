@@ -80,6 +80,7 @@ export default function ImportExport() {
 			<textarea className="fullwidth" readOnly
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
+				accept=".json,application/json"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
 			<p className="buttons mt-4">
 				<Button variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
