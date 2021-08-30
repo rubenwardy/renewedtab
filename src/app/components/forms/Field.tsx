@@ -9,7 +9,7 @@ interface FieldProps {
 	schemaEntry: SchemaEntry;
 	value: any;
 	fieldOnly: boolean;
-	onChange?: (value: any) => void;
+	onChange: (value: any) => void;
 }
 
 export function Field(props: FieldProps) {

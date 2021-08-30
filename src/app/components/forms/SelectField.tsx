@@ -10,9 +10,7 @@ export default function SelectField(props: FieldProps<any>) {
 	const intl = useIntl();
 
 	function handleChanged(newMode: string) {
-		if (props.onChange) {
-			props.onChange(newMode);
-		}
+		props.onChange(newMode);
 		setValue(newMode);
 	}
 

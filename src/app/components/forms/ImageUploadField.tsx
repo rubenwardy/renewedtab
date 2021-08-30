@@ -51,9 +51,7 @@ export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 			data: data,
 		});
 
-		if (props.onChange) {
-			props.onChange({ key: id });
-		}
+		props.onChange({ key: id });
 	}
 
 	return (

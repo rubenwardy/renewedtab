@@ -6,10 +6,8 @@ export default function CheckboxField(props: FieldProps<boolean>) {
 	const [value, setValue] = useState(props.value);
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		if (props.onChange) {
-			setValue(e.target.checked);
-			props.onChange(e.target.checked);
-		}
+		setValue(e.target.checked);
+		props.onChange(e.target.checked);
 	}
 
 	return (

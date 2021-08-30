@@ -56,9 +56,7 @@ export default function ArrayField(props: FieldProps<any[]>) {
 	const forceUpdate = useForceUpdate();
 
 	function handleChange() {
-		if (props.onChange) {
-			props.onChange(props.value);
-		}
+		props.onChange(props.value);
 	}
 
 	function handleAdd(front: boolean) {

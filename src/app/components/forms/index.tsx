@@ -6,7 +6,7 @@ export interface FieldProps<T> {
 	name: string;
 	value: T;
 	schemaEntry: SchemaEntry;
-	onChange?: (value: T) => void;
+	onChange: (value: T) => void;
 }
 
 import { DateField, TextAreaField, TextField, URLField } from "./HTMLFields";
@@ -18,7 +18,7 @@ import EnumSelectField from "./EnumSelectField";
 import CheckboxField from "./CheckboxField";
 import ImageUploadField from "./ImageUploadField";
 import { HostAllField, HostURLFIeld } from "./HostPermFields";
-import { UnitNumberField } from "./NumberField";
+import { NumberField, UnitNumberField } from "./NumberField";
 import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
 
@@ -28,6 +28,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return DateField;
 	} else if (type == "boolean") {
 		return CheckboxField;
+	} else if (type == "number") {
+		return NumberField;
 	} else if (type == "unit_number") {
 		return UnitNumberField;
 	} else if (type == "json") {
@@ -56,8 +58,10 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return TextAreaField;
 	} else if (type == "quote_categories") {
 		return QuoteCategoriesField;
-	} else {
+	} else if (type == "string") {
 		return TextField;
+	} else {
+		throw new Error(`Unknown schema type ${type.toString()}`);
 	}
 }
 

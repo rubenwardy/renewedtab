@@ -113,9 +113,7 @@ export default function LocationField(props: FieldProps<Location>) {
 	const [value, setValue] = useState<Location>(props.value);
 
 	function handleSelect(location: Location) {
-		if (props.onChange) {
-			props.onChange(location);
-		}
+		props.onChange(location);
 		setModalOpen(false);
 		setValue(location);
 	}

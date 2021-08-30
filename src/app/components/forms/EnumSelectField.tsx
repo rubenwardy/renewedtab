@@ -11,9 +11,7 @@ export default function EnumSelectField(props: FieldProps<any>) {
 	const intl = useIntl();
 
 	function handleChanged(newMode: any) {
-		if (props.onChange) {
-			props.onChange(getValue(newMode));
-		}
+		props.onChange(getValue(newMode));
 		setValue(getValue(newMode));
 	}
 

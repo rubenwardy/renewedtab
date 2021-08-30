@@ -1,6 +1,6 @@
 import { useCache, useForceUpdate, usePromise } from "app/hooks";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
-import React, { ChangeEvent, useState } from "react";
+import React, { FocusEvent, ChangeEvent, useEffect, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import RequestHostPermission from "../RequestHostPermission";
@@ -26,17 +26,15 @@ const messages = defineMessages({
 
 export function HostURLFIeld(props: FieldProps<string>) {
 	const [value, setValue] = useState<string>(props.value);
+	useEffect(() => setValue(props.value), [props.value]);
 	const [submittedUrls, setSubmittedUrls] = useCache<{ [key: string]: boolean}>("submittedUrls", {});
 
-	function handleChange(e: ChangeEvent<HTMLInputElement>) {
+	function handleBlur(e: FocusEvent<HTMLInputElement>) {
 		if (!e.target.checkValidity()) {
 			return;
 		}
 
-		if (props.onChange) {
-			props.onChange(e.target.value);
-		}
-		setValue(e.target.value);
+		props.onChange(value);
 	}
 
 	let host = "";
@@ -81,9 +79,11 @@ export function HostURLFIeld(props: FieldProps<string>) {
 
 	return (
 		<>
-			<input type="url" name={props.name} defaultValue={props.value}
+			<input type="url" name={props.name} value={value}
 					autoComplete={autocomplete ? "off" : "on"}
-					onChange={handleChange} list={autocomplete ? `dl-${props.name}` : undefined} />
+					onChange={e => setValue(e.target.value)}
+					onBlur={handleBlur}
+					list={autocomplete ? `dl-${props.name}` : undefined} />
 
 			{autocomplete &&
 				<datalist id={`dl-${props.name}`}>
@@ -111,10 +111,8 @@ export function HostAllField(props: FieldProps<boolean>) {
 	const intl = useIntl();
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		if (props.onChange) {
-			setValue(e.target.checked);
-			props.onChange(e.target.checked);
-		}
+		setValue(e.target.checked);
+		props.onChange(e.target.checked);
 	}
 
 	function onResult() {

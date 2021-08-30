@@ -22,9 +22,7 @@ export default function QuoteCategoriesField(props: FieldProps<StrToBool>) {
 		};
 
 		setValue(nextValue);
-		if (props.onChange) {
-			props.onChange(nextValue);
-		}
+		props.onChange(nextValue);
 	}
 
 	const selectboxes = options

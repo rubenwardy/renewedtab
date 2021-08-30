@@ -1,15 +1,18 @@
-import React, { ChangeEvent } from "react";
+import React, { useEffect, useState } from "react";
 import { FieldProps } from ".";
 
+
 export default function JSONField(props: FieldProps<any | any[]>) {
-	function handleChange(e: ChangeEvent<HTMLTextAreaElement>) {
-		if (props.onChange) {
-			props.onChange(JSON.parse(e.target.value));
-		}
+	const [value, setValue] = useState<string>(JSON.stringify(props.value) ?? "");
+	useEffect(() => setValue(JSON.stringify(props.value)), [props.value]);
+
+	function handleBlur() {
+		props.onChange(JSON.parse(value));
 	}
 
 	return (
-		<textarea name={props.name}
-			defaultValue={JSON.stringify(props.value)}
-			onChange={handleChange} className="fullwidth" />);
+		<textarea name={props.name} value={value}
+			onChange={e => setValue(e.target.value)}
+			onBlur={handleBlur}
+			className="fullwidth" />);
 }
