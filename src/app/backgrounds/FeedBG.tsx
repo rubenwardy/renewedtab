@@ -55,7 +55,7 @@ export const FeedBG : BackgroundProvider<FeedBGProps> = {
 	defaultValues: {
 		feedURL: "https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss",
 		randomiseFrom: 1,
-		cacheExpiry: CacheExpiry.Minutes15,
+		cacheExpiry: CacheExpiry.Hourly,
 		position: "center",
 		brightnessDark: 100,
 		blur: 0,

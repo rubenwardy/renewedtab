@@ -49,10 +49,9 @@ function isNotExpired(fetchedAt: Date, expiry: CacheExpiry) {
 
 	switch (expiry) {
 	case CacheExpiry.Minutes15:
-		const minutes = 15;
-		return new Date().valueOf() < fetchedAt.valueOf() + minutes * 60 * 1000;
+		return new Date().valueOf() < fetchedAt.valueOf() + 15 * 60 * 1000;
 	case CacheExpiry.Hourly:
-		return Math.floor(new Date().getHours()) == Math.floor(fetchedAt.getHours());
+		return new Date().valueOf() < fetchedAt.valueOf() + 60 * 60 * 1000;
 	case CacheExpiry.Daily:
 		return new Date().getDate() == fetchedAt.getDate();
 	default:
@@ -80,7 +79,7 @@ async function updateBackground(key: string, provider: BackgroundProvider<unknow
 async function loadBackground(provider: BackgroundProvider<unknown>, values: any): Promise<ActualBackgroundProps | undefined> {
 	const key = `${provider.id}:${JSON.stringify(toTypedJSON(values))}`;
 	const cache = loadFromCache(key, provider);
-	if (cache && values.cacheExpiry && isNotExpired(cache.fetchedAt, values.cacheExpiry ?? CacheExpiry.Minutes15)) {
+	if (cache && values.cacheExpiry && isNotExpired(cache.fetchedAt, values.cacheExpiry ?? CacheExpiry.Hourly)) {
 		console.log("Setting background from cache");
 		return cache.value;
 	}

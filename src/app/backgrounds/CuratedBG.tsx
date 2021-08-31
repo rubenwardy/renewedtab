@@ -54,7 +54,7 @@ export const CuratedBG : BackgroundProvider<CuratedBGProps> = {
 		blur: type.unit_number(backgroundMessages.blurRadius, "px", undefined, 0),
 	},
 	defaultValues: {
-		cacheExpiry: CacheExpiry.Minutes15,
+		cacheExpiry: CacheExpiry.Hourly,
 		brightnessDark: 100,
 		brightnessLight: 80,
 		blur: 0,

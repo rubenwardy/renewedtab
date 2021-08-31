@@ -40,7 +40,7 @@ export const UnsplashBG : BackgroundProvider<UnsplashBGProps> = {
 		blur: type.unit_number(backgroundMessages.blurRadius, "px", undefined, 0),
 	},
 	defaultValues: {
-		cacheExpiry: CacheExpiry.Minutes15,
+		cacheExpiry: CacheExpiry.Hourly,
 		collection: "",
 		brightnessDark: 100,
 		brightnessLight: 80,
