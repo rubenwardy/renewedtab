@@ -3,7 +3,7 @@ import { storage } from "app/Storage";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundProvider, CreditProps } from ".";
+import { ActualBackgroundProps, BackgroundProvider, getCreditsFromBackgroundInfo } from ".";
 import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 
@@ -69,17 +69,11 @@ export const CuratedBG : BackgroundProvider<CuratedBGProps> = {
 		}
 
 		const dataURL = await fetchBinaryAsDataURL(backgroundInfo.url);
-
-		const credits: CreditProps = {
-			info: backgroundInfo,
-			enableVoting: true,
-		};
-
 		return {
 			...values,
 			image: dataURL,
 			color: backgroundInfo.color,
-			credits: credits,
+			credits: getCreditsFromBackgroundInfo(backgroundInfo, true),
 		};
 	}
 };

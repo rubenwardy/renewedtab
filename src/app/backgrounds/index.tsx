@@ -9,12 +9,42 @@ import { ImageUrlBG } from "./ImageUrlBG";
 import { UnsplashBG } from "./UnsplashBG";
 
 
-export interface CreditProps {
-	info: BackgroundInfo;
-	enableVoting?: boolean;
-	setIsHovered?: (value: boolean) => void;
-	onVoted?: () => void;
+interface Link {
+	text: string;
+	url?: string;
 }
+
+
+export interface BackgroundCredit {
+	info?: BackgroundInfo;
+	title?: Link;
+	author?: Link;
+	site?: Link;
+	enableVoting?: boolean;
+}
+
+
+export function getCreditsFromBackgroundInfo(info: BackgroundInfo, enableVoting?: boolean): BackgroundCredit {
+	return {
+		info, enableVoting,
+
+		title: (info.title || info.links.photo) ? {
+			text: info.title ?? "",
+			url: info.links.photo
+		} : undefined,
+
+		author: info.author ? {
+			text: info.author,
+			url: info.links.author
+		} : undefined,
+
+		site: info.site ? {
+			text: info.site,
+			url: info.links.site
+		} : undefined,
+	};
+}
+
 
 export interface ActualBackgroundProps {
 	image?: string;
@@ -22,7 +52,7 @@ export interface ActualBackgroundProps {
 	brightnessDark?: number;
 	brightnessLight?: number;
 	blur?: number;
-	credits?: CreditProps;
+	credits?: BackgroundCredit;
 	position?: string;
 }
 

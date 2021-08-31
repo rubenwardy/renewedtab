@@ -2,7 +2,7 @@ import { fetchFeed, getAPI } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { AutocompleteList, type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundProvider } from ".";
+import { ActualBackgroundProps, BackgroundCredit, BackgroundProvider } from ".";
 import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 
@@ -69,18 +69,26 @@ export const FeedBG : BackgroundProvider<FeedBGProps> = {
 
 		const feed = await fetchFeed(values.feedURL);
 
-		const images = feed.articles
-			.map(art => art.image)
-			.filter(image => image)
+		const articles = feed.articles
+			.filter(art => art.image)
 			.slice(0, values.randomiseFrom ?? 1);
-		if (images.length == 0) {
+		if (articles.length == 0) {
 			return {};
 		}
 
-		const image = images[Math.floor(Math.random() * images.length)];
+		const article = articles[Math.floor(Math.random() * articles.length)];
+
+		const credits: BackgroundCredit = {
+			title: {
+				text: article.title ?? "",
+				url: article.link,
+			},
+		};
+
 		return {
 			...values,
-			image: image,
+			credits: credits,
+			image: article.image!,
 		};
 	}
 };

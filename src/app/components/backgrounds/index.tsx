@@ -5,6 +5,7 @@ import { BackgroundConfig } from "app/hooks/background";
 import { fromTypedJSON, toTypedJSON } from "app/utils/TypedJSON";
 import React, { useMemo } from "react";
 import ActualBackground from "./ActualBackground";
+import { CreditsProps } from "./Credits";
 
 
 export interface BackgroundProps {
@@ -118,14 +119,17 @@ export default function Background(props: BackgroundProps) {
 	if (!actualBg) {
 		return (<div id="background" />);
 	}
-	if (actualBg.credits) {
-		actualBg.credits.setIsHovered = props.setWidgetsHidden;
-		actualBg.credits.onVoted = () => {
+
+	const credits = actualBg.credits ? { ... actualBg.credits } as CreditsProps : undefined;
+	if (credits) {
+		credits.setIsHovered = props.setWidgetsHidden;
+		credits.onVoted = () => {
 			if (provider.enableCaching) {
 				window.localStorage.removeItem("_bg-cache");
 			}
 			forceUpdate();
 		};
 	}
-	return (<ActualBackground {...actualBg} />);
+
+	return (<ActualBackground {...actualBg} credits={credits} />);
 }

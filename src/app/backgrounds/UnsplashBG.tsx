@@ -2,7 +2,7 @@ import { fetchBinaryAsDataURL, getAPI } from "app/hooks";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundProvider } from ".";
+import { ActualBackgroundProps, BackgroundProvider, getCreditsFromBackgroundInfo } from ".";
 import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 
@@ -61,16 +61,11 @@ export const UnsplashBG : BackgroundProvider<UnsplashBGProps> = {
 		}
 
 		const dataURL = await fetchBinaryAsDataURL(backgroundInfo.url);
-
-		const credits = {
-			info: backgroundInfo,
-		};
-
 		return {
 			...values,
 			image: dataURL,
 			color: backgroundInfo.color,
-			credits: credits,
+			credits: getCreditsFromBackgroundInfo(backgroundInfo),
 		};
 	}
 };

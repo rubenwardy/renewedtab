@@ -9,6 +9,8 @@
 	--color-primary-light-highlight: #96e7fa;
 }
 
+@import "mixins";
+
 html, body, #app {
 	width: 100%;
 	height: 100%;
@@ -89,18 +91,34 @@ footer {
 		display: block;
 	}
 
-	.title {
+	.line-1, .line-2 {
 		display: block;
+		padding: 0.25rem 0;
 	}
 
-	.title, .btn {
+	.line-2, .btn {
 		opacity: 0;
 		transition: opacity 0.1s ease-in-out;
 	}
 
-	&:hover .title, &:hover .btn {
-		visibility: visible;
-		opacity: 1;
+	.line-1 {
+		margin-bottom: 0.8em;
+		max-width: 30vw;
+		@include line_clamp(1);
+	}
+
+	&:hover {
+		.line-1 {
+			overflow: auto;
+			max-height: none !important;
+			line-clamp: none !important;
+			-webkit-line-clamp: none !important;
+		}
+
+		.line-2, .btn {
+			visibility: visible;
+			opacity: 1;
+		}
 	}
 }
 
@@ -167,7 +185,7 @@ main .scroll-wrap {
 	}
 }
 
-@import "mixins";
+
 @import "buttons";
 @import "panel";
 @import "widget";
