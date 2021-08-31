@@ -135,17 +135,17 @@ function getThemeSchema(): Schema {
 	if (supportsBackdropFilter) {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
-			fontScaling: type.unit_number(messages.fontScaling, "%"),
-			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px"),
-			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
+			fontScaling: type.unit_number(messages.fontScaling, "%", undefined, 80, 200),
+			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px", undefined, 0),
+			panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
 			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
 			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
 		};
 	} else {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
-			fontScaling: type.unit_number(messages.fontScaling, "%"),
-			panelOpacity: type.unit_number(messages.panelOpacity, "%"),
+			fontScaling: type.unit_number(messages.fontScaling, "%", undefined, 80, 200),
+			panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
 			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
 			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
 		};

@@ -67,7 +67,7 @@ Button.defaultSize = new Vector2(5, 1);
 Button.themeSchema = {
 	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	color: type.color(schemaMessages.color),
-	opacity: type.unit_number(schemaMessages.opacity, "%", messages.tintOpacityHint),
+	opacity: type.unit_number(schemaMessages.opacity, "%", messages.tintOpacityHint, 0, 100),
 };
 
 Button.initialTheme = {

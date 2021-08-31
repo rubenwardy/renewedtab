@@ -45,12 +45,12 @@ export const FeedBG : BackgroundProvider<FeedBGProps> = {
 	schema: {
 		feedURL: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
 			() => getAPI<AutocompleteList[]>("webcomics/", {})),
-		randomiseFrom: type.number(messages.randomiseFrom, messages.randomiseFromHint),
+		randomiseFrom: type.number(messages.randomiseFrom, messages.randomiseFromHint, 1),
 		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages,
 			backgroundMessages.cacheExpiry, backgroundMessages.cacheExpiryHint),
 		position: type.string(backgroundMessages.position, backgroundMessages.positionHint),
-		brightnessDark: type.unit_number(backgroundMessages.brightness, "%"),
-		blur: type.unit_number(backgroundMessages.blurRadius, "px"),
+		brightnessDark: type.unit_number(backgroundMessages.brightness, "%", undefined, 0,  150),
+		blur: type.unit_number(backgroundMessages.blurRadius, "px", undefined, 0),
 	},
 	defaultValues: {
 		feedURL: "https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss",

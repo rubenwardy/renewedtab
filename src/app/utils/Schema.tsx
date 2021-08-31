@@ -23,8 +23,10 @@ export interface SchemaEntry {
 	label: MessageDescriptor;
 	messages?: Messages;
 	hint?: MessageDescriptor;
-	unit?: string;
 	values?: any;
+	unit?: string;
+	min?: number;
+	max?: number;
 	autocomplete?: (intl: IntlShape) => Promise<AutocompleteList[]>;
 }
 
@@ -67,14 +69,16 @@ export namespace type {
 	export const boolean = makeTypeFunc("boolean");
 	export const string = makeTypeFunc("string");
 	export const textarea = makeTypeFunc("textarea");
-	export const number = makeTypeFunc("number");
 	export const json = makeTypeFunc("json");
 
-	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor): SchemaEntry => ({
+	export const number = (label: MessageDescriptor, hint?: MessageDescriptor, min?: number, max?: number): SchemaEntry => ({
+		type: "number",
+		label, hint, min, max
+	});
+
+	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor, min?: number, max?: number): SchemaEntry => ({
 		type: "unit_number",
-		label: label,
-		hint: hint,
-		unit: unit,
+		label, hint, unit, min, max
 	});
 
 	/**

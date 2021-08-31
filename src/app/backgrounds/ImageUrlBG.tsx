@@ -33,8 +33,8 @@ export const ImageUrlBG : BackgroundProvider<ImageUrlBGProps> = {
 	schema: {
 		url: type.url(schemaMessages.imageUrl),
 		position: type.string(backgroundMessages.position, backgroundMessages.positionHint),
-		brightnessDark: type.unit_number(backgroundMessages.brightness, "%"),
-		blur: type.unit_number(backgroundMessages.blurRadius, "px"),
+		brightnessDark: type.unit_number(backgroundMessages.brightness, "%", undefined, 0, 150),
+		blur: type.unit_number(backgroundMessages.blurRadius, "px", undefined, 0, 150),
 	},
 	defaultValues: {
 		url: "",

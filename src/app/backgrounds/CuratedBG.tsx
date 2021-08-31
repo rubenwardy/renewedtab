@@ -49,9 +49,9 @@ export const CuratedBG : BackgroundProvider<CuratedBGProps> = {
 	description: messages.description,
 	schema: {
 		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages, backgroundMessages.cacheExpiry),
-		brightnessDark: type.unit_number(backgroundMessages.brightnessDark, "%", backgroundMessages.brightnessDarkHint),
-		brightnessLight: type.unit_number(backgroundMessages.brightnessLight, "%", backgroundMessages.brightnessLightHint),
-		blur: type.unit_number(backgroundMessages.blurRadius, "px"),
+		brightnessDark: type.unit_number(backgroundMessages.brightnessDark, "%", backgroundMessages.brightnessDarkHint, 0, 150),
+		brightnessLight: type.unit_number(backgroundMessages.brightnessLight, "%", backgroundMessages.brightnessLightHint, 0, 150),
+		blur: type.unit_number(backgroundMessages.blurRadius, "px", undefined, 0),
 	},
 	defaultValues: {
 		cacheExpiry: CacheExpiry.Minutes15,

@@ -8,15 +8,16 @@ export function NumberField(props: FieldProps<number>) {
 	useEffect(() => setValue(props.value.toString()), [props.value]);
 
 	function handleBlur(e: ChangeEvent<HTMLInputElement>) {
-		if (!isNaN(parseFloat(e.target.value))) {
+		if (e.target.checkValidity() && !isNaN(parseFloat(e.target.value))) {
 			props.onChange(parseFloat(e.target.value));
 		}
 	}
 
 	return (
-		<input type="number" name={props.name} value={value}
-				size={10} onChange={e => setValue(e.target.value)}
-				onBlur={handleBlur} required />);
+		<input type="number" name={props.name} value={value} size={10}
+			min={props.schemaEntry.min} max={props.schemaEntry.max}
+			onChange={e => setValue(e.target.value)}
+			onBlur={handleBlur} required />);
 }
 
 
@@ -25,7 +26,7 @@ export function UnitNumberField(props: FieldProps<number>) {
 	useEffect(() => setValue(props.value.toString()), [props.value]);
 
 	function handleBlur(e: ChangeEvent<HTMLInputElement>) {
-		if (!isNaN(parseFloat(e.target.value))) {
+		if (e.target.checkValidity() && !isNaN(parseFloat(e.target.value))) {
 			props.onChange(parseFloat(e.target.value));
 		}
 	}
@@ -33,6 +34,7 @@ export function UnitNumberField(props: FieldProps<number>) {
 	return (
 		<div className="field-group unit-field">
 			<input type="number" name={props.name} value={value} size={10}
+				min={props.schemaEntry.min} max={props.schemaEntry.max}
 				onChange={e => setValue(e.target.value)}
 				onBlur={handleBlur} required />
 			<span className="unit">{props.schemaEntry.unit}</span>

@@ -33,8 +33,8 @@ export const ImageBG : BackgroundProvider<ImageBGProps> = {
 	description: messages.description,
 	schema: {
 		image: type.image(schemaMessages.image, schemaMessages.imageHint),
-		brightnessDark: type.unit_number(backgroundMessages.brightness, "%"),
-		blur: type.unit_number(backgroundMessages.blurRadius, "px"),
+		brightnessDark: type.unit_number(backgroundMessages.brightness, "%", undefined, 0, 150),
+		blur: type.unit_number(backgroundMessages.blurRadius, "px", undefined, 0),
 	},
 	defaultValues: {
 		image: undefined,
