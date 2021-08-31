@@ -138,7 +138,7 @@ export function Credits(props: CreditsProps) {
 					onMouseEnter={() => setIsHovered(true)}
 					onMouseLeave={() => setIsHovered(false)}>
 				<a href={props.title?.url}>
-					<span className="line-1">{title}</span>
+					<span className="line-1 oneline">{title}</span>
 				</a>
 			</div>);
 	}

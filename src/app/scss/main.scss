@@ -91,8 +91,11 @@ footer {
 		display: block;
 	}
 
-	.line-1, .line-2 {
+	.line-2 {
 		display: block;
+	}
+
+	.line-1, .line-2 {
 		padding: 0.25rem 0;
 	}
 
@@ -103,12 +106,15 @@ footer {
 
 	.line-1 {
 		margin-bottom: 0.8em;
-		max-width: 30vw;
-		@include line_clamp(1);
+
+		&.oneline {
+			max-width: 10vw;
+			@include line_clamp(1);
+		}
 	}
 
 	&:hover {
-		.line-1 {
+		.line-1.oneline {
 			overflow: auto;
 			max-height: none !important;
 			line-clamp: none !important;
