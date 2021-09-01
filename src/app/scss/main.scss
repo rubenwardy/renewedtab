@@ -108,7 +108,7 @@ footer {
 		margin-bottom: 0.8em;
 
 		&.oneline {
-			max-width: 10vw;
+			max-width: 30vw;
 			@include line_clamp(1);
 		}
 	}
