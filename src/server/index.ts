@@ -310,6 +310,7 @@ function readAutocompleteFromFile(filename: string) {
 
 const feeds = readAutocompleteFromFile("feeds");
 const webcomics = readAutocompleteFromFile("webcomics");
+const feeds_background = readAutocompleteFromFile("feeds_background");
 app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
 	notifyAPIRequest("autocomplete:feeds");
 	res.json(feeds);
@@ -317,6 +318,10 @@ app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
 app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) => {
 	notifyAPIRequest("autocomplete:webcomic");
 	res.json(webcomics);
+});
+app.get("/api/feeds/background/", async (_req: express.Request, res: express.Response) => {
+	notifyAPIRequest("autocomplete:feeds_background");
+	res.json(feeds_background);
 });
 
 app.post("/api/autocomplete/", async (req: express.Request, res: express.Response) => {

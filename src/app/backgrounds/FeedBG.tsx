@@ -44,7 +44,7 @@ export const FeedBG : BackgroundProvider<FeedBGProps> = {
 	description: messages.description,
 	schema: {
 		feedURL: type.urlPerm(schemaMessages.url, schemaMessages.rssUrlHint,
-			() => getAPI<AutocompleteList[]>("webcomics/", {})),
+			() => getAPI<AutocompleteList[]>("feeds/background/", {})),
 		randomiseFrom: type.number(messages.randomiseFrom, messages.randomiseFromHint, 1),
 		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages,
 			backgroundMessages.cacheExpiry, backgroundMessages.cacheExpiryHint),
