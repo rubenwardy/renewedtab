@@ -122,8 +122,8 @@ export function Credits(props: CreditsProps) {
 	} else if (props.author || props.site) {
 		return (
 			<div className="credits text-shadow"
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}>
+					onMouseEnter={startOnHover}
+					onMouseLeave={onMouseLeave}>
 				<a href={props.title?.url}>
 					<span className="line-2">{title}</span>
 					<span className="line-1">
@@ -135,8 +135,8 @@ export function Credits(props: CreditsProps) {
 	} else {
 		return (
 			<div className="credits text-shadow"
-					onMouseEnter={() => setIsHovered(true)}
-					onMouseLeave={() => setIsHovered(false)}>
+					onMouseEnter={startOnHover}
+					onMouseLeave={onMouseLeave}>
 				<a href={props.title?.url}>
 					<span className="line-1 oneline">{title}</span>
 				</a>
