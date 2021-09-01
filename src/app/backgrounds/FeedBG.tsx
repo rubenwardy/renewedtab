@@ -19,11 +19,12 @@ const messages = defineMessages({
 
 	randomiseFrom: {
 		defaultMessage: "Limit images",
-		description: "Feed background mode: randomise checkbox",
+		description: "Feed background mode: form field label",
 	},
 
 	randomiseFromHint: {
 		defaultMessage: "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image",
+		description: "Feed background mode: form field hint (Limit images)",
 	},
 });
 

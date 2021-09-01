@@ -54,7 +54,7 @@ export const backgroundMessages = defineMessages({
 
 	cacheExpiry: {
 		defaultMessage: "Show a new photo",
-		description: "Backgroud settings: form field label",
+		description: "Backgroud settings: form field label (how often background images change)",
 	},
 
 	cacheExpiryHint: {
@@ -77,12 +77,12 @@ export const cacheExpiryMessages = defineMessages({
 	},
 
 	[CacheExpiry.Hourly]: {
-		defaultMessage: "Once an hour",
+		defaultMessage: "Every hour",
 		description: "Background expiry dropdown",
 	},
 
 	[CacheExpiry.Daily]: {
-		defaultMessage: "Once a day",
+		defaultMessage: "Every day",
 		description: "Background expiry dropdown",
 	},
 });

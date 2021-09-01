@@ -95,6 +95,10 @@
         "description": "Form field hint (Image)",
         "message": "Images are stored locally on your browser, and never uploaded"
     },
+    "4cMia7": {
+        "description": "Backgroud settings: form field label (how often background images change)",
+        "message": "Show a new photo"
+    },
     "4dzBeG": {
         "description": "Currencies widget: form field label",
         "message": "From"
@@ -148,6 +152,10 @@
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
     },
+    "Ay1sfO": {
+        "description": "Feed background mode: form field hint (Limit images)",
+        "message": "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image"
+    },
     "B0kbsm": {
         "description": "Unsplash background mode",
         "message": "Feed"
@@ -196,6 +204,10 @@
     "Dk7Khi": {
         "description": "Weather widget: Fahrenheit unit",
         "message": "Fahrenheit"
+    },
+    "E4nLwR": {
+        "description": "Background expiry dropdown",
+        "message": "Every day"
     },
     "FCmJHd": {
         "description": "Feed widget description",
@@ -335,6 +347,10 @@
         "description": "Form field label",
         "message": "Color"
     },
+    "PBMGxw": {
+        "description": "Feed background mode: form field label",
+        "message": "Limit images"
+    },
     "PM6qZ7": {
         "message": "Show seconds"
     },
@@ -392,10 +408,6 @@
     "SG4UJU": {
         "description": "Button Widget",
         "message": "Button"
-    },
-    "Sfrm5w": {
-        "description": "Background expiry dropdown",
-        "message": "Once an hour"
     },
     "ShQneX": {
         "description": "Form field label",
@@ -501,6 +513,10 @@
     "YAgYL6": {
         "message": "Tuesday"
     },
+    "YQhLKn": {
+        "description": "Background expiry dropdown",
+        "message": "Every hour"
+    },
     "YS5zRT": {
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
         "message": "Search with {name}"
@@ -576,14 +592,6 @@
     "bQFsdR": {
         "message": "Grant permission to access {host}"
     },
-    "biJNV5": {
-        "description": "Backgroud settings: form field label",
-        "message": "Show a new photo"
-    },
-    "cF0LvQ": {
-        "description": "Background expiry dropdown",
-        "message": "Once a day"
-    },
     "cL6y1P": {
         "description": "Form field hint (Feed URL)",
         "message": "URL to an Atom or RSS feed"
@@ -652,9 +660,6 @@
         "description": "Links Widget",
         "message": "Links"
     },
-    "gYM9cf": {
-        "message": "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image"
-    },
     "h/ftND": {
         "message": "Choose a file"
     },
@@ -678,10 +683,6 @@
     },
     "ibhC3l": {
         "message": "Like Renewed Tab? Consider donating to cover costs and help support development."
-    },
-    "ip0uRu": {
-        "description": "Feed background mode: randomise checkbox",
-        "message": "Limit images"
     },
     "irdBm2": {
         "description": "Settings tab",
