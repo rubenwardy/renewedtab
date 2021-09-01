@@ -1,6 +1,15 @@
-export interface WeatherForecast {
-	day?: string; ///< deprecated, use dayOfWeek instead
+export interface WeatherCurrent {
+	icon?: string;
+	temp: number;
+	pressure: number;
+	humidity: number;
+	sunrise: string;
+	sunset: string;
+	uvi: number;
+	wind_speed: number;
+}
 
+export interface WeatherDay {
 	dayOfWeek: number;
 	icon?: string,
 	minTemp: number;
@@ -9,10 +18,19 @@ export interface WeatherForecast {
 	sunset: string;
 }
 
+export interface WeatherHour {
+	time: string;
+	icon?: string;
+	temp: number;
+}
+
 export interface WeatherInfo {
 	timezone_offset: number;
-	current: { icon?: string, temp: number };
-	forecast: WeatherForecast[];
+	current: WeatherCurrent;
+	hourly: WeatherHour[];
+	daily: WeatherDay[];
+
+	forecast?: WeatherDay[];
 }
 
 export enum TemperatureUnit {

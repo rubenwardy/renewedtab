@@ -7,7 +7,7 @@ import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl'
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
-import { Location, TemperatureUnit, WeatherForecast, WeatherInfo } from 'common/api/weather';
+import { Location, TemperatureUnit, WeatherDay, WeatherInfo } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
 
 
@@ -61,7 +61,7 @@ const dayNames = defineMessages({
 
 
 
-interface WeatherForecastProps extends WeatherForecast {
+interface WeatherDayProps extends WeatherDay {
 	renderTemp: (celsius: number) => string;
 }
 
@@ -72,9 +72,7 @@ function makeIconElement(icon?: string) {
 }
 
 
-
-
-function WeatherForecast(props: WeatherForecastProps) {
+function WeatherDay(props: WeatherDayProps) {
 	return (
 		<div className="forecast">
 			<span className="label">
@@ -119,8 +117,8 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 		return (<ErrorView error={error} loading={true} />);
 	}
 
-	const forecast = info.forecast.slice(1, 4).map(forecast =>
-			(<WeatherForecast key={forecast.dayOfWeek} renderTemp={renderTemp} {...forecast} />));
+	const forecast = info.daily.slice(1, 4).map(day =>
+			(<WeatherDay key={day.dayOfWeek} renderTemp={renderTemp} {...day} />));
 
 	return (
 		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow">
