@@ -1,6 +1,7 @@
 export interface WeatherCurrent {
 	icon?: string;
 	temp: number;
+	feels_like: number;
 	pressure: number;
 	humidity: number;
 	sunrise: string;

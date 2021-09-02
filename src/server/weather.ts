@@ -85,6 +85,7 @@ function parseWeatherInfo(info: OWMOneCall): WeatherInfo {
 		current: {
 			icon: getIcon(info.current),
 			temp: kelvinToCelsius(info.current.temp),
+			feels_like: kelvinToCelsius(info.current.feels_like),
 			pressure: info.current.pressure,
 			humidity: info.current.humidity,
 			sunrise: unixToTime(info.current.sunrise),
@@ -94,7 +95,7 @@ function parseWeatherInfo(info: OWMOneCall): WeatherInfo {
 		},
 		hourly: info.hourly.map(hour => ({
 			time: unixToTime(hour.dt),
-			temp: hour.temp,
+			temp: kelvinToCelsius(hour.temp),
 			icon: hour.weather[0]?.icon,
 		})),
 		daily: daily,
@@ -134,5 +135,5 @@ async function fetchWeatherInfo(lat: number, long: number): Promise<WeatherInfo>
 
 
 export const getWeatherInfo: (lat: number, long: number) => Promise<WeatherInfo>
-	= makeKeyCache(fetchWeatherInfo, 3 * 60,
+	= makeKeyCache(fetchWeatherInfo, 1 * 60,
 		(lat, long) => `${lat.toFixed(3)},${long.toFixed(3)}`)
