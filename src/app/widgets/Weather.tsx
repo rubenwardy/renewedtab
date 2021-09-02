@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
-import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
+import { defineMessage, defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
-import { Location, TemperatureUnit, WeatherDay, WeatherInfo } from 'common/api/weather';
+import { convertWeatherTemperatures, getUVRisk, Location, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
+import { mergeClasses } from 'app/utils';
 
 
 const messages = defineMessages({
@@ -37,6 +38,26 @@ const messages = defineMessages({
 		description: "Weather widget: form field label",
 	},
 
+	showCurrent: {
+		defaultMessage: "Show current weather",
+		description: "Weather widget: form field label",
+	},
+
+	showDetails: {
+		defaultMessage: "Show current weather information",
+		description: "Weather widget: form field label",
+	},
+
+	showHourlyForecast: {
+		defaultMessage: "Show hourly forecast",
+		description: "Weather widget: form field label",
+	},
+
+	showDailyForecast: {
+		defaultMessage: "Show daily forecast",
+		description: "Weather widget: form field label",
+	},
+
 	[TemperatureUnit.Celsius]: {
 		defaultMessage: "Celsius",
 		description: "Weather widget: Celsius unit",
@@ -57,31 +78,114 @@ const dayNames = defineMessages({
 	[4]: { defaultMessage: "Thursday" },
 	[5]: { defaultMessage: "Friday" },
 	[6]: { defaultMessage: "Saturday" },
-}) as { [num: number]: MessageDescriptor };
+}) as Record<number, MessageDescriptor>;
 
 
+const uvRisks = defineMessages({
+	[UVRisk.Low]: {
+		defaultMessage: "Low",
+		description: "Low UV risk",
+	},
 
-interface WeatherDayProps extends WeatherDay {
-	renderTemp: (celsius: number) => string;
-}
+	[UVRisk.Moderate]: {
+		defaultMessage: "Moderate",
+		description: "Moderate UV risk",
+	},
 
-function makeIconElement(icon?: string) {
-	return icon
-		? (<img className="icon" src={`https://openweathermap.org/img/wn/${icon}.png`} />)
+	[UVRisk.High]: {
+		defaultMessage: "High",
+		description: "High UV risk",
+	},
+
+	[UVRisk.VeryHigh]: {
+		defaultMessage: "Very High",
+		description: "Very High UV risk",
+	},
+
+	[UVRisk.Extreme]: {
+		defaultMessage: "Extreme",
+		description: "Extreme UV risk",
+	},
+}) as Record<UVRisk, MessageDescriptor>;
+
+
+function Icon(props: { icon?: string, className?: string }) {
+	return props.icon
+		? (<img className={mergeClasses("icon", props.className)}
+				src={`https://openweathermap.org/img/wn/${props.icon}.png`} />)
 		: (<></>);
 }
 
 
-function WeatherDay(props: WeatherDayProps) {
+function renderHour(time: string) {
+	const hour = parseInt(time.split(":")[0]);
+	if (hour == 0) {
+		return "12 PM";
+	} else if (hour < 12) {
+		return `${hour} AM`;
+	} else {
+		return `${hour - 12} PM`;
+	}
+}
+
+
+function Day(props: WeatherDay) {
 	return (
-		<div className="forecast">
-			<span className="label">
+		<div className="col-auto forecast">
+			<div>
 				<FormattedMessage {...dayNames[props.dayOfWeek]} />
-			</span>
-			<span>
-				{makeIconElement(props.icon)}
-				{props.renderTemp(props.minTemp)} {props.renderTemp(props.maxTemp)}
-			</span>
+			</div>
+			<div><Icon icon={props.icon} /></div>
+			<div className="temp">
+				{props.minTemp.toFixed(0)}° {props.maxTemp.toFixed(0)}°
+			</div>
+		</div>);
+}
+
+
+function Hour(props: WeatherHour) {
+	return (
+		<div className="col-auto forecast">
+			<div>{renderHour(props.time)}</div>
+			<div><Icon icon={props.icon} /></div>
+			<div className="temp">{props.temp.toFixed(0)}°</div>
+		</div>);
+}
+
+
+function Current(props: { current: WeatherCurrent, showDetails: boolean }) {
+	const uvRisk = getUVRisk(props.current.uvi);
+	return (
+		<div className="row weather-current">
+			<div className="col-auto text-left">
+				<div className="temp">{props.current.temp.toFixed(0)}°</div>
+				{props.showDetails && (
+					<p>
+						<FormattedMessage
+							defaultMessage="Feels like <b>{temp}°</b>"
+							values={{
+								temp: props.current.feels_like.toFixed(0),
+								b: (chunk: any) => (<b>{chunk}</b>),
+							}} />
+					</p>)}
+			</div>
+			{props.showDetails && (
+				<div className="col-auto text-left">
+					<p><b>{props.current.wind_speed.toFixed(1)}m/s</b> wind</p>
+					<p><b>{props.current.humidity}%</b> humidity</p>
+					{/* <p><b>{props.current.pressure}hPa</b> pressure</p> */}
+					<p>
+						<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
+							<FormattedMessage {...uvRisks[uvRisk]} />
+						</b> UV
+					</p>
+					<p>
+						<b>{props.current.sunrise} - {props.current.sunset}</b>
+					</p>
+				</div>)}
+			<div className="col-auto">
+				<Icon icon={props.current.icon} />
+			</div>
 		</div>);
 }
 
@@ -89,45 +193,57 @@ function WeatherDay(props: WeatherDayProps) {
 interface WeatherProps {
 	location: Location;
 	unit: TemperatureUnit;
+	showCurrent: boolean;
+	showDetails: boolean;
+	showHourlyForecast: boolean;
+	showDailyForecast: boolean;
 }
 
 export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
+	const unit = props.unit ?? TemperatureUnit.Celsius;
 
 	if (!props.location) {
 		return (<ErrorView error={new UserError(messages.locationNeeded)} />);
 	}
 
-	const unit = props.unit ?? TemperatureUnit.Celsius;
-	function renderTemp(celsuis: number): string {
-		if (unit == TemperatureUnit.Celsius) {
-			return `${celsuis.toFixed(0)}°C`;
-		} else {
-			const fh = 1.8 * celsuis + 32;
-			return `${fh.toFixed(0)}°F`;
-		}
-	}
-
-
-	const [info, error] = useAPI<WeatherInfo>("/weather/",
+	const [rawInfo, error] = useAPI<WeatherInfo>("/weather/",
 		{ lat: props.location.latitude, long: props.location.longitude},
 		[props.location.latitude, props.location.longitude]);
-
-	if (!info) {
+	if (!rawInfo) {
+		useMemo(() => 0, [null, unit])
 		return (<ErrorView error={error} loading={true} />);
 	}
 
-	const forecast = info.daily.slice(1, 4).map(day =>
-			(<WeatherDay key={day.dayOfWeek} renderTemp={renderTemp} {...day} />));
+	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
+
+
+	const hourly = info.hourly.slice(0, 5).map(hour =>
+		(<Hour key={hour.time} {...hour} />))
+
+	const dailyStartOffset = props.showCurrent ? 1 : 0;
+	const daily = info.daily.slice(dailyStartOffset, dailyStartOffset + 4).map(day =>
+			(<Day key={day.dayOfWeek} {...day} />));
 
 	return (
 		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow">
-			<h2 className="col-span-3">{props.location.name}</h2>
-			<div className="col-span-3 large">
-				{makeIconElement(info.current.icon)}
-				{renderTemp(info.current.temp)}
+			<div className="row">
+				<div className="col text-left location">
+					{props.location.name}
+				</div>
+				<div className="col-auto text-right weather-credits">
+					<a href="https://openweathermap.org">OpenWeatherMap</a>
+				</div>
 			</div>
-			{forecast}
+
+			{props.showCurrent && (
+				<Current current={info.current} showDetails={props.showDetails} />)}
+
+			{props.showHourlyForecast && (
+				<div className="row">{hourly}</div>)}
+
+			{props.showDailyForecast && (
+				<div className="row">{daily}</div>)}
 		</Panel>);
 }
 
@@ -144,12 +260,20 @@ Weather.initialProps = {
 		longitude: -2.587910,
 	} as Location,
 	unit: TemperatureUnit.Celsius,
-};
+	showCurrent: true,
+	showDetails: true,
+	showHourlyForecast: false,
+	showDailyForecast: true,
+} as WeatherProps;
 
 
 Weather.schema = {
 	location: type.location(schemaMessages.location),
 	unit: type.selectEnum(TemperatureUnit, messages, messages.temperatureUnit),
+	showCurrent: type.boolean(messages.showCurrent),
+	showDetails: type.boolean(messages.showDetails),
+	showHourlyForecast: type.boolean(messages.showHourlyForecast),
+	showDailyForecast: type.boolean(messages.showDailyForecast),
 } as Schema;
 
-Weather.defaultSize = new Vector2(5, 3);
+Weather.defaultSize = new Vector2(5, 4);

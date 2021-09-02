@@ -80,6 +80,10 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 	float: right;
 }
 
+.text-left {
+	text-align: left;
+}
+
 .text-center {
 	text-align: center;
 }
@@ -132,12 +136,13 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 .col {
 	display: block;
-	flex-grow: 1;
+	// flex-grow: 1;
+	flex: 1;
 }
 
 .col-auto {
 	display: block;
-	flex-shrink: 0;
+	// flex-shrink: 0;
 }
 
 .col-1 {
@@ -146,6 +151,22 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 .col-2 {
 	flex-basis: 16.66%;
+}
+
+.row-span-2 {
+	grid-row: span 2;
+}
+
+.row-span-3 {
+	grid-row: span 3;
+}
+
+.col-span-2 {
+	grid-column: span 2;
+}
+
+.col-span-3 {
+	grid-column: span 3;
 }
 
 .one-half {

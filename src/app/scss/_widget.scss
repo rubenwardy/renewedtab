@@ -168,64 +168,6 @@ main > .widget {
 	margin: 1em 0;
 }
 
-.weather {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 2fr 2fr;
-	grid-gap: 0.5em;
-	grid-auto-flow: dense;
-	text-align: center;
-
-	h2 {
-		margin: 0;
-	}
-
-	.large {
-		font-size: 200%;
-	}
-
-	.label {
-		display: block;
-		color: rgba(255, 255, 255, 0.5);
-		margin-bottom: 0.3rem;
-	}
-
-	.icon {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	.forecast {
-		font-size: 80%;
-
-		.label {
-			font-size: 100%;
-		}
-	}
-
-	.forecast .icon {
-		width: 25px;
-		padding: 0;
-		margin: 0 2px 0 0;
-	}
-}
-
-.row-span-2 {
-	grid-row: span 2;
-}
-
-.row-span-3 {
-	grid-row: span 3;
-}
-
-.col-span-2 {
-	grid-column: span 2;
-}
-
-.col-span-3 {
-	grid-column: span 3;
-}
-
 .widget-image {
 	img {
 		width: 100%;
