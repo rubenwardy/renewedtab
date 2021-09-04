@@ -1,4 +1,5 @@
 import Panel from 'app/components/Panel';
+import { calculateDecimalAge } from 'app/utils/dates';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps } from 'app/Widget';
@@ -33,19 +34,15 @@ interface AgeProps {
 	birthDate: Date;
 }
 
-function calculateYearsSince(date: Date): number {
-	const delta = new Date().getTime() - date.getTime();
-	return delta / 365.25 / 1000 / (60 * 60 * 24);
-}
 
 export default function Age(widget: WidgetProps<AgeProps>) {
 	const props = widget.props;
 
-	const [age, setAge] = useState(calculateYearsSince(props.birthDate));
+	const [age, setAge] = useState(calculateDecimalAge(props.birthDate));
 
 	useEffect(() => {
 		const timer = setInterval(() => {
-			setAge(calculateYearsSince(props.birthDate));
+			setAge(calculateDecimalAge(props.birthDate));
 		}, 500);
 
 		return () => {
