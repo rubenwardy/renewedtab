@@ -2,7 +2,6 @@ import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import { enumToValue } from "app/utils/enum";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
-import { Radio, RadioGroup } from "react-radio-group";
 import { FieldProps } from ".";
 
 export default function EnumSelectField(props: FieldProps<any>) {
@@ -35,28 +34,15 @@ export default function EnumSelectField(props: FieldProps<any>) {
 	}
 
 	const enumValues = Object.keys(Enum).filter(value => isNaN(Number(value)));
-	if (enumValues.length < 3) {
-		const radioModes =
-			enumValues
-				.map(x => (
-					<div key={getValue(x)}>
-						<Radio value={getValue(x)} /> {getString(x)}
-					</div>));
-		return (
-			<RadioGroup name={props.name} selectedValue={getValue(value)}
-					onChange={handleChanged} className="radios">
-				{radioModes}
-			</RadioGroup>);
-	} else {
-		const radioModes =
-			enumValues
-				.map(x => (
-					<option className="field" key={getValue(x)} value={getValue(x)}>
-						{getString(x)}
-					</option>));
-		return (
-			<select name={props.name} value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
-				{radioModes}
-			</select>);
-	}
+
+	const options =
+		enumValues
+			.map(x => (
+				<option className="field" key={getValue(x)} value={getValue(x)}>
+					{getString(x)}
+				</option>));
+	return (
+		<select name={props.name} value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
+			{options}
+		</select>);
 }

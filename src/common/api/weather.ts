@@ -39,6 +39,12 @@ export enum TemperatureUnit {
 	Fahrenheit // :'(
 }
 
+export enum SpeedUnit {
+	MetersPerSecond,
+	MilesPerHour,
+	KilometersPerHour,
+}
+
 export interface Location {
 	name: string;
 	latitude: number;
@@ -47,6 +53,10 @@ export interface Location {
 
 
 export function convertWeatherTemperatures(info: WeatherInfo, unit: TemperatureUnit): WeatherInfo {
+	if (typeof unit == "string") {
+		unit = TemperatureUnit[unit] as unknown as TemperatureUnit;
+	}
+
 	function convert(temp: number): number {
 		if (unit == TemperatureUnit.Fahrenheit) {
 			return 1.8 * temp + 32;
@@ -95,5 +105,24 @@ export function getUVRisk(uvi: number): UVRisk {
 		return UVRisk.VeryHigh;
 	} else {
 		return UVRisk.Extreme;
+	}
+}
+
+export function renderSpeed(speed: number, unit: SpeedUnit) {
+	if (typeof unit == "string") {
+		unit = SpeedUnit[unit] as unknown as SpeedUnit;
+	}
+
+	switch (unit) {
+	case SpeedUnit.MetersPerSecond:
+		return `${speed.toFixed(1)}m/s`;
+	case SpeedUnit.MilesPerHour:
+		const mph = speed * 2.23694;
+		return `${mph.toFixed(1)}mph`;
+	case SpeedUnit.KilometersPerHour:
+		const kph = speed * 3.6;
+		return `${kph.toFixed(1)}kph`;
+	default:
+		throw new Error(`Unknown unit: ${unit}`);
 	}
 }

@@ -7,7 +7,7 @@ import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl'
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
-import { convertWeatherTemperatures, getUVRisk, Location, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo } from 'common/api/weather';
+import { convertWeatherTemperatures, getUVRisk, Location, renderSpeed, SpeedUnit, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
 import { mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
@@ -39,6 +39,11 @@ const messages = defineMessages({
 		description: "Weather widget: form field label",
 	},
 
+	windSpeedUnit: {
+		defaultMessage: "Wind Speed Unit",
+		description: "Weather widget: form field label",
+	},
+
 	display: {
 		defaultMessage: "Display Options",
 		description: "Weather widget: display subform title",
@@ -63,7 +68,9 @@ const messages = defineMessages({
 		defaultMessage: "Show daily forecast",
 		description: "Weather widget: form field label",
 	},
+});
 
+const temperatureUnitMessages = defineMessages({
 	[TemperatureUnit.Celsius]: {
 		defaultMessage: "Celsius",
 		description: "Weather widget: Celsius unit",
@@ -72,6 +79,23 @@ const messages = defineMessages({
 	[TemperatureUnit.Fahrenheit]: {
 		defaultMessage: "Fahrenheit",
 		description: "Weather widget: Fahrenheit unit",
+	},
+});
+
+const speedUnitMessages = defineMessages({
+	[SpeedUnit.MetersPerSecond]: {
+		defaultMessage: "Meters per second (m/s)",
+		description: "Weather widget: Speed unit",
+	},
+
+	[SpeedUnit.MilesPerHour]: {
+		defaultMessage: "Miles per hour (mph)",
+		description: "Weather widget: Speed unit",
+	},
+
+	[SpeedUnit.KilometersPerHour]: {
+		defaultMessage: "Kilometers per hour (kph)",
+		description: "Weather widget: Speed unit",
 	},
 });
 
@@ -159,7 +183,8 @@ function Hour(props: WeatherHour) {
 }
 
 
-function Current(props: { current: WeatherCurrent, showDetails: boolean }) {
+function Current(props: {
+		current: WeatherCurrent, showDetails: boolean, windSpeedUnit: SpeedUnit }) {
 	const uvRisk = getUVRisk(props.current.uvi);
 	return (
 		<div className="col row weather-current">
@@ -179,7 +204,7 @@ function Current(props: { current: WeatherCurrent, showDetails: boolean }) {
 			</div>
 			{props.showDetails && (
 				<div className="col-auto text-left">
-					<p><b>{props.current.wind_speed.toFixed(1)}m/s</b> wind</p>
+					<p><b>{renderSpeed(props.current.wind_speed, props.windSpeedUnit)}</b> wind</p>
 					<p><b>{props.current.humidity}%</b> humidity</p>
 					{/* <p><b>{props.current.pressure}hPa</b> pressure</p> */}
 					<p>
@@ -208,6 +233,7 @@ interface WeatherDisplay {
 interface WeatherProps {
 	location: Location;
 	unit: TemperatureUnit
+	windSpeedUnit: SpeedUnit;
 	display: WeatherDisplay;
 }
 
@@ -268,7 +294,9 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 			</div>
 
 			{props.display.showCurrent && (
-				<Current current={info.current} showDetails={props.display.showDetails} />)}
+				<Current current={info.current}
+					showDetails={props.display.showDetails}
+					windSpeedUnit={props.windSpeedUnit} />)}
 
 			{props.display.showHourlyForecast && (
 				<div className="row">{hourly}</div>)}
@@ -291,6 +319,7 @@ Weather.initialProps = {
 		longitude: -2.587910,
 	} as Location,
 	unit: TemperatureUnit.Celsius,
+	windSpeedUnit: SpeedUnit.MetersPerSecond,
 	display: {
 		showCurrent: true,
 		showDetails: true,
@@ -309,7 +338,8 @@ const displaySchema: Schema = {
 
 Weather.schema = {
 	location: type.location(schemaMessages.location),
-	unit: type.selectEnum(TemperatureUnit, messages, messages.temperatureUnit),
+	unit: type.selectEnum(TemperatureUnit, temperatureUnitMessages, messages.temperatureUnit),
+	windSpeedUnit: type.selectEnum(SpeedUnit, speedUnitMessages, messages.windSpeedUnit),
 	display: type.subform(displaySchema, messages.display),
 } as Schema;
 
