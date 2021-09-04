@@ -1,5 +1,5 @@
 import { WidgetTheme } from "app/Widget";
-import React, { CSSProperties, ReactNode } from "react";
+import React, { CSSProperties, forwardRef, ReactNode, Ref } from "react";
 
 
 export interface PanelProps extends WidgetTheme {
@@ -22,7 +22,7 @@ export interface PanelProps extends WidgetTheme {
 }
 
 
-export default function Panel(props: PanelProps) {
+function PanelImpl(props: PanelProps, ref: Ref<HTMLDivElement>) {
 	const style = props.style ?? {};
 	if (props.textColor) {
 		style.color = style.color ?? props.textColor;
@@ -47,7 +47,11 @@ export default function Panel(props: PanelProps) {
 	}
 
 	return (
-		<div className={className.join(" ")} style={style}>
+		<div className={className.join(" ")} style={style} ref={ref}>
 			{props.children}
 		</div>);
 }
+
+
+const Panel = forwardRef<HTMLDivElement, PanelProps>(PanelImpl);
+export default Panel;

@@ -13,8 +13,16 @@
 		justify-content: space-between;
 	}
 
-	> *:not(:first-child):not(:last-child) {
-		margin-bottom: 0.75em;
+	&.weather-lg {
+		> *:not(:first-child):not(:last-child) {
+			margin-bottom: 1em;
+		}
+	}
+
+	&.weather-sm {
+		> *:not(:first-child):not(:last-child) {
+			margin-bottom: 0.3em;
+		}
 	}
 
 	.location, .weather-credits {
@@ -46,6 +54,15 @@
 			}
 		}
 
+		.pair {
+			margin: 0 0 0.25em;
+
+			p {
+				display: inline-block;
+				margin: 0 0.5rem 0 0;
+			}
+		}
+
 		.uv-low {
 			color: lightgreen;
 		}
@@ -71,6 +88,10 @@
 		font-size: 200%;
 	}
 
+	.forecasts {
+		gap: 10px;
+	}
+
 	.forecast {
 		display: flex;
 		flex-direction: column;
@@ -87,6 +108,11 @@
 			width: 32px;
 			height: 32px;
 		}
+	}
+
+	&.weather-sm .forecast .icon {
+		width: 24px;
+		height: 24px;
 	}
 
 	.icon {

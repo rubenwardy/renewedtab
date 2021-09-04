@@ -1,13 +1,13 @@
 export interface WeatherCurrent {
 	icon?: string;
 	temp: number;
-	feels_like: number;
-	pressure: number;
-	humidity: number;
-	sunrise: string;
-	sunset: string;
-	uvi: number;
-	wind_speed: number;
+	feels_like?: number;
+	pressure?: number;
+	humidity?: number;
+	sunrise?: string;
+	sunset?: string;
+	uvi?: number;
+	wind_speed?: number;
 }
 
 export interface WeatherDay {
@@ -70,7 +70,7 @@ export function convertWeatherTemperatures(info: WeatherInfo, unit: TemperatureU
 		current: {
 			...info.current,
 			temp: convert(info.current.temp),
-			feels_like: convert(info.current.feels_like),
+			feels_like: info.current.feels_like ? convert(info.current.feels_like) : undefined,
 		},
 		hourly: info.hourly.map(hour => ({
 			...hour,
@@ -108,21 +108,33 @@ export function getUVRisk(uvi: number): UVRisk {
 	}
 }
 
-export function renderSpeed(speed: number, unit: SpeedUnit) {
+export function convertSpeed(speed: number, unit: SpeedUnit): number {
 	if (typeof unit == "string") {
 		unit = SpeedUnit[unit] as unknown as SpeedUnit;
 	}
 
 	switch (unit) {
 	case SpeedUnit.MetersPerSecond:
-		return `${speed.toFixed(1)}m/s`;
+		return speed;
 	case SpeedUnit.MilesPerHour:
-		const mph = speed * 2.23694;
-		return `${mph.toFixed(1)}mph`;
+		return speed * 2.23694;
 	case SpeedUnit.KilometersPerHour:
-		const kph = speed * 3.6;
-		return `${kph.toFixed(1)}kph`;
+		return speed * 3.6;
 	default:
 		throw new Error(`Unknown unit: ${unit}`);
 	}
+}
+
+const SpeedUnitSuffixes: Record<SpeedUnit, string> = {
+	[SpeedUnit.MetersPerSecond]: "m/s",
+	[SpeedUnit.MilesPerHour]: "mph",
+	[SpeedUnit.KilometersPerHour]: "kph",
+};
+
+export function getSpeedUnitSuffix(unit: SpeedUnit) {
+	if (typeof unit == "string") {
+		unit = SpeedUnit[unit] as unknown as SpeedUnit;
+	}
+
+	return SpeedUnitSuffixes[unit];
 }

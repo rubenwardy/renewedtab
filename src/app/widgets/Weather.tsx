@@ -7,7 +7,7 @@ import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl'
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
-import { convertWeatherTemperatures, getUVRisk, Location, renderSpeed, SpeedUnit, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo } from 'common/api/weather';
+import { convertWeatherTemperatures, getUVRisk, Location, convertSpeed, SpeedUnit, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo, getSpeedUnitSuffix } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
 import { mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
@@ -58,6 +58,11 @@ const messages = defineMessages({
 	showDetails: {
 		defaultMessage: "Show current weather information",
 		description: "Weather widget: form field label",
+	},
+
+	useDetailsIcons: {
+		defaultMessage: "Use icons for details",
+		description: "Weather widget: form field label"
 	},
 
 	showHourlyForecast: {
@@ -112,29 +117,29 @@ const dayNames = defineMessages({
 }) as Record<number, MessageDescriptor>;
 
 
-const uvRisks = defineMessages({
+const uvRiskMessages = defineMessages({
 	[UVRisk.Low]: {
-		defaultMessage: "Low",
+		defaultMessage: "<b>Low</b> UV",
 		description: "Low UV risk",
 	},
 
 	[UVRisk.Moderate]: {
-		defaultMessage: "Moderate",
+		defaultMessage: "<b>Moderate</b> UV",
 		description: "Moderate UV risk",
 	},
 
 	[UVRisk.High]: {
-		defaultMessage: "High",
+		defaultMessage: "<b>High</b> UV",
 		description: "High UV risk",
 	},
 
 	[UVRisk.VeryHigh]: {
-		defaultMessage: "Very High",
+		defaultMessage: "<b>Very High</b> UV",
 		description: "Very High UV risk",
 	},
 
 	[UVRisk.Extreme]: {
-		defaultMessage: "Extreme",
+		defaultMessage: "<b>Extreme</b> UV",
 		description: "Extreme UV risk",
 	},
 }) as Record<UVRisk, MessageDescriptor>;
@@ -184,38 +189,107 @@ function Hour(props: WeatherHour) {
 }
 
 
+function CurrentDetails(props: {
+		current: WeatherCurrent, windSpeedUnit: SpeedUnit, showAsIcons: boolean }) {
+	const uvRisk = props.current.uvi != undefined ? getUVRisk(props.current.uvi) : undefined;
+	const speed = props.current.wind_speed != undefined && convertSpeed(props.current.wind_speed, props.windSpeedUnit);
+	const speedUnit = props.current.wind_speed != undefined && getSpeedUnitSuffix(props.windSpeedUnit);
+
+	if (props.showAsIcons) {
+		return (
+			<>
+				<div className="pair">
+					{speed !== false && (
+						<p key="wind" title={speedUnit || undefined}>
+							<i className="fas fa-wind mr-1" />
+							<b>{speed.toFixed(1)}</b>
+						</p>)}
+					{props.current.humidity != undefined && (
+						<p key="humidity">
+							<i className="fas fa-tint mr-1" />
+							<b>{props.current.humidity}%</b>
+						</p>)}
+				</div>
+				{uvRisk !== undefined && (
+					<p key="uv">
+						<FormattedMessage {...uvRiskMessages[uvRisk]}
+							values={{
+								b: (chunk: any) => (
+									<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
+										{chunk}
+									</b>),
+							}}/>
+					</p>)}
+				{(props.current.sunrise && props.current.sunset) && (
+					<p key="sunrise">
+						<i className="fas fa-sun mr-1" />
+						<b>{props.current.sunrise} - {props.current.sunset}</b>
+					</p>)}
+			</>);
+	} else {
+		return (<>
+			{speed != false && (
+				<p key="wind">
+					<FormattedMessage
+						defaultMessage="<b>{speed}</b> wind"
+						description="Weather widget: wind speed value"
+						values={{
+							speed: `${speed.toFixed(1)}${speedUnit}`,
+							b: (chunk: any) => (<b>{chunk}</b>),
+						}} />
+				</p>)}
+			{props.current.humidity != undefined && (
+				<p key="humidity">
+					<FormattedMessage
+						defaultMessage="<b>{humidity}%</b> humidity"
+						description="Weather widget: humidity value"
+						values={{
+							humidity: props.current.humidity.toFixed(0),
+							b: (chunk: any) => (<b>{chunk}</b>),
+						}} />
+				</p>)}
+			{uvRisk != undefined && (
+				<p key="uv">
+					<FormattedMessage {...uvRiskMessages[uvRisk]}
+						values={{
+							b: (chunk: any) => (
+								<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
+									{chunk}
+								</b>),
+						}}/>
+				</p>)}
+			{(props.current.sunrise && props.current.sunset) && (
+				<p key="sunrise">
+					<b>{props.current.sunrise} - {props.current.sunset}</b>
+				</p>)}
+		</>);
+	}
+}
+
+
 function Current(props: {
-		current: WeatherCurrent, showDetails: boolean, windSpeedUnit: SpeedUnit }) {
-	const uvRisk = getUVRisk(props.current.uvi);
+		current: WeatherCurrent, showDetails: boolean, showAsIcons: boolean, windSpeedUnit: SpeedUnit }) {
 	return (
 		<div className="row weather-current h-100">
 			<div className="col h-100">
 				<div className="row row-vertical text-left h-100">
 					<FitText className="col temp">{props.current.temp.toFixed(0)}°</FitText>
-					{props.showDetails && (
+					{props.showDetails && props.current.feels_like && (
 						<div className="col-auto">
-							<FormattedMessage
-								defaultMessage="Feels like <b>{temp}°</b>"
-								values={{
-									temp: props.current.feels_like.toFixed(0),
-									b: (chunk: any) => (<b>{chunk}</b>),
-								}} />
+							<p className="mx-0">
+								<FormattedMessage
+									defaultMessage="Feels like <b>{temp}°</b>"
+									values={{
+										temp: props.current.feels_like.toFixed(0),
+										b: (chunk: any) => (<b>{chunk}</b>),
+									}} />
+							</p>
 						</div>)}
 				</div>
 			</div>
 			{props.showDetails && (
 				<div className="col-auto text-left">
-					<p><b>{renderSpeed(props.current.wind_speed, props.windSpeedUnit)}</b> wind</p>
-					<p><b>{props.current.humidity}%</b> humidity</p>
-					{/* <p><b>{props.current.pressure}hPa</b> pressure</p> */}
-					<p>
-						<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
-							<FormattedMessage {...uvRisks[uvRisk]} />
-						</b> UV
-					</p>
-					<p>
-						<b>{props.current.sunrise} - {props.current.sunset}</b>
-					</p>
+					<CurrentDetails {...props} />
 				</div>)}
 			<div className="col text-right h-100">
 				<Icon icon={props.current.icon} />
@@ -229,6 +303,7 @@ interface WeatherDisplay {
 	showDetails: boolean;
 	showHourlyForecast: boolean;
 	showDailyForecast: boolean;
+	useDetailsIcons: boolean;
 }
 
 interface WeatherProps {
@@ -272,7 +347,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-	const numberOfColumns = size ? size.x / 50 : 5;
+	const numberOfColumns =  size ? size.x / 65 : 5;
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
@@ -283,9 +358,9 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const sizeCode = getSizeCode(size, props);
 	const classes = mergeClasses("weather", `weather-${sizeCode}`, "h-100");
 	return (
-		<Panel {...widget.theme}
+		<Panel {...widget.theme} ref={ref}
 				className={classes} invisClassName={`${classes} text-shadow`}>
-			<div className="row" ref={ref}>
+			<div className="row">
 				<div className="col text-left location">
 					{props.location.name}
 				</div>
@@ -298,14 +373,15 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 				<div className="col">
 					<Current current={info.current}
 						showDetails={props.display.showDetails}
-						windSpeedUnit={props.windSpeedUnit} />
+						windSpeedUnit={props.windSpeedUnit}
+						showAsIcons={props.display.useDetailsIcons} />
 				</div>)}
 
 			{props.display.showHourlyForecast && (
-				<div className="row">{hourly}</div>)}
+				<div className="row forecasts">{hourly}</div>)}
 
 			{props.display.showDailyForecast && (
-				<div className="row">{daily}</div>)}
+				<div className="row forecasts">{daily}</div>)}
 		</Panel>);
 }
 
@@ -326,6 +402,7 @@ Weather.initialProps = {
 	display: {
 		showCurrent: true,
 		showDetails: true,
+		useDetailsIcons: true,
 		showHourlyForecast: false,
 		showDailyForecast: true,
 	}
@@ -335,6 +412,7 @@ Weather.initialProps = {
 const displaySchema: Schema = {
 	showCurrent: type.boolean(messages.showCurrent),
 	showDetails: type.boolean(messages.showDetails),
+	useDetailsIcons: type.boolean(messages.useDetailsIcons),
 	showHourlyForecast: type.boolean(messages.showHourlyForecast),
 	showDailyForecast: type.boolean(messages.showDailyForecast),
 };
@@ -346,7 +424,7 @@ Weather.schema = {
 	display: type.subform(displaySchema, messages.display),
 } as Schema;
 
-Weather.defaultSize = new Vector2(5, 4);
+Weather.defaultSize = new Vector2(5, 3);
 
 Weather.onLoaded = async (widget: Widget<WeatherProps>) => {
 	widget.props = { ...deepCopy(Weather.initialProps), ...widget.props };

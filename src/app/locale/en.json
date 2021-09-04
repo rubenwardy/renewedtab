@@ -15,6 +15,10 @@
         "description": "Weather widget: form field label",
         "message": "Show hourly forecast"
     },
+    "/4k9ry": {
+        "description": "Very High UV risk",
+        "message": "<b>Very High</b> UV"
+    },
     "/dtDqf": {
         "description": "Notes Widget",
         "message": "Notes"
@@ -137,10 +141,6 @@
     "7wOM6+": {
         "description": "Year Progress widget",
         "message": "Year Progress"
-    },
-    "8B2t4e": {
-        "description": "Moderate UV risk",
-        "message": "Moderate"
     },
     "8J0Bhj": {
         "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
@@ -283,6 +283,10 @@
     "J91edI": {
         "description": "Settings tab",
         "message": "Import / Export"
+    },
+    "JN/uvd": {
+        "description": "Moderate UV risk",
+        "message": "<b>Moderate</b> UV"
     },
     "JihbEV": {
         "description": "Theme settings: link to CSS docs",
@@ -429,6 +433,10 @@
         "description": "Form field label",
         "message": "Text"
     },
+    "SlsfFk": {
+        "description": "Weather widget: wind speed value",
+        "message": "<b>{speed}</b> wind"
+    },
     "T/wBPw": {
         "message": "Remove {type}"
     },
@@ -461,6 +469,10 @@
     "UgAgeT": {
         "description": "Currencies widget: credit to data provider",
         "message": "Powered by exchangerate.host"
+    },
+    "Upkn1Q": {
+        "description": "High UV risk",
+        "message": "<b>High</b> UV"
     },
     "V1EIOe": {
         "description": "IFrame widget description",
@@ -518,10 +530,6 @@
     "XITVvp": {
         "message": "Show panel background"
     },
-    "XKeUHB": {
-        "description": "Low UV risk",
-        "message": "Low"
-    },
     "XV4mnl": {
         "description": "Background settings: form field hint (Show a new photo)",
         "message": "Depending on your settings, the same photo may be chosen"
@@ -529,6 +537,10 @@
     "XrQEPN": {
         "description": "Form field label",
         "message": "Location"
+    },
+    "XrcwAv": {
+        "description": "Weather widget: form field label",
+        "message": "Use icons for details"
     },
     "XsTD4Q": {
         "description": "Todo List Widget",
@@ -631,9 +643,9 @@
         "description": "Bookmarks widget description",
         "message": "Shows your bookmarks"
     },
-    "cwgVKr": {
-        "description": "Very High UV risk",
-        "message": "Very High"
+    "ckvzIb": {
+        "description": "Low UV risk",
+        "message": "<b>Low</b> UV"
     },
     "d7dHsn": {
         "description": "Background expiry dropdown",
@@ -829,10 +841,6 @@
         "description": "Subheading for per-widget styling properties",
         "message": "Styling"
     },
-    "p50IQz": {
-        "description": "Extreme UV risk",
-        "message": "Extreme"
-    },
     "p7+m8N": {
         "description": "Top Sites widget: permission request",
         "message": "Grant permission to access top sites"
@@ -907,6 +915,10 @@
         "description": "Links widget, form field hint (Icon)",
         "message": "Optional, URL to image (18px recommended)"
     },
+    "sl3V8S": {
+        "description": "Weather widget: humidity value",
+        "message": "<b>{humidity}%</b> humidity"
+    },
     "sx01dA": {
         "description": "Links widget description",
         "message": "Links, with support for headings and icons"
@@ -918,10 +930,6 @@
     "tyq8NB": {
         "description": "Weather Widget",
         "message": "Weather"
-    },
-    "uQ+xRF": {
-        "description": "High UV risk",
-        "message": "High"
     },
     "uRYRJh": {
         "message": "Edit {type}"
@@ -1027,6 +1035,10 @@
     "zKofmb": {
         "description": "Backgroud settings: form field hint (Unsplash Collection)",
         "message": "Collection ID. Found in the URL, example: 42576559"
+    },
+    "zaQRTm": {
+        "description": "Extreme UV risk",
+        "message": "<b>Extreme</b> UV"
     },
     "zfsplE": {
         "description": "Background credits vote",
