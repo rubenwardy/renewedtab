@@ -112,7 +112,6 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	const [time, setTime] = React.useState<Date>(new Date());
 	const intl = useIntl();
 	const [ref, size] = useElementSize<HTMLDivElement>();
-	const fontSize = size ? Math.min(size.y * 0.9, size.x / 2.5) : undefined;
 
 	React.useEffect(() => {
 		const timer = setInterval(() => {
@@ -125,8 +124,11 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	}, []);
 
 	const dateStyle = enumToValue(DateStyle, props.dateStyle);
+	const fontSize = size ? Math.min(size.y * 0.9, size.x / 2.5) : undefined;
+	const fontSizeProp = fontSize ? `${fontSize}px` : undefined;
 	const style: CSSProperties = {
-		fontSize: fontSize ? `${fontSize}px` : undefined,
+		fontSize: fontSizeProp,
+		lineHeight: fontSizeProp,
 	};
 
 	return (

@@ -3,13 +3,14 @@ import { useAPI, useElementSize } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
-import { defineMessage, defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
+import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
 import { convertWeatherTemperatures, getUVRisk, Location, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
 import { mergeClasses } from 'app/utils';
+import FitText from 'app/components/FitText';
 
 
 const messages = defineMessages({
@@ -156,18 +157,20 @@ function Hour(props: WeatherHour) {
 function Current(props: { current: WeatherCurrent, showDetails: boolean }) {
 	const uvRisk = getUVRisk(props.current.uvi);
 	return (
-		<div className="row weather-current">
-			<div className="col-auto text-left">
-				<div className="temp">{props.current.temp.toFixed(0)}°</div>
-				{props.showDetails && (
-					<p>
-						<FormattedMessage
-							defaultMessage="Feels like <b>{temp}°</b>"
-							values={{
-								temp: props.current.feels_like.toFixed(0),
-								b: (chunk: any) => (<b>{chunk}</b>),
-							}} />
-					</p>)}
+		<div className="col row weather-current">
+			<div className="col h-100">
+				<div className="row row-vertical text-left h-100">
+					<FitText className="col temp">{props.current.temp.toFixed(0)}°</FitText>
+					{props.showDetails && (
+						<div className="col-auto">
+							<FormattedMessage
+								defaultMessage="Feels like <b>{temp}°</b>"
+								values={{
+									temp: props.current.feels_like.toFixed(0),
+									b: (chunk: any) => (<b>{chunk}</b>),
+								}} />
+						</div>)}
+				</div>
 			</div>
 			{props.showDetails && (
 				<div className="col-auto text-left">
@@ -183,7 +186,7 @@ function Current(props: { current: WeatherCurrent, showDetails: boolean }) {
 						<b>{props.current.sunrise} - {props.current.sunset}</b>
 					</p>
 				</div>)}
-			<div className="col-auto">
+			<div className="col text-right h-100">
 				<Icon icon={props.current.icon} />
 			</div>
 		</div>);

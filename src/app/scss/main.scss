@@ -191,6 +191,18 @@ main .scroll-wrap {
 	}
 }
 
+.fittext {
+	position: relative;
+
+	span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		transform: translate(0, -50%);
+	}
+}
+
 
 @import "buttons";
 @import "panel";

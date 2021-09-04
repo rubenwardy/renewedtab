@@ -1,5 +1,5 @@
 import { Vector2 } from "app/utils/Vector2";
-import { useEffect, useRef, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
 export * from "./promises";
 export * from "./http";
@@ -19,33 +19,33 @@ export function useForceUpdateValue(): [any, () => void] {
 
 
 /**
- * Get element size
- *
- * @returns [ref, size]
- */
+* Get element size
+*
+* @returns [ref, size]
+*/
 export function useElementSize<T extends HTMLElement>():
-		[ React.RefObject<T>, Vector2 | undefined ] {
-	const ref = useRef<T>(null);
+		[React.RefCallback<T>, Vector2 | undefined] {
 	const [size, setSize] = useState<Vector2 | undefined>(undefined);
-
-	function updateSize() {
-		if (ref.current) {
-			const newSize = new Vector2(ref.current.clientWidth, ref.current.clientHeight);
-			if (size == undefined || !newSize.equals(size)) {
-				setSize(newSize);
-			}
+	function updateSize(node: T) {
+		const newSize = new Vector2(node.clientWidth, node.clientHeight);
+		if (size == undefined || !newSize.equals(size)) {
+			setSize(newSize);
 		}
 	}
 
-	useEffect(() => {
-		const timer = setInterval(() => {
-			updateSize();
-		}, 500);
+	const resizeObserver = useMemo(() => new ResizeObserver(entries => {
+		for (const entry of entries) {
+			updateSize(entry.target as T);
+		}
+	}), []);
 
-		updateSize();
-
-		return () => clearInterval(timer);
+	const ref = useCallback((node: T) => {
+		if (node !== null) {
+			updateSize(node);
+			resizeObserver.observe(node);
+		}
 	}, []);
+
 
 	return [ref, size];
 }

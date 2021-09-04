@@ -5,16 +5,16 @@
 	text-align: center;
 	justify-content: space-between;
 
-	> * {
-		flex-grow: 1;
-	}
-
 	* {
 		box-sizing:  border-box;
 	}
 
 	> .row {
 		justify-content: space-between;
+	}
+
+	> *:not(:first-child):not(:last-child) {
+		margin-bottom: 1em;
 	}
 
 	.location, .weather-credits {
@@ -30,13 +30,10 @@
 		gap: 0.75rem;
 		justify-content: space-between;
 
-		.temp {
-			font-size: 4rem;
-			line-height: 4rem;
-		}
-
 		.icon {
-			width: 96px;
+			height: 100%;
+			max-width: 100%;
+			object-fit: contain;
 		}
 
 		p {
