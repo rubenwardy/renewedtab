@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useAPI } from 'app/hooks';
+import { useAPI, useElementSize } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetProps } from 'app/Widget';
@@ -202,6 +202,7 @@ interface WeatherProps {
 export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
 	const unit = props.unit ?? TemperatureUnit.Celsius;
+	const [ref, size] = useElementSize<HTMLDivElement>();
 
 	if (!props.location) {
 		return (<ErrorView error={new UserError(messages.locationNeeded)} />);
@@ -217,17 +218,16 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-
-	const hourly = info.hourly.slice(0, 5).map(hour =>
+	const numberOfColumns = size ? size.x / 50 : 5;
+	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
 	const dailyStartOffset = props.showCurrent ? 1 : 0;
-	const daily = info.daily.slice(dailyStartOffset, dailyStartOffset + 4).map(day =>
+	const daily = info.daily.slice(dailyStartOffset, dailyStartOffset + numberOfColumns).map(day =>
 			(<Day key={day.dayOfWeek} {...day} />));
 
 	return (
-		<Panel {...widget.theme} className="weather" invisClassName="weather text-shadow">
-			<div className="row">
+			<div className="row" ref={ref}>
 				<div className="col text-left location">
 					{props.location.name}
 				</div>

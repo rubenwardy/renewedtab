@@ -1,11 +1,12 @@
 import Panel from "app/components/Panel";
+import { useElementSize } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { enumToValue } from "app/utils/enum";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { themeMessages, Widget, WidgetProps, WidgetTheme } from "app/Widget";
-import React, { CSSProperties, useRef, useState } from "react";
+import React, { CSSProperties } from "react";
 import { defineMessages, FormattedTime, IntlShape, useIntl } from "react-intl";
 
 
@@ -110,24 +111,13 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 	const props = widget.props;
 	const [time, setTime] = React.useState<Date>(new Date());
 	const intl = useIntl();
-	const ref = useRef<HTMLDivElement>(null);
-	const [fontSize, setFontSize] = useState<number | undefined>(undefined);
-
-	function updateFontSize() {
-		if (ref.current) {
-			const desiredHeight = ref.current.clientHeight * 0.9;
-			const widthToHeight = ref.current.clientWidth / 2.5;
-			setFontSize(Math.min(desiredHeight, widthToHeight));
-		}
-	}
+	const [ref, size] = useElementSize<HTMLDivElement>();
+	const fontSize = size ? Math.min(size.y * 0.9, size.x / 2.5) : undefined;
 
 	React.useEffect(() => {
 		const timer = setInterval(() => {
 			setTime(new Date());
-			updateFontSize();
 		}, 500);
-
-		updateFontSize();
 
 		return () => {
 			clearInterval(timer);
