@@ -25,7 +25,7 @@ export default function FitText(props: FitTextProps) {
 	const style: CSSProperties = {};
 	if (size) {
 		const desiredHeight = size.y;
-		const widthToHeight = (size.x - 20) * getTextRatio(props.children.join(""));
+		const widthToHeight = size.x * 0.8 * getTextRatio(props.children.join(""));
 		const fontSize = clampNumber(Math.min(desiredHeight, widthToHeight),
 				props.minFontSize ?? 20, props.maxFontSize ?? 200);
 		const fontSizeProp = `${fontSize}px`;

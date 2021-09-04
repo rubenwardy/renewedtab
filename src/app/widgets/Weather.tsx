@@ -288,7 +288,7 @@ function Current(props: {
 				</div>
 			</div>
 			{props.showDetails && (
-				<div className="col-auto text-left">
+				<div className="col-auto text-left details">
 					<CurrentDetails {...props} />
 				</div>)}
 			<div className="col text-right h-100">
