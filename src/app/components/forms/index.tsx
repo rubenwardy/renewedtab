@@ -21,6 +21,7 @@ import { FeedURLField, HostAllField } from "./HostPermFields";
 import { NumberField, UnitNumberField } from "./NumberField";
 import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
+import SubFormField from "./SubFormField";
 
 
 export function makeField(type: Type): React.FC<FieldProps<any>> {
@@ -60,6 +61,8 @@ export function makeField(type: Type): React.FC<FieldProps<any>> {
 		return QuoteCategoriesField;
 	} else if (type == "string") {
 		return TextField;
+	} else if (type == "subform") {
+		return SubFormField;
 	} else {
 		throw new Error(`Unknown schema type ${type.toString()}`);
 	}

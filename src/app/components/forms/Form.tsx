@@ -1,3 +1,4 @@
+import { mergeClasses } from "app/utils";
 import Schema, { SchemaEntry } from "app/utils/Schema";
 import React from "react";
 import { FormattedMessage } from "react-intl";
@@ -10,6 +11,7 @@ export interface FormProps {
 	showEmptyView?: boolean;
 	table?: boolean;
 	onChange?: (key: string, value: any) => void;
+	className?: string;
 }
 
 
@@ -49,6 +51,9 @@ export default function Form(props: FormProps) {
 	if (props.table) {
 		return (<>{inner}</>);
 	} else {
-		return (<div className="form">{inner}</div>);
+		return (
+			<div className={mergeClasses("form", props.className)}>
+				{inner}
+			</div>);
 	}
 }

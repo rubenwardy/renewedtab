@@ -11,6 +11,10 @@
         "description": "Age widget description",
         "message": "States your current age with way too much precision"
     },
+    "+sI+Oh": {
+        "description": "Weather widget: form field label",
+        "message": "Show hourly forecast"
+    },
     "/dtDqf": {
         "description": "Notes Widget",
         "message": "Notes"
@@ -134,6 +138,10 @@
         "description": "Year Progress widget",
         "message": "Year Progress"
     },
+    "8B2t4e": {
+        "description": "Moderate UV risk",
+        "message": "Moderate"
+    },
     "8J0Bhj": {
         "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
     },
@@ -243,6 +251,10 @@
     "H00a0q": {
         "description": "Links widget, form field hint (Link URL)",
         "message": "Leave blank to make heading"
+    },
+    "HEvlTB": {
+        "description": "Weather widget: display subform title",
+        "message": "Display Options"
     },
     "HPLtg4": {
         "description": "Currencies widget: error",
@@ -498,6 +510,10 @@
     "XITVvp": {
         "message": "Show panel background"
     },
+    "XKeUHB": {
+        "description": "Low UV risk",
+        "message": "Low"
+    },
     "XV4mnl": {
         "description": "Background settings: form field hint (Show a new photo)",
         "message": "Depending on your settings, the same photo may be chosen"
@@ -603,6 +619,10 @@
         "description": "Bookmarks widget description",
         "message": "Shows your bookmarks"
     },
+    "cwgVKr": {
+        "description": "Very High UV risk",
+        "message": "Very High"
+    },
     "d7dHsn": {
         "description": "Background expiry dropdown",
         "message": "Every 15 minutes"
@@ -662,6 +682,9 @@
     },
     "h/ftND": {
         "message": "Choose a file"
+    },
+    "hCBQrY": {
+        "message": "Feels like <b>{temp}°</b>"
     },
     "hUIQ7h": {
         "description": "Backgroud settings: form field label",
@@ -747,6 +770,10 @@
         "description": "HTML Widget",
         "message": "HTML"
     },
+    "mw6Uh+": {
+        "description": "Weather widget: form field label",
+        "message": "Show daily forecast"
+    },
     "nF7bWj": {
         "description": "Clock widget: date style type",
         "message": "ISO ({example})"
@@ -786,6 +813,10 @@
         "description": "Subheading for per-widget styling properties",
         "message": "Styling"
     },
+    "p50IQz": {
+        "description": "Extreme UV risk",
+        "message": "Extreme"
+    },
     "p7+m8N": {
         "description": "Top Sites widget: permission request",
         "message": "Grant permission to access top sites"
@@ -809,6 +840,10 @@
     "pbEMNj": {
         "description": "Onboarding page: previous button",
         "message": "Previous"
+    },
+    "pqIuCa": {
+        "description": "Weather widget: form field label",
+        "message": "Show current weather"
     },
     "py0oht": {
         "description": "Greeting widget: greeting, after 4pm",
@@ -840,6 +875,10 @@
     "rAuRqW": {
         "message": "Translations are provided by the community."
     },
+    "rYprNW": {
+        "description": "Weather widget: form field label",
+        "message": "Show current weather information"
+    },
     "rb3Zy8": {
         "description": "Feed widget: form field label",
         "message": "Filter Articles"
@@ -863,6 +902,10 @@
     "tyq8NB": {
         "description": "Weather Widget",
         "message": "Weather"
+    },
+    "uQ+xRF": {
+        "description": "High UV risk",
+        "message": "High"
     },
     "uRYRJh": {
         "message": "Edit {type}"

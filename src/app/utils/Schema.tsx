@@ -6,7 +6,7 @@ type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[])
 export type Type = JSType | "url_feed" | "host_all" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
 	"color" | "color_pair" | "image" | "unit_number" | "textarea" |
-	"quote_categories" | "enum" | "select";
+	"quote_categories" | "enum" | "select" | "subform";
 
 
 export type AutocompleteItem = {label: string, value: string};
@@ -124,6 +124,18 @@ export namespace type {
 	export const array = (subschema: Schema, label: MessageDescriptor,
 			hint?: MessageDescriptor): SchemaEntry => ({
 		type: "array",
+		subschema: subschema,
+		label: label,
+		hint: hint,
+	});
+
+	/**
+	 * Displays a new heading with a form. Sub-forms should be the last
+	 * item in a schema.
+	 */
+	 export const subform = (subschema: Schema, label: MessageDescriptor,
+			hint?: MessageDescriptor): SchemaEntry => ({
+		type: "subform",
 		subschema: subschema,
 		label: label,
 		hint: hint,

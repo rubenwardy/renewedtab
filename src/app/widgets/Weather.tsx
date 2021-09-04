@@ -39,6 +39,11 @@ const messages = defineMessages({
 		description: "Weather widget: form field label",
 	},
 
+	display: {
+		defaultMessage: "Display Options",
+		description: "Weather widget: display subform title",
+	},
+
 	showCurrent: {
 		defaultMessage: "Show current weather",
 		description: "Weather widget: form field label",
@@ -193,14 +198,33 @@ function Current(props: { current: WeatherCurrent, showDetails: boolean }) {
 }
 
 
-interface WeatherProps {
-	location: Location;
-	unit: TemperatureUnit;
+interface WeatherDisplay {
 	showCurrent: boolean;
 	showDetails: boolean;
 	showHourlyForecast: boolean;
 	showDailyForecast: boolean;
 }
+
+interface WeatherProps {
+	location: Location;
+	unit: TemperatureUnit
+	display: WeatherDisplay;
+}
+
+
+function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
+	const limitX = props.display.showDetails ? 369 : 241;
+	let limitY = 0;
+	if (props.display.showHourlyForecast && props.display.showDailyForecast) {
+		limitY = 310;
+	} else if (props.display.showDailyForecast || props.display.showDailyForecast) {
+		limitY = 230;
+	} else {
+		limitY = 115;
+	}
+	return (size && (size.x <= limitX || size.y <= limitY)) ? "sm" : "lg";
+}
+
 
 export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
@@ -225,11 +249,15 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
-	const dailyStartOffset = props.showCurrent ? 1 : 0;
+	const dailyStartOffset = props.display.showCurrent ? 1 : 0;
 	const daily = info.daily.slice(dailyStartOffset, dailyStartOffset + numberOfColumns).map(day =>
 			(<Day key={day.dayOfWeek} {...day} />));
 
+	const sizeCode = getSizeCode(size, props);
+	const classes = mergeClasses("weather", `weather-${sizeCode}`);
 	return (
+		<Panel {...widget.theme}
+				className={classes} invisClassName={`${classes} text-shadow`}>
 			<div className="row" ref={ref}>
 				<div className="col text-left location">
 					{props.location.name}
@@ -239,13 +267,13 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 				</div>
 			</div>
 
-			{props.showCurrent && (
-				<Current current={info.current} showDetails={props.showDetails} />)}
+			{props.display.showCurrent && (
+				<Current current={info.current} showDetails={props.display.showDetails} />)}
 
-			{props.showHourlyForecast && (
+			{props.display.showHourlyForecast && (
 				<div className="row">{hourly}</div>)}
 
-			{props.showDailyForecast && (
+			{props.display.showDailyForecast && (
 				<div className="row">{daily}</div>)}
 		</Panel>);
 }
@@ -263,20 +291,27 @@ Weather.initialProps = {
 		longitude: -2.587910,
 	} as Location,
 	unit: TemperatureUnit.Celsius,
-	showCurrent: true,
-	showDetails: true,
-	showHourlyForecast: false,
-	showDailyForecast: true,
+	display: {
+		showCurrent: true,
+		showDetails: true,
+		showHourlyForecast: false,
+		showDailyForecast: true,
+	}
 } as WeatherProps;
 
 
-Weather.schema = {
-	location: type.location(schemaMessages.location),
-	unit: type.selectEnum(TemperatureUnit, messages, messages.temperatureUnit),
+const displaySchema: Schema = {
 	showCurrent: type.boolean(messages.showCurrent),
 	showDetails: type.boolean(messages.showDetails),
 	showHourlyForecast: type.boolean(messages.showHourlyForecast),
 	showDailyForecast: type.boolean(messages.showDailyForecast),
+};
+
+Weather.schema = {
+	location: type.location(schemaMessages.location),
+	unit: type.selectEnum(TemperatureUnit, messages, messages.temperatureUnit),
+	display: type.subform(displaySchema, messages.display),
 } as Schema;
 
 Weather.defaultSize = new Vector2(5, 4);
+
