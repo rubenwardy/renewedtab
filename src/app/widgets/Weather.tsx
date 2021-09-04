@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useAPI, useElementSize } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
-import { WidgetProps } from 'app/Widget';
+import { Widget, WidgetProps } from 'app/Widget';
 import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
@@ -11,6 +11,7 @@ import { convertWeatherTemperatures, getUVRisk, Location, renderSpeed, SpeedUnit
 import UserError from 'app/utils/UserError';
 import { mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
+import deepCopy from 'app/utils/deepcopy';
 
 
 const messages = defineMessages({
@@ -187,7 +188,7 @@ function Current(props: {
 		current: WeatherCurrent, showDetails: boolean, windSpeedUnit: SpeedUnit }) {
 	const uvRisk = getUVRisk(props.current.uvi);
 	return (
-		<div className="col row weather-current">
+		<div className="row weather-current h-100">
 			<div className="col h-100">
 				<div className="row row-vertical text-left h-100">
 					<FitText className="col temp">{props.current.temp.toFixed(0)}°</FitText>
@@ -280,7 +281,7 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 			(<Day key={day.dayOfWeek} {...day} />));
 
 	const sizeCode = getSizeCode(size, props);
-	const classes = mergeClasses("weather", `weather-${sizeCode}`);
+	const classes = mergeClasses("weather", `weather-${sizeCode}`, "h-100");
 	return (
 		<Panel {...widget.theme}
 				className={classes} invisClassName={`${classes} text-shadow`}>
@@ -294,9 +295,11 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 			</div>
 
 			{props.display.showCurrent && (
-				<Current current={info.current}
-					showDetails={props.display.showDetails}
-					windSpeedUnit={props.windSpeedUnit} />)}
+				<div className="col">
+					<Current current={info.current}
+						showDetails={props.display.showDetails}
+						windSpeedUnit={props.windSpeedUnit} />
+				</div>)}
 
 			{props.display.showHourlyForecast && (
 				<div className="row">{hourly}</div>)}
@@ -345,3 +348,6 @@ Weather.schema = {
 
 Weather.defaultSize = new Vector2(5, 4);
 
+Weather.onLoaded = async (widget: Widget<WeatherProps>) => {
+	widget.props = { ...deepCopy(Weather.initialProps), ...widget.props };
+};
