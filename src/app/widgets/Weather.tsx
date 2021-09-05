@@ -316,7 +316,7 @@ interface WeatherProps {
 
 
 function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
-	const limitX = props.display.showDetails ? 369 : 241;
+	const limitX = props.display.showDetails ? 300 : 241;
 	let limitY = 0;
 	if (props.display.showHourlyForecast && props.display.showDailyForecast) {
 		limitY = 310;
@@ -325,7 +325,7 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 	} else {
 		limitY = 115;
 	}
-	return (size && (size.x <= limitX || size.y <= limitY)) ? "sm" : "lg";
+	return (size && (size.x < limitX || size.y < limitY)) ? "sm" : "lg";
 }
 
 
