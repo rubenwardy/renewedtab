@@ -928,5 +928,57 @@
     "zo4ZQa": {
         "message": "Tunjuk",
         "description": "Feed widget: filter allow checkbox label"
+    },
+    "4cMia7": {
+        "message": "Tunjuk gambar baharu",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "Ay1sfO": {
+        "message": "Kawal berapa banyak imej paling terbaru untuk digunakan dalam pilihan secara rawak. Menetapkan kepada 1 akan sentiasa memilih imej paling terbaru sahaja",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "E4nLwR": {
+        "message": "Setiap hari",
+        "description": "Background expiry dropdown"
+    },
+    "PBMGxw": {
+        "message": "Hadkan imej",
+        "description": "Feed background mode: form field label"
+    },
+    "XV4mnl": {
+        "message": "Bergantung kepada tetapan anda, gambar yang sama mungkin dipilih",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "YQhLKn": {
+        "message": "Setiap jam",
+        "description": "Background expiry dropdown"
+    },
+    "d7dHsn": {
+        "message": "Setiap 15 minit",
+        "description": "Background expiry dropdown"
+    },
+    "+TYXj6": {
+        "message": "Hari ini, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "2vJWTd": {
+        "message": "Gambar",
+        "description": "Background credits title placeholder"
+    },
+    "B0kbsm": {
+        "message": "Suapan",
+        "description": "Unsplash background mode"
+    },
+    "HPLtg4": {
+        "message": "Mata wang tidak diketahui ''{currency}''",
+        "description": "Currencies widget: error"
+    },
+    "RhyKzC": {
+        "message": "Diberikan",
+        "description": "Curated background mode"
+    },
+    "TS11GJ": {
+        "message": "Imej rawak daripada suapan RSS atau Atom",
+        "description": "Backgroud mode description"
     }
 }
