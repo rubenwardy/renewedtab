@@ -484,10 +484,6 @@
     "Rw51mJ": {
         "message": "Impulsado por <a>OpenStreetMap</a>."
     },
-    "xy7dL3": {
-        "message": "Impulsado por OpenWeatherMap.org",
-        "description": "Weather widget: edit modal hint"
-    },
     "UgAgeT": {
         "message": "Impulsado por exchangerate.host",
         "description": "Currencies widget: credit to data provider"

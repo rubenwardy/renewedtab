@@ -587,10 +587,6 @@
         "message": "Menyapa Anda",
         "description": "Greeting widget description"
     },
-    "xy7dL3": {
-        "message": "Didukung oleh OpenWeatherMap.org",
-        "description": "Weather widget: edit modal hint"
-    },
     "y1Z3or": {
         "message": "Bahasa"
     },
@@ -598,17 +594,9 @@
         "message": "Cuaca saat ini dan yang diperkirakan",
         "description": "Weather widget description"
     },
-    "yO9MXI": {
-        "message": "Mata uang '{currency}' tak dikenal",
-        "description": "Currencies widget: error"
-    },
     "yY7Rve": {
         "message": "Sembunyikan",
         "description": "Feed widget: filter show checkbox label"
-    },
-    "ycaP+t": {
-        "message": "Otomatis",
-        "description": "Auto background mode"
     },
     "yfgoZf": {
         "message": "Obrolan Discord / Matrix"
