@@ -928,5 +928,57 @@
     "TIEfOV": {
         "message": "Bir makale var olan en az bir \"Göster\" filtresine dahilse ve hiçbir \"Gizle\" filtresine dahil değilse gösterilir.",
         "description": "Feed widget: form field hint (Filters)"
+    },
+    "4cMia7": {
+        "message": "Yeni bir fotoğraf göster",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "Ay1sfO": {
+        "message": "En yeni kaç resim arasından rastgele seçim yapılacağını kontrol eder. Bunu 1'e ayarlarsanız her zaman son resim seçilir",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "E4nLwR": {
+        "message": "Her gün",
+        "description": "Background expiry dropdown"
+    },
+    "PBMGxw": {
+        "message": "Resimleri limitle",
+        "description": "Feed background mode: form field label"
+    },
+    "XV4mnl": {
+        "message": "Ayarlarınıza bağlı olarak, aynı fotoğraf seçilebilir",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "YQhLKn": {
+        "message": "Her saat",
+        "description": "Background expiry dropdown"
+    },
+    "d7dHsn": {
+        "message": "Her 15 dakika",
+        "description": "Background expiry dropdown"
+    },
+    "+TYXj6": {
+        "message": "Bugün, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "2vJWTd": {
+        "message": "Fotoğraf",
+        "description": "Background credits title placeholder"
+    },
+    "B0kbsm": {
+        "message": "Besleme",
+        "description": "Unsplash background mode"
+    },
+    "HPLtg4": {
+        "message": "Bilinmeyen para birimi ''{currency}''",
+        "description": "Currencies widget: error"
+    },
+    "RhyKzC": {
+        "message": "Seçilmiş",
+        "description": "Curated background mode"
+    },
+    "TS11GJ": {
+        "message": "Bir atom veya RSS beslemesinden rastgele resim",
+        "description": "Backgroud mode description"
     }
 }
