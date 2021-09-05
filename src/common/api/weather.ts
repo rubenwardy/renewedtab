@@ -26,6 +26,8 @@ export interface WeatherHour {
 }
 
 export interface WeatherInfo {
+	url?: string;
+
 	timezone_offset: number;
 	current: WeatherCurrent;
 	hourly: WeatherHour[];

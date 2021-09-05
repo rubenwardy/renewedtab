@@ -401,10 +401,6 @@
         "message": "Linkler. Heading ve ikon desteği de vardır",
         "description": "Links widget description"
     },
-    "xy7dL3": {
-        "message": "OpenWeatherMap.org ile çalışır",
-        "description": "Weather widget: edit modal hint"
-    },
     "KyDwm3": {
         "message": "Sık kullanılan sitelerinizi gösterir",
         "description": "Top Sites widget: description"

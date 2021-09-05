@@ -988,10 +988,6 @@
         "description": "Greeting widget description",
         "message": "Greets you"
     },
-    "xy7dL3": {
-        "description": "Weather widget: edit modal hint",
-        "message": "Powered by OpenWeatherMap.org"
-    },
     "y1Z3or": {
         "message": "Language"
     },

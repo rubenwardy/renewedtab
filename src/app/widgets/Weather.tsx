@@ -25,11 +25,6 @@ const messages = defineMessages({
 		description: "Weather widget description"
 	},
 
-	editHint: {
-		defaultMessage: "Powered by OpenWeatherMap.org",
-		description: "Weather widget: edit modal hint",
-	},
-
 	locationNeeded: {
 		defaultMessage: "Location needed. Click edit to add it.",
 		description: "Weather widget: location needed error",
@@ -362,8 +357,10 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 		<Panel {...widget.theme} ref={ref}
 				className={classes} invisClassName={`${classes} text-shadow`}>
 			<div className="row">
-				<div className="col text-left location">
-					{props.location.name}
+				<div className="col text-left location weather-title">
+					{info.url
+						? (<a href={info.url}>{props.location.name}</a>)
+						: (props.location.name)}
 				</div>
 				<div className="col-auto text-right weather-credits">
 					<a href="https://openweathermap.org">OpenWeatherMap</a>
@@ -389,8 +386,6 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 
 Weather.title = messages.title;
 Weather.description = messages.description;
-
-Weather.editHint = messages.editHint;
 
 Weather.initialProps = {
 	location: {
