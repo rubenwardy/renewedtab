@@ -928,5 +928,9 @@
     "zo4ZQa": {
         "message": "Mostra",
         "description": "Feed widget: filter allow checkbox label"
+    },
+    "B0kbsm": {
+        "message": "Feed",
+        "description": "Unsplash background mode"
     }
 }
