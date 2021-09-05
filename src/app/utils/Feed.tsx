@@ -51,13 +51,19 @@ function getImage(el: Element, parseXML: XMLParser): ([string, string | undefine
 	return [ cleanURL(img.getAttribute("src")!), img.getAttribute("alt") ?? ""];
 }
 
+
 export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 	const articles: Article[] = [];
 	if (root.tagName == "rss") {
 		root.querySelectorAll("item").forEach(el => {
 			const img = getImage(el, parseXML);
+			const title = el.querySelector("title")?.textContent;
+			if (!title) {
+				return;
+			}
+
 			articles.push({
-				title: escapeHTMLtoText(el.querySelector("title")!.textContent!, parseXML).trim(),
+				title: escapeHTMLtoText(title, parseXML).trim(),
 				link: el.querySelector("link")?.textContent?.trim() ?? undefined,
 				image: img && img[0],
 				alt: img && img[1],
@@ -65,15 +71,20 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 		});
 
 		return {
-			title: root.querySelector("channel > title")!.textContent ?? undefined,
-			link: root.querySelector("channel > link")!.textContent ?? undefined,
+			title: root.querySelector("channel > title")?.textContent ?? undefined,
+			link: root.querySelector("channel > link")?.textContent ?? undefined,
 			articles: articles,
 		};
 	} else if (root.tagName == "feed") {
 		root.querySelectorAll("entry").forEach(el => {
 			const img = getImage(el, parseXML);
+			const title = el.querySelector("title")?.textContent;
+			if (!title) {
+				return;
+			}
+
 			articles.push({
-				title: escapeHTMLtoText(el.querySelector("title")!.textContent!, parseXML).trim(),
+				title: escapeHTMLtoText(title, parseXML).trim(),
 				link: el.querySelector("link")?.getAttribute("href")?.trim(),
 				image: img && img[0],
 				alt: img && img[1],
