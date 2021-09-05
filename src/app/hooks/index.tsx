@@ -40,12 +40,13 @@ export function useElementSize<T extends HTMLElement>():
 	}), []);
 
 	const ref = useCallback((node: T) => {
-		if (node !== null) {
+		if (node === null) {
+			resizeObserver.disconnect();
+		} else {
 			updateSize(node);
 			resizeObserver.observe(node);
 		}
 	}, []);
-
 
 	return [ref, size];
 }
