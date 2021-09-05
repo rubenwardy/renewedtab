@@ -191,7 +191,8 @@ function Hour(props: WeatherHour) {
 
 function CurrentDetails(props: {
 		current: WeatherCurrent, windSpeedUnit: SpeedUnit, showAsIcons: boolean }) {
-	const uvRisk = props.current.uvi != undefined ? getUVRisk(props.current.uvi) : undefined;
+	const uvRisk = (props.current.uvi != undefined && props.current.uvi > 0)
+		? getUVRisk(props.current.uvi) : undefined;
 	const speed = props.current.wind_speed != undefined && convertSpeed(props.current.wind_speed, props.windSpeedUnit);
 	const speedUnit = props.current.wind_speed != undefined && getSpeedUnitSuffix(props.windSpeedUnit);
 
