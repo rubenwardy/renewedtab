@@ -40,7 +40,7 @@ IFrame.initialProps = {
 
 IFrame.schema = {
 	url: type.url(schemaMessages.url),
-} as Schema;
+} as Schema<IFrameProps>;
 
 IFrame.defaultSize = new Vector2(5, 4);
 

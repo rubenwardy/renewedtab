@@ -78,7 +78,7 @@ Quotes.initialProps = {
 
 Quotes.schema = {
 	categories: type.quoteCategories(schemaMessages.categories),
-} as Schema;
+} as Schema<QuotesProps>;
 
 Quotes.defaultSize = new Vector2(15, 2);
 
@@ -90,4 +90,4 @@ Quotes.initialTheme = {
 Quotes.themeSchema = {
 	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	textColor: type.color(schemaMessages.textColor),
-} as Schema;
+} as Schema<WidgetTheme>;

@@ -27,7 +27,7 @@ Invisible.description = messages.description;
 
 Invisible.initialProps = {};
 
-Invisible.schema = {} as Schema;
+Invisible.schema = {};
 
 Invisible.defaultSize = new Vector2(5, 5);
 
@@ -35,4 +35,4 @@ Invisible.initialTheme = {
 	showPanelBG: false,
 } as WidgetTheme;
 
-Invisible.themeSchema = {} as Schema;
+Invisible.themeSchema = {};

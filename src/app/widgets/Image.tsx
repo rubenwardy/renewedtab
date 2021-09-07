@@ -53,7 +53,7 @@ Image.initialProps = {
 Image.schema = {
 	image_url: type.string(schemaMessages.imageUrl),
 	link: type.url(schemaMessages.linkUrl, messages.linkHint),
-} as Schema;
+} as Schema<ImageProps>;
 
 Image.defaultSize = new Vector2(5, 5);
 

@@ -7,6 +7,7 @@ import { usePromise } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "./Button";
+import { SchemaEntry } from "app/utils/Schema";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -43,7 +44,8 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 		props.save();
 	}
 
-	const isWide = Object.values(schema).some(field => field.type == "array" || field.type == "unordered_array");
+	const isWide = Object.values(schema as Record<string, SchemaEntry>)
+		.some(field => field.type == "array" || field.type == "unordered_array");
 
 	return (
 		<Modal title={title} wide={isWide} isOpen={true} {...props}>

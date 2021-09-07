@@ -44,8 +44,8 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 		setSentryEnabled(e.target.checked);
 	}
 
-	function handleSetGridValue(key: string, val: any) {
-		(props.grid as any)[key] = val;
+	function handleSetGridValue(key: keyof WidgetGridSettings, val: any) {
+		props.grid![key] = val;
 		props.setGrid({ ...props.grid! });
 	}
 

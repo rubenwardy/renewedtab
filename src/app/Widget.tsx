@@ -28,7 +28,7 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	/**
 	 * Schema for the props, used to generate WidgetEditor forms.
 	 */
-	schema: Schema | ((widget: Widget<T>, intl: IntlShape) => Promise<Schema>);
+	schema: Schema<T> | ((widget: Widget<T>, intl: IntlShape) => Promise<Schema<T>>);
 
 	/**
 	 * Description shown in Create Widget dialog.
@@ -53,7 +53,7 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	/**
 	 * Schema for theme
 	 */
-	themeSchema?: Schema | ((widget: Widget<T>) => Schema);
+	themeSchema?: Schema<WidgetTheme> | ((widget: Widget<T>) => Schema<WidgetTheme>);
 
 	/**
 	 * Called when the widget is created, either by the user
@@ -90,12 +90,12 @@ export const themeMessages = defineMessages({
 	},
 });
 
-export const defaultThemeSchema: Schema = {
+export const defaultThemeSchema: Schema<WidgetTheme> = {
 	showPanelBG: type.boolean(themeMessages.showPanelBG),
 };
 
 
-export const defaultLinksThemeSchema: Schema = {
+export const defaultLinksThemeSchema: Schema<WidgetTheme> = {
 	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	useIconBar: type.boolean(schemaMessages.useIconBar),
 };
@@ -108,7 +108,8 @@ export const defaultLinksThemeSchema: Schema = {
  * @param type Widget type
  * @returns schema
  */
-export async function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>, intl: IntlShape): Promise<Schema> {
+export async function getSchemaForWidget<T>(widget: Widget<T>,
+		type: WidgetType<T>, intl: IntlShape): Promise<Schema<T>> {
 	if (typeof type.schema == "function") {
 		return await type.schema(widget, intl);
 	} else {
@@ -124,7 +125,7 @@ export async function getSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<
  * @param type Widget type
  * @returns schema
  */
- export function getThemeSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>): Schema {
+ export function getThemeSchemaForWidget<T>(widget: Widget<T>, type: WidgetType<T>): Schema<WidgetTheme> {
 	if (typeof type.themeSchema == "undefined") {
 		return defaultThemeSchema;
 	} else if (typeof type.themeSchema == "function") {

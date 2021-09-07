@@ -137,7 +137,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		</main>);
 }
 
-export const gridSettingsSchema: Schema = {
+export const gridSettingsSchema: Schema<WidgetGridSettings> = {
 	columns: type.number(messages.columnsLabel, messages.columnsHint, 5),
 	spacing: type.unit_number(messages.spacingLabel, "px", messages.spacingHint, 0),
 };

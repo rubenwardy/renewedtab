@@ -19,7 +19,7 @@ export type ImageHandle = { key: string };
 
 export interface SchemaEntry {
 	type: Type;
-	subschema?: Schema;
+	subschema?: Schema<unknown>;
 	label: MessageDescriptor;
 	messages?: Messages;
 	hint?: MessageDescriptor;
@@ -31,14 +31,16 @@ export interface SchemaEntry {
 }
 
 
+
 /**
  * Schema is a key-value object used to define the types that are expected.
  *
  * Used to provide automatic forms to edit widgets.
  */
-export default interface Schema {
-	[name: string]: SchemaEntry;
-}
+type Schema<T> = Partial<Record<keyof T & string, SchemaEntry>>;
+export default Schema;
+
+export type UncheckedSchema = Schema<Record<string, any>>;
 
 
 function makeTypeFunc(type: Type) {
@@ -121,7 +123,7 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	export const array = (subschema: Schema, label: MessageDescriptor,
+	export const array = (subschema: Schema<unknown>, label: MessageDescriptor,
 			hint?: MessageDescriptor): SchemaEntry => ({
 		type: "array",
 		subschema: subschema,
@@ -133,7 +135,7 @@ export namespace type {
 	 * Displays a new heading with a form. Sub-forms should be the last
 	 * item in a schema.
 	 */
-	 export const subform = (subschema: Schema, label: MessageDescriptor,
+	 export const subform = (subschema: Schema<unknown>, label: MessageDescriptor,
 			hint?: MessageDescriptor): SchemaEntry => ({
 		type: "subform",
 		subschema: subschema,
@@ -147,7 +149,7 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	 export const unorderedArray = (subschema: Schema, label: MessageDescriptor,
+	 export const unorderedArray = (subschema: Schema<unknown>, label: MessageDescriptor,
 			hint?: MessageDescriptor): SchemaEntry => ({
 		type: "unordered_array",
 		subschema: subschema,

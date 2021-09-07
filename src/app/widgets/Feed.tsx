@@ -118,7 +118,7 @@ Feed.initialProps = {
 };
 
 
-const filterSchema: Schema = {
+const filterSchema: Schema<Filter> = {
 	isAllowed: type.select({ false: "Hide", true: "Allow" },
 		{ false: messages.hide, true: messages.show }, messages.isAllowed),
 	text: type.string(schemaMessages.text),
@@ -129,7 +129,7 @@ Feed.schema = {
 	url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
 			() => getAPI<AutocompleteItem[]>("feeds/", {})),
 	filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
-} as Schema;
+} as Schema<FeedProps>;
 
 Feed.defaultSize = new Vector2(5, 4);
 

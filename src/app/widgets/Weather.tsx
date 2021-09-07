@@ -405,7 +405,7 @@ Weather.initialProps = {
 } as WeatherProps;
 
 
-const displaySchema: Schema = {
+const displaySchema: Schema<WeatherDisplay> = {
 	showCurrent: type.boolean(messages.showCurrent),
 	showDetails: type.boolean(messages.showDetails),
 	useDetailsIcons: type.boolean(messages.useDetailsIcons),
@@ -418,7 +418,7 @@ Weather.schema = {
 	unit: type.selectEnum(TemperatureUnit, temperatureUnitMessages, messages.temperatureUnit),
 	windSpeedUnit: type.selectEnum(SpeedUnit, speedUnitMessages, messages.windSpeedUnit),
 	display: type.subform(displaySchema, messages.display),
-} as Schema;
+} as Schema<WeatherProps>;
 
 Weather.defaultSize = new Vector2(5, 3);
 

@@ -69,6 +69,6 @@ Age.initialProps = {
 
 Age.schema = {
 	birthDate: type.date(messages.birth_date),
-} as Schema;
+} as Schema<AgeProps>;
 
 Age.defaultSize = new Vector2(5, 1);

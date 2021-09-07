@@ -84,7 +84,7 @@ DailyGoal.editHint = messages.editHint;
 
 DailyGoal.initialProps = {};
 
-DailyGoal.schema = {} as Schema;
+DailyGoal.schema = {};
 
 DailyGoal.defaultSize = new Vector2(15, 1);
 

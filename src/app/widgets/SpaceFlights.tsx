@@ -147,6 +147,6 @@ SpaceFlights.editHint = messages.editHint;
 
 SpaceFlights.initialProps = {};
 
-SpaceFlights.schema = {} as Schema;
+SpaceFlights.schema = {};
 
 SpaceFlights.defaultSize = new Vector2(5, 4);

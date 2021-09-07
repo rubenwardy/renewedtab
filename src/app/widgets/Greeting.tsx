@@ -26,17 +26,22 @@ const messages = defineMessages({
 
 	morning: {
 		defaultMessage: "Good morning",
-		description: "Greeting widget: greeting, before 12 noon",
+		description: "Greeting widget: greeting, from midnight to noon",
 	},
 
 	afternoon: {
 		defaultMessage: "Good afternoon",
-		description: "Greeting widget: greeting, from 12 noon to 4pm",
+		description: "Greeting widget: greeting, from noon to 4pm",
 	},
 
 	evening: {
 		defaultMessage: "Good evening",
-		description: "Greeting widget: greeting, after 4pm",
+		description: "Greeting widget: greeting, from 4pm to 9pm",
+	},
+
+	night: {
+		defaultMessage: "Good night",
+		description: "Greeting widget: greeting, from 9pm to midnight",
 	},
 
 	name: {
@@ -52,8 +57,10 @@ function getGreeting(): MessageDescriptor {
 		return messages.morning;
 	} else if (hour < 16) {
 		return messages.afternoon;
-	} else {
+	} else if (hour < 21) {
 		return messages.evening;
+	} else {
+		return messages.night;
 	}
 }
 
@@ -85,7 +92,7 @@ Greeting.editHint = messages.editHint;
 
 Greeting.initialProps = {};
 
-Greeting.schema = {} as Schema;
+Greeting.schema = {};
 
 Greeting.defaultSize = new Vector2(15, 1);
 

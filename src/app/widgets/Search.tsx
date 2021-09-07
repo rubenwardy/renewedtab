@@ -148,22 +148,22 @@ Search.initialProps = {
 	searchURL: "https://google.com/search",
 };
 
-Search.schema = async (widget: Widget<SearchProps>) => {
+Search.schema = async (widget: Widget<SearchProps>): Promise<Schema<SearchProps>> => {
 	if (!hasSearchAPI) {
 		return {
 			searchTitle: type.string(messages.searchTitle),
 			searchURL: type.url(schemaMessages.url),
-		} as Schema;
+		};
 	} else if (widget.props.useBrowserEngine) {
 		return {
 			useBrowserEngine: type.boolean(messages.useBrowserDefault),
-		}
+		};
 	} else {
 		return {
 			useBrowserEngine: type.boolean(messages.useBrowserDefault),
 			searchTitle: type.string(messages.searchTitle),
 			searchURL: type.url(schemaMessages.url),
-		} as Schema;
+		};
 	}
 }
 

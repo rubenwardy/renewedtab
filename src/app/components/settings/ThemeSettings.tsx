@@ -128,7 +128,7 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 }
 
 
-function getThemeSchema(): Schema {
+function getThemeSchema(): Schema<ThemeConfig> {
 	const supportsBackdropFilter =
 		CSS.supports("backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)");
 

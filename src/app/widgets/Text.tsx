@@ -43,7 +43,7 @@ Text.initialProps = {
 
 Text.schema = {
 	text: type.textarea(schemaMessages.text),
-} as Schema;
+} as Schema<TextProps>;
 
 Text.defaultSize = new Vector2(5, 1);
 

@@ -75,7 +75,7 @@ TopSites.isBrowserOnly = true;
 
 TopSites.initialProps = {};
 
-TopSites.schema = {} as Schema;
+TopSites.schema = {};
 
 TopSites.defaultSize = new Vector2(15, 2);
 

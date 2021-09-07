@@ -67,6 +67,6 @@ Notes.onLoaded = async (widget: Widget<any>) => {
 	}
 }
 
-Notes.schema = {} as Schema;
+Notes.schema = {};
 
 Notes.defaultSize = new Vector2(5, 2);

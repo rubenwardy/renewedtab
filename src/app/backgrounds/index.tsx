@@ -60,7 +60,7 @@ export interface BackgroundProvider<T> {
 	id: string;
 	title: MyMessageDescriptor;
 	description: MyMessageDescriptor;
-	schema: Schema;
+	schema: Schema<T>;
 	defaultValues: T;
 	isBrowserOnly?: boolean;
 	enableCaching?: boolean;
@@ -109,12 +109,12 @@ export function getBackgroundProvider<T>(name: (string | number)): (BackgroundPr
  * @param name Background provider name
  * @returns Schema
  */
-export function getSchemaForProvider(name: string): Schema {
-	const schema = getBackgroundProvider(name)!.schema;
+export function getSchemaForProvider<T>(name: string): Schema<T> {
+	const schema = getBackgroundProvider<T & { blur?: unknown }>(name)!.schema;
 
 	const supportsBackdropFilter =
 		CSS.supports("backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)");
-	if (!supportsBackdropFilter) {
+	if (!supportsBackdropFilter && "blur" in schema) {
 		delete schema.blur;
 	}
 

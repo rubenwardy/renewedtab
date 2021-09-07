@@ -41,7 +41,7 @@ YearProgress.title = messages.title;
 YearProgress.description = messages.description;
 
 YearProgress.initialProps = {};
-YearProgress.schema = {} as Schema;
+YearProgress.schema = {};
 
 YearProgress.defaultSize = new Vector2(5, 1);
 
@@ -53,4 +53,4 @@ YearProgress.initialTheme = {
 YearProgress.themeSchema = {
 	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	color: type.color(schemaMessages.color),
-} as Schema;
+} as Schema<WidgetTheme>;

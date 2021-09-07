@@ -90,19 +90,19 @@ Links.initialProps = {
 	]
 };
 
-Links.schema = async (widget: Widget<LinkBoxProps>) => {
+Links.schema = async (widget: Widget<LinkBoxProps>): Promise<Schema<LinkBoxProps>> => {
 	const linkSchema = widget.props.enableCustomIcons ? FullLinkSchema : LinkSchema;
 	if (typeof browser !== "undefined") {
 		return {
 			links: type.array(linkSchema, messages.links),
 			enableCustomIcons: type.boolean(messages.enableCustomIcons),
 			useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
-		} as Schema;
+		};
 	} else {
 		return {
 			links: type.array(linkSchema, messages.links),
 			enableCustomIcons: type.boolean(messages.enableCustomIcons),
-		} as Schema;
+		};
 	}
 }
 

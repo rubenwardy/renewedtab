@@ -144,7 +144,7 @@ Bookmarks.initialProps = {
 
 Bookmarks.schema = {
 	includeFolders: type.boolean(messages.includeFolders),
-} as Schema;
+} as Schema<BookmarksProps>;
 
 Bookmarks.defaultSize = new Vector2(15, 2);
 

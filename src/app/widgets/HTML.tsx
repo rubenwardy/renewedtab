@@ -48,6 +48,6 @@ HTML.initialProps = {
 
 HTML.schema = {
 	html: type.textarea(messages.html, messages.htmlHint),
-} as Schema;
+} as Schema<HTMLProps>;
 
 HTML.defaultSize = new Vector2(5, 4);

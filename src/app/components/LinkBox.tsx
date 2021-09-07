@@ -30,13 +30,13 @@ export interface Link {
 }
 
 
-export const LinkSchema : Schema = {
+export const LinkSchema: Schema<Link> = {
 	title: type.string(schemaMessages.title),
 	url: type.url(schemaMessages.url, messages.urlHint),
 };
 
 
-export const FullLinkSchema : Schema = {
+export const FullLinkSchema: Schema<Link> = {
 	title: type.string(schemaMessages.title),
 	icon: type.url(schemaMessages.icon, messages.iconHint),
 	url: type.url(schemaMessages.url, messages.urlHint),

@@ -89,7 +89,7 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 			</h3>
 			<ul className="presets">
 				{presets.map(preset => (
-					<Preset key={(preset.title as any).id} {...preset}
+					<Preset key={preset.title.id} {...preset}
 						onClick={() => applyPreset(preset)} />))}
 			</ul>
 			<p className="text-muted mt-4">

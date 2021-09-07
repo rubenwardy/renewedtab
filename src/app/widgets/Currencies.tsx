@@ -128,7 +128,7 @@ Currencies.schema = async () => {
 			currencyOptions[key] = `${value.code}: ${value.description}`;
 		});
 
-	const rateSchema: Schema = {
+	const rateSchema: Schema<CurrenciesProps["rates"][number]> = {
 		from: type.select(currencyOptions, undefined, messages.from),
 		to: type.select(currencyOptions, undefined, messages.to),
 	};

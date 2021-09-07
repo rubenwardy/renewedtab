@@ -179,7 +179,7 @@ Clock.schema = async (_widget: Widget<any>, intl: IntlShape) => {
 		showSeconds: type.boolean(messages.showSeconds),
 		hour12: type.boolean(messages.hour12),
 		dateStyle: type.selectEnum(DateStyle, dateStyleMessagesWithExamples, messages.showDate),
-	} as Schema;
+	} as Schema<ClockProps>;
 }
 Clock.defaultSize = new Vector2(15, 2);
 
@@ -191,7 +191,7 @@ Clock.initialTheme = {
 Clock.themeSchema = {
 	showPanelBG: type.boolean(themeMessages.showPanelBG),
 	textColor: type.color(schemaMessages.textColor),
-} as Schema;
+} as Schema<WidgetTheme>;
 
 
 Clock.onLoaded = async (widget: Widget<ClockProps>) => {

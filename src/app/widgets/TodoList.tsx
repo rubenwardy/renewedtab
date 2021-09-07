@@ -128,6 +128,6 @@ TodoList.initialProps = {
 	list: [],
 } as TodoListProps;
 
-TodoList.schema = {} as Schema;
+TodoList.schema = {};
 
 TodoList.defaultSize = new Vector2(5, 4);

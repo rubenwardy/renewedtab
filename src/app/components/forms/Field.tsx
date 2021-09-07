@@ -14,7 +14,7 @@ interface FieldProps {
 
 export function Field(props: FieldProps) {
 	const SubField = makeField(props.schemaEntry.type);
-	const showLabel = !props.fieldOnly && !(SubField as any).noParentLabel;
+	const showLabel = !props.fieldOnly && !SubField.noParentLabel;
 	const showHint = !props.fieldOnly;
 
 	return (

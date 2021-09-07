@@ -2,20 +2,23 @@ import React from "react";
 import Form, { FormProps } from "./Form";
 import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
-import Schema from "app/utils/Schema";
+import Schema, { SchemaEntry, UncheckedSchema } from "app/utils/Schema";
 import { useForceUpdate } from "app/hooks";
 import { FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { miscMessages } from "app/locale/common";
 
-interface RowProps extends FormProps {
+
+
+
+interface RowProps<T extends { id: string }> extends FormProps<T> {
 	idx: number;
 	isLast: boolean;
 	onDelete: () => void;
 	onMove?: (up: boolean) => void;
 }
 
-function ArrayRow(props: RowProps) {
+function ArrayRow<T extends { id: string }>(props: RowProps<T>) {
 	return (
 		<tr>
 			{props.onMove && (
@@ -39,20 +42,22 @@ function ArrayRow(props: RowProps) {
 }
 
 
-function createFromSchema(schema: Schema): any {
+function createFromSchema(schema: UncheckedSchema): any {
 	const retval: any = { id: uuid() };
-	Object.entries(schema).forEach(([key, entry]) => {
-		if (entry.type == "string" || entry.type == "url") {
-			retval[key] = "";
-		} else if (entry.type == "number") {
-			retval[key] = 0;
-		}
-	})
+	Object.entries(schema)
+		.filter(([,entry]) => entry)
+		.forEach(([key, entry]) => {
+			if (entry!.type == "string" || entry!.type == "url") {
+				retval[key] = "";
+			} else if (entry!.type == "number") {
+				retval[key] = 0;
+			}
+		});
 	return retval;
 }
 
 
-export default function ArrayField(props: FieldProps<any[]>) {
+export default function ArrayField<T extends { id: string }>(props: FieldProps<T[]>) {
 	const forceUpdate = useForceUpdate();
 
 	function handleChange() {
@@ -94,11 +99,13 @@ export default function ArrayField(props: FieldProps<any[]>) {
 		forceUpdate();
 	}
 
-	const headers = Object.entries(props.schemaEntry.subschema!).map(([key, type]) => (
-		<th key={key}>
-			<div className="header"><FormattedMessage {...type.label} /></div>
-			<div className="hint text-muted">{type.hint && <FormattedMessage {...type.hint} />}</div>
-		</th>));
+	const headers = Object.entries(props.schemaEntry.subschema! as UncheckedSchema)
+		.filter(([,type]) => type)
+		.map(([key, type]) => (
+			<th key={key}>
+				<div className="header"><FormattedMessage {...type!.label} /></div>
+				<div className="hint text-muted">{type!.hint && <FormattedMessage {...type!.hint} />}</div>
+			</th>));
 
 	const isOrdered = props.type != "unordered_array";
 

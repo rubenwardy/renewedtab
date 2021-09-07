@@ -23,8 +23,12 @@ import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
 import SubFormField from "./SubFormField";
 
+export interface FieldComponent<T> extends React.FC<FieldProps<T>> {
+	noParentLabel?: boolean;
+}
 
-export function makeField(type: Type): React.FC<FieldProps<any>> {
+
+export function makeField(type: Type): FieldComponent<any> {
 	if (type == Date) {
 		return DateField;
 	} else if (type == "boolean") {
