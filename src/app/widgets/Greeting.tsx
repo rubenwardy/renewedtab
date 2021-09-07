@@ -1,9 +1,8 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
 import Panel from "app/components/Panel";
 import { useStorage } from "app/hooks";
-import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetProps, WidgetTheme } from "app/Widget";
+import { WidgetProps, WidgetType } from "app/Widget";
 import React, { ChangeEvent } from "react";
 import { defineMessages, FormattedMessage, MessageDescriptor, useIntl } from "react-intl";
 
@@ -65,7 +64,7 @@ function getGreeting(): MessageDescriptor {
 }
 
 
-export default function Greeting(widget: WidgetProps<any>) {
+function Greeting(widget: WidgetProps<Record<string, never>>) {
 	const [name, setName] = useStorage<string | undefined>("name");
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -85,17 +84,16 @@ export default function Greeting(widget: WidgetProps<any>) {
 }
 
 
-Greeting.title = messages.title;
-Greeting.description = messages.description;
-
-Greeting.editHint = messages.editHint;
-
-Greeting.initialProps = {};
-
-Greeting.schema = {};
-
-Greeting.defaultSize = new Vector2(15, 1);
-
-Greeting.initialTheme = {
-	showPanelBG: false,
-} as WidgetTheme;
+const widget: WidgetType<Record<string, never>> = {
+	Component: Greeting,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+	defaultSize: new Vector2(15, 1),
+	initialProps: {},
+	schema: {},
+	initialTheme: {
+		showPanelBG: false,
+	},
+};
+export default widget;

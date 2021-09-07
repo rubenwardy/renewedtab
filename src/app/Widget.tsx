@@ -15,8 +15,12 @@ export interface WidgetTheme {
 	opacity?: number;
 }
 
-export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
+export interface WidgetType<T> {
+	Component: ReactFC<WidgetProps<T>>;
+
 	title: MessageDescriptor;
+	description: MessageDescriptor;
+
 
 	defaultSize: Vector2;
 
@@ -29,11 +33,6 @@ export interface WidgetType<T> extends ReactFC<WidgetProps<T>> {
 	 * Schema for the props, used to generate WidgetEditor forms.
 	 */
 	schema: Schema<T> | ((widget: Widget<T>, intl: IntlShape) => Promise<Schema<T>>);
-
-	/**
-	 * Description shown in Create Widget dialog.
-	 */
-	description: MessageDescriptor;
 
 	/**
 	 * Whether the widget requires the browser version
@@ -78,7 +77,7 @@ export interface Widget<T> {
 }
 
 export interface WidgetProps<T> extends Widget<T> {
-	child: WidgetType<T>;
+	typeDef: WidgetType<T>;
 	save(): void;
 	remove(): void;
 }

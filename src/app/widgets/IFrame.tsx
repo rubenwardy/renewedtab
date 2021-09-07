@@ -1,8 +1,8 @@
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps, WidgetTheme } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -23,7 +23,7 @@ interface IFrameProps {
 	url: string;
 }
 
-export default function IFrame(widget: WidgetProps<IFrameProps>) {
+function IFrame(widget: WidgetProps<IFrameProps>) {
 	return (
 		<Panel {...widget.theme} scrolling={false}>
 			<iframe src={widget.props.url} width="100%" height="100%" frameBorder="0" />
@@ -31,19 +31,19 @@ export default function IFrame(widget: WidgetProps<IFrameProps>) {
 }
 
 
-IFrame.title = messages.title;
-IFrame.description = messages.description;
-
-IFrame.initialProps = {
-	url: "https://example.com"
+const widget: WidgetType<IFrameProps> = {
+	Component: IFrame,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 4),
+	initialProps: {
+		url: "https://example.com",
+	},
+	schema: {
+		url: type.url(schemaMessages.url),
+	},
+	initialTheme: {
+		showPanelBG: false,
+	}
 };
-
-IFrame.schema = {
-	url: type.url(schemaMessages.url),
-} as Schema<IFrameProps>;
-
-IFrame.defaultSize = new Vector2(5, 4);
-
-IFrame.initialTheme = {
-	showPanelBG: false,
-} as WidgetTheme;
+export default widget;

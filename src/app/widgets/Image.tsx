@@ -1,8 +1,8 @@
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps, WidgetTheme } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -29,7 +29,7 @@ interface ImageProps {
 	link: string;
 }
 
-export default function Image(widget: WidgetProps<ImageProps>) {
+function Image(widget: WidgetProps<ImageProps>) {
 	const props = widget.props;
 
 	return (
@@ -42,21 +42,21 @@ export default function Image(widget: WidgetProps<ImageProps>) {
 }
 
 
-Image.title = messages.title;
-Image.description = messages.description;
-
-Image.initialProps = {
-	link: "",
-	image_url: "https://placekitten.com/300/300"
+const widget: WidgetType<ImageProps> = {
+	Component: Image,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 5),
+	initialProps: {
+		link: "",
+		image_url: "https://placekitten.com/300/300"
+	},
+	schema: {
+		image_url: type.string(schemaMessages.imageUrl),
+		link: type.url(schemaMessages.linkUrl, messages.linkHint),
+	},
+	initialTheme: {
+		showPanelBG: false,
+	},
 };
-
-Image.schema = {
-	image_url: type.string(schemaMessages.imageUrl),
-	link: type.url(schemaMessages.linkUrl, messages.linkHint),
-} as Schema<ImageProps>;
-
-Image.defaultSize = new Vector2(5, 5);
-
-Image.initialTheme = {
-	showPanelBG: false,
-} as WidgetTheme;
+export default widget;

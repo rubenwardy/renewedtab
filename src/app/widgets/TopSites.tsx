@@ -2,9 +2,8 @@ import ErrorView from 'app/components/ErrorView';
 import LinkBox, { Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
-import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
+import { defaultLinksThemeSchema, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -46,7 +45,7 @@ function TopSitesImpl(widget: WidgetProps<any>) {
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
-export default function TopSites(widget: WidgetProps<any>) {
+function TopSites(widget: WidgetProps<Record<string, never>>) {
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
 
@@ -68,28 +67,28 @@ export default function TopSites(widget: WidgetProps<any>) {
 }
 
 
-TopSites.title = messages.title;
-TopSites.description = messages.description;
+const widget: WidgetType<Record<string, never>> = {
+	Component: TopSites,
+	title: messages.title,
+	description: messages.description,
+	isBrowserOnly: true,
+	defaultSize: new Vector2(15, 2),
 
-TopSites.isBrowserOnly = true;
+	initialProps: {},
+	schema: {},
 
-TopSites.initialProps = {};
+	initialTheme: {
+		showPanelBG: false,
+		useIconBar: true,
+	},
+	themeSchema: defaultLinksThemeSchema,
 
-TopSites.schema = {};
-
-TopSites.defaultSize = new Vector2(15, 2);
-
-TopSites.themeSchema = defaultLinksThemeSchema;
-
-TopSites.initialTheme = {
-	showPanelBG: false,
-	useIconBar: true,
-} as WidgetTheme;
-
-TopSites.onLoaded = async (widget: Widget<any>) => {
-	if (typeof widget.props.useIconBar !== "undefined") {
-		widget.theme.useIconBar = widget.props.useIconBar;
-		widget.theme.showPanelBG = !widget.props.useIconBar;
-		delete widget.props.useIconBar;
-	}
-}
+	async onLoaded(widget) {
+		if (typeof widget.props.useIconBar !== "undefined") {
+			widget.theme.useIconBar = widget.props.useIconBar;
+			widget.theme.showPanelBG = !widget.props.useIconBar;
+			delete widget.props.useIconBar;
+		}
+	},
+};
+export default widget;

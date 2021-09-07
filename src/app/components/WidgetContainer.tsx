@@ -17,15 +17,15 @@ interface WidgetDialogProps<T> extends WidgetProps<T> {
 
 function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	const intl = useIntl();
-	const themeSchema = getThemeSchemaForWidget(props, props.child);
+	const themeSchema = getThemeSchemaForWidget(props, props.typeDef);
 	const [forceKey, setForce] = useState({});
 	const forceUpdate = () => setForce({});
 
 	const title = intl.formatMessage(
 		{ defaultMessage: "Edit {type}" },
-		{ type: intl.formatMessage(props.child.title) });
+		{ type: intl.formatMessage(props.typeDef.title) });
 
-	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.child, intl),
+	const [schema, error] = usePromise(() => getSchemaForWidget(props, props.typeDef, intl),
 			[props.type, props.id, forceKey]);
 	if (!schema) {
 		return (
@@ -37,7 +37,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	}
 
 	function onChange() {
-		if (typeof props.child.schema == "function") {
+		if (typeof props.typeDef.schema == "function") {
 			forceUpdate();
 		}
 
@@ -50,9 +50,9 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	return (
 		<Modal title={title} wide={isWide} isOpen={true} {...props}>
 			<div className="modal-body">
-				{props.child.editHint &&
+				{props.typeDef.editHint &&
 					<p className="text-muted">
-						<FormattedMessage {...props.child.editHint} />
+						<FormattedMessage {...props.typeDef.editHint} />
 					</p>}
 
 				<Form
@@ -82,7 +82,7 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	const intl = useIntl();
 	const title = intl.formatMessage(
 			{ defaultMessage: "Remove {type}" },
-			{ type: intl.formatMessage(props.child.title) });
+			{ type: intl.formatMessage(props.typeDef.title) });
 	return (
 		<Modal title={title} isOpen={true} {...props}>
 			<div className="modal-body">
@@ -118,13 +118,13 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		return (<WidgetDelete onClose={close} {...props} />);
 	}
 
-	if (typeof browser === "undefined" && props.child.isBrowserOnly === true) {
+	if (typeof browser === "undefined" && props.typeDef.isBrowserOnly === true) {
 		return (
 			<>
 				<div className="widget-strip">
 					<span className="widget-title">
 						<i className="fas fa-grip-vertical mr-3" />
-						<FormattedMessage {...props.child.title} />
+						<FormattedMessage {...props.typeDef.title} />
 					</span>
 					<span className="widget-btns">
 						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
@@ -152,13 +152,13 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		}
 	}
 
-	const Child = props.child;
+	const Child = props.typeDef.Component;
 	return (
 		<div className="widget-inner" onKeyPress={onKeyPress}>
 			<div className="widget-strip">
 				<span className="widget-title">
 					<i className="fas fa-grip-vertical mr-3" />
-					<FormattedMessage {...props.child.title} />
+					<FormattedMessage {...props.typeDef.title} />
 				</span>
 				<span className="widget-btns">
 					<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
-import { WidgetProps } from 'app/Widget';
+import { AutocompleteItem, type } from 'app/utils/Schema';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
@@ -31,7 +31,7 @@ interface WebComicProps {
 	url: string;
 }
 
-export default function WebComic(widget: WidgetProps<WebComicProps>) {
+function WebComic(widget: WidgetProps<WebComicProps>) {
 	const props = widget.props;
 	const [feed, error] = useFeed(props.url, [props.url]);
 
@@ -55,16 +55,17 @@ export default function WebComic(widget: WidgetProps<WebComicProps>) {
 }
 
 
-WebComic.title = messages.title;
-WebComic.description = messages.description;
-
-WebComic.initialProps = {
-	url: "https://xkcd.com/atom.xml"
-};
-
-WebComic.schema = {
-	url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
+const widget: WidgetType<WebComicProps> = {
+	Component: WebComic,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 4),
+	initialProps: {
+		url: "https://xkcd.com/atom.xml"
+	},
+	schema: {
+		url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
 			() => getAPI<AutocompleteItem[]>("webcomics/", {})),
-} as Schema<WebComicProps>;
-
-WebComic.defaultSize = new Vector2(5, 4);
+	},
+};
+export default widget;

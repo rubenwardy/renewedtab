@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useAPI, useElementSize } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
-import { Widget, WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages, FormattedMessage, MessageDescriptor } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
@@ -324,7 +324,7 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 }
 
 
-export default function Weather(widget: WidgetProps<WeatherProps>) {
+function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
 	const unit = props.unit ?? TemperatureUnit.Celsius;
 	const [ref, size] = useElementSize<HTMLDivElement>();
@@ -384,10 +384,15 @@ export default function Weather(widget: WidgetProps<WeatherProps>) {
 }
 
 
-Weather.title = messages.title;
-Weather.description = messages.description;
+const displaySchema: Schema<WeatherDisplay> = {
+	showCurrent: type.boolean(messages.showCurrent),
+	showDetails: type.boolean(messages.showDetails),
+	useDetailsIcons: type.boolean(messages.useDetailsIcons),
+	showHourlyForecast: type.boolean(messages.showHourlyForecast),
+	showDailyForecast: type.boolean(messages.showDailyForecast),
+};
 
-Weather.initialProps = {
+const initialProps: WeatherProps = {
 	location: {
 		name: "Bristol",
 		latitude: 51.454514,
@@ -401,27 +406,25 @@ Weather.initialProps = {
 		useDetailsIcons: true,
 		showHourlyForecast: false,
 		showDailyForecast: true,
+	},
+};
+
+
+const widget: WidgetType<WeatherProps> = {
+	Component: Weather,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 3),
+	initialProps: initialProps,
+	schema: {
+		location: type.location(schemaMessages.location),
+		unit: type.selectEnum(TemperatureUnit, temperatureUnitMessages, messages.temperatureUnit),
+		windSpeedUnit: type.selectEnum(SpeedUnit, speedUnitMessages, messages.windSpeedUnit),
+		display: type.subform(displaySchema, messages.display),
+	},
+
+	async onLoaded(widget) {
+		widget.props = { ...deepCopy(initialProps), ...widget.props };
 	}
-} as WeatherProps;
-
-
-const displaySchema: Schema<WeatherDisplay> = {
-	showCurrent: type.boolean(messages.showCurrent),
-	showDetails: type.boolean(messages.showDetails),
-	useDetailsIcons: type.boolean(messages.useDetailsIcons),
-	showHourlyForecast: type.boolean(messages.showHourlyForecast),
-	showDailyForecast: type.boolean(messages.showDailyForecast),
 };
-
-Weather.schema = {
-	location: type.location(schemaMessages.location),
-	unit: type.selectEnum(TemperatureUnit, temperatureUnitMessages, messages.temperatureUnit),
-	windSpeedUnit: type.selectEnum(SpeedUnit, speedUnitMessages, messages.windSpeedUnit),
-	display: type.subform(displaySchema, messages.display),
-} as Schema<WeatherProps>;
-
-Weather.defaultSize = new Vector2(5, 3);
-
-Weather.onLoaded = async (widget: Widget<WeatherProps>) => {
-	widget.props = { ...deepCopy(Weather.initialProps), ...widget.props };
-};
+export default widget;

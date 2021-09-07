@@ -2,10 +2,9 @@ import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
 import { useWidgetProp } from "app/hooks/widget";
-import Schema from "app/utils/Schema";
 import uuid from "app/utils/uuid";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetProps } from "app/Widget";
+import { WidgetProps, WidgetType } from "app/Widget";
 import React, { ChangeEvent, useState } from "react";
 import { defineMessages, useIntl } from "react-intl";
 
@@ -74,7 +73,7 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 }
 
 
-export default function TodoList(widget: WidgetProps<TodoListProps>) {
+function TodoList(widget: WidgetProps<TodoListProps>) {
 	const [list, setList] = useWidgetProp<TodoItemData[]>(widget, "list");
 	const [newItemText, setNewItemText] = useState<string>("");
 	const intl = useIntl();
@@ -119,15 +118,15 @@ export default function TodoList(widget: WidgetProps<TodoListProps>) {
 }
 
 
-TodoList.title = messages.title;
-TodoList.description = messages.description;
-
-TodoList.editHint = messages.editHint;
-
-TodoList.initialProps = {
-	list: [],
-} as TodoListProps;
-
-TodoList.schema = {};
-
-TodoList.defaultSize = new Vector2(5, 4);
+const widget: WidgetType<TodoListProps> = {
+	Component: TodoList,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+	defaultSize: new Vector2(5, 4),
+	initialProps: {
+		list: [],
+	},
+	schema: {},
+};
+export default widget;

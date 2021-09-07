@@ -2,9 +2,9 @@ import ErrorView from 'app/components/ErrorView';
 import LinkBox, { Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetTheme } from 'app/Widget';
+import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetType } from 'app/Widget';
 import UserError from 'app/utils/UserError';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
@@ -111,7 +111,7 @@ function BookmarksImpl(widget: WidgetProps<BookmarksProps>) {
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
-export default function Bookmarks(widget: WidgetProps<BookmarksProps>) {
+function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
 
@@ -133,32 +133,33 @@ export default function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 }
 
 
-Bookmarks.title = messages.title;
-Bookmarks.description = messages.description;
+const widget: WidgetType<BookmarksProps> = {
+	Component: Bookmarks,
 
-Bookmarks.isBrowserOnly = true;
+	title: messages.title,
+	description: messages.description,
 
-Bookmarks.initialProps = {
-	includeFolders: false,
-};
+	isBrowserOnly: true,
 
-Bookmarks.schema = {
-	includeFolders: type.boolean(messages.includeFolders),
-} as Schema<BookmarksProps>;
+	defaultSize: new Vector2(15, 2),
+	initialProps: {
+		includeFolders: false,
+	},
+	schema: {
+		includeFolders: type.boolean(messages.includeFolders),
+	},
+	initialTheme: {
+		showPanelBG: false,
+		useIconBar: true,
+	},
+	themeSchema: defaultLinksThemeSchema,
 
-Bookmarks.defaultSize = new Vector2(15, 2);
-
-Bookmarks.themeSchema = defaultLinksThemeSchema;
-
-Bookmarks.initialTheme = {
-	showPanelBG: false,
-	useIconBar: true,
-} as WidgetTheme;
-
-Bookmarks.onLoaded = async (widget: Widget<any>) => {
-	if (typeof widget.props.useIconBar !== "undefined") {
-		widget.theme.useIconBar = widget.props.useIconBar;
-		widget.theme.showPanelBG = !widget.props.useIconBar;
-		delete widget.props.useIconBar;
+	async onLoaded(widget: Widget<any>) {
+		if (typeof widget.props.useIconBar !== "undefined") {
+			widget.theme.useIconBar = widget.props.useIconBar;
+			widget.theme.showPanelBG = !widget.props.useIconBar;
+			delete widget.props.useIconBar;
+		}
 	}
-}
+};
+export default widget;

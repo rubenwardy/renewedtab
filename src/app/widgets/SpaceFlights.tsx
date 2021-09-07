@@ -1,10 +1,9 @@
 import React from 'react';
 import { useAPI } from 'app/hooks';
 import { Vector2 } from 'app/utils/Vector2';
-import Schema from 'app/utils/Schema';
 import { defineMessages, FormattedMessage, IntlShape, useIntl } from 'react-intl';
 import Panel from 'app/components/Panel';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import ErrorView from 'app/components/ErrorView';
 import SpaceLaunch from 'common/api/SpaceLaunch';
 
@@ -97,7 +96,7 @@ function renderDate(intl: IntlShape, launch: SpaceLaunch): string {
 }
 
 
-export default function SpaceFlights(widget: WidgetProps<any>) {
+function SpaceFlights(widget: WidgetProps<any>) {
 	const intl = useIntl();
 	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
 	if (!data) {
@@ -140,13 +139,13 @@ export default function SpaceFlights(widget: WidgetProps<any>) {
 }
 
 
-SpaceFlights.title = messages.title;
-SpaceFlights.description = messages.description;
-
-SpaceFlights.editHint = messages.editHint;
-
-SpaceFlights.initialProps = {};
-
-SpaceFlights.schema = {};
-
-SpaceFlights.defaultSize = new Vector2(5, 4);
+const widget: WidgetType<Record<string, never>> = {
+	Component: SpaceFlights,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+	defaultSize: new Vector2(5, 4),
+	initialProps: {},
+	schema: {},
+};
+export default widget;

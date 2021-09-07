@@ -1,9 +1,9 @@
 import Meter from 'app/components/Meter';
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { themeMessages, WidgetProps, WidgetTheme } from 'app/Widget';
+import { themeMessages, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -21,8 +21,7 @@ const messages = defineMessages({
 });
 
 
-
-export default function YearProgress(widget: WidgetProps<any>) {
+function YearProgress(widget: WidgetProps<any>) {
 	const now = new Date();
 	const start = new Date(now.getFullYear(), 0, 0);
 	const diff = (now.valueOf() - start.valueOf()) +
@@ -37,20 +36,22 @@ export default function YearProgress(widget: WidgetProps<any>) {
 		</Panel>);
 }
 
-YearProgress.title = messages.title;
-YearProgress.description = messages.description;
 
-YearProgress.initialProps = {};
-YearProgress.schema = {};
+const widget: WidgetType<Record<string, never>> = {
+	Component: YearProgress,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 1),
+	initialProps: {},
+	schema: {},
 
-YearProgress.defaultSize = new Vector2(5, 1);
-
-YearProgress.initialTheme = {
-	showPanelBG: false,
-	color: "",
-} as WidgetTheme;
-
-YearProgress.themeSchema = {
-	showPanelBG: type.boolean(themeMessages.showPanelBG),
-	color: type.color(schemaMessages.color),
-} as Schema<WidgetTheme>;
+	initialTheme: {
+		showPanelBG: false,
+		color: "",
+	},
+	themeSchema: {
+		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		color: type.color(schemaMessages.color),
+	}
+};
+export default widget;

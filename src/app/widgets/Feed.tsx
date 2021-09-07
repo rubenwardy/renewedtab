@@ -1,7 +1,7 @@
 import React from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
-import { Widget, WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
@@ -64,7 +64,7 @@ interface FeedProps {
 	filters: Filter[];
 }
 
-export default function Feed(widget: WidgetProps<FeedProps>) {
+function Feed(widget: WidgetProps<FeedProps>) {
 	const props = widget.props;
 
 	const [feed, error] = useFeed(props.url, [props.url]);
@@ -108,31 +108,32 @@ export default function Feed(widget: WidgetProps<FeedProps>) {
 }
 
 
-Feed.title = messages.title;
-Feed.description = messages.description;
-
-Feed.initialProps = {
-	title: "",
-	url: "https://feeds.bbci.co.uk/news/rss.xml",
-	filters: [],
-};
-
-
 const filterSchema: Schema<Filter> = {
 	isAllowed: type.select({ false: "Hide", true: "Allow" },
 		{ false: messages.hide, true: messages.show }, messages.isAllowed),
 	text: type.string(schemaMessages.text),
 };
 
-Feed.schema = {
-	title: type.string(schemaMessages.title, messages.titleHint),
-	url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
-			() => getAPI<AutocompleteItem[]>("feeds/", {})),
-	filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
-} as Schema<FeedProps>;
 
-Feed.defaultSize = new Vector2(5, 4);
+const widget: WidgetType<FeedProps> = {
+	Component: Feed,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 4),
+	initialProps: {
+		title: "",
+		url: "https://feeds.bbci.co.uk/news/rss.xml",
+		filters: [],
+	},
+	schema: {
+		title: type.string(schemaMessages.title, messages.titleHint),
+		url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
+				() => getAPI<AutocompleteItem[]>("feeds/", {})),
+		filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
+	},
 
-Feed.onLoaded = async (widget: Widget<FeedProps>) => {
-	widget.props.filters = widget.props.filters ?? [];
-}
+	async onLoaded(widget) {
+		widget.props.filters = widget.props.filters ?? [];
+	},
+};
+export default widget;

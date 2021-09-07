@@ -2,13 +2,11 @@ import React from "react";
 import Form, { FormProps } from "./Form";
 import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
-import Schema, { SchemaEntry, UncheckedSchema } from "app/utils/Schema";
+import { UncheckedSchema } from "app/utils/Schema";
 import { useForceUpdate } from "app/hooks";
 import { FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { miscMessages } from "app/locale/common";
-
-
 
 
 interface RowProps<T extends { id: string }> extends FormProps<T> {

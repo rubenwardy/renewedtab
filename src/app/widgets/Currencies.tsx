@@ -3,7 +3,7 @@ import Panel from 'app/components/Panel';
 import { buildAPIURL, useAPI } from 'app/hooks';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import { calculateExchangeRate, CurrencyInfo } from 'common/api/currencies';
 import { compareString } from 'common/utils/string';
 import React, { useMemo } from 'react';
@@ -53,7 +53,7 @@ interface CurrenciesProps {
 }
 
 
-export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
+function Currencies(widget: WidgetProps<CurrenciesProps>) {
 	const rates = useMemo(
 		() => widget.props.rates.filter(rate => rate.from != "" && rate.to != ""),
 		[ widget.props.rates.length ]);
@@ -98,45 +98,45 @@ export default function Currencies(widget: WidgetProps<CurrenciesProps>) {
 }
 
 
-Currencies.title = messages.title;
-Currencies.description = messages.description;
-Currencies.editHint = messages.editHint;
+const widget: WidgetType<CurrenciesProps> = {
+	Component: Currencies,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+	defaultSize: new Vector2(5, 3),
+	initialProps: {
+		rates: [
+			{ from: "GBP", to: "EUR" },
+			{ from: "BTC", to: "USD" },
+		]
+	},
 
-Currencies.initialProps = {
-	rates: [
-		{ from: "GBP", to: "EUR" },
-		{ from: "BTC", to: "USD" },
-	]
-} as CurrenciesProps;
+	async schema() {
+		const url = buildAPIURL("/currencies/");
+		const response = await fetch(new Request(url.toString(), {
+			method: "GET",
+			headers: {
+				"Accept": "application/json",
+			},
+		}));
 
+		const json = await response.json() as Record<string, CurrencyInfo>;
+		const currencyOptions: Record<string, string> = {};
+		currencyOptions[""] = "";
+		Object.entries(json)
+			.sort((a, b) => compareString(a[0], b[0]))
+			.forEach(([key, value]) => {
+				currencyOptions[key] = `${value.code}: ${value.description}`;
+			});
 
-Currencies.schema = async () => {
-	const url = buildAPIURL("/currencies/");
-	const response = await fetch(new Request(url.toString(), {
-		method: "GET",
-		headers: {
-			"Accept": "application/json",
-		},
-	}));
+		const rateSchema: Schema<CurrenciesProps["rates"][number]> = {
+			from: type.select(currencyOptions, undefined, messages.from),
+			to: type.select(currencyOptions, undefined, messages.to),
+		};
 
-	const json = await response.json() as Record<string, CurrencyInfo>;
-	const currencyOptions: Record<string, string> = {};
-	currencyOptions[""] = "";
-	Object.entries(json)
-		.sort((a, b) => compareString(a[0], b[0]))
-		.forEach(([key, value]) => {
-			currencyOptions[key] = `${value.code}: ${value.description}`;
-		});
-
-	const rateSchema: Schema<CurrenciesProps["rates"][number]> = {
-		from: type.select(currencyOptions, undefined, messages.from),
-		to: type.select(currencyOptions, undefined, messages.to),
-	};
-
-	return {
-		rates: type.array(rateSchema, messages.rates),
-	};
-}
-
-
-Currencies.defaultSize = new Vector2(5, 3);
+		return {
+			rates: type.array(rateSchema, messages.rates),
+		};
+	},
+};
+export default widget;

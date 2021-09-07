@@ -1,6 +1,5 @@
-import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetTheme } from 'app/Widget';
+import { WidgetType } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 
 
@@ -17,22 +16,20 @@ const messages = defineMessages({
 })
 
 
-export default function Invisible(): (JSX.Element | null) {
+function Invisible(): (JSX.Element | null) {
 	return null;
 }
 
 
-Invisible.title = messages.title;
-Invisible.description = messages.description;
-
-Invisible.initialProps = {};
-
-Invisible.schema = {};
-
-Invisible.defaultSize = new Vector2(5, 5);
-
-Invisible.initialTheme = {
-	showPanelBG: false,
-} as WidgetTheme;
-
-Invisible.themeSchema = {};
+const widget: WidgetType<Record<string, never>> = {
+	Component: Invisible,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 5),
+	initialProps: {},
+	schema: {},
+	initialTheme: {
+		showPanelBG: false,
+	},
+};
+export default widget;

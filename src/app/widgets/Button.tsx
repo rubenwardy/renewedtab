@@ -1,9 +1,9 @@
 import { schemaMessages } from 'app/locale/common';
 import { clampNumber, mergeClasses } from 'app/utils';
 import Color from 'app/utils/Color';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { themeMessages, WidgetProps, WidgetTheme } from 'app/Widget';
+import { themeMessages, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -30,7 +30,7 @@ interface ButtonProps {
 	text: string;
 }
 
-export default function Button(props: WidgetProps<ButtonProps>)  {
+function Button(props: WidgetProps<ButtonProps>)  {
 	const color = Color.fromString(props.theme.color ?? "") ?? Color.fromString("#007DB8")!;
 	color.a = clampNumber(props.theme.opacity ?? 100, 0, 100) / 100;
 	const style: any = {
@@ -49,30 +49,29 @@ export default function Button(props: WidgetProps<ButtonProps>)  {
 }
 
 
-Button.title = messages.title;
-Button.description = messages.description;
-
-Button.initialProps = {
-	url: "https://rubenwardy.com",
-	text: "rubenwardy.com",
+const widget: WidgetType<ButtonProps> = {
+	Component: Button,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 1),
+	initialProps: {
+		url: "https://rubenwardy.com",
+		text: "rubenwardy.com",
+	},
+	schema: {
+		url: type.url(schemaMessages.url),
+		text: type.string(schemaMessages.text),
+	},
+	initialTheme: {
+		showPanelBG: true,
+		useIconBar: false,
+		color: "#007DB8",
+		opacity: 40,
+	},
+	themeSchema: {
+		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		color: type.color(schemaMessages.color),
+		opacity: type.unit_number(schemaMessages.opacity, "%", messages.tintOpacityHint, 0, 100),
+	},
 };
-
-Button.schema = {
-	url: type.url(schemaMessages.url),
-	text: type.string(schemaMessages.text),
-} as Schema<ButtonProps>;
-
-Button.defaultSize = new Vector2(5, 1);
-
-Button.themeSchema = {
-	showPanelBG: type.boolean(themeMessages.showPanelBG),
-	color: type.color(schemaMessages.color),
-	opacity: type.unit_number(schemaMessages.opacity, "%", messages.tintOpacityHint, 0, 100),
-} as Schema<WidgetTheme>;
-
-Button.initialTheme = {
-	showPanelBG: true,
-	useIconBar: false,
-	color: "#007DB8",
-	opacity: 40,
-} as WidgetTheme;
+export default widget;

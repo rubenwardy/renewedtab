@@ -1,8 +1,8 @@
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps, WidgetTheme } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -24,7 +24,7 @@ interface TextProps
 	text: string;
 }
 
-export default function Text(widget: WidgetProps<TextProps>)  {
+function Text(widget: WidgetProps<TextProps>)  {
 	return (
 		<Panel {...widget.theme}>
 			<div className="medium">
@@ -34,19 +34,19 @@ export default function Text(widget: WidgetProps<TextProps>)  {
 }
 
 
-Text.title = messages.title;
-Text.description = messages.description;
-
-Text.initialProps = {
-	text: "Hello world",
+const widget: WidgetType<TextProps> = {
+	Component: Text,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 1),
+	initialProps: {
+		text: "Hello world",
+	},
+	schema: {
+		text: type.textarea(schemaMessages.text),
+	},
+	initialTheme: {
+		showPanelBG: false,
+	},
 };
-
-Text.schema = {
-	text: type.textarea(schemaMessages.text),
-} as Schema<TextProps>;
-
-Text.defaultSize = new Vector2(5, 1);
-
-Text.initialTheme = {
-	showPanelBG: false,
-} as WidgetTheme;
+export default widget;

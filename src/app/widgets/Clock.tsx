@@ -3,9 +3,9 @@ import { useElementSize } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { enumToValue } from "app/utils/enum";
-import Schema, { type } from "app/utils/Schema";
+import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { themeMessages, Widget, WidgetProps, WidgetTheme } from "app/Widget";
+import { themeMessages, WidgetProps, WidgetType } from "app/Widget";
 import React, { CSSProperties } from "react";
 import { defineMessages, FormattedTime, IntlShape, useIntl } from "react-intl";
 
@@ -107,7 +107,7 @@ interface ClockProps {
 	dateStyle: DateStyle;
 }
 
-export default function Clock(widget: WidgetProps<ClockProps>) {
+function Clock(widget: WidgetProps<ClockProps>) {
 	const props = widget.props;
 	const [time, setTime] = React.useState<Date>(new Date());
 	const intl = useIntl();
@@ -151,54 +151,58 @@ export default function Clock(widget: WidgetProps<ClockProps>) {
 		</Panel>);
 }
 
-Clock.title = messages.title;
-Clock.description = messages.description;
-Clock.editHint = messages.editHint;
 
-Clock.initialProps = {
-	showSeconds: false,
-	hour12: false,
-	dateStyle: DateStyle.None,
+const widget: WidgetType<ClockProps> = {
+	Component: Clock,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+
+	defaultSize: new Vector2(15, 2),
+
+	initialProps: {
+		showSeconds: false,
+		hour12: false,
+		dateStyle: DateStyle.None,
+	},
+
+	initialTheme: {
+		showPanelBG: false,
+		textColor: "#ffffff",
+	},
+	themeSchema: {
+		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		textColor: type.color(schemaMessages.textColor),
+	},
+
+	async schema(_widget, intl) {
+		const dateStyleMessagesWithExamples: Record<string, MyMessageDescriptor> = {};
+		dateStyleMessagesWithExamples[DateStyle.None] = dateStyleMessages[DateStyle.None];
+		Object.entries(dateStyleMessages)
+			.filter(([key]) => parseInt(key) != DateStyle.None)
+			.forEach(([key, value]) => {
+				dateStyleMessagesWithExamples[key] = {
+					...value,
+					values: {
+						example: renderDate(intl, new Date(), parseInt(key)),
+					}
+				} as MyMessageDescriptor;
+			});
+
+		return {
+			showSeconds: type.boolean(messages.showSeconds),
+			hour12: type.boolean(messages.hour12),
+			dateStyle: type.selectEnum(DateStyle, dateStyleMessagesWithExamples, messages.showDate),
+		};
+	},
+
+	async onLoaded(widget) {
+		if (typeof widget.theme.textColor === "undefined") {
+			widget.theme.textColor = "#ffffff";
+		}
+		if (typeof widget.props.dateStyle == "undefined") {
+			widget.props.dateStyle = DateStyle.None;
+		}
+	},
 };
-
-Clock.schema = async (_widget: Widget<any>, intl: IntlShape) => {
-	const dateStyleMessagesWithExamples: Record<string, MyMessageDescriptor> = {};
-	dateStyleMessagesWithExamples[DateStyle.None] = dateStyleMessages[DateStyle.None];
-	Object.entries(dateStyleMessages)
-		.filter(([key]) => parseInt(key) != DateStyle.None)
-		.forEach(([key, value]) => {
-			dateStyleMessagesWithExamples[key] = {
-				...value,
-				values: {
-					example: renderDate(intl, new Date(), parseInt(key)),
-				}
-			} as MyMessageDescriptor;
-		});
-
-	return {
-		showSeconds: type.boolean(messages.showSeconds),
-		hour12: type.boolean(messages.hour12),
-		dateStyle: type.selectEnum(DateStyle, dateStyleMessagesWithExamples, messages.showDate),
-	} as Schema<ClockProps>;
-}
-Clock.defaultSize = new Vector2(15, 2);
-
-Clock.initialTheme = {
-	showPanelBG: false,
-	textColor: "#ffffff",
-} as WidgetTheme;
-
-Clock.themeSchema = {
-	showPanelBG: type.boolean(themeMessages.showPanelBG),
-	textColor: type.color(schemaMessages.textColor),
-} as Schema<WidgetTheme>;
-
-
-Clock.onLoaded = async (widget: Widget<ClockProps>) => {
-	if (typeof widget.theme.textColor === "undefined") {
-		widget.theme.textColor = "#ffffff";
-	}
-	if (typeof widget.props.dateStyle == "undefined") {
-		widget.props.dateStyle = DateStyle.None;
-	}
-};
+export default widget;

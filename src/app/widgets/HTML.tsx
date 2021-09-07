@@ -1,7 +1,7 @@
 import Panel from 'app/components/Panel';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -32,7 +32,7 @@ interface HTMLProps {
 	html: string;
 }
 
-export default function HTML(widget: WidgetProps<HTMLProps>) {
+function HTML(widget: WidgetProps<HTMLProps>) {
 	return (
 		<Panel {...widget.theme} scrolling={false}>
 			<div dangerouslySetInnerHTML={{__html: widget.props.html}} />
@@ -40,14 +40,16 @@ export default function HTML(widget: WidgetProps<HTMLProps>) {
 }
 
 
-HTML.title = messages.title;
-HTML.description = messages.description;
-HTML.initialProps = {
-	html: "Hello <b>World</b>"
+const widget: WidgetType<HTMLProps> = {
+	Component: HTML,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 4),
+	initialProps: {
+		html: "Hello <b>World</b>"
+	},
+	schema: {
+		html: type.textarea(messages.html, messages.htmlHint),
+	},
 };
-
-HTML.schema = {
-	html: type.textarea(messages.html, messages.htmlHint),
-} as Schema<HTMLProps>;
-
-HTML.defaultSize = new Vector2(5, 4);
+export default widget;

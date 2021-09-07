@@ -75,7 +75,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 	const widgets = widgetManager.widgets.map(widget => {
 		const props : WidgetProps<any> = {
 			...widget,
-			child: WidgetTypes[widget.type],
+			typeDef: WidgetTypes[widget.type],
 			save: widgetManager.save.bind(widgetManager),
 			remove: () => handleRemove(widget.id)
 		};

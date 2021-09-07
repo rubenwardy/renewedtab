@@ -77,7 +77,6 @@ function Icon(props: IconProps) {
 
 
 export interface LinkBoxProps {
-	widgetTheme: WidgetTheme;
 	links: Link[];
 	useWebsiteIcons?: boolean;
 	defaultIcon?: string;
@@ -86,7 +85,7 @@ export interface LinkBoxProps {
 }
 
 
-export default function LinkBox(props: LinkBoxProps)  {
+export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme })  {
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 

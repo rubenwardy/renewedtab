@@ -2,9 +2,8 @@ import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
 import { useWidgetProp } from "app/hooks/widget";
-import Schema from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { WidgetProps, WidgetTheme } from "app/Widget";
+import { WidgetProps, WidgetType } from "app/Widget";
 import React, { ChangeEvent, useEffect } from "react";
 import { defineMessages, useIntl } from "react-intl";
 
@@ -41,7 +40,7 @@ interface DailyGoalProps {
 }
 
 
-export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
+function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 	const [goal, setGoal] = useWidgetProp<Goal | undefined>(widget, "goal");
 
 	useEffect(() => {
@@ -77,17 +76,16 @@ export default function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 }
 
 
-DailyGoal.title = messages.title;
-DailyGoal.description = messages.description;
-
-DailyGoal.editHint = messages.editHint;
-
-DailyGoal.initialProps = {};
-
-DailyGoal.schema = {};
-
-DailyGoal.defaultSize = new Vector2(15, 1);
-
-DailyGoal.initialTheme = {
-	showPanelBG: false,
-} as WidgetTheme;
+const widget: WidgetType<DailyGoalProps> = {
+	Component: DailyGoal,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+	defaultSize: new Vector2(15, 1),
+	initialProps: {},
+	schema: {},
+	initialTheme: {
+		showPanelBG: false,
+	},
+};
+export default widget;

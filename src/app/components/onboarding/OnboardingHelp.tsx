@@ -11,7 +11,7 @@ import { WidgetContainer } from "../WidgetContainer";
 export default function OnboardingHelp() {
 	const Notes = WidgetTypes["Notes"];
 	const fakeWidget = useMemo<WidgetProps<NotesProps>>(() => ({
-		child: Notes,
+		typeDef: Notes,
 		save: () => {},
 		remove: () => {},
 		id: 3,

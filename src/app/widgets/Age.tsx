@@ -1,8 +1,8 @@
 import Panel from 'app/components/Panel';
 import { calculateDecimalAge } from 'app/utils/dates';
-import Schema, { type } from 'app/utils/Schema';
+import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React, { useEffect, useState } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
@@ -35,7 +35,7 @@ interface AgeProps {
 }
 
 
-export default function Age(widget: WidgetProps<AgeProps>) {
+function Age(widget: WidgetProps<AgeProps>) {
 	const props = widget.props;
 
 	const [age, setAge] = useState(calculateDecimalAge(props.birthDate));
@@ -60,15 +60,17 @@ export default function Age(widget: WidgetProps<AgeProps>) {
 		</Panel>);
 }
 
-Age.title = messages.title;
-Age.description = messages.description;
 
-Age.initialProps = {
-	birthDate: new Date("1997-01-01")
+const widget: WidgetType<AgeProps> = {
+	Component: Age,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 1),
+	initialProps: {
+		birthDate: new Date("1997-01-01"),
+	},
+	schema: {
+		birthDate: type.date(messages.birth_date),
+	},
 };
-
-Age.schema = {
-	birthDate: type.date(messages.birth_date),
-} as Schema<AgeProps>;
-
-Age.defaultSize = new Vector2(5, 1);
+export default widget;

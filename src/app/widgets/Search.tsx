@@ -1,9 +1,9 @@
 import Panel from "app/components/Panel";
 import { usePromise } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
-import Schema, { type } from "app/utils/Schema";
+import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { Widget, WidgetProps } from "app/Widget";
+import { WidgetProps, WidgetType } from "app/Widget";
 import React, { useRef } from "react";
 import { defineMessages, useIntl } from "react-intl";
 
@@ -85,7 +85,7 @@ async function getBrowserSearchEngineName(): Promise<string> {
 }
 
 
-export default function Search(widget: WidgetProps<SearchProps>) {
+function Search(widget: WidgetProps<SearchProps>) {
 	const props = widget.props;
 	const intl = useIntl();
 
@@ -139,40 +139,42 @@ export default function Search(widget: WidgetProps<SearchProps>) {
 }
 
 
-Search.title = messages.title;
-Search.description = messages.description;
+const widget: WidgetType<SearchProps> = {
+	Component: Search,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(15, 1),
+	initialProps: {
+		useBrowserEngine: true,
+		searchTitle: "Google",
+		searchURL: "https://google.com/search",
+	},
 
-Search.initialProps = {
-	useBrowserEngine: true,
-	searchTitle: "Google",
-	searchURL: "https://google.com/search",
+	onCreated(widget) {
+		if (!hasSearchAPI) {
+			widget.props.searchTitle = "Google";
+			widget.props.searchURL = "https://google.com/search";
+		}
+	},
+
+	async schema(widget) {
+		if (!hasSearchAPI) {
+			return {
+				searchTitle: type.string(messages.searchTitle),
+				searchURL: type.url(schemaMessages.url),
+			};
+		} else if (widget.props.useBrowserEngine) {
+			return {
+				useBrowserEngine: type.boolean(messages.useBrowserDefault),
+			};
+		} else {
+			return {
+				useBrowserEngine: type.boolean(messages.useBrowserDefault),
+				searchTitle: type.string(messages.searchTitle),
+				searchURL: type.url(schemaMessages.url),
+			};
+		}
+	},
+
 };
-
-Search.schema = async (widget: Widget<SearchProps>): Promise<Schema<SearchProps>> => {
-	if (!hasSearchAPI) {
-		return {
-			searchTitle: type.string(messages.searchTitle),
-			searchURL: type.url(schemaMessages.url),
-		};
-	} else if (widget.props.useBrowserEngine) {
-		return {
-			useBrowserEngine: type.boolean(messages.useBrowserDefault),
-		};
-	} else {
-		return {
-			useBrowserEngine: type.boolean(messages.useBrowserDefault),
-			searchTitle: type.string(messages.searchTitle),
-			searchURL: type.url(schemaMessages.url),
-		};
-	}
-}
-
-
-Search.defaultSize = new Vector2(15, 1);
-
-Search.onCreated = (widget: Widget<SearchProps>) => {
-	if (!hasSearchAPI) {
-		widget.props.searchTitle = "Google";
-		widget.props.searchURL = "https://google.com/search";
-	}
-}
+export default widget;

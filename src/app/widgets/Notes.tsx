@@ -1,9 +1,7 @@
 import Panel from 'app/components/Panel';
 import { useWidgetProp } from 'app/hooks/widget';
-import { storage } from 'app/Storage';
-import Schema from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { Widget, WidgetProps } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -29,7 +27,7 @@ export interface NotesProps {
 	notes: string;
 }
 
-export default function Notes(widget: WidgetProps<NotesProps>) {
+function Notes(widget: WidgetProps<NotesProps>) {
 	const [ notes, setNotes ] = useWidgetProp<string>(widget, "notes");
 
 	function handleChange(event: React.FormEvent<HTMLTextAreaElement>) {
@@ -47,26 +45,14 @@ export default function Notes(widget: WidgetProps<NotesProps>) {
 }
 
 
-Notes.title = messages.title;
-Notes.description = messages.description;
-
-Notes.initialProps = {
-	notes: "",
+const widget: WidgetType<NotesProps> = {
+	Component: Notes,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 2),
+	initialProps: {
+		notes: ""
+	},
+	schema: {},
 };
-
-Notes.onLoaded = async (widget: Widget<any>) => {
-	if (widget.props.storageKey &&
-			(widget.props.notes == undefined || widget.props.notes === "")) {
-		widget.props.notes = "";
-
-		const value = await storage.get(widget.props.storageKey);
-		if (typeof value == "string") {
-			widget.props.notes = value;
-			delete widget.props.storageKey;
-		}
-	}
-}
-
-Notes.schema = {};
-
-Notes.defaultSize = new Vector2(5, 2);
+export default widget;

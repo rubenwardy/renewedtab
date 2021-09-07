@@ -2,9 +2,9 @@ import ErrorView from "app/components/ErrorView";
 import Panel from "app/components/Panel";
 import { useAPI } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
-import Schema, { type } from "app/utils/Schema";
+import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { themeMessages, WidgetProps, WidgetTheme } from "app/Widget";
+import { themeMessages, WidgetProps, WidgetType } from "app/Widget";
 import { Quote } from "common/api/quotes";
 import React from "react";
 import { defineMessages } from "react-intl";
@@ -33,7 +33,7 @@ interface QuotesProps {
 }
 
 
-export default function Quotes(widget: WidgetProps<QuotesProps>) {
+function Quotes(widget: WidgetProps<QuotesProps>) {
 	const categories = Object.entries(widget.props.categories)
 		.filter(([, value]) => value)
 		.map(([key,]) => key);
@@ -63,31 +63,31 @@ export default function Quotes(widget: WidgetProps<QuotesProps>) {
 		</Panel>);
 }
 
-Quotes.title = messages.title;
-Quotes.description = messages.description;
-Quotes.editHint = messages.editHint;
 
-Quotes.initialProps = {
-	categories: {
-		"inspire": true,
-		"life": true,
-		"love": true,
-		"funny": true
-	}
-} as QuotesProps;
-
-Quotes.schema = {
-	categories: type.quoteCategories(schemaMessages.categories),
-} as Schema<QuotesProps>;
-
-Quotes.defaultSize = new Vector2(15, 2);
-
-Quotes.initialTheme = {
-	showPanelBG: false,
-	textColor: "#ffffff",
-} as WidgetTheme;
-
-Quotes.themeSchema = {
-	showPanelBG: type.boolean(themeMessages.showPanelBG),
-	textColor: type.color(schemaMessages.textColor),
-} as Schema<WidgetTheme>;
+const widget: WidgetType<QuotesProps> = {
+	Component: Quotes,
+	title: messages.title,
+	description: messages.description,
+	editHint: messages.editHint,
+	defaultSize: new Vector2(15, 2),
+	initialProps: {
+		categories: {
+			"inspire": true,
+			"life": true,
+			"love": true,
+			"funny": true
+		}
+	},
+	schema: {
+		categories: type.quoteCategories(schemaMessages.categories),
+	},
+	initialTheme: {
+		showPanelBG: false,
+		textColor: "#ffffff",
+	},
+	themeSchema: {
+		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		textColor: type.color(schemaMessages.textColor),
+	},
+};
+export default widget;
