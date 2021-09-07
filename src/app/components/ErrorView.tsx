@@ -39,13 +39,18 @@ export default function ErrorView(props: ErrorViewProps) {
 		}
 	}
 
-	let msg = props.error;
-	if (msg instanceof UserError && msg.messageDescriptor) {
-		msg = myFormatMessage(intl, msg.messageDescriptor);
-	} else if (msg instanceof Error || typeof (msg as any).message != "undefined") {
-		msg = (msg as any).message;
-	} else if (typeof (msg as any).toString == "function") {
-		msg = msg.toString();
+	let msg: string
+	if (typeof props.error == "object") {
+		if ("messageDescriptor" in props.error) {
+			msg = myFormatMessage(intl, props.error.messageDescriptor!);
+		} else if ("message" in props.error) {
+			msg = props.error.message;
+		} else {
+			console.error(props.error);
+			throw new Error("Unknown error value!");
+		}
+	} else {
+		msg = props.error;
 	}
 
 	return (
