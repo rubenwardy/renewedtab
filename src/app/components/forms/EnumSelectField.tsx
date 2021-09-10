@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useIntl } from "react-intl";
 import { FieldProps } from ".";
 
-export default function EnumSelectField(props: FieldProps<any>) {
+export default function EnumSelectField(props: FieldProps<string | number>) {
 	const Enum = props.schemaEntry.values;
 	const [value, setValue] = useState(props.value);
 	const intl = useIntl();

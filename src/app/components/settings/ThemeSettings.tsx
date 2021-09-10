@@ -99,8 +99,8 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 		() => Object.assign({}, defaults, props.theme),
 		[ props.theme ]);
 
-	function handleOnChange(key: string, value: any) {
-		(props.theme as any)[key] = value;
+	function handleOnChange(key: keyof ThemeConfig, value: any) {
+		props.theme![key] = value;
 		props.setTheme(props.theme!);
 	}
 

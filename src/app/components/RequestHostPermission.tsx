@@ -11,7 +11,7 @@ const messages = defineMessages({
 	}
 })
 
-function makeHostPermission(host: string): any {
+function makeHostPermission(host: string): browser.permissions.Permissions {
 	return {
 		origins: [`*://${host}/*`]
 	}

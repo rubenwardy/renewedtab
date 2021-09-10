@@ -11,18 +11,18 @@ import deepCopy from "./utils/deepcopy";
 export class WidgetManager {
 	private id_counter = 0;
 
-	widgets: (Widget<any>)[] = [];
+	widgets: (Widget<unknown>)[] = [];
 
 	constructor(private storage: IStorage) {}
 
 	async load() {
-		const json = await this.storage.get<Widget<any>[]>("widgets");
+		const json = await this.storage.get<Widget<unknown>[]>("widgets");
 		if (!json) {
 			this.widgets = [];
 			return;
 		}
 
-		this.widgets = json.filter((widget: Widget<any>) => WidgetTypes[widget.type]);
+		this.widgets = json.filter((widget: Widget<unknown>) => WidgetTypes[widget.type]);
 		this.id_counter =
 			this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 
@@ -79,7 +79,7 @@ export class WidgetManager {
 		this.save();
 	}
 
-	createFromArray(widgets: any[]): Widget<any>[] {
+	createFromArray(widgets: any[]): Widget<unknown>[] {
 		return widgets.map(widgetData => {
 			const widget = this.createWidget(widgetData.type);
 			widget.position = widgetData.position ?? undefined;

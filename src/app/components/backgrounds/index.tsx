@@ -21,7 +21,7 @@ interface BackgroundCache {
 }
 
 
-function loadFromCache(key: string, provider: BackgroundProvider<unknown>): (BackgroundCache | undefined) {
+function loadFromCache(key: string, provider: BackgroundProvider<any>): (BackgroundCache | undefined) {
 	if (!provider.enableCaching) {
 		return undefined;
 	}
@@ -60,7 +60,7 @@ function isNotExpired(fetchedAt: Date, expiry: CacheExpiry) {
 }
 
 
-async function updateBackground(key: string, provider: BackgroundProvider<unknown>, values: any): Promise<ActualBackgroundProps | undefined> {
+async function updateBackground<T>(key: string, provider: BackgroundProvider<T>, values: T): Promise<ActualBackgroundProps | undefined> {
 	const retval = await provider.get(values);
 	if (retval && provider.enableCaching) {
 		console.log("Filling background cache from provider");
@@ -76,7 +76,7 @@ async function updateBackground(key: string, provider: BackgroundProvider<unknow
 }
 
 
-async function loadBackground(provider: BackgroundProvider<unknown>, values: any): Promise<ActualBackgroundProps | undefined> {
+async function loadBackground(provider: BackgroundProvider<any>, values: any): Promise<ActualBackgroundProps | undefined> {
 	const key = `${provider.id}:${JSON.stringify(toTypedJSON(values))}`;
 	const cache = loadFromCache(key, provider);
 	if (cache && values.cacheExpiry && isNotExpired(cache.fetchedAt, values.cacheExpiry ?? CacheExpiry.Hourly)) {

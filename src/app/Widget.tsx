@@ -141,7 +141,7 @@ export async function getSchemaForWidget<T>(widget: Widget<T>,
  * @param type Widget type
  * @returns theme
  */
-export function getInitialTheme(type: WidgetType<any>): WidgetTheme {
+export function getInitialTheme(type: WidgetType<unknown>): WidgetTheme {
 	if (typeof type.initialTheme !== "undefined") {
 		return type.initialTheme;
 	}

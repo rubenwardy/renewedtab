@@ -32,7 +32,7 @@ export default class WidgetLayouter {
 		}
 	}
 
-	add(widget: Widget<any>) {
+	add(widget: Widget<unknown>) {
 		if (!widget.position ||
 				this.hasWidget(new Rect2(widget.position, widget.size))) {
 			if (widget.position) {
@@ -44,7 +44,7 @@ export default class WidgetLayouter {
 		this.rects.push(new Rect2(widget.position, widget.size));
 	}
 
-	resolveAll(widgets: Widget<any>[]) {
+	resolveAll(widgets: Widget<unknown>[]) {
 		widgets.filter(widget => widget.position).forEach(this.add.bind(this));
 		widgets.filter(widget => !widget.position).forEach(this.add.bind(this));
 	}

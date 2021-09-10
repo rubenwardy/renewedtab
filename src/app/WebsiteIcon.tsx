@@ -45,8 +45,8 @@ async function fetchIconURL(url: string): Promise<string> {
 function blobToDataURL(blob: Blob): Promise<string> {
 	return new Promise((resolve) => {
 		const reader = new FileReader();
-		reader.onload = (e: any) => {
-			resolve(e.target.result);
+		reader.onload = (e: ProgressEvent<FileReader>) => {
+			resolve(e.target!.result as string);
 		}
 		reader.readAsDataURL(blob);
 	})

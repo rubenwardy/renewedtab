@@ -112,10 +112,10 @@ export function buildAPIURL(path: string, args?: Record<string, any>): URL {
 	Object.entries(args ?? {}).forEach(([key, value]) => {
 		if (value instanceof Array) {
 			value.forEach(single => {
-				url.searchParams.append(key.toString(), (single as any).toString());
+				url.searchParams.append(key.toString(), single.toString());
 			});
 		} else {
-			url.searchParams.set(key.toString(), (value as any).toString());
+			url.searchParams.set(key.toString(), value.toString());
 		}
 	});
 	return url;
@@ -190,7 +190,8 @@ export async function fetchFeed(url: string): Promise<Feed> {
 
 	const data = await fetchXML(makeProxy(url));
 
-	const feed = parseFeed(data.children[0], (s, l) => new window.DOMParser().parseFromString(s, l as any));
+	const feed = parseFeed(data.children[0],
+		(s, l) => new window.DOMParser().parseFromString(s, l as any));
 	if (!feed) {
 		throw new UserError(messages.errorLoadingFeed);
 	}

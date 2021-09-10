@@ -12,7 +12,7 @@ export function useForceUpdate(): () => void {
 }
 
 
-export function useForceUpdateValue(): [any, () => void] {
+export function useForceUpdateValue(): [unknown, () => void] {
 	const [force, setForce] = useState({});
 	return [force, () => setForce({})];
 }
