@@ -980,5 +980,76 @@
     "TS11GJ": {
         "message": "Imej rawak daripada suapan RSS atau Atom",
         "description": "Backgroud mode description"
+    },
+    "+sI+Oh": {
+        "message": "Tunjuk ramalan sejam sekali",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "UV <b>Sangat Tinggi</b>",
+        "description": "Very High UV risk"
+    },
+    "BiPNnl": {
+        "message": "Unit Kelajuan Angin",
+        "description": "Weather widget: form field label"
+    },
+    "HEvlTB": {
+        "message": "Pilihan Paparan",
+        "description": "Weather widget: display subform title"
+    },
+    "JN/uvd": {
+        "message": "UV <b>Sederhana</b>",
+        "description": "Moderate UV risk"
+    },
+    "SlsfFk": {
+        "message": "Angin <b>{speed}</b>",
+        "description": "Weather widget: wind speed value"
+    },
+    "Upkn1Q": {
+        "message": "UV <b>Tinggi</b>",
+        "description": "High UV risk"
+    },
+    "W3zKGr": {
+        "message": "Kilometer per jam (km/j)",
+        "description": "Weather widget: Speed unit"
+    },
+    "XrcwAv": {
+        "message": "Guna ikon untuk maklumat lanjut",
+        "description": "Weather widget: form field label"
+    },
+    "abwneZ": {
+        "message": "Meter per saat (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "ckvzIb": {
+        "message": "UV <b>Rendah</b>",
+        "description": "Low UV risk"
+    },
+    "hCBQrY": {
+        "message": "Rasa macam <b>{temp}°</b>"
+    },
+    "mL3MOs": {
+        "message": "Batu sejam (bsj)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mw6Uh+": {
+        "message": "Tunjuk ramalan harian",
+        "description": "Weather widget: form field label"
+    },
+    "pqIuCa": {
+        "message": "Tunjuk cuaca semasa",
+        "description": "Weather widget: form field label"
+    },
+    "rYprNW": {
+        "message": "Tunjuk maklumat cuaca semasa",
+        "description": "Weather widget: form field label"
+    },
+    "sl3V8S": {
+        "message": "Kelembapan <b>{humidity}%</b>",
+        "description": "Weather widget: humidity value"
+    },
+    "zaQRTm": {
+        "message": "UV <b>Melampau</b>",
+        "description": "Extreme UV risk"
     }
 }
