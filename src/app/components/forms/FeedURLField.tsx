@@ -1,18 +1,12 @@
-import { useCache, useForceUpdate, usePromise } from "app/hooks";
+import { useCache, usePromise } from "app/hooks";
 import { AutocompleteItem } from "app/utils/Schema";
-import { clearWebsiteIcons } from "app/WebsiteIcon";
-import React, { ChangeEvent, useState } from "react";
+import React, { useRef, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import RequestHostPermission from "../RequestHostPermission";
-import RequestPermission from "../RequestPermission";
 
 
 const messages = defineMessages({
-	grantAll: {
-		defaultMessage: "Grant permission to access all websites",
-	},
-
 	suggestURL: {
 		defaultMessage: "Suggest URL be added to default suggestions",
 		description: "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
@@ -67,15 +61,16 @@ function URLSubmitter(props: { url: string, autocomplete?: AutocompleteItem[] })
 }
 
 
-export function FeedURLField(props: FieldProps<string>) {
+export default function FeedURLField(props: FieldProps<string>) {
 	const [value, setValue] = useState<string>(props.value);
+	const ref = useRef<HTMLInputElement>(null);
 
-	function handleBlur(e: ChangeEvent<HTMLInputElement>) {
-		if (!e.target.checkValidity()) {
+	function handleBlurOrPermission() {
+		if (!ref.current!.checkValidity()) {
 			return;
 		}
 
-		props.onChange(e.target.value);
+		props.onChange(value);
 	}
 
 	let host = "";
@@ -92,10 +87,10 @@ export function FeedURLField(props: FieldProps<string>) {
 
 	return (
 		<>
-			<input type="url" name={props.name} value={value}
+			<input type="url" name={props.name} value={value} ref={ref}
 					autoComplete={autocomplete ? "off" : "on"}
 					onChange={e => setValue(e.target.value)}
-					onBlur={handleBlur}
+					onBlur={handleBlurOrPermission}
 					list={autocomplete ? `dl-${props.name}` : undefined} />
 
 			{autocomplete &&
@@ -104,50 +99,9 @@ export function FeedURLField(props: FieldProps<string>) {
 						<option key={v.value} value={v.value}>{v.label}</option>))}
 				</datalist>}
 
-			<RequestHostPermission host={host} />
+			<RequestHostPermission host={host} onHasPermission={handleBlurOrPermission} />
 			{/* <URLSubmitter url={value} autocomplete={autocomplete ?? undefined} /> */}
 		</>);
 }
 
 
-export function HostAllField(props: FieldProps<boolean>) {
-	const [value, setValue] = useState(props.value);
-	const forceUpdate = useForceUpdate();
-	const intl = useIntl();
-
-	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		setValue(e.target.checked);
-		props.onChange(e.target.checked);
-	}
-
-	function onResult() {
-		clearWebsiteIcons();
-		forceUpdate();
-	}
-
-	const permissions: browser.permissions.Permissions = {
-		permissions: [],
-		origins: ["*://*/"],
-	};
-
-	const [needsPermission,] =
-		usePromise(async () => ! await browser.permissions.contains(permissions),
-				[forceUpdate]);
-
-	return (
-		<>
-			<input type="checkbox" checked={value ?? false} onChange={handleChange} />
-			<label className="inline ml-2" htmlFor={props.name}>
-				{intl.formatMessage(props.schemaEntry.label)}
-			</label>
-
-			{needsPermission && value && (
-				<p className="mt-2">
-					<RequestPermission permissions={permissions}
-						label={intl.formatMessage(messages.grantAll)}
-						onResult={onResult} />
-				</p>)}
-		</>);
-}
-
-HostAllField.noParentLabel = true;

@@ -35,6 +35,7 @@ export async function checkHostPermission( url: string) {
 
 interface RequestHostPermissionProps {
 	host: string;
+	onHasPermission?: () => void;
 }
 
 export default function RequestHostPermission(props: RequestHostPermissionProps) {
@@ -45,7 +46,12 @@ export default function RequestHostPermission(props: RequestHostPermissionProps)
 	const [isVisible, setVisible] = useState<boolean>(false);
 
 	runPromise(() => needsHostPermission(props.host),
-		setVisible, () => {},
+		needsPerm => {
+			setVisible(needsPerm);
+			if (!needsPerm) {
+				props.onHasPermission?.();
+			}
+		}, () => {},
 		[props.host]);
 
 	const intl = useIntl();
@@ -57,7 +63,12 @@ export default function RequestHostPermission(props: RequestHostPermissionProps)
 		return (
 			<p className="my-4">
 				<RequestPermission permissions={makeHostPermission(props.host)}
-						label={label} onResult={() => setVisible(false)} />
+						label={label} onResult={granted => {
+							if (granted) {
+								setVisible(false);
+								props.onHasPermission?.();
+							}
+						}} />
 			</p>);
 	} else {
 		return null;

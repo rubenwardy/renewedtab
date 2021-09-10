@@ -17,11 +17,12 @@ import SelectField from "./SelectField";
 import EnumSelectField from "./EnumSelectField";
 import CheckboxField from "./CheckboxField";
 import ImageUploadField from "./ImageUploadField";
-import { FeedURLField, HostAllField } from "./HostPermFields";
 import { NumberField, UnitNumberField } from "./NumberField";
 import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
 import SubFormField from "./SubFormField";
+import FeedURLField from "./FeedURLField";
+import HostAllField from "./HostAllField";
 
 export interface FieldComponent<T> extends React.FC<FieldProps<T>> {
 	noParentLabel?: boolean;
