@@ -153,7 +153,7 @@ const uvRiskMessages = defineMessages({
 function Icon(props: { icon?: string, className?: string }) {
 	return props.icon
 		? (<img className={mergeClasses("icon", props.className)}
-				src={`https://openweathermap.org/img/wn/${props.icon}.png`} />)
+				src={`https://openweathermap.org/img/wn/${props.icon}@2x.png`} />)
 		: (<></>);
 }
 
