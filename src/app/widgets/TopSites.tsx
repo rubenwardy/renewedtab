@@ -42,7 +42,8 @@ function TopSitesImpl(widget: WidgetProps<any>) {
 
 	return (
 		<LinkBox {...props} widgetTheme={widget.theme} links={links} useWebsiteIcons={true}
-			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
+			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe"
+			limitItemsToAvoidScrolling={widget.theme.useIconBar} />);
 }
 
 function TopSites(widget: WidgetProps<Record<string, never>>) {

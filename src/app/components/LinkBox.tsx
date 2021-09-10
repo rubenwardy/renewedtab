@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { defineMessages } from 'react-intl';
-import { usePromise } from 'app/hooks';
+import { useElementSize, usePromise } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
 import { schemaMessages } from 'app/locale/common';
@@ -82,14 +82,22 @@ export interface LinkBoxProps {
 	defaultIcon?: string;
 	errorIcon?: string;
 	enableCustomIcons?: boolean;
+	limitItemsToAvoidScrolling?: boolean;
 }
 
 
 export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme })  {
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
+	const [ref, size] = useElementSize();
 
 	const links = useMemo<Link[]>(() => deepCopy(props.links), [props.links]);
+	if (size && props.limitItemsToAvoidScrolling) {
+		const rows = size.y / 100;
+		const columns = size.x / 120;
+		links.splice(rows * columns);
+	}
+
 	if (useWebsiteIcons && typeof browser !== "undefined") {
 		links
 			.filter(link => link.url.length > 0 && link.icon == "")
@@ -126,7 +134,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 
 	return (
 		<Panel {...props.widgetTheme} flush={true}>
-			<ul className={useIconBar ? "iconbar" : "links large"}>
+			<ul className={useIconBar ? "iconbar" : "links large"} ref={ref}>
 				{linkElements}
 			</ul>
 		</Panel>);
