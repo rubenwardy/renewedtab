@@ -155,6 +155,10 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 	flex-direction: column;
 }
 
+.row-centered {
+	align-items: center;
+}
+
 .row-span-2 {
 	grid-row: span 2;
 }

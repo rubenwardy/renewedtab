@@ -97,20 +97,27 @@
 	}
 
 	.forecasts {
-		gap: 10px;
+		gap: 0.5em;
 	}
 
 	.forecast {
-		display: flex;
-		flex-direction: column;
-		gap: 0.3rem;
+		.row {
+			margin-top: 5px;
+		}
+
 		font-size: 80%;
 		color: rgba(255, 255, 255, 0.5);
 
 		.temp {
 			font-size: 110%;
 			color: #f0f0f0;
+
+			.low {
+				color: rgba(255, 255, 255, 0.5);
+			}
 		}
+
+
 
 		.icon {
 			width: 32px;

@@ -176,9 +176,12 @@ function Day(props: WeatherDay) {
 			<div>
 				<FormattedMessage {...dayNames[props.dayOfWeek]} />
 			</div>
-			<div><Icon icon={props.icon} /></div>
-			<div className="temp">
-				{props.minTemp.toFixed(0)}° {props.maxTemp.toFixed(0)}°
+			<div className="row row-centered">
+				<div className="col-auto"><Icon icon={props.icon} /></div>
+				<div className="col temp">
+					<span className="high">{props.maxTemp.toFixed(0)}</span>&nbsp;
+					<span className="low">{props.minTemp.toFixed(0)}</span>
+				</div>
 			</div>
 		</div>);
 }
@@ -188,8 +191,10 @@ function Hour(props: WeatherHour) {
 	return (
 		<div className="col-auto forecast">
 			<div>{renderHour(props.time)}</div>
-			<div><Icon icon={props.icon} /></div>
-			<div className="temp">{props.temp.toFixed(0)}°</div>
+			<div className="row row-centered">
+				<div className="col-auto"><Icon icon={props.icon} /></div>
+				<div className="col temp">{props.temp.toFixed(0)}°</div>
+			</div>
 		</div>);
 }
 
@@ -319,7 +324,7 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-	const numberOfColumns =  size ? size.x / 65 : 5;
+	const numberOfColumns =  size ? size.x / 75 : 5;
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
