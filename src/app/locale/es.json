@@ -782,5 +782,125 @@
     "7bfD9/": {
         "message": "Sugerir URL que se agregue a las sugerencias predeterminadas",
         "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "d7dHsn": {
+        "message": "Cada 15 minutos",
+        "description": "Background expiry dropdown"
+    },
+    "or/+Da": {
+        "message": "Estilismo",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "+sI+Oh": {
+        "message": "Mostrar pronóstico por hora",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "UV <b>Muy alto</b>",
+        "description": "Very High UV risk"
+    },
+    "JN/uvd": {
+        "message": "UV <b>Moderado</b>",
+        "description": "Moderate UV risk"
+    },
+    "HEvlTB": {
+        "message": "Opciones de pantalla",
+        "description": "Weather widget: display subform title"
+    },
+    "BiPNnl": {
+        "message": "Unidad de velocidad del viento",
+        "description": "Weather widget: form field label"
+    },
+    "Upkn1Q": {
+        "message": "UV <b>Alto</b>",
+        "description": "High UV risk"
+    },
+    "SlsfFk": {
+        "message": "<b>{velocidad}</b> viento",
+        "description": "Weather widget: wind speed value"
+    },
+    "W3zKGr": {
+        "message": "Kilómetros por hora (kph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "YQhLKn": {
+        "message": "Cada hora",
+        "description": "Background expiry dropdown"
+    },
+    "ckvzIb": {
+        "message": "UV <b>Bajo</b>",
+        "description": "Low UV risk"
+    },
+    "hCBQrY": {
+        "message": "Se siente como <b>{temp} °</b>"
+    },
+    "abwneZ": {
+        "message": "Metros por segundo (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mL3MOs": {
+        "message": "Millas por hora (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mw6Uh+": {
+        "message": "Mostrar pronóstico diario",
+        "description": "Weather widget: form field label"
+    },
+    "pqIuCa": {
+        "message": "Mostrar el tiempo actual",
+        "description": "Weather widget: form field label"
+    },
+    "rYprNW": {
+        "message": "Mostrar información meteorológica actual",
+        "description": "Weather widget: form field label"
+    },
+    "sl3V8S": {
+        "message": "<b>{humidity}%</b> de humedad",
+        "description": "Weather widget: humidity value"
+    },
+    "zaQRTm": {
+        "message": "UV <b>Extremo</b>",
+        "description": "Extreme UV risk"
+    },
+    "3vh5vd": {
+        "message": "No muestra nada, es útil para fines de diseño",
+        "description": "Invisible widget description"
+    },
+    "pbEMNj": {
+        "message": "Previa",
+        "description": "Onboarding page: previous button"
+    },
+    "PBMGxw": {
+        "message": "Limitar imágenes",
+        "description": "Feed background mode: form field label"
+    },
+    "Q1mwPp": {
+        "message": "Considere la posibilidad de <a>contribuir o agregar su idioma</a>."
+    },
+    "RhyKzC": {
+        "message": "Curado",
+        "description": "Curated background mode"
+    },
+    "WZjKFf": {
+        "message": "Advertencia: esto puede contener datos personales, si se ingresó alguno en la configuración del widget."
+    },
+    "ekIjqh": {
+        "message": "Otorgar permiso para acceder a todos los sitios web"
+    },
+    "ubO4zt": {
+        "message": "Web Comic",
+        "description": "Web Comic Widget"
+    },
+    "vVnypL": {
+        "message": "Muestra una cita aleatoria, con categorías",
+        "description": "Quotes Widget description"
+    },
+    "xR87uK": {
+        "message": "El espacio entre widgets, en píxeles.",
+        "description": "Widget grid: form hint for grid spacing"
+    },
+    "b2Rs2F": {
+        "message": "Cambiar el brillo de las imágenes más claras",
+        "description": "Backgroud settings: form field label (Brightness: Light)"
     }
 }
