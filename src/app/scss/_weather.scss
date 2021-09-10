@@ -30,7 +30,7 @@
 	}
 
 	.weather-credits a {
-		color:rgba(255, 255, 255, 0.35);
+		color:rgba(255, 255, 255, 0.25);
 	}
 
 	.weather-title a {
@@ -42,10 +42,19 @@
 		gap: 0.75rem;
 		justify-content: space-between;
 
-		.icon {
-			height: 100%;
-			max-width: 100%;
-			object-fit: contain;
+		.icon-container {
+			position: relative;
+			min-width: 72px;
+
+			.icon {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				max-width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
 		}
 
 		p {

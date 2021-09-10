@@ -269,7 +269,7 @@ function Current(props: {
 				<div className="col-auto text-left details">
 					<CurrentDetails {...props} />
 				</div>)}
-			<div className="col text-right h-100">
+			<div className="col text-right h-100 icon-container">
 				<Icon icon={props.current.icon} />
 			</div>
 		</div>);
