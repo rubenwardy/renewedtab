@@ -98,7 +98,7 @@ module.exports = {
 						},
 					},
 				],
-				exclude: /node_modules/
+				exclude: /node_modules/,
 			},
 			{
 				test: /\.s?[ac]ss$/i,
@@ -109,18 +109,18 @@ module.exports = {
 				],
 				sideEffects: true,
 			},
-		]
+		],
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"],
 		modules: [
 			path.resolve(__dirname, "src"),
 			"node_modules"
-		]
-
+		],
 	},
 	output: {
 		filename: "[name].js",
-		path: dest
+		path: dest,
+		clean: true,
 	},
 };
