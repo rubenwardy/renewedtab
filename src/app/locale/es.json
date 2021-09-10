@@ -11,10 +11,6 @@
         "message": "Icono",
         "description": "Form field label"
     },
-    "18X7au": {
-        "message": "Buenas tardes",
-        "description": "Greeting widget: greeting, from 12 noon to 4pm"
-    },
     "7OH6mh": {
         "message": "Imagen",
         "description": "Image Widget"
@@ -420,10 +416,6 @@
         "message": "Objetivo diario",
         "description": "Daily Goal Widget"
     },
-    "dLthbh": {
-        "message": "Buenos dias",
-        "description": "Greeting widget: greeting, before 12 noon"
-    },
     "gEYo49": {
         "message": "Posición",
         "description": "Backgroud settings: form field label"
@@ -456,10 +448,6 @@
     "olBVPS": {
         "message": "Exportar",
         "description": "Import / export settings, export"
-    },
-    "py0oht": {
-        "message": "Buenas noches",
-        "description": "Greeting widget: greeting, after 4pm"
     },
     "q4caWd": {
         "message": "Radio de desenfoque",
@@ -815,10 +803,6 @@
         "message": "UV <b>Alto</b>",
         "description": "High UV risk"
     },
-    "SlsfFk": {
-        "message": "<b>{velocidad}</b> viento",
-        "description": "Weather widget: wind speed value"
-    },
     "W3zKGr": {
         "message": "Kilómetros por hora (kph)",
         "description": "Weather widget: Speed unit"
@@ -853,10 +837,6 @@
     "rYprNW": {
         "message": "Mostrar información meteorológica actual",
         "description": "Weather widget: form field label"
-    },
-    "sl3V8S": {
-        "message": "<b>{humidity}%</b> de humedad",
-        "description": "Weather widget: humidity value"
     },
     "zaQRTm": {
         "message": "UV <b>Extremo</b>",
@@ -902,5 +882,17 @@
     "b2Rs2F": {
         "message": "Cambiar el brillo de las imágenes más claras",
         "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "LmmkFP": {
+        "message": "Buenas tardes",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "G7cVm+": {
+        "message": "Buenos dias",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "ERdckS": {
+        "message": "Buenas noches",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

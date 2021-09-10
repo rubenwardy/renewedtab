@@ -19,10 +19,6 @@
         "message": "ícone",
         "description": "Form field label"
     },
-    "18X7au": {
-        "message": "Boa Tarde",
-        "description": "Greeting widget: greeting, from 12 noon to 4pm"
-    },
     "1s5GYl": {
         "message": "opacidade",
         "description": "Form field label"
@@ -492,10 +488,6 @@
         "message": "Escolha uma Imagem",
         "description": "Form field label"
     },
-    "dLthbh": {
-        "message": "Bom Dia",
-        "description": "Greeting widget: greeting, before 12 noon"
-    },
     "eXkpJi": {
         "message": "Use ícones de sites (favicons)",
         "description": "Links widget: form field label"
@@ -666,10 +658,6 @@
     "sx01dA": {
         "message": "Links, com suporte para títulos e ícones",
         "description": "Links widget description"
-    },
-    "py0oht": {
-        "message": "Boa noite",
-        "description": "Greeting widget: greeting, after 4pm"
     },
     "translation_credits": {
         "message": "Tradução pt-br por Darck Angel Sama",
@@ -928,5 +916,17 @@
     "4dzBeG": {
         "message": "De",
         "description": "Currencies widget: form field label"
+    },
+    "LmmkFP": {
+        "message": "Boa Tarde",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "G7cVm+": {
+        "message": "Bom Dia",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "ERdckS": {
+        "message": "Boa noite",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

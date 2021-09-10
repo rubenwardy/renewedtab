@@ -19,10 +19,6 @@
         "message": "Icône",
         "description": "Form field label"
     },
-    "18X7au": {
-        "message": "Bon après-midi",
-        "description": "Greeting widget: greeting, from 12 noon to 4pm"
-    },
     "1s5GYl": {
         "message": "Opacité",
         "description": "Form field label"
@@ -429,10 +425,6 @@
         "message": "Choisissez une image",
         "description": "Form field label"
     },
-    "dLthbh": {
-        "message": "Bonjour",
-        "description": "Greeting widget: greeting, before 12 noon"
-    },
     "eXkpJi": {
         "message": "Utiliser les icônes des sites Web (favicons)",
         "description": "Links widget: form field label"
@@ -751,10 +743,6 @@
         "message": "Image aléatoire provenant d'Atom ou d'un flux RSS",
         "description": "Backgroud mode description"
     },
-    "SlsfFk": {
-        "message": "vent à <b>{speed}</b>",
-        "description": "Weather widget: wind speed value"
-    },
     "y1Z3or": {
         "message": "Langue"
     },
@@ -777,10 +765,6 @@
     "XV4mnl": {
         "message": "Selon vos réglages, la même photo peut être choisie",
         "description": "Background settings: form field hint (Show a new photo)"
-    },
-    "XrcwAv": {
-        "message": "Utilisez des icônes pour les détails",
-        "description": "Weather widget: form field label"
     },
     "YuNOET": {
         "message": "HTML",
@@ -876,10 +860,6 @@
         "message": "Afficher la météo actuelle",
         "description": "Weather widget: form field label"
     },
-    "py0oht": {
-        "message": "Bonne soirée",
-        "description": "Greeting widget: greeting, after 4pm"
-    },
     "q4caWd": {
         "message": "Rayon du flou",
         "description": "Backgroud settings: form field label"
@@ -898,10 +878,6 @@
     "qYVXqA": {
         "message": "Options de {mode}",
         "description": "Background mode options"
-    },
-    "sl3V8S": {
-        "message": "<b>{humidity} %</b> d'humidité",
-        "description": "Weather widget: humidity value"
     },
     "translation_credits": {
         "message": "Traduction en français de lanhild, EricPorlier et AirSThib",
@@ -1051,5 +1027,17 @@
     "yY7Rve": {
         "message": "Cacher",
         "description": "Feed widget: filter show checkbox label"
+    },
+    "LmmkFP": {
+        "message": "Bon après-midi",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "G7cVm+": {
+        "message": "Bonjour",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "ERdckS": {
+        "message": "Bonne soirée",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

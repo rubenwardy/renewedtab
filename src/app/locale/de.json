@@ -111,10 +111,6 @@
         "message": "Symbol",
         "description": "Form field label"
     },
-    "18X7au": {
-        "message": "Guten Tag",
-        "description": "Greeting widget: greeting, from 12 noon to 4pm"
-    },
     "AgU+/t": {
         "message": "Eine Liste der bevorstehenden Weltraumstarts, betrieben durch RocketLaunch.Live",
         "description": "SpaceFlights widget description"
@@ -240,10 +236,6 @@
     "dIwFS5": {
         "message": "Wählen Sie ein Bild",
         "description": "Form field label"
-    },
-    "dLthbh": {
-        "message": "Guten Morgen",
-        "description": "Greeting widget: greeting, before 12 noon"
     },
     "eXkpJi": {
         "message": "Benutze Icon von Webseiten (favicons)",
@@ -490,5 +482,13 @@
     "Bl74xq": {
         "message": "Ein Link Knopf",
         "description": "Button widget description"
+    },
+    "LmmkFP": {
+        "message": "Guten Tag",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "G7cVm+": {
+        "message": "Guten Morgen",
+        "description": "Greeting widget: greeting, from midnight to noon"
     }
 }

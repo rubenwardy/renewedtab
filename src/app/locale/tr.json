@@ -329,10 +329,6 @@
         "message": "Görüntü URL'i",
         "description": "Form field label"
     },
-    "py0oht": {
-        "message": "İyi akşamlar",
-        "description": "Greeting widget: greeting, after 4pm"
-    },
     "YYoBQn": {
         "message": "Panel Bulanıklık Yarıçapı",
         "description": "Theme settings: form field label"
@@ -488,14 +484,6 @@
     "J91edI": {
         "message": "Dışarıdan yükle / Dışarı gönder",
         "description": "Settings tab"
-    },
-    "18X7au": {
-        "message": "İyi günler",
-        "description": "Greeting widget: greeting, from 12 noon to 4pm"
-    },
-    "dLthbh": {
-        "message": "Günaydın",
-        "description": "Greeting widget: greeting, before 12 noon"
     },
     "oDog89": {
         "message": "Notlar için düzenlenebilir bir metin kutusu",
@@ -1005,10 +993,6 @@
         "message": "<b>Orta</b> UV",
         "description": "Moderate UV risk"
     },
-    "SlsfFk": {
-        "message": "<b>{speed}</b> rüzgar",
-        "description": "Weather widget: wind speed value"
-    },
     "Upkn1Q": {
         "message": "<b>Yüksek</b> UV",
         "description": "High UV risk"
@@ -1016,10 +1000,6 @@
     "W3zKGr": {
         "message": "Kilometre/saat (kph)",
         "description": "Weather widget: Speed unit"
-    },
-    "XrcwAv": {
-        "message": "Detaylar için ikon kullan",
-        "description": "Weather widget: form field label"
     },
     "abwneZ": {
         "message": "Metre/saniye (m/s)",
@@ -1044,12 +1024,20 @@
         "message": "Anlık hava durumu bilgisi göster",
         "description": "Weather widget: form field label"
     },
-    "sl3V8S": {
-        "message": "Nem: <b>%{humidity}</b>",
-        "description": "Weather widget: humidity value"
-    },
     "zaQRTm": {
         "message": "<b>Aşırı yüksek</b> UV",
         "description": "Extreme UV risk"
+    },
+    "ERdckS": {
+        "message": "İyi akşamlar",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "LmmkFP": {
+        "message": "İyi günler",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "G7cVm+": {
+        "message": "Günaydın",
+        "description": "Greeting widget: greeting, from midnight to noon"
     }
 }

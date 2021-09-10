@@ -37,10 +37,6 @@
         "message": "Ikon",
         "description": "Form field label"
     },
-    "18X7au": {
-        "message": "Selamat petang",
-        "description": "Greeting widget: greeting, from 12 noon to 4pm"
-    },
     "1s5GYl": {
         "message": "Kelegapan",
         "description": "Form field label"
@@ -385,10 +381,6 @@
         "message": "Pilih imej",
         "description": "Form field label"
     },
-    "dLthbh": {
-        "message": "Selamat pagi",
-        "description": "Greeting widget: greeting, before 12 noon"
-    },
     "egigiF": {
         "message": "Terima kasih kepada Unsplash, OpenStreetMap, OpenWeatherMap, dan RocketLaunch.Live untuk API mereka."
     },
@@ -520,10 +512,6 @@
     "pVrtrA": {
         "message": "Gunakan imej sendiri",
         "description": "Backgroud mode description"
-    },
-    "py0oht": {
-        "message": "Selamat malam",
-        "description": "Greeting widget: greeting, after 4pm"
     },
     "qAhUUO": {
         "message": "Khamis"
@@ -1001,10 +989,6 @@
         "message": "UV <b>Sederhana</b>",
         "description": "Moderate UV risk"
     },
-    "SlsfFk": {
-        "message": "Angin <b>{speed}</b>",
-        "description": "Weather widget: wind speed value"
-    },
     "Upkn1Q": {
         "message": "UV <b>Tinggi</b>",
         "description": "High UV risk"
@@ -1012,10 +996,6 @@
     "W3zKGr": {
         "message": "Kilometer per jam (km/j)",
         "description": "Weather widget: Speed unit"
-    },
-    "XrcwAv": {
-        "message": "Guna ikon untuk maklumat lanjut",
-        "description": "Weather widget: form field label"
     },
     "abwneZ": {
         "message": "Meter per saat (m/s)",
@@ -1044,12 +1024,20 @@
         "message": "Tunjuk maklumat cuaca semasa",
         "description": "Weather widget: form field label"
     },
-    "sl3V8S": {
-        "message": "Kelembapan <b>{humidity}%</b>",
-        "description": "Weather widget: humidity value"
-    },
     "zaQRTm": {
         "message": "UV <b>Melampau</b>",
         "description": "Extreme UV risk"
+    },
+    "LmmkFP": {
+        "message": "Selamat petang",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "G7cVm+": {
+        "message": "Selamat pagi",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "ERdckS": {
+        "message": "Selamat malam",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

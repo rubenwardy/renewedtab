@@ -43,10 +43,6 @@
         "description": "Preset: focus description",
         "message": "Daily goals and inspirational quotes"
     },
-    "18X7au": {
-        "description": "Greeting widget: greeting, from 12 noon to 4pm",
-        "message": "Good afternoon"
-    },
     "1s5GYl": {
         "description": "Form field label",
         "message": "Opacity"
@@ -221,6 +217,10 @@
         "description": "Background expiry dropdown",
         "message": "Every day"
     },
+    "ERdckS": {
+        "description": "Greeting widget: greeting, from 4pm to 9pm",
+        "message": "Good evening"
+    },
     "FCmJHd": {
         "description": "Feed widget description",
         "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
@@ -232,6 +232,10 @@
     "G6WG/N": {
         "description": "Invisible Widget",
         "message": "Invisible"
+    },
+    "G7cVm+": {
+        "description": "Greeting widget: greeting, from midnight to noon",
+        "message": "Good morning"
     },
     "GSox4d": {
         "description": "Theme settings: form field hint (Font)",
@@ -330,9 +334,17 @@
         "description": "Theme settings: form field label",
         "message": "Font Scaling"
     },
+    "LmmkFP": {
+        "description": "Greeting widget: greeting, from noon to 4pm",
+        "message": "Good afternoon"
+    },
     "Lxc1x4": {
         "description": "Clock Widget",
         "message": "Clock"
+    },
+    "M0PwXU": {
+        "description": "Weather widget: wind speed tooltip",
+        "message": "Wind Speed ({unit})"
     },
     "M8ugqX": {
         "message": "No matching widgets"
@@ -421,6 +433,10 @@
         "description": "IFrame Widget",
         "message": "IFrame"
     },
+    "S6nfAm": {
+        "description": "Weather widget: humidity tooltip",
+        "message": "Humidity (%)"
+    },
     "SAo61B": {
         "description": "Bookmarks Widget",
         "message": "Bookmarks"
@@ -432,10 +448,6 @@
     "ShQneX": {
         "description": "Form field label",
         "message": "Text"
-    },
-    "SlsfFk": {
-        "description": "Weather widget: wind speed value",
-        "message": "<b>{speed}</b> wind"
     },
     "T/wBPw": {
         "message": "Remove {type}"
@@ -537,10 +549,6 @@
     "XrQEPN": {
         "description": "Form field label",
         "message": "Location"
-    },
-    "XrcwAv": {
-        "description": "Weather widget: form field label",
-        "message": "Use icons for details"
     },
     "XsTD4Q": {
         "description": "Todo List Widget",
@@ -658,10 +666,6 @@
     "dIwFS5": {
         "description": "Form field label",
         "message": "Choose an image"
-    },
-    "dLthbh": {
-        "description": "Greeting widget: greeting, before 12 noon",
-        "message": "Good morning"
     },
     "eXkpJi": {
         "description": "Links widget: form field label",
@@ -829,6 +833,10 @@
         "description": "Greeting widget: name prompt",
         "message": "name"
     },
+    "oOTuB/": {
+        "description": "Greeting widget: greeting, from 9pm to midnight",
+        "message": "Good night"
+    },
     "ofl4Ui": {
         "description": "Location form field: search",
         "message": "Search"
@@ -868,10 +876,6 @@
     "pqIuCa": {
         "description": "Weather widget: form field label",
         "message": "Show current weather"
-    },
-    "py0oht": {
-        "description": "Greeting widget: greeting, after 4pm",
-        "message": "Good evening"
     },
     "q4caWd": {
         "description": "Backgroud settings: form field label",
@@ -915,10 +919,6 @@
         "description": "Links widget, form field hint (Icon)",
         "message": "Optional, URL to image (18px recommended)"
     },
-    "sl3V8S": {
-        "description": "Weather widget: humidity value",
-        "message": "<b>{humidity}%</b> humidity"
-    },
     "sx01dA": {
         "description": "Links widget description",
         "message": "Links, with support for headings and icons"
@@ -941,6 +941,10 @@
     "uzT59w": {
         "description": "Preset: Grid",
         "message": "Grid"
+    },
+    "v9UIPJ": {
+        "description": "Weather widget: wind speed tooltip",
+        "message": "Sunrise - Sunset"
     },
     "vVnypL": {
         "description": "Quotes Widget description",
