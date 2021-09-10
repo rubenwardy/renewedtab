@@ -39,7 +39,7 @@ const messages = defineMessages({
 	},
 
 	night: {
-		defaultMessage: "Good night",
+		defaultMessage: "Sleep well",
 		description: "Greeting widget: greeting, from 9pm to midnight",
 	},
 
