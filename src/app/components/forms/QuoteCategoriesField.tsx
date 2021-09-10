@@ -1,6 +1,6 @@
+import { useIntl } from "react-intl";
 import { useAPI } from "app/hooks";
 import { QuoteCategory } from "common/api/quotes";
-import { compareString } from "common/utils/string";
 import React, { ChangeEvent, useState } from "react";
 import { FieldProps } from ".";
 import ErrorView from "../ErrorView";
@@ -8,6 +8,7 @@ import ErrorView from "../ErrorView";
 type StrToBool = { [key: string]: boolean };
 
 export default function QuoteCategoriesField(props: FieldProps<StrToBool>) {
+	const intl = useIntl();
 	const [value, setValue] = useState(props.value ?? {});
 
 	const [options, error] = useAPI<QuoteCategory[]>("quote-categories/", {}, []);
@@ -26,7 +27,8 @@ export default function QuoteCategoriesField(props: FieldProps<StrToBool>) {
 	}
 
 	const selectboxes = options
-		.sort((a, b) => compareString(a.text, b.text))
+		.sort((a, b) => a.text.localeCompare(b.text, intl.locale, {
+				sensitivity: "base" }))
 		.map(category => (
 			<li key={category.id} className="field">
 				<input type="checkbox" name="category" value={category.id}

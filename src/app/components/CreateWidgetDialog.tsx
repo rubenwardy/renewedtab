@@ -1,5 +1,4 @@
 import { miscMessages } from "app/locale/common";
-import { compareString } from "common/utils/string";
 import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetManager } from "../WidgetManager";
@@ -33,7 +32,8 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 			.filter(widget => query == "" ||
 					widget.title.toLowerCase().includes(query.toLowerCase()) ||
 					widget.description.toLowerCase().includes(query.toLowerCase()))
-			.sort((a, b) => compareString(a.title, b.title));
+			.sort((a, b) => a.title.localeCompare(b.title, intl.locale, {
+					sensitivity: "base" }));
 
 	let widgets = widgetTypes
 		.filter((widget) => isBrowser || widget.isBrowserOnly !== true)

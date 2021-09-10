@@ -5,7 +5,6 @@ import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps, WidgetType } from 'app/Widget';
 import { calculateExchangeRate, CurrencyInfo } from 'common/api/currencies';
-import { compareString } from 'common/utils/string';
 import React, { useMemo } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -124,7 +123,8 @@ const widget: WidgetType<CurrenciesProps> = {
 		const currencyOptions: Record<string, string> = {};
 		currencyOptions[""] = "";
 		Object.entries(json)
-			.sort((a, b) => compareString(a[0], b[0]))
+			.sort((a, b) => a[0].localeCompare(b[0], undefined, {
+					sensitivity: "base" }))
 			.forEach(([key, value]) => {
 				currencyOptions[key] = `${value.code}: ${value.description}`;
 			});
