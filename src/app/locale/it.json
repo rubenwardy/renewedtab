@@ -920,17 +920,5 @@
     "B0kbsm": {
         "message": "Feed",
         "description": "Unsplash background mode"
-    },
-    "LmmkFP": {
-        "message": "Buon pomeriggio",
-        "description": "Greeting widget: greeting, from noon to 4pm"
-    },
-    "G7cVm+": {
-        "message": "Buongiorno",
-        "description": "Greeting widget: greeting, from midnight to noon"
-    },
-    "ERdckS": {
-        "message": "Buonasera",
-        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

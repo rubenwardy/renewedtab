@@ -916,17 +916,5 @@
     "4dzBeG": {
         "message": "De",
         "description": "Currencies widget: form field label"
-    },
-    "LmmkFP": {
-        "message": "Boa Tarde",
-        "description": "Greeting widget: greeting, from noon to 4pm"
-    },
-    "G7cVm+": {
-        "message": "Bom Dia",
-        "description": "Greeting widget: greeting, from midnight to noon"
-    },
-    "ERdckS": {
-        "message": "Boa noite",
-        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

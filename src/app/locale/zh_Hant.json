@@ -205,9 +205,5 @@
     "PYJFvz": {
         "message": "分類",
         "description": "Form field label, list of categories. Used by Quotes widget"
-    },
-    "LmmkFP": {
-        "message": "午安",
-        "description": "Greeting widget: greeting, from noon to 4pm"
     }
 }

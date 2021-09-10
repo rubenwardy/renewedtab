@@ -882,17 +882,5 @@
     "b2Rs2F": {
         "message": "Cambiar el brillo de las imágenes más claras",
         "description": "Backgroud settings: form field label (Brightness: Light)"
-    },
-    "LmmkFP": {
-        "message": "Buenas tardes",
-        "description": "Greeting widget: greeting, from noon to 4pm"
-    },
-    "G7cVm+": {
-        "message": "Buenos dias",
-        "description": "Greeting widget: greeting, from midnight to noon"
-    },
-    "ERdckS": {
-        "message": "Buenas noches",
-        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

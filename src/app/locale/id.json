@@ -651,17 +651,5 @@
     },
     "MiIvsP": {
         "message": "Anda dapat menambahkan, memindahkan, mengubah ukuran, dan mengkonfigurasi widget-widget pada grid menggunakan kendali yang intuitif."
-    },
-    "LmmkFP": {
-        "message": "Selamat siang",
-        "description": "Greeting widget: greeting, from noon to 4pm"
-    },
-    "G7cVm+": {
-        "message": "Selamat pagi",
-        "description": "Greeting widget: greeting, from midnight to noon"
-    },
-    "ERdckS": {
-        "message": "Selamat malam",
-        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

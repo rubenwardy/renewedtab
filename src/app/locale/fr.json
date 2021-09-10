@@ -1027,17 +1027,5 @@
     "yY7Rve": {
         "message": "Cacher",
         "description": "Feed widget: filter show checkbox label"
-    },
-    "LmmkFP": {
-        "message": "Bon après-midi",
-        "description": "Greeting widget: greeting, from noon to 4pm"
-    },
-    "G7cVm+": {
-        "message": "Bonjour",
-        "description": "Greeting widget: greeting, from midnight to noon"
-    },
-    "ERdckS": {
-        "message": "Bonne soirée",
-        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }

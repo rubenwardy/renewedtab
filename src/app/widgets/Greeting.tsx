@@ -24,22 +24,22 @@ const messages = defineMessages({
 	},
 
 	morning: {
-		defaultMessage: "Good morning",
+		defaultMessage: "Good morning, {name}",
 		description: "Greeting widget: greeting, from midnight to noon",
 	},
 
 	afternoon: {
-		defaultMessage: "Good afternoon",
+		defaultMessage: "Good afternoon, {name}",
 		description: "Greeting widget: greeting, from noon to 4pm",
 	},
 
 	evening: {
-		defaultMessage: "Good evening",
+		defaultMessage: "Good evening, {name}",
 		description: "Greeting widget: greeting, from 4pm to 9pm",
 	},
 
 	night: {
-		defaultMessage: "Sleep well",
+		defaultMessage: "Sleep well, {name}",
 		description: "Greeting widget: greeting, from 9pm to midnight",
 	},
 
@@ -75,10 +75,14 @@ function Greeting(widget: WidgetProps<Record<string, never>>) {
 	return (
 		<Panel {...widget.theme}>
 			<div className="large middle-center">
-				<FormattedMessage {...getGreeting()} />,&nbsp;
-				{name !== undefined &&
-					<AutoWidthInput onChange={handleChange} value={name ?? ""}
-							placeholder={intl.formatMessage(messages.name)} />}.
+				<div>
+					{name !== undefined &&
+						<FormattedMessage {...getGreeting()} values={{
+							name: (
+								<AutoWidthInput onChange={handleChange} value={name ?? ""}
+									placeholder={intl.formatMessage(messages.name)} />),
+						}} />}
+				</div>
 			</div>
 		</Panel>);
 }

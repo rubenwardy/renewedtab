@@ -1027,17 +1027,5 @@
     "zaQRTm": {
         "message": "UV <b>Melampau</b>",
         "description": "Extreme UV risk"
-    },
-    "LmmkFP": {
-        "message": "Selamat petang",
-        "description": "Greeting widget: greeting, from noon to 4pm"
-    },
-    "G7cVm+": {
-        "message": "Selamat pagi",
-        "description": "Greeting widget: greeting, from midnight to noon"
-    },
-    "ERdckS": {
-        "message": "Selamat malam",
-        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }
