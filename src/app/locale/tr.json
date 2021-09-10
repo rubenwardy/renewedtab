@@ -980,5 +980,76 @@
     "TS11GJ": {
         "message": "Bir atom veya RSS beslemesinden rastgele resim",
         "description": "Backgroud mode description"
+    },
+    "mL3MOs": {
+        "message": "Mil/saat (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "+sI+Oh": {
+        "message": "Saatlik hava durumu göster",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "<b>Çok Yüksek</b> UV",
+        "description": "Very High UV risk"
+    },
+    "BiPNnl": {
+        "message": "Rüzgar Hızı Birimi",
+        "description": "Weather widget: form field label"
+    },
+    "HEvlTB": {
+        "message": "Görüntüleme Ayarları",
+        "description": "Weather widget: display subform title"
+    },
+    "JN/uvd": {
+        "message": "<b>Orta</b> UV",
+        "description": "Moderate UV risk"
+    },
+    "SlsfFk": {
+        "message": "<b>{speed}</b> rüzgar",
+        "description": "Weather widget: wind speed value"
+    },
+    "Upkn1Q": {
+        "message": "<b>Yüksek</b> UV",
+        "description": "High UV risk"
+    },
+    "W3zKGr": {
+        "message": "Kilometre/saat (kph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "XrcwAv": {
+        "message": "Detaylar için ikon kullan",
+        "description": "Weather widget: form field label"
+    },
+    "abwneZ": {
+        "message": "Metre/saniye (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "ckvzIb": {
+        "message": "<b>Düşük</b> UV",
+        "description": "Low UV risk"
+    },
+    "hCBQrY": {
+        "message": "Hissedilen sıcaklık: <b>{temp}°</b>"
+    },
+    "mw6Uh+": {
+        "message": "Günlük hava durumu göster",
+        "description": "Weather widget: form field label"
+    },
+    "pqIuCa": {
+        "message": "Anlık hava durumu göster",
+        "description": "Weather widget: form field label"
+    },
+    "rYprNW": {
+        "message": "Anlık hava durumu bilgisi göster",
+        "description": "Weather widget: form field label"
+    },
+    "sl3V8S": {
+        "message": "Nem: <b>%{humidity}</b>",
+        "description": "Weather widget: humidity value"
+    },
+    "zaQRTm": {
+        "message": "<b>Aşırı yüksek</b> UV",
+        "description": "Extreme UV risk"
     }
 }
