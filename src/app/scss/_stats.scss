@@ -1,7 +1,7 @@
 .stats {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 0.5em;
+	gap: 0.1em;
 
 	.singlestat {
 		width: 100px;
@@ -12,6 +12,7 @@
 .singlestat {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 
 	.title, .value {
 		text-align: center;

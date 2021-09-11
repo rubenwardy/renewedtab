@@ -82,7 +82,7 @@ function Currencies(widget: WidgetProps<CurrenciesProps>) {
 
 	return (
 		<Panel {...widget.theme}>
-			<div className="stats">
+			<div className="stats h-100">
 				{rates.map(({from, to}) => (
 					<div className="singlestat" key={`${from}-${to}`}>
 						<span className="title">
