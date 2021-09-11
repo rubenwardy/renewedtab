@@ -861,5 +861,131 @@
     "b2Rs2F": {
         "message": "Cambiar el brillo de las imágenes más claras",
         "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "qzlLb3": {
+        "message": "Do",
+        "description": "Short weekday name (Sunday)"
+    },
+    "frEJEM": {
+        "message": "Ju",
+        "description": "Short weekday name (Thursday)"
+    },
+    "eXB4qM": {
+        "message": "Mi",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "YS3jnS": {
+        "message": "Vi",
+        "description": "Short weekday name (Friday)"
+    },
+    "Vckd1G": {
+        "message": "Lu",
+        "description": "Short weekday name (Monday)"
+    },
+    "Go7At+": {
+        "message": "Sa",
+        "description": "Short weekday name (Saturday)"
+    },
+    "uv1bYR": {
+        "message": "Ma",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "FCmJHd": {
+        "message": "Muestra un feed Atom o RSS, útil para seguir las noticias, los sitios web y los blogs",
+        "description": "Feed widget description"
+    },
+    "GSox4d": {
+        "message": "Cualquier nombre de tipografía instalado en su computadora",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "M0PwXU": {
+        "message": "Velocidad del viento ({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "OBJta4": {
+        "message": "Puede cambiar el nombre haciendo clic en el widget",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "XV4mnl": {
+        "message": "Dependiendo de su configuración, se puede elegir la misma foto",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "FHzdXg": {
+        "message": "Las siguientes configuraciones son <b> experimentales </b>; esto significa que puede encontrar errores y rarezas al cambiarlos, y las actualizaciones pueden romper sus temas.",
+        "description": "Theme settings"
+    },
+    "zEj0dg": {
+        "message": "Muestra el progreso a lo largo del año como una barra de progreso",
+        "description": "Age widget description"
+    },
+    "v9UIPJ": {
+        "message": "Salida del sol - puesta de sol",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "FqCn+F": {
+        "message": "Buenos días, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "QBZZBG": {
+        "message": "Tenga en cuenta: esta es una función experimental y los selectores de CSS pueden fallar en versiones futuras.",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "Ibm90j": {
+        "message": "La hora se basa en la zona horaria de su sistema. Si la hora es incorrecta, asegúrese de tener la zona horaria configurada correctamente en las configuraciones de su computadora y navegador.",
+        "description": "Clock widget: edit hint"
+    },
+    "LfHpBk": {
+        "message": "Escala de tipografía",
+        "description": "Theme settings: form field label"
+    },
+    "S6nfAm": {
+        "message": "Humedad (%)",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "ao/AFQ": {
+        "message": "Te recuerda un objetivo diario",
+        "description": "Daily Goal widget description"
+    },
+    "oGS5TE": {
+        "message": "Buenas tardes, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "8J0Bhj": {
+        "message": "Bienvenido a <a>Renewed Tab</a>: una página Nueva Pestaña personalizable, con widgets y fondos hermosos."
+    },
+    "TS11GJ": {
+        "message": "Imagen aleatoria de un feed Atom o RSS",
+        "description": "Backgroud mode description"
+    },
+    "gAZqVl": {
+        "message": "Puede agregar (<add></add>) o eliminar (<remove></remove>) widgets más tarde, o cambiar las configuraciones (<cog></cog>) como desee.",
+        "description": "Onboarding: preset hint"
+    },
+    "VxE3S8": {
+        "message": "Esto enviará automáticamente el URL a los desarrolladores de la Renewed Tab. Luego, pueden optar por agregarlo a las sugerencias para todos los usuarios.",
+        "description": "Host URL field: help text for suggest URL button"
+    },
+    "y2OItK": {
+        "message": "Barra de búsqueda a su navegador favorito",
+        "description": "Search widget description"
+    },
+    "ykNa5O": {
+        "message": "Gracias a Font-Awesome por sus íconos, a React por su UI y a WebPack por las compilaciones."
+    },
+    "zKofmb": {
+        "message": "ID de colección. Encontrado en la URL, ejemplo: 42576559",
+        "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    },
+    "oDog89": {
+        "message": "Un área de texto editable para notas",
+        "description": "Notes widget description"
+    },
+    "DJRqNI": {
+        "message": "Muestra la imagen más reciente de un feed Atom o RSS, útil para WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "TIEfOV": {
+        "message": "Se mostrará un artículo si coincide con por lo menos un filtro 'Mostrar' (si lo hay) y no coincide con filtros 'Ocultar'.",
+        "description": "Feed widget: form field hint (Filters)"
     }
 }
