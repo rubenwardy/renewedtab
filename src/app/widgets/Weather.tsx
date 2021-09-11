@@ -112,13 +112,13 @@ const speedUnitMessages = defineMessages({
 
 
 const dayNames = defineMessages({
-	[0]: { defaultMessage: "SUN" },
-	[1]: { defaultMessage: "MON" },
-	[2]: { defaultMessage: "TUE" },
-	[3]: { defaultMessage: "WED" },
-	[4]: { defaultMessage: "THU" },
-	[5]: { defaultMessage: "FRI" },
-	[6]: { defaultMessage: "SAT" },
+	[0]: { defaultMessage: "SUN", description: "Short weekday name (Sunday)" },
+	[1]: { defaultMessage: "MON", description: "Short weekday name (Monday)" },
+	[2]: { defaultMessage: "TUE", description: "Short weekday name (Tuesday)" },
+	[3]: { defaultMessage: "WED", description: "Short weekday name (Wednesday)" },
+	[4]: { defaultMessage: "THU", description: "Short weekday name (Thursday)" },
+	[5]: { defaultMessage: "FRI", description: "Short weekday name (Friday)" },
+	[6]: { defaultMessage: "SAT", description: "Short weekday name (Saturday)" },
 }) as Record<number, MessageDescriptor>;
 
 

@@ -257,6 +257,10 @@
         "description": "Clock widget: date style form field label",
         "message": "Date style"
     },
+    "Go7At+": {
+        "description": "Short weekday name (Saturday)",
+        "message": "SAT"
+    },
     "GqPEp+": {
         "message": "Requires browser extension version"
     },
@@ -333,9 +337,6 @@
     "L6nTur": {
         "description": "Onboarding: presets title",
         "message": "Choose a Starting Point"
-    },
-    "LFezWN": {
-        "message": "WED"
     },
     "LfHpBk": {
         "description": "Theme settings: form field label",
@@ -449,9 +450,6 @@
         "description": "Form field label",
         "message": "Text"
     },
-    "SzoV5j": {
-        "message": "MON"
-    },
     "T/wBPw": {
         "message": "Remove {type}"
     },
@@ -496,6 +494,10 @@
     "VPDVTF": {
         "description": "Shown when array table form field has no rows",
         "message": "Nothing here"
+    },
+    "Vckd1G": {
+        "description": "Short weekday name (Monday)",
+        "message": "MON"
     },
     "VjDvbL": {
         "description": "Form field label",
@@ -542,9 +544,6 @@
     "XITVvp": {
         "message": "Show panel background"
     },
-    "XRiZdq": {
-        "message": "TUE"
-    },
     "XV4mnl": {
         "description": "Background settings: form field hint (Show a new photo)",
         "message": "Depending on your settings, the same photo may be chosen"
@@ -560,6 +559,10 @@
     "YQhLKn": {
         "description": "Background expiry dropdown",
         "message": "Every hour"
+    },
+    "YS3jnS": {
+        "description": "Short weekday name (Friday)",
+        "message": "FRI"
     },
     "YS5zRT": {
         "description": "Search widget: searchbox placeholder text, when search engine name is known",
@@ -637,9 +640,6 @@
     "bQFsdR": {
         "message": "Grant permission to access {host}"
     },
-    "c/wqRq": {
-        "message": "FRI"
-    },
     "cL6y1P": {
         "description": "Form field hint (Feed URL)",
         "message": "URL to an Atom or RSS feed"
@@ -667,6 +667,10 @@
         "description": "Form field label",
         "message": "Choose an image"
     },
+    "eXB4qM": {
+        "description": "Short weekday name (Wednesday)",
+        "message": "WED"
+    },
     "eXkpJi": {
         "description": "Links widget: form field label",
         "message": "Use icons from websites (favicons)"
@@ -680,9 +684,6 @@
     "ekW/+6": {
         "message": "Unable to connect to the Internet"
     },
-    "fFLzL0": {
-        "message": "SAT"
-    },
     "fW8Xpd": {
         "description": "Weather widget: location needed error",
         "message": "Location needed. Click edit to add it."
@@ -690,6 +691,10 @@
     "fWK68w": {
         "description": "Theme settings: form field label",
         "message": "Font"
+    },
+    "frEJEM": {
+        "description": "Short weekday name (Thursday)",
+        "message": "THU"
     },
     "fz43UJ": {
         "description": "Renewed Tab donation link",
@@ -713,9 +718,6 @@
     },
     "h/ftND": {
         "message": "Choose a file"
-    },
-    "h99NC2": {
-        "message": "SUN"
     },
     "hCBQrY": {
         "message": "Feels like <b>{temp}°</b>"
@@ -897,6 +899,10 @@
         "description": "Backgroud settings: form field label",
         "message": "Unsplash collection"
     },
+    "qzlLb3": {
+        "description": "Short weekday name (Sunday)",
+        "message": "SUN"
+    },
     "rAuRqW": {
         "message": "Translations are provided by the community."
     },
@@ -916,9 +922,6 @@
         "description": "Links widget, form field hint (Icon)",
         "message": "Optional, URL to image (18px recommended)"
     },
-    "sjDOif": {
-        "message": "THU"
-    },
     "sx01dA": {
         "description": "Links widget description",
         "message": "Links, with support for headings and icons"
@@ -937,6 +940,10 @@
     "ubO4zt": {
         "description": "Web Comic Widget",
         "message": "Web Comic"
+    },
+    "uv1bYR": {
+        "description": "Short weekday name (Tuesday)",
+        "message": "TUE"
     },
     "uzT59w": {
         "description": "Preset: Grid",
