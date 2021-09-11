@@ -987,5 +987,13 @@
     "TIEfOV": {
         "message": "Se mostrará un artículo si coincide con por lo menos un filtro 'Mostrar' (si lo hay) y no coincide con filtros 'Ocultar'.",
         "description": "Feed widget: form field hint (Filters)"
+    },
+    "2AUlDo": {
+        "message": "Buenas noches, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Buenas tardes, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
     }
 }
