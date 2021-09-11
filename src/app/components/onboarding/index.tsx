@@ -16,7 +16,6 @@ const messages = defineMessages({
 });
 
 interface OnboardingProps {
-	isOpen: boolean;
 	onClose: () => void;
 
 	locale: string;

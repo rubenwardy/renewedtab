@@ -81,7 +81,7 @@ function LocationModal(props: LocationModalProps) {
 	const intl = useIntl();
 	return (
 		<Modal title={intl.formatMessage(messages.modalTitle)}
-				isOpen={true} onClose={props.cancel} lighterBg={true}>
+				onClose={props.cancel} lighterBg={true}>
 			<div className="modal-body">
 				<div className="field-group mt-1">
 					<input type="text" ref={ref} autoFocus={true}

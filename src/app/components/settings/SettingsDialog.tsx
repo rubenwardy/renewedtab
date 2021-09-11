@@ -87,6 +87,10 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 	const intl = useIntl();
 	const Tab = getComponentForTab(currentTab);
 
+	if (!props.isOpen) {
+		return null;
+	}
+
 	return (
 		<Modal title={intl.formatMessage({ defaultMessage: "Settings "})}
 				wide={true} {...props}>

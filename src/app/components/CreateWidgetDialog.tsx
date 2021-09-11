@@ -6,7 +6,6 @@ import { WidgetTypes } from "../widgets";
 import Modal from "./Modal";
 
 interface CreateWidgetDialogProps {
-	isOpen: boolean;
 	onClose: () => void;
 	manager: WidgetManager;
 }

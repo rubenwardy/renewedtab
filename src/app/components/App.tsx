@@ -56,10 +56,9 @@ export default function App() {
 				<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 					<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 				</Sentry.ErrorBoundary>
-				<CreateWidgetDialog
-						isOpen={createIsOpen}
+				{createIsOpen && (<CreateWidgetDialog
 						manager={widgetManager}
-						onClose={() => setCreateOpen(false)} />
+						onClose={() => setCreateOpen(false)} />)}
 				<SettingsDialog
 						isOpen={settingsIsOpen}
 						onClose={() => setSettingsOpen(false)}
@@ -71,7 +70,6 @@ export default function App() {
 					<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
 				{onboardingIsOpen && (
 					<Onboarding
-							isOpen={onboardingIsOpen}
 							onClose={onboardingForceUpdate}
 							locale={locale} setLocale={setLocale}
 							manager={widgetManager} />)}

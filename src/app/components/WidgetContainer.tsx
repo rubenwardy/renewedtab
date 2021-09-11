@@ -29,7 +29,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 			[props.type, props.id, forceKey]);
 	if (!schema) {
 		return (
-			<Modal title={title} isOpen={true} {...props}>
+			<Modal title={title} {...props}>
 				<div className="modal-body">
 					<ErrorView error={error} loading={true} />
 				</div>
@@ -48,7 +48,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 		.some(field => field.type == "array" || field.type == "unordered_array");
 
 	return (
-		<Modal title={title} wide={isWide} isOpen={true} {...props}>
+		<Modal title={title} wide={isWide} {...props}>
 			<div className="modal-body">
 				{props.typeDef.editHint &&
 					<p className="text-muted">
@@ -84,7 +84,7 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 			{ defaultMessage: "Remove {type}" },
 			{ type: intl.formatMessage(props.typeDef.title) });
 	return (
-		<Modal title={title} isOpen={true} {...props}>
+		<Modal title={title} {...props}>
 			<div className="modal-body">
 				<FormattedMessage
 					defaultMessage="Are you sure you want to permanently remove this widget?"

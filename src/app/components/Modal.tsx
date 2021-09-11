@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 
 export interface ModalProps {
 	title: string;
-	isOpen: boolean;
 	onClose?: () => void;
 	children: ReactNode[] | ReactNode;
 	lighterBg?: boolean;
@@ -12,10 +11,6 @@ export interface ModalProps {
 }
 
 export default function Modal(props: ModalProps) {
-	if (!props.isOpen) {
-		return null;
-	}
-
 	const [mounted, setMounted] = useState(false);
 	useEffect(() => {
 		window.requestAnimationFrame(() => setMounted(true));
