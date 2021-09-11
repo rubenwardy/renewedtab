@@ -237,9 +237,6 @@
     "QqE4JC": {
         "message": "Tak ada URL feed."
     },
-    "QrihTZ": {
-        "message": "Jumat"
-    },
     "RZqASt": {
         "message": "Satu warna",
         "description": "Backgroud mode description"
@@ -304,9 +301,6 @@
         "message": "Warna",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "Sabtu"
-    },
     "WZjKFf": {
         "message": "Peringatan: ini dapat mengandung data pribadi, jika ada yang dimasukkan ke pengaturan widget."
     },
@@ -328,9 +322,6 @@
     "XsTD4Q": {
         "message": "Daftar Todo",
         "description": "Todo List Widget"
-    },
-    "YAgYL6": {
-        "message": "Selasa"
     },
     "YS5zRT": {
         "message": "Cari dengan {name}",
@@ -365,9 +356,6 @@
     "as6rZ1": {
         "message": "Aktifkan pelaporan crash (menggunakan Sentry)",
         "description": "General settings: enable sentry"
-    },
-    "azMsfM": {
-        "message": "Senin"
     },
     "bQFsdR": {
         "message": "Berikan izin untuk mengakses {host}"
@@ -462,12 +450,6 @@
         "message": "Unsplash",
         "description": "Unsplash background mode"
     },
-    "lxblgl": {
-        "message": "Rabu"
-    },
-    "mJR06P": {
-        "message": "Minggu"
-    },
     "mSg5KK": {
         "message": "Kecerahan: Gelap",
         "description": "Backgroud settings: form field label"
@@ -507,9 +489,6 @@
     "q4caWd": {
         "message": "Radius blur",
         "description": "Backgroud settings: form field label"
-    },
-    "qAhUUO": {
-        "message": "Kamis"
     },
     "qoEZRi": {
         "message": "Koleksi Unsplash",

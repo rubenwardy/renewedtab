@@ -29,9 +29,6 @@
     "47FYwb": {
         "message": "Cancelar"
     },
-    "qAhUUO": {
-        "message": "Jueves"
-    },
     "nGSwtl": {
         "message": "Buscar",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
@@ -257,9 +254,6 @@
         "message": "Botón",
         "description": "Button Widget"
     },
-    "azMsfM": {
-        "message": "Lunes"
-    },
     "dIwFS5": {
         "message": "Elige una imagen",
         "description": "Form field label"
@@ -331,9 +325,6 @@
         "message": "Política de privacidad",
         "description": "General settings: privacy policy button"
     },
-    "QrihTZ": {
-        "message": "Viernes"
-    },
     "RZqASt": {
         "message": "Un solo color",
         "description": "Backgroud mode description"
@@ -390,9 +381,6 @@
         "message": "Color",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "Sábado"
-    },
     "X18x9m": {
         "message": "General",
         "description": "Settings tab"
@@ -400,9 +388,6 @@
     "XrQEPN": {
         "message": "Localización",
         "description": "Form field label"
-    },
-    "YAgYL6": {
-        "message": "Martes"
     },
     "YuNOET": {
         "message": "HTML",
@@ -533,9 +518,6 @@
     "MiIvsP": {
         "message": "Puede agregar, mover, cambiar el tamaño y configurar widgets en una cuadrícula usando controles intuitivos."
     },
-    "mJR06P": {
-        "message": "Domingo"
-    },
     "l8+Uwz": {
         "message": "Nada para editar.",
         "description": "Form has no fields"
@@ -594,9 +576,6 @@
     "lkJAu6": {
         "message": "Unsplash",
         "description": "Unsplash background mode"
-    },
-    "lxblgl": {
-        "message": "Miércoles"
     },
     "mSg5KK": {
         "message": "Brillo: Oscuro",

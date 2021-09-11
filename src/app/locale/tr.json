@@ -115,9 +115,6 @@
     "QqE4JC": {
         "message": "Besleme URL'i eksik."
     },
-    "QrihTZ": {
-        "message": "Cuma"
-    },
     "T4VxQN": {
         "message": "Yükleniyor…"
     },
@@ -129,17 +126,8 @@
         "message": "Renk",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "Cumartesi"
-    },
     "XITVvp": {
         "message": "Panel arkaplanını göster"
-    },
-    "YAgYL6": {
-        "message": "Salı"
-    },
-    "azMsfM": {
-        "message": "Pazartesi"
     },
     "lUdRdE": {
         "message": "Hata: {msg}"
@@ -151,15 +139,6 @@
     "lkJAu6": {
         "message": "Unsplash",
         "description": "Unsplash background mode"
-    },
-    "lxblgl": {
-        "message": "Çarşamba"
-    },
-    "mJR06P": {
-        "message": "Pazar"
-    },
-    "qAhUUO": {
-        "message": "Perşembe"
     },
     "/dtDqf": {
         "message": "Notlar",

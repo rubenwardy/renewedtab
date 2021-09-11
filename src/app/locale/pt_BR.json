@@ -274,9 +274,6 @@
     "QqE4JC": {
         "message": "URL de feed ausente."
     },
-    "QrihTZ": {
-        "message": "Sexta-feira"
-    },
     "RCe+DS": {
         "message": "Arrastar e Soltar Widgets"
     },
@@ -348,9 +345,6 @@
         "message": "Cor",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "sábado"
-    },
     "a09vzt": {
         "message": "A solicitação HTTP falhou, {code} {msg}."
     },
@@ -376,9 +370,6 @@
     "XsTD4Q": {
         "message": "Lista de afazeres",
         "description": "Todo List Widget"
-    },
-    "YAgYL6": {
-        "message": "terça-feira"
     },
     "YS5zRT": {
         "message": "Pesquise com {name}",
@@ -462,9 +453,6 @@
     "as6rZ1": {
         "message": "Habilitar relatórios de travamento (usando Sentinela)",
         "description": "General settings: enable sentry"
-    },
-    "azMsfM": {
-        "message": "segunda-feira"
     },
     "bQFsdR": {
         "message": "Conceda permissão para acessar {host}"
@@ -554,12 +542,6 @@
         "message": "Você pode alterar a meta clicando nele no widget",
         "description": "Daily Goal widget: edit modal hint"
     },
-    "lxblgl": {
-        "message": "quarta-feira"
-    },
-    "mJR06P": {
-        "message": "domingo"
-    },
     "mY9tpI": {
         "message": "Erro ao carregar feed. Certifique-se de que é um feed RSS ou Atom."
     },
@@ -624,9 +606,6 @@
     "oDog89": {
         "message": "Uma área de texto editável para notas",
         "description": "Notes widget description"
-    },
-    "qAhUUO": {
-        "message": "quinta-feira"
     },
     "qCsSqt": {
         "message": "Escuridão do fundo do painel",

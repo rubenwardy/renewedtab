@@ -227,9 +227,6 @@
     "QqE4JC": {
         "message": "URL suapan tiada isi."
     },
-    "QrihTZ": {
-        "message": "Jumaat"
-    },
     "RZqASt": {
         "message": "Warna tunggal",
         "description": "Backgroud mode description"
@@ -290,9 +287,6 @@
         "message": "Warna",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "Sabtu"
-    },
     "WQeyl4": {
         "message": "Berikan kebenaran untuk mencapai tanda buku"
     },
@@ -318,9 +312,6 @@
     "XsTD4Q": {
         "message": "Senarai Tugasan",
         "description": "Todo List Widget"
-    },
-    "YAgYL6": {
-        "message": "Selasa"
     },
     "YS5zRT": {
         "message": "Gelintar menggunakan {name}",
@@ -355,9 +346,6 @@
     "ao/AFQ": {
         "message": "Mengingatkan anda mengenai matlamat harian",
         "description": "Daily Goal widget description"
-    },
-    "azMsfM": {
-        "message": "Isnin"
     },
     "bQFsdR": {
         "message": "Berikan kebenaran untuk mencapai {host}"
@@ -460,12 +448,6 @@
         "message": "Anda boleh tukar matlamat dengan klik padanya di widget",
         "description": "Daily Goal widget: edit modal hint"
     },
-    "lxblgl": {
-        "message": "Rabu"
-    },
-    "mJR06P": {
-        "message": "Ahad"
-    },
     "nGSwtl": {
         "message": "Gelintar",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
@@ -512,9 +494,6 @@
     "pVrtrA": {
         "message": "Gunakan imej sendiri",
         "description": "Backgroud mode description"
-    },
-    "qAhUUO": {
-        "message": "Khamis"
     },
     "qCsSqt": {
         "message": "Kegelapan Latar Belakang Panel",

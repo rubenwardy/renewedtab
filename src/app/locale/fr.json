@@ -270,9 +270,6 @@
         "message": "Texte",
         "description": "Text Widget"
     },
-    "QrihTZ": {
-        "message": "vendredi"
-    },
     "Rw51mJ": {
         "message": "Propulsé par <a>OpenStreetMap</a>."
     },
@@ -319,9 +316,6 @@
         "message": "Couleur",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "samedi"
-    },
     "WZjKFf": {
         "message": "Attention : cela peut contenir des données personnelles, si elles ont été saisies dans les paramètres du widget."
     },
@@ -343,9 +337,6 @@
     "XsTD4Q": {
         "message": "Liste de choses à faire",
         "description": "Todo List Widget"
-    },
-    "YAgYL6": {
-        "message": "mardi"
     },
     "YS5zRT": {
         "message": "Rechercher avec {nom}",
@@ -399,9 +390,6 @@
     "ao/AFQ": {
         "message": "Vous rappelle un objectif quotidien",
         "description": "Daily Goal widget description"
-    },
-    "azMsfM": {
-        "message": "Lundi"
     },
     "bQFsdR": {
         "message": "Accorder l'autorisation d'accéder à {hôte}"
@@ -864,9 +852,6 @@
         "message": "Rayon du flou",
         "description": "Backgroud settings: form field label"
     },
-    "qAhUUO": {
-        "message": "Jeudi"
-    },
     "qCsSqt": {
         "message": "Opacité de l'arrière-plan du panneau",
         "description": "Theme settings: form field label"
@@ -947,12 +932,6 @@
     "zsdRww": {
         "message": "Utilisé pour les boutons principaux et les liens",
         "description": "Theme settings: form field hint (Primary Color)"
-    },
-    "lxblgl": {
-        "message": "Mercredi"
-    },
-    "mJR06P": {
-        "message": "Dimanche"
     },
     "mSg5KK": {
         "message": "Luminosité : Sombre",

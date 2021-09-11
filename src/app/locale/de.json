@@ -203,9 +203,6 @@
         "message": "Farbe",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "Samstag"
-    },
     "Wi0G88": {
         "message": "Über und Hilfe",
         "description": "Settings tab"
@@ -270,14 +267,8 @@
         "message": "Kategorien",
         "description": "Form field label, list of categories. Used by Quotes widget"
     },
-    "QrihTZ": {
-        "message": "Freitag"
-    },
     "QqE4JC": {
         "message": "Fehlende Feed URL."
-    },
-    "azMsfM": {
-        "message": "Montag"
     },
     "cL6y1P": {
         "message": "URL zu einem Atom oder RSS Feed",
@@ -317,9 +308,6 @@
     "XsTD4Q": {
         "message": "ToDo Liste",
         "description": "Todo List Widget"
-    },
-    "YAgYL6": {
-        "message": "Dienstag"
     },
     "ZRWjTk": {
         "message": "Benutze die Standardsuchmaschine des Browsers",

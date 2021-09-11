@@ -168,12 +168,6 @@
     "Q1mwPp": {
         "message": "Considera di <a>contribuire o aggiungere la tua lingua</a>."
     },
-    "QrihTZ": {
-        "message": "Venerdì"
-    },
-    "azMsfM": {
-        "message": "Lunedì"
-    },
     "b2Rs2F": {
         "message": "Cambia la luminosità delle immagini più chiare",
         "description": "Backgroud settings: form field label (Brightness: Light)"
@@ -251,9 +245,6 @@
         "message": "Colore",
         "description": "Color background mode"
     },
-    "WMNHPh": {
-        "message": "Sabato"
-    },
     "WQeyl4": {
         "message": "Concedi il permesso di accedere ai segnalibri"
     },
@@ -282,9 +273,6 @@
     "XsTD4Q": {
         "message": "Cose da Fare",
         "description": "Todo List Widget"
-    },
-    "YAgYL6": {
-        "message": "Martedì"
     },
     "YYoBQn": {
         "message": "Raggio Sfocatura Pannello",
@@ -689,12 +677,6 @@
         "message": "Puoi cambiare l'obiettivo cliccandoci su",
         "description": "Daily Goal widget: edit modal hint"
     },
-    "lxblgl": {
-        "message": "Mercoledì"
-    },
-    "mJR06P": {
-        "message": "Domenica"
-    },
     "mSg5KK": {
         "message": "Luminosità: Scura",
         "description": "Backgroud settings: form field label"
@@ -802,9 +784,6 @@
     "GcxpZV": {
         "message": "Formato data",
         "description": "Clock widget: date style form field label"
-    },
-    "qAhUUO": {
-        "message": "Giovedì"
     },
     "GqPEp+": {
         "message": "Richiede l'estensione browser"
