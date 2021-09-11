@@ -112,13 +112,13 @@ const speedUnitMessages = defineMessages({
 
 
 const dayNames = defineMessages({
-	[0]: { defaultMessage: "Sunday" },
-	[1]: { defaultMessage: "Monday" },
-	[2]: { defaultMessage: "Tuesday" },
-	[3]: { defaultMessage: "Wednesday" },
-	[4]: { defaultMessage: "Thursday" },
-	[5]: { defaultMessage: "Friday" },
-	[6]: { defaultMessage: "Saturday" },
+	[0]: { defaultMessage: "SUN" },
+	[1]: { defaultMessage: "MON" },
+	[2]: { defaultMessage: "TUE" },
+	[3]: { defaultMessage: "WED" },
+	[4]: { defaultMessage: "THU" },
+	[5]: { defaultMessage: "FRI" },
+	[6]: { defaultMessage: "SAT" },
 }) as Record<number, MessageDescriptor>;
 
 
@@ -201,7 +201,7 @@ function Hour(props: WeatherHour) {
 
 function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUnit }) {
 	const uvRisk = (props.current.uvi != undefined && props.current.uvi > 0)
-	? getUVRisk(props.current.uvi) : undefined;
+		? getUVRisk(props.current.uvi) : undefined;
 	const speed = props.current.wind_speed != undefined && convertSpeed(props.current.wind_speed, props.windSpeedUnit);
 	const speedUnit = props.current.wind_speed != undefined && getSpeedUnitSuffix(props.windSpeedUnit);
 

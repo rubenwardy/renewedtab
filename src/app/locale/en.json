@@ -334,6 +334,9 @@
         "description": "Onboarding: presets title",
         "message": "Choose a Starting Point"
     },
+    "LFezWN": {
+        "message": "WED"
+    },
     "LfHpBk": {
         "description": "Theme settings: form field label",
         "message": "Font Scaling"
@@ -412,9 +415,6 @@
     "QqE4JC": {
         "message": "Missing feed URL."
     },
-    "QrihTZ": {
-        "message": "Friday"
-    },
     "RCe+DS": {
         "message": "Drag and Drop Widgets"
     },
@@ -448,6 +448,9 @@
     "ShQneX": {
         "description": "Form field label",
         "message": "Text"
+    },
+    "SzoV5j": {
+        "message": "MON"
     },
     "T/wBPw": {
         "message": "Remove {type}"
@@ -518,9 +521,6 @@
         "description": "Color background mode",
         "message": "Color"
     },
-    "WMNHPh": {
-        "message": "Saturday"
-    },
     "WQeyl4": {
         "message": "Grant permission to access bookmarks"
     },
@@ -542,6 +542,9 @@
     "XITVvp": {
         "message": "Show panel background"
     },
+    "XRiZdq": {
+        "message": "TUE"
+    },
     "XV4mnl": {
         "description": "Background settings: form field hint (Show a new photo)",
         "message": "Depending on your settings, the same photo may be chosen"
@@ -553,9 +556,6 @@
     "XsTD4Q": {
         "description": "Todo List Widget",
         "message": "Todo List"
-    },
-    "YAgYL6": {
-        "message": "Tuesday"
     },
     "YQhLKn": {
         "description": "Background expiry dropdown",
@@ -630,15 +630,15 @@
         "description": "General settings: enable sentry",
         "message": "Enable crash reporting (using Sentry)"
     },
-    "azMsfM": {
-        "message": "Monday"
-    },
     "b2Rs2F": {
         "description": "Backgroud settings: form field label (Brightness: Light)",
         "message": "Change brightness of lighter images"
     },
     "bQFsdR": {
         "message": "Grant permission to access {host}"
+    },
+    "c/wqRq": {
+        "message": "FRI"
     },
     "cL6y1P": {
         "description": "Form field hint (Feed URL)",
@@ -680,6 +680,9 @@
     "ekW/+6": {
         "message": "Unable to connect to the Internet"
     },
+    "fFLzL0": {
+        "message": "SAT"
+    },
     "fW8Xpd": {
         "description": "Weather widget: location needed error",
         "message": "Location needed. Click edit to add it."
@@ -710,6 +713,9 @@
     },
     "h/ftND": {
         "message": "Choose a file"
+    },
+    "h99NC2": {
+        "message": "SUN"
     },
     "hCBQrY": {
         "message": "Feels like <b>{temp}°</b>"
@@ -780,12 +786,6 @@
     "lwUV0r": {
         "description": "Daily Goal widget: edit modal hint",
         "message": "You can change the goal by clicking it on the widget"
-    },
-    "lxblgl": {
-        "message": "Wednesday"
-    },
-    "mJR06P": {
-        "message": "Sunday"
     },
     "mL3MOs": {
         "description": "Weather widget: Speed unit",
@@ -881,9 +881,6 @@
         "description": "Backgroud settings: form field label",
         "message": "Blur radius"
     },
-    "qAhUUO": {
-        "message": "Thursday"
-    },
     "qCsSqt": {
         "description": "Theme settings: form field label",
         "message": "Panel Background Darkness"
@@ -918,6 +915,9 @@
     "sYvWWw": {
         "description": "Links widget, form field hint (Icon)",
         "message": "Optional, URL to image (18px recommended)"
+    },
+    "sjDOif": {
+        "message": "THU"
     },
     "sx01dA": {
         "description": "Links widget description",
