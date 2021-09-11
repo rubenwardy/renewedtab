@@ -20,6 +20,8 @@ function makeHostPermission(host: string): browser.permissions.Permissions {
 export async function needsHostPermission(host: string): Promise<boolean> {
 	if (typeof browser === 'undefined') {
 		return false;
+	} else if (host.endsWith(".renewedtab.com")) {
+		return false;
 	}
 
 	return !(await browser.permissions.contains(makeHostPermission(host)));
