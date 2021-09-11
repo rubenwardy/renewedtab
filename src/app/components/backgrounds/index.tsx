@@ -2,6 +2,7 @@ import { ActualBackgroundProps, BackgroundProvider, getBackgroundProvider, getSc
 import { CacheExpiry } from "app/backgrounds/messages";
 import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
+import { enumToValue } from "app/utils/enum";
 import { fromTypedJSON, toTypedJSON } from "app/utils/TypedJSON";
 import React, { useMemo } from "react";
 import ActualBackground from "./ActualBackground";
@@ -43,9 +44,7 @@ function loadFromCache(key: string, provider: BackgroundProvider<any>): (Backgro
 
 
 function isNotExpired(fetchedAt: Date, expiry: CacheExpiry) {
-	if (typeof expiry == "string") {
-		expiry = CacheExpiry[expiry] as unknown as number;
-	}
+	expiry = enumToValue(CacheExpiry, expiry);
 
 	switch (expiry) {
 	case CacheExpiry.Minutes15:

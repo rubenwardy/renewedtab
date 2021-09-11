@@ -2,7 +2,7 @@ import Panel from "app/components/Panel";
 import { useElementSize } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
-import { enumToValue } from "app/utils/enum";
+import { enumToString, enumToValue } from "app/utils/enum";
 import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { themeMessages, WidgetProps, WidgetType } from "app/Widget";
@@ -84,7 +84,8 @@ const dateStyleMessages = defineMessages({
 
 
 function renderDate(intl: IntlShape, date: Date, dateStyle: DateStyle): string {
-	const dateStyleString = DateStyle[dateStyle].toLowerCase() as any
+	const dateStyleString = enumToString(DateStyle, dateStyle).toLowerCase() as any;
+
 	if (dateStyle == DateStyle.ISO) {
 		const month = (date.getMonth() + 1).toString().padStart(2, "0");
 		const day = (date.getDate()).toString().padStart(2, "0");

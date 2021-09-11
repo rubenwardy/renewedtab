@@ -1,17 +1,17 @@
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
-import { enumToValue } from "app/utils/enum";
+import { enumToString, enumToValue } from "app/utils/enum";
 import React, { useState } from "react";
 import { useIntl } from "react-intl";
 import { FieldProps } from ".";
 
 export default function EnumSelectField(props: FieldProps<string | number>) {
 	const Enum = props.schemaEntry.values;
-	const [value, setValue] = useState(props.value);
+	const [value, setValue] = useState(enumToString(Enum, props.value));
 	const intl = useIntl();
 
-	function handleChanged(newMode: any) {
-		props.onChange(getValue(newMode));
-		setValue(getValue(newMode));
+	function handleChanged(newMode: string) {
+		props.onChange(newMode);
+		setValue(newMode);
 	}
 
 	function getString(x: any): string {
@@ -25,24 +25,12 @@ export default function EnumSelectField(props: FieldProps<string | number>) {
 		}
 	}
 
-	function getValue(x: any): any {
-		if (typeof(x) == "string") {
-			return Enum[x];
-		} else {
-			return x;
-		}
-	}
-
 	const enumValues = Object.keys(Enum).filter(value => isNaN(Number(value)));
-
-	const options =
-		enumValues
-			.map(x => (
-				<option className="field" key={getValue(x)} value={getValue(x)}>
-					{getString(x)}
-				</option>));
 	return (
-		<select name={props.name} value={getValue(value)} onChange={(e) => handleChanged(e.target.value)}>
-			{options}
+		<select name={props.name} value={value} onChange={(e) => handleChanged(e.target.value)}>
+			{enumValues.map(x => (
+				<option className="field" key={x} value={x}>
+					{getString(x)}
+				</option>))}
 		</select>);
 }

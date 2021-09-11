@@ -1,3 +1,5 @@
+import { enumToValue } from "app/utils/enum";
+
 export interface WeatherCurrent {
 	icon?: string;
 	temp: number;
@@ -55,9 +57,7 @@ export interface Location {
 
 
 export function convertWeatherTemperatures(info: WeatherInfo, unit: TemperatureUnit): WeatherInfo {
-	if (typeof unit == "string") {
-		unit = TemperatureUnit[unit] as unknown as TemperatureUnit;
-	}
+	unit = enumToValue(TemperatureUnit, unit);
 
 	function convert(temp: number): number {
 		if (unit == TemperatureUnit.Fahrenheit) {
@@ -111,9 +111,7 @@ export function getUVRisk(uvi: number): UVRisk {
 }
 
 export function convertSpeed(speed: number, unit: SpeedUnit): number {
-	if (typeof unit == "string") {
-		unit = SpeedUnit[unit] as unknown as SpeedUnit;
-	}
+	unit = enumToValue(SpeedUnit, unit);
 
 	switch (unit) {
 	case SpeedUnit.MetersPerSecond:
