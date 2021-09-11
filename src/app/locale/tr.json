@@ -1027,5 +1027,61 @@
     "zaQRTm": {
         "message": "<b>Aşırı yüksek</b> UV",
         "description": "Extreme UV risk"
+    },
+    "2AUlDo": {
+        "message": "İyi uykular, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "İyi akşamlar, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "FqCn+F": {
+        "message": "Günaydın, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "oGS5TE": {
+        "message": "İyi günler, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "v9UIPJ": {
+        "message": "Gündoğumu - Günbatımı",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "M0PwXU": {
+        "message": "Rüzgar Hızı ({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "S6nfAm": {
+        "message": "Nem (%)",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "Go7At+": {
+        "message": "CMT",
+        "description": "Short weekday name (Saturday)"
+    },
+    "Vckd1G": {
+        "message": "PZT",
+        "description": "Short weekday name (Monday)"
+    },
+    "YS3jnS": {
+        "message": "CUM",
+        "description": "Short weekday name (Friday)"
+    },
+    "eXB4qM": {
+        "message": "ÇAR",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "frEJEM": {
+        "message": "PER",
+        "description": "Short weekday name (Thursday)"
+    },
+    "uv1bYR": {
+        "message": "SAL",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "qzlLb3": {
+        "message": "PAZ",
+        "description": "Short weekday name (Sunday)"
     }
 }
