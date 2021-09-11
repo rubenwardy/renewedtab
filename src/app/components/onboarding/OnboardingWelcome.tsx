@@ -43,7 +43,8 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 									values={{
 										a: (chunk: any) => (
 											<a href="https://renewedtab.com/translations/">{chunk}</a>)
-									}} /><br />
+									}} />
+								{props.locale == "en" ? <br /> : " "}
 								<FormattedMessage
 									defaultMessage="Consider <a>contributing or adding your language</a>."
 									values={{
