@@ -305,7 +305,7 @@
         "description": "Form field label"
     },
     "VkW6D1": {
-        "message": "centre, haut ou bas",
+        "message": "center, top, or bottom",
         "description": "Backgroud settings: form field hint (Position)"
     },
     "WF5DKA": {
@@ -339,7 +339,7 @@
         "description": "Todo List Widget"
     },
     "YS5zRT": {
-        "message": "Rechercher avec {nom}",
+        "message": "Rechercher avec {name}",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"
     },
     "YYoBQn": {
@@ -392,7 +392,7 @@
         "description": "Daily Goal widget description"
     },
     "bQFsdR": {
-        "message": "Accorder l'autorisation d'accéder à {hôte}"
+        "message": "Accorder l'autorisation d'accéder à {host}"
     },
     "cL6y1P": {
         "message": "URL vers un flux Atom ou RSS",
@@ -534,7 +534,7 @@
         "description": "Currencies widget: form field label"
     },
     "IbCXY9": {
-        "message": "Standard ({exemple})",
+        "message": "Standard ({example})",
         "description": "Clock widget: date style type"
     },
     "RCe+DS": {

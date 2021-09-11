@@ -487,7 +487,7 @@
         "message": "<b>{name}</b>, a {latitude}, {longitude}"
     },
     "O8mt7g": {
-        "message": "Numerico ({esempio})",
+        "message": "Numerico ({example})",
         "description": "Clock widget: date style type"
     },
     "yUJ5MA": {

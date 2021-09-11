@@ -330,7 +330,7 @@
         "description": "Form field label"
     },
     "VkW6D1": {
-        "message": "centro, superior ou inferior",
+        "message": "center, top, or bottom",
         "description": "Backgroud settings: form field hint (Position)"
     },
     "VxE3S8": {
@@ -829,7 +829,7 @@
         "description": "Delete widget modal message"
     },
     "IbCXY9": {
-        "message": "Padrão ({exemplo})",
+        "message": "Padrão ({example})",
         "description": "Clock widget: date style type"
     },
     "TIEfOV": {
