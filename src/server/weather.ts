@@ -1,11 +1,8 @@
 import { WeatherInfo } from "common/api/weather";
 import fetchCatch, { Request } from "./http";
-import { serverConfig, UA_DEFAULT } from ".";
+import { OPEN_WEATHER_MAP_API_KEY, UA_DEFAULT } from ".";
 import { notifyUpstreamRequest } from "./metrics";
 import { makeKeyCache } from "./cache";
-
-const OPEN_WEATHER_MAP_API_KEY =
-	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
 
 
 interface OWMBase {

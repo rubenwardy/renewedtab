@@ -81,6 +81,7 @@ textarea.invisible, input.invisible {
 
 .field-group {
 	display: flex;
+	min-width: 400px;
 
 	> * {
 		margin: 0;

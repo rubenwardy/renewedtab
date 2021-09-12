@@ -23,6 +23,10 @@ export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.10.0; +htt
 export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.10.0; +https://renewedtab.com/)";
 const SENTRY_DSN = process.env.SENTRY_DSN;
 const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
+export const OPEN_WEATHER_MAP_API_KEY =
+	process.env.OPEN_WEATHER_MAP_API_KEY ?? serverConfig.OPEN_WEATHER_MAP_API_KEY;
+
+
 
 
 // App
@@ -30,7 +34,7 @@ const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
 import { getWeatherInfo } from "./weather";
 import { getBackground } from "./backgrounds";
 import { handleProxy } from "./proxy";
-import { getCoordsFromQuery } from "./geocode";
+import { getCoordsFromQuery, getPlaceInfoFromLocation } from "./geocode";
 import getImageFromUnsplash from "./backgrounds/unsplash";
 import SpaceLaunch from "common/api/SpaceLaunch";
 import { getQuote, getQuoteCategories } from "./quotes";
@@ -100,8 +104,27 @@ app.get("/proxy/", async (req: express.Request, res: express.Response) => {
 });
 
 
+function parseLocation(req: express.Request) {
+	if (typeof req.query.long != "string" || typeof req.query.lat != "string") {
+		return null;
+	}
+
+	const location = {
+		latitude: parseFloat(req.query.lat as string),
+		longitude: parseFloat(req.query.long as string),
+	};
+
+	if (isNaN(location.latitude) || isNaN(location.longitude)) {
+		return null;
+	}
+
+	return location;
+}
+
+
 app.get("/api/weather/", async (req: express.Request, res: express.Response) => {
-	if (!req.query.long || !req.query.lat) {
+	const location = parseLocation(req);
+	if (!location) {
 		writeClientError(res, "Missing location");
 		return;
 	}
@@ -109,9 +132,7 @@ app.get("/api/weather/", async (req: express.Request, res: express.Response) => 
 	notifyAPIRequest("weather");
 
 	try {
-		res.json(await getWeatherInfo(
-			Number.parseFloat(req.query.lat as string),
-			Number.parseFloat(req.query.long as string)));
+		res.json(await getWeatherInfo(location.latitude, location.longitude));
 	} catch (ex: any) {
 		writeClientError(res, ex.message);
 	}
@@ -128,6 +149,23 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response) => 
 
 	try {
 		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
+	} catch (ex: any) {
+		writeClientError(res, ex.message);
+	}
+});
+
+
+app.get("/api/geolookup/", async (req: express.Request, res: express.Response) => {
+	const location = parseLocation(req);
+	if (!location) {
+		writeClientError(res, "Missing location");
+		return;
+	}
+
+	notifyAPIRequest("geolookup");
+
+	try {
+		res.json(await getPlaceInfoFromLocation(location.latitude, location.longitude));
 	} catch (ex: any) {
 		writeClientError(res, ex.message);
 	}

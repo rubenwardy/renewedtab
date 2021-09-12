@@ -23,6 +23,12 @@
 	&.active {
 		color: var(--color-primary-dark);
 	}
+
+	img.icon {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
 }
 
 .btn-sm {

@@ -27,6 +27,15 @@ interface ButtonProps {
 }
 
 
+function ButtonIcon(props: { icon: string, className?: string}) {
+	if (props.icon.endsWith(".svg")) {
+		return (<img src={props.icon} className={mergeClasses("icon", props.className)} />)
+	} else {
+		return (<i className={mergeClasses("icon", props.icon, props.className)} />);
+	}
+}
+
+
 export default function Button(props: ButtonProps) {
 	const Tag = props.href ? "a" : "button";
 
@@ -54,7 +63,7 @@ export default function Button(props: ButtonProps) {
 	return (
 		<Tag {...props2} className={className}>
 			{props.icon &&
-				(<i className={`${props.icon} ${label && "mr-2"}`} />)}
+				(<ButtonIcon icon={props.icon} className={label ? "mr-2" : undefined} />)}
 			{label}
 		</Tag>);
 }
