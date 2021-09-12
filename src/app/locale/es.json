@@ -995,5 +995,72 @@
     "2O5Rq1": {
         "message": "Buenas tardes, {name}",
         "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "sYvWWw": {
+        "message": "Opcional, URL a la imagen (se recomiendan 18 píxeles)",
+        "description": "Links widget, form field hint (Icon)"
+    },
+    "Ay1sfO": {
+        "message": "Controla de cuántas de las imágenes más recientes tiene que escoger al azar. Establecer esto en 1 siempre elegirá la última imagen",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "MN3prI": {
+        "message": "Incluir carpetas como secciones",
+        "description": "Bookmarks widget: form field label"
+    },
+    "Wi0G88": {
+        "message": "Acerca de y Ayuda",
+        "description": "Settings tab"
+    },
+    "YYoBQn": {
+        "message": "Radio de desenfoque del panel",
+        "description": "Theme settings: form field label"
+    },
+    "Z79HMN": {
+        "message": "Fondos seleccionados al azar",
+        "description": "Backgroud mode description"
+    },
+    "as6rZ1": {
+        "message": "Habilitar informes de fallas (usando Sentry)",
+        "description": "General settings: enable sentry"
+    },
+    "cR7nCG": {
+        "message": "Restablecer el tema al defecto"
+    },
+    "eXkpJi": {
+        "message": "Utilice iconos de sitios web (favicons)",
+        "description": "Links widget: form field label"
+    },
+    "lwUV0r": {
+        "message": "Puede cambiar el objetivo haciendo clic en el widget",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "KhM0zv": {
+        "message": "Las citas provienen de fuentes externas y no son revisadas por Renewed Tab.",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "ZeZlbR": {
+        "message": "Establece la opacidad del color teñido del botón",
+        "description": "Button widget: form field hint (Opacity)"
+    },
+    "jSHZmX": {
+        "message": "Seguimiento de elementos de la lista de tareas",
+        "description": "Todo List widget: description"
+    },
+    "sx01dA": {
+        "message": "Enlaces, con soporte para encabezados e íconos",
+        "description": "Links widget description"
+    },
+    "4UpnpD": {
+        "message": "Las imágenes se almacenan localmente en su navegador y nunca se suben",
+        "description": "Form field hint (Image)"
+    },
+    "TZknEV": {
+        "message": "Tenga cuidado con lo que pege aquí. Un atacante podría hacer que pegue código aquí que roba cosas a las que tiene acceso la extensión, como el historial del navegador y los sitios principales.",
+        "description": "HTML widget: form field hint (HTML)"
+    },
+    "ZRWjTk": {
+        "message": "Utilice el buscador predeterminado del navegador",
+        "description": "Search widget: form field label"
     }
 }
