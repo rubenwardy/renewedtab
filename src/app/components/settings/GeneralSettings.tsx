@@ -1,8 +1,8 @@
-import { getLanguages } from "app/locale";
 import React, { ChangeEvent, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { Form } from "../forms";
+import LanguageSelector from "../LanguageSelector";
 import { gridSettingsSchema, WidgetGridSettings } from "../WidgetGrid";
 
 
@@ -51,30 +51,9 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 
 	return (
 		<div className="modal-body">
-			<div className="field">
-				<label htmlFor="locale">
-					<i className="fas fa-language mr-2" />
-					<FormattedMessage defaultMessage="Language" />
-				</label>
-				<select value={props.locale} onChange={onLocaleChange}>
-					{Object.entries(getLanguages()).map(([key, title]) =>
-						<option key={key} value={key}>{title}</option>)}
-				</select>
-				<p className="text-muted">
-					<FormattedMessage
-						defaultMessage="Translations are provided by the community."
-						values={{
-							a: (chunk: any) => (
-								<a href="https://renewedtab.com/translations/">{chunk}</a>)
-						}} /><br />
-					<FormattedMessage
-						defaultMessage="Consider <a>contributing or adding your language</a>."
-						values={{
-							a: (chunk: any) => (
-								<a href="https://renewedtab.com/translations/">{chunk}</a>)
-						}} />
-				</p>
-			</div>
+			<LanguageSelector
+				locale={props.locale}
+				setLocale={props.setLocale} />
 
 			<Form
 				values={props.grid!}
