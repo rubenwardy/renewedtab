@@ -93,7 +93,7 @@ function CreditsVote(props: CreditsProps) {
 
 export function Credits(props: CreditsProps) {
 	const setIsHovered = props.setIsHovered ?? (() => {});
-	const [startOnHover, cancelOnHover] = useDelay(setIsHovered, 1000, true);
+	const [startOnHover, cancelOnHover] = useDelay(setIsHovered, 100, true);
 	const intl = useIntl();
 
 	function onMouseLeave() {
