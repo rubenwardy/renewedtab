@@ -49,7 +49,7 @@ export default function Onboarding(props: OnboardingProps) {
 
 	return (
 		<Modal title={intl.formatMessage(messages.title)} {...props}
-				wide={true} onClose={undefined}>
+				wide={true} onClose={undefined} lighterBg={true}>
 			<Carousel>
 				<OnboardingWelcome {...pageProps} />
 				<OnboardingHelp />

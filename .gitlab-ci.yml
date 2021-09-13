@@ -107,6 +107,15 @@ sentry:
   only:
     - tags
 
+chrome:
+  stage: deploy
+  dependencies: ["webext"]
+  interruptible: false
+  script:
+    - npm run upload:chrome chrome.zip
+  only:
+    - tags
+
 
 # firefox:
 #   stage: deploy
