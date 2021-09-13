@@ -21,6 +21,9 @@ export default function LanguageSelector(props: LanguageSelectorProps) {
 		}
 	}
 
+	const langs = Object.entries(getLanguages()).sort(
+		([,x], [,y]) => x.localeCompare(y, undefined, { sensitivity: "base" }));
+
 	return (
 		<div className={mergeClasses("field", props.className)}>
 			<label htmlFor="locale">
@@ -28,7 +31,7 @@ export default function LanguageSelector(props: LanguageSelectorProps) {
 				<FormattedMessage defaultMessage="Language" />
 			</label>
 			<select value={props.locale} onChange={onLocaleChange}>
-				{Object.entries(getLanguages()).map(([key, title]) =>
+				{langs.map(([key, title]) =>
 					<option key={key} value={key}>{title}</option>)}
 			</select>
 			<p className="text-muted">
