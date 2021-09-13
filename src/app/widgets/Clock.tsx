@@ -1,13 +1,13 @@
+import FitText from "app/components/FitText";
 import Panel from "app/components/Panel";
-import { useElementSize } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { enumToString, enumToValue } from "app/utils/enum";
 import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
 import { themeMessages, WidgetProps, WidgetType } from "app/Widget";
-import React, { CSSProperties } from "react";
-import { defineMessages, FormattedTime, IntlShape, useIntl } from "react-intl";
+import React from "react";
+import { defineMessages, IntlShape, useIntl } from "react-intl";
 
 
 enum DateStyle {
@@ -112,7 +112,6 @@ function Clock(widget: WidgetProps<ClockProps>) {
 	const props = widget.props;
 	const [time, setTime] = React.useState<Date>(new Date());
 	const intl = useIntl();
-	const [ref, size] = useElementSize<HTMLDivElement>();
 
 	React.useEffect(() => {
 		const timer = setInterval(() => {
@@ -125,28 +124,23 @@ function Clock(widget: WidgetProps<ClockProps>) {
 	}, []);
 
 	const dateStyle = enumToValue(DateStyle, props.dateStyle);
-	const fontSize = size ? Math.min(size.y * 0.9, size.x / 2.5) : undefined;
-	const fontSizeProp = fontSize ? `${fontSize}px` : undefined;
-	const style: CSSProperties = {
-		fontSize: fontSizeProp,
-		lineHeight: fontSizeProp,
-	};
 
 	return (
 		<Panel {...widget.theme} scrolling={false}>
-			<div className="middle-center" ref={ref}>
-				<div>
-					<span className="time" style={style}>
-						<FormattedTime
-							value={time}
-							hour="numeric" minute="numeric"
-							second={props.showSeconds ? "numeric" : undefined}
-							hourCycle={props.hour12 ? "h12" : "h23"} />
-					</span>
-					<span className="date">
-						{dateStyle != undefined && dateStyle != DateStyle.None &&
-							renderDate(intl, time, dateStyle)}
-					</span>
+			<div className="row row-vertical h-100">
+				<div className="col text-center">
+					<FitText>
+						{intl.formatTime(time, {
+							hour: "numeric",
+							minute: "numeric",
+							second: props.showSeconds ? "numeric" : undefined,
+							hourCycle: props.hour12 ? "h12" : "h23",
+						})}
+					</FitText>
+				</div>
+				<div className="col-auto date">
+					{dateStyle != undefined && dateStyle != DateStyle.None &&
+								renderDate(intl, time, dateStyle)}
 				</div>
 			</div>
 		</Panel>);

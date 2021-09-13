@@ -3,7 +3,7 @@ import { useElementSize } from "app/hooks"
 import { clampNumber, mergeClasses } from "app/utils";
 
 interface FitTextProps extends  React.HTMLAttributes<HTMLDivElement>{
-	children: string[];
+	children: string[] | string;
 	minFontSize?: number;
 	maxFontSize?: number;
 }
@@ -21,11 +21,13 @@ function getTextRatio(text: string):  number{
 
 
 export default function FitText(props: FitTextProps) {
+	const children = typeof props.children == "string" ? [ props.children ] : props.children
+
 	const [ref, size] = useElementSize();
 	const style: CSSProperties = {};
 	if (size) {
 		const desiredHeight = size.y;
-		const widthToHeight = size.x * 0.8 * getTextRatio(props.children.join(""));
+		const widthToHeight = size.x * 0.8 * getTextRatio(children.join(""));
 		const fontSize = clampNumber(Math.min(desiredHeight, widthToHeight),
 				props.minFontSize ?? 20, props.maxFontSize ?? 200);
 		const fontSizeProp = `${fontSize}px`;
