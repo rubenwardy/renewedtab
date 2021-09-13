@@ -22,6 +22,7 @@ test:
   dependencies: []
   interruptible: true
   script:
+    - npm run trans:check
     - npm test
     - npm run lint
 
