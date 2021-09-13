@@ -71,7 +71,7 @@
         "description": "Form field label"
     },
     "+oSH/F": {
-        "message": "Dice tu edad con demasiada precisión",
+        "message": "Dice tu edad actual con demasiada precisión",
         "description": "Age widget description"
     },
     "/iBdV1": {
@@ -157,7 +157,7 @@
         "description": "Onboarding page: next button"
     },
     "wwQ6Va": {
-        "message": "Elegir la ubicación",
+        "message": "Elegir ubicación",
         "description": "Location field"
     },
     "wogY8a": {
@@ -447,7 +447,7 @@
         "description": "Feed widget: filter show checkbox label"
     },
     "zfsplE": {
-        "message": "Nunca lo muestres otra vez",
+        "message": "Nunca volver a mostrar",
         "description": "Background credits vote"
     },
     "AgU+/t": {
@@ -466,7 +466,7 @@
         "description": "SpaceFlights widget: edit modal hint"
     },
     "zo4ZQa": {
-        "message": "Muestrar",
+        "message": "Mostrar",
         "description": "Feed widget: filter allow checkbox label"
     },
     "aXrD3p": {
@@ -530,7 +530,7 @@
         "description": "Widget grid: form label for grid spacing"
     },
     "Q5Myqt": {
-        "message": "Número de columnas en la cuadrícula del widget. Cada columna tiene aproximadamente 50 px más espacio, por lo que con un espacio de 15 px, el máximo que debe tener una ventana de 1080p es 30 columnas.",
+        "message": "Número de columnas en la cuadrícula del widget. Cada columna tiene aproximadamente 50 px más el espaciado, por lo que con un espaciado de 15 px, el máximo que debe tener una ventana de 1080p es 30 columnas.",
         "description": "Widget grid: form hint for grid columns"
     },
     "RCe+DS": {
@@ -695,15 +695,15 @@
         "description": "Import / export settings, reset confirmation"
     },
     "p8GKKf": {
-        "message": "Sitios web más visitados por usted",
+        "message": "Sitios web más visitados",
         "description": "Top Sites Widget"
     },
     "pG7wIz": {
-        "message": "Muestra los tipos de cambio, las divisas forex y las criptomonedas (BitCoin, etc.) también son compatibles",
+        "message": "Muestra tasas de cambio, tambien compatible con divisas forex y criptomonedas (BitCoin, etc.)",
         "description": "Currencies widget description"
     },
     "p7+m8N": {
-        "message": "Otorgar permiso para acceder a los sitios web más visitados por usted",
+        "message": "Otorgue permiso para obtener sus sitios web más visitados",
         "description": "Top Sites widget: permission request"
     },
     "qCsSqt": {
@@ -755,7 +755,7 @@
         "description": "Background expiry dropdown"
     },
     "or/+Da": {
-        "message": "Estilismo",
+        "message": "Estilo",
         "description": "Subheading for per-widget styling properties"
     },
     "+sI+Oh": {
@@ -826,7 +826,7 @@
         "description": "Invisible widget description"
     },
     "pbEMNj": {
-        "message": "Previa",
+        "message": "Anterior",
         "description": "Onboarding page: previous button"
     },
     "PBMGxw": {
@@ -911,7 +911,7 @@
         "description": "Background settings: form field hint (Show a new photo)"
     },
     "FHzdXg": {
-        "message": "Las siguientes configuraciones son <b> experimentales </b>; esto significa que puede encontrar errores y rarezas al cambiarlos, y las actualizaciones pueden romper sus temas.",
+        "message": "Las siguientes configuraciones son <b>experimentales</b>; esto significa que puede encontrar errores y rarezas al cambiarlos, y las actualizaciones pueden romper sus temas.",
         "description": "Theme settings"
     },
     "zEj0dg": {
@@ -985,7 +985,7 @@
         "description": "Web Comic widget description"
     },
     "TIEfOV": {
-        "message": "Se mostrará un artículo si coincide con por lo menos un filtro 'Mostrar' (si lo hay) y no coincide con filtros 'Ocultar'.",
+        "message": "Se mostrará un artículo si coincide por lo menos con un filtro 'Mostrar' (si lo hay), y no coincide con filtros 'Ocultar'.",
         "description": "Feed widget: form field hint (Filters)"
     },
     "2AUlDo": {
@@ -1056,7 +1056,7 @@
         "description": "Form field hint (Image)"
     },
     "TZknEV": {
-        "message": "Tenga cuidado con lo que pege aquí. Un atacante podría hacer que pegue código aquí que roba cosas a las que tiene acceso la extensión, como el historial del navegador y los sitios principales.",
+        "message": "Tenga cuidado con lo que pegue aquí. Un atacante podría hacer que pegue código aquí para robar cosas a las que tiene acceso la extensión, como el historial del navegador y sus sitios web principales.",
         "description": "HTML widget: form field hint (HTML)"
     },
     "ZRWjTk": {
