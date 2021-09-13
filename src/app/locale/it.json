@@ -899,5 +899,21 @@
     "B0kbsm": {
         "message": "Feed",
         "description": "Unsplash background mode"
+    },
+    "2O5Rq1": {
+        "message": "Buonasera, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2AUlDo": {
+        "message": "Buonasera, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "FqCn+F": {
+        "message": "Buongiorno, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "oGS5TE": {
+        "message": "Buon pomeriggio, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
     }
 }

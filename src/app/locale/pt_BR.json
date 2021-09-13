@@ -895,5 +895,41 @@
     "4dzBeG": {
         "message": "De",
         "description": "Currencies widget: form field label"
+    },
+    "2O5Rq1": {
+        "message": "Boa noite, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2AUlDo": {
+        "message": "Boa noite, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "FqCn+F": {
+        "message": "Bom dia, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "oGS5TE": {
+        "message": "Boa tarde, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "4cMia7": {
+        "message": "Mostrar uma foto nova",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "+TYXj6": {
+        "message": "Hoje, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "2vJWTd": {
+        "message": "Foto",
+        "description": "Background credits title placeholder"
+    },
+    "+sI+Oh": {
+        "message": "Mostrar previsão de hora em hora",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "UV <b>Muito Alto</b>",
+        "description": "Very High UV risk"
     }
 }
