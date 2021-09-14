@@ -57,7 +57,7 @@ function parseWeatherInfo(info: OWMOneCall): WeatherInfo {
 
 	function unixToTime(unix: number): string {
 		const date = unixToDate(unix);
-		return `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
+		return `${date.getUTCHours().toString().padStart(2, "0")}:${date.getUTCMinutes().toString().padStart(2, "0")}`;
 	}
 
 	function kelvinToCelsius(k: number) {
@@ -69,7 +69,7 @@ function parseWeatherInfo(info: OWMOneCall): WeatherInfo {
 	}
 
 	const daily = info.daily.map(day => ({
-		dayOfWeek: unixToDate(day.dt).getDay(),
+		dayOfWeek: unixToDate(day.dt).getUTCDay(),
 		icon: getIcon(day),
 		minTemp: kelvinToCelsius(day.temp.min),
 		maxTemp: kelvinToCelsius(day.temp.max),
