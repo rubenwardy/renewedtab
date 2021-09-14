@@ -47,6 +47,10 @@ class APIClient {
 			body: readStream,
 		}));
 
+		if (!response.ok) {
+			throw new Error(await response.text());
+		}
+
 		return await response.json();
 	}
 
@@ -100,7 +104,7 @@ async function upload(zipPath) {
 
 	console.log("Getting token");
 	const token = webstore.fetchToken();
-	const myZipFile = fs.createReadStream(zipPath);
+	const myZipFile = fs.readFileSync(zipPath);
 	console.log("Uploading to Chrome Web Store...")
 	const res = await webstore.uploadExisting(myZipFile, token);
 	console.log(res);
