@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { WidgetManager } from "app/WidgetManager";
 import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGrid";
@@ -36,8 +36,12 @@ export default function App() {
 	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
 	const [gridSettings, setGridSettings] = useStorage<WidgetGridSettings>(
 		"grid_settings", { ...defaultGridSettings });
-	const onboardingIsOpen = loaded && widgetManager.widgets.length == 0;
-	const onboardingForceUpdate = useForceUpdate();
+	const [onboardingIsOpen, setOnboardingIsOpen] = useState<boolean | undefined>(undefined);
+	useEffect(() => {
+		if (loaded && onboardingIsOpen == undefined) {
+			setOnboardingIsOpen(widgetManager.widgets.length == 0);
+		}
+	}, [loaded]);
 
 	if (theme) {
 		applyTheme(theme);
@@ -70,7 +74,7 @@ export default function App() {
 					<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
 				{onboardingIsOpen && (
 					<Onboarding
-							onClose={onboardingForceUpdate}
+							onClose={() => setOnboardingIsOpen(false)}
 							locale={locale} setLocale={setLocale}
 							manager={widgetManager} />)}
 				<ReviewRequester />
