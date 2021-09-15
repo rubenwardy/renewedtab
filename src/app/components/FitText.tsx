@@ -20,6 +20,13 @@ function getTextRatio(text: string):  number{
 }
 
 
+/**
+ * A constant to reduce the size of the text, to allow the
+ * text to fit in without wrapping.
+ */
+const MAGIC_NUMBER = 0.7;
+
+
 export default function FitText(props: FitTextProps) {
 	const children = typeof props.children == "string" ? [ props.children ] : props.children
 
@@ -27,7 +34,7 @@ export default function FitText(props: FitTextProps) {
 	const style: CSSProperties = {};
 	if (size) {
 		const desiredHeight = size.y;
-		const widthToHeight = size.x * 0.8 * getTextRatio(children.join(""));
+		const widthToHeight = size.x * MAGIC_NUMBER * getTextRatio(children.join(""));
 		const fontSize = clampNumber(Math.min(desiredHeight, widthToHeight),
 				props.minFontSize ?? 20, props.maxFontSize ?? 200);
 		const fontSizeProp = `${fontSize}px`;
