@@ -14,15 +14,19 @@
 	}
 
 	&.weather-lg {
-		> *:not(:first-child):not(:last-child) {
+		> *:not(:last-child) {
 			margin-bottom: 1em;
 		}
 	}
 
 	&.weather-sm {
-		> *:not(:first-child):not(:last-child) {
+		> *:not(:last-child) {
 			margin-bottom: 0.3em;
 		}
+	}
+
+	&.weather-by > *:first-child {
+		margin-bottom: 0;
 	}
 
 	.location, .weather-credits {
@@ -37,6 +41,12 @@
 		color:#eee;
 	}
 
+	&:not(.weather-by) {
+		.weather-current .icon-container {
+			min-width: 72px;
+		}
+	}
+
 	.weather-current {
 		align-items: center;
 		gap: 0.75rem;
@@ -44,7 +54,6 @@
 
 		.icon-container {
 			position: relative;
-			min-width: 72px;
 
 			.icon {
 				position: absolute;

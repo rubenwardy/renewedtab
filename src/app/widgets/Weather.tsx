@@ -333,20 +333,24 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 			(<Day key={day.dayOfWeek} {...day} />));
 
 	const sizeCode = getSizeCode(size, props);
-	const classes = mergeClasses("weather", `weather-${sizeCode}`, "h-100");
+	const hideCredits = size && (size.x < 50 || size.y < 75) && !props.display.showDetails &&
+			!props.display.showHourlyForecast && !props.display.showDailyForecast;
+	const classes = mergeClasses("weather", `weather-${sizeCode}`,
+			hideCredits && "weather-by", "h-100");
 	return (
 		<Panel {...widget.theme} ref={ref}
 				className={classes} invisClassName={`${classes} text-shadow`}>
-			<div className="row">
-				<div className="col text-left location weather-title">
-					{info.url
-						? (<a href={info.url}>{props.location.name}</a>)
-						: (props.location.name)}
-				</div>
-				<div className="col-auto text-right weather-credits">
-					<a href="https://openweathermap.org">OpenWeatherMap</a>
-				</div>
-			</div>
+			{!hideCredits && (
+				<div className="row">
+					<div className="col text-left location weather-title">
+						{info.url
+							? (<a href={info.url}>{props.location.name}</a>)
+							: (props.location.name)}
+					</div>
+					<div className="col-auto text-right weather-credits">
+						<a href="https://openweathermap.org">OpenWeatherMap</a>
+					</div>
+				</div>)}
 
 			{props.display.showCurrent && (
 				<div className="col">
