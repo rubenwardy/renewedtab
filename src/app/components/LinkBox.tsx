@@ -91,16 +91,19 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const [ref, size] = useElementSize();
 
-	const links = useMemo<Link[]>(() => deepCopy(props.links), [props.links]);
-	if (size && props.limitItemsToAvoidScrolling) {
-		const rows = size.y / 100;
-		const columns = size.x / 120;
-		links.splice(rows * columns);
-	}
+	const links = useMemo<Link[]>(() => {
+		const ret = deepCopy(props.links);
+		if (size && props.limitItemsToAvoidScrolling) {
+			const rows = Math.floor((size.y + 10) / 120);
+			const columns = Math.floor((size.x + 10) / 105);
+			ret.splice(rows * columns);
+		}
+		return ret;
+	}, [props.links, size]);
 
 	if (useWebsiteIcons && typeof browser !== "undefined") {
 		links
-			.filter(link => link.url.length > 0 && link.icon == "")
+			.filter(link => link.url.length > 0 && (link.icon == "" || link.icon == undefined))
 			.forEach(link => {
 				link.icon = getWebsiteIconOrNull(link.url);
 			});

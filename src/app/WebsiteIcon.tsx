@@ -37,7 +37,7 @@ async function fetchIconURL(url: string): Promise<string> {
 		}
 	}
 
-	const ret = new URL(topIcon?.getAttribute("href") ?? "/favicon.ico", url);
+	const ret = new URL(topIcon?.getAttribute("href") ?? "/favicon.ico", response.url);
 	return ret.toString();
 }
 
@@ -71,6 +71,10 @@ async function fetchIcon(url: string): Promise<string> {
 			"Accept": "image/*",
 		},
 	}));
+
+	if (!response.ok) {
+		throw new Error(`Failed to load ${iconUrl}`);
+	}
 
 	const blob = await response.blob();
 	const data = await blobToDataURL(blob);
