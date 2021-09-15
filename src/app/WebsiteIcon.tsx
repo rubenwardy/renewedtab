@@ -23,14 +23,15 @@ async function fetchIconURL(url: string): Promise<string> {
 	const html = new window.DOMParser().parseFromString(
 		await response.text(), "text/html");
 
-	const icons = html.querySelectorAll("link[rel~='icon']");
+	const icons = html.querySelectorAll("link[rel*='icon']");
 
 	let topScore = -1;
 	let topIcon : (Element | null) = null;
 	for (const icon of icons.values()) {
 		const sizes = icon.getAttribute("sizes")?.split("x") ?? [];
-		const score = sizes.map((x) => parseInt(x))
-			.reduce((acc, x) => acc + x, 0);
+		const score =
+			(icon.getAttribute("rel")!.includes("apple-touch-icon") ? 10 : 0) +
+			sizes.map((x) => parseInt(x)).reduce((acc, x) => acc + x, 0);
 		if (score > topScore) {
 			topScore = score;
 			topIcon = icon;
