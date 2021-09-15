@@ -26,19 +26,33 @@ async function fetchIconURL(url: string): Promise<string> {
 	const icons = html.querySelectorAll("link[rel*='icon']");
 
 	let topScore = -1;
-	let topIcon : (Element | null) = null;
+	let topIcon : (string | null) = null;
 	for (const icon of icons.values()) {
-		const sizes = icon.getAttribute("sizes")?.split("x") ?? [];
+		const href = icon.getAttribute("href");
+		if (!href) {
+			continue;
+		}
+
+		const sizes = icon.getAttribute("sizes")
+				?.split(" ")
+				.map(size => size.split("x").map(x => parseInt(x))) ?? [];
+
+		const sizeScores = sizes.map(size => Math.min(...size));
+
 		const score =
 			(icon.getAttribute("rel")!.includes("apple-touch-icon") ? 10 : 0) +
-			sizes.map((x) => parseInt(x)).reduce((acc, x) => acc + x, 0);
+			(href.toLowerCase().endsWith(".ico") ? 0 : 10) +
+			Math.max(0, ...sizeScores);
+
 		if (score > topScore) {
 			topScore = score;
-			topIcon = icon;
+			topIcon = href;
 		}
 	}
 
-	const ret = new URL(topIcon?.getAttribute("href") ?? "/favicon.ico", response.url);
+	console.log("- selected ", topIcon);
+
+	const ret = new URL(topIcon ?? "/favicon.ico", response.url);
 	return ret.toString();
 }
 
