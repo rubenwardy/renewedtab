@@ -10,53 +10,70 @@ You need to:
 
 ## Hello World Example
 
-Widgets are React components and must implement the `WidgetFactory` interface.
-This is done by assigning properties to the function, as seen below.
+Create the file: `src/app/widgets/HelloWorld.tsx`.
 
-Here's an example:
+Widgets are defined as an object that implements the `WidgetType` interface.
+The interface contains the component and various meta information.
+
+After adding implementing the interface, you should export it and then add it
+to `WidgetTypes` in `src/app/widgets/index.tsx`.
+
 
 ```ts
-import Schema, { type } from 'app/utils/Schema';
+import Panel from 'app/components/Panel';
+import { type } from 'app/utils/Schema';
+import { Vector2 } from 'app/utils/Vector2';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
+
 const messages = defineMessages({
+	title: {
+		defaultMessage: "Hello World",
+		description: "Hello World widget",
+	},
+
 	description: {
 		defaultMessage: "A helpful description shown in the create widget dialog",
+		description: "Hello World widget description",
 	},
 
 	yourName: {
 		defaultMessage: "Your name",
+		description: "Hello World: label",
 	},
 });
+
 
 interface HelloWorldProps {
 	name: string;
 }
 
-export default function HelloWorld(props: HelloWorldProps) {
+
+function HelloWorld(widget: WidgetProps<HelloWorldProps>) {
 	return (
-		<div className="panel">
+		<Panel {...widget.theme} className="vertical-middle">
 			<FormattedMessage
 					defaultMessage="Hello {name}!"
 					values={{ name: props.name }}>
-		</div>);
+		</Panel>);
 }
 
-HelloWorld.description = messages.description;
 
-// Default values for props
-HelloWorld.initialProps = {
-	name: "",
+const widget: WidgetType<HelloWorldProps> = {
+	Component: HelloWorld,
+	title: messages.title,
+	description: messages.description,
+	defaultSize: new Vector2(5, 1),
+	initialProps: {
+		name: "",
+	},
+	schema: {
+		name: type.string(messages.yourName),
+	},
 };
-
-// Schema for props, see below
-HelloWorld.schema = {
-	name: type.string(messages.yourName),
-} as Schema;
-
-// Default size on grid when created
-HelloWorld.defaultSize = new Vector2(5, 1);
+export default widget;
 ```
 
 ## Schema
