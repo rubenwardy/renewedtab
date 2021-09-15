@@ -86,12 +86,14 @@ function renderDate(intl: IntlShape, launch: SpaceLaunch): string {
 		return launch.date_str;
 	}
 
+	const locale = intl.locale == "en" ? undefined : intl.locale;
 	const day = Number.parseInt(ret[2]);
-	const month = MonthShortToLong.get(ret[1].toLowerCase()) ?? ret[1];
 	if (day <= 31) {
-		return `${day + getOrdinal(day)} ${month}`;
+		const date = new Date(`${day} ${ret[1]} 2021`);
+		return date.toLocaleString(locale, { day: "numeric", month: "short" });
 	} else {
-		return month;
+		const date = new Date(`1 ${ret[1]} 2021`);
+		return date.toLocaleString(locale, { month: "short" });
 	}
 }
 
@@ -114,14 +116,14 @@ function SpaceFlights(widget: WidgetProps<any>) {
 						{isToday && " 🚀"}
 					</div>
 					<div className="row">
-						<span className="col one-line text-muted">
+						<div className="col one-line text-muted">
 							{launch.provider}
-						</span>
-						<span className="col-auto float-right text-muted"
+						</div>
+						<div className="col-auto float-right text-muted"
 								title={winOpen ? intl.formatDate(winOpen,
 									{ dateStyle: "medium", timeStyle: "short" }) : undefined}>
 							{renderDate(intl, launch)}
-						</span>
+						</div>
 					</div>
 				</a>
 			</li>);
