@@ -1,3 +1,4 @@
+import { fetchBinaryAsDataURL } from "./hooks/http";
 import { cacheStorage } from "./Storage";
 
 
@@ -12,7 +13,51 @@ function getDomain(url: string): string {
 }
 
 
-async function fetchIconURL(url: string): Promise<string> {
+interface TippyTopImage {
+	domains: string[];
+	image_url: string;
+}
+
+
+let tippytops: Promise<TippyTopImage[]> | undefined = undefined;
+const TIPPY_TOP_URL = "https://mozilla.github.io/tippy-top-sites/data/icons-top2000.json";
+
+
+const ICON_SELECTORS = ([
+	`link[rel="apple-touch-icon"]`,
+	`link[rel="apple-touch-icon-precomposed"]`,
+	`link[rel="icon shortcut"]`,
+	`link[rel="shortcut icon"]`,
+	`link[rel="icon"]`,
+	`meta[name="apple-touch-icon"]`,
+]).join(", ");
+
+
+async function fetchTippyTops(url: string): Promise<string | undefined> {
+	if (!tippytops) {
+		tippytops = (async () => {
+			const response = await fetch(new Request(TIPPY_TOP_URL), { method: "GET" });
+			return await response.json();
+		})();
+	}
+
+	const data = await tippytops;
+	if (data) {
+		const domain = getDomain(url);
+		const icon = data.find(x => x.domains.includes(domain) ||
+			x.domains.includes(`www.${domain}`) ||
+			x.domains.includes(domain.replace("www.", "")));
+		console.log(domain, icon);
+		if (icon) {
+			return await fetchBinaryAsDataURL(icon.image_url);
+		}
+	}
+
+	return undefined;
+}
+
+
+async function fetchIconURL(url: string): Promise<string | undefined> {
 	const response = await fetch(new Request(url, {
 		method: "GET",
 		headers: {
@@ -23,13 +68,15 @@ async function fetchIconURL(url: string): Promise<string> {
 	const html = new window.DOMParser().parseFromString(
 		await response.text(), "text/html");
 
-	const icons = html.querySelectorAll("link[rel*='icon']");
+	const icons = html.querySelectorAll(ICON_SELECTORS);
 
 	let topScore = -1;
 	let topIcon : (string | null) = null;
 	for (const icon of icons.values()) {
-		const href = icon.getAttribute("href");
-		if (!href) {
+		const href = icon.tagName.toLowerCase() == "meta"
+				? icon.getAttribute("content")
+				: icon.getAttribute("href");
+		if (!href || href.startsWith("data:")) {
 			continue;
 		}
 
@@ -40,7 +87,7 @@ async function fetchIconURL(url: string): Promise<string> {
 		const sizeScores = sizes.map(size => Math.min(...size));
 
 		const score =
-			(icon.getAttribute("rel")!.includes("apple-touch-icon") ? 10 : 0) +
+			(icon.getAttribute("rel")?.includes("apple-touch-icon") ? 10 : 0) +
 			(href.toLowerCase().endsWith(".ico") ? 0 : 10) +
 			Math.max(0, ...sizeScores);
 
@@ -50,25 +97,12 @@ async function fetchIconURL(url: string): Promise<string> {
 		}
 	}
 
-	console.log("- selected ", topIcon);
-
 	const ret = new URL(topIcon ?? "/favicon.ico", response.url);
-	return ret.toString();
+	return await fetchBinaryAsDataURL(ret.toString());
 }
 
 
-function blobToDataURL(blob: Blob): Promise<string> {
-	return new Promise((resolve) => {
-		const reader = new FileReader();
-		reader.onload = (e: ProgressEvent<FileReader>) => {
-			resolve(e.target!.result as string);
-		}
-		reader.readAsDataURL(blob);
-	})
-}
-
-
-async function fetchIcon(url: string): Promise<string> {
+async function fetchIcon(url: string): Promise<string | undefined> {
 	const key = "icon-" + new URL(url).hostname;
 	if (cacheStorage) {
 		const value = await cacheStorage.get<CachedIcon>(key);
@@ -79,32 +113,35 @@ async function fetchIcon(url: string): Promise<string> {
 		}
 	}
 
-	const iconUrl = await fetchIconURL(url);
-	const response = await fetch(new Request(iconUrl, {
-		method: "GET",
-		headers: {
-			"Accept": "image/*",
-		},
-	}));
+	try {
+		const data = await fetchTippyTops(url);
+		if (data) {
+			await cacheStorage.set(key, {
+				url: data,
+				fetchedAt: new Date(),
+			});
+			return data;
+		}
+	} catch(e) {}
 
-	if (!response.ok) {
-		throw new Error(`Failed to load ${iconUrl}`);
-	}
+	try {
+		const data = await fetchIconURL(url);
+		if (data) {
+			await cacheStorage.set(key, {
+				url: data,
+				fetchedAt: new Date(),
+			});
+			return data;
+		}
+	} catch(e) {}
 
-	const blob = await response.blob();
-	const data = await blobToDataURL(blob);
-	await cacheStorage.set(key, {
-		url: data,
-		fetchedAt: new Date(),
-	});
-
-	return data;
+	return undefined;
 }
 
 
-const cache = new Map<string, Promise<string>>();
+const cache = new Map<string, Promise<string | undefined>>();
 
-function getWebsiteIcon(url: string): Promise<string> {
+function getWebsiteIcon(url: string): Promise<string | undefined> {
 	const key = getDomain(url);
 	if (!cache.has(key)) {
 		cache.set(key, fetchIcon(url));

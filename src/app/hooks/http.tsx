@@ -169,9 +169,6 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
 export async function fetchBinaryAsDataURL(url: string): Promise<string> {
 	const response = await fetchCheckCors(new Request(url, {
 		method: "GET",
-		headers: {
-			"Accept": "application/json",
-		}
 	}));
 
 	if (!response.ok) {
