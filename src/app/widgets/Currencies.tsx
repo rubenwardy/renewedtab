@@ -86,7 +86,9 @@ function Currencies(widget: WidgetProps<CurrenciesProps>) {
 				{rates.map(({from, to}) => (
 					<div className="singlestat" key={`${from}-${to}`}>
 						<span className="title">
-							{`${from} 🠒 ${to}`}
+							{from}
+							<i className="fas fa-long-arrow-alt-right mx-2" />
+							{to}
 						</span>
 						<span className="value">
 							{renderExchangeRate(from, to)}
