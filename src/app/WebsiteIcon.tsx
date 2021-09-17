@@ -1,5 +1,6 @@
 import { fetchBinaryAsDataURL, fetchCheckCors } from "./hooks/http";
 import { cacheStorage } from "./Storage";
+import { firstPromise } from "./utils";
 
 
 interface CachedIcon {
@@ -104,35 +105,22 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 
 async function fetchIcon(url: string): Promise<string | undefined> {
 	const key = "icon-" + new URL(url).hostname;
-	if (cacheStorage) {
-		const value = await cacheStorage.get<CachedIcon>(key);
-		if (value) {
-			console.log(`Loaded favicon for ${key} from cache`);
-			return value.url;
-		}
+	const value = await cacheStorage.get<CachedIcon>(key);
+	if (value) {
+		console.log(`Loaded favicon for ${key} from cache`);
+		return value.url;
 	}
 
-	try {
-		const data = await fetchTippyTops(url);
-		if (data) {
-			await cacheStorage.set(key, {
-				url: data,
-				fetchedAt: new Date(),
-			});
-			return data;
-		}
-	} catch(e) {}
-
-	try {
-		const data = await fetchIconURL(url);
-		if (data) {
-			await cacheStorage.set(key, {
-				url: data,
-				fetchedAt: new Date(),
-			});
-			return data;
-		}
-	} catch(e) {}
+	const data = await firstPromise([
+			() => fetchTippyTops(url),
+			() => fetchIconURL(url) ]);
+	if (data) {
+		await cacheStorage.set(key, {
+			url: data,
+			fetchedAt: new Date(),
+		});
+		return data;
+	}
 
 	return undefined;
 }

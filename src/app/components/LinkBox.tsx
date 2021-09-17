@@ -60,7 +60,7 @@ function Icon(props: IconProps) {
 		} else {
 			return props.icon;
 		}
-	}, [props.icon])
+	}, [props.icon]);
 
 	if (!props.requiresIcons && (!icon || icon.length == 0)) {
 		return null;

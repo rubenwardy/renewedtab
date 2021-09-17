@@ -24,3 +24,25 @@ export function mergeClasses(...classes: (string | false | null | undefined)[]) 
 export function clampNumber(v: number, min: number, max: number): number {
 	return Math.min(max, Math.max(v, min));
 }
+
+
+/**
+ * Returns the result of the first promise that is successful, or undefined
+ *
+ * @param funcs
+ * @returns
+ */
+export async function firstPromise<T>(funcs: (() => Promise<T>)[]): Promise<(T | undefined)> {
+	for (let i = 0; i < funcs.length; i++) {
+		try {
+			const value = await funcs[i]();
+			if (value != undefined) {
+				return value;
+			}
+		} catch {
+			continue;
+		}
+	}
+
+	return undefined;
+}
