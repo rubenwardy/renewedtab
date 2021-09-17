@@ -99,7 +99,7 @@ sentry:
     - sentry-cli releases new ${VERSION}
     - sentry-cli releases set-commits --auto $VERSION
     - sentry-cli releases deploys ${VERSION} new -e production
-    - sentry-cli releases files ${VERSION} upload-sourcemaps --ext ts --ext js --ext tsx --ext map src dist --url-prefix "~/app"
+    - sentry-cli releases files ${VERSION} upload-sourcemaps --validate --ext ts --ext js --ext tsx --ext map src dist --url-prefix "~/app"
     - sentry-cli releases finalize ${VERSION}
   variables:
     VERSION: "renewedtab@$CI_COMMIT_TAG"
