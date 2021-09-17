@@ -1,4 +1,4 @@
-import { fetchBinaryAsDataURL } from "./hooks/http";
+import { fetchBinaryAsDataURL, fetchCheckCors } from "./hooks/http";
 import { cacheStorage } from "./Storage";
 
 
@@ -36,7 +36,7 @@ const ICON_SELECTORS = ([
 async function fetchTippyTops(url: string): Promise<string | undefined> {
 	if (!tippytops) {
 		tippytops = (async () => {
-			const response = await fetch(new Request(TIPPY_TOP_URL), { method: "GET" });
+			const response = await fetchCheckCors(new Request(TIPPY_TOP_URL), { method: "GET" });
 			return await response.json();
 		})();
 	}
@@ -58,7 +58,7 @@ async function fetchTippyTops(url: string): Promise<string | undefined> {
 
 
 async function fetchIconURL(url: string): Promise<string | undefined> {
-	const response = await fetch(new Request(url, {
+	const response = await fetchCheckCors(new Request(url, {
 		method: "GET",
 		headers: {
 			"Accept": "text/html",
@@ -108,7 +108,6 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 		const value = await cacheStorage.get<CachedIcon>(key);
 		if (value) {
 			console.log(`Loaded favicon for ${key} from cache`);
-			await cacheStorage.set(key, value);
 			return value.url;
 		}
 	}

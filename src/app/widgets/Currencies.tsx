@@ -1,6 +1,6 @@
 import ErrorView from 'app/components/ErrorView';
 import Panel from 'app/components/Panel';
-import { buildAPIURL, useAPI } from 'app/hooks';
+import { getAPI, useAPI } from 'app/hooks';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps, WidgetType } from 'app/Widget';
@@ -113,15 +113,8 @@ const widget: WidgetType<CurrenciesProps> = {
 	},
 
 	async schema() {
-		const url = buildAPIURL("/currencies/");
-		const response = await fetch(new Request(url.toString(), {
-			method: "GET",
-			headers: {
-				"Accept": "application/json",
-			},
-		}));
+		const json = (await getAPI("/currencies/", {})) as Record<string, CurrencyInfo>;
 
-		const json = await response.json() as Record<string, CurrencyInfo>;
 		const currencyOptions: Record<string, string> = {};
 		currencyOptions[""] = "";
 		Object.entries(json)

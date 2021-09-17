@@ -30,29 +30,6 @@ const messages = defineMessages({
 	}
 });
 
-
-function getOrdinal(num: number): string {
-	const dec = Math.floor(num / 10);
-	const unit = num % 10;
-	if (dec == 1) {
-		return "th";
-	} else if (unit == 1) {
-		return "st";
-	} else if (unit == 2) {
-		return "nd";
-	} else if (unit == 3) {
-		return "rd";
-	} else {
-		return "th";
-	}
-}
-
-const MonthShortToLong = new Map([
-	["jan", "January"], ["feb", "February"], ["mar", "March"], ["apr", "April"],
-	["jun", "June"], ["jul", "July"], ["aug", "August"], ["sep", "September"],
-	["oct", "October"], ["nov", "November"], ["dec", "December"]
-]);
-
 function isSameDay(one?: Date, two?: Date): boolean {
 	return one != undefined && two != undefined &&
 			one.getFullYear() === two.getFullYear() &&

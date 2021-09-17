@@ -35,7 +35,7 @@ function makeProxy(url: string) {
 }
 
 
-async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Response> {
+export async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Response> {
 	try {
 		return await fetch(request, init);
 	} catch (e) {

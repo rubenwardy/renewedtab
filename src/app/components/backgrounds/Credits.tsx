@@ -1,5 +1,5 @@
 import { BackgroundCredit } from "app/backgrounds";
-import { useStorage } from "app/hooks";
+import { buildAPIURL, fetchCheckCors, useStorage } from "app/hooks";
 import { useDelay } from "app/hooks/delay";
 import { BackgroundInfo } from "common/api/backgrounds";
 import React from "react";
@@ -26,10 +26,8 @@ const messages = defineMessages({
 
 
 function reportVote(info: BackgroundInfo, isPositive: boolean) {
-	const url = new URL(config.API_URL);
-	url.pathname = (url.pathname + "background/vote/").replace(/\/\//g, "/");
-
-	fetch(new Request(url.toString(), {
+	const url = buildAPIURL("/background/vote/");
+	fetchCheckCors(new Request(url.toString(), {
 		method: "POST",
 		cache: "no-cache",
 		headers: {

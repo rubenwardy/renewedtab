@@ -27,14 +27,6 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 	const [sentryEnabled, setSentryEnabled] =
 		useState(localStorage.getItem("_sentry-opt-out") != "yes");
 
-	function onLocaleChange(e: ChangeEvent<HTMLSelectElement>) {
-		const selectedIndex = e.target.options.selectedIndex;
-		const locale = e.target.options[selectedIndex].getAttribute("value");
-		if (locale) {
-			props.setLocale(locale);
-		}
-	}
-
 	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
 		if (e.target.checked) {
 			localStorage.removeItem("_sentry-opt-out");

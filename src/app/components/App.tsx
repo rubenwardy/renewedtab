@@ -4,7 +4,7 @@ import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGrid";
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
-import { useForceUpdate, usePromise, useStorage } from "app/hooks";
+import { usePromise, useStorage } from "app/hooks";
 import { FormattedMessage, IntlProvider } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";

@@ -1,4 +1,4 @@
-import { useCache, usePromise } from "app/hooks";
+import { buildAPIURL, fetchCheckCors, useCache, usePromise } from "app/hooks";
 import { AutocompleteItem } from "app/utils/Schema";
 import React, { useRef, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
@@ -30,10 +30,8 @@ function URLSubmitter(props: { url: string, autocomplete?: AutocompleteItem[] })
 		!props.autocomplete.some(suggestion => value == suggestion.value);
 
 	function submitURLToSuggestions() {
-		const url = new URL(config.API_URL);
-		url.pathname = (url.pathname + "autocomplete/").replace(/\/\//g, "/");
-
-		fetch(new Request(url.toString(), {
+		const url = buildAPIURL("/autocomplete/");
+		fetchCheckCors(new Request(url.toString(), {
 			method: "POST",
 			cache: "no-cache",
 			headers: {
