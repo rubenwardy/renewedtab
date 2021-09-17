@@ -2,6 +2,7 @@ import { ActualBackgroundProps, BackgroundProvider, getBackgroundProvider, getSc
 import { CacheExpiry } from "app/backgrounds/messages";
 import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
+import { clearLocalStorage } from "app/Storage";
 import { enumToValue } from "app/utils/enum";
 import { fromTypedJSON, toTypedJSON } from "app/utils/TypedJSON";
 import React, { useMemo } from "react";
@@ -69,7 +70,17 @@ async function updateBackground<T>(key: string, provider: BackgroundProvider<T>,
 			fetchedAt: new Date(),
 		};
 
-		window.localStorage.setItem("_bg-cache", JSON.stringify(toTypedJSON(toCache)));
+		const json = JSON.stringify(toTypedJSON(toCache));
+		try {
+			window.localStorage.setItem("_bg-cache", json);
+		} catch (e: any) {
+			if (!e.includes("Quota")) {
+				throw e;
+			}
+
+			clearLocalStorage();
+			window.localStorage.setItem("_bg-cache", json);
+		}
 	}
 	return retval;
 }

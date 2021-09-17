@@ -90,7 +90,18 @@ class LocalStorage implements IStorage {
 
 	async set<T>(key: string, value: T): Promise<void> {
 		console.log(`[Storage] Set ${key}`);
-		window.localStorage.setItem(key, JSON.stringify(toTypedJSON(value)));
+
+		const json = JSON.stringify(toTypedJSON(value));
+		try {
+			window.localStorage.setItem(key, json);
+		} catch (e: any) {
+			if (!e.includes("Quota") || typeof browser != "undefined") {
+				throw e;
+			}
+
+			clearLocalStorage();
+			window.localStorage.setItem(key, json);
+		}
 	}
 
 	async remove(key: string): Promise<void> {
@@ -143,7 +154,14 @@ if (typeof browser === 'undefined' && typeof navigator !== "undefined" &&
 export const storage : IStorage =
 	(typeof browser !== 'undefined') ? new WebExtStorage(browser.storage.local) : new LocalStorage();
 
-export const largeStorage : IStorage = new DelegateStorage(
-	(typeof browser !== 'undefined') ? new WebExtStorage(browser.storage.local) : new LocalStorage(), "large-");
+export const largeStorage : IStorage = new DelegateStorage(storage, "large-");
 
 export const cacheStorage : IStorage = new DelegateStorage(new LocalStorage(), "_");
+
+export function clearLocalStorage() {
+	const opt_out = window.localStorage.getItem("_sentry-opt-out");
+	window.localStorage.clear();
+	if (opt_out) {
+		window.localStorage.setItem("_sentry-opt-out", opt_out);
+	}
+}
