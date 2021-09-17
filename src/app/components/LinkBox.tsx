@@ -94,7 +94,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	const links = useMemo<Link[]>(() => {
 		const ret = deepCopy(props.links);
 		if (size && props.limitItemsToAvoidScrolling) {
-			const rows = Math.floor((size.y + 10) / 120);
+			const rows = Math.max(1, Math.floor((size.y + 10) / 120));
 			const columns = Math.floor((size.x + 10) / 105);
 			ret.splice(rows * columns);
 		}
