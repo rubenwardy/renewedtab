@@ -1,4 +1,5 @@
-import { fetchBinaryAsDataURL, fetchCheckCors } from "./hooks/http";
+import { TippyTopImage } from "common/api/icons";
+import { fetchBinaryAsDataURL, fetchCheckCors, getAPI } from "./hooks/http";
 import { cacheStorage } from "./Storage";
 import { firstPromise } from "./utils";
 
@@ -14,14 +15,7 @@ function getDomain(url: string): string {
 }
 
 
-interface TippyTopImage {
-	domains: string[];
-	image_url: string;
-}
-
-
 let tippytops: Promise<TippyTopImage[]> | undefined = undefined;
-const TIPPY_TOP_URL = "https://mozilla.github.io/tippy-top-sites/data/icons-top2000.json";
 
 
 const ICON_SELECTORS = ([
@@ -36,10 +30,7 @@ const ICON_SELECTORS = ([
 
 async function fetchTippyTops(url: string): Promise<string | undefined> {
 	if (!tippytops) {
-		tippytops = (async () => {
-			const response = await fetchCheckCors(new Request(TIPPY_TOP_URL), { method: "GET" });
-			return await response.json();
-		})();
+		tippytops = getAPI("/website-icons/", {});
 	}
 
 	const data = await tippytops;
@@ -104,7 +95,7 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 
 
 async function fetchIcon(url: string): Promise<string | undefined> {
-	const key = "icon-" + new URL(url).hostname;
+	const key = "favicon-" + new URL(url).hostname;
 	const value = await cacheStorage.get<CachedIcon>(key);
 	if (value) {
 		console.log(`Loaded favicon for ${key} from cache`);

@@ -73,6 +73,8 @@ function writeClientError(res: express.Response, msg: string) {
 
 
 import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
+import { preProcessFile } from "typescript";
+import { TippyTopImage } from "common/api/icons";
 
 app.get('/metrics', async (req, res) => {
 	try {
@@ -440,6 +442,24 @@ app.get("/api/currencies/", async (req: express.Request, res: express.Response) 
 	} catch (ex: any) {
 		writeClientError(res, ex.message);
 	}
+});
+
+
+const TIPPY_TOP_URL = "https://mozilla.github.io/tippy-top-sites/data/icons-top2000.json";
+let icons: (TippyTopImage[] | undefined) = undefined;
+app.get("/api/website-icons/", async (req, res: express.Response) => {
+	if (!icons) {
+		const response = await fetchCatch(new Request(TIPPY_TOP_URL), {
+			method: "GET",
+			timeout: 10000,
+			headers: {
+				"User-Agent": UA_DEFAULT,
+				"Accept": "application/json",
+			},
+		});
+		icons = (await response.json()) as TippyTopImage[];
+	}
+	res.json(icons);
 });
 
 
