@@ -458,6 +458,10 @@ app.get("/api/website-icons/", async (req, res: express.Response) => {
 			},
 		});
 		icons = (await response.json()) as TippyTopImage[];
+		icons.push({
+			domains: [ "minetest.net", "wiki.minetest.net", "forum.minetest.net" ],
+			image_url: "https://www.minetest.net/media/icon.svg",
+		});
 	}
 	res.json(icons);
 });
