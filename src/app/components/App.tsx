@@ -5,7 +5,7 @@ import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGri
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { usePromise, useStorage } from "app/hooks";
-import { FormattedMessage, IntlProvider } from "react-intl";
+import { defineMessages, FormattedMessage, IntlProvider, useIntl } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
@@ -13,6 +13,24 @@ import { storage } from "app/Storage";
 import * as Sentry from "@sentry/react";
 import Onboarding from "./onboarding";
 import { useBackground } from "app/hooks/background";
+
+
+const messages = defineMessages({
+	newTab: {
+		defaultMessage: "New Tab",
+	},
+});
+
+
+function Title() {
+	const intl = useIntl();
+
+	if (typeof browser != "undefined") {
+		document.title = intl.formatMessage(messages.newTab);
+	}
+
+	return null;
+}
 
 
 const widgetManager = new WidgetManager(storage);
@@ -24,7 +42,6 @@ export default function App() {
 	}, []);
 
 	const loaded = loadingRes != null;
-
 	const [actualLocale, setLocale] = useStorage<string>("locale", getUserLocale());
 	const locale = actualLocale ?? "en"
 	const messages = getTranslation(locale);
@@ -56,6 +73,7 @@ export default function App() {
 
 	return (
 		<IntlProvider locale={locale} defaultLocale="en" messages={messages}>
+			<Title />
 			<div className={classes.join(" ")}>
 				<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 					<Background background={background} setWidgetsHidden={setWidgetsHidden} />
