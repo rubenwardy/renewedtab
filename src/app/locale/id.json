@@ -368,10 +368,6 @@
         "message": "Pilih sebuah gambar",
         "description": "Form field label"
     },
-    "eXkpJi": {
-        "message": "Gunakan ikon dari situs web (favicon)",
-        "description": "Links widget: form field label"
-    },
     "egigiF": {
         "message": "Terima kasih kepada Unsplash, OpenStreetMap, OpenWeatherMap, dan RocketLaunch.Live untuk API mereka."
     },
@@ -630,5 +626,9 @@
     },
     "MiIvsP": {
         "message": "Anda dapat menambahkan, memindahkan, mengubah ukuran, dan mengkonfigurasi widget-widget pada grid menggunakan kendali yang intuitif."
+    },
+    "yT43pK": {
+        "message": "Gunakan ikon dari situs web (favicon)",
+        "description": "Form field label"
     }
 }

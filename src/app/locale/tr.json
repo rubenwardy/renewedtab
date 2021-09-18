@@ -532,10 +532,6 @@
         "message": "Yazı Tipi Boyutlama",
         "description": "Theme settings: form field label"
     },
-    "eXkpJi": {
-        "message": "İnternet sitelerinden ikon kullan (favicon)",
-        "description": "Links widget: form field label"
-    },
     "YS5zRT": {
         "message": "{name} ile ara",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"
@@ -667,10 +663,6 @@
     "Mihrhf": {
         "message": "Yok",
         "description": "Clock widget: date style type, not shown"
-    },
-    "Q5Myqt": {
-        "message": "Araç alanındaki sütunların sayısı. Her sütun yaklaşık 50px artı boşluktan oluşur, yani 15px boşlukla, 1080p bir pencerede en fazla 30 sütun bulunmalıdır.",
-        "description": "Widget grid: form hint for grid columns"
     },
     "nnaWVi": {
         "message": "Celsius",
@@ -1062,5 +1054,9 @@
     "qzlLb3": {
         "message": "PAZ",
         "description": "Short weekday name (Sunday)"
+    },
+    "yT43pK": {
+        "message": "İnternet sitelerinden ikon kullan (favicon)",
+        "description": "Form field label"
     }
 }

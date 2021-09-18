@@ -234,10 +234,6 @@
         "message": "Wählen Sie ein Bild",
         "description": "Form field label"
     },
-    "eXkpJi": {
-        "message": "Benutze Icon von Webseiten (favicons)",
-        "description": "Links widget: form field label"
-    },
     "cSF2y1": {
         "message": "Zeigt die Lesezeichen",
         "description": "Bookmarks widget description"
@@ -470,5 +466,9 @@
     "Bl74xq": {
         "message": "Ein Link Knopf",
         "description": "Button widget description"
+    },
+    "yT43pK": {
+        "message": "Benutze Icon von Webseiten (favicons)",
+        "description": "Form field label"
     }
 }

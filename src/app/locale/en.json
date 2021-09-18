@@ -225,6 +225,10 @@
         "description": "Background expiry dropdown",
         "message": "Every day"
     },
+    "F1A/8i": {
+        "description": "Feed widget: form field label",
+        "message": "Sources"
+    },
     "FCmJHd": {
         "description": "Feed widget description",
         "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
@@ -267,6 +271,10 @@
     "H00a0q": {
         "description": "Links widget, form field hint (Link URL)",
         "message": "Leave blank to make heading"
+    },
+    "H1tqyZ": {
+        "description": "Widget grid: form label for grid full width",
+        "message": "Grid Full Width"
     },
     "HEvlTB": {
         "description": "Weather widget: display subform title",
@@ -350,6 +358,10 @@
         "description": "Weather widget: wind speed tooltip",
         "message": "Wind Speed ({unit})"
     },
+    "M6lR5V": {
+        "description": "Widget grid: form hint for grid columns",
+        "message": "Number of columns in the widget grid. You can fit {max} columns in the current window width ({res}px)."
+    },
     "M8ugqX": {
         "message": "No matching widgets"
     },
@@ -396,10 +408,6 @@
     },
     "Q1mwPp": {
         "message": "Consider <a>contributing or adding your language</a>."
-    },
-    "Q5Myqt": {
-        "description": "Widget grid: form hint for grid columns",
-        "message": "Number of columns in the widget grid. Each column is roughly 50px plus spacing, so with 15px spacing, the maximum a 1080p window should have is 30 columns."
     },
     "QBZZBG": {
         "description": "Theme settings: form field hint (Custom CSS)",
@@ -640,6 +648,9 @@
     "bQFsdR": {
         "message": "Grant permission to access {host}"
     },
+    "btOI+Z": {
+        "message": "New Tab"
+    },
     "cL6y1P": {
         "description": "Form field hint (Feed URL)",
         "message": "URL to an Atom or RSS feed"
@@ -670,10 +681,6 @@
     "eXB4qM": {
         "description": "Short weekday name (Wednesday)",
         "message": "WED"
-    },
-    "eXkpJi": {
-        "description": "Links widget: form field label",
-        "message": "Use icons from websites (favicons)"
     },
     "egigiF": {
         "message": "Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs."
@@ -914,6 +921,10 @@
         "description": "Feed widget: form field label",
         "message": "Filter Articles"
     },
+    "rsdRPB": {
+        "description": "Widget grid: form label for grid full width",
+        "message": "Stretch grid to cover the entire page. Requires Reload."
+    },
     "sPl3nI": {
         "description": "Form field label",
         "message": "Title"
@@ -1009,6 +1020,10 @@
     "y8o0oA": {
         "description": "Weather widget description",
         "message": "Current and forecasted weather"
+    },
+    "yT43pK": {
+        "description": "Form field label",
+        "message": "Use icons from websites (favicons)"
     },
     "yUJ5MA": {
         "description": "Preset: goals",

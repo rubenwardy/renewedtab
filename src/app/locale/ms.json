@@ -467,10 +467,6 @@
         "message": "Tunjukkan tapak teratas",
         "description": "Top Sites widget: description"
     },
-    "eXkpJi": {
-        "message": "Gunakan ikon daripada laman sesawang (favicon)",
-        "description": "Links widget: form field label"
-    },
     "ofl4Ui": {
         "message": "Cari",
         "description": "Location form field: search"
@@ -647,10 +643,6 @@
     "PYJFvz": {
         "message": "Kategori",
         "description": "Form field label, list of categories. Used by Quotes widget"
-    },
-    "Q5Myqt": {
-        "message": "Jumlah jalur dalam grid widget. Setiap lajur bersaiz lebih kurang 50px tambah penjarakan, jadi dengan penjarakan 15px, jumlah lajur maksimum yang sepatutnya bagi tetingkap 1080p ialah 30 lajur.",
-        "description": "Widget grid: form hint for grid columns"
     },
     "GcxpZV": {
         "message": "Gaya tarikh",
@@ -1062,5 +1054,9 @@
     "S6nfAm": {
         "message": "Kelembapan (%)",
         "description": "Weather widget: humidity tooltip"
+    },
+    "yT43pK": {
+        "message": "Gunakan ikon daripada laman sesawang (favicon)",
+        "description": "Form field label"
     }
 }

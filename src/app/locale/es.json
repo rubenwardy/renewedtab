@@ -529,10 +529,6 @@
         "message": "Espaciado de la cuadrícula",
         "description": "Widget grid: form label for grid spacing"
     },
-    "Q5Myqt": {
-        "message": "Número de columnas en la cuadrícula del widget. Cada columna tiene aproximadamente 50 px más el espaciado, por lo que con un espaciado de 15 px, el máximo que debe tener una ventana de 1080p es 30 columnas.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "RCe+DS": {
         "message": "Arrastrar y soltar widgets"
     },
@@ -1027,10 +1023,6 @@
     "cR7nCG": {
         "message": "Restablecer el tema al defecto"
     },
-    "eXkpJi": {
-        "message": "Utilice iconos de sitios web (favicons)",
-        "description": "Links widget: form field label"
-    },
     "lwUV0r": {
         "message": "Puede cambiar el objetivo haciendo clic en el widget",
         "description": "Daily Goal widget: edit modal hint"
@@ -1062,5 +1054,9 @@
     "ZRWjTk": {
         "message": "Utilice el buscador predeterminado del navegador",
         "description": "Search widget: form field label"
+    },
+    "yT43pK": {
+        "message": "Utilice iconos de sitios web (favicons)",
+        "description": "Form field label"
     }
 }

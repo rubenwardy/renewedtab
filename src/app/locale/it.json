@@ -145,10 +145,6 @@
         "message": "Crea un nuova cosa da fare",
         "description": "Todo List widget: prompt"
     },
-    "Q5Myqt": {
-        "message": "Numero delle colonne nella griglia dei widget. Ogni colonna è all'incirca 50px più la spaziatura, quindi con 15px di spaziatura le colonne massime che una schermata 1080p può avere sono 30.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "adRrk3": {
         "message": "Azzera tutto",
         "description": "Import / export settings, reset"
@@ -297,10 +293,6 @@
     "dIwFS5": {
         "message": "Scegli un'immagine",
         "description": "Form field label"
-    },
-    "eXkpJi": {
-        "message": "Usa icone dei siti (favicon)",
-        "description": "Links widget: form field label"
     },
     "ekIjqh": {
         "message": "Concedi il permesso di accedere a tutti i siti"
@@ -915,5 +907,9 @@
     "oGS5TE": {
         "message": "Buon pomeriggio, {name}",
         "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "yT43pK": {
+        "message": "Usa icone dei siti (favicon)",
+        "description": "Form field label"
     }
 }

@@ -204,10 +204,6 @@
         "message": "Arrière-plans choisis au hasard",
         "description": "Backgroud mode description"
     },
-    "Q5Myqt": {
-        "message": "Nombre de colonnes dans la grille de widgets. Chaque colonne mesure environ 50 pixels, plus l'espacement. Donc avec un espacement de 15 pixels, le maximum d'une fenêtre 1080p devrait être de 30 colonnes.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "Kzo9ZH": {
         "message": "URL de l'image",
         "description": "Form field label"
@@ -412,10 +408,6 @@
     "dIwFS5": {
         "message": "Choisissez une image",
         "description": "Form field label"
-    },
-    "eXkpJi": {
-        "message": "Utiliser les icônes des sites Web (favicons)",
-        "description": "Links widget: form field label"
     },
     "egigiF": {
         "message": "Merci à Unsplash, OpenStreetMap, OpenWeatherMap et RocketLaunch.Live pour leurs API."
@@ -1062,5 +1054,9 @@
     "S6nfAm": {
         "message": "Humidité (%)",
         "description": "Weather widget: humidity tooltip"
+    },
+    "yT43pK": {
+        "message": "Utiliser les icônes des sites Web (favicons)",
+        "description": "Form field label"
     }
 }

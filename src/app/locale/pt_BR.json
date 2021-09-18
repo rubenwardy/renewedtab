@@ -409,10 +409,6 @@
     "MiIvsP": {
         "message": "Você pode adicionar, mover, redimensionar e configurar widgets em uma grade usando controles intuitivos."
     },
-    "Q5Myqt": {
-        "message": "Número de colunas na grade do widget. Cada coluna tem aproximadamente 50 px mais espaçamento, portanto, com espaçamento de 15 px, o máximo que uma janela 1080p deve ter é 30 colunas.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "TZknEV": {
         "message": "Cuidado com o que você cola aqui. Um invasor pode fazer você colar um código aqui que rouba itens aos quais a extensão tem acesso - como o histórico do navegador e os principais sites.",
         "description": "HTML widget: form field hint (HTML)"
@@ -475,10 +471,6 @@
     "dIwFS5": {
         "message": "Escolha uma Imagem",
         "description": "Form field label"
-    },
-    "eXkpJi": {
-        "message": "Use ícones de sites (favicons)",
-        "description": "Links widget: form field label"
     },
     "egigiF": {
         "message": "Agradecemos a Unsplash, OpenStreetMap, OpenWeatherMap e RocketLaunch.Live por suas APIs."
@@ -931,5 +923,9 @@
     "/4k9ry": {
         "message": "UV <b>Muito Alto</b>",
         "description": "Very High UV risk"
+    },
+    "yT43pK": {
+        "message": "Use ícones de sites (favicons)",
+        "description": "Form field label"
     }
 }
