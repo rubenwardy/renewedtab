@@ -22,7 +22,7 @@ export interface WidgetGridSettings {
 
 const messages = defineMessages({
 	fullWidthLabel: {
-		defaultMessage: "Grid Full Width",
+		defaultMessage: "Full Width Grid",
 		description: "Widget grid: form label for grid full width",
 	},
 

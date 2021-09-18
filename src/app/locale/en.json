@@ -183,6 +183,10 @@
         "description": "Button widget description",
         "message": "A link button"
     },
+    "CMdRFu": {
+        "description": "Widget grid: form label for grid full width",
+        "message": "Full Width Grid"
+    },
     "CNpJaZ": {
         "description": "Preset: focus",
         "message": "Focus"
@@ -271,10 +275,6 @@
     "H00a0q": {
         "description": "Links widget, form field hint (Link URL)",
         "message": "Leave blank to make heading"
-    },
-    "H1tqyZ": {
-        "description": "Widget grid: form label for grid full width",
-        "message": "Grid Full Width"
     },
     "HEvlTB": {
         "description": "Weather widget: display subform title",
