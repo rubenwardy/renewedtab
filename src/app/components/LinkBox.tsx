@@ -66,9 +66,9 @@ function Icon(props: IconProps) {
 		return null;
 	} else if (errored) {
 		return (<span><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
-	} else if (icon && icon.includes("/")) {
+	} else if (typeof icon == "string" && (icon.includes("/") || icon.startsWith("data:"))) {
 		return (<img className="icon" src={icon} onError={() => setErrored(true)} />);
-	} else if (icon && icon.startsWith("fa-")) {
+	} else if (typeof icon == "string" && icon.startsWith("fa-")) {
 		return (<span><i className={`fas ${icon} icon`} /></span>);
 	} else {
 		return (<span><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
