@@ -39,7 +39,6 @@ async function fetchTippyTops(url: string): Promise<string | undefined> {
 		const icon = data.find(x => x.domains.includes(domain) ||
 			x.domains.includes(`www.${domain}`) ||
 			x.domains.includes(domain.replace("www.", "")));
-		console.log(domain, icon);
 		if (icon) {
 			return await fetchBinaryAsDataURL(icon.image_url);
 		}

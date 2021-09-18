@@ -74,7 +74,9 @@ async function updateBackground<T>(key: string, provider: BackgroundProvider<T>,
 		try {
 			window.localStorage.setItem("_bg-cache", json);
 		} catch (e: any) {
-			if (!e.includes("Quota")) {
+			if (typeof e.toString() != "function" ||
+					!e.toString().includes("Quota") ||
+					typeof browser != "undefined") {
 				throw e;
 			}
 

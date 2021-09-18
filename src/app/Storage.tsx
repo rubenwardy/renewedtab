@@ -95,7 +95,9 @@ class LocalStorage implements IStorage {
 		try {
 			window.localStorage.setItem(key, json);
 		} catch (e: any) {
-			if (!e.includes("Quota") || typeof browser != "undefined") {
+			if (typeof e.toString() != "function" ||
+					!e.toString().includes("Quota") ||
+					typeof browser != "undefined") {
 				throw e;
 			}
 
