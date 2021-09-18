@@ -9,6 +9,7 @@ import { getAPI, useFeed, useForceUpdateValue } from 'app/hooks';
 import ErrorView from 'app/components/ErrorView';
 import uuid from 'app/utils/uuid';
 import { Tabs } from 'app/components/Tabs';
+import UserError from 'app/utils/UserError';
 
 
 const messages = defineMessages({
@@ -55,7 +56,12 @@ const messages = defineMessages({
 	hide: {
 		defaultMessage: "Hide",
 		description: "Feed widget: filter show checkbox label",
-	}
+	},
+
+	noSources: {
+		defaultMessage: "Please specify a source",
+		description: "Feed widget: no sources error message",
+	},
 });
 
 
@@ -135,6 +141,11 @@ function Feed(widget: WidgetProps<FeedProps>) {
 		title: x.title || new URL(x.url).hostname,
 		url: x.url,
 	})), [force, props.sources, props.sources.length]);
+
+	if (props.sources.length == 0) {
+		return (
+			<ErrorView error={new UserError(messages.noSources)} />);
+	}
 
 	return (
 		<Panel {...widget.theme} flush={true}>
