@@ -1,12 +1,13 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { defineMessages } from 'react-intl';
-import { useElementSize, usePromise } from 'app/hooks';
+import { useElementSize } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
 import { schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetTheme } from 'app/Widget';
 import Panel from './Panel';
+import Icon from './Icon';
 
 
 const messages = defineMessages({
@@ -41,39 +42,6 @@ export const FullLinkSchema: Schema<Link> = {
 	icon: type.url(schemaMessages.icon, messages.iconHint),
 	url: type.url(schemaMessages.url, messages.urlHint),
 };
-
-
-interface IconProps {
-	icon: string | Promise<string | undefined>;
-	requiresIcons: boolean;
-	defaultIcon?: string;
-	errorIcon?: string;
-}
-
-
-function Icon(props: IconProps) {
-	const [errored, setErrored] = useState(false);
-
-	const [icon,] = usePromise(async () => {
-		if (props.icon instanceof Promise) {
-			return await props.icon;
-		} else {
-			return props.icon;
-		}
-	}, [props.icon]);
-
-	if (!props.requiresIcons && (!icon || icon.length == 0)) {
-		return null;
-	} else if (errored) {
-		return (<span><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
-	} else if (typeof icon == "string" && (icon.includes("/") || icon.startsWith("data:"))) {
-		return (<img className="icon" src={icon} onError={() => setErrored(true)} />);
-	} else if (typeof icon == "string" && icon.startsWith("fa-")) {
-		return (<span><i className={`fas ${icon} icon`} /></span>);
-	} else {
-		return (<span><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
-	}
-}
 
 
 export interface LinkBoxProps {

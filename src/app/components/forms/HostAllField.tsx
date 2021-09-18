@@ -1,4 +1,4 @@
-import { useForceUpdate, usePromise } from "app/hooks";
+import { useForceUpdate, useForceUpdateValue, usePromise } from "app/hooks";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
 import React, { ChangeEvent, useState } from "react";
 import { defineMessages, useIntl } from "react-intl";
@@ -14,7 +14,7 @@ const messages = defineMessages({
 
 export default function HostAllField(props: FieldProps<boolean>) {
 	const [value, setValue] = useState(props.value);
-	const forceUpdate = useForceUpdate();
+	const [force, forceUpdate] = useForceUpdateValue();
 	const intl = useIntl();
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -34,7 +34,7 @@ export default function HostAllField(props: FieldProps<boolean>) {
 
 	const [needsPermission,] =
 		usePromise(async () => ! await browser.permissions.contains(permissions),
-				[forceUpdate]);
+				[force]);
 
 	return (
 		<>

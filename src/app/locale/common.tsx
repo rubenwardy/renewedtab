@@ -75,6 +75,11 @@ export const schemaMessages = defineMessages({
 		defaultMessage: "Categories",
 		description: "Form field label, list of categories. Used by Quotes widget"
 	},
+
+	useWebsiteIcons: {
+		defaultMessage: "Use icons from websites (favicons)",
+		description: "Form field label",
+	},
 });
 
 

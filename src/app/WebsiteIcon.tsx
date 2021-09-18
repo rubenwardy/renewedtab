@@ -88,7 +88,11 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 		}
 	}
 
-	const ret = new URL(topIcon ?? "/favicon.ico", response.url);
+	if (!topIcon) {
+		return undefined;
+	}
+
+	const ret = new URL(topIcon, response.url);
 	return await fetchBinaryAsDataURL(ret.toString());
 }
 
@@ -101,9 +105,15 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 		return value.url;
 	}
 
+	const rootURL = new URL(url);
+	rootURL.pathname = "/";
+
 	const data = await firstPromise([
 			() => fetchTippyTops(url),
-			() => fetchIconURL(url) ]);
+			() => fetchIconURL(url),
+			() => fetchIconURL(rootURL.toString()),
+			() => fetchBinaryAsDataURL(new URL("/favicon.ico", url).toString()),
+		]);
 	if (data) {
 		await cacheStorage.set(key, {
 			url: data,
@@ -128,7 +138,11 @@ function getWebsiteIcon(url: string): Promise<string | undefined> {
 }
 
 
-export async function getWebsiteIconOrNull(url: string): Promise<(string | undefined)> {
+export async function getWebsiteIconOrNull(url: (string | undefined)): Promise<(string | undefined)> {
+	if (url == "" || url == undefined) {
+		return undefined;
+	}
+
 	try {
 		return await getWebsiteIcon(url);
 	} catch (e) {

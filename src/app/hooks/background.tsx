@@ -1,7 +1,7 @@
 import { getBackgroundProvider } from "app/backgrounds";
 import { storage } from "app/Storage";
 import { useState } from "react";
-import { runPromise } from ".";
+import { useRunPromise } from ".";
 
 export interface BackgroundConfig {
 	mode: string;
@@ -35,7 +35,7 @@ export function updateBackgroundConfig(info: BackgroundConfig) {
 
 export function useBackground(): [(BackgroundConfig | null), (info: BackgroundConfig) => void] {
 	const [value, setValue] = useState<BackgroundConfig | null>(null);
-	runPromise<BackgroundConfig | null>(
+	useRunPromise<BackgroundConfig | null>(
 		getBackgroundConfig, setValue, () => {}, []);
 
 	function updateValue(val: BackgroundConfig) {

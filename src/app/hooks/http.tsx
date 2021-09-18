@@ -96,7 +96,7 @@ async function fetchXML(url: string) {
 * @return {[response, error]]} - Response and error
 */
 export function useJSON<T>(url: string, dependents?: any[]): [(T | null), (string | null)] {
-	return usePromise(() => fetchJSON(makeProxy(url)), dependents);
+	return usePromise(() => fetchJSON(makeProxy(url)), dependents ?? []);
 }
 
 
