@@ -20,9 +20,9 @@ export type ImageHandle = { key: string };
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema<unknown>;
-	label: MessageDescriptor;
+	label: MyMessageDescriptor;
 	messages?: Messages;
-	hint?: MessageDescriptor;
+	hint?: MyMessageDescriptor;
 	values?: any;
 	unit?: string;
 	min?: number;
@@ -73,12 +73,12 @@ export namespace type {
 	export const textarea = makeTypeFunc("textarea");
 	export const json = makeTypeFunc("json");
 
-	export const number = (label: MessageDescriptor, hint?: MessageDescriptor, min?: number, max?: number): SchemaEntry => ({
+	export const number = (label: MyMessageDescriptor, hint?: MyMessageDescriptor, min?: number, max?: number): SchemaEntry => ({
 		type: "number",
 		label, hint, min, max
 	});
 
-	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor, min?: number, max?: number): SchemaEntry => ({
+	export const unit_number = (label: MyMessageDescriptor, unit: string, hint?: MyMessageDescriptor, min?: number, max?: number): SchemaEntry => ({
 		type: "unit_number",
 		label, hint, unit, min, max
 	});

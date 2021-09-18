@@ -1,4 +1,5 @@
 import { useForceUpdate, useForceUpdateValue, usePromise } from "app/hooks";
+import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
 import React, { ChangeEvent, useState } from "react";
 import { defineMessages, useIntl } from "react-intl";
@@ -40,7 +41,7 @@ export default function HostAllField(props: FieldProps<boolean>) {
 		<>
 			<input type="checkbox" checked={value ?? false} onChange={handleChange} />
 			<label className="inline ml-2" htmlFor={props.name}>
-				{intl.formatMessage(props.schemaEntry.label)}
+				{myFormatMessage(intl, props.schemaEntry.label)}
 			</label>
 
 			{needsPermission && value && (

@@ -7,6 +7,7 @@ import { useForceUpdate } from "app/hooks";
 import { FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { miscMessages } from "app/locale/common";
+import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 
 
 interface RowProps<T extends { id: string }> extends FormProps<T> {
@@ -101,8 +102,12 @@ export default function ArrayField<T extends { id: string }>(props: FieldProps<T
 		.filter(([,type]) => type)
 		.map(([key, type]) => (
 			<th key={key}>
-				<div className="header"><FormattedMessage {...type!.label} /></div>
-				<div className="hint text-muted">{type!.hint && <FormattedMessage {...type!.hint} />}</div>
+				<div className="header">
+					<MyFormattedMessage message={type!.label} />
+				</div>
+				<div className="hint text-muted">
+					{type!.hint && <MyFormattedMessage message={type!.hint} />}
+				</div>
 			</th>));
 
 	const isOrdered = props.type != "unordered_array";

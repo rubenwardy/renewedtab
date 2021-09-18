@@ -1,6 +1,6 @@
+import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import { SchemaEntry } from "app/utils/Schema";
 import React from "react";
-import { FormattedMessage } from "react-intl";
 import { makeField } from ".";
 
 
@@ -21,7 +21,7 @@ export function Field(props: FieldProps) {
 		<>
 			{showLabel &&
 				<label htmlFor={props.name}>
-					<FormattedMessage {...props.schemaEntry.label} />
+					<MyFormattedMessage message={props.schemaEntry.label} />
 				</label>}
 
 			<SubField name={props.name} value={props.value}
@@ -30,7 +30,7 @@ export function Field(props: FieldProps) {
 
 			{showHint && props.schemaEntry.hint &&
 				<p className="text-muted">
-					<FormattedMessage {...props.schemaEntry.hint} />
+					<MyFormattedMessage message={props.schemaEntry.hint} />
 				</p>}
 		</>);
 }
