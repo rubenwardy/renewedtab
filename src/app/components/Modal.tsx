@@ -66,5 +66,5 @@ export default function Modal(props: ModalProps) {
 				{props.children}
 			</div>
 		</aside>
-	), document.getElementById("app")!);
+	), document.getElementById("modal-root")!);
 }
