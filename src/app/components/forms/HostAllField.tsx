@@ -1,4 +1,4 @@
-import { useForceUpdate, useForceUpdateValue, usePromise } from "app/hooks";
+import { useForceUpdateValue, usePromise } from "app/hooks";
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import { clearWebsiteIcons } from "app/WebsiteIcon";
 import React, { ChangeEvent, useState } from "react";

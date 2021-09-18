@@ -5,27 +5,39 @@ import { WidgetTypes } from "app/widgets";
 import { ErrorBoundary } from "./ErrorView";
 import WidgetLayouter from "app/WidgetLayouter";
 import { Vector2 } from "app/utils/Vector2";
-import GridLayout, { Layout } from "react-grid-layout";
+import GridLayout, { Layout, WidthProvider } from "react-grid-layout";
 import { useForceUpdate } from "app/hooks";
 import { WidgetProps } from "app/Widget";
 import Schema, { type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
+import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 
 
 export interface WidgetGridSettings {
+	fullWidth: boolean;
 	columns: number;
 	spacing: number;
 }
 
 
 const messages = defineMessages({
+	fullWidthLabel: {
+		defaultMessage: "Grid Full Width",
+		description: "Widget grid: form label for grid full width",
+	},
+
+	fullWidthHint: {
+		defaultMessage: "Stretch grid to cover the entire page. Requires Reload.",
+		description: "Widget grid: form label for grid full width",
+	},
+
 	columnsLabel: {
 		defaultMessage: "Grid Columns",
 		description: "Widget grid: form label for grid columns",
 	},
 
 	columnsHint: {
-		defaultMessage: "Number of columns in the widget grid. Each column is roughly 50px plus spacing, so with 15px spacing, the maximum a 1080p window should have is 30 columns.",
+		defaultMessage: "Number of columns in the widget grid. You can fit {max} columns in the current window width ({res}px).",
 		description: "Widget grid: form hint for grid columns",
 	},
 
@@ -45,6 +57,8 @@ interface WidgetGridProps extends WidgetGridSettings {
 	wm: WidgetManager;
 	isLocked: boolean;
 }
+
+const ReactGridLayout = WidthProvider(GridLayout);
 
 export default function WidgetGrid(props: WidgetGridProps) {
 	const widgetManager = props.wm;
@@ -117,32 +131,42 @@ export default function WidgetGrid(props: WidgetGridProps) {
 	const cellSize = 50;
 	const cellSpacing = props.spacing;
 	const gridWidth = gridColumns*(cellSize+cellSpacing);
-	const mainStyle: CSSProperties = {
-		width: Math.ceil(gridWidth / 2) * 2
-	};
+	const mainStyle: CSSProperties = props.fullWidth
+		? { minWidth: Math.ceil(gridWidth / 2) * 2, width: "100%" }
+		: { width: Math.ceil(gridWidth / 2) * 2 };
 
 	return (
 		<main>
 			<div className='scroll-wrap'>
-				<GridLayout className={gridClassNames} style={mainStyle}
+				<ReactGridLayout className={gridClassNames} style={mainStyle}
 						isDraggable={!props.isLocked} isResizable={!props.isLocked}
 						layout={layout} onLayoutChange={onLayoutChange}
 						cols={gridColumns} rowHeight={cellSize}
 						margin={[cellSpacing, cellSpacing]}
-						width={gridWidth}
+						width={!props.fullWidth ? gridWidth : undefined}
 						draggableHandle=".widget-title">
 					{widgets}
-				</GridLayout>
+				</ReactGridLayout>
 			</div>
 		</main>);
 }
 
-export const gridSettingsSchema: Schema<WidgetGridSettings> = {
-	columns: type.number(messages.columnsLabel, messages.columnsHint, 5),
-	spacing: type.unit_number(messages.spacingLabel, "px", messages.spacingHint, 0),
-};
+export function makeGridSettingsSchema(values: WidgetGridSettings): Schema<WidgetGridSettings> {
+	const screenWidth = document.body.clientWidth;
+	const hint = bindValuesToDescriptor(messages.columnsHint, {
+		max: Math.floor((screenWidth - 10 + values.spacing) / (50 + values.spacing)),
+		res: screenWidth,
+	})
+
+	return {
+		fullWidth: type.boolean(messages.fullWidthLabel, messages.fullWidthHint),
+		columns: type.number(messages.columnsLabel, hint, 5),
+		spacing: type.unit_number(messages.spacingLabel, "px", messages.spacingHint, 0),
+	};
+}
 
 export const defaultGridSettings: WidgetGridSettings = {
+	fullWidth: false,
 	columns: 15,
 	spacing: 15,
 };
