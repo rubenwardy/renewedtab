@@ -4,6 +4,8 @@ import { WidgetManager } from "app/WidgetManager";
 import { expect } from "chai";
 import DummyStorage from "./DummyStorage";
 
+const NUM_LINKS = 6;
+
 describe("WidgetManager::create", () => {
 	it("createsDefaultWidgets", async () => {
 		const storage = new DummyStorage();
@@ -30,8 +32,8 @@ describe("WidgetManager::create", () => {
 
 		const widget1 = wm.createWidget<LinkBoxProps>("Links");
 		const widget2 = wm.createWidget<LinkBoxProps>("Links");
-		expect(widget1.props.links.length).to.equal(7);
-		expect(widget2.props.links.length).to.equal(7);
+		expect(widget1.props.links.length).to.equal(NUM_LINKS);
+		expect(widget2.props.links.length).to.equal(NUM_LINKS);
 
 		widget1.props.links.push({
 			id: "123",
@@ -39,8 +41,8 @@ describe("WidgetManager::create", () => {
 			url: "url",
 		});
 
-		expect(widget1.props.links.length).to.equal(8);
-		expect(widget2.props.links.length).to.equal(7);
+		expect(widget1.props.links.length).to.equal(NUM_LINKS + 1);
+		expect(widget2.props.links.length).to.equal(NUM_LINKS);
 	});
 
 	it("copiesTheme", async () => {

@@ -46,15 +46,9 @@ const initialProps: LinkBoxProps = {
 		},
 		{
 			id: uuid(),
-			title: "Website",
+			title: "Help and Support",
 			icon: "",
-			url: "https://renewedtab.com/"
-		},
-		{
-			id: uuid(),
-			title: "Donate",
-			icon: "",
-			url: "https://renewedtab.com/donate/"
+			url: "https://renewedtab.com/help/"
 		},
 		{
 			id: uuid(),
@@ -64,21 +58,21 @@ const initialProps: LinkBoxProps = {
 		},
 		{
 			id: uuid(),
-			title: "rubenwardy",
+			title: "Popular",
 			icon: "",
 			url: "",
 		},
 		{
 			id: uuid(),
-			title: "rubenwardy.com",
+			title: "YouTube",
 			icon: "",
-			url: "https://rubenwardy.com/"
+			url: "https://www.youtube.com/"
 		},
 		{
 			id: uuid(),
-			title: "@rubenwardy on Twitter",
+			title: "Wikipedia",
 			icon: "",
-			url: "https://twitter.com/rubenwardy/"
+			url: "https://en.wikipedia.org/"
 		},
 	],
 };
