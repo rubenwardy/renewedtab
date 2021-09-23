@@ -889,19 +889,19 @@
         "description": "Currencies widget: form field label"
     },
     "2O5Rq1": {
-        "message": "Boa noite, {name}",
+        "message": "Boa noite!, {name}",
         "description": "Greeting widget: greeting, from 4pm to 9pm"
     },
     "2AUlDo": {
-        "message": "Boa noite, {name}",
+        "message": "Boa noite!, {name}",
         "description": "Greeting widget: greeting, from 9pm to midnight"
     },
     "FqCn+F": {
-        "message": "Bom dia, {name}",
+        "message": "Bom dia!, {name}",
         "description": "Greeting widget: greeting, from midnight to noon"
     },
     "oGS5TE": {
-        "message": "Boa tarde, {name}",
+        "message": "Boa tarde!, {name}",
         "description": "Greeting widget: greeting, from noon to 4pm"
     },
     "4cMia7": {
@@ -927,5 +927,155 @@
     "yT43pK": {
         "message": "Use ícones de sites (favicons)",
         "description": "Form field label"
+    },
+    "CMdRFu": {
+        "message": "Grade de largura total",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "eXB4qM": {
+        "message": "quarta-feira",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "Go7At+": {
+        "message": "Sábado",
+        "description": "Short weekday name (Saturday)"
+    },
+    "Vckd1G": {
+        "message": "Segunda-feira",
+        "description": "Short weekday name (Monday)"
+    },
+    "YS3jnS": {
+        "message": "sexta-feira",
+        "description": "Short weekday name (Friday)"
+    },
+    "frEJEM": {
+        "message": "Quinta-feira",
+        "description": "Short weekday name (Thursday)"
+    },
+    "qzlLb3": {
+        "message": "Domingo",
+        "description": "Short weekday name (Sunday)"
+    },
+    "uv1bYR": {
+        "message": "terça-feira",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "Ay1sfO": {
+        "message": "Controla quantas das imagens mais recentes podem ser escolhidas aleatoriamente. Definir como 1 sempre escolherá a imagem mais recente",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "B0kbsm": {
+        "message": "Feed noticias",
+        "description": "Unsplash background mode"
+    },
+    "E4nLwR": {
+        "message": "Todos os dias",
+        "description": "Background expiry dropdown"
+    },
+    "mw6Uh+": {
+        "message": "Mostrar previsão diária",
+        "description": "Weather widget: form field label"
+    },
+    "abwneZ": {
+        "message": "Metros por segundo (m / s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "ckvzIb": {
+        "message": "<b>Baixo</b> UV",
+        "description": "Low UV risk"
+    },
+    "d7dHsn": {
+        "message": "A cada 15 minutos",
+        "description": "Background expiry dropdown"
+    },
+    "rYprNW": {
+        "message": "Mostrar informações meteorológicas atuais",
+        "description": "Weather widget: form field label"
+    },
+    "pqIuCa": {
+        "message": "Mostrar clima atual",
+        "description": "Weather widget: form field label"
+    },
+    "v9UIPJ": {
+        "message": "Nascer do sol pôr do sol",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "HEvlTB": {
+        "message": "Opções de exibição",
+        "description": "Weather widget: display subform title"
+    },
+    "JN/uvd": {
+        "message": "UV <b>Moderado</b>",
+        "description": "Moderate UV risk"
+    },
+    "M0PwXU": {
+        "message": "Velocidade do Vento",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "S6nfAm": {
+        "message": "Humidade",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "XV4mnl": {
+        "message": "Dependendo de suas configurações, a mesma foto pode ser escolhida",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "HPLtg4": {
+        "message": "Moeda desconhecida''{currency}''",
+        "description": "Currencies widget: error"
+    },
+    "RhyKzC": {
+        "message": "Curado",
+        "description": "Curated background mode"
+    },
+    "TS11GJ": {
+        "message": "Imagem aleatória de um feed Atom ou RSS",
+        "description": "Backgroud mode description"
+    },
+    "mL3MOs": {
+        "message": "Milhas por hora (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "PBMGxw": {
+        "message": "Limitar imagens",
+        "description": "Feed background mode: form field label"
+    },
+    "F1A/8i": {
+        "message": "Fontes",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Número de colunas na grade do widget. Você pode ajustar {max} colunas na largura da janela atual ({res} px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "YQhLKn": {
+        "message": "Toda hora",
+        "description": "Background expiry dropdown"
+    },
+    "btOI+Z": {
+        "message": "Nova aba"
+    },
+    "hCBQrY": {
+        "message": "Parece como <b> {temp} ° </b>"
+    },
+    "zaQRTm": {
+        "message": "<b>Extremo</b> UV",
+        "description": "Extreme UV risk"
+    },
+    "rsdRPB": {
+        "message": "Estique a grade para cobrir toda a página. Requer recarregar.",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "BiPNnl": {
+        "message": "Unidade de velocidade do vento",
+        "description": "Weather widget: form field label"
+    },
+    "Upkn1Q": {
+        "message": "<b>Alto</b> UV",
+        "description": "High UV risk"
+    },
+    "W3zKGr": {
+        "message": "quilómetro",
+        "description": "Weather widget: Speed unit"
     }
 }
