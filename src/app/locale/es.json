@@ -282,7 +282,7 @@
         "message": "Este widget requiere la versión de extensión del navegador."
     },
     "CNpJaZ": {
-        "message": "Atención",
+        "message": "Concentración",
         "description": "Preset: focus"
     },
     "Cq4JWx": {
@@ -1058,5 +1058,24 @@
     "yT43pK": {
         "message": "Utilice iconos de sitios web (favicons)",
         "description": "Form field label"
+    },
+    "CMdRFu": {
+        "message": "Cuadrícula de Ancho Completo",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "F1A/8i": {
+        "message": "Fuentes",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Número de columnas en la cuadrícula de widgets. Puede colocar {max} columnas en el ancho actual de la ventana ({res}px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Nueva Pestaña"
+    },
+    "rsdRPB": {
+        "message": "Estirar la cuadrícula para cubrir toda la página. Requiere recargar la página.",
+        "description": "Widget grid: form label for grid full width"
     }
 }
