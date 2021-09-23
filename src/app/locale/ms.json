@@ -1063,10 +1063,6 @@
         "message": "Sumber",
         "description": "Feed widget: form field label"
     },
-    "H1tqyZ": {
-        "message": "Lebar Penuh Grid",
-        "description": "Widget grid: form label for grid full width"
-    },
     "M6lR5V": {
         "message": "Jumlah lajur dalam grid widget. Anda boleh guna sehingga {max} lajur dalam lebar tetingkap semasa ({res}px).",
         "description": "Widget grid: form hint for grid columns"
