@@ -27,7 +27,7 @@
         "message": "Ajouter"
     },
     "27lljH": {
-        "message": "Vous avez <b>{age}</b>",
+        "message": "Vous avez <b>{age}</b> ans",
         "description": "Age widget text"
     },
     "2VPa4j": {
@@ -1058,5 +1058,24 @@
     "yT43pK": {
         "message": "Utiliser les icônes des sites Web (favicons)",
         "description": "Form field label"
+    },
+    "CMdRFu": {
+        "message": "Grille en pleine largeur",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "F1A/8i": {
+        "message": "Sources",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Nombre de colonnes dans la grille de widgets. Vous pouvez ajuster {max} colonnes dans la largeur de fenêtre actuelle ({res}px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Nouvel onglet"
+    },
+    "rsdRPB": {
+        "message": "Étirez la grille pour remplir toute la page. Nécessite un rechargement.",
+        "description": "Widget grid: form label for grid full width"
     }
 }
