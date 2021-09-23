@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import { mergeClasses } from 'app/utils';
 import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
-import { useRunPromise, usePromise } from 'app/hooks/promises';
 import Icon from './Icon';
 
 

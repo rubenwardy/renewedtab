@@ -80,6 +80,11 @@ export const schemaMessages = defineMessages({
 		defaultMessage: "Use icons from websites (favicons)",
 		description: "Form field label",
 	},
+
+	openInNewTab: {
+		defaultMessage: "Open links in new tab",
+		description: "Form field label",
+	}
 });
 
 

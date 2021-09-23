@@ -197,7 +197,7 @@ const widget: WidgetType<FeedProps> = {
 		useWebsiteIcons: false,
 	},
 
-	async schema(_widget) {
+	async schema() {
 		if (typeof browser !== "undefined") {
 			return {
 				sources: type.array(sourceSchema, messages.sources),

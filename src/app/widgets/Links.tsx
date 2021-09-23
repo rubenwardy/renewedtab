@@ -91,12 +91,14 @@ const widget: WidgetType<LinkBoxProps> = {
 		if (typeof browser !== "undefined") {
 			return {
 				links: type.array(linkSchema, messages.links),
+				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				enableCustomIcons: type.boolean(messages.enableCustomIcons),
 				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
 			};
 		} else {
 			return {
 				links: type.array(linkSchema, messages.links),
+				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				enableCustomIcons: type.boolean(messages.enableCustomIcons),
 			};
 		}

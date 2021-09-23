@@ -73,7 +73,6 @@ function writeClientError(res: express.Response, msg: string) {
 
 
 import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
-import { preProcessFile } from "typescript";
 import { TippyTopImage } from "common/api/icons";
 
 app.get('/metrics', async (req, res) => {

@@ -51,6 +51,7 @@ export interface LinkBoxProps {
 	errorIcon?: string;
 	enableCustomIcons?: boolean;
 	limitItemsToAvoidScrolling?: boolean;
+	openInNewTab?: boolean;
 }
 
 
@@ -58,6 +59,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const [ref, size] = useElementSize();
+	const target = props.openInNewTab ? "_blank" : undefined;
 
 	const links = useMemo<Link[]>(() => {
 		const ret = deepCopy(props.links);
@@ -88,7 +90,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 			return (
 				<li key={link.id} data-hostname={domain} data-url={link.url}
 						data-title={link.title} data-icon={link.icon}>
-					<a href={link.url}>
+					<a href={link.url} target={target}>
 						{icon}
 						<span className="title">{link.title}</span>
 					</a>
