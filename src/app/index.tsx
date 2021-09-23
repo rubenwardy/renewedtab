@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import App from "./components/App";
 import "./scss/main.scss";
+import { getFeedbackURL } from "./utils/webext";
 
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
@@ -65,13 +66,13 @@ render(
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import { faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
 	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock,
-	faLockOpen, faQuestionCircle, faGripVertical, faLanguage, faTint, faSun, faWind, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
-import { getFeedbackURL } from "./utils/webext";
+	faLockOpen, faQuestionCircle, faGripVertical, faLanguage, faTint, faSun,
+	faWind, faLongArrowAltRight, faClone } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
 	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock, faLockOpen,
 	faQuestionCircle, faGripVertical, faLanguage, faTint, faSun, faWind,
-	faLongArrowAltRight);
+	faLongArrowAltRight, faClone);
 dom.watch();
 
 

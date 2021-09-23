@@ -90,8 +90,12 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		const props : WidgetProps<unknown> = {
 			...widget,
 			typeDef: WidgetTypes[widget.type],
-			save: widgetManager.save.bind(widgetManager),
-			remove: () => handleRemove(widget.id)
+			save: () => widgetManager.save(),
+			remove: () => handleRemove(widget.id),
+			duplicate: () => {
+				widgetManager.clone(widget);
+				forceUpdate();
+			},
 		};
 
 		return (

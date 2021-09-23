@@ -80,6 +80,7 @@ export interface WidgetProps<T> extends Widget<T> {
 	typeDef: WidgetType<T>;
 	save(): void;
 	remove(): void;
+	duplicate(): void;
 }
 
 

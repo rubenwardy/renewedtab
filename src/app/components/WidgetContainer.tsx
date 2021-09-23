@@ -164,6 +164,9 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 					<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>
 						<i className="fas fa-trash" />
 					</a>
+					<a className="btn" onClick={props.duplicate}>
+						<i className="fas fa-clone" />
+					</a>
 					<a className="btn widget-edit" onClick={() => setMode(WidgetMode.Edit)}>
 						<i className="fas fa-pen" />
 					</a>
