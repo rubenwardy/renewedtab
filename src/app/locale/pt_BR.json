@@ -1009,11 +1009,11 @@
         "description": "Moderate UV risk"
     },
     "M0PwXU": {
-        "message": "Velocidade do Vento",
+        "message": "Velocidade do Vento ({unit})",
         "description": "Weather widget: wind speed tooltip"
     },
     "S6nfAm": {
-        "message": "Humidade",
+        "message": "Humidade (%)",
         "description": "Weather widget: humidity tooltip"
     },
     "XV4mnl": {
@@ -1021,7 +1021,7 @@
         "description": "Background settings: form field hint (Show a new photo)"
     },
     "HPLtg4": {
-        "message": "Moeda desconhecida''{currency}''",
+        "message": "Moeda desconhecida ''{currency}''",
         "description": "Currencies widget: error"
     },
     "RhyKzC": {

@@ -470,5 +470,117 @@
     "yT43pK": {
         "message": "Benutze Icon von Webseiten (favicons)",
         "description": "Form field label"
+    },
+    "Go7At+": {
+        "message": "Sa",
+        "description": "Short weekday name (Saturday)"
+    },
+    "Abtyj/": {
+        "message": "Bild ist größer als 2MB ({dataSizeMB}MB). Um schnellere Ladezeiten zu haben, sollte ein kleineres Bild verwendet werden.",
+        "description": "Image upload error message"
+    },
+    "4cMia7": {
+        "message": "Zeige ein neues Bild",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "M0PwXU": {
+        "message": "Windgeschwindigkeit ({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "FqCn+F": {
+        "message": "Guten morgen, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "2AUlDo": {
+        "message": "Schlaf gut, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Guten Abend, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "W3zKGr": {
+        "message": "Kilometer pro Stunde (km/h)",
+        "description": "Weather widget: Speed unit"
+    },
+    "E4nLwR": {
+        "message": "Jeden tag",
+        "description": "Background expiry dropdown"
+    },
+    "FCmJHd": {
+        "message": "Zeigt einen Atom oder RSS Feed, nützlich um Nachrichten, Webseiten und Blogs zu verfolgen",
+        "description": "Feed widget description"
+    },
+    "0l+aD2": {
+        "message": "Tägliche Ziele und inspirierende Zitate",
+        "description": "Preset: focus description"
+    },
+    "D4M6tn": {
+        "message": "Wilkommen bei Renewed Tab",
+        "description": "Onboarding modal: title"
+    },
+    "4dzBeG": {
+        "message": "Von",
+        "description": "Currencies widget: form field label"
+    },
+    "7wOM6+": {
+        "message": "Jahresfortschritt",
+        "description": "Year Progress widget"
+    },
+    "+TYXj6": {
+        "message": "Heute, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "2vJWTd": {
+        "message": "Photo",
+        "description": "Background credits title placeholder"
+    },
+    "HPLtg4": {
+        "message": "Unbekannte Währung \"{currency}\"",
+        "description": "Currencies widget: error"
+    },
+    "HEvlTB": {
+        "message": "Zeige Optionen",
+        "description": "Weather widget: display subform title"
+    },
+    "+sI+Oh": {
+        "message": "Zeige stündliche Vorhersage",
+        "description": "Weather widget: form field label"
+    },
+    "BiPNnl": {
+        "message": "Windgeschwindigkeitseinheit",
+        "description": "Weather widget: form field label"
+    },
+    "abwneZ": {
+        "message": "Meter pro Sekunde (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "aXrD3p": {
+        "message": "Währungen",
+        "description": "Currencies widget"
+    },
+    "F1A/8i": {
+        "message": "Quellen",
+        "description": "Feed widget: form field label"
+    },
+    "pG7wIz": {
+        "message": "Zeigt Wechselkurse, unterstützt Devisen und Kryptowährungen (BitCoin etc.)",
+        "description": "Currencies widget description"
+    },
+    "3vjl5Q": {
+        "message": "Zeigen / Verstecken",
+        "description": "Feed widget filter allow label"
+    },
+    "Ddd3ZY": {
+        "message": "Nach",
+        "description": "Currencies widget: form field label"
+    },
+    "CNpJaZ": {
+        "message": "Fokus",
+        "description": "Preset: focus"
+    },
+    "Cq4JWx": {
+        "message": "Die Nachrichten, das Wetter und mehr",
+        "description": "Preset: grid description"
     }
 }
