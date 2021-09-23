@@ -5,7 +5,7 @@ import { mergeClasses } from 'app/utils';
 
 interface IconProps {
 	icon: string | Promise<string | undefined>;
-	requiresIcons: boolean;
+	requiresIcons?: boolean;
 	defaultIcon?: string;
 	errorIcon?: string;
 	className?: string;
@@ -14,6 +14,7 @@ interface IconProps {
 
 export default function Icon(props: IconProps) {
 	const [errored, setErrored] = useState(false);
+	const requiresIcons = props.requiresIcons ?? true;
 
 	const [icon,] = usePromise(async () => {
 		if (props.icon instanceof Promise) {
@@ -23,7 +24,7 @@ export default function Icon(props: IconProps) {
 		}
 	}, [props.icon]);
 
-	if (!props.requiresIcons && (!icon || icon.length == 0)) {
+	if (!requiresIcons && (!icon || icon.length == 0)) {
 		return null;
 	} else if (errored) {
 		return (<span className={props.className}><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);

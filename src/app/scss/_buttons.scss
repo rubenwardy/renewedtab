@@ -13,6 +13,7 @@
 		box-shadow 0.15s ease-in-out;
 	cursor: pointer;
 	box-sizing: border-box;
+	text-align: center;
 
 	&:hover {
 		color: white;
@@ -154,6 +155,7 @@
 		object-fit: cover;
 		max-height: 18px;
 		vertical-align: middle;
+		object-fit: contain;
 		color: rgba(255, 255, 255, 0.5);
 	}
 }

@@ -26,7 +26,7 @@ function Tab(props: { option: Option, selected: boolean, onClick: () => void, us
     return (
         <button className={mergeClasses("tab", props.selected && "selected")}
                 onClick={() => props.onClick()}>
-            {props.useWebsiteIcons && <Icon icon={iconPromise} requiresIcons={true} />}
+            {props.useWebsiteIcons && <Icon icon={iconPromise} />}
             {props.option.title}
         </button>);
 }
