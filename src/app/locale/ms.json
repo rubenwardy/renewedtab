@@ -1073,5 +1073,9 @@
     "rsdRPB": {
         "message": "Regang grid untuk meliputi keseluruhan halaman. Perlu Muat Semula.",
         "description": "Widget grid: form label for grid full width"
+    },
+    "CMdRFu": {
+        "message": "Lebar Penuh Grid",
+        "description": "Widget grid: form label for grid full width"
     }
 }
