@@ -1058,5 +1058,24 @@
     "yT43pK": {
         "message": "İnternet sitelerinden ikon kullan (favicon)",
         "description": "Form field label"
+    },
+    "CMdRFu": {
+        "message": "Tam Genişlikli Izgara",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "F1A/8i": {
+        "message": "Kaynaklar",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Araç ızgarasındaki sütun sayısı. Şu anki pencere genişliğine ({res}px) sığdırabileceğiniz sütun sayısı: {max}.",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Yeni Sekme"
+    },
+    "rsdRPB": {
+        "message": "Izgarayı bütün sayfayı kaplayacak şekilde genişlet. Sayfanın yenilenmesi gerekir.",
+        "description": "Widget grid: form label for grid full width"
     }
 }
