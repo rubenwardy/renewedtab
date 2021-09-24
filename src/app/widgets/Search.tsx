@@ -4,6 +4,7 @@ import { usePromise } from "app/hooks";
 import { useGlobalSearch } from "app/hooks/globalSearch";
 import { schemaMessages } from "app/locale/common";
 import { type } from "app/utils/Schema";
+import UserError from "app/utils/UserError";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";
 import React, { useRef } from "react";
@@ -40,6 +41,16 @@ const messages = defineMessages({
 		defaultMessage: "Search",
 		description: "Search widget: searchbox placeholder text, when search engine name is unknown",
 	},
+
+	enableGlobalSearch: {
+		defaultMessage: "Enable widget search",
+		description: "Search widget: form field label, enable filtering widgets",
+	},
+
+	missingQueryVariable: {
+		defaultMessage: "Missing '{query}' in search URL. Eg: https://google.com/search/?q='{query}'",
+		description: "Search widget: error, missing query variable",
+	},
 });
 
 
@@ -47,6 +58,7 @@ interface SearchProps {
 	useBrowserEngine: boolean;
 	searchTitle: string;
 	searchURL: string;
+	enableGlobalSearch: boolean;
 }
 
 
@@ -115,22 +127,32 @@ async function getSearchEngineSettings(props: SearchProps): Promise<SearchEngine
 				}
 			},
 		};
-	} else {
+	} else if (props.searchURL != "") {
+		if (!props.searchURL.includes("{query}")) {
+			throw new UserError(messages.missingQueryVariable);
+		}
+
 		return {
 			name: props.searchTitle,
 			onSearch: (query) => {
 				const encoded = encodeURIComponent(query);
 				window.location.href = props.searchURL.replace("{query}", encoded);
 			},
-		}
+		};
+	} else {
+		return {
+			name: "",
+			onSearch: () => {},
+		};
 	}
 }
 
 
 function Search(widget: WidgetProps<SearchProps>) {
-	const { query, setQuery } = useGlobalSearch();
+	const globalSearch = useGlobalSearch();
 	const props = widget.props;
 	const intl = useIntl();
+	const enableGlobalSearch = props.enableGlobalSearch ?? true;
 
 	const [settings, error] = usePromise(() => getSearchEngineSettings(props), []);
 	const ref = useRef<HTMLInputElement>(null);
@@ -156,7 +178,11 @@ function Search(widget: WidgetProps<SearchProps>) {
 			<form onSubmit={onSubmit}>
 				<i className="icon fas fa-search" />
 				<input autoFocus={true} placeholder={placeholder}
-						value={query} onChange={e => setQuery(e.target.value)}
+						value={enableGlobalSearch ? globalSearch.query : undefined}
+						onChange={
+							enableGlobalSearch
+								? (e => globalSearch.setQuery(e.target.value))
+								: undefined}
 						type="text" name="q" ref={ref}
 						className="large invisible" />
 			</form>
@@ -173,13 +199,7 @@ const widget: WidgetType<SearchProps> = {
 		useBrowserEngine: true,
 		searchTitle: "Google",
 		searchURL: "https://google.com/search?q={query}",
-	},
-
-	onCreated(widget) {
-		if (!hasSearchAPI) {
-			widget.props.searchTitle = "Google";
-			widget.props.searchURL = "https://google.com/search";
-		}
+		enableGlobalSearch: true,
 	},
 
 	async schema(widget) {
@@ -187,27 +207,37 @@ const widget: WidgetType<SearchProps> = {
 			return {
 				searchTitle: type.string(messages.searchTitle),
 				searchURL: type.url(schemaMessages.url),
+				enableGlobalSearch: type.boolean(messages.enableGlobalSearch),
 			};
 		} else if (widget.props.useBrowserEngine) {
 			return {
 				useBrowserEngine: type.boolean(messages.useBrowserDefault),
+				enableGlobalSearch: type.boolean(messages.enableGlobalSearch),
 			};
 		} else {
 			return {
 				useBrowserEngine: type.boolean(messages.useBrowserDefault),
 				searchTitle: type.string(messages.searchTitle),
 				searchURL: type.url(schemaMessages.url),
+				enableGlobalSearch: type.boolean(messages.enableGlobalSearch),
 			};
 		}
 	},
 
 	async onLoaded(widget) {
-		if (!widget.props.searchURL.includes("{query}")) {
-			const url = new URL(widget.props.searchURL);
-			url.searchParams.set("q", "---query---");
-			widget.props.searchURL = url.toString().replace("q=---query---", "q={query}");
-		}
-	}
+		if (widget.props.enableGlobalSearch == undefined) {
+			widget.props.enableGlobalSearch = true;
 
+			if (!widget.props.searchURL.includes("{query}")) {
+				try {
+					const url = new URL(widget.props.searchURL);
+					url.searchParams.set("q", "---query---");
+					widget.props.searchURL = url.toString().replace("q=---query---", "q={query}");
+				} catch(e) {
+					widget.props.searchURL += "?q={query}";
+				}
+			}
+		}
+	},
 };
 export default widget;
