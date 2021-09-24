@@ -46,3 +46,16 @@ export async function firstPromise<T>(funcs: (() => Promise<T>)[]): Promise<(T |
 
 	return undefined;
 }
+
+
+/**
+ * Does query match any values in `args`?
+ *
+ * @param query
+ * @param args
+ * @returns
+ */
+export function queryMatchesAny(query: string, ...args: string[]) {
+	return query == "" ||
+		args.some(x => x.toLowerCase().includes(query.toLowerCase()));
+}

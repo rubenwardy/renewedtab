@@ -124,4 +124,19 @@ export const miscMessages = defineMessages({
 	requiresBrowserVersion: {
 		defaultMessage: "Requires browser extension version",
 	},
+
+	noResults: {
+		defaultMessage: "No results",
+		description: "A search has returned no results here (note: there may be multiple places being searched)"
+	},
+
+	globalSearchEditHint: {
+		defaultMessage: "You can filter this widget using a Search widget.",
+		description: "Edit hint shown on searchable widgets",
+	},
+
+	poweredBy: {
+		defaultMessage: "Powered by {host}.",
+		description: "Credit to a website",
+	},
 });

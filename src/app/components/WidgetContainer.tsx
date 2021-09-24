@@ -8,6 +8,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "./Button";
 import { SchemaEntry } from "app/utils/Schema";
+import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -52,7 +53,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 			<div className="modal-body">
 				{props.typeDef.editHint &&
 					<p className="text-muted">
-						<FormattedMessage {...props.typeDef.editHint} />
+						<MyFormattedMessage message={props.typeDef.editHint} />
 					</p>}
 
 				<Form

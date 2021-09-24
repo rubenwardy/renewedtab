@@ -1,5 +1,6 @@
 import Panel from "app/components/Panel";
 import { usePromise } from "app/hooks";
+import { useGlobalSearch } from "app/hooks/globalSearch";
 import { schemaMessages } from "app/locale/common";
 import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
@@ -15,7 +16,7 @@ const messages = defineMessages({
 	},
 
 	description: {
-		defaultMessage: "Search box to your favourite search engine",
+		defaultMessage: "Search widgets or the web using your favourite search engine",
 		description: "Search widget description",
 	},
 
@@ -86,6 +87,7 @@ async function getBrowserSearchEngineName(): Promise<string> {
 
 
 function Search(widget: WidgetProps<SearchProps>) {
+	const { query, setQuery } = useGlobalSearch();
 	const props = widget.props;
 	const intl = useIntl();
 
@@ -120,7 +122,9 @@ function Search(widget: WidgetProps<SearchProps>) {
 		return (
 			<Panel {...widget.theme} flush={true}>
 				<form onSubmit={onSubmit}>
+					<i className="icon fas fa-search" />
 					<input autoFocus={true} placeholder={placeholder}
+							value={query} onChange={e => setQuery(e.target.value)}
 							type="text" name="q" ref={ref}
 							className="large invisible" />
 				</form>
@@ -130,7 +134,9 @@ function Search(widget: WidgetProps<SearchProps>) {
 	return (
 		<Panel {...widget.theme} flush={true}>
 			<form method="get" action={props.searchURL}>
+				<i className="icon fas fa-search" />
 				<input autoFocus={true} type="text" name="q"
+						value={query} onChange={e => setQuery(e.target.value)}
 						placeholder={
 							intl.formatMessage(messages.searchWith, { name: props.searchTitle })}
 						className="large invisible" />

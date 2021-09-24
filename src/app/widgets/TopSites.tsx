@@ -2,7 +2,7 @@ import ErrorView from 'app/components/ErrorView';
 import LinkBox, { Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
-import { schemaMessages } from 'app/locale/common';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, WidgetProps, WidgetType } from 'app/Widget';
@@ -74,6 +74,7 @@ const widget: WidgetType<Record<string, never>> = {
 	Component: TopSites,
 	title: messages.title,
 	description: messages.description,
+	editHint: miscMessages.globalSearchEditHint,
 	isBrowserOnly: true,
 	defaultSize: new Vector2(15, 2),
 

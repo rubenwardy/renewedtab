@@ -1,13 +1,15 @@
 import React, { useMemo } from 'react';
-import { defineMessages } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import { useElementSize } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
-import { schemaMessages } from 'app/locale/common';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetTheme } from 'app/Widget';
 import Panel from './Panel';
 import Icon from './Icon';
+import { useGlobalSearch } from 'app/hooks/globalSearch';
+import { queryMatchesAny } from 'app/utils';
 
 
 const messages = defineMessages({
@@ -56,20 +58,22 @@ export interface LinkBoxProps {
 
 
 export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme })  {
+	const { query } = useGlobalSearch();
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const [ref, size] = useElementSize();
 	const target = props.openInNewTab ? "_blank" : undefined;
 
 	const links = useMemo<Link[]>(() => {
-		const ret = deepCopy(props.links);
+		const ret = deepCopy(props.links.filter(link =>
+			queryMatchesAny(query, link.title, link.url)));
 		if (size && props.limitItemsToAvoidScrolling) {
 			const rows = Math.max(1, Math.floor((size.y + 10) / 120));
 			const columns = Math.floor((size.x + 10) / 105);
 			ret.splice(rows * columns);
 		}
 		return ret;
-	}, [props.links, size]);
+	}, [props.links, size, query]);
 
 	if (useWebsiteIcons && typeof browser !== "undefined") {
 		links
@@ -109,6 +113,10 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 		<Panel {...props.widgetTheme} flush={true}>
 			<ul className={useIconBar ? "iconbar" : "links large"} ref={ref}>
 				{linkElements}
+				{linkElements.length == 0 && props.links.length > 0 && (
+					<li className="section">
+						<FormattedMessage {...miscMessages.noResults} />
+					</li>)}
 			</ul>
 		</Panel>);
 }

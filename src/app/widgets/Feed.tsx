@@ -2,14 +2,16 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
 import { WidgetProps, WidgetType } from 'app/Widget';
-import { defineMessages } from 'react-intl';
-import { schemaMessages } from 'app/locale/common';
+import { defineMessages, FormattedMessage } from 'react-intl';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI, useFeed, useForceUpdateValue } from 'app/hooks';
 import ErrorView from 'app/components/ErrorView';
 import uuid from 'app/utils/uuid';
 import { Tabs } from 'app/components/Tabs';
 import UserError from 'app/utils/UserError';
+import { useGlobalSearch } from 'app/hooks/globalSearch';
+import { queryMatchesAny } from 'app/utils';
 
 
 const messages = defineMessages({
@@ -92,10 +94,14 @@ interface FeedPanelProps extends FeedProps {
 function FeedPanel(props: FeedPanelProps) {
 	const source = props.sources[0];
 	const [feed, error] = useFeed(source.url, [source.url]);
+	const { query } = useGlobalSearch();
 
 	if (!feed) {
 		useEffect(() => {}, [""]);
-		return (<ErrorView error={error} loading={true} />);
+		return (
+			<div className="panel-inset">
+				<ErrorView error={error} loading={true} panel={false} />
+			</div>);
 	}
 
 	useEffect(() => {
@@ -113,6 +119,7 @@ function FeedPanel(props: FeedPanelProps) {
 		.map(filter => filter.text.toLowerCase());
 
 	const rows = feed.articles
+		.filter(article => queryMatchesAny(query, article.title))
 		.filter(article => {
 			const title = article.title.toLowerCase();
 			return article.link &&
@@ -126,6 +133,11 @@ function FeedPanel(props: FeedPanelProps) {
 	return (
 		<ul className="links">
 			{rows}
+			{rows.length == 0 && feed.articles.length > 0 && (
+					<li className="section">
+						<FormattedMessage {...miscMessages.noResults} />
+					</li>
+				)}
 		</ul>);
 }
 
@@ -179,6 +191,7 @@ const widget: WidgetType<FeedProps> = {
 	Component: Feed,
 	title: messages.title,
 	description: messages.description,
+	editHint: miscMessages.globalSearchEditHint,
 	defaultSize: new Vector2(5, 4),
 	initialProps: {
 		sources: [

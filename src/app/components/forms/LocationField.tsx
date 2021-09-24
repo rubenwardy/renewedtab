@@ -146,9 +146,9 @@ function LocationModal(props: LocationModalProps) {
 					<LocationQuery query={query} onSelect={handleSelect} />}
 				<p className="text-muted mt-4">
 					<FormattedMessage
-						defaultMessage="Powered by <a>OpenStreetMap</a>."
+						{...miscMessages.poweredBy}
 						values={{
-							a: (chunk: any) => (<a href="https://www.openstreetmap.org/">{chunk}</a>)
+							host: "OpenStreetMap.org"
 						}} />
 				</p>
 				<Button variant={ButtonVariant.Secondary} onClick={props.cancel}

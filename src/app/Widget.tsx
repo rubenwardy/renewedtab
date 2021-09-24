@@ -1,6 +1,7 @@
 import { MessageDescriptor } from "@formatjs/intl";
 import { defineMessages, IntlShape } from "react-intl";
 import { schemaMessages } from "./locale/common";
+import { MyMessageDescriptor } from "./locale/MyMessageDescriptor";
 import Schema, { type } from "./utils/Schema";
 import { Vector2 } from "./utils/Vector2";
 
@@ -42,7 +43,7 @@ export interface WidgetType<T> {
 	/**
 	 * Hint to be shown in the WidgetEditor.
 	 */
-	editHint?: MessageDescriptor;
+	editHint?: MyMessageDescriptor;
 
 	/**
 	 * Initial values for shared theme settings

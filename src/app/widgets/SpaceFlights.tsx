@@ -6,6 +6,10 @@ import Panel from 'app/components/Panel';
 import { WidgetProps, WidgetType } from 'app/Widget';
 import ErrorView from 'app/components/ErrorView';
 import SpaceLaunch from 'common/api/SpaceLaunch';
+import { useGlobalSearch } from 'app/hooks/globalSearch';
+import { queryMatchesAny } from 'app/utils';
+import { miscMessages } from 'app/locale/common';
+import { bindValuesToDescriptor } from 'app/locale/MyMessageDescriptor';
 
 
 const messages = defineMessages({
@@ -17,11 +21,6 @@ const messages = defineMessages({
 	description: {
 		defaultMessage: "A list of upcoming space launches, powered by RocketLaunch.Live",
 		description: "SpaceFlights widget description",
-	},
-
-	editHint: {
-		defaultMessage: "Powered by RocketLaunch.Live",
-		description: "SpaceFlights widget: edit modal hint",
 	},
 
 	today: {
@@ -76,43 +75,51 @@ function renderDate(intl: IntlShape, launch: SpaceLaunch): string {
 
 
 function SpaceFlights(widget: WidgetProps<any>) {
+	const { query } = useGlobalSearch();
 	const intl = useIntl();
 	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
 	if (!data) {
 		return (<ErrorView error={error} loading={true} />);
 	}
 
-	const rows = data.map(launch => {
-		const winOpen = attemptDate(launch.win_open);
-		const isToday = isSameDay(new Date(), winOpen ?? undefined);
-		return (
-			<li key={launch.id}>
-				<a href={launch.link}>
-					<div>
-						{launch.name}
-						{isToday && " 🚀"}
-					</div>
-					<div className="row">
-						<div className="col one-line text-muted">
-							{launch.provider}
+	const rows = data
+		.filter(launch => queryMatchesAny(query, launch.name, launch.provider))
+		.map(launch => {
+			const winOpen = attemptDate(launch.win_open);
+			const isToday = isSameDay(new Date(), winOpen ?? undefined);
+			return (
+				<li key={launch.id}>
+					<a href={launch.link}>
+						<div>
+							{launch.name}
+							{isToday && " 🚀"}
 						</div>
-						<div className="col-auto float-right text-muted"
-								title={winOpen ? intl.formatDate(winOpen,
-									{ dateStyle: "medium", timeStyle: "short" }) : undefined}>
-							{renderDate(intl, launch)}
+						<div className="row">
+							<div className="col one-line text-muted">
+								{launch.provider}
+							</div>
+							<div className="col-auto float-right text-muted"
+									title={winOpen ? intl.formatDate(winOpen,
+										{ dateStyle: "medium", timeStyle: "short" }) : undefined}>
+								{renderDate(intl, launch)}
+							</div>
 						</div>
-					</div>
-				</a>
-			</li>);
-	});
+					</a>
+				</li>);
+		});
 
 	return (
 		<Panel {...widget.theme} flush={true}>
-			<h2 className="panel-inset">
+			<h2 className="panel-inset pb-1">
 				<FormattedMessage {...messages.title} />
 			</h2>
 			<ul className="links">
 				{rows}
+				{rows.length == 0 && data.length > 0 && (
+					<li className="section">
+						<FormattedMessage {...miscMessages.noResults} />
+					</li>
+				)}
 			</ul>
 		</Panel>);
 }
@@ -122,7 +129,10 @@ const widget: WidgetType<Record<string, never>> = {
 	Component: SpaceFlights,
 	title: messages.title,
 	description: messages.description,
-	editHint: messages.editHint,
+	editHint: [
+		miscMessages.globalSearchEditHint,
+		bindValuesToDescriptor(miscMessages.poweredBy, { host: "RocketLaunch.live" }),
+	],
 	defaultSize: new Vector2(5, 4),
 	initialProps: {},
 	schema: {},

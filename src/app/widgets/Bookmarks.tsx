@@ -8,7 +8,7 @@ import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetType } from 'app/Wi
 import UserError from 'app/utils/UserError';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import { schemaMessages } from 'app/locale/common';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 
 
 const messages = defineMessages({
@@ -140,6 +140,7 @@ const widget: WidgetType<BookmarksProps> = {
 
 	title: messages.title,
 	description: messages.description,
+	editHint: miscMessages.globalSearchEditHint,
 
 	isBrowserOnly: true,
 
