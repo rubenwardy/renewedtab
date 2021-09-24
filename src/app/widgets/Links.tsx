@@ -1,5 +1,4 @@
 import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema } from 'app/components/LinkBox';
-import { useGlobalSearch } from 'app/hooks/globalSearch';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
