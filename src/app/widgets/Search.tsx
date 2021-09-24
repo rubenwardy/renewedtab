@@ -1,3 +1,4 @@
+import ErrorView from "app/components/ErrorView";
 import Panel from "app/components/Panel";
 import { usePromise } from "app/hooks";
 import { useGlobalSearch } from "app/hooks/globalSearch";
@@ -86,59 +87,77 @@ async function getBrowserSearchEngineName(): Promise<string> {
 }
 
 
+interface SearchEngineSettings {
+	name: string;
+	onSearch: (query: string) => void;
+}
+
+
+async function getSearchEngineSettings(props: SearchProps): Promise<SearchEngineSettings> {
+	if (hasSearchAPI && props.useBrowserEngine) {
+		const name = await getBrowserSearchEngineName();
+		return {
+			name,
+			onSearch: (query) => {
+				if (query) {
+					if (typeof browser.search.query == "function") {
+						browser.search.query({
+							text: query
+						});
+					} else {
+						browser.tabs.getCurrent().then((tab) => {
+							browser.search.search({
+								query: query,
+								tabId: tab.id,
+							});
+						})
+					}
+				}
+			},
+		};
+	} else {
+		return {
+			name: props.searchTitle,
+			onSearch: (query) => {
+				const encoded = encodeURIComponent(query);
+				window.location.href = props.searchURL.replace("{query}", encoded);
+			},
+		}
+	}
+}
+
+
 function Search(widget: WidgetProps<SearchProps>) {
 	const { query, setQuery } = useGlobalSearch();
 	const props = widget.props;
 	const intl = useIntl();
 
-	if (hasSearchAPI && props.useBrowserEngine) {
-		const [name] = usePromise(() => getBrowserSearchEngineName(), []);
-		const ref = useRef<HTMLInputElement>(null);
-
-		function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-			e.preventDefault();
-
-			const query = ref.current?.value;
-			if (query) {
-				if (typeof browser.search.query == "function") {
-					browser.search.query({
-						text: query
-					});
-				} else {
-					browser.tabs.getCurrent().then((tab) => {
-						browser.search.search({
-							query: query,
-							tabId: tab.id,
-						});
-					})
-				}
-			}
-		}
-
-		const placeholder = name
-			? intl.formatMessage(messages.searchWith, { name: name })
-			: intl.formatMessage(messages.search);
-
-		return (
-			<Panel {...widget.theme} flush={true}>
-				<form onSubmit={onSubmit}>
-					<i className="icon fas fa-search" />
-					<input autoFocus={true} placeholder={placeholder}
-							value={query} onChange={e => setQuery(e.target.value)}
-							type="text" name="q" ref={ref}
-							className="large invisible" />
-				</form>
-			</Panel>);
+	const [settings, error] = usePromise(() => getSearchEngineSettings(props), []);
+	const ref = useRef<HTMLInputElement>(null);
+	if (!settings) {
+		return (<ErrorView error={error} loading={true} />);
 	}
+
+	function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+
+		const query = ref.current?.value;
+		if (query) {
+			settings?.onSearch(query);
+		}
+	}
+
+	const placeholder = settings.name
+		? intl.formatMessage(messages.searchWith, { name: settings.name })
+		: intl.formatMessage(messages.search);
 
 	return (
 		<Panel {...widget.theme} flush={true}>
-			<form method="get" action={props.searchURL}>
+			<form onSubmit={onSubmit}>
 				<i className="icon fas fa-search" />
-				<input autoFocus={true} type="text" name="q"
+				<input autoFocus={true} placeholder={placeholder}
 						value={query} onChange={e => setQuery(e.target.value)}
-						placeholder={
-							intl.formatMessage(messages.searchWith, { name: props.searchTitle })}
+						type="text" name="q" ref={ref}
 						className="large invisible" />
 			</form>
 		</Panel>);
@@ -153,7 +172,7 @@ const widget: WidgetType<SearchProps> = {
 	initialProps: {
 		useBrowserEngine: true,
 		searchTitle: "Google",
-		searchURL: "https://google.com/search",
+		searchURL: "https://google.com/search?q={query}",
 	},
 
 	onCreated(widget) {
@@ -181,6 +200,14 @@ const widget: WidgetType<SearchProps> = {
 			};
 		}
 	},
+
+	async onLoaded(widget) {
+		if (!widget.props.searchURL.includes("{query}")) {
+			const url = new URL(widget.props.searchURL);
+			url.searchParams.set("q", "---query---");
+			widget.props.searchURL = url.toString().replace("q=---query---", "q={query}");
+		}
+	}
 
 };
 export default widget;
