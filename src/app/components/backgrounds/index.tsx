@@ -76,7 +76,7 @@ async function updateBackground<T>(key: string, provider: BackgroundProvider<T>,
 		} catch (e: any) {
 			if (typeof e.toString() != "function" ||
 					!e.toString().includes("Quota") ||
-					typeof browser != "undefined") {
+					typeof browser == "undefined") {
 				throw e;
 			}
 
