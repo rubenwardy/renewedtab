@@ -98,7 +98,7 @@ async function loadBackground(provider: BackgroundProvider<any>, values: any): P
 
 	if (cache) {
 		console.log("Setting background from cache, updating in the background");
-		updateBackground(key, provider, values);
+		updateBackground(key, provider, values).catch(console.error);
 		return cache.value;
 	} else {
 		console.log("Setting background from provider");
