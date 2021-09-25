@@ -23,10 +23,6 @@
         "description": "Notes Widget",
         "message": "Notes"
     },
-    "/hm6jk": {
-        "description": "Form field label",
-        "message": "Show text"
-    },
     "0PsF7Z": {
         "description": "Delete widget modal message",
         "message": "Are you sure you want to permanently remove this widget?"
@@ -947,6 +943,10 @@
     "rsdRPB": {
         "description": "Widget grid: form label for grid full width",
         "message": "Stretch grid to cover the entire page. Requires Reload."
+    },
+    "sIC2UV": {
+        "description": "Widget styling, checkbox for showing text on eg: Links",
+        "message": "Show text"
     },
     "sPl3nI": {
         "description": "Form field label",

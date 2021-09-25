@@ -43,7 +43,7 @@ export const schemaMessages = defineMessages({
 
 	showText: {
 		defaultMessage: "Show text",
-		description: "Form field label"
+		description: "Widget styling, checkbox for showing text on eg: Links"
 	},
 
 	location: {
