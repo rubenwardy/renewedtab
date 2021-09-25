@@ -96,7 +96,10 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 						data-title={link.title} data-icon={link.icon}>
 					<a href={link.url} target={target}>
 						{icon}
-						<span className="title">{link.title}</span>
+						<span className="title">
+							{(!props.widgetTheme.useIconBar || props.widgetTheme.showText) &&
+								link.title}
+						</span>
 					</a>
 				</li>);
 		} else {

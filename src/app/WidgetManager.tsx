@@ -32,8 +32,11 @@ export class WidgetManager {
 
 			const widgetType = WidgetTypes[widget.type];
 
+			const initialTheme = getInitialTheme(widgetType);
 			if (widget.theme == undefined) {
-				widget.theme = deepCopy(getInitialTheme(widgetType));
+				widget.theme = deepCopy(initialTheme);
+			} else {
+				widget.theme = { ...initialTheme, ...widget.theme };
 			}
 
 			if (widgetType.onLoaded) {

@@ -1,5 +1,5 @@
 import { MessageDescriptor } from "@formatjs/intl";
-import { defineMessages, IntlShape } from "react-intl";
+import { IntlShape } from "react-intl";
 import { schemaMessages } from "./locale/common";
 import { MyMessageDescriptor } from "./locale/MyMessageDescriptor";
 import Schema, { type } from "./utils/Schema";
@@ -11,6 +11,7 @@ type ReactFC<T> = ((props: T) => (JSX.Element | null));
 export interface WidgetTheme {
 	showPanelBG: boolean;
 	useIconBar?: boolean;
+	showText?: boolean;
 	color?: string;
 	textColor?: string;
 	opacity?: number;
@@ -85,21 +86,25 @@ export interface WidgetProps<T> extends Widget<T> {
 }
 
 
-export const themeMessages = defineMessages({
-	showPanelBG: {
-		defaultMessage: "Show panel background",
-	},
-});
-
 export const defaultThemeSchema: Schema<WidgetTheme> = {
-	showPanelBG: type.boolean(themeMessages.showPanelBG),
+	showPanelBG: type.boolean(schemaMessages.showPanelBG),
 };
 
 
-export const defaultLinksThemeSchema: Schema<WidgetTheme> = {
-	showPanelBG: type.boolean(themeMessages.showPanelBG),
-	useIconBar: type.boolean(schemaMessages.useIconBar),
-};
+export function defaultLinksThemeSchema(widget: Widget<unknown>): Schema<WidgetTheme> {
+	if (widget.theme.useIconBar) {
+		return {
+			showPanelBG: type.boolean(schemaMessages.showPanelBG),
+			useIconBar: type.boolean(schemaMessages.useIconBar),
+			showText: type.boolean(schemaMessages.showText),
+		};
+	} else {
+		return {
+			showPanelBG: type.boolean(schemaMessages.showPanelBG),
+			useIconBar: type.boolean(schemaMessages.useIconBar),
+		};
+	}
+}
 
 
 /**
@@ -144,14 +149,17 @@ export async function getSchemaForWidget<T>(widget: Widget<T>,
  * @returns theme
  */
 export function getInitialTheme(type: WidgetType<unknown>): WidgetTheme {
-	if (typeof type.initialTheme !== "undefined") {
-		return type.initialTheme;
-	}
-
-	return {
+	const defaultInitial: WidgetTheme =  {
 		showPanelBG: true,
 		useIconBar: false,
 		color: undefined,
 		textColor: undefined,
+		showText: true,
+	};
+
+	if (typeof type.initialTheme !== "undefined") {
+		return { ...defaultInitial, ...type.initialTheme };
 	}
+
+	return defaultInitial;
 }

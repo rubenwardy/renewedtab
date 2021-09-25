@@ -5,7 +5,7 @@ import Color from 'app/utils/Color';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
-import { themeMessages, WidgetProps, WidgetType } from 'app/Widget';
+import { WidgetProps, WidgetType } from 'app/Widget';
 import React, { useMemo } from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -111,7 +111,7 @@ const widget: WidgetType<ButtonProps> = {
 		opacity: 40,
 	},
 	themeSchema: {
-		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		showPanelBG: type.boolean(schemaMessages.showPanelBG),
 		color: type.color(schemaMessages.color),
 		opacity: type.unit_number(schemaMessages.opacity, "%", messages.tintOpacityHint, 0, 100),
 	},

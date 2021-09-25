@@ -31,9 +31,18 @@ export const schemaMessages = defineMessages({
 		description: "Form field label",
 	},
 
+	showPanelBG: {
+		defaultMessage: "Show panel background",
+	},
+
 	useIconBar: {
 		defaultMessage: "Display as icons",
 		description: "Form field label",
+	},
+
+	showText: {
+		defaultMessage: "Show text",
+		description: "Form field label"
 	},
 
 	location: {
