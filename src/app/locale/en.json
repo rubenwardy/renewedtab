@@ -746,9 +746,6 @@
     "iH2AHA": {
         "message": "<a>Open source</a>, licensed under GPLv3+."
     },
-    "ibhC3l": {
-        "message": "Like Renewed Tab? Consider donating to cover costs and help support development."
-    },
     "irdBm2": {
         "description": "Settings tab",
         "message": "Theme"
@@ -860,6 +857,9 @@
     "oJnbwn": {
         "description": "Greeting widget: name prompt",
         "message": "name"
+    },
+    "oRui+E": {
+        "message": "Enjoying Renewed Tab? Consider donating to help cover costs and support its development."
     },
     "ofl4Ui": {
         "description": "Location form field: search",
