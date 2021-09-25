@@ -29,10 +29,6 @@
         "message": "Nota",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Klik item untuk edit",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0hxZWu": {
         "message": "Ikon",
         "description": "Form field label"
@@ -231,9 +227,6 @@
         "message": "Warna tunggal",
         "description": "Backgroud mode description"
     },
-    "Rw51mJ": {
-        "message": "Disediakan oleh <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -301,9 +294,6 @@
     "X5OoHJ": {
         "message": "Apakah matlamat anda untuk hari ini?",
         "description": "Daily Goal prompt"
-    },
-    "XITVvp": {
-        "message": "Tunjukkan latar belakang panel"
     },
     "XrQEPN": {
         "message": "Lokasi",
@@ -396,10 +386,6 @@
     },
     "h/ftND": {
         "message": "Pilih fail"
-    },
-    "hZZSzJ": {
-        "message": "Disediakan oleh RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "hktZIl": {
         "message": "Menunjukkan masa"
@@ -566,10 +552,6 @@
     },
     "y1Z3or": {
         "message": "Bahasa"
-    },
-    "y2OItK": {
-        "message": "Kotak gelintar untuk enjin gelintar kegemaran anda",
-        "description": "Search widget description"
     },
     "y8o0oA": {
         "message": "Cuaca semasa dan ramalan",
@@ -769,9 +751,6 @@
         "message": "Menunjukkan suapan RSS atau Atom, berguna untuk mengikuti berita, laman sesawang, dan blog",
         "description": "Feed widget description"
     },
-    "M8ugqX": {
-        "message": "Tiada widget dipadankan"
-    },
     "vlumg9": {
         "message": "Cari widget...",
         "description": "Create Widgets modal: search widgets placeholder"
@@ -847,10 +826,6 @@
     "QV6YlB": {
         "message": "Kadar Pertukaran",
         "description": "Currencies widget: form field label"
-    },
-    "UgAgeT": {
-        "message": "Dikuasakan oleh exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "kF06lD": {
         "message": "Panjang ({example})",
@@ -1077,5 +1052,9 @@
     "CMdRFu": {
         "message": "Grid Lebar Penuh",
         "description": "Widget grid: form label for grid full width"
+    },
+    "lY73np": {
+        "message": "Tunjukkan latar belakang panel",
+        "description": "Widget styling, checkbox"
     }
 }

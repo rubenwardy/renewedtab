@@ -19,10 +19,6 @@
         "message": "Appunti",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Clicca sugli oggetti per modificarli",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0l+aD2": {
         "message": "Obiettivi giornalieri e frasi motivanti",
         "description": "Preset: focus description"
@@ -191,10 +187,6 @@
         "message": "Luminosità",
         "description": "Backgroud settings: form field label"
     },
-    "hZZSzJ": {
-        "message": "Sviluppato con RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
-    },
     "hktZIl": {
         "message": "Mostra l'ora"
     },
@@ -258,9 +250,6 @@
     "X5OoHJ": {
         "message": "Qual è il tuo obiettivo di oggi?",
         "description": "Daily Goal prompt"
-    },
-    "XITVvp": {
-        "message": "Mostra il pannello di sfondo"
     },
     "XrQEPN": {
         "message": "Località",
@@ -420,10 +409,6 @@
     "y1Z3or": {
         "message": "Lingua"
     },
-    "y2OItK": {
-        "message": "Barra del tuo motore di ricerca preferito",
-        "description": "Search widget description"
-    },
     "y8o0oA": {
         "message": "Meteo di oggi e dei prossimi giorni",
         "description": "Weather widget description"
@@ -471,9 +456,6 @@
     "Lxc1x4": {
         "message": "Orologio",
         "description": "Clock Widget"
-    },
-    "M8ugqX": {
-        "message": "Nessun widget trovato"
     },
     "KsX2fE": {
         "message": "<b>{name}</b>, a {latitude}, {longitude}"
@@ -623,9 +605,6 @@
     "TkgCJ9": {
         "message": "Puoi ricevere aiuto o fare richieste usando il link sottostante."
     },
-    "Rw51mJ": {
-        "message": "Sviluppato con <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -637,10 +616,6 @@
     "U2Qnh7": {
         "message": "Immagine",
         "description": "Image background mode"
-    },
-    "UgAgeT": {
-        "message": "Sviluppato con exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "V1EIOe": {
         "message": "Mostra una pagina web",
@@ -911,5 +886,9 @@
     "yT43pK": {
         "message": "Usa icone dei siti (favicon)",
         "description": "Form field label"
+    },
+    "lY73np": {
+        "message": "Mostra il pannello di sfondo",
+        "description": "Widget styling, checkbox"
     }
 }

@@ -33,6 +33,7 @@ export const schemaMessages = defineMessages({
 
 	showPanelBG: {
 		defaultMessage: "Show panel background",
+		description: "Widget styling, checkbox",
 	},
 
 	useIconBar: {

@@ -23,9 +23,9 @@
         "description": "Notes Widget",
         "message": "Notes"
     },
-    "/iBdV1": {
-        "description": "Todo List widget: edit modal hint",
-        "message": "Click items to edit them"
+    "/hm6jk": {
+        "description": "Form field label",
+        "message": "Show text"
     },
     "0PsF7Z": {
         "description": "Delete widget modal message",
@@ -81,6 +81,10 @@
     "3Nw7b0": {
         "description": "Search widget: form field label",
         "message": "Search engine name"
+    },
+    "3UG6ds": {
+        "description": "Search widget description",
+        "message": "Search widgets or the web using your favourite search engine"
     },
     "3ZfhWo": {
         "message": "Permission needed to access {host}. Edit this widget to grant it."
@@ -163,6 +167,10 @@
     "Abtyj/": {
         "description": "Image upload error message",
         "message": "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image."
+    },
+    "Ack5ID": {
+        "description": "A search has returned no results here (note: there may be multiple places being searched)",
+        "message": "No results"
     },
     "AgU+/t": {
         "description": "SpaceFlights widget description",
@@ -331,6 +339,10 @@
         "description": "Age widget: form field label",
         "message": "Birth date"
     },
+    "KdIFGg": {
+        "description": "Search widget: error, missing query variable",
+        "message": "Missing '{query}' in search URL. Eg: https://google.com/search/?q='{query}'"
+    },
     "KhM0zv": {
         "description": "Daily Goal widget: edit modal hint",
         "message": "Quotes are sourced from external sources, and are not reviewed by Renewed Tab."
@@ -365,9 +377,6 @@
     "M6lR5V": {
         "description": "Widget grid: form hint for grid columns",
         "message": "Number of columns in the widget grid. You can fit {max} columns in the current window width ({res}px)."
-    },
-    "M8ugqX": {
-        "message": "No matching widgets"
     },
     "MN3prI": {
         "description": "Bookmarks widget: form field label",
@@ -439,9 +448,6 @@
         "description": "Curated background mode",
         "message": "Curated"
     },
-    "Rw51mJ": {
-        "message": "Powered by <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "description": "IFrame Widget",
         "message": "IFrame"
@@ -490,10 +496,6 @@
     "U2Qnh7": {
         "description": "Image background mode",
         "message": "Image"
-    },
-    "UgAgeT": {
-        "description": "Currencies widget: credit to data provider",
-        "message": "Powered by exchangerate.host"
     },
     "Upkn1Q": {
         "description": "High UV risk",
@@ -552,9 +554,6 @@
     "X5OoHJ": {
         "description": "Daily Goal prompt",
         "message": "What's your goal for today?"
-    },
-    "XITVvp": {
-        "message": "Show panel background"
     },
     "XV4mnl": {
         "description": "Background settings: form field hint (Show a new photo)",
@@ -737,9 +736,9 @@
         "description": "Backgroud settings: form field label",
         "message": "Brightness"
     },
-    "hZZSzJ": {
-        "description": "SpaceFlights widget: edit modal hint",
-        "message": "Powered by RocketLaunch.Live"
+    "hWimZf": {
+        "description": "Search widget: form field label, enable filtering widgets",
+        "message": "Enable widget search"
     },
     "hktZIl": {
         "message": "Shows the time"
@@ -788,6 +787,10 @@
     "lUdRdE": {
         "message": "Error: {msg}"
     },
+    "lY73np": {
+        "description": "Widget styling, checkbox",
+        "message": "Show panel background"
+    },
     "lYJGY5": {
         "description": "Image URL background mode",
         "message": "Image URL"
@@ -819,6 +822,10 @@
         "description": "Weather widget: form field label",
         "message": "Show daily forecast"
     },
+    "n0cZ3b": {
+        "description": "Credit to a website",
+        "message": "Powered by {host}."
+    },
     "nF7bWj": {
         "description": "Clock widget: date style type",
         "message": "ISO ({example})"
@@ -827,12 +834,20 @@
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
         "message": "Search"
     },
+    "nHw5cV": {
+        "description": "Todo List widget: edit modal hint",
+        "message": "Click items to edit them."
+    },
     "nnaWVi": {
         "description": "Weather widget: Celsius unit",
         "message": "Celsius"
     },
     "o2uuHu": {
         "message": "12 hour clock"
+    },
+    "o9vGxx": {
+        "description": "Form field label",
+        "message": "Open links in new tab"
     },
     "oBl48o": {
         "description": "Import / export settings, reset confirmation",
@@ -893,6 +908,10 @@
     "q4caWd": {
         "description": "Backgroud settings: form field label",
         "message": "Blur radius"
+    },
+    "q6/aVX": {
+        "description": "Edit hint shown on searchable widgets",
+        "message": "You can filter this widget using a Search widget."
     },
     "qCsSqt": {
         "description": "Theme settings: form field label",
@@ -1016,10 +1035,6 @@
     },
     "y1Z3or": {
         "message": "Language"
-    },
-    "y2OItK": {
-        "description": "Search widget description",
-        "message": "Search box to your favourite search engine"
     },
     "y8o0oA": {
         "description": "Weather widget description",

@@ -82,10 +82,6 @@
     "D3idYv": {
         "message": "Einstellungen"
     },
-    "/iBdV1": {
-        "message": "Klicke auf Elemente um sie zu bearbeiten",
-        "description": "Todo List widget: edit modal hint"
-    },
     "3ZfhWo": {
         "message": "Berechtigung benötigt um auf {host} zuzugreifen. Bearbeiten sie dieses Widget um sie zu erteilen."
     },
@@ -242,9 +238,6 @@
         "message": "Was ist das Ziel für heute?",
         "description": "Daily Goal prompt"
     },
-    "XITVvp": {
-        "message": "Zeige Elementhintergrund"
-    },
     "Z2/hH0": {
         "message": "Bild: {filename}"
     },
@@ -376,10 +369,6 @@
         "message": "Links",
         "description": "Links Widget"
     },
-    "hZZSzJ": {
-        "message": "Bereitgestellt durch RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
-    },
     "WQeyl4": {
         "message": "Erlaubnis erteilen, auf die Lesezeichen zuzugreifen"
     },
@@ -415,9 +404,6 @@
     },
     "Q1mwPp": {
         "message": "Überlegen sie sich <a>ihre Sprache zu verbessern oder hinzuzufügen</a>."
-    },
-    "Rw51mJ": {
-        "message": "Zur Verfügung gestellt durch <a>OpenStreetMap</a>."
     },
     "S3njcM": {
         "message": "IFrame",
@@ -582,5 +568,9 @@
     "Cq4JWx": {
         "message": "Die Nachrichten, das Wetter und mehr",
         "description": "Preset: grid description"
+    },
+    "lY73np": {
+        "message": "Zeige Elementhintergrund",
+        "description": "Widget styling, checkbox"
     }
 }

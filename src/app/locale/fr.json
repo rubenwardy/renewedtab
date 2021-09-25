@@ -7,10 +7,6 @@
         "message": "Notes",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Cliquez sur les objets pour les modifier",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0feb3b": {
         "message": "Faire d'un lien une image. Optionnel",
         "description": "Image widget: Form field hint (Link)"
@@ -266,9 +262,6 @@
         "message": "Texte",
         "description": "Text Widget"
     },
-    "Rw51mJ": {
-        "message": "Propulsé par <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -422,9 +415,6 @@
         "message": "Cela enverra automatiquement l'URL aux développeurs de Renewed Tab. Ils peuvent ensuite choisir de l'ajouter aux suggestions pour tous les utilisateurs.",
         "description": "Host URL field: help text for suggest URL button"
     },
-    "XITVvp": {
-        "message": "Afficher l'arrière-plan du panneau"
-    },
     "zfsplE": {
         "message": "Ne plus afficher",
         "description": "Background credits vote"
@@ -467,9 +457,6 @@
     "L6nTur": {
         "message": "Choisissez un point de départ",
         "description": "Onboarding: presets title"
-    },
-    "M8ugqX": {
-        "message": "Pas de widgets coïncidant"
     },
     "MiIvsP": {
         "message": "Vous pouvez ajouter, déplacer, redimensionner et configurer les widgets sur la grille avec des contrôles intuitifs."
@@ -649,10 +636,6 @@
         "message": "Luminosité",
         "description": "Backgroud settings: form field label"
     },
-    "hZZSzJ": {
-        "message": "Proposé par RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
-    },
     "pHo6u+": {
         "message": "Aucune image trouvée dans le flux",
         "description": "Web Comic widget: no images found error"
@@ -729,10 +712,6 @@
     "TZknEV": {
         "message": "Faites attention à ce que vous collez ici. Un pirate pourrait vous faire coller ici du code qui vole des éléments auxquels l'extension a accès, comme l'historique du navigateur et les meilleurs sites.",
         "description": "HTML widget: form field hint (HTML)"
-    },
-    "UgAgeT": {
-        "message": "Proposé par exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "Upkn1Q": {
         "message": "Indice UV <b>élevé</b>",
@@ -874,10 +853,6 @@
     "vlumg9": {
         "message": "Chercher des widgets...",
         "description": "Create Widgets modal: search widgets placeholder"
-    },
-    "y2OItK": {
-        "message": "Champ de recherche vers votre moteur de recherche préféré",
-        "description": "Search widget description"
     },
     "y8o0oA": {
         "message": "Météo actuelle et prévue",
@@ -1077,5 +1052,9 @@
     "rsdRPB": {
         "message": "Étirez la grille pour remplir toute la page. Nécessite un rechargement.",
         "description": "Widget grid: form label for grid full width"
+    },
+    "lY73np": {
+        "message": "Afficher l'arrière-plan du panneau",
+        "description": "Widget styling, checkbox"
     }
 }

@@ -74,10 +74,6 @@
         "message": "Dice tu edad actual con demasiada precisión",
         "description": "Age widget description"
     },
-    "/iBdV1": {
-        "message": "Haga clic en los elementos para editarlos",
-        "description": "Todo List widget: edit modal hint"
-    },
     "Bl74xq": {
         "message": "Un botón de enlace",
         "description": "Button widget description"
@@ -200,9 +196,6 @@
     "O8mt7g": {
         "message": "Números ({example})",
         "description": "Clock widget: date style type"
-    },
-    "M8ugqX": {
-        "message": "No hay widgets que coincidan"
     },
     "0l+aD2": {
         "message": "Metas diarias y citas inspiradoras",
@@ -454,17 +447,6 @@
         "message": "Una lista de los próximos lanzamientos espaciales, impulsada por RocketLaunch.Live",
         "description": "SpaceFlights widget description"
     },
-    "Rw51mJ": {
-        "message": "Impulsado por <a>OpenStreetMap</a>."
-    },
-    "UgAgeT": {
-        "message": "Impulsado por exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
-    },
-    "hZZSzJ": {
-        "message": "Impulsado por RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
-    },
     "zo4ZQa": {
         "message": "Mostrar",
         "description": "Feed widget: filter allow checkbox label"
@@ -668,9 +650,6 @@
     },
     "WQeyl4": {
         "message": "Otorgar permiso para acceder a los marcadores"
-    },
-    "XITVvp": {
-        "message": "Mostrar fondo del panel"
     },
     "bQFsdR": {
         "message": "Otorga permiso para acceder a {host}"
@@ -961,10 +940,6 @@
         "message": "Esto enviará automáticamente el URL a los desarrolladores de Renewed Tab. Luego, pueden optar por agregarlo a las sugerencias para todos los usuarios.",
         "description": "Host URL field: help text for suggest URL button"
     },
-    "y2OItK": {
-        "message": "Barra de búsqueda a su navegador favorito",
-        "description": "Search widget description"
-    },
     "ykNa5O": {
         "message": "Gracias a Font-Awesome por sus íconos, a React por su UI y a WebPack por las compilaciones."
     },
@@ -1077,5 +1052,9 @@
     "rsdRPB": {
         "message": "Estirar la cuadrícula para cubrir toda la página. Requiere recargar la página.",
         "description": "Widget grid: form label for grid full width"
+    },
+    "lY73np": {
+        "message": "Mostrar fondo del panel",
+        "description": "Widget styling, checkbox"
     }
 }

@@ -36,9 +36,6 @@
     "PM6qZ7": {
         "message": "Saniye göster"
     },
-    "Rw51mJ": {
-        "message": "<a>OpenStreetMap</a> ile çalışır."
-    },
     "T/wBPw": {
         "message": "{type} aracını kaldır"
     },
@@ -125,9 +122,6 @@
     "WKiXhX": {
         "message": "Renk",
         "description": "Color background mode"
-    },
-    "XITVvp": {
-        "message": "Panel arkaplanını göster"
     },
     "lUdRdE": {
         "message": "Hata: {msg}"
@@ -271,10 +265,6 @@
     "pHo6u+": {
         "message": "Beslemede görüntü bulunamadı",
         "description": "Web Comic widget: no images found error"
-    },
-    "hZZSzJ": {
-        "message": "RocketLaunch.Live ile çalışır",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "p7+m8N": {
         "message": "Sık kullanılan sitelerinize erişmek için izin verin",
@@ -420,10 +410,6 @@
         "message": "Pozisyon",
         "description": "Backgroud settings: form field label"
     },
-    "/iBdV1": {
-        "message": "Ögelere tıklayarak onları düzenleyebilirsiniz",
-        "description": "Todo List widget: edit modal hint"
-    },
     "GSox4d": {
         "message": "Bilgisayarınızda kurulu olan bir yazı tipi ismi",
         "description": "Theme settings: form field hint (Font)"
@@ -451,10 +437,6 @@
     "amHvKE": {
         "message": "Buraya not yazın",
         "description": "Notes widget: prompt"
-    },
-    "y2OItK": {
-        "message": "En sevdiğiniz arama motoru için bir arama çubuğu",
-        "description": "Search widget description"
     },
     "VjDvbL": {
         "message": "URL",
@@ -809,9 +791,6 @@
         "message": "Yılın ilerlemesini bir ilerleme çubuğunda gösterir",
         "description": "Age widget description"
     },
-    "M8ugqX": {
-        "message": "Eşleşen araç yok"
-    },
     "qEk9AJ": {
         "message": "Koyu renkli görüntülerin parlaklığını değiştirir",
         "description": "Backgroud settings: form field label (Brightness: Dark)"
@@ -843,10 +822,6 @@
     "QV6YlB": {
         "message": "Döviz Kurları",
         "description": "Currencies widget: form field label"
-    },
-    "UgAgeT": {
-        "message": "exchangerate.host ile çalışır",
-        "description": "Currencies widget: credit to data provider"
     },
     "kF06lD": {
         "message": "Uzun ({example})",
@@ -1077,5 +1052,9 @@
     "rsdRPB": {
         "message": "Izgarayı bütün sayfayı kaplayacak şekilde genişlet. Sayfanın yenilenmesi gerekir.",
         "description": "Widget grid: form label for grid full width"
+    },
+    "lY73np": {
+        "message": "Panel arkaplanını göster",
+        "description": "Widget styling, checkbox"
     }
 }

@@ -160,10 +160,6 @@
         "message": "筆記",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "點擊元件以編輯",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0feb3b": {
         "message": "可選，把圖像變成一個連結",
         "description": "Image widget: Form field hint (Link)"

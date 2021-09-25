@@ -7,10 +7,6 @@
         "message": "Notas",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Clique nos itens para editá-los",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0feb3b": {
         "message": "Opcional, tornar a imagem um link",
         "description": "Image widget: Form field hint (Link)"
@@ -281,9 +277,6 @@
         "message": "Uma única cor",
         "description": "Backgroud mode description"
     },
-    "Rw51mJ": {
-        "message": "Desenvolvido por <a> OpenStreetMap </a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -359,9 +352,6 @@
     "X5OoHJ": {
         "message": "Qual é o seu objetivo para hoje?",
         "description": "Daily Goal prompt"
-    },
-    "XITVvp": {
-        "message": "Mostrar fundo do painel"
     },
     "XrQEPN": {
         "message": "Localização",
@@ -587,10 +577,6 @@
     "h/ftND": {
         "message": "Escolha o Arquivo"
     },
-    "hZZSzJ": {
-        "message": "Desenvolvido por RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
-    },
     "ktmuOE": {
         "message": "Deixe em branco para usar o título do feed",
         "description": "Feed widget: form field hint (Title)"
@@ -701,10 +687,6 @@
     "y1Z3or": {
         "message": "Idioma"
     },
-    "y2OItK": {
-        "message": "Procure seu mecanismo de busca favorito",
-        "description": "Search widget description"
-    },
     "y8o0oA": {
         "message": "Clima atual e previsão",
         "description": "Weather widget description"
@@ -813,9 +795,6 @@
         "message": "Mostra um feed Atom ou RSS, útil para acompanhar notícias, sites e blogs",
         "description": "Feed widget description"
     },
-    "M8ugqX": {
-        "message": "Nenhum widget correspondente"
-    },
     "0PsF7Z": {
         "message": "Tem certeza de que deseja remover este widget permanentemente?",
         "description": "Delete widget modal message"
@@ -867,10 +846,6 @@
     "O8mt7g": {
         "message": "Números ({example})",
         "description": "Clock widget: date style type"
-    },
-    "UgAgeT": {
-        "message": "Desenvolvido por exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "pG7wIz": {
         "message": "Mostra taxas de câmbio, com suporte para moedas forex e criptografia (BitCoin etc)",
@@ -1077,5 +1052,9 @@
     "W3zKGr": {
         "message": "quilómetro",
         "description": "Weather widget: Speed unit"
+    },
+    "lY73np": {
+        "message": "Mostrar fundo do painel",
+        "description": "Widget styling, checkbox"
     }
 }

@@ -52,10 +52,6 @@
         "message": "Situs Web",
         "description": "Renewed Tab website"
     },
-    "/iBdV1": {
-        "message": "Klik item untuk menyuntingnya",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0hxZWu": {
         "message": "Ikon",
         "description": "Form field label"
@@ -198,9 +194,6 @@
         "message": "Jam",
         "description": "Clock Widget"
     },
-    "M8ugqX": {
-        "message": "Tak ada widget yang cocok"
-    },
     "Mihrhf": {
         "message": "Tidak ada",
         "description": "Clock widget: date style type, not shown"
@@ -241,9 +234,6 @@
         "message": "Satu warna",
         "description": "Backgroud mode description"
     },
-    "Rw51mJ": {
-        "message": "Didukung oleh <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -272,10 +262,6 @@
     "U2Qnh7": {
         "message": "Gambar",
         "description": "Image background mode"
-    },
-    "UgAgeT": {
-        "message": "Didukung oleh exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "V1EIOe": {
         "message": "Menampilkan sebuah situs web",
@@ -311,9 +297,6 @@
     "X18x9m": {
         "message": "Umum",
         "description": "Settings tab"
-    },
-    "XITVvp": {
-        "message": "Tampilkan latar belakang panel"
     },
     "XrQEPN": {
         "message": "Lokasi",
@@ -407,10 +390,6 @@
     "hUIQ7h": {
         "message": "Kecerahan",
         "description": "Backgroud settings: form field label"
-    },
-    "hZZSzJ": {
-        "message": "Didukung oleh RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "iFxzUm": {
         "message": "Suka",
@@ -630,5 +609,9 @@
     "yT43pK": {
         "message": "Gunakan ikon dari situs web (favicon)",
         "description": "Form field label"
+    },
+    "lY73np": {
+        "message": "Tampilkan latar belakang panel",
+        "description": "Widget styling, checkbox"
     }
 }
