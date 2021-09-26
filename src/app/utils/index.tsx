@@ -32,10 +32,15 @@ export function clampNumber(v: number, min: number, max: number): number {
  * @param funcs
  * @returns
  */
-export async function firstPromise<T>(funcs: (() => Promise<T>)[]): Promise<(T | undefined)> {
+export async function firstPromise<T>(funcs: ((() => Promise<T>) | false | undefined)[]): Promise<(T | undefined)> {
 	for (let i = 0; i < funcs.length; i++) {
+		const func = funcs[i];
+		if (func == false || func == undefined) {
+			continue;
+		}
+
 		try {
-			const value = await funcs[i]();
+			const value = await func();
 			if (value != undefined) {
 				return value;
 			}
@@ -58,4 +63,13 @@ export async function firstPromise<T>(funcs: (() => Promise<T>)[]): Promise<(T |
 export function queryMatchesAny(query: string, ...args: string[]) {
 	return query == "" ||
 		args.some(x => x.toLowerCase().includes(query.toLowerCase()));
+}
+
+
+export function parseURL(v: string): URL | undefined {
+	try {
+		return new URL(v);
+	} catch (e) {
+		return undefined;
+	}
 }

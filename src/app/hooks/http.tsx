@@ -166,7 +166,7 @@ export function useXML(url: string, dependents?: any[]): [(Document | null), (st
  *
  * @param url URL to fetch
  */
-export async function fetchBinaryAsDataURL(url: string): Promise<string> {
+export async function fetchBinaryAsDataURL(url: string, validate?: (r: Response) => void): Promise<string> {
 	const response = await fetchCheckCors(new Request(url, {
 		method: "GET",
 	}));
@@ -174,6 +174,8 @@ export async function fetchBinaryAsDataURL(url: string): Promise<string> {
 	if (!response.ok) {
 		throw new UserError(await response.text());
 	}
+
+	validate?.(response);
 
 	const blob = await response.blob();
 	return await readBlobAsDataURL(blob);

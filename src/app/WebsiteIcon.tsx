@@ -28,6 +28,14 @@ const ICON_SELECTORS = ([
 ]).join(", ");
 
 
+function validateIcon(res: Response) {
+	const mime = res.headers.get("Content-Type");
+	if (mime && !mime.startsWith("image/")) {
+		throw new Error("Invalid icon");
+	}
+}
+
+
 async function fetchTippyTops(url: string): Promise<string | undefined> {
 	if (!tippytops) {
 		tippytops = getAPI("/website-icons/", {});
@@ -40,7 +48,7 @@ async function fetchTippyTops(url: string): Promise<string | undefined> {
 			x.domains.includes(`www.${domain}`) ||
 			x.domains.includes(domain.replace("www.", "")));
 		if (icon) {
-			return await fetchBinaryAsDataURL(icon.image_url);
+			return await fetchBinaryAsDataURL(icon.image_url, validateIcon);
 		}
 	}
 
@@ -78,11 +86,12 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 		const sizeScores = sizes.map(size => Math.min(...size));
 
 		const score =
+			(icon.getAttribute("rel")?.includes("apple-touch-icon-precomposed") ? 10 : 0) +
 			(icon.getAttribute("rel")?.includes("apple-touch-icon") ? 10 : 0) +
 			(href.toLowerCase().endsWith(".ico") ? 0 : 10) +
 			Math.max(0, ...sizeScores);
 
-		if (score > topScore) {
+		if (score >= topScore) {
 			topScore = score;
 			topIcon = href;
 		}
@@ -93,7 +102,24 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 	}
 
 	const ret = new URL(topIcon, response.url);
-	return await fetchBinaryAsDataURL(ret.toString());
+	return await fetchBinaryAsDataURL(ret.toString(), validateIcon);
+}
+
+
+const SUBDOMAIN_REMOVAL = new Set([
+	"feeds", "rss", "feedrss", "feedsrss", "rssfeeds", "atom" ]);
+
+
+function getParentDomainIfWhitelisted(urlStr: string): string | undefined {
+	const url = new URL(urlStr);
+	const first = url.host.split(".")[0];
+	if (SUBDOMAIN_REMOVAL.has(first)) {
+		url.host = url.host.substring(first.length + 1);
+		url.pathname = "/";
+		return url.toString();
+	}
+
+	return undefined;
 }
 
 
@@ -108,11 +134,15 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 	const rootURL = new URL(url);
 	rootURL.pathname = "/";
 
+	const parentURL = getParentDomainIfWhitelisted(url)
+
 	const data = await firstPromise([
 			() => fetchTippyTops(url),
 			() => fetchIconURL(url),
-			() => fetchIconURL(rootURL.toString()),
-			() => fetchBinaryAsDataURL(new URL("/favicon.ico", url).toString()),
+			url != rootURL.toString() && (() =>  fetchIconURL(rootURL.toString())),
+			parentURL ? (() => fetchTippyTops(parentURL)) : undefined,
+			parentURL ? (() => fetchIconURL(parentURL)) : undefined,
+			() => fetchBinaryAsDataURL(new URL("/favicon.ico", url).toString(), validateIcon),
 		]);
 	if (data) {
 		await cacheStorage.set(key, {

@@ -162,7 +162,8 @@ function Feed(widget: WidgetProps<FeedProps>) {
 	return (
 		<Panel {...widget.theme} flush={true}>
 			<Tabs value={selectedId} options={options} onChanged={setSelectedId}
-				useWebsiteIcons={props.useWebsiteIcons} />
+				useWebsiteIcons={props.useWebsiteIcons}
+				useRootPathForIcons={true} />
 			<FeedPanel {...props} sources={[selected]}
 				onGotTitle={title => {
 					selected.title = title;

@@ -460,6 +460,9 @@ app.get("/api/website-icons/", async (req, res: express.Response) => {
 		icons.push({
 			domains: [ "minetest.net", "wiki.minetest.net", "forum.minetest.net" ],
 			image_url: "https://www.minetest.net/media/icon.svg",
+		}, {
+			domains: [ "feeds.bbci.co.uk" ],
+			image_url: "https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/5.2.0/apple-touch-icon.png",
 		});
 	}
 	res.json(icons);
