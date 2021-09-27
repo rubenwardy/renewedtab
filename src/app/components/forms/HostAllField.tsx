@@ -7,7 +7,7 @@ import { FieldProps } from ".";
 import RequestPermission from "../RequestPermission";
 
 const messages = defineMessages({
-    grantAll: {
+	grantAll: {
 		defaultMessage: "Grant permission to access all websites",
 	},
 });

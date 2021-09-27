@@ -14,21 +14,31 @@ import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 
 
 export interface WidgetGridSettings {
-	fullWidth: boolean;
+	fullPage: boolean;
 	columns: number;
 	spacing: number;
 }
 
 
 const messages = defineMessages({
-	fullWidthLabel: {
-		defaultMessage: "Full Width Grid",
+	fullPageLabel: {
+		defaultMessage: "Full Page Grid",
 		description: "Widget grid: form label for grid full width",
 	},
 
-	fullWidthHint: {
-		defaultMessage: "Stretch grid to cover the entire page. Requires Reload.",
-		description: "Widget grid: form label for grid full width",
+	fullPageHint1: {
+		defaultMessage: "Stretch grid to cover the entire page.",
+		description: "Widget grid: form label 1 for grid full width",
+	},
+
+	fullPageHint2: {
+		defaultMessage: "You should increase \"Grid Columns\" to at least {cols} to make best use of space.",
+		description: "Widget grid: form label 2 for grid full width",
+	},
+
+	fullPageHint3: {
+		defaultMessage: "Note that other widgets won't move out of the way when dragging.",
+		description: "Widget grid: form label 3 for grid full width",
 	},
 
 	columnsLabel: {
@@ -131,24 +141,41 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		forceUpdate();
 	}
 
-
 	const cellSize = 50;
 	const cellSpacing = props.spacing;
 	const gridWidth = gridColumns*(cellSize+cellSpacing);
-	const mainStyle: CSSProperties = props.fullWidth
-		? { minWidth: Math.ceil(gridWidth / 2) * 2, width: "100%" }
+
+	const wrapStyle: CSSProperties = {
+		height: props.fullPage ? "100%" : undefined,
+		padding: props.fullPage ? "20px 0 40px 0" : undefined,
+	};
+
+	const gridStyle: CSSProperties = props.fullPage
+		? { minWidth: Math.ceil(gridWidth / 2), width: "100%", height: "100%" }
 		: { width: Math.ceil(gridWidth / 2) * 2 };
 
 	return (
 		<main>
-			<div className='scroll-wrap'>
-				<ReactGridLayout className={gridClassNames} style={mainStyle}
+			<div className='scroll-wrap' style={wrapStyle}>
+				<ReactGridLayout
+						// Clear cache when fullPage changes
+						key={props.fullPage ? "one" : "two"}
+
+						className={gridClassNames} style={gridStyle}
 						isDraggable={!props.isLocked} isResizable={!props.isLocked}
 						layout={layout} onLayoutChange={onLayoutChange}
 						cols={gridColumns} rowHeight={cellSize}
 						margin={[cellSpacing, cellSpacing]}
-						width={!props.fullWidth ? gridWidth : undefined}
-						draggableHandle=".widget-title">
+						draggableHandle=".widget-title"
+						resizeHandles={["sw", "se", "ne"]}
+
+						// Mode specific options
+						isBounded={props.fullPage}
+						width={!props.fullPage ? gridWidth : undefined}
+						autoSize={!props.fullPage}
+						preventCollision={props.fullPage}
+						maxRows={props.fullPage ? Math.floor(document.body.clientHeight / (cellSize+cellSpacing)) : undefined}
+						compactType={props.fullPage ? null : "vertical"}>
 					{widgets}
 				</ReactGridLayout>
 			</div>
@@ -157,20 +184,25 @@ export default function WidgetGrid(props: WidgetGridProps) {
 
 export function makeGridSettingsSchema(values: WidgetGridSettings): Schema<WidgetGridSettings> {
 	const screenWidth = document.body.clientWidth;
-	const hint = bindValuesToDescriptor(messages.columnsHint, {
-		max: Math.floor((screenWidth - 10 + values.spacing) / (50 + values.spacing)),
-		res: screenWidth,
-	})
+	const maxColumns = Math.floor((screenWidth - 10 + values.spacing) / (50 + values.spacing));
 
 	return {
-		fullWidth: type.boolean(messages.fullWidthLabel, messages.fullWidthHint),
-		columns: type.number(messages.columnsLabel, hint, 5),
+		fullPage: type.boolean(messages.fullPageLabel, [
+			messages.fullPageHint1,
+			bindValuesToDescriptor(messages.fullPageHint2, {
+				cols: Math.floor(maxColumns * 0.85),
+			}),
+			messages.fullPageHint3]),
+		columns: type.number(messages.columnsLabel, bindValuesToDescriptor(messages.columnsHint, {
+			max: maxColumns,
+			res: screenWidth,
+		}), 5),
 		spacing: type.unit_number(messages.spacingLabel, "px", messages.spacingHint, 0),
 	};
 }
 
 export const defaultGridSettings: WidgetGridSettings = {
-	fullWidth: false,
+	fullPage: false,
 	columns: 15,
 	spacing: 15,
 };

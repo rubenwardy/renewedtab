@@ -19,6 +19,10 @@
         "description": "Very High UV risk",
         "message": "<b>Very High</b> UV"
     },
+    "/Mpu8A": {
+        "description": "Widget grid: form label 1 for grid full width",
+        "message": "Stretch grid to cover the entire page."
+    },
     "/dtDqf": {
         "description": "Notes Widget",
         "message": "Notes"
@@ -190,10 +194,6 @@
     "Bl74xq": {
         "description": "Button widget description",
         "message": "A link button"
-    },
-    "CMdRFu": {
-        "description": "Widget grid: form label for grid full width",
-        "message": "Full Width Grid"
     },
     "CNpJaZ": {
         "description": "Preset: focus",
@@ -555,6 +555,10 @@
         "description": "Background settings: form field hint (Show a new photo)",
         "message": "Depending on your settings, the same photo may be chosen"
     },
+    "XYIyWM": {
+        "description": "Widget grid: form label 2 for grid full width",
+        "message": "You should increase \"Grid Columns\" to at least {cols} to make best use of space."
+    },
     "XrQEPN": {
         "description": "Form field label",
         "message": "Location"
@@ -717,6 +721,10 @@
     "gHzZEt": {
         "description": "Preset: focus description",
         "message": "Just a clock and a search bar"
+    },
+    "gQAsym": {
+        "description": "Widget grid: form label 3 for grid full width",
+        "message": "Note that other widgets won't move out of the way when dragging."
     },
     "gSjZfg": {
         "description": "Links Widget",
@@ -940,10 +948,6 @@
         "description": "Feed widget: form field label",
         "message": "Filter Articles"
     },
-    "rsdRPB": {
-        "description": "Widget grid: form label for grid full width",
-        "message": "Stretch grid to cover the entire page. Requires Reload."
-    },
     "sIC2UV": {
         "description": "Widget styling, checkbox for showing text on eg: Links",
         "message": "Show text"
@@ -1016,6 +1020,10 @@
     "x59fh0": {
         "description": "Space Flights Widget",
         "message": "Space Flights"
+    },
+    "x7WADS": {
+        "description": "Widget grid: form label for grid full width",
+        "message": "Full Page Grid"
     },
     "xR87uK": {
         "description": "Widget grid: form hint for grid spacing",
