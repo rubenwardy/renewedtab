@@ -1,4 +1,3 @@
-import { MessageDescriptor } from "@formatjs/intl";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { IntlShape } from "react-intl";
 

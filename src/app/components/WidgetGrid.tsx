@@ -74,6 +74,11 @@ export default function WidgetGrid(props: WidgetGridProps) {
 	const widgetManager = props.wm;
 	const [gridClassNames, setGridClassNames] = useState("layout");
 	const forceUpdate = useForceUpdate();
+	const gridColumns = props.columns;
+	const cellSize = 50;
+	const cellSpacing = props.spacing;
+	const gridWidth = gridColumns*(cellSize+cellSpacing);
+	const maxRows = props.fullPage ? Math.floor(document.body.clientHeight / (cellSize+cellSpacing)) : undefined;
 
 	useEffect(() => {
 		const timer = setTimeout(() => setGridClassNames("layout animated"), 1000);
@@ -85,16 +90,14 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		forceUpdate();
 	}
 
-	const gridColumns = props.columns;
 
-
-	const layouter = new WidgetLayouter(new Vector2(gridColumns, 12));
+	const layouter = new WidgetLayouter(new Vector2(gridColumns, maxRows ?? 0));
 	layouter.resolveAll(widgetManager.widgets);
 
+	// Sort widgets to allow predictable focus order
 	widgetManager.widgets.sort((a, b) =>
 		(a.position!.x + 100 * a.position!.y) -
 		(b.position!.x + 100 * b.position!.y));
-
 
 	const widgets = widgetManager.widgets.map(widget => {
 		const props : WidgetProps<unknown> = {
@@ -141,10 +144,6 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		forceUpdate();
 	}
 
-	const cellSize = 50;
-	const cellSpacing = props.spacing;
-	const gridWidth = gridColumns*(cellSize+cellSpacing);
-
 	const wrapStyle: CSSProperties = {
 		height: props.fullPage ? "100%" : undefined,
 		padding: props.fullPage ? "20px 0 40px 0" : undefined,
@@ -174,7 +173,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 						width={!props.fullPage ? gridWidth : undefined}
 						autoSize={!props.fullPage}
 						preventCollision={props.fullPage}
-						maxRows={props.fullPage ? Math.floor(document.body.clientHeight / (cellSize+cellSpacing)) : undefined}
+						maxRows={maxRows}
 						compactType={props.fullPage ? null : "vertical"}>
 					{widgets}
 				</ReactGridLayout>
