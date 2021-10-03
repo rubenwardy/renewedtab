@@ -1053,5 +1053,48 @@
     "lY73np": {
         "message": "Tunjukkan latar belakang panel",
         "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "Anda menggemari Renewed Tab? Apa kata anda derma untuk bantu menanggung kos operasi dan menyokong pembangunannya."
+    },
+    "Ack5ID": {
+        "message": "Tiada hasil",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "3UG6ds": {
+        "message": "Cari widget atau gelintar sesawang menggunakan enjin gelintar kegemaran anda",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Sila nyatakan sumber",
+        "description": "Feed widget: no sources error message"
+    },
+    "KdIFGg": {
+        "message": "URL carian tiada '{query}' yang wajib disertakan. Cth. https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "hWimZf": {
+        "message": "Dayakan carian widget",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "Dikuasakan oleh {host}.",
+        "description": "Credit to a website"
+    },
+    "o9vGxx": {
+        "message": "Buka pautan dalam tab baharu",
+        "description": "Form field label"
+    },
+    "q6/aVX": {
+        "message": "Anda boleh tapis widget ini menggunakan widget Gelintar.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Tunjuk teks",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "nHw5cV": {
+        "message": "Klik item untuk editnya.",
+        "description": "Todo List widget: edit modal hint"
     }
 }
