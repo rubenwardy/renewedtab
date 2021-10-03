@@ -900,10 +900,6 @@
         "message": "Use ícones de sites (favicons)",
         "description": "Form field label"
     },
-    "CMdRFu": {
-        "message": "Grade de largura total",
-        "description": "Widget grid: form label for grid full width"
-    },
     "eXB4qM": {
         "message": "quarta-feira",
         "description": "Short weekday name (Wednesday)"
@@ -1033,10 +1029,6 @@
     "zaQRTm": {
         "message": "<b>Extremo</b> UV",
         "description": "Extreme UV risk"
-    },
-    "rsdRPB": {
-        "message": "Estique a grade para cobrir toda a página. Requer recarregar.",
-        "description": "Widget grid: form label for grid full width"
     },
     "BiPNnl": {
         "message": "Unidade de velocidade do vento",

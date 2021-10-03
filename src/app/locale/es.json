@@ -1031,10 +1031,6 @@
         "message": "Utilice iconos de sitios web (favicons)",
         "description": "Form field label"
     },
-    "CMdRFu": {
-        "message": "Cuadrícula de Ancho Completo",
-        "description": "Widget grid: form label for grid full width"
-    },
     "F1A/8i": {
         "message": "Fuentes",
         "description": "Feed widget: form field label"
@@ -1045,10 +1041,6 @@
     },
     "btOI+Z": {
         "message": "Nueva Pestaña"
-    },
-    "rsdRPB": {
-        "message": "Estirar la cuadrícula para cubrir toda la página. Requiere recargar la página.",
-        "description": "Widget grid: form label for grid full width"
     },
     "lY73np": {
         "message": "Mostrar fondo del panel",

@@ -1042,10 +1042,6 @@
     "btOI+Z": {
         "message": "Tab Baharu"
     },
-    "rsdRPB": {
-        "message": "Regang grid untuk meliputi keseluruhan halaman. Perlu Muat Semula.",
-        "description": "Widget grid: form label for grid full width"
-    },
     "CMdRFu": {
         "message": "Grid Lebar Penuh",
         "description": "Widget grid: form label for grid full width"

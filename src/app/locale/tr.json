@@ -1031,10 +1031,6 @@
         "message": "İnternet sitelerinden ikon kullan (favicon)",
         "description": "Form field label"
     },
-    "CMdRFu": {
-        "message": "Tam Genişlikli Izgara",
-        "description": "Widget grid: form label for grid full width"
-    },
     "F1A/8i": {
         "message": "Kaynaklar",
         "description": "Feed widget: form field label"
@@ -1045,10 +1041,6 @@
     },
     "btOI+Z": {
         "message": "Yeni Sekme"
-    },
-    "rsdRPB": {
-        "message": "Izgarayı bütün sayfayı kaplayacak şekilde genişlet. Sayfanın yenilenmesi gerekir.",
-        "description": "Widget grid: form label for grid full width"
     },
     "lY73np": {
         "message": "Panel arkaplanını göster",

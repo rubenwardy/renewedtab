@@ -1031,10 +1031,6 @@
         "message": "Utiliser les icônes des sites Web (favicons)",
         "description": "Form field label"
     },
-    "CMdRFu": {
-        "message": "Grille en pleine largeur",
-        "description": "Widget grid: form label for grid full width"
-    },
     "F1A/8i": {
         "message": "Sources",
         "description": "Feed widget: form field label"
@@ -1045,10 +1041,6 @@
     },
     "btOI+Z": {
         "message": "Nouvel onglet"
-    },
-    "rsdRPB": {
-        "message": "Étirez la grille pour remplir toute la page. Nécessite un rechargement.",
-        "description": "Widget grid: form label for grid full width"
     },
     "lY73np": {
         "message": "Afficher l'arrière-plan du panneau",
