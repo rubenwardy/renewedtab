@@ -1053,5 +1053,48 @@
     "lY73np": {
         "message": "Afficher l'arrière-plan du panneau",
         "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "Vous aimez Renewed Tab ? Envisagez de faire un don pour aider à couvrir les coûts et soutenir son développement."
+    },
+    "3UG6ds": {
+        "message": "Rechercher des widgets ou sur le web avec votre moteur favori",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Veuillez spécifier une source",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Aucun résultat",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "KdIFGg": {
+        "message": "'{query}' manquant dans l'URL de recherche. Ex : https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "o9vGxx": {
+        "message": "Ouvrir les liens dans un nouvel onglet",
+        "description": "Form field label"
+    },
+    "nHw5cV": {
+        "message": "Cliquer sur les items pour les éditer.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "hWimZf": {
+        "message": "Activer la recherche de widgets",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "Propulsé par {host}.",
+        "description": "Credit to a website"
+    },
+    "q6/aVX": {
+        "message": "Vous pouvez filtrer ce widget à l'aide d'un widget de recherche.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Afficher le texte",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
     }
 }
