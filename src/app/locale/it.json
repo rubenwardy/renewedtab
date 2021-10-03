@@ -887,5 +887,37 @@
     "lY73np": {
         "message": "Mostra il pannello di sfondo",
         "description": "Widget styling, checkbox"
+    },
+    "4cMia7": {
+        "message": "Mostra una nuova foto",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "3UG6ds": {
+        "message": "Cerca widget oppure sul web usando il tuo motore di ricerca preferito",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Per favore, specifica una sorgente",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Nessun risultato",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "+TYXj6": {
+        "message": "Oggi, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "2vJWTd": {
+        "message": "Foto",
+        "description": "Background credits title placeholder"
+    },
+    "+sI+Oh": {
+        "message": "Mostra previsioni orarie",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "Rischio raggi UV <b>Molto alto</b>",
+        "description": "Very High UV risk"
     }
 }
