@@ -432,7 +432,7 @@
         "description": "Backgroud settings: form field label"
     },
     "translation_credits": {
-        "message": "Traducción al Español por j45",
+        "message": "Traducción al español por j45 y Dragonop",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
     "yY7Rve": {
@@ -1053,5 +1053,48 @@
     "lY73np": {
         "message": "Mostrar fondo del panel",
         "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "¿Disfrutando Renewed Tab? Considere hacer una donación para ayudar a cubrir costos y apoyar su desarrollo."
+    },
+    "KdIFGg": {
+        "message": "Falta '{query}' en la URL de búsqueda. Ej: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "3UG6ds": {
+        "message": "Busque en widgets o en la web usando su motor de búsqueda favorito",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Por favor especifique una fuente",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Sin resultados",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "hWimZf": {
+        "message": "Activar búsqueda en widgets",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "Impulsado por {host}.",
+        "description": "Credit to a website"
+    },
+    "nHw5cV": {
+        "message": "Haga click en los items para editarlos.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "o9vGxx": {
+        "message": "Abrir enlaces en una nueva pestaña",
+        "description": "Form field label"
+    },
+    "q6/aVX": {
+        "message": "Puede filtrar este widget usando un widget de búsqueda.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Mostrar texto",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
     }
 }
