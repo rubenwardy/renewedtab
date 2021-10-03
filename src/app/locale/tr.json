@@ -1053,5 +1053,48 @@
     "lY73np": {
         "message": "Panel arkaplanını göster",
         "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "Renewed Tab'i sevdiniz mi? Bağış yaparak giderlerini karşılamaya ve geliştirilmesine yardımcı olmayı düşünebilirsiniz."
+    },
+    "3UG6ds": {
+        "message": "En sevdiğiniz arama motorunu kullanarak araçlar arasında veya internette arama yapın",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Lütfen bir kaynak belirtin",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Sonuç yok",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "KdIFGg": {
+        "message": "Arama URL'inde '{query}' eksik. Örnek: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "hWimZf": {
+        "message": "Araç aramasını etkinleştir",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "{host} ile çalışır.",
+        "description": "Credit to a website"
+    },
+    "nHw5cV": {
+        "message": "Ögelere tıklayarak düzenleyin.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "o9vGxx": {
+        "message": "Linkleri yeni sekmede aç",
+        "description": "Form field label"
+    },
+    "q6/aVX": {
+        "message": "Bu aracı bir Arama aracı kullanarak filtreleyebilirsiniz.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Metin göster",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
     }
 }
