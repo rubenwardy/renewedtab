@@ -13,6 +13,9 @@ import { defineMessages } from "react-intl";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 
 
+type ResizeHandle = 's' | 'w' | 'e' | 'n' | 'sw' | 'nw' | 'se' | 'ne';
+
+
 export interface WidgetGridSettings {
 	fullPage: boolean;
 	columns: number;
@@ -153,6 +156,8 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		? { minWidth: Math.ceil(gridWidth / 2), width: "100%", height: "100%" }
 		: { width: Math.ceil(gridWidth / 2) * 2 };
 
+	const handles: ResizeHandle[] = props.fullPage ? ["sw", "se", "ne"] : ["se"];
+
 	return (
 		<main>
 			<div className='scroll-wrap' style={wrapStyle}>
@@ -166,7 +171,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 						cols={gridColumns} rowHeight={cellSize}
 						margin={[cellSpacing, cellSpacing]}
 						draggableHandle=".widget-title"
-						resizeHandles={["sw", "se", "ne"]}
+						resizeHandles={handles}
 
 						// Mode specific options
 						isBounded={props.fullPage}
