@@ -74,10 +74,6 @@
         "message": "Dice tu edad actual con demasiada precisión",
         "description": "Age widget description"
     },
-    "/iBdV1": {
-        "message": "Haga clic en los elementos para editarlos",
-        "description": "Todo List widget: edit modal hint"
-    },
     "Bl74xq": {
         "message": "Un botón de enlace",
         "description": "Button widget description"
@@ -201,9 +197,6 @@
         "message": "Números ({example})",
         "description": "Clock widget: date style type"
     },
-    "M8ugqX": {
-        "message": "No hay widgets que coincidan"
-    },
     "0l+aD2": {
         "message": "Metas diarias y citas inspiradoras",
         "description": "Preset: focus description"
@@ -282,7 +275,7 @@
         "message": "Este widget requiere la versión de extensión del navegador."
     },
     "CNpJaZ": {
-        "message": "Atención",
+        "message": "Concentración",
         "description": "Preset: focus"
     },
     "Cq4JWx": {
@@ -439,7 +432,7 @@
         "description": "Backgroud settings: form field label"
     },
     "translation_credits": {
-        "message": "Traducción al Español por j45",
+        "message": "Traducción al español por j45 y Dragonop",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
     "yY7Rve": {
@@ -453,17 +446,6 @@
     "AgU+/t": {
         "message": "Una lista de los próximos lanzamientos espaciales, impulsada por RocketLaunch.Live",
         "description": "SpaceFlights widget description"
-    },
-    "Rw51mJ": {
-        "message": "Impulsado por <a>OpenStreetMap</a>."
-    },
-    "UgAgeT": {
-        "message": "Impulsado por exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
-    },
-    "hZZSzJ": {
-        "message": "Impulsado por RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "zo4ZQa": {
         "message": "Mostrar",
@@ -529,10 +511,6 @@
         "message": "Espaciado de la cuadrícula",
         "description": "Widget grid: form label for grid spacing"
     },
-    "Q5Myqt": {
-        "message": "Número de columnas en la cuadrícula del widget. Cada columna tiene aproximadamente 50 px más el espaciado, por lo que con un espaciado de 15 px, el máximo que debe tener una ventana de 1080p es 30 columnas.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "RCe+DS": {
         "message": "Arrastrar y soltar widgets"
     },
@@ -565,9 +543,6 @@
     "ZUZeuR": {
         "message": "Mostrar un mensaje",
         "description": "Text widget description"
-    },
-    "ibhC3l": {
-        "message": "¿Le gusta Renewed Tab? Considere hacer una donación para ayudar a cubrir costos y ayudar en su desarrollo."
     },
     "lYJGY5": {
         "message": "Imagen desde URL",
@@ -672,9 +647,6 @@
     },
     "WQeyl4": {
         "message": "Otorgar permiso para acceder a los marcadores"
-    },
-    "XITVvp": {
-        "message": "Mostrar fondo del panel"
     },
     "bQFsdR": {
         "message": "Otorga permiso para acceder a {host}"
@@ -965,10 +937,6 @@
         "message": "Esto enviará automáticamente el URL a los desarrolladores de Renewed Tab. Luego, pueden optar por agregarlo a las sugerencias para todos los usuarios.",
         "description": "Host URL field: help text for suggest URL button"
     },
-    "y2OItK": {
-        "message": "Barra de búsqueda a su navegador favorito",
-        "description": "Search widget description"
-    },
     "ykNa5O": {
         "message": "Gracias a Font-Awesome por sus íconos, a React por su UI y a WebPack por las compilaciones."
     },
@@ -1027,10 +995,6 @@
     "cR7nCG": {
         "message": "Restablecer el tema al defecto"
     },
-    "eXkpJi": {
-        "message": "Utilice iconos de sitios web (favicons)",
-        "description": "Links widget: form field label"
-    },
     "lwUV0r": {
         "message": "Puede cambiar el objetivo haciendo clic en el widget",
         "description": "Daily Goal widget: edit modal hint"
@@ -1062,5 +1026,67 @@
     "ZRWjTk": {
         "message": "Utilice el buscador predeterminado del navegador",
         "description": "Search widget: form field label"
+    },
+    "yT43pK": {
+        "message": "Utilice iconos de sitios web (favicons)",
+        "description": "Form field label"
+    },
+    "F1A/8i": {
+        "message": "Fuentes",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Número de columnas en la cuadrícula de widgets. Puede colocar {max} columnas en el ancho actual de la ventana ({res}px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Nueva Pestaña"
+    },
+    "lY73np": {
+        "message": "Mostrar fondo del panel",
+        "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "¿Disfrutando Renewed Tab? Considere hacer una donación para ayudar a cubrir costos y apoyar su desarrollo."
+    },
+    "KdIFGg": {
+        "message": "Falta '{query}' en la URL de búsqueda. Ej: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "3UG6ds": {
+        "message": "Busque en widgets o en la web usando su motor de búsqueda favorito",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Por favor especifique una fuente",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Sin resultados",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "hWimZf": {
+        "message": "Activar búsqueda en widgets",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "Impulsado por {host}.",
+        "description": "Credit to a website"
+    },
+    "nHw5cV": {
+        "message": "Haga click en los items para editarlos.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "o9vGxx": {
+        "message": "Abrir enlaces en una nueva pestaña",
+        "description": "Form field label"
+    },
+    "q6/aVX": {
+        "message": "Puede filtrar este widget usando un widget de búsqueda.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Mostrar texto",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
     }
 }

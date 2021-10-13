@@ -1,12 +1,15 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
+import { useGlobalSearch } from "app/hooks/globalSearch";
 import { useWidgetProp } from "app/hooks/widget";
+import { miscMessages } from "app/locale/common";
+import { queryMatchesAny } from "app/utils";
 import uuid from "app/utils/uuid";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";
 import React, { ChangeEvent, useState } from "react";
-import { defineMessages, useIntl } from "react-intl";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 
 
 const messages = defineMessages({
@@ -21,7 +24,7 @@ const messages = defineMessages({
 	},
 
 	editHint: {
-		defaultMessage: "Click items to edit them",
+		defaultMessage: "Click items to edit them.",
 		description: "Todo List widget: edit modal hint",
 	},
 
@@ -74,6 +77,7 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 
 
 function TodoList(widget: WidgetProps<TodoListProps>) {
+	const { query } = useGlobalSearch();
 	const [list, setList] = useWidgetProp<TodoItemData[]>(widget, "list");
 	const [newItemText, setNewItemText] = useState<string>("");
 	const intl = useIntl();
@@ -98,13 +102,20 @@ function TodoList(widget: WidgetProps<TodoListProps>) {
 		setList(list);
 	}
 
+	const filteredList = list.filter(item => queryMatchesAny(query, item.text));
+
 	return (
 		<Panel {...widget.theme}>
 			<ul className="todolist">
-				{list.map(item => (
+				{filteredList.map(item => (
 					<TodoItem key={item.id} item={item}
 							delete={() => onDelete(item)}
 							onChange={() => setList(list)} />))}
+				{filteredList.length == 0 && list.length > 0 && (
+					<li className="text-muted">
+						<FormattedMessage {...miscMessages.noResults} />
+					</li>
+				)}
 
 				<li>
 					<input type="checkbox" disabled />
@@ -122,7 +133,7 @@ const widget: WidgetType<TodoListProps> = {
 	Component: TodoList,
 	title: messages.title,
 	description: messages.description,
-	editHint: messages.editHint,
+	editHint: [messages.editHint, miscMessages.globalSearchEditHint],
 	defaultSize: new Vector2(5, 4),
 	initialProps: {
 		list: [],

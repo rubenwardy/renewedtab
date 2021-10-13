@@ -2,7 +2,7 @@ import { cacheStorage, IStorage, largeStorage, storage } from "app/Storage";
 import debounce from "app/utils/debounce";
 import { useMemo, useState } from "react";
 import { useForceUpdate } from ".";
-import { runPromise } from "./promises";
+import { useRunPromise } from "./promises";
 
 
 function useStorageBacking<T>(backing: IStorage, key: string,
@@ -16,7 +16,7 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 
 	const [value, setValue] = useState<T | null>(null);
 
-	runPromise<T | null>(() => backing.get(key),
+	useRunPromise<T | null>(() => backing.get(key),
 		(v) => setValue(v ?? defaultValue ?? null),
 		() => {}, [ key ]);
 

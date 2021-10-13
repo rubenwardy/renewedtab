@@ -29,10 +29,6 @@
         "message": "Nota",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Klik item untuk edit",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0hxZWu": {
         "message": "Ikon",
         "description": "Form field label"
@@ -231,9 +227,6 @@
         "message": "Warna tunggal",
         "description": "Backgroud mode description"
     },
-    "Rw51mJ": {
-        "message": "Disediakan oleh <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -301,9 +294,6 @@
     "X5OoHJ": {
         "message": "Apakah matlamat anda untuk hari ini?",
         "description": "Daily Goal prompt"
-    },
-    "XITVvp": {
-        "message": "Tunjukkan latar belakang panel"
     },
     "XrQEPN": {
         "message": "Lokasi",
@@ -397,10 +387,6 @@
     "h/ftND": {
         "message": "Pilih fail"
     },
-    "hZZSzJ": {
-        "message": "Disediakan oleh RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
-    },
     "hktZIl": {
         "message": "Menunjukkan masa"
     },
@@ -410,9 +396,6 @@
     },
     "iH2AHA": {
         "message": "<a>Sumber terbuka</a>, dilesenkan di bawah GPLv3+."
-    },
-    "ibhC3l": {
-        "message": "Suka Renewed Tab? Apa kata anda derma untuk tampung kos dan bantu menyokong pembangunan."
     },
     "irdBm2": {
         "message": "Tema",
@@ -466,10 +449,6 @@
     "KyDwm3": {
         "message": "Tunjukkan tapak teratas",
         "description": "Top Sites widget: description"
-    },
-    "eXkpJi": {
-        "message": "Gunakan ikon daripada laman sesawang (favicon)",
-        "description": "Links widget: form field label"
     },
     "ofl4Ui": {
         "message": "Cari",
@@ -571,10 +550,6 @@
     "y1Z3or": {
         "message": "Bahasa"
     },
-    "y2OItK": {
-        "message": "Kotak gelintar untuk enjin gelintar kegemaran anda",
-        "description": "Search widget description"
-    },
     "y8o0oA": {
         "message": "Cuaca semasa dan ramalan",
         "description": "Weather widget description"
@@ -647,10 +622,6 @@
     "PYJFvz": {
         "message": "Kategori",
         "description": "Form field label, list of categories. Used by Quotes widget"
-    },
-    "Q5Myqt": {
-        "message": "Jumlah jalur dalam grid widget. Setiap lajur bersaiz lebih kurang 50px tambah penjarakan, jadi dengan penjarakan 15px, jumlah lajur maksimum yang sepatutnya bagi tetingkap 1080p ialah 30 lajur.",
-        "description": "Widget grid: form hint for grid columns"
     },
     "GcxpZV": {
         "message": "Gaya tarikh",
@@ -777,9 +748,6 @@
         "message": "Menunjukkan suapan RSS atau Atom, berguna untuk mengikuti berita, laman sesawang, dan blog",
         "description": "Feed widget description"
     },
-    "M8ugqX": {
-        "message": "Tiada widget dipadankan"
-    },
     "vlumg9": {
         "message": "Cari widget...",
         "description": "Create Widgets modal: search widgets placeholder"
@@ -855,10 +823,6 @@
     "QV6YlB": {
         "message": "Kadar Pertukaran",
         "description": "Currencies widget: form field label"
-    },
-    "UgAgeT": {
-        "message": "Dikuasakan oleh exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "kF06lD": {
         "message": "Panjang ({example})",
@@ -1062,5 +1026,71 @@
     "S6nfAm": {
         "message": "Kelembapan (%)",
         "description": "Weather widget: humidity tooltip"
+    },
+    "yT43pK": {
+        "message": "Gunakan ikon daripada laman sesawang (favicon)",
+        "description": "Form field label"
+    },
+    "F1A/8i": {
+        "message": "Sumber",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Jumlah lajur dalam grid widget. Anda boleh guna sehingga {max} lajur dalam lebar tetingkap semasa ({res}px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Tab Baharu"
+    },
+    "CMdRFu": {
+        "message": "Grid Lebar Penuh",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "lY73np": {
+        "message": "Tunjukkan latar belakang panel",
+        "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "Anda menggemari Renewed Tab? Apa kata anda derma untuk bantu menanggung kos operasi dan menyokong pembangunannya."
+    },
+    "Ack5ID": {
+        "message": "Tiada hasil",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "3UG6ds": {
+        "message": "Cari widget atau gelintar sesawang menggunakan enjin gelintar kegemaran anda",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Sila nyatakan sumber",
+        "description": "Feed widget: no sources error message"
+    },
+    "KdIFGg": {
+        "message": "URL carian tiada '{query}' yang wajib disertakan. Cth. https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "hWimZf": {
+        "message": "Dayakan carian widget",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "Dikuasakan oleh {host}.",
+        "description": "Credit to a website"
+    },
+    "o9vGxx": {
+        "message": "Buka pautan dalam tab baharu",
+        "description": "Form field label"
+    },
+    "q6/aVX": {
+        "message": "Anda boleh tapis widget ini menggunakan widget Gelintar.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Tunjuk teks",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "nHw5cV": {
+        "message": "Klik item untuk editnya.",
+        "description": "Todo List widget: edit modal hint"
     }
 }

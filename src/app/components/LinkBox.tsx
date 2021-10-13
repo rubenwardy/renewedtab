@@ -1,12 +1,15 @@
-import React, { useMemo, useState } from 'react';
-import { defineMessages } from 'react-intl';
-import { useElementSize, usePromise } from 'app/hooks';
+import React, { useMemo } from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
+import { useElementSize } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
-import { schemaMessages } from 'app/locale/common';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetTheme } from 'app/Widget';
 import Panel from './Panel';
+import Icon from './Icon';
+import { useGlobalSearch } from 'app/hooks/globalSearch';
+import { queryMatchesAny } from 'app/utils';
 
 
 const messages = defineMessages({
@@ -43,39 +46,6 @@ export const FullLinkSchema: Schema<Link> = {
 };
 
 
-interface IconProps {
-	icon: string | Promise<string | undefined>;
-	requiresIcons: boolean;
-	defaultIcon?: string;
-	errorIcon?: string;
-}
-
-
-function Icon(props: IconProps) {
-	const [errored, setErrored] = useState(false);
-
-	const [icon,] = usePromise(async () => {
-		if (props.icon instanceof Promise) {
-			return await props.icon;
-		} else {
-			return props.icon;
-		}
-	}, [props.icon]);
-
-	if (!props.requiresIcons && (!icon || icon.length == 0)) {
-		return null;
-	} else if (errored) {
-		return (<span><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
-	} else if (typeof icon == "string" && (icon.includes("/") || icon.startsWith("data:"))) {
-		return (<img className="icon" src={icon} onError={() => setErrored(true)} />);
-	} else if (typeof icon == "string" && icon.startsWith("fa-")) {
-		return (<span><i className={`fas ${icon} icon`} /></span>);
-	} else {
-		return (<span><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
-	}
-}
-
-
 export interface LinkBoxProps {
 	links: Link[];
 	useWebsiteIcons?: boolean;
@@ -83,23 +53,27 @@ export interface LinkBoxProps {
 	errorIcon?: string;
 	enableCustomIcons?: boolean;
 	limitItemsToAvoidScrolling?: boolean;
+	openInNewTab?: boolean;
 }
 
 
 export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme })  {
+	const { query } = useGlobalSearch();
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const [ref, size] = useElementSize();
+	const target = props.openInNewTab ? "_blank" : undefined;
 
 	const links = useMemo<Link[]>(() => {
-		const ret = deepCopy(props.links);
+		const ret = deepCopy(props.links.filter(link =>
+			queryMatchesAny(query, link.title, link.url)));
 		if (size && props.limitItemsToAvoidScrolling) {
 			const rows = Math.max(1, Math.floor((size.y + 10) / 120));
 			const columns = Math.floor((size.x + 10) / 105);
 			ret.splice(rows * columns);
 		}
 		return ret;
-	}, [props.links, size]);
+	}, [props.links, size, query]);
 
 	if (useWebsiteIcons && typeof browser !== "undefined") {
 		links
@@ -120,9 +94,12 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 			return (
 				<li key={link.id} data-hostname={domain} data-url={link.url}
 						data-title={link.title} data-icon={link.icon}>
-					<a href={link.url}>
+					<a href={link.url} target={target} rel="noreferrer">
 						{icon}
-						<span className="title">{link.title}</span>
+						<span className="title">
+							{(!props.widgetTheme.useIconBar || props.widgetTheme.showText) &&
+								link.title}
+						</span>
 					</a>
 				</li>);
 		} else {
@@ -139,6 +116,10 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 		<Panel {...props.widgetTheme} flush={true}>
 			<ul className={useIconBar ? "iconbar" : "links large"} ref={ref}>
 				{linkElements}
+				{linkElements.length == 0 && props.links.length > 0 && (
+					<li className="section">
+						<FormattedMessage {...miscMessages.noResults} />
+					</li>)}
 			</ul>
 		</Panel>);
 }

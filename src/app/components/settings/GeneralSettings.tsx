@@ -1,9 +1,10 @@
-import React, { ChangeEvent, useState } from "react";
+import { useForceUpdateValue } from "app/hooks";
+import React, { ChangeEvent, useMemo, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { Form } from "../forms";
 import LanguageSelector from "../LanguageSelector";
-import { gridSettingsSchema, WidgetGridSettings } from "../WidgetGrid";
+import { makeGridSettingsSchema, WidgetGridSettings } from "../WidgetGrid";
 
 
 const messages = defineMessages({
@@ -26,6 +27,7 @@ export interface GeneralSettingsProps {
 export default function GeneralSettings(props: GeneralSettingsProps) {
 	const [sentryEnabled, setSentryEnabled] =
 		useState(localStorage.getItem("_sentry-opt-out") != "yes");
+	const [force, forceUpdate] = useForceUpdateValue();
 
 	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
 		if (e.target.checked) {
@@ -36,10 +38,15 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 		setSentryEnabled(e.target.checked);
 	}
 
-	function handleSetGridValue(key: keyof WidgetGridSettings, val: any) {
-		props.grid![key] = val;
+	function handleSetGridValue(key: string, val: any) {
+		(props.grid as any)[key] = val;
 		props.setGrid({ ...props.grid! });
+		forceUpdate();
 	}
+
+	const gridSettingsSchema = useMemo(
+		() => makeGridSettingsSchema(props.grid!),
+		[ force ]);
 
 	return (
 		<div className="modal-body">

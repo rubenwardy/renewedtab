@@ -8,6 +8,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "./Button";
 import { SchemaEntry } from "app/utils/Schema";
+import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -52,7 +53,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 			<div className="modal-body">
 				{props.typeDef.editHint &&
 					<p className="text-muted">
-						<FormattedMessage {...props.typeDef.editHint} />
+						<MyFormattedMessage message={props.typeDef.editHint} />
 					</p>}
 
 				<Form
@@ -122,15 +123,14 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		return (
 			<>
 				<div className="widget-strip">
-					<span className="widget-title">
+					<i className="widget-handle fas fa-grip-vertical" />
+					<span className="widget-title widget-handle">
 						<i className="fas fa-grip-vertical mr-3" />
 						<FormattedMessage {...props.typeDef.title} />
 					</span>
-					<span className="widget-btns">
-						<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
-							<i className="fas fa-trash" />
-						</a>
-					</span>
+					<a className="btn" onClick={() => setMode(WidgetMode.Delete)}>
+						<i className="fas fa-trash" />
+					</a>
 				</div>
 				<div className="panel text-muted">
 					<FormattedMessage
@@ -156,18 +156,19 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 	return (
 		<div className="widget-inner" onKeyPress={onKeyPress}>
 			<div className="widget-strip">
-				<span className="widget-title">
-					<i className="fas fa-grip-vertical mr-3" />
+				<i className="widget-handle fas fa-grip-vertical" />
+				<div className="widget-title widget-handle">
 					<FormattedMessage {...props.typeDef.title} />
-				</span>
-				<span className="widget-btns">
-					<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>
-						<i className="fas fa-trash" />
-					</a>
-					<a className="btn widget-edit" onClick={() => setMode(WidgetMode.Edit)}>
-						<i className="fas fa-pen" />
-					</a>
-				</span>
+				</div>
+				<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>
+					<i className="fas fa-trash" />
+				</a>
+				<a className="btn" onClick={props.duplicate}>
+					<i className="fas fa-clone" />
+				</a>
+				<a className="btn widget-edit" onClick={() => setMode(WidgetMode.Edit)}>
+					<i className="fas fa-pen" />
+				</a>
 			</div>
 			<ErrorBoundary>
 				<Child {...props} />

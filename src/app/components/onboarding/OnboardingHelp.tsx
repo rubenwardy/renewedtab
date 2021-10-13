@@ -14,6 +14,7 @@ export default function OnboardingHelp() {
 		typeDef: Notes,
 		save: () => {},
 		remove: () => {},
+		duplicate: () => {},
 		id: 3,
 		type: "Notes",
 		props: {

@@ -1,7 +1,7 @@
 import { IStorage } from "./Storage";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
-import { getInitialTheme, Widget } from "./Widget";
+import { getInitialTheme, Widget, WidgetTheme } from "./Widget";
 import deepCopy from "./utils/deepcopy";
 
 
@@ -32,8 +32,11 @@ export class WidgetManager {
 
 			const widgetType = WidgetTypes[widget.type];
 
+			const initialTheme = getInitialTheme(widgetType);
 			if (widget.theme == undefined) {
-				widget.theme = deepCopy(getInitialTheme(widgetType));
+				widget.theme = deepCopy(initialTheme);
+			} else {
+				widget.theme = { ...initialTheme, ...widget.theme };
 			}
 
 			if (widgetType.onLoaded) {
@@ -46,7 +49,7 @@ export class WidgetManager {
 		this.storage.set("widgets", this.widgets);
 	}
 
-	createWidget<T>(type: string): Widget<T> {
+	createWidget<T>(type: string, size?: Vector2, props?: T, theme?: WidgetTheme): Widget<T> {
 		this.id_counter++;
 
 		const widget_type = WidgetTypes[type];
@@ -54,9 +57,9 @@ export class WidgetManager {
 			id: this.id_counter,
 			type: type,
 			position: undefined,
-			size: widget_type.defaultSize,
-			props: deepCopy(widget_type.initialProps),
-			theme: deepCopy(getInitialTheme(widget_type)),
+			size: size ?? widget_type.defaultSize,
+			props: deepCopy({ ...widget_type.initialProps, ...props }),
+			theme: deepCopy({ ...getInitialTheme(widget_type), ...theme }),
 		};
 		this.widgets.push(widget);
 
@@ -90,5 +93,9 @@ export class WidgetManager {
 				? { ...widgetData.theme } : widget.theme;
 			return widget;
 		});
+	}
+
+	clone<T>(widget: Widget<T>): Widget<T> {
+		return this.createWidget<T>(widget.type, widget.size, widget.props, widget.theme);
 	}
 }

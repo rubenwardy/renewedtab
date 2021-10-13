@@ -31,9 +31,19 @@ export const schemaMessages = defineMessages({
 		description: "Form field label",
 	},
 
+	showPanelBG: {
+		defaultMessage: "Show panel background",
+		description: "Widget styling, checkbox",
+	},
+
 	useIconBar: {
 		defaultMessage: "Display as icons",
 		description: "Form field label",
+	},
+
+	showText: {
+		defaultMessage: "Show text",
+		description: "Widget styling, checkbox for showing text on eg: Links"
 	},
 
 	location: {
@@ -75,6 +85,16 @@ export const schemaMessages = defineMessages({
 		defaultMessage: "Categories",
 		description: "Form field label, list of categories. Used by Quotes widget"
 	},
+
+	useWebsiteIcons: {
+		defaultMessage: "Use icons from websites (favicons)",
+		description: "Form field label",
+	},
+
+	openInNewTab: {
+		defaultMessage: "Open links in new tab",
+		description: "Form field label",
+	}
 });
 
 
@@ -113,5 +133,20 @@ export const miscMessages = defineMessages({
 
 	requiresBrowserVersion: {
 		defaultMessage: "Requires browser extension version",
+	},
+
+	noResults: {
+		defaultMessage: "No results",
+		description: "A search has returned no results here (note: there may be multiple places being searched)"
+	},
+
+	globalSearchEditHint: {
+		defaultMessage: "You can filter this widget using a Search widget.",
+		description: "Edit hint shown on searchable widgets",
+	},
+
+	poweredBy: {
+		defaultMessage: "Powered by {host}.",
+		description: "Credit to a website",
 	},
 });

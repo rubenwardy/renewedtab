@@ -41,9 +41,9 @@ describe("Widget", function() {
 		await widget.edit();
 
 		const modal = new Modal();
-		expect(await modal.count(By.className("field"))).to.eq(2);
+		expect(await modal.count(By.className("field"))).to.eq(3);
 
 		await modal.clickInside(By.css(`.form:first-child input[type="checkbox"]`));
-		expect(await modal.count(By.className("field"))).to.eq(4);
+		expect(await modal.count(By.className("field"))).to.eq(5);
 	})
 });

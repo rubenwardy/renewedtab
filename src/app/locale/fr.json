@@ -7,10 +7,6 @@
         "message": "Notes",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Cliquez sur les objets pour les modifier",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0feb3b": {
         "message": "Faire d'un lien une image. Optionnel",
         "description": "Image widget: Form field hint (Link)"
@@ -27,7 +23,7 @@
         "message": "Ajouter"
     },
     "27lljH": {
-        "message": "Vous avez <b>{age}</b>",
+        "message": "Vous avez <b>{age}</b> ans",
         "description": "Age widget text"
     },
     "2VPa4j": {
@@ -204,10 +200,6 @@
         "message": "Arrière-plans choisis au hasard",
         "description": "Backgroud mode description"
     },
-    "Q5Myqt": {
-        "message": "Nombre de colonnes dans la grille de widgets. Chaque colonne mesure environ 50 pixels, plus l'espacement. Donc avec un espacement de 15 pixels, le maximum d'une fenêtre 1080p devrait être de 30 colonnes.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "Kzo9ZH": {
         "message": "URL de l'image",
         "description": "Form field label"
@@ -269,9 +261,6 @@
     "TUnCKb": {
         "message": "Texte",
         "description": "Text Widget"
-    },
-    "Rw51mJ": {
-        "message": "Propulsé par <a>OpenStreetMap</a>."
     },
     "S3njcM": {
         "message": "IFrame",
@@ -413,10 +402,6 @@
         "message": "Choisissez une image",
         "description": "Form field label"
     },
-    "eXkpJi": {
-        "message": "Utiliser les icônes des sites Web (favicons)",
-        "description": "Links widget: form field label"
-    },
     "egigiF": {
         "message": "Merci à Unsplash, OpenStreetMap, OpenWeatherMap et RocketLaunch.Live pour leurs API."
     },
@@ -429,9 +414,6 @@
     "VxE3S8": {
         "message": "Cela enverra automatiquement l'URL aux développeurs de Renewed Tab. Ils peuvent ensuite choisir de l'ajouter aux suggestions pour tous les utilisateurs.",
         "description": "Host URL field: help text for suggest URL button"
-    },
-    "XITVvp": {
-        "message": "Afficher l'arrière-plan du panneau"
     },
     "zfsplE": {
         "message": "Ne plus afficher",
@@ -475,9 +457,6 @@
     "L6nTur": {
         "message": "Choisissez un point de départ",
         "description": "Onboarding: presets title"
-    },
-    "M8ugqX": {
-        "message": "Pas de widgets coïncidant"
     },
     "MiIvsP": {
         "message": "Vous pouvez ajouter, déplacer, redimensionner et configurer les widgets sur la grille avec des contrôles intuitifs."
@@ -647,19 +626,12 @@
     "iH2AHA": {
         "message": "<a>Open source</a>, licence sous GPLv3+."
     },
-    "ibhC3l": {
-        "message": "Vous aimez Renewed Tab ? Envisagez de faire un don pour couvrir les coûts et aider à soutenir le développement."
-    },
     "h/ftND": {
         "message": "Choisir un fichier"
     },
     "hUIQ7h": {
         "message": "Luminosité",
         "description": "Backgroud settings: form field label"
-    },
-    "hZZSzJ": {
-        "message": "Proposé par RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "pHo6u+": {
         "message": "Aucune image trouvée dans le flux",
@@ -737,10 +709,6 @@
     "TZknEV": {
         "message": "Faites attention à ce que vous collez ici. Un pirate pourrait vous faire coller ici du code qui vole des éléments auxquels l'extension a accès, comme l'historique du navigateur et les meilleurs sites.",
         "description": "HTML widget: form field hint (HTML)"
-    },
-    "UgAgeT": {
-        "message": "Proposé par exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "Upkn1Q": {
         "message": "Indice UV <b>élevé</b>",
@@ -882,10 +850,6 @@
     "vlumg9": {
         "message": "Chercher des widgets...",
         "description": "Create Widgets modal: search widgets placeholder"
-    },
-    "y2OItK": {
-        "message": "Champ de recherche vers votre moteur de recherche préféré",
-        "description": "Search widget description"
     },
     "y8o0oA": {
         "message": "Météo actuelle et prévue",
@@ -1062,5 +1026,67 @@
     "S6nfAm": {
         "message": "Humidité (%)",
         "description": "Weather widget: humidity tooltip"
+    },
+    "yT43pK": {
+        "message": "Utiliser les icônes des sites Web (favicons)",
+        "description": "Form field label"
+    },
+    "F1A/8i": {
+        "message": "Sources",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Nombre de colonnes dans la grille de widgets. Vous pouvez ajuster {max} colonnes dans la largeur de fenêtre actuelle ({res}px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Nouvel onglet"
+    },
+    "lY73np": {
+        "message": "Afficher l'arrière-plan du panneau",
+        "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "Vous aimez Renewed Tab ? Envisagez de faire un don pour aider à couvrir les coûts et soutenir son développement."
+    },
+    "3UG6ds": {
+        "message": "Rechercher des widgets ou sur le web avec votre moteur favori",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Veuillez spécifier une source",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Aucun résultat",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "KdIFGg": {
+        "message": "'{query}' manquant dans l'URL de recherche. Ex : https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "o9vGxx": {
+        "message": "Ouvrir les liens dans un nouvel onglet",
+        "description": "Form field label"
+    },
+    "nHw5cV": {
+        "message": "Cliquer sur les items pour les éditer.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "hWimZf": {
+        "message": "Activer la recherche de widgets",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "Propulsé par {host}.",
+        "description": "Credit to a website"
+    },
+    "q6/aVX": {
+        "message": "Vous pouvez filtrer ce widget à l'aide d'un widget de recherche.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Afficher le texte",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
     }
 }

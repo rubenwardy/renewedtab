@@ -4,7 +4,7 @@ import { useAPI } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { themeMessages, WidgetProps, WidgetType } from "app/Widget";
+import { WidgetProps, WidgetType } from "app/Widget";
 import { Quote } from "common/api/quotes";
 import React from "react";
 import { defineMessages } from "react-intl";
@@ -86,7 +86,7 @@ const widget: WidgetType<QuotesProps> = {
 		textColor: "#ffffff",
 	},
 	themeSchema: {
-		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		showPanelBG: type.boolean(schemaMessages.showPanelBG),
 		textColor: type.color(schemaMessages.textColor),
 	},
 };

@@ -1,4 +1,4 @@
-import { runPromise } from "app/hooks";
+import { useRunPromise } from "app/hooks";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import UserError from "app/utils/UserError";
 import React, { useState } from "react";
@@ -47,7 +47,7 @@ export default function RequestHostPermission(props: RequestHostPermissionProps)
 
 	const [isVisible, setVisible] = useState<boolean>(false);
 
-	runPromise(() => needsHostPermission(props.host),
+	useRunPromise(() => needsHostPermission(props.host),
 		needsPerm => {
 			setVisible(needsPerm);
 			if (!needsPerm) {

@@ -1,4 +1,5 @@
 import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema } from 'app/components/LinkBox';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
@@ -27,16 +28,11 @@ const messages = defineMessages({
 		defaultMessage: "Enable custom icons",
 		description: "Links widget: form field label",
 	},
-
-	useWebsiteIcons: {
-		defaultMessage: "Use icons from websites (favicons)",
-		description: "Links widget: form field label",
-	},
 });
 
 
-function Links(props: WidgetProps<LinkBoxProps>)  {
-	return (<LinkBox {...props.props} widgetTheme={props.theme} />);
+function Links(widget: WidgetProps<LinkBoxProps>)  {
+	return (<LinkBox {...widget.props} widgetTheme={widget.theme} />);
 }
 
 
@@ -86,6 +82,7 @@ const widget: WidgetType<LinkBoxProps> = {
 	Component: Links,
 	title: messages.title,
 	description: messages.description,
+	editHint: miscMessages.globalSearchEditHint,
 	defaultSize: new Vector2(5, 5),
 	initialProps: initialProps,
 	themeSchema: defaultLinksThemeSchema,
@@ -95,12 +92,14 @@ const widget: WidgetType<LinkBoxProps> = {
 		if (typeof browser !== "undefined") {
 			return {
 				links: type.array(linkSchema, messages.links),
+				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				enableCustomIcons: type.boolean(messages.enableCustomIcons),
-				useWebsiteIcons: type.booleanHostPerm(messages.useWebsiteIcons),
+				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
 			};
 		} else {
 			return {
 				links: type.array(linkSchema, messages.links),
+				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				enableCustomIcons: type.boolean(messages.enableCustomIcons),
 			};
 		}

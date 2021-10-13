@@ -1,4 +1,3 @@
-import { MessageDescriptor } from "@formatjs/intl";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { IntlShape } from "react-intl";
 
@@ -20,9 +19,9 @@ export type ImageHandle = { key: string };
 export interface SchemaEntry {
 	type: Type;
 	subschema?: Schema<unknown>;
-	label: MessageDescriptor;
+	label: MyMessageDescriptor;
 	messages?: Messages;
-	hint?: MessageDescriptor;
+	hint?: MyMessageDescriptor;
 	values?: any;
 	unit?: string;
 	min?: number;
@@ -44,13 +43,13 @@ export type UncheckedSchema = Schema<Record<string, any>>;
 
 
 function makeTypeFunc(type: Type) {
-	return (label: MessageDescriptor, hint?: MessageDescriptor) => ({
+	return (label: MyMessageDescriptor, hint?: MyMessageDescriptor) => ({
 		type, label, hint,
 	});
 }
 
 function makeAutocompletedTypeFunc(type: Type) {
-	return (label: MessageDescriptor, hint?: MessageDescriptor,
+	return (label: MyMessageDescriptor, hint?: MyMessageDescriptor,
 			autocomplete?: (intl: IntlShape) => Promise<{label: string, value: string}[]>) => ({
 		type, label, hint, autocomplete
 	});
@@ -58,7 +57,7 @@ function makeAutocompletedTypeFunc(type: Type) {
 
 function makeSelectFunc(type: Type) {
 	return (values: any, messages: (Messages | undefined),
-			label: MessageDescriptor, hint?: MessageDescriptor): SchemaEntry => ({
+			label: MyMessageDescriptor, hint?: MyMessageDescriptor): SchemaEntry => ({
 		type, values, messages, label, hint,
 	});
 }
@@ -73,12 +72,12 @@ export namespace type {
 	export const textarea = makeTypeFunc("textarea");
 	export const json = makeTypeFunc("json");
 
-	export const number = (label: MessageDescriptor, hint?: MessageDescriptor, min?: number, max?: number): SchemaEntry => ({
+	export const number = (label: MyMessageDescriptor, hint?: MyMessageDescriptor, min?: number, max?: number): SchemaEntry => ({
 		type: "number",
 		label, hint, min, max
 	});
 
-	export const unit_number = (label: MessageDescriptor, unit: string, hint?: MessageDescriptor, min?: number, max?: number): SchemaEntry => ({
+	export const unit_number = (label: MyMessageDescriptor, unit: string, hint?: MyMessageDescriptor, min?: number, max?: number): SchemaEntry => ({
 		type: "unit_number",
 		label, hint, unit, min, max
 	});
@@ -123,8 +122,8 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	export const array = (subschema: Schema<unknown>, label: MessageDescriptor,
-			hint?: MessageDescriptor): SchemaEntry => ({
+	export const array = (subschema: Schema<unknown>, label: MyMessageDescriptor,
+			hint?: MyMessageDescriptor): SchemaEntry => ({
 		type: "array",
 		subschema: subschema,
 		label: label,
@@ -135,8 +134,8 @@ export namespace type {
 	 * Displays a new heading with a form. Sub-forms should be the last
 	 * item in a schema.
 	 */
-	 export const subform = (subschema: Schema<unknown>, label: MessageDescriptor,
-			hint?: MessageDescriptor): SchemaEntry => ({
+	 export const subform = (subschema: Schema<unknown>, label: MyMessageDescriptor,
+			hint?: MyMessageDescriptor): SchemaEntry => ({
 		type: "subform",
 		subschema: subschema,
 		label: label,
@@ -149,8 +148,8 @@ export namespace type {
 	 * You shouldn't include `id` in the subschema, as you don't want users to
 	 * edit it.
 	 */
-	 export const unorderedArray = (subschema: Schema<unknown>, label: MessageDescriptor,
-			hint?: MessageDescriptor): SchemaEntry => ({
+	 export const unorderedArray = (subschema: Schema<unknown>, label: MyMessageDescriptor,
+			hint?: MyMessageDescriptor): SchemaEntry => ({
 		type: "unordered_array",
 		subschema: subschema,
 		label: label,

@@ -1,4 +1,5 @@
 import { miscMessages } from "app/locale/common";
+import { queryMatchesAny } from "app/utils";
 import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetManager } from "../WidgetManager";
@@ -28,9 +29,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 				description: intl.formatMessage(widget.description),
 				isBrowserOnly: widget.isBrowserOnly,
 			}))
-			.filter(widget => query == "" ||
-					widget.title.toLowerCase().includes(query.toLowerCase()) ||
-					widget.description.toLowerCase().includes(query.toLowerCase()))
+			.filter(widget => queryMatchesAny(query, widget.title, widget.description))
 			.sort((a, b) => a.title.localeCompare(b.title, intl.locale, {
 					sensitivity: "base" }));
 
@@ -73,7 +72,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 				{widgets}
 				{widgets.length == 0 && (
 					<li className="section">
-						<FormattedMessage defaultMessage="No matching widgets" />
+						<FormattedMessage {...miscMessages.noResults} />
 					</li>)}
 			</ul>
 		</Modal>);

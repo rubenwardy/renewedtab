@@ -13,6 +13,7 @@
 		box-shadow 0.15s ease-in-out;
 	cursor: pointer;
 	box-sizing: border-box;
+	text-align: center;
 
 	&:hover {
 		color: white;
@@ -113,4 +114,48 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 0.25rem;
+}
+
+.tabs {
+	@include nolist();
+	margin-bottom: 0.5rem;
+
+	li {
+		display: inline-block;
+	}
+}
+
+.tab {
+	display: block;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.75);
+	padding: 0.375rem 0;
+	margin: 0 0.25rem 0 0.75rem;
+	font-size: 0.9375rem;
+	line-height: 1.5;
+	transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+	cursor: pointer;
+	box-sizing: border-box;
+	background: transparent;
+	border: 0px;
+	border-bottom: 2px solid transparent;
+
+	&:hover {
+		color: white;
+	}
+
+	&.selected {
+		border-color: var(--color-primary-light);
+		color: white;
+	}
+
+	.icon {
+		display: inline-block;
+		margin: 0 0.25rem 0 0;
+		object-fit: cover;
+		max-height: 18px;
+		vertical-align: middle;
+		object-fit: contain;
+		color: rgba(255, 255, 255, 0.5);
+	}
 }

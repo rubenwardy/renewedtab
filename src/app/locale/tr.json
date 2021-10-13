@@ -36,9 +36,6 @@
     "PM6qZ7": {
         "message": "Saniye göster"
     },
-    "Rw51mJ": {
-        "message": "<a>OpenStreetMap</a> ile çalışır."
-    },
     "T/wBPw": {
         "message": "{type} aracını kaldır"
     },
@@ -74,9 +71,6 @@
     },
     "iH2AHA": {
         "message": "<a>Açık kaynak</a>, GPLv3+ kapsamında lisanslanmıştır."
-    },
-    "ibhC3l": {
-        "message": "Renewed Tab'i beğendiniz mi? Maliyetleri karşılamak ve geliştirmeyi desteklemek için bağış yapmayı düşünebilirsiniz."
     },
     "kAEQyV": {
         "message": "Tamam"
@@ -125,9 +119,6 @@
     "WKiXhX": {
         "message": "Renk",
         "description": "Color background mode"
-    },
-    "XITVvp": {
-        "message": "Panel arkaplanını göster"
     },
     "lUdRdE": {
         "message": "Hata: {msg}"
@@ -271,10 +262,6 @@
     "pHo6u+": {
         "message": "Beslemede görüntü bulunamadı",
         "description": "Web Comic widget: no images found error"
-    },
-    "hZZSzJ": {
-        "message": "RocketLaunch.Live ile çalışır",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "p7+m8N": {
         "message": "Sık kullanılan sitelerinize erişmek için izin verin",
@@ -420,10 +407,6 @@
         "message": "Pozisyon",
         "description": "Backgroud settings: form field label"
     },
-    "/iBdV1": {
-        "message": "Ögelere tıklayarak onları düzenleyebilirsiniz",
-        "description": "Todo List widget: edit modal hint"
-    },
     "GSox4d": {
         "message": "Bilgisayarınızda kurulu olan bir yazı tipi ismi",
         "description": "Theme settings: form field hint (Font)"
@@ -451,10 +434,6 @@
     "amHvKE": {
         "message": "Buraya not yazın",
         "description": "Notes widget: prompt"
-    },
-    "y2OItK": {
-        "message": "En sevdiğiniz arama motoru için bir arama çubuğu",
-        "description": "Search widget description"
     },
     "VjDvbL": {
         "message": "URL",
@@ -531,10 +510,6 @@
     "LfHpBk": {
         "message": "Yazı Tipi Boyutlama",
         "description": "Theme settings: form field label"
-    },
-    "eXkpJi": {
-        "message": "İnternet sitelerinden ikon kullan (favicon)",
-        "description": "Links widget: form field label"
     },
     "YS5zRT": {
         "message": "{name} ile ara",
@@ -667,10 +642,6 @@
     "Mihrhf": {
         "message": "Yok",
         "description": "Clock widget: date style type, not shown"
-    },
-    "Q5Myqt": {
-        "message": "Araç alanındaki sütunların sayısı. Her sütun yaklaşık 50px artı boşluktan oluşur, yani 15px boşlukla, 1080p bir pencerede en fazla 30 sütun bulunmalıdır.",
-        "description": "Widget grid: form hint for grid columns"
     },
     "nnaWVi": {
         "message": "Celsius",
@@ -817,9 +788,6 @@
         "message": "Yılın ilerlemesini bir ilerleme çubuğunda gösterir",
         "description": "Age widget description"
     },
-    "M8ugqX": {
-        "message": "Eşleşen araç yok"
-    },
     "qEk9AJ": {
         "message": "Koyu renkli görüntülerin parlaklığını değiştirir",
         "description": "Backgroud settings: form field label (Brightness: Dark)"
@@ -851,10 +819,6 @@
     "QV6YlB": {
         "message": "Döviz Kurları",
         "description": "Currencies widget: form field label"
-    },
-    "UgAgeT": {
-        "message": "exchangerate.host ile çalışır",
-        "description": "Currencies widget: credit to data provider"
     },
     "kF06lD": {
         "message": "Uzun ({example})",
@@ -1062,5 +1026,67 @@
     "qzlLb3": {
         "message": "PAZ",
         "description": "Short weekday name (Sunday)"
+    },
+    "yT43pK": {
+        "message": "İnternet sitelerinden ikon kullan (favicon)",
+        "description": "Form field label"
+    },
+    "F1A/8i": {
+        "message": "Kaynaklar",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Araç ızgarasındaki sütun sayısı. Şu anki pencere genişliğine ({res}px) sığdırabileceğiniz sütun sayısı: {max}.",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "btOI+Z": {
+        "message": "Yeni Sekme"
+    },
+    "lY73np": {
+        "message": "Panel arkaplanını göster",
+        "description": "Widget styling, checkbox"
+    },
+    "oRui+E": {
+        "message": "Renewed Tab'i sevdiniz mi? Bağış yaparak giderlerini karşılamaya ve geliştirilmesine yardımcı olmayı düşünebilirsiniz."
+    },
+    "3UG6ds": {
+        "message": "En sevdiğiniz arama motorunu kullanarak araçlar arasında veya internette arama yapın",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Lütfen bir kaynak belirtin",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Sonuç yok",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "KdIFGg": {
+        "message": "Arama URL'inde '{query}' eksik. Örnek: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "hWimZf": {
+        "message": "Araç aramasını etkinleştir",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "n0cZ3b": {
+        "message": "{host} ile çalışır.",
+        "description": "Credit to a website"
+    },
+    "nHw5cV": {
+        "message": "Ögelere tıklayarak düzenleyin.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "o9vGxx": {
+        "message": "Linkleri yeni sekmede aç",
+        "description": "Form field label"
+    },
+    "q6/aVX": {
+        "message": "Bu aracı bir Arama aracı kullanarak filtreleyebilirsiniz.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Metin göster",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
     }
 }

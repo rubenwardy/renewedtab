@@ -1,5 +1,5 @@
+import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React, { ChangeEvent, useState } from "react";
-import { FormattedMessage } from "react-intl";
 import { FieldProps } from ".";
 
 export default function CheckboxField(props: FieldProps<boolean>) {
@@ -14,7 +14,7 @@ export default function CheckboxField(props: FieldProps<boolean>) {
 		<>
 			<input type="checkbox" checked={value ?? false} onChange={handleChange} />
 			<label className="inline ml-2" htmlFor={props.name}>
-				<FormattedMessage {...props.schemaEntry.label} />
+				<MyFormattedMessage message={props.schemaEntry.label} />
 			</label>
 		</>);
 }

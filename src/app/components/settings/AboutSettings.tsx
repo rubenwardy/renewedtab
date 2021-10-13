@@ -65,7 +65,7 @@ export default function AboutSettings() {
 			</p>
 			<p>
 				<FormattedMessage
-						defaultMessage="Like Renewed Tab? Consider donating to cover costs and help support development." />
+						defaultMessage="Enjoying Renewed Tab? Consider donating to help cover costs and support its development." />
 			</p>
 			<p>
 				<Button href="https://renewedtab.com/" icon="fas fa-globe-europe"

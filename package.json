@@ -16,7 +16,7 @@
 		"package:webext": "npm run package:chrome && npm run package:firefox",
 		"package:chrome": "npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -i manifest.firefox.json -i 'app/*.map' -n chrome.zip --overwrite-dest",
 		"package:firefox": "npm run build:app && cp src/webext/manifest.firefox.json dist/webext/manifest.json && web-ext build -s ./dist/webext/ -i app/manifest.json -i manifest.firefox.json -i app/index.html -i 'app/*.map' -n firefox.zip --overwrite-dest",
-		"lint": "eslint 'src/**/*.{js,ts,tsx}'",
+		"lint": "eslint 'src/**/*.{js,ts,tsx}' --max-warnings 0",
 		"fixlint": "eslint 'src/**/*.{js,ts,tsx}' --fix",
 		"test": "TS_NODE_FILES=1 NODE_PATH=src mocha -r ts-node/register 'tests/app/**/*.test.ts'",
 		"uitest": "TS_NODE_FILES=1 NODE_PATH=src mocha -r ts-node/register 'tests/ui/**/*.test.ts' --file ./tests/ui/setup-selenium.ts",

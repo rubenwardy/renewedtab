@@ -8,6 +8,7 @@ import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetType } from 'app/Wi
 import UserError from 'app/utils/UserError';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
+import { miscMessages, schemaMessages } from 'app/locale/common';
 
 
 const messages = defineMessages({
@@ -38,6 +39,7 @@ const messages = defineMessages({
 
 interface BookmarksProps {
 	includeFolders: boolean;
+	openInNewTab: boolean;
 }
 
 async function tryGetSubTree(id: string): Promise<browser.bookmarks.BookmarkTreeNode | null> {
@@ -138,15 +140,18 @@ const widget: WidgetType<BookmarksProps> = {
 
 	title: messages.title,
 	description: messages.description,
+	editHint: miscMessages.globalSearchEditHint,
 
 	isBrowserOnly: true,
 
 	defaultSize: new Vector2(15, 2),
 	initialProps: {
 		includeFolders: false,
+		openInNewTab: false,
 	},
 	schema: {
 		includeFolders: type.boolean(messages.includeFolders),
+		openInNewTab: type.boolean(schemaMessages.openInNewTab),
 	},
 	initialTheme: {
 		showPanelBG: false,

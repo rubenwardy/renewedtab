@@ -1,12 +1,16 @@
 import ErrorView from 'app/components/ErrorView';
 import Panel from 'app/components/Panel';
 import { getAPI, useAPI } from 'app/hooks';
+import { useGlobalSearch } from 'app/hooks/globalSearch';
+import { miscMessages } from 'app/locale/common';
+import { bindValuesToDescriptor } from 'app/locale/MyMessageDescriptor';
+import { queryMatchesAny } from 'app/utils';
 import Schema, { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps, WidgetType } from 'app/Widget';
 import { calculateExchangeRate, CurrencyInfo } from 'common/api/currencies';
 import React, { useMemo } from 'react';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 
 
 const messages = defineMessages({
@@ -23,11 +27,6 @@ const messages = defineMessages({
 	rates: {
 		defaultMessage: "Exchange Rates",
 		description: "Currencies widget: form field label",
-	},
-
-	editHint: {
-		defaultMessage: "Powered by exchangerate.host",
-		description: "Currencies widget: credit to data provider",
 	},
 
 	from: {
@@ -53,9 +52,12 @@ interface CurrenciesProps {
 
 
 function Currencies(widget: WidgetProps<CurrenciesProps>) {
+	const { query } = useGlobalSearch();
 	const rates = useMemo(
-		() => widget.props.rates.filter(rate => rate.from != "" && rate.to != ""),
-		[ widget.props.rates.length ]);
+		() => widget.props.rates.filter(
+			rate => rate.from != "" && rate.to != "" &&
+				queryMatchesAny(query, rate.from, rate.to)),
+		[ widget.props.rates.length, query ]);
 
 	const intl = useIntl();
 	const [ currencies, error ] = useAPI<Record<string, CurrencyInfo>>(`/currencies/`, {}, []);
@@ -94,6 +96,10 @@ function Currencies(widget: WidgetProps<CurrenciesProps>) {
 							{renderExchangeRate(from, to)}
 						</span>
 					</div>))}
+				{rates.length == 0 && widget.props.rates.length > 0 && (
+					<div className="text-muted">
+						<FormattedMessage {...miscMessages.noResults} />
+					</div>)}
 			</div>
 		</Panel>);
 }
@@ -103,7 +109,10 @@ const widget: WidgetType<CurrenciesProps> = {
 	Component: Currencies,
 	title: messages.title,
 	description: messages.description,
-	editHint: messages.editHint,
+	editHint: [
+		miscMessages.globalSearchEditHint,
+		bindValuesToDescriptor(miscMessages.poweredBy, { host: "exchangerate.host" }),
+	],
 	defaultSize: new Vector2(5, 3),
 	initialProps: {
 		rates: [

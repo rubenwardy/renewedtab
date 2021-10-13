@@ -5,7 +5,7 @@ import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { enumToString, enumToValue } from "app/utils/enum";
 import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";
-import { themeMessages, WidgetProps, WidgetType } from "app/Widget";
+import { WidgetProps, WidgetType } from "app/Widget";
 import React from "react";
 import { defineMessages, IntlShape, useIntl } from "react-intl";
 
@@ -166,7 +166,7 @@ const widget: WidgetType<ClockProps> = {
 		textColor: "#ffffff",
 	},
 	themeSchema: {
-		showPanelBG: type.boolean(themeMessages.showPanelBG),
+		showPanelBG: type.boolean(schemaMessages.showPanelBG),
 		textColor: type.color(schemaMessages.textColor),
 	},
 

@@ -4,6 +4,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import * as Sentry from "@sentry/react";
 import UserError from "app/utils/UserError";
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
+import { mergeClasses } from "app/utils";
 
 interface ErrorViewProps {
 	/**
@@ -31,7 +32,7 @@ export default function ErrorView(props: ErrorViewProps) {
 	if (props.error == undefined) {
 		if (props.loading === true) {
 			return (
-				<div className="panel text-muted loading">
+				<div className={mergeClasses(props.panel !== false && "panel", "text-muted loading")}>
 					<FormattedMessage {...miscMessages.loading} />
 				</div>);
 		} else {
@@ -54,7 +55,7 @@ export default function ErrorView(props: ErrorViewProps) {
 	}
 
 	return (
-		<div className={`${props.panel !== false && "panel"} text-muted error`}>
+		<div className={mergeClasses(props.panel !== false && "panel", "text-muted error")}>
 			<FormattedMessage
 					defaultMessage="Error: {msg}"
 					values={{ msg: msg }} />

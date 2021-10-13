@@ -19,10 +19,6 @@
         "message": "Appunti",
         "description": "Notes Widget"
     },
-    "/iBdV1": {
-        "message": "Clicca sugli oggetti per modificarli",
-        "description": "Todo List widget: edit modal hint"
-    },
     "0l+aD2": {
         "message": "Obiettivi giornalieri e frasi motivanti",
         "description": "Preset: focus description"
@@ -145,10 +141,6 @@
         "message": "Crea un nuova cosa da fare",
         "description": "Todo List widget: prompt"
     },
-    "Q5Myqt": {
-        "message": "Numero delle colonne nella griglia dei widget. Ogni colonna è all'incirca 50px più la spaziatura, quindi con 15px di spaziatura le colonne massime che una schermata 1080p può avere sono 30.",
-        "description": "Widget grid: form hint for grid columns"
-    },
     "adRrk3": {
         "message": "Azzera tutto",
         "description": "Import / export settings, reset"
@@ -194,10 +186,6 @@
     "hUIQ7h": {
         "message": "Luminosità",
         "description": "Backgroud settings: form field label"
-    },
-    "hZZSzJ": {
-        "message": "Sviluppato con RocketLaunch.Live",
-        "description": "SpaceFlights widget: edit modal hint"
     },
     "hktZIl": {
         "message": "Mostra l'ora"
@@ -263,9 +251,6 @@
         "message": "Qual è il tuo obiettivo di oggi?",
         "description": "Daily Goal prompt"
     },
-    "XITVvp": {
-        "message": "Mostra il pannello di sfondo"
-    },
     "XrQEPN": {
         "message": "Località",
         "description": "Form field label"
@@ -298,10 +283,6 @@
         "message": "Scegli un'immagine",
         "description": "Form field label"
     },
-    "eXkpJi": {
-        "message": "Usa icone dei siti (favicon)",
-        "description": "Links widget: form field label"
-    },
     "ekIjqh": {
         "message": "Concedi il permesso di accedere a tutti i siti"
     },
@@ -329,9 +310,6 @@
     },
     "iH2AHA": {
         "message": "<a>Software libero</a>, sotto licenza GPLv3+."
-    },
-    "ibhC3l": {
-        "message": "Ti piace Renewed Tab? Prendi in considerazione di donare per aiutarmi a coprire le spese e supportare lo sviluppo."
     },
     "irdBm2": {
         "message": "Tema",
@@ -428,10 +406,6 @@
     "y1Z3or": {
         "message": "Lingua"
     },
-    "y2OItK": {
-        "message": "Barra del tuo motore di ricerca preferito",
-        "description": "Search widget description"
-    },
     "y8o0oA": {
         "message": "Meteo di oggi e dei prossimi giorni",
         "description": "Weather widget description"
@@ -479,9 +453,6 @@
     "Lxc1x4": {
         "message": "Orologio",
         "description": "Clock Widget"
-    },
-    "M8ugqX": {
-        "message": "Nessun widget trovato"
     },
     "KsX2fE": {
         "message": "<b>{name}</b>, a {latitude}, {longitude}"
@@ -631,9 +602,6 @@
     "TkgCJ9": {
         "message": "Puoi ricevere aiuto o fare richieste usando il link sottostante."
     },
-    "Rw51mJ": {
-        "message": "Sviluppato con <a>OpenStreetMap</a>."
-    },
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
@@ -645,10 +613,6 @@
     "U2Qnh7": {
         "message": "Immagine",
         "description": "Image background mode"
-    },
-    "UgAgeT": {
-        "message": "Sviluppato con exchangerate.host",
-        "description": "Currencies widget: credit to data provider"
     },
     "V1EIOe": {
         "message": "Mostra una pagina web",
@@ -915,5 +879,45 @@
     "oGS5TE": {
         "message": "Buon pomeriggio, {name}",
         "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "yT43pK": {
+        "message": "Usa icone dei siti (favicon)",
+        "description": "Form field label"
+    },
+    "lY73np": {
+        "message": "Mostra il pannello di sfondo",
+        "description": "Widget styling, checkbox"
+    },
+    "4cMia7": {
+        "message": "Mostra una nuova foto",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "3UG6ds": {
+        "message": "Cerca widget oppure sul web usando il tuo motore di ricerca preferito",
+        "description": "Search widget description"
+    },
+    "8HmiSe": {
+        "message": "Per favore, specifica una sorgente",
+        "description": "Feed widget: no sources error message"
+    },
+    "Ack5ID": {
+        "message": "Nessun risultato",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "+TYXj6": {
+        "message": "Oggi, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "2vJWTd": {
+        "message": "Foto",
+        "description": "Background credits title placeholder"
+    },
+    "+sI+Oh": {
+        "message": "Mostra previsioni orarie",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "Rischio raggi UV <b>Molto alto</b>",
+        "description": "Very High UV risk"
     }
 }

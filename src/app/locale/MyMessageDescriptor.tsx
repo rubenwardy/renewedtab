@@ -10,7 +10,7 @@ export type MyMessageDescriptor = MessageWithValue | MessageWithValue[];
 export function MyFormattedMessage(props: { message: MyMessageDescriptor }) {
 	const descriptor = props.message;
 	if (Array.isArray(descriptor)) {
-		return (<>{descriptor.map(msg => <FormattedMessage key={msg.id} {...msg} />).join(" ")}</>);
+		return (<>{descriptor.map(msg => (<><FormattedMessage key={msg.id} {...msg} />{" "}</>))}</>);
 	} else {
 		return <FormattedMessage {...descriptor} />;
 	}
