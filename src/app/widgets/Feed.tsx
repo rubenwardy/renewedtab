@@ -82,6 +82,7 @@ interface FeedSource {
 interface FeedProps {
 	sources: FeedSource[];
 	filters: Filter[];
+	openInNewTab: boolean;
 	useWebsiteIcons: boolean;
 }
 
@@ -95,6 +96,7 @@ function FeedPanel(props: FeedPanelProps) {
 	const source = props.sources[0];
 	const [feed, error] = useFeed(source.url, [source.url]);
 	const { query } = useGlobalSearch();
+	const target = props.openInNewTab ? "_blank" : undefined;
 
 	if (!feed) {
 		useEffect(() => {}, [""]);
@@ -128,7 +130,11 @@ function FeedPanel(props: FeedPanelProps) {
 					!blockFilters.some(filter => title.includes(filter));
 		})
 		.map(article => (
-			<li key={article.link}><a href={article.link}>{article.title}</a></li>));
+			<li key={article.link}>
+				<a href={article.link} target={target} rel="noreferrer">
+					{article.title}
+				</a>
+			</li>));
 
 	return (
 		<ul className="links">
@@ -210,6 +216,7 @@ const widget: WidgetType<FeedProps> = {
 			},
 		],
 		filters: [],
+		openInNewTab: false,
 		useWebsiteIcons: false,
 	},
 
@@ -218,12 +225,14 @@ const widget: WidgetType<FeedProps> = {
 			return {
 				sources: type.array(sourceSchema, messages.sources),
 				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
+				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
 			};
 		} else {
 			return {
 				sources: type.array(sourceSchema, messages.sources),
 				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
+				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 			};
 		}
 	},

@@ -94,7 +94,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 			return (
 				<li key={link.id} data-hostname={domain} data-url={link.url}
 						data-title={link.title} data-icon={link.icon}>
-					<a href={link.url} target={target}>
+					<a href={link.url} target={target} rel="noreferrer">
 						{icon}
 						<span className="title">
 							{(!props.widgetTheme.useIconBar || props.widgetTheme.showText) &&
