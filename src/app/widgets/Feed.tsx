@@ -164,7 +164,9 @@ function Feed(widget: WidgetProps<FeedProps>) {
 			<Tabs value={selectedId} options={options} onChanged={setSelectedId}
 				useWebsiteIcons={props.useWebsiteIcons}
 				useRootPathForIcons={true} />
-			<FeedPanel {...props} sources={[selected]}
+			<FeedPanel {...props}
+				key={selected.url}
+				sources={[selected]}
 				onGotTitle={title => {
 					selected.title = title;
 					widget.save();
