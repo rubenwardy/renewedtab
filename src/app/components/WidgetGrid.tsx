@@ -170,7 +170,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 						layout={layout} onLayoutChange={onLayoutChange}
 						cols={gridColumns} rowHeight={cellSize}
 						margin={[cellSpacing, cellSpacing]}
-						draggableHandle=".widget-title"
+						draggableHandle=".widget-handle"
 						resizeHandles={handles}
 
 						// Mode specific options
