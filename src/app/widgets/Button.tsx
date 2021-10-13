@@ -50,18 +50,21 @@ function Button(widget: WidgetProps<ButtonProps>)  {
 		[props.url]);
 
 	const className = mergeClasses(
-			"btn btn-custom btn-brighten h-100 w-100 m-0",
+			"btn btn-custom btn-brighten h-100 w-100 m-0 p-3",
 			(widget.theme.showPanelBG !== false) && "blur");
 
+	const isHorizontal = widget.size.x > 2 * widget.size.y;
+
 	return (
-		<a href={props.url} style={style} className={className} >
-			<div className="row row-vertical middle-center h-100">
+		<a href={props.url} style={style} className={className}>
+			<div className={mergeClasses("row middle-center h-100", !isHorizontal && "row-vertical")}>
 				{icon && (
-					<div className="col p-1" style={{ position: "relative" }}>
+					<div className={mergeClasses(isHorizontal ? "col-auto" : "col",  "p-1 h-100")}
+							style={{ position: "relative" }}>
 						<Icon icon={icon} />
 					</div>)}
 				{props.text && (
-					<div className="col-auto">
+					<div className={isHorizontal ? "col" : "col-auto"}>
 						{props.text}
 					</div>)}
 			</div>
