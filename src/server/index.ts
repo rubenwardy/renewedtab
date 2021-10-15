@@ -253,10 +253,18 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 		// Stupid API keeps changing
 		const result = json.response?.result ?? json.result;
 
+		function mapProvider(provider: string): string {
+			if (provider.toLowerCase() == "united launch alliance (ula)") {
+				return "United Launch Alliance";
+			} else {
+				return provider;
+			}
+		}
+
 		const launches: SpaceLaunch[] = result.map((launch: any) => ({
 			id: launch.id,
 			name: launch.name,
-			provider: launch.provider?.name,
+			provider: mapProvider(launch.provider?.name),
 			vehicle: launch.vehicle?.name,
 			win_open: launch.win_open,
 			win_close: launch.win_close,
