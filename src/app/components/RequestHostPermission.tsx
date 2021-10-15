@@ -17,17 +17,26 @@ function makeHostPermission(host: string): browser.permissions.Permissions {
 	}
 }
 
+
+/**
+ * @param host
+ * @returns true if host permission is needed, false otherwise
+ */
 export async function needsHostPermission(host: string): Promise<boolean> {
-	if (typeof browser === 'undefined') {
-		return false;
-	} else if (host.endsWith(".renewedtab.com")) {
+	if (typeof browser === 'undefined' || host.endsWith(".renewedtab.com")) {
 		return false;
 	}
 
 	return !(await browser.permissions.contains(makeHostPermission(host)));
 }
 
-export async function checkHostPermission( url: string) {
+
+/**
+ * Throws a UserError if a host permission has not been granted for URL
+ *
+ * @param url
+ */
+export async function checkHostPermission(url: string): Promise<void> {
 	const host = new URL(url).host;
 	if (await needsHostPermission(host)) {
 		throw new UserError(bindValuesToDescriptor(messages.hostPermissionNeeded, { host: host }));
@@ -39,6 +48,7 @@ interface RequestHostPermissionProps {
 	host: string;
 	onHasPermission?: () => void;
 }
+
 
 export default function RequestHostPermission(props: RequestHostPermissionProps) {
 	if (typeof browser === 'undefined') {

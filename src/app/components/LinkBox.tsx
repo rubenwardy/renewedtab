@@ -9,7 +9,7 @@ import { WidgetTheme } from 'app/Widget';
 import Panel from './Panel';
 import Icon from './Icon';
 import { useGlobalSearch } from 'app/hooks/globalSearch';
-import { queryMatchesAny } from 'app/utils';
+import { parseURL, queryMatchesAny } from 'app/utils';
 
 
 const messages = defineMessages({
@@ -90,9 +90,8 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
 
 		if (link.url.trim() != "") {
-			const domain = new URL(link.url).hostname;
 			return (
-				<li key={link.id} data-hostname={domain} data-url={link.url}
+				<li key={link.id} data-hostname={parseURL(link.url)?.hostname} data-url={link.url}
 						data-title={link.title} data-icon={link.icon}>
 					<a href={link.url} target={target} rel="noreferrer">
 						{icon}
