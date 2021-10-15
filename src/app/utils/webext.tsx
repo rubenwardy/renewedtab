@@ -46,7 +46,7 @@ export async function getInstallInfo(): Promise<InstallInfo> {
 
 
 export function getFeedbackURLFromInfo(info: InstallInfo, path: string): string {
-	const url = new URL(`https://renewedtab.com/${path}/`);
+	const url = new URL(path, "https://renewedtab.com/");
 
 	if (info.platform) {
 		url.searchParams.set("platform", info.platform);

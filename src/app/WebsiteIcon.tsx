@@ -159,12 +159,16 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 const cache = new Map<string, Promise<string | undefined>>();
 
 function getWebsiteIcon(url: string): Promise<string | undefined> {
-	const key = getDomain(url);
-	if (!cache.has(key)) {
-		cache.set(key, fetchIcon(url));
-	}
+	try {
+		const key = getDomain(url);
+		if (!cache.has(key)) {
+			cache.set(key, fetchIcon(url));
+		}
 
-	return cache.get(key)!;
+		return cache.get(key)!;
+	} catch (e) {
+		return Promise.reject(e);
+	}
 }
 
 

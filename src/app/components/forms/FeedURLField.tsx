@@ -1,4 +1,5 @@
 import { buildAPIURL, fetchCheckCors, useCache, usePromise } from "app/hooks";
+import { parseURL } from "app/utils";
 import { AutocompleteItem } from "app/utils/Schema";
 import React, { useRef, useState } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
@@ -71,13 +72,7 @@ export default function FeedURLField(props: FieldProps<string>) {
 		props.onChange(value);
 	}
 
-	let host = "";
-	try {
-		host = new URL(value).host;
-	} catch (e) {
-		// ignore
-	}
-
+	const host = parseURL(value)?.host ?? "";
 	const intl = useIntl();
 	const [autocomplete, ] = props.schemaEntry.autocomplete
 			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
