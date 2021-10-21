@@ -66,5 +66,13 @@
     "3vjl5Q": {
         "message": "Показать/Скрыть",
         "description": "Feed widget filter allow label"
+    },
+    "+oSH/F": {
+        "message": "Показывает ваш нынешний возраст с преувеличенной точностью",
+        "description": "Age widget description"
+    },
+    "/4k9ry": {
+        "message": "<b>Очень</b> Высокий",
+        "description": "Very High UV risk"
     }
 }

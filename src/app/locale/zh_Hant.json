@@ -201,5 +201,13 @@
     "PYJFvz": {
         "message": "分類",
         "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "0l+aD2": {
+        "message": "每日目标和励志名言",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "不透明度",
+        "description": "Form field label"
     }
 }
