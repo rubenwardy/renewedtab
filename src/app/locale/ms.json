@@ -1088,5 +1088,21 @@
     "nHw5cV": {
         "message": "Klik item untuk editnya.",
         "description": "Todo List widget: edit modal hint"
+    },
+    "XYIyWM": {
+        "message": "Anda patut tingkatkan \"Lajur Grid\" menjadi sekurang-kurangnya {cols} untuk kegunaan ruang optimum.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "x7WADS": {
+        "message": "Grid Halaman Penuh",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "/Mpu8A": {
+        "message": "Regangkan grid untuk meliputi keseluruhan halaman.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "gQAsym": {
+        "message": "Ambil perhatian bahawa widget lain tidak akan dipindahkan apabila ditarik.",
+        "description": "Widget grid: form label 3 for grid full width"
     }
 }
