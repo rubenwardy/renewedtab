@@ -53,7 +53,7 @@ export default function App() {
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
 	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
-	const [gridSettings, setGridSettings] = useStorage<WidgetGridSettings>(
+	const [rawGridSettings, setGridSettings] = useStorage<WidgetGridSettings>(
 		"grid_settings", { ...defaultGridSettings });
 	const [onboardingIsOpen, setOnboardingIsOpen] = useState<boolean | undefined>(undefined);
 	useEffect(() => {
@@ -61,6 +61,8 @@ export default function App() {
 			setOnboardingIsOpen(widgetManager.widgets.length == 0);
 		}
 	}, [loaded]);
+
+	const gridSettings = rawGridSettings && { ...defaultGridSettings, ...rawGridSettings};
 
 	if (theme) {
 		applyTheme(theme);
