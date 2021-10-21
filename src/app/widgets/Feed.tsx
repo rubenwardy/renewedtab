@@ -11,7 +11,7 @@ import uuid from 'app/utils/uuid';
 import { Tabs } from 'app/components/Tabs';
 import UserError from 'app/utils/UserError';
 import { useGlobalSearch } from 'app/hooks/globalSearch';
-import { queryMatchesAny } from 'app/utils';
+import { parseURL, queryMatchesAny } from 'app/utils';
 
 
 const messages = defineMessages({
@@ -154,9 +154,9 @@ function Feed(widget: WidgetProps<FeedProps>) {
 	const selected = props.sources.find(x => x.id == selectedId) ?? props.sources[0];
 	const [force, forceUpdate] = useForceUpdateValue();
 
-	const options = useMemo(() => props.sources.map(x => ({
+	const options = useMemo(() => props.sources.filter(x => x.url).map(x => ({
 		id: x.id,
-		title: x.title || new URL(x.url).hostname,
+		title: x.title || parseURL(x.url)?.hostname || "?",
 		url: x.url,
 	})), [force, props.sources, props.sources.length]);
 
