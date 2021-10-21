@@ -1,1 +1,440 @@
-{}
+{
+    "+GMx80": {
+        "message": "Joylashuv topilmadi",
+        "description": "Location form field: error"
+    },
+    "+oSH/F": {
+        "message": "Hozirgi yoshingizni eng aniq ravishda kuzatib boring",
+        "description": "Age widget description"
+    },
+    "+sI+Oh": {
+        "message": "Har soat ko'rinishida ko'rsatish",
+        "description": "Weather widget: form field label"
+    },
+    "0feb3b": {
+        "message": "Ixtiyoriy, rasmni havola sifatida ko'rsating",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "3UG6ds": {
+        "message": "Vidjetlarni izlang yoki o'zingizning eng yoqtirgan qidiruv tizimingizni ko'rsating",
+        "description": "Search widget description"
+    },
+    "4F+2K3": {
+        "message": "Unsplash to'plamidan ixtiyoriy rasm",
+        "description": "Backgroud mode description"
+    },
+    "7bfD9/": {
+        "message": "Kiritilgan URL odatiy joydan o'rin oladi",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "9+2gJZ": {
+        "message": "Vidjet uchun brauzeringiz qo'shimchalar versiyasi kerak."
+    },
+    "AgU+/t": {
+        "message": "Rejalashtirilayotgan kosmik parvozlar ro'yxati, RocketLaunch.Live tomonidan",
+        "description": "SpaceFlights widget description"
+    },
+    "BiPNnl": {
+        "message": "Shamol Tezligi Ko'rsatkichi",
+        "description": "Weather widget: form field label"
+    },
+    "Cq4JWx": {
+        "message": "Yangiliklar, ob-havo va boshqalar",
+        "description": "Preset: grid description"
+    },
+    "DJRqNI": {
+        "message": "Atom va RSS'dan eng so'nggi rasmlarni ko'rsatish, WebComics uchun foydali.",
+        "description": "Web Comic widget description"
+    },
+    "FHzdXg": {
+        "message": "Quyidagi sozlamalar <b>Sinov jarayonida</b>; bu mavzularni yangilash va o'zgartirishlar vaqtida ularni buzib qo'yishi mumkin.",
+        "description": "Theme settings"
+    },
+    "Ibm90j": {
+        "message": "Vaqt sizning tizim vaqt zonasiga asoslangan. Agar vaqt noto'g'ri ko'rsatilayotgan bo'lsa kompyuteringiz yoki brauzeringiz sozlamalaridan unin to'g'rilang.",
+        "description": "Clock widget: edit hint"
+    },
+    "L6nTur": {
+        "message": "Boshlanish nuqtasini tanlash",
+        "description": "Onboarding: presets title"
+    },
+    "M0PwXU": {
+        "message": "Shamol Tezligi ({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "O8mt7g": {
+        "message": "Raqamlar ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "N/7Stk": {
+        "message": "Tuzuvchi: <a>rubenwardy</a>."
+    },
+    "MN3prI": {
+        "message": "Papkalarni bo'limlar ko'rinishida olish",
+        "description": "Bookmarks widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Katak vidjetidagi ustunlar soni. Siz bu ({res}px) ekran uchun maksimal {max} ustun kiritishinigz mumkin.",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "+TYXj6": {
+        "message": "Bugun , {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "/4k9ry": {
+        "message": "<b>Juda Baland</b> UV",
+        "description": "Very High UV risk"
+    },
+    "/Mpu8A": {
+        "message": "Ekranni qoplab olish uchun katakchani torting.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/dtDqf": {
+        "message": "Eslatmalar",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "Rostdan ham ushbu vidjetni o'chirib yubormoqchimisiz?",
+        "description": "Delete widget modal message"
+    },
+    "0hxZWu": {
+        "message": "Ikonka",
+        "description": "Form field label"
+    },
+    "0l+aD2": {
+        "message": "Kunlik maqsad va iqtiboslar",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "Tiniqlik",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Qo'shish"
+    },
+    "27lljH": {
+        "message": "Sizning yoshingiz <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "Hayrli tun, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Hayrli kun, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2VPa4j": {
+        "message": "Ingliz",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "2efE5y": {
+        "message": "Salomlashuv",
+        "description": "Greeting Widget"
+    },
+    "2vJWTd": {
+        "message": "Rasm",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "Vebsayt",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Qidiruv tizim nomi",
+        "description": "Search widget: form field label"
+    },
+    "3ZfhWo": {
+        "message": "{host} bilan aloqa uchun ruhsat zarur. Uni ma'qullash uchun ushbu vidjetni tahrirlang."
+    },
+    "3aaibf": {
+        "message": "Vidjet Qo'shish"
+    },
+    "3vh5vd": {
+        "message": "Joylashtirish uchun foydali narsa topilmadi",
+        "description": "Invisible widget description"
+    },
+    "3vjl5Q": {
+        "message": "Ko'rsatish / Yashirish",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "Bekor qilish"
+    },
+    "4UpnpD": {
+        "message": "Rasmlar sizning brauzeringizda saqlanadi va ular bizda saqlanmaydi",
+        "description": "Form field hint (Image)"
+    },
+    "4cMia7": {
+        "message": "Yangi rasm ko'rsatish",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "dan",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Yordam va So'rovlar"
+    },
+    "5DCxT+": {
+        "message": "Harorat Ko'rsatkichi",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "Ixtiyoriy CSS",
+        "description": "Theme settings: form field label"
+    },
+    "6MDM6D": {
+        "message": "Iboralar",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "Saqlanganlar topilmadi",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "Rasm",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "Yillik O'sish",
+        "description": "Year Progress widget"
+    },
+    "8HmiSe": {
+        "message": "Iltimos manbani ko'rsating",
+        "description": "Feed widget: no sources error message"
+    },
+    "8J0Bhj": {
+        "message": "<a>Renewed Tab</a>ga hush kelibsiz: Yangi sahifani videjet va ajoyib fonlar bilan moslab oling."
+    },
+    "8xVVb5": {
+        "message": "Asosiy Rang",
+        "description": "Theme settings: form field label"
+    },
+    "Abtyj/": {
+        "message": "Rasm 2MB dan katta ({dataSizeMB}MB). Brauzeringiz qotmasdan ishlashi uchun kichikroq rasm tanlang.",
+        "description": "Image upload error message"
+    },
+    "Ack5ID": {
+        "message": "Hech narsa topilmadi",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "B0kbsm": {
+        "message": "RSS",
+        "description": "Unsplash background mode"
+    },
+    "Bl74xq": {
+        "message": "Havola tugmasi",
+        "description": "Button widget description"
+    },
+    "CNpJaZ": {
+        "message": "Fokus",
+        "description": "Preset: focus"
+    },
+    "CmRs9p": {
+        "message": "Izlash",
+        "description": "Search Widget"
+    },
+    "CshCZY": {
+        "message": "Orqa fon turi"
+    },
+    "D0+wcK": {
+        "message": "Rasm havoladan oliv ko'rsatiladi",
+        "description": "Image widget description"
+    },
+    "D3idYv": {
+        "message": "Sozlamalar"
+    },
+    "D4M6tn": {
+        "message": "Renewed Tab'ga Hush kelibsiz",
+        "description": "Onboarding modal: title"
+    },
+    "Ddd3ZY": {
+        "message": "ga",
+        "description": "Currencies widget: form field label"
+    },
+    "E4nLwR": {
+        "message": "Har kuni",
+        "description": "Background expiry dropdown"
+    },
+    "Dk7Khi": {
+        "message": "Farengeyt",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "F1A/8i": {
+        "message": "Manbalar",
+        "description": "Feed widget: form field label"
+    },
+    "FqCn+F": {
+        "message": "Hayrli tong, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "G6WG/N": {
+        "message": "Yashirin",
+        "description": "Invisible Widget"
+    },
+    "FCmJHd": {
+        "message": "Atom yoki RSS ko'satish, yangiliklar, vebsaytlar va bloglarni ko'rish uchun foydali",
+        "description": "Feed widget description"
+    },
+    "GSox4d": {
+        "message": "Kompyuteringizga o'rnatilgan istalgan shrift nomi",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "GWRKVT": {
+        "message": "Matn Rangi",
+        "description": "Form field label"
+    },
+    "GXkv/F": {
+        "message": "Joylashuvni tanlang",
+        "description": "Location form field: prompt"
+    },
+    "GcxpZV": {
+        "message": "Sana ko'rinishi",
+        "description": "Clock widget: date style form field label"
+    },
+    "Go7At+": {
+        "message": "SHAN",
+        "description": "Short weekday name (Saturday)"
+    },
+    "GqPEp+": {
+        "message": "Brauzer kengaytmasi versiyasi zarur"
+    },
+    "H00a0q": {
+        "message": "Sarlavha qilish uchun bo'sh qoldiring",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "HEvlTB": {
+        "message": "Amallarni Ko'rsatish",
+        "description": "Weather widget: display subform title"
+    },
+    "HPLtg4": {
+        "message": "Noma'lum valyuta ''{currency}''",
+        "description": "Currencies widget: error"
+    },
+    "I48yxw": {
+        "message": "Maxfiylik",
+        "description": "General settings: privacy"
+    },
+    "IbCXY9": {
+        "message": "Standard ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "IqLwUL": {
+        "message": "Katak oralig'i",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "J91edI": {
+        "message": "Import / Export",
+        "description": "Settings tab"
+    },
+    "JN/uvd": {
+        "message": "<b>Nazorat</b> UV",
+        "description": "Moderate UV risk"
+    },
+    "JihbEV": {
+        "message": "CSS qo'llanma",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "JvOSvX": {
+        "message": "Orqa fon",
+        "description": "Settings tab"
+    },
+    "JzanJ8": {
+        "message": "Katak Ustunlari",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "K3r6DQ": {
+        "message": "O'chirish"
+    },
+    "K8s82y": {
+        "message": "Tug'ilgan kun",
+        "description": "Age widget: form field label"
+    },
+    "KdIFGg": {
+        "message": "Qidiruv URLda '{query}' tushirib qoldirildi. Masalan: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "KhM0zv": {
+        "message": "Iboralar tashqi manbalardan olinganligi sababli Renewed Tab tomonidan tekshirilmaydi.",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> at {latitude} by {longitude}"
+    },
+    "KyDwm3": {
+        "message": "Mashxur saytlarni ko'rsatish",
+        "description": "Top Sites widget: description"
+    },
+    "Kzo9ZH": {
+        "message": "Rasm havolasi",
+        "description": "Form field label"
+    },
+    "LfHpBk": {
+        "message": "Shrift yotiqligi",
+        "description": "Theme settings: form field label"
+    },
+    "Lxc1x4": {
+        "message": "Soat",
+        "description": "Clock Widget"
+    },
+    "Mihrhf": {
+        "message": "Hech qanday",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "PM6qZ7": {
+        "message": "Sekundni ko'rsatish"
+    },
+    "PYJFvz": {
+        "message": "Bo'limlar",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "OQHLB5": {
+        "message": "Rang",
+        "description": "Form field label"
+    },
+    "PBMGxw": {
+        "message": "Rasmlar uchun cheklov",
+        "description": "Feed background mode: form field label"
+    },
+    "OPzczE": {
+        "message": "Qisqartma ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "OBJta4": {
+        "message": "Nomini vidjet ustiga bosib o'zgartirishingiz mumkin",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "MiIvsP": {
+        "message": "Vidjetlarni qulay boshqaruv yordamida qo'shishingiz, boshqarish va o'lchamini o'zgartirishingiz mumkin."
+    },
+    "QcExtH": {
+        "message": "Maxfiylik Siyosati",
+        "description": "General settings: privacy policy button"
+    },
+    "QV6YlB": {
+        "message": "Almashtirish Kursi",
+        "description": "Currencies widget: form field label"
+    },
+    "QBZZBG": {
+        "message": "Yodda tuting: bu test rejimidagi qulayliklar va CSS selektorlar kelajakda to'g'rilab boriladi.",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "Q1mwPp": {
+        "message": "<a>O'z mahalliy tilingizni qo'shing</a> yoki o'ylab ko'ring."
+    },
+    "QqE4JC": {
+        "message": "RSS URL kiritilmadi."
+    },
+    "RCe+DS": {
+        "message": "Ko'tarib Qo'yish Videjtlari"
+    },
+    "RZqASt": {
+        "message": "Yakka rang",
+        "description": "Backgroud mode description"
+    },
+    "S3njcM": {
+        "message": "IFrame",
+        "description": "IFrame Widget"
+    }
+}
