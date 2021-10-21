@@ -11,12 +11,15 @@ const locales : { [key: string]: Translation } = {
 	"ms": require("./compiled/ms.json"),
 	"pt-br": require("./compiled/pt_BR.json"),
 	"tr": require("./compiled/tr.json"),
+	"zh-hans": require("./compiled/zh_Hans.json"),
 };
 
 // Locales will automatically resolve to more generic locales (ie: es-MX to es),
 // but not the other way around.
 const localeAliases : { [key: string]: string } = {
 	"pt": "pt-br",
+	"zh": "zh-hans",
+	"zh-hant": "zh-hans",
 };
 
 

@@ -1088,5 +1088,21 @@
     "sIC2UV": {
         "message": "Afficher le texte",
         "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "/Mpu8A": {
+        "message": "Étirez la grille pour couvrir toute la page.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "XYIyWM": {
+        "message": "Vous devriez augmenter les \"colonnes de la grille\" à au moins {cols} pour un meilleur usage de l'espace.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "gQAsym": {
+        "message": "Notez que les autres widgets ne s'écarteront pas lors du déplacement.",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "x7WADS": {
+        "message": "Grille pleine page",
+        "description": "Widget grid: form label for grid full width"
     }
 }

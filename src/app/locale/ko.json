@@ -1,0 +1,213 @@
+{
+    "2AUlDo": {
+        "message": "{name}님, 안녕히 주무세요",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "좋은 저녁입니다, {name}님",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "인사말",
+        "description": "Greeting Widget"
+    },
+    "2vJWTd": {
+        "message": "사진",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "웹사이트",
+        "description": "Renewed Tab website"
+    },
+    "0PsF7Z": {
+        "message": "이 위젯을 영구적으로 삭제하시겠습니까?",
+        "description": "Delete widget modal message"
+    },
+    "0feb3b": {
+        "message": "선택적, 이미지를 링크로 만듭니다",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "3Nw7b0": {
+        "message": "검색 엔진 이름",
+        "description": "Search widget: form field label"
+    },
+    "+GMx80": {
+        "message": "위치가 없습니다",
+        "description": "Location form field: error"
+    },
+    "+TYXj6": {
+        "message": "오늘, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+oSH/F": {
+        "message": "현재 나이를 너무 정확하게 나타냈습니다",
+        "description": "Age widget description"
+    },
+    "+sI+Oh": {
+        "message": "시간별 예측 표시",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "자외선이 <b>너무 높습니다</b>",
+        "description": "Very High UV risk"
+    },
+    "/Mpu8A": {
+        "message": "전체 페이지를 덮을 수 있도록 그리드를 늘립니다.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/dtDqf": {
+        "message": "노트",
+        "description": "Notes Widget"
+    },
+    "0l+aD2": {
+        "message": "일일 목표와 명언",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "불투명도",
+        "description": "Form field label"
+    },
+    "3ZfhWo": {
+        "message": "{host}에 접근하려면 권한이 필요합니다. 이 위젯을 수정하려면 허용해주세요."
+    },
+    "3aaibf": {
+        "message": "위젯 추가"
+    },
+    "3vjl5Q": {
+        "message": "보이기 / 숨기기",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "취소"
+    },
+    "4cMia7": {
+        "message": "새로운 사진 보기",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "보냄",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "도움 및 요청"
+    },
+    "5DCxT+": {
+        "message": "온도 단위",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "맞춤 CSS",
+        "description": "Theme settings: form field label"
+    },
+    "6MDM6D": {
+        "message": "명언",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "북마크를 얻을 수 없습니다",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "이미지",
+        "description": "Image Widget"
+    },
+    "7bfD9/": {
+        "message": "기본 제안에 제안할 URL을 추가합니다",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+    },
+    "7wOM6+": {
+        "message": "올해 목표",
+        "description": "Year Progress widget"
+    },
+    "8HmiSe": {
+        "message": "소스를 지정해주세요",
+        "description": "Feed widget: no sources error message"
+    },
+    "8xVVb5": {
+        "message": "기본 색상",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "이 위젯은 브라우저 확장 버전이 필요합니다."
+    },
+    "Ack5ID": {
+        "message": "결과가 없습니다",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "AgU+/t": {
+        "message": "다가오는 우주 발사 목록, RocketLaunch.Live에 의해 구동",
+        "description": "SpaceFlights widget description"
+    },
+    "Ay1sfO": {
+        "message": "랜덤으로 선택할 최신 이미지 수를 제어합니다. 이 값을 1로 설정하면 항상 최신 이미지로 선택됩니다",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "B0kbsm": {
+        "message": "피드",
+        "description": "Unsplash background mode"
+    },
+    "BJYZgx": {
+        "message": "이동 핸들(<move></move>)과 크기 조정 핸들(<resize></resize>)을 사용합니다."
+    },
+    "BiPNnl": {
+        "message": "풍속 단위",
+        "description": "Weather widget: form field label"
+    },
+    "Bl74xq": {
+        "message": "링크 버튼입니다",
+        "description": "Button widget description"
+    },
+    "CmRs9p": {
+        "message": "검색",
+        "description": "Search Widget"
+    },
+    "CshCZY": {
+        "message": "배경 유형"
+    },
+    "2/2yg+": {
+        "message": "추가"
+    },
+    "0hxZWu": {
+        "message": "아이콘",
+        "description": "Form field label"
+    },
+    "2VPa4j": {
+        "message": "한국어",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "3UG6ds": {
+        "message": "좋아하는 검색 엔진을 사용하여 위젯 또는 웹을 검색합니다",
+        "description": "Search widget description"
+    },
+    "27lljH": {
+        "message": "당신의 나이는 <b>{age}세</b> 입니다",
+        "description": "Age widget text"
+    },
+    "3vh5vd": {
+        "message": "아무 것도 표시하지 않습니다. 레이아웃 용도로 유용합니다",
+        "description": "Invisible widget description"
+    },
+    "4F+2K3": {
+        "message": "Unsplash 콜렉션의 랜덤 이미지",
+        "description": "Backgroud mode description"
+    },
+    "4UpnpD": {
+        "message": "이미지가 브라우저의 로컬로 저장하며, 절대로 업로드되지 않습니다",
+        "description": "Form field hint (Image)"
+    },
+    "8J0Bhj": {
+        "message": "위젯과 아름다운 배경을 가졌고 사용자 지정이 가능한 새 탭 페이지인 <a>Renewed Tab</a>에 오신 것을 환영합니다."
+    },
+    "Abtyj/": {
+        "message": "이미지가 2MB보다 큽니다({dataSizeMB}MB). 불러오는 시간을 단축하려면 더 작은 이미지를 사용해야 합니다.",
+        "description": "Image upload error message"
+    },
+    "CNpJaZ": {
+        "message": "집중",
+        "description": "Preset: focus"
+    },
+    "Cq4JWx": {
+        "message": "뉴스, 날씨 등",
+        "description": "Preset: grid description"
+    }
+}

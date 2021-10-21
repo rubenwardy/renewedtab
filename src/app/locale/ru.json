@@ -1,0 +1,78 @@
+{
+    "+sI+Oh": {
+        "message": "Показать почасовую погоду",
+        "description": "Weather widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Заметки",
+        "description": "Notes Widget"
+    },
+    "0hxZWu": {
+        "message": "Ярлык",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Добавить"
+    },
+    "2AUlDo": {
+        "message": "Спокойно ночи, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Добрый вечер, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "Приветствую",
+        "description": "Greeting Widget"
+    },
+    "2vJWTd": {
+        "message": "Фото",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "Вебсайт",
+        "description": "Renewed Tab website"
+    },
+    "2VPa4j": {
+        "message": "Русский",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "47FYwb": {
+        "message": "Отменить"
+    },
+    "4cMia7": {
+        "message": "Показать новое фото",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "С",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Помощь и Запросы"
+    },
+    "+TYXj6": {
+        "message": "Сегодня, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "0PsF7Z": {
+        "message": "Вы уверены, что хотите удалить этот виджет?",
+        "description": "Delete widget modal message"
+    },
+    "3aaibf": {
+        "message": "Добавить виджет"
+    },
+    "3vjl5Q": {
+        "message": "Показать/Скрыть",
+        "description": "Feed widget filter allow label"
+    },
+    "+oSH/F": {
+        "message": "Показывает ваш нынешний возраст с преувеличенной точностью",
+        "description": "Age widget description"
+    },
+    "/4k9ry": {
+        "message": "<b>Очень</b> Высокий",
+        "description": "Very High UV risk"
+    }
+}
