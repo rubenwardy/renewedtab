@@ -210,7 +210,7 @@ app.post("/api/background/vote/", async (req: express.Request, res: express.Resp
 });
 
 
-const reCollectionID = /^[A-Za-z0-9]+$/;
+const reCollectionID = /[\/\? ]/;
 app.get("/api/unsplash/", async (req: express.Request, res: express.Response) => {
 	notifyAPIRequest("unsplash");
 
@@ -221,7 +221,7 @@ app.get("/api/unsplash/", async (req: express.Request, res: express.Response) =>
 			return;
 		}
 
-		if (!reCollectionID.test(collection)) {
+		if (reCollectionID.test(collection)) {
 			writeClientError(res, "Invalid collection ID");
 			return;
 		}
