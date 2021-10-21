@@ -486,7 +486,7 @@
         "description": "Preset: focus description"
     },
     "JzanJ8": {
-        "message": "Columnas de cuadrícula",
+        "message": "Columnas de Cuadrícula",
         "description": "Widget grid: form label for grid columns"
     },
     "aaxFkJ": {
@@ -1088,5 +1088,21 @@
     "sIC2UV": {
         "message": "Mostrar texto",
         "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "/Mpu8A": {
+        "message": "Estirar cuadrícula para cubrir toda la página.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "x7WADS": {
+        "message": "Cuadrícula de Página Completa",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "XYIyWM": {
+        "message": "Debería aumentar las \"Columnas de Cuadrícula\" a al menos {cols} para hacer un mejor uso del espacio.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "gQAsym": {
+        "message": "Tenga en cuenta que otros widgets no se moverán al arrastrar.",
+        "description": "Widget grid: form label 3 for grid full width"
     }
 }
