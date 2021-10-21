@@ -1088,5 +1088,21 @@
     "sIC2UV": {
         "message": "Metin göster",
         "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "XYIyWM": {
+        "message": "Alanı en iyi şekilde kullanmak için \"Izgara Sütunları\"nı en az {cols} değerine çıkarın.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "gQAsym": {
+        "message": "Sürüklerken diğer araçlar yana çekilmez.",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "/Mpu8A": {
+        "message": "Izgarayı bütün sayfası kaplayacak şekilde uzat.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "x7WADS": {
+        "message": "Tam Sayfa Izgara",
+        "description": "Widget grid: form label for grid full width"
     }
 }
