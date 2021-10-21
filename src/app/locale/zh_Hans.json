@@ -147,7 +147,7 @@
         "description": "Form field hint (Image)"
     },
     "/4k9ry": {
-        "message": "紫外线指数<b>非常高</b>",
+        "message": "紫外线指数<b>甚高</b>",
         "description": "Very High UV risk"
     },
     "+TYXj6": {
@@ -321,7 +321,7 @@
         "description": "Settings tab"
     },
     "JN/uvd": {
-        "message": "紫外线水平<b>中度</b>",
+        "message": "紫外线指数<b>中</b>",
         "description": "Moderate UV risk"
     },
     "JihbEV": {
@@ -843,5 +843,266 @@
     "fz43UJ": {
         "message": "捐赠",
         "description": "Renewed Tab donation link"
+    },
+    "n0cZ3b": {
+        "message": "由{host}提供。",
+        "description": "Credit to a website"
+    },
+    "nF7bWj": {
+        "message": "国际标准化组织（{example}）",
+        "description": "Clock widget: date style type"
+    },
+    "nGSwtl": {
+        "message": "搜索",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "nHw5cV": {
+        "message": "点击项目以编辑它们。",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "nnaWVi": {
+        "message": "摄氏度",
+        "description": "Weather widget: Celsius unit"
+    },
+    "o2uuHu": {
+        "message": "12小时制"
+    },
+    "o9vGxx": {
+        "message": "在新标签页中打开",
+        "description": "Form field label"
+    },
+    "oBl48o": {
+        "message": "你确定要重置所有数据吗？",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "oDog89": {
+        "message": "一个用于笔记的可编辑的文本区域",
+        "description": "Notes widget description"
+    },
+    "oGS5TE": {
+        "message": "下午好，{name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "oJnbwn": {
+        "message": "姓名",
+        "description": "Greeting widget: name prompt"
+    },
+    "oRui+E": {
+        "message": "喜欢我们提供的Renewed Tab？可以考虑捐赠来帮助我们收回成本和支持我们今后的发展。"
+    },
+    "ofl4Ui": {
+        "message": "搜索",
+        "description": "Location form field: search"
+    },
+    "olBVPS": {
+        "message": "导出",
+        "description": "Import / export settings, export"
+    },
+    "or/+Da": {
+        "message": "样式",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "p7+m8N": {
+        "message": "允许访问热门网站",
+        "description": "Top Sites widget: permission request"
+    },
+    "p8GKKf": {
+        "message": "热门网站",
+        "description": "Top Sites Widget"
+    },
+    "pG7wIz": {
+        "message": "显示汇率，支持外汇货币和加密货币（比特币等）",
+        "description": "Currencies widget description"
+    },
+    "pHo6u+": {
+        "message": "订阅源中没有发现图像",
+        "description": "Web Comic widget: no images found error"
+    },
+    "pVrtrA": {
+        "message": "使用自定义图像",
+        "description": "Backgroud mode description"
+    },
+    "pqIuCa": {
+        "message": "显示当前天气",
+        "description": "Weather widget: form field label"
+    },
+    "pbEMNj": {
+        "message": "上一个",
+        "description": "Onboarding page: previous button"
+    },
+    "q4caWd": {
+        "message": "模糊半径",
+        "description": "Backgroud settings: form field label"
+    },
+    "q6/aVX": {
+        "message": "你可以用搜索小部件来过滤这个小部件。",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "qCsSqt": {
+        "message": "面板背景暗度",
+        "description": "Theme settings: form field label"
+    },
+    "qYVXqA": {
+        "message": "{mode}选项",
+        "description": "Background mode options"
+    },
+    "qoEZRi": {
+        "message": "Unsplash 集合",
+        "description": "Backgroud settings: form field label"
+    },
+    "qzlLb3": {
+        "message": "周日",
+        "description": "Short weekday name (Sunday)"
+    },
+    "rAuRqW": {
+        "message": "翻译由社区提供。"
+    },
+    "rYprNW": {
+        "message": "显示当前的天气信息",
+        "description": "Weather widget: form field label"
+    },
+    "rb3Zy8": {
+        "message": "筛选文章",
+        "description": "Feed widget: form field label"
+    },
+    "sIC2UV": {
+        "message": "显示文本",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "sPl3nI": {
+        "message": "标题",
+        "description": "Form field label"
+    },
+    "sYvWWw": {
+        "message": "可选的，图片的网址（建议使用18px）",
+        "description": "Links widget, form field hint (Icon)"
+    },
+    "sx01dA": {
+        "message": "链接，支持标题和图标",
+        "description": "Links widget description"
+    },
+    "uRYRJh": {
+        "message": "编辑{type}"
+    },
+    "ubO4zt": {
+        "message": "网络漫画",
+        "description": "Web Comic Widget"
+    },
+    "uv1bYR": {
+        "message": "周二",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "uzT59w": {
+        "message": "网格",
+        "description": "Preset: Grid"
+    },
+    "v9UIPJ": {
+        "message": "日出 - 日落",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "vlumg9": {
+        "message": "搜索小部件...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "wZq5vc": {
+        "message": "显示为图标",
+        "description": "Form field label"
+    },
+    "wogY8a": {
+        "message": "创建小部件"
+    },
+    "wr0l0L": {
+        "message": "来自网址链接的图像",
+        "description": "Backgroud mode description"
+    },
+    "wwQ6Va": {
+        "message": "选择位置",
+        "description": "Location field"
+    },
+    "x59fh0": {
+        "message": "太空飞行",
+        "description": "Space Flights Widget"
+    },
+    "x7WADS": {
+        "message": "全网页网格",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "translation_credits": {
+        "message": "由Ganache72翻译为简体中文",
+        "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+    },
+    "xR87uK": {
+        "message": "小部件之间的间距，单位是像素。",
+        "description": "Widget grid: form hint for grid spacing"
+    },
+    "xtOPHp": {
+        "message": "链接网址",
+        "description": "Form field label"
+    },
+    "xtl3ls": {
+        "message": "启用自定义图标",
+        "description": "Links widget: form field label"
+    },
+    "xvXMaZ": {
+        "message": "向您问好",
+        "description": "Greeting widget description"
+    },
+    "y8o0oA": {
+        "message": "当前和预测的天气",
+        "description": "Weather widget description"
+    },
+    "yT43pK": {
+        "message": "使用网站上的图标（网站图标）",
+        "description": "Form field label"
+    },
+    "yUJ5MA": {
+        "message": "目标",
+        "description": "Preset: goals"
+    },
+    "yfgoZf": {
+        "message": "Discord / Matrix 频道"
+    },
+    "ykNa5O": {
+        "message": "感谢Font-Awesome提供的图标，React提供的用户界面，以及WebPack提供的构建。"
+    },
+    "yvWbz6": {
+        "message": "下一个",
+        "description": "Onboarding page: next button"
+    },
+    "zEj0dg": {
+        "message": "以进度条的形式显示今年的进度",
+        "description": "Age widget description"
+    },
+    "zKofmb": {
+        "message": "集合编号。可以在地址栏里找到，例如：42576559",
+        "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    },
+    "zaQRTm": {
+        "message": "紫外线指数<b>极高</b>",
+        "description": "Extreme UV risk"
+    },
+    "zfsplE": {
+        "message": "不再显示",
+        "description": "Background credits vote"
+    },
+    "ziyAdj": {
+        "message": "导入",
+        "description": "Import / export settings, import"
+    },
+    "zo4ZQa": {
+        "message": "显示",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "zsdRww": {
+        "message": "用于主要的按钮和链接",
+        "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "qEk9AJ": {
+        "message": "更改较暗图像的亮度",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "vVnypL": {
+        "message": "显示一个带有分类的随机引用",
+        "description": "Quotes Widget description"
     }
 }
