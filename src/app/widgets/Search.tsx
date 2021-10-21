@@ -183,7 +183,8 @@ function Search(widget: WidgetProps<SearchProps>) {
 							enableGlobalSearch
 								? (e => globalSearch.setQuery(e.target.value))
 								: undefined}
-						type="text" name="q" ref={ref}
+						type="search" name="q" ref={ref}
+						autoComplete="off"
 						className="large invisible" />
 			</form>
 		</Panel>);
