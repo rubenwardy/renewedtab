@@ -342,5 +342,49 @@
     "KhM0zv": {
         "message": "引用来自于外部资源，Renewed Tab 未对此进行审查。",
         "description": "Daily Goal widget: edit modal hint"
+    },
+    "hCBQrY": {
+        "message": "体感温度 <b>{temp}°</b>"
+    },
+    "hUIQ7h": {
+        "message": "亮度",
+        "description": "Backgroud settings: form field label"
+    },
+    "tyq8NB": {
+        "message": "天气",
+        "description": "Weather Widget"
+    },
+    "wEQDC6": {
+        "message": "编辑"
+    },
+    "yY7Rve": {
+        "message": "隐藏",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "y1Z3or": {
+        "message": "语言"
+    },
+    "ywSKRt": {
+        "message": "自定义 HTML",
+        "description": "HTML widget description"
+    },
+    "z7UTSa": {
+        "message": "关于 Renewed Tab"
+    },
+    "WKiXhX": {
+        "message": "颜色",
+        "description": "Color background mode"
+    },
+    "YQhLKn": {
+        "message": "每小时",
+        "description": "Background expiry dropdown"
+    },
+    "adRrk3": {
+        "message": "重置所有",
+        "description": "Import / export settings, reset"
+    },
+    "d7dHsn": {
+        "message": "每 15 分钟",
+        "description": "Background expiry dropdown"
     }
 }
