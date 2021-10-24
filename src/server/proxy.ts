@@ -1,6 +1,7 @@
 import fetchCatch, { Request } from "./http";
 import { serverConfig, UA_PROXY } from ".";
 import { makeKeyCache } from "./cache";
+import UserError from "./UserError";
 
 const PROXY_ALLOWED_HOSTS: string[] = serverConfig.PROXY_ALLOWED_HOSTS ?? [
 	"feeds.bbci.co.uk",
@@ -20,7 +21,7 @@ function checkProxyURL(url: URL) {
 	const hostAllowed = PROXY_ALLOWED_HOSTS.some(other =>
 		url.hostname == other || url.hostname.endsWith("." + other));
 	if (!hostAllowed) {
-		throw new Error(`Accessing host ${url.hostname} is not allowed on the web version. ` +
+		throw new UserError(`Accessing host ${url.hostname} is not allowed on the web version. ` +
 			`For security reasons, the web version may only access pre-approved domains. ` +
 			`Consider using the Chrome/Firefox extension instead.`);
 	}

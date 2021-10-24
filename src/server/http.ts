@@ -1,4 +1,5 @@
 import fetch, { RequestInfo, RequestInit, Request, Response } from "node-fetch";
+import UserError from "./UserError";
 export { Request, Response } from "node-fetch";
 
 export default async function fetchCatch(url: RequestInfo, init?: RequestInit): Promise<Response> {
@@ -13,6 +14,6 @@ export default async function fetchCatch(url: RequestInfo, init?: RequestInit): 
 			host = new URL(request.url).host;
 		}
 
-		throw new Error(`Error whilst connecting to ${host}`);
+		throw new UserError(`Error whilst connecting to ${host}`);
 	}
 }

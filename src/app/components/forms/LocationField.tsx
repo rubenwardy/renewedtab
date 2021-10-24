@@ -117,6 +117,7 @@ function LocationModal(props: LocationModalProps) {
 		const position = await getGeoLocation();
 
 		setQuery({
+			key: "",
 			name: "",
 			latitude: position.coords.latitude,
 			longitude: position.coords.longitude,
