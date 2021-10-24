@@ -455,9 +455,6 @@
         "message": "Monedas",
         "description": "Currencies widget"
     },
-    "egigiF": {
-        "message": "Gracias a Unsplash, OpenStreetMap, OpenWeatherMap y RocketLaunch.Live por sus APIs."
-    },
     "ekW/+6": {
         "message": "Incapaz de conectarse a Internet"
     },
@@ -783,10 +780,6 @@
     },
     "pqIuCa": {
         "message": "Mostrar el tiempo actual",
-        "description": "Weather widget: form field label"
-    },
-    "rYprNW": {
-        "message": "Mostrar información meteorológica actual",
         "description": "Weather widget: form field label"
     },
     "zaQRTm": {

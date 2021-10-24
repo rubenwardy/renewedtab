@@ -819,9 +819,6 @@
         "message": "周三",
         "description": "Short weekday name (Wednesday)"
     },
-    "egigiF": {
-        "message": "感谢 Unsplash、OpenStreetMap、OpenWeatherMap 和 RocketLaunch.Live 提供的 API。"
-    },
     "ekIjqh": {
         "message": "允许访问所有网站"
     },
@@ -956,10 +953,6 @@
     },
     "rAuRqW": {
         "message": "翻译由社区提供。"
-    },
-    "rYprNW": {
-        "message": "显示当前的天气信息",
-        "description": "Weather widget: form field label"
     },
     "rb3Zy8": {
         "message": "筛选文章",

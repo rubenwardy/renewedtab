@@ -3,6 +3,10 @@
         "description": "Location form field: error",
         "message": "No locations found"
     },
+    "+PNw8j": {
+        "description": "Weather widget: form field hint (Display Options)",
+        "message": "Even if you hide some info, you can often still see it by hovering over days and hours"
+    },
     "+TYXj6": {
         "description": "SpaceFlights widget: today and time",
         "message": "Today, {time}"
@@ -122,6 +126,10 @@
     "4syC1B": {
         "message": "Help and Requests"
     },
+    "5640CU": {
+        "description": "Weather widget: form field label",
+        "message": "Current: Show precipitation"
+    },
     "5DCxT+": {
         "description": "Weather widget: form field label",
         "message": "Temperature Unit"
@@ -176,6 +184,10 @@
         "description": "SpaceFlights widget description",
         "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
     },
+    "AuSjzq": {
+        "description": "Weather widget: form field label",
+        "message": "Current: Show UV risk"
+    },
     "Ay1sfO": {
         "description": "Feed background mode: form field hint (Limit images)",
         "message": "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image"
@@ -183,6 +195,10 @@
     "B0kbsm": {
         "description": "Unsplash background mode",
         "message": "Feed"
+    },
+    "B1pyj1": {
+        "description": "Weather widget: form field label",
+        "message": "Current: Show feels like"
     },
     "BJYZgx": {
         "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
@@ -194,6 +210,10 @@
     "Bl74xq": {
         "description": "Button widget description",
         "message": "A link button"
+    },
+    "BnmONl": {
+        "description": "Weather widget: form field label",
+        "message": "Current: Show sunrise / sunset"
     },
     "CNpJaZ": {
         "description": "Preset: focus",
@@ -291,6 +311,10 @@
     "HPLtg4": {
         "description": "Currencies widget: error",
         "message": "Unknown currency ''{currency}''"
+    },
+    "HksGis": {
+        "description": "Weather widget: form field label",
+        "message": "Current: Show wind"
     },
     "I48yxw": {
         "description": "General settings: privacy",
@@ -408,6 +432,9 @@
         "description": "Feed background mode: form field label",
         "message": "Limit images"
     },
+    "PHwOzi": {
+        "message": "Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs."
+    },
     "PM6qZ7": {
         "message": "Show seconds"
     },
@@ -432,6 +459,10 @@
     },
     "QqE4JC": {
         "message": "Missing feed URL."
+    },
+    "R4cyIr": {
+        "description": "Weather widget: form field label",
+        "message": "Current: Show humidity"
     },
     "RCe+DS": {
         "message": "Drag and Drop Widgets"
@@ -681,12 +712,13 @@
         "description": "Form field label",
         "message": "Choose an image"
     },
+    "eKCjBm": {
+        "description": "Weather widget: change of precipitation (rain, etc)",
+        "message": "Precipitation (%)"
+    },
     "eXB4qM": {
         "description": "Short weekday name (Wednesday)",
         "message": "WED"
-    },
-    "egigiF": {
-        "message": "Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs."
     },
     "ekIjqh": {
         "message": "Grant permission to access all websites"
@@ -939,10 +971,6 @@
     },
     "rAuRqW": {
         "message": "Translations are provided by the community."
-    },
-    "rYprNW": {
-        "description": "Weather widget: form field label",
-        "message": "Show current weather information"
     },
     "rb3Zy8": {
         "description": "Feed widget: form field label",

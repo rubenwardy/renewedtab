@@ -57,9 +57,6 @@
     "cR7nCG": {
         "message": "Temayı varsayılana sıfırla"
     },
-    "egigiF": {
-        "message": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
-    },
     "ekIjqh": {
         "message": "Bütün internet sitelerine erişmek için izin verin"
     },
@@ -961,10 +958,6 @@
     },
     "pqIuCa": {
         "message": "Anlık hava durumu göster",
-        "description": "Weather widget: form field label"
-    },
-    "rYprNW": {
-        "message": "Anlık hava durumu bilgisi göster",
         "description": "Weather widget: form field label"
     },
     "zaQRTm": {

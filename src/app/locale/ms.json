@@ -359,9 +359,6 @@
         "message": "Pilih imej",
         "description": "Form field label"
     },
-    "egigiF": {
-        "message": "Terima kasih kepada Unsplash, OpenStreetMap, OpenWeatherMap, dan RocketLaunch.Live untuk API mereka."
-    },
     "ekIjqh": {
         "message": "Berikan kebenaran untuk mencapai semua laman sesawang"
     },
@@ -961,10 +958,6 @@
     },
     "pqIuCa": {
         "message": "Tunjuk cuaca semasa",
-        "description": "Weather widget: form field label"
-    },
-    "rYprNW": {
-        "message": "Tunjuk maklumat cuaca semasa",
         "description": "Weather widget: form field label"
     },
     "zaQRTm": {

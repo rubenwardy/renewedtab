@@ -263,9 +263,6 @@
         "message": "URL zu einem Atom oder RSS Feed",
         "description": "Form field hint (Feed URL)"
     },
-    "egigiF": {
-        "message": "Danke an Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live für ihre Anwendungsschnittstellen."
-    },
     "OQHLB5": {
         "message": "Farbe",
         "description": "Form field label"

@@ -65,13 +65,43 @@ const messages = defineMessages({
 		description: "Weather widget: display subform title",
 	},
 
+	displayHint: {
+		defaultMessage: "Even if you hide some info, you can often still see it by hovering over days and hours",
+		description: "Weather widget: form field hint (Display Options)",
+	},
+
 	showCurrent: {
 		defaultMessage: "Show current weather",
 		description: "Weather widget: form field label",
 	},
 
-	showDetails: {
-		defaultMessage: "Show current weather information",
+	showFeelsLike: {
+		defaultMessage: "Current: Show feels like",
+		description: "Weather widget: form field label",
+	},
+
+	showPrecipitation: {
+		defaultMessage: "Current: Show precipitation",
+		description: "Weather widget: form field label",
+	},
+
+	showHumidity: {
+		defaultMessage: "Current: Show humidity",
+		description: "Weather widget: form field label",
+	},
+
+	showWind: {
+		defaultMessage: "Current: Show wind",
+		description: "Weather widget: form field label",
+	},
+
+	showUV: {
+		defaultMessage: "Current: Show UV risk",
+		description: "Weather widget: form field label",
+	},
+
+	showSunriseSunset: {
+		defaultMessage: "Current: Show sunrise / sunset",
 		description: "Weather widget: form field label",
 	},
 
@@ -227,7 +257,7 @@ function Hour(props: WeatherHour) {
 }
 
 
-function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUnit }) {
+function CurrentDetails(props: { current: WeatherCurrent, display: WeatherDisplay, windSpeedUnit: SpeedUnit }) {
 	const uvRisk = (props.current.uvi != undefined && props.current.uvi > 0)
 		? getUVRisk(props.current.uvi) : undefined;
 	const speed = props.current.wind_speed != undefined && convertSpeed(props.current.wind_speed, props.windSpeedUnit);
@@ -242,25 +272,25 @@ function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUn
 	return (
 		<>
 			<div className="pair">
-				{props.current.precipitation != undefined && (
+				{props.display.showPrecipitation && props.current.precipitation != undefined && (
 					<p key="precipitation" title={precipitationTooltip}>
 						<i className="fas fa-umbrella mr-1" />
 						<b>{props.current.precipitation}%</b>
 					</p>)}
-				{props.current.humidity != undefined && (
+				{props.display.showHumidity && props.current.humidity != undefined && (
 					<p key="humidity" title={humidityTooltip}>
 						<i className="fas fa-tint mr-1" />
 						<b>{props.current.humidity}%</b>
 					</p>)}
 			</div>
 
-			{speed !== false && (
+			{props.display.showWind && speed !== false && (
 				<p key="wind" title={windTooltip}>
 					<i className="fas fa-wind mr-1" />
 					<b>{speed.toFixed(1)}</b>
 				</p>)}
 
-			{uvRisk !== undefined && (
+			{props.display.showUV && uvRisk !== undefined && (
 					<p key="uv">
 						<FormattedMessage {...uvRiskMessages[uvRisk]}
 							values={{
@@ -271,7 +301,7 @@ function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUn
 						}}/>
 					</p>)}
 
-			{(props.current.sunrise && props.current.sunset) && (
+			{(props.display.showSunriseSunset && props.current.sunrise && props.current.sunset) && (
 				<p key="sunrise" title={sunriseTooltip}>
 					<i className="fas fa-sun mr-1" />
 					<b>{props.current.sunrise} - {props.current.sunset}</b>
@@ -281,13 +311,13 @@ function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUn
 
 
 function Current(props: {
-		current: WeatherCurrent, showDetails: boolean, windSpeedUnit: SpeedUnit }) {
+		current: WeatherCurrent, display: WeatherDisplay, windSpeedUnit: SpeedUnit }) {
 	return (
 		<div className="row weather-current h-100">
 			<div className="col h-100">
 				<div className="row row-vertical text-left h-100">
 					<FitText className="col temp">{props.current.temp.toFixed(0)}°</FitText>
-					{props.showDetails && props.current.feels_like && (
+					{props.display.showFeelsLike && props.current.feels_like && (
 						<div className="col-auto">
 							<p className="mx-0">
 								<FormattedMessage
@@ -300,7 +330,7 @@ function Current(props: {
 						</div>)}
 				</div>
 			</div>
-			{props.showDetails && (
+			{hasDetails(props.display) && (
 				<div className="col-auto text-left details">
 					<CurrentDetails {...props} />
 				</div>)}
@@ -313,9 +343,20 @@ function Current(props: {
 
 interface WeatherDisplay {
 	showCurrent: boolean;
-	showDetails: boolean;
+	showFeelsLike: boolean;
+	showPrecipitation: boolean;
+	showHumidity: boolean;
+	showWind: boolean;
+	showUV: boolean;
+	showSunriseSunset: boolean;
 	showHourlyForecast: boolean;
 	showDailyForecast: boolean;
+}
+
+
+function hasDetails(display: WeatherDisplay) {
+	return display.showPrecipitation || display.showHumidity ||
+		display.showWind || display.showSunriseSunset;
 }
 
 interface WeatherProps {
@@ -327,7 +368,7 @@ interface WeatherProps {
 
 
 function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
-	const limitX = props.display.showDetails ? 300 : 241;
+	const limitX = hasDetails(props.display) ? 300 : 241;
 	let limitY = 0;
 	if (props.display.showHourlyForecast && props.display.showDailyForecast) {
 		limitY = 310;
@@ -367,7 +408,7 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 		(<Day key={day.dayOfWeek} day={day} windSpeedUnit={props.windSpeedUnit} />));
 
 	const sizeCode = getSizeCode(size, props);
-	const hideCredits = size && (size.x < 170 || size.y < 75) && !props.display.showDetails &&
+	const hideCredits = size && (size.x < 170 || size.y < 75) && !hasDetails(props.display) &&
 			!props.display.showHourlyForecast && !props.display.showDailyForecast;
 	const classes = mergeClasses("weather", `weather-${sizeCode}`,
 			hideCredits && "weather-by", "h-100");
@@ -391,7 +432,7 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 			{props.display.showCurrent && (
 				<div className="col">
 					<Current current={info.current}
-						showDetails={props.display.showDetails}
+						display={props.display}
 						windSpeedUnit={props.windSpeedUnit} />
 				</div>)}
 
@@ -406,7 +447,12 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 
 const displaySchema: Schema<WeatherDisplay> = {
 	showCurrent: type.boolean(messages.showCurrent),
-	showDetails: type.boolean(messages.showDetails),
+	showFeelsLike: type.boolean(messages.showFeelsLike),
+	showPrecipitation: type.boolean(messages.showPrecipitation),
+	showHumidity: type.boolean(messages.showHumidity),
+	showWind: type.boolean(messages.showWind),
+	showUV: type.boolean(messages.showUV),
+	showSunriseSunset: type.boolean(messages.showSunriseSunset),
 	showHourlyForecast: type.boolean(messages.showHourlyForecast),
 	showDailyForecast: type.boolean(messages.showDailyForecast),
 };
@@ -421,7 +467,12 @@ const initialProps: WeatherProps = {
 	windSpeedUnit: SpeedUnit.MetersPerSecond,
 	display: {
 		showCurrent: true,
-		showDetails: true,
+		showFeelsLike: true,
+		showPrecipitation: true,
+		showHumidity: true,
+		showWind: true,
+		showUV: true,
+		showSunriseSunset: false,
 		showHourlyForecast: false,
 		showDailyForecast: true,
 	},
@@ -438,11 +489,22 @@ const widget: WidgetType<WeatherProps> = {
 		location: type.location(schemaMessages.location),
 		unit: type.selectEnum(TemperatureUnit, temperatureUnitMessages, messages.temperatureUnit),
 		windSpeedUnit: type.selectEnum(SpeedUnit, speedUnitMessages, messages.windSpeedUnit),
-		display: type.subform(displaySchema, messages.display),
+		display: type.subform(displaySchema, messages.display, messages.displayHint),
 	},
 
 	async onLoaded(widget) {
 		widget.props = { ...deepCopy(initialProps), ...widget.props };
+
+		const showDetails = (widget.props.display as any).showDetails
+		if (showDetails != undefined) {
+			widget.props.display.showFeelsLike = showDetails;
+			widget.props.display.showPrecipitation = showDetails;
+			widget.props.display.showHumidity = showDetails;
+			widget.props.display.showWind = showDetails;
+			widget.props.display.showUV = showDetails;
+			widget.props.display.showSunriseSunset = false;
+			delete (widget.props.display as any).showDetails
+		}
 	}
 };
 export default widget;
