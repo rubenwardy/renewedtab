@@ -324,16 +324,15 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-	const numberOfColumns =  size ? size.x / 75 : 5;
+	const numberOfColumns = size ? size.x / 65 : 5;
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
-	const dailyStartOffset = props.display.showCurrent ? 1 : 0;
-	const daily = info.daily.slice(dailyStartOffset, dailyStartOffset + numberOfColumns).map(day =>
+	const daily = info.daily.slice(0, numberOfColumns).map(day =>
 			(<Day key={day.dayOfWeek} {...day} />));
 
 	const sizeCode = getSizeCode(size, props);
-	const hideCredits = size && (size.x < 50 || size.y < 75) && !props.display.showDetails &&
+	const hideCredits = size && (size.x < 170 || size.y < 75) && !props.display.showDetails &&
 			!props.display.showHourlyForecast && !props.display.showDailyForecast;
 	const classes = mergeClasses("weather", `weather-${sizeCode}`,
 			hideCredits && "weather-by", "h-100");
@@ -348,7 +347,9 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 							: (props.location.name)}
 					</div>
 					<div className="col-auto text-right weather-credits">
-						<a href="https://openweathermap.org">OpenWeatherMap</a>
+						<a href="https://www.accuweather.com">
+							<img src="accuweather.png" alt="AccuWeather" />
+						</a>
 					</div>
 				</div>)}
 

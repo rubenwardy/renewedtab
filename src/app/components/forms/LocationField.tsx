@@ -145,13 +145,6 @@ function LocationModal(props: LocationModalProps) {
 					<LocationLookup query={query} onSelect={handleSelect} />}
 				{typeof query == "string" && query != "" &&
 					<LocationQuery query={query} onSelect={handleSelect} />}
-				<p className="text-muted mt-4">
-					<FormattedMessage
-						{...miscMessages.poweredBy}
-						values={{
-							host: "OpenStreetMap.org"
-						}} />
-				</p>
 				<Button variant={ButtonVariant.Secondary} onClick={props.cancel}
 					label={miscMessages.cancel} />
 			</div>

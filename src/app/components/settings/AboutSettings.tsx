@@ -58,7 +58,7 @@ export default function AboutSettings() {
 			</p>
 			<p>
 				<FormattedMessage
-						defaultMessage="Thanks to Unsplash, OpenStreetMap, OpenWeatherMap, and RocketLaunch.Live for their APIs." />
+						defaultMessage="Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs." />
 				&nbsp;
 				<FormattedMessage
 						defaultMessage="Thanks to Font-Awesome for icons, React for UI, and WebPack for builds." />

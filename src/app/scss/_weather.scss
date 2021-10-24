@@ -34,7 +34,16 @@
 	}
 
 	.weather-credits a {
-		color:rgba(255, 255, 255, 0.25);
+		opacity: 0.3;
+		color:rgba(255, 255, 255, 1);
+
+		&:hover {
+			opacity: 0.6;
+		}
+
+		img {
+			max-height: 1em;
+		}
 	}
 
 	.weather-title a {
