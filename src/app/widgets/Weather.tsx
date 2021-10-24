@@ -45,6 +45,11 @@ const messages = defineMessages({
 		description: "Weather widget: humidity tooltip",
 	},
 
+	precipitationTooltip: {
+		defaultMessage: "Precipitation (%)",
+		description: "Weather widget: change of precipitation (rain, etc)",
+	},
+
 	windTooltip: {
 		defaultMessage: "Wind Speed ({unit})",
 		description: "Weather widget: wind speed tooltip",
@@ -170,17 +175,34 @@ function renderHour(time: string) {
 }
 
 
-function Day(props: WeatherDay) {
+function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit }) {
+	const intl = useIntl();
+	const sunriseTooltip = intl.formatMessage(messages.sunriseTooltip);
+	const precipitationTooltip = intl.formatMessage(messages.precipitationTooltip);
+
+
+	const speed = day.wind_speed != undefined && convertSpeed(day.wind_speed, windSpeedUnit);
+	const speedUnit = day.wind_speed != undefined && getSpeedUnitSuffix(windSpeedUnit);
+	const windTooltip = intl.formatMessage(messages.windTooltip, { unit: speedUnit });
+
+	const tooltip = [
+		day.sunrise &&
+			`${sunriseTooltip}: ${day.sunrise} - ${day.sunset}`,
+		day.precipitation &&
+			`${precipitationTooltip}: ${day.precipitation}%`,
+		speed &&
+			`${windTooltip}: ${speed.toFixed(2)} ${speedUnit}`,
+	]
 	return (
-		<div className="col-auto forecast">
+		<div className="col-auto forecast" title={tooltip.filter(x => x).join("\n")}>
 			<div>
-				<FormattedMessage {...dayNames[props.dayOfWeek]} />
+				<FormattedMessage {...dayNames[day.dayOfWeek]} />
 			</div>
 			<div className="row row-centered">
-				<div className="col-auto"><Icon icon={props.icon} /></div>
+				<div className="col-auto"><Icon icon={day.icon} /></div>
 				<div className="col temp">
-					<span className="high">{props.maxTemp.toFixed(0)}</span>&nbsp;
-					<span className="low">{props.minTemp.toFixed(0)}</span>
+					<span className="high">{day.maxTemp.toFixed(0)}</span>&nbsp;
+					<span className="low">{day.minTemp.toFixed(0)}</span>
 				</div>
 			</div>
 		</div>);
@@ -188,12 +210,18 @@ function Day(props: WeatherDay) {
 
 
 function Hour(props: WeatherHour) {
+	const intl = useIntl();
+	const precipitationTooltip = intl.formatMessage(messages.precipitationTooltip);
 	return (
 		<div className="col-auto forecast">
 			<div>{renderHour(props.time)}</div>
 			<div className="row row-centered">
 				<div className="col-auto"><Icon icon={props.icon} /></div>
-				<div className="col temp">{props.temp.toFixed(0)}°</div>
+				<div className="col temp">{props.temp.toFixed(0)}</div>
+				{(props.precipitation && props.precipitation > 2) ?  (
+					<div className="col rain ml-1" title={precipitationTooltip}>
+						{props.precipitation.toFixed(0)}%
+					</div>) : null}
 			</div>
 		</div>);
 }
@@ -207,16 +235,17 @@ function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUn
 
 	const intl = useIntl();
 	const windTooltip = intl.formatMessage(messages.windTooltip, { unit: speedUnit });
+	const precipitationTooltip = intl.formatMessage(messages.precipitationTooltip);
 	const humidityTooltip = intl.formatMessage(messages.humidityTooltip);
 	const sunriseTooltip = intl.formatMessage(messages.sunriseTooltip);
 
 	return (
 		<>
 			<div className="pair">
-				{speed !== false && (
-					<p key="wind" title={windTooltip}>
-						<i className="fas fa-wind mr-1" />
-						<b>{speed.toFixed(1)}</b>
+				{props.current.precipitation != undefined && (
+					<p key="precipitation" title={precipitationTooltip}>
+						<i className="fas fa-umbrella mr-1" />
+						<b>{props.current.precipitation}%</b>
 					</p>)}
 				{props.current.humidity != undefined && (
 					<p key="humidity" title={humidityTooltip}>
@@ -225,16 +254,22 @@ function CurrentDetails(props: { current: WeatherCurrent, windSpeedUnit: SpeedUn
 					</p>)}
 			</div>
 
-			{uvRisk !== undefined && (
-				<p key="uv">
-					<FormattedMessage {...uvRiskMessages[uvRisk]}
-						values={{
-							b: (chunk: any) => (
-								<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
-									{chunk}
-								</b>),
-					}}/>
+			{speed !== false && (
+				<p key="wind" title={windTooltip}>
+					<i className="fas fa-wind mr-1" />
+					<b>{speed.toFixed(1)}</b>
 				</p>)}
+
+			{uvRisk !== undefined && (
+					<p key="uv">
+						<FormattedMessage {...uvRiskMessages[uvRisk]}
+							values={{
+								b: (chunk: any) => (
+									<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
+										{chunk}
+									</b>),
+						}}/>
+					</p>)}
 
 			{(props.current.sunrise && props.current.sunset) && (
 				<p key="sunrise" title={sunriseTooltip}>
@@ -324,12 +359,12 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-	const numberOfColumns = size ? size.x / 65 : 5;
+	const numberOfColumns = size ? size.x / 75 : 5;
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
 	const daily = info.daily.slice(0, numberOfColumns).map(day =>
-			(<Day key={day.dayOfWeek} {...day} />));
+		(<Day key={day.dayOfWeek} day={day} windSpeedUnit={props.windSpeedUnit} />));
 
 	const sizeCode = getSizeCode(size, props);
 	const hideCredits = size && (size.x < 170 || size.y < 75) && !props.display.showDetails &&

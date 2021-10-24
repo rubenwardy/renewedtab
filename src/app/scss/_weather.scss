@@ -37,12 +37,17 @@
 		opacity: 0.3;
 		color:rgba(255, 255, 255, 1);
 
-		&:hover {
-			opacity: 0.6;
-		}
-
 		img {
 			max-height: 1em;
+			filter: GRAYSCALE();
+		}
+
+		&:hover {
+			opacity: 0.6;
+
+			img {
+				filter: none;
+			}
 		}
 	}
 
@@ -131,13 +136,17 @@
 		font-size: 80%;
 		color: rgba(255, 255, 255, 0.5);
 
-		.temp {
+		.col {
 			font-size: 110%;
 			color: #f0f0f0;
 
 			.low {
 				color: rgba(255, 255, 255, 0.5);
 			}
+		}
+
+		.rain {
+			color: rgba(165, 210, 255, 0.5);
 		}
 
 		.icon {

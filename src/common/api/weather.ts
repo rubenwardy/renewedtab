@@ -7,11 +7,12 @@ export interface WeatherCurrent {
 	feels_like?: number;
 	pressure?: number;
 	humidity?: number;
-	precipitationProbability?: number;
+	precipitation?: number;
 	sunrise?: string;
 	sunset?: string;
 	uvi?: number;
 	wind_speed?: number;
+	link?: string;
 }
 
 export interface WeatherDay {
@@ -21,12 +22,14 @@ export interface WeatherDay {
 	maxTemp: number;
 	sunrise: string;
 	sunset: string;
+	precipitation?: number;
+	wind_speed?: number;
 }
 
 export interface WeatherHour {
 	time: string;
 	icon?: string; // <deprecated
-	precipitationProbability?: number;
+	precipitation?: number;
 	temp: number;
 }
 

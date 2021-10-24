@@ -88,6 +88,7 @@ export interface AccuCurrentAPI {
 	Wind: {
 		Speed: { Metric: AccuValue };
 	};
+	Link: string;
 }
 
 

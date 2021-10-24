@@ -1,10 +1,10 @@
-import { WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo } from "common/api/weather";
+import { WeatherDay, WeatherHour, WeatherInfo } from "common/api/weather";
 import fetchCatch, { Request } from "../http";
 import { ACCUWEATHER_API_KEY, UA_DEFAULT } from "..";
 import { notifyUpstreamRequest } from "../metrics";
 import { makeKeyCache } from "../cache";
 import { getLocationFromCoords } from "./geocode";
-import { handleAccuError, AccuCurrentAPI, AccuHourlyAPI, AccuDailyAPI } from "./accu";
+import { handleAccuError, AccuCurrentAPI, AccuHourlyAPI, AccuDailyAPI, AccuDay } from "./accu";
 import UserError from "server/UserError";
 
 
@@ -65,7 +65,6 @@ function indexOfOrUndefined(str: string, searchString: string, position?: number
 
 
 /**
- *
  * @param date A date like "2021-10-23T07:00:00+09:00"
  * @returns
  */
@@ -77,7 +76,17 @@ function dateToLocaltime(date: string) {
 }
 
 
-async function fetchCurrentForecast(key: string): Promise<WeatherCurrent> {
+/**
+ * @param date A date like "2021-10-23T07:00:00+09:00"
+ * @returns
+ */
+function dateToDayOfWeek(date: string) {
+	const dateOnly = date.substring(0, date.indexOf("T"));
+	return new Date(dateOnly).getUTCDay();
+}
+
+
+async function fetchCurrentForecast(key: string): Promise<AccuCurrentAPI> {
 	if (!ACCUWEATHER_API_KEY) {
 		throw new UserError("Weather API disabled as the server owner hasn't configured ACCUWEATHER_API_KEY.")
 	}
@@ -102,19 +111,7 @@ async function fetchCurrentForecast(key: string): Promise<WeatherCurrent> {
 	}
 
 	const array = await response.json() as AccuCurrentAPI[];
-	const json = array[0];
-	return {
-		icon: getLegacyIcon(json.WeatherIcon, undefined),
-		temp: json.Temperature.Metric.Value,
-		feels_like: json.RealFeelTemperature.Metric.Value,
-		pressure: json.Pressure.Metric.Value,
-		humidity: json.RelativeHumidity,
-		sunrise: undefined,
-		sunset: undefined,
-		uvi: json.UVIndex,
-		wind_speed: json.Wind.Speed.Metric.Value,
-		precipitationProbability: json.PrecipitationProbability ?? 13,
-	};
+	return array[0];
 }
 
 
@@ -146,7 +143,7 @@ async function fetchHourlyForecast(key: string): Promise<WeatherHour[]> {
 		time: dateToLocaltime(hour.DateTime),
 		temp: hour.Temperature.Value,
 		icon: getLegacyIcon(hour.WeatherIcon, hour.IconPhrase),
-		precipitationProbability: hour.PrecipitationProbability,
+		precipitation: hour.PrecipitationProbability,
 	}));
 }
 
@@ -178,12 +175,14 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 
 	const json = await response.json() as AccuDailyAPI;
 	return json.DailyForecasts.map(day => ({
-		dayOfWeek: new Date(day.Date).getUTCDay(),
+		dayOfWeek: dateToDayOfWeek(day.Date),
 		icon: getLegacyIcon(day.Day.Icon, day.Day.IconPhrase),
 		minTemp: day.Temperature.Minimum.Value,
 		maxTemp: day.Temperature.Maximum.Value,
 		sunrise: dateToLocaltime(day.Sun.Rise),
 		sunset: dateToLocaltime(day.Sun.Set),
+		precipitation: day.Day.PrecipitationProbability,
+		wind_speed: Math.round(100 * day.Day.Wind.Speed.Value / 3.6) / 100,
 	}));
 }
 
@@ -195,10 +194,28 @@ async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
 		fetchDailyForecast(key),
 	]);
 
-	current.sunrise = daily[0]?.sunrise;
-	current.sunset = daily[0]?.sunset;
+	const estimatedPercipitation = hourly.slice(0, 4)
+		.reduce((acc, x) => Math.max(acc, x.precipitation ?? 0), 0);
 
-	return { current, hourly, daily };
+	return {
+		current: {
+			icon: getLegacyIcon(current.WeatherIcon, undefined),
+			temp: current.Temperature.Metric.Value,
+			feels_like: current.RealFeelTemperature.Metric.Value,
+			pressure: current.Pressure.Metric.Value,
+			humidity: current.RelativeHumidity,
+			sunrise: daily[0]?.sunrise,
+			sunset: daily[0]?.sunset,
+			uvi: current.UVIndex,
+			precipitation: current.PrecipitationProbability ?? estimatedPercipitation,
+			wind_speed: Math.round(100 * current.Wind.Speed.Metric.Value / 3.6) / 100,
+		},
+
+		hourly,
+		daily,
+
+		url: current.Link.replace("http://", "https://"),
+	};
 }
 
 export const getWeatherInfo: (key: string) => Promise<WeatherInfo>
