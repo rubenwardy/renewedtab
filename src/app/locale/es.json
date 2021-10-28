@@ -752,7 +752,7 @@
         "description": "High UV risk"
     },
     "W3zKGr": {
-        "message": "Kilómetros por hora (kph)",
+        "message": "Kilómetros por hora (km/h)",
         "description": "Weather widget: Speed unit"
     },
     "YQhLKn": {
@@ -771,7 +771,7 @@
         "description": "Weather widget: Speed unit"
     },
     "mL3MOs": {
-        "message": "Millas por hora (mph)",
+        "message": "Millas por hora (mi/h)",
         "description": "Weather widget: Speed unit"
     },
     "mw6Uh+": {
@@ -1017,7 +1017,7 @@
         "description": "HTML widget: form field hint (HTML)"
     },
     "ZRWjTk": {
-        "message": "Utilice el buscador predeterminado del navegador",
+        "message": "Utilizar el buscador predeterminado del navegador",
         "description": "Search widget: form field label"
     },
     "yT43pK": {
@@ -1097,5 +1097,40 @@
     "gQAsym": {
         "message": "Tenga en cuenta que otros widgets no se moverán al arrastrar.",
         "description": "Widget grid: form label 3 for grid full width"
+    },
+    "+PNw8j": {
+        "message": "Incluso si oculta algo de información, generalmente aún puede verla al mantener el cursor en días y horas",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "5640CU": {
+        "message": "Actual: Mostrar precipitación",
+        "description": "Weather widget: form field label"
+    },
+    "AuSjzq": {
+        "message": "Actual: Mostrar riesgo UV",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Actual: Mostrar sensación térmica",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Actual: Mostrar salida / puesta de sol",
+        "description": "Weather widget: form field label"
+    },
+    "HksGis": {
+        "message": "Actual: Mostrar viento",
+        "description": "Weather widget: form field label"
+    },
+    "PHwOzi": {
+        "message": "Gracias a Unsplash, AccuWeather, y RocketLaunch.Live por sus APIs."
+    },
+    "R4cyIr": {
+        "message": "Actual: Mostrar humedad",
+        "description": "Weather widget: form field label"
+    },
+    "eKCjBm": {
+        "message": "Precipitación (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
     }
 }
