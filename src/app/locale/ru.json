@@ -74,5 +74,57 @@
     "/4k9ry": {
         "message": "<b>Очень</b> Высокий",
         "description": "Very High UV risk"
+    },
+    "3Nw7b0": {
+        "message": "Название поисковой системы",
+        "description": "Search widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "Пользовательские CSS",
+        "description": "Theme settings: form field label"
+    },
+    "B0kbsm": {
+        "message": "Кормить",
+        "description": "Unsplash background mode"
+    },
+    "BiPNnl": {
+        "message": "Единица скорости ветра",
+        "description": "Weather widget: form field label"
+    },
+    "+GMx80": {
+        "message": "Ничего не найдено",
+        "description": "Location form field: error"
+    },
+    "8HmiSe": {
+        "message": "Укажите источник",
+        "description": "Feed widget: no sources error message"
+    },
+    "8xVVb5": {
+        "message": "Основной цвет",
+        "description": "Theme settings: form field label"
+    },
+    "Ack5ID": {
+        "message": "Никаких результатов",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "CNpJaZ": {
+        "message": "Фокус",
+        "description": "Preset: focus"
+    },
+    "5640CU": {
+        "message": "Текущее: Показать осадки",
+        "description": "Weather widget: form field label"
+    },
+    "5DCxT+": {
+        "message": "Единица измерения температуры",
+        "description": "Weather widget: form field label"
+    },
+    "6MDM6D": {
+        "message": "Цитаты",
+        "description": "Quotes Widget"
+    },
+    "7OH6mh": {
+        "message": "Изображение",
+        "description": "Image Widget"
     }
 }
