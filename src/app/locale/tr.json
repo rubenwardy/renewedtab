@@ -1097,5 +1097,40 @@
     "x7WADS": {
         "message": "Tam Sayfa Izgara",
         "description": "Widget grid: form label for grid full width"
+    },
+    "+PNw8j": {
+        "message": "Bazı bilgileri gizleseniz bile, günlerin ve saatlerin üzerinde durarak görebilirsiniz",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "AuSjzq": {
+        "message": "Anlık: UV riskini göster",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Anlık: Hissedilen sıcaklığı göster",
+        "description": "Weather widget: form field label"
+    },
+    "eKCjBm": {
+        "message": "Yağış (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "R4cyIr": {
+        "message": "Anlık: Nem durumunu göster",
+        "description": "Weather widget: form field label"
+    },
+    "5640CU": {
+        "message": "Anlık: Yağış durumunu göster",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Anlık: Gündoğumu / günbatımını göster",
+        "description": "Weather widget: form field label"
+    },
+    "HksGis": {
+        "message": "Anlık: Rüzgar durumunu göster",
+        "description": "Weather widget: form field label"
+    },
+    "PHwOzi": {
+        "message": "Unsplash, AccuWeather ve RocketLaunch.Live'a APIları için teşekkür ederiz."
     }
 }
