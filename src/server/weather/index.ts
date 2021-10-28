@@ -4,7 +4,7 @@ import { ACCUWEATHER_API_KEY, UA_DEFAULT } from "..";
 import { notifyUpstreamRequest } from "../metrics";
 import { makeKeyCache } from "../cache";
 import { getLocationFromCoords } from "./geocode";
-import { handleAccuError, AccuCurrentAPI, AccuHourlyAPI, AccuDailyAPI, AccuDay } from "./accu";
+import { handleAccuError, AccuCurrentAPI, AccuHourlyAPI, AccuDailyAPI } from "./accu";
 import UserError from "server/UserError";
 
 
@@ -228,5 +228,5 @@ async function fetchWeatherInfoByCoords(lat: number, long: number): Promise<Weat
 }
 
 export const getWeatherInfoByCoords: (lat: number, long: number) => Promise<WeatherInfo>
-	= makeKeyCache(fetchWeatherInfoByCoords, 2 * 60,
+	= makeKeyCache(fetchWeatherInfoByCoords, 1 * 60,
 		(lat, long) => `${lat.toFixed(3)},${long.toFixed(3)}`)

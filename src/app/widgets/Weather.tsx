@@ -210,7 +210,6 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 	const sunriseTooltip = intl.formatMessage(messages.sunriseTooltip);
 	const precipitationTooltip = intl.formatMessage(messages.precipitationTooltip);
 
-
 	const speed = day.wind_speed != undefined && convertSpeed(day.wind_speed, windSpeedUnit);
 	const speedUnit = day.wind_speed != undefined && getSpeedUnitSuffix(windSpeedUnit);
 	const windTooltip = intl.formatMessage(messages.windTooltip, { unit: speedUnit });
@@ -222,7 +221,8 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 			`${precipitationTooltip}: ${day.precipitation}%`,
 		speed &&
 			`${windTooltip}: ${speed.toFixed(2)} ${speedUnit}`,
-	]
+	];
+
 	return (
 		<div className="col-auto forecast" title={tooltip.filter(x => x).join("\n")}>
 			<div>
