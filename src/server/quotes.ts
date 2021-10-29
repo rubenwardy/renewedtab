@@ -3,6 +3,7 @@ import { UA_DEFAULT } from "server";
 import { makeKeyCache } from "./cache";
 import fetchCatch, { Request } from "./http";
 import { notifyUpstreamRequest } from "./metrics";
+import UserError from "./UserError";
 
 
 export async function getQuoteCategories(): Promise<QuoteCategory[]> {
@@ -63,9 +64,9 @@ async function fetchQuotes(category: string): Promise<Quote[]> {
 	const quotes = json?.contents?.quotes;
 	if (!response.ok || !quotes) {
 		if (json.error && json.error.message) {
-			throw new Error(json.error.message)
+			throw new UserError(json.error.message)
 		} else {
-			throw new Error("Getting quotes");
+			throw new UserError("Unable to get quotes");
 		}
 	}
 

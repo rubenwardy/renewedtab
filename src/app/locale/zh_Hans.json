@@ -35,7 +35,7 @@
         "description": "Feed widget description"
     },
     "FHzdXg": {
-        "message": "以下到设置是<b>实验性的</b>；这意味着你在改变它们时可能会遇到 bug 和怪异的情况，并且更新可能会破坏你的主题。",
+        "message": "以下的设置是<b>实验性的</b>；这意味着你在更改它们时可能会遇到 bug 和怪异的情况，一些更新也可能会破坏你的主题。",
         "description": "Theme settings"
     },
     "GXkv/F": {
@@ -106,7 +106,7 @@
         "description": "The name of the current language, to be used in the settings dialog"
     },
     "2efE5y": {
-        "message": "问候",
+        "message": "问候语",
         "description": "Greeting Widget"
     },
     "2vJWTd": {
@@ -174,7 +174,7 @@
         "description": "Theme settings: form field label"
     },
     "6MDM6D": {
-        "message": "引用",
+        "message": "引用名言",
         "description": "Quotes Widget"
     },
     "6pdO6i": {
@@ -340,7 +340,7 @@
         "description": "Age widget: form field label"
     },
     "KhM0zv": {
-        "message": "引用来自于外部资源，Renewed Tab 未对此进行审查。",
+        "message": "引用的内容来自于外部资源，Renewed Tab 未对此进行审查。",
         "description": "Daily Goal widget: edit modal hint"
     },
     "hCBQrY": {
@@ -420,7 +420,7 @@
         "description": "Feed widget: form field hint (Filters)"
     },
     "TZknEV": {
-        "message": "请小心你在这里粘贴的内容。攻击者可能会让你在这里粘贴代码，窃取扩展程序可以访问的东西——例如浏览器历史和热门网站。",
+        "message": "请小心你在这里粘贴的内容。攻击者可能会让你在这里粘贴代码，窃取扩展程序可以访问的东西——例如浏览器历史和最常访问网站。",
         "description": "HTML widget: form field hint (HTML)"
     },
     "VkW6D1": {
@@ -447,7 +447,7 @@
         "message": "<b>{name}</b>在{latitude}由{longitude}"
     },
     "KyDwm3": {
-        "message": "显示热门网站",
+        "message": "显示最常访问的网站",
         "description": "Top Sites widget: description"
     },
     "MN3prI": {
@@ -501,11 +501,11 @@
         "description": "Backgroud mode description"
     },
     "RhyKzC": {
-        "message": "仔细挑选并展览的",
+        "message": "精选",
         "description": "Curated background mode"
     },
     "S3njcM": {
-        "message": "框架",
+        "message": "IFrame 嵌入网页",
         "description": "IFrame Widget"
     },
     "S6nfAm": {
@@ -574,7 +574,7 @@
         "description": "Age widget"
     },
     "WZjKFf": {
-        "message": "警告：这可能包含个人数据，如果有任何数据被输入到小部件的设置中。"
+        "message": "警告：如果您在小部件的设置中保存了个人数据，在这导出的配置文件也会包含您的个人数据。"
     },
     "gSjZfg": {
         "message": "链接",
@@ -737,7 +737,7 @@
         "message": "图像：{filename}"
     },
     "Z79HMN": {
-        "message": "随机选定的背景",
+        "message": "随机的精选背景图片",
         "description": "Backgroud mode description"
     },
     "ZRWjTk": {
@@ -818,9 +818,6 @@
     "eXB4qM": {
         "message": "周三",
         "description": "Short weekday name (Wednesday)"
-    },
-    "egigiF": {
-        "message": "感谢 Unsplash、OpenStreetMap、OpenWeatherMap 和 RocketLaunch.Live 提供的 API。"
     },
     "ekIjqh": {
         "message": "允许访问所有网站"
@@ -903,11 +900,11 @@
         "description": "Subheading for per-widget styling properties"
     },
     "p7+m8N": {
-        "message": "允许访问热门网站",
+        "message": "允许获取你最常访问的网站",
         "description": "Top Sites widget: permission request"
     },
     "p8GKKf": {
-        "message": "热门网站",
+        "message": "最常访问的网站",
         "description": "Top Sites Widget"
     },
     "pG7wIz": {
@@ -956,10 +953,6 @@
     },
     "rAuRqW": {
         "message": "翻译由社区提供。"
-    },
-    "rYprNW": {
-        "message": "显示当前的天气信息",
-        "description": "Weather widget: form field label"
     },
     "rb3Zy8": {
         "message": "筛选文章",
@@ -1044,7 +1037,7 @@
         "description": "Links widget: form field label"
     },
     "xvXMaZ": {
-        "message": "向您问好",
+        "message": "向你展示问候语",
         "description": "Greeting widget description"
     },
     "y8o0oA": {
@@ -1102,7 +1095,7 @@
         "description": "Backgroud settings: form field label (Brightness: Dark)"
     },
     "vVnypL": {
-        "message": "显示一个带有分类的随机引用",
+        "message": "随机显示一个带有分类的名言",
         "description": "Quotes Widget description"
     }
 }

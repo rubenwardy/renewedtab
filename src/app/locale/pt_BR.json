@@ -462,9 +462,6 @@
         "message": "Escolha uma Imagem",
         "description": "Form field label"
     },
-    "egigiF": {
-        "message": "Agradecemos a Unsplash, OpenStreetMap, OpenWeatherMap e RocketLaunch.Live por suas APIs."
-    },
     "ekIjqh": {
         "message": "Conceda permissão para acessar todos os sites"
     },
@@ -955,10 +952,6 @@
     "d7dHsn": {
         "message": "A cada 15 minutos",
         "description": "Background expiry dropdown"
-    },
-    "rYprNW": {
-        "message": "Mostrar informações meteorológicas atuais",
-        "description": "Weather widget: form field label"
     },
     "pqIuCa": {
         "message": "Mostrar clima atual",

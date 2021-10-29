@@ -2,6 +2,7 @@ import { BackgroundInfo } from "common/api/backgrounds";
 import fetchCatch, { Request } from "../http";
 import { serverConfig, UA_DEFAULT } from "..";
 import { notifyUpstreamRequest } from "server/metrics";
+import UserError from "server/UserError";
 
 const UNSPLASH_ACCESS_KEY =
 	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;
@@ -17,7 +18,7 @@ interface UnsplashImage {
 
 export default async function getImageFromUnsplash(collection: string): Promise<BackgroundInfo> {
 	if (UNSPLASH_ACCESS_KEY == "") {
-		throw new Error("Missing unsplash key")
+		throw new UserError("Missing unsplash key");
 	}
 
 	const url = new URL("https://api.unsplash.com/photos/random");
@@ -36,7 +37,7 @@ export default async function getImageFromUnsplash(collection: string): Promise<
 
 	const text = await response.text();
 	if (text.startsWith("Rate Limit")) {
-		throw new Error("Unsplash rate limit exceeded");
+		throw new UserError("Unsplash rate limit exceeded");
 	}
 
 	const image : UnsplashImage = JSON.parse(text);

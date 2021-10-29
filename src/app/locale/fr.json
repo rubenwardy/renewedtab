@@ -402,9 +402,6 @@
         "message": "Choisissez une image",
         "description": "Form field label"
     },
-    "egigiF": {
-        "message": "Merci à Unsplash, OpenStreetMap, OpenWeatherMap et RocketLaunch.Live pour leurs API."
-    },
     "ekIjqh": {
         "message": "Accorder l'autorisation d'accéder à tous les sites Web"
     },
@@ -835,10 +832,6 @@
     "translation_credits": {
         "message": "Traduction en français de lanhild, EricPorlier et AirSThib",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
-    },
-    "rYprNW": {
-        "message": "Montrer les informations météo actuelles",
-        "description": "Weather widget: form field label"
     },
     "kAEQyV": {
         "message": "OK"

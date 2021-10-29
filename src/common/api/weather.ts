@@ -1,36 +1,41 @@
 import { enumToValue } from "app/utils/enum";
 
 export interface WeatherCurrent {
-	icon?: string;
+	icon?: string; // <deprecated
+
 	temp: number;
 	feels_like?: number;
 	pressure?: number;
 	humidity?: number;
+	precipitation?: number;
 	sunrise?: string;
 	sunset?: string;
 	uvi?: number;
 	wind_speed?: number;
+	link?: string;
 }
 
 export interface WeatherDay {
 	dayOfWeek: number;
-	icon?: string,
+	icon?: string, // <deprecated
 	minTemp: number;
 	maxTemp: number;
 	sunrise: string;
 	sunset: string;
+	precipitation?: number;
+	wind_speed?: number;
 }
 
 export interface WeatherHour {
 	time: string;
-	icon?: string;
+	icon?: string; // <deprecated
+	precipitation?: number;
 	temp: number;
 }
 
 export interface WeatherInfo {
 	url?: string;
 
-	timezone_offset: number;
 	current: WeatherCurrent;
 	hourly: WeatherHour[];
 	daily: WeatherDay[];
@@ -51,6 +56,7 @@ export enum SpeedUnit {
 
 export interface Location {
 	name: string;
+	key: string;
 	latitude: number;
 	longitude: number;
 }

@@ -111,9 +111,6 @@
     "cR7nCG": {
         "message": "Reimposta il tema di base"
     },
-    "egigiF": {
-        "message": "Si ringraziano Unsplash, OpenStreetMap, OpenWeatherMap e RocketLaunch.Live per le loro API."
-    },
     "LfHpBk": {
         "message": "Dimensione Carattere",
         "description": "Theme settings: form field label"
@@ -484,7 +481,7 @@
         "description": "Age widget description"
     },
     "ykNa5O": {
-        "message": "Si ringrazia Font-Awesome per le icone, React per l'interfaccia, e WebPack per l'impacchettatura."
+        "message": "Si ringrazia Font-Awesome per le icone, React per l'interfaccia, e WebPack per l'impacchettamento."
     },
     "zKofmb": {
         "message": "ID collezione. Situato nell'URL, per esempio: 42576559",
@@ -869,7 +866,7 @@
         "description": "Greeting widget: greeting, from 4pm to 9pm"
     },
     "2AUlDo": {
-        "message": "Buonasera, {name}",
+        "message": "Sogni d'oro, {name}",
         "description": "Greeting widget: greeting, from 9pm to midnight"
     },
     "FqCn+F": {
@@ -919,5 +916,221 @@
     "/4k9ry": {
         "message": "Rischio raggi UV <b>Molto alto</b>",
         "description": "Very High UV risk"
+    },
+    "oRui+E": {
+        "message": "Ti trovi bene con Renewed Tab? Prendi in considerazione una donazione per aiutarmi a coprire i costi e supportarne lo sviluppo."
+    },
+    "Go7At+": {
+        "message": "SAB",
+        "description": "Short weekday name (Saturday)"
+    },
+    "Vckd1G": {
+        "message": "LUN",
+        "description": "Short weekday name (Monday)"
+    },
+    "YS3jnS": {
+        "message": "VEN",
+        "description": "Short weekday name (Friday)"
+    },
+    "eXB4qM": {
+        "message": "MER",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "frEJEM": {
+        "message": "GIO",
+        "description": "Short weekday name (Thursday)"
+    },
+    "qzlLb3": {
+        "message": "DOM",
+        "description": "Short weekday name (Sunday)"
+    },
+    "uv1bYR": {
+        "message": "MAR",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "+PNw8j": {
+        "message": "Anche se nascondi alcune informazioni, puoi ancora probabilmente vederle passando sopra i giorni e le ore",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "PHwOzi": {
+        "message": "Si ringraziano Unsplash, AccuWeather e RocketLaunch.Live per le loro API."
+    },
+    "XYIyWM": {
+        "message": "Dovresti incrementare \"Colonne Griglia\" ad almeno {cols} per sfruttare al meglio lo spazio.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "gQAsym": {
+        "message": "Tieni presente che gli altri widget non verranno spostati al trascinare.",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "nHw5cV": {
+        "message": "Clicca sugli oggetti per modificarli.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "Ay1sfO": {
+        "message": "Gestisce tra quante delle immagini più recenti dovrà scegliere. Impostando questo a 1 sceglierà sempre l'immagine più recente",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "TS11GJ": {
+        "message": "Immagine casuale da un feed Atom o RSS",
+        "description": "Backgroud mode description"
+    },
+    "pqIuCa": {
+        "message": "Mostra il meteo attuale",
+        "description": "Weather widget: form field label"
+    },
+    "v9UIPJ": {
+        "message": "Alba - Tramonto",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "KdIFGg": {
+        "message": "'{query}' mancante nell'URL immesso. Es: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "hWimZf": {
+        "message": "Abilita la ricerca tra i widget",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "q6/aVX": {
+        "message": "Puoi filtrare questo widget usandone uno di tipo Cerca.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "M0PwXU": {
+        "message": "Velocità Vento ({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "PBMGxw": {
+        "message": "Limita immagini",
+        "description": "Feed background mode: form field label"
+    },
+    "S6nfAm": {
+        "message": "Umidità (%)",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "HPLtg4": {
+        "message": "Valuta sconosciuta \"{currency}\"",
+        "description": "Currencies widget: error"
+    },
+    "d7dHsn": {
+        "message": "Ogni 15 minuti",
+        "description": "Background expiry dropdown"
+    },
+    "ckvzIb": {
+        "message": "<b>Bassi</b> UV",
+        "description": "Low UV risk"
+    },
+    "BiPNnl": {
+        "message": "Unità di Velocità del Vento",
+        "description": "Weather widget: form field label"
+    },
+    "HEvlTB": {
+        "message": "Opzioni di visualizzazione",
+        "description": "Weather widget: display subform title"
+    },
+    "JN/uvd": {
+        "message": "<b>Moderati</b> UV",
+        "description": "Moderate UV risk"
+    },
+    "F1A/8i": {
+        "message": "Fonti",
+        "description": "Feed widget: form field label"
+    },
+    "M6lR5V": {
+        "message": "Numero di colonne nella griglia. Puoi inserire {max} colonne data la larghezza attuale della finestra ({res}px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "YQhLKn": {
+        "message": "Ogni ora",
+        "description": "Background expiry dropdown"
+    },
+    "abwneZ": {
+        "message": "Metri al secondo (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "XV4mnl": {
+        "message": "A seconda delle tue impostazioni, potrebbe venir scelta la stessa foto",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "btOI+Z": {
+        "message": "Nuova Scheda"
+    },
+    "/Mpu8A": {
+        "message": "Stira la griglia per coprire l'intera pagina.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "AuSjzq": {
+        "message": "Corrente: Mostra rischio raggi UV",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Corrente: Mostra temperatura percepita",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Corrente: Mostra alba / tramonto",
+        "description": "Weather widget: form field label"
+    },
+    "E4nLwR": {
+        "message": "Ogni giorno",
+        "description": "Background expiry dropdown"
+    },
+    "HksGis": {
+        "message": "Corrente: Mostra vento",
+        "description": "Weather widget: form field label"
+    },
+    "R4cyIr": {
+        "message": "Corrente: Mostra umidità",
+        "description": "Weather widget: form field label"
+    },
+    "RhyKzC": {
+        "message": "Scelti per voi",
+        "description": "Curated background mode"
+    },
+    "Upkn1Q": {
+        "message": "<b>Alti</b> UV",
+        "description": "High UV risk"
+    },
+    "W3zKGr": {
+        "message": "Chilometri orari (kph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "eKCjBm": {
+        "message": "Precipitazioni (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "5640CU": {
+        "message": "Corrente: Mostra precipitazioni",
+        "description": "Weather widget: form field label"
+    },
+    "hCBQrY": {
+        "message": "Temp. percepita: <b>{temp}°</b>"
+    },
+    "mL3MOs": {
+        "message": "Miglia orarie (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mw6Uh+": {
+        "message": "Mostra previsioni giornaliere",
+        "description": "Weather widget: form field label"
+    },
+    "n0cZ3b": {
+        "message": "Sviluppato con {host}.",
+        "description": "Credit to a website"
+    },
+    "o9vGxx": {
+        "message": "Apre i link in una nuova scheda",
+        "description": "Form field label"
+    },
+    "sIC2UV": {
+        "message": "Mostra testo",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "x7WADS": {
+        "message": "Griglia a Tutta Pagina",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "zaQRTm": {
+        "message": "<b>Estremi</b> UV",
+        "description": "Extreme UV risk"
     }
 }

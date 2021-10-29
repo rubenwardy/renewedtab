@@ -57,9 +57,6 @@
     "cR7nCG": {
         "message": "Temayı varsayılana sıfırla"
     },
-    "egigiF": {
-        "message": "Unsplash, OpenStreetMap, OpenWeatherMap ve RocketLaunch.Live'a APIları için teşekkürler."
-    },
     "ekIjqh": {
         "message": "Bütün internet sitelerine erişmek için izin verin"
     },
@@ -963,10 +960,6 @@
         "message": "Anlık hava durumu göster",
         "description": "Weather widget: form field label"
     },
-    "rYprNW": {
-        "message": "Anlık hava durumu bilgisi göster",
-        "description": "Weather widget: form field label"
-    },
     "zaQRTm": {
         "message": "<b>Aşırı yüksek</b> UV",
         "description": "Extreme UV risk"
@@ -1104,5 +1097,40 @@
     "x7WADS": {
         "message": "Tam Sayfa Izgara",
         "description": "Widget grid: form label for grid full width"
+    },
+    "+PNw8j": {
+        "message": "Bazı bilgileri gizleseniz bile, günlerin ve saatlerin üzerinde durarak görebilirsiniz",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "AuSjzq": {
+        "message": "Anlık: UV riskini göster",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Anlık: Hissedilen sıcaklığı göster",
+        "description": "Weather widget: form field label"
+    },
+    "eKCjBm": {
+        "message": "Yağış (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "R4cyIr": {
+        "message": "Anlık: Nem durumunu göster",
+        "description": "Weather widget: form field label"
+    },
+    "5640CU": {
+        "message": "Anlık: Yağış durumunu göster",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Anlık: Gündoğumu / günbatımını göster",
+        "description": "Weather widget: form field label"
+    },
+    "HksGis": {
+        "message": "Anlık: Rüzgar durumunu göster",
+        "description": "Weather widget: form field label"
+    },
+    "PHwOzi": {
+        "message": "Unsplash, AccuWeather ve RocketLaunch.Live'a APIları için teşekkür ederiz."
     }
 }

@@ -359,9 +359,6 @@
         "message": "Pilih imej",
         "description": "Form field label"
     },
-    "egigiF": {
-        "message": "Terima kasih kepada Unsplash, OpenStreetMap, OpenWeatherMap, dan RocketLaunch.Live untuk API mereka."
-    },
     "ekIjqh": {
         "message": "Berikan kebenaran untuk mencapai semua laman sesawang"
     },
@@ -963,10 +960,6 @@
         "message": "Tunjuk cuaca semasa",
         "description": "Weather widget: form field label"
     },
-    "rYprNW": {
-        "message": "Tunjuk maklumat cuaca semasa",
-        "description": "Weather widget: form field label"
-    },
     "zaQRTm": {
         "message": "UV <b>Melampau</b>",
         "description": "Extreme UV risk"
@@ -1104,5 +1097,40 @@
     "gQAsym": {
         "message": "Ambil perhatian bahawa widget lain tidak akan dipindahkan apabila ditarik.",
         "description": "Widget grid: form label 3 for grid full width"
+    },
+    "+PNw8j": {
+        "message": "Walaupun jika anda sembunyikan sesetengah maklumat, selalunya anda masih boleh melihatnya dengan melalukan tetikus di atas paparan hari dan jam",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "AuSjzq": {
+        "message": "Semasa: Tunjuk risiko UV",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Semasa: Tunjuk matahari terbit / matahari terbenam",
+        "description": "Weather widget: form field label"
+    },
+    "eKCjBm": {
+        "message": "Kerpasan (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "5640CU": {
+        "message": "Semasa: Tunjuk kerpasan",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Semasa: Tunjuk rasa macam",
+        "description": "Weather widget: form field label"
+    },
+    "HksGis": {
+        "message": "Semasa: Tunjuk angin",
+        "description": "Weather widget: form field label"
+    },
+    "PHwOzi": {
+        "message": "Terima kasih kepada Unsplash, AccuWeather, dan RocketLaunch.Live untuk capaian API mereka."
+    },
+    "R4cyIr": {
+        "message": "Semasa: Tunjuk kelembapan",
+        "description": "Weather widget: form field label"
     }
 }

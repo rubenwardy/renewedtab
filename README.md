@@ -42,9 +42,8 @@ Copy `config.example.json` to `config.json`.
 * Configure some API keys if you want to use third-party services.
   These are optional, but will prevent some features from working.
 	* The settings:
-		* `OPEN_WEATHER_MAP_API_KEY`: [openweathermap.org](https://home.openweathermap.org/users/sign_up)
+		* `ACCUWEATHER_API_KEY`: AccuWeather.com
 		* `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
-		* `OWNER_EMAIL`: Your email, required by OpenStreetMap
 	* You can set the above server settings in `config.json`, or using
 	  environment variables (recommended for production).
 

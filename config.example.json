@@ -1,7 +1,7 @@
 {
 	"API_URL": "https://api.renewedtab.com/",
 	"PROXY_URL": "https://api.renewedtab.com/proxy/",
-	"OPEN_WEATHER_MAP_API_KEY": "",
+	"ACCUWEATHER_API_KEY": "",
 	"UNSPLASH_ACCESS_KEY": "",
 	"OWNER_EMAIL": "your@email.com",
 	"SENTRY_DSN": "",
