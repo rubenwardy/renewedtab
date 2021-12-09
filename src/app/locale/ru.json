@@ -126,5 +126,47 @@
     "7OH6mh": {
         "message": "Изображение",
         "description": "Image Widget"
+    },
+    "0l+aD2": {
+        "message": "Ежедневные цели и вдохновляющие цитаты",
+        "description": "Preset: focus description"
+    },
+    "3UG6ds": {
+        "message": "Ищите виджеты или сайты с помощью любимой поисковой системы",
+        "description": "Search widget description"
+    },
+    "7wOM6+": {
+        "message": "Годовой прогресс",
+        "description": "Year Progress widget"
+    },
+    "CmRs9p": {
+        "message": "Поиск",
+        "description": "Search Widget"
+    },
+    "CshCZY": {
+        "message": "Тип фона"
+    },
+    "D0+wcK": {
+        "message": "Отобразить изображение, при желании сделав его ссылкой",
+        "description": "Image widget description"
+    },
+    "D3idYv": {
+        "message": "Настройки"
+    },
+    "4F+2K3": {
+        "message": "Случайное изображение из коллекции Unsplash",
+        "description": "Backgroud mode description"
+    },
+    "6pdO6i": {
+        "message": "Невозможно получить закладки",
+        "description": "Bookmarks widget: error message"
+    },
+    "Bl74xq": {
+        "message": "Кнопка ссылки",
+        "description": "Button widget description"
+    },
+    "BnmONl": {
+        "message": "Текущее: Показать восход / закат",
+        "description": "Weather widget: form field label"
     }
 }
