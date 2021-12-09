@@ -1034,5 +1034,96 @@
     "zaQRTm": {
         "message": "<b>Экстремальный</b> УФ",
         "description": "Extreme UV risk"
+    },
+    "Ddd3ZY": {
+        "message": "К",
+        "description": "Currencies widget: form field label"
+    },
+    "RhyKzC": {
+        "message": "Кураторский",
+        "description": "Curated background mode"
+    },
+    "sx01dA": {
+        "message": "Ссылки с поддержкой заголовков и значков",
+        "description": "Links widget description"
+    },
+    "qoEZRi": {
+        "message": "Коллекция Unsplash",
+        "description": "Backgroud settings: form field label"
+    },
+    "rAuRqW": {
+        "message": "Перевод предоставлен сообществом."
+    },
+    "yfgoZf": {
+        "message": "Чаты Discord / Matrix"
+    },
+    "TS11GJ": {
+        "message": "Случайное изображение из Atom или RSS-канала",
+        "description": "Backgroud mode description"
+    },
+    "TkgCJ9": {
+        "message": "Вы можете получить помощь или запросить функцию, используя ссылку ниже."
+    },
+    "as6rZ1": {
+        "message": "Включить отчеты о сбоях (с помощью Sentry)",
+        "description": "General settings: enable sentry"
+    },
+    "gQAsym": {
+        "message": "Обратите внимание, что другие виджеты не смещаются при перетаскивании.",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "iFxzUm": {
+        "message": "Нравиться",
+        "description": "Background credits vote"
+    },
+    "jSHZmX": {
+        "message": "Следить за пунктами списка дел",
+        "description": "Todo List widget: description"
+    },
+    "pG7wIz": {
+        "message": "Показывает курсы обмена, поддерживает валюту форекс и криптовалюту (BitCoin и т. Д.)",
+        "description": "Currencies widget description"
+    },
+    "q6/aVX": {
+        "message": "Вы можете отфильтровать этот виджет с помощью виджета поиска.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "WZjKFf": {
+        "message": "Предупреждение: это может содержать личные данные, если таковые были введены в настройках виджета."
+    },
+    "XYIyWM": {
+        "message": "Вы должны увеличить \"Столбцы сетки\" как минимум до {cols}, чтобы максимально использовать пространство.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "lkJAu6": {
+        "message": "Unsplash",
+        "description": "Unsplash background mode"
+    },
+    "zKofmb": {
+        "message": "ID коллекции. Найдено в URL-адресе, например: 42576559",
+        "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    },
+    "M6lR5V": {
+        "message": "Количество столбцов в сетке виджета. Вы можете разместить {max} столбцов в текущей ширине окна ({res} px).",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "TIEfOV": {
+        "message": "Статья будет показана, если она соответствует хотя бы одному фильтру «Показать» (если есть) и не соответствует фильтрам «Скрыть».",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "gAZqVl": {
+        "message": "Вы можете добавить (<add> </add>) или удалить (<remove> </remove>) виджеты позже или изменить настройки (<cog> </cog>) по желанию.",
+        "description": "Onboarding: preset hint"
+    },
+    "PHwOzi": {
+        "message": "Спасибо Unsplash, AccuWeather и RocketLaunch.Live за их API."
+    },
+    "TZknEV": {
+        "message": "Будьте осторожны с тем, что вы здесь вставляете. Злоумышленники могут заставить вас вставить сюда код, который рассекречивает информацию, к которой у расширения есть доступ, например историю браузера и посещаемые сайты.",
+        "description": "HTML widget: form field hint (HTML)"
+    },
+    "VxE3S8": {
+        "message": "Автоматически отправит URL разработчикам обновленной вкладки. Затем они могут добавить его к предложениям для всех пользователей.",
+        "description": "Host URL field: help text for suggest URL button"
     }
 }
