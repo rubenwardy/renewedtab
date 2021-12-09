@@ -198,7 +198,7 @@
         "description": "Feed widget: no sources error message"
     },
     "8J0Bhj": {
-        "message": "欢迎来到<a>Renewed Tab</a>：一个可自定义的新标签页，带有小部件和漂亮的背景。"
+        "message": "欢迎来到 <a>Renewed Tab</a>：一个可自定义的新标签页，拥有丰富的小部件和各种精美的背景图片供您选择。"
     },
     "8xVVb5": {
         "message": "主要颜色",
@@ -458,7 +458,7 @@
         "message": "你可以直观地使用控件在网格上添加、移动、调整大小和配置小部件。"
     },
     "N/7Stk": {
-        "message": "由<a>rubenwardy</a>建立。"
+        "message": "由 <a>rubenwardy</a> 建立。"
     },
     "O8mt7g": {
         "message": "数字（{example}）",
@@ -885,7 +885,7 @@
         "description": "Greeting widget: name prompt"
     },
     "oRui+E": {
-        "message": "喜欢我们提供的Renewed Tab？可以考虑捐赠来帮助我们收回成本和支持我们今后的发展。"
+        "message": "您对我们提供的 Renewed Tab 是否满意？满意的话欢迎给我们捐赠，这将帮助我们收回成本并支持我们今后更好的发展。"
     },
     "ofl4Ui": {
         "message": "搜索",
@@ -1021,7 +1021,7 @@
         "description": "Widget grid: form label for grid full width"
     },
     "translation_credits": {
-        "message": "由Ganache72翻译为简体中文",
+        "message": "由 Ganache72 翻译为简体中文",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
     "xR87uK": {
@@ -1056,7 +1056,7 @@
         "message": "Discord / Matrix 频道"
     },
     "ykNa5O": {
-        "message": "感谢Font-Awesome提供的图标，React提供的用户界面，以及WebPack提供的构建。"
+        "message": "感谢 Font-Awesome 提供的图标，React 提供的用户界面，以及 WebPack 提供的构建技术。"
     },
     "yvWbz6": {
         "message": "下一个",
@@ -1097,5 +1097,40 @@
     "vVnypL": {
         "message": "随机显示一个带有分类的名言",
         "description": "Quotes Widget description"
+    },
+    "+PNw8j": {
+        "message": "即使你隐藏了一些信息，你仍可以通过将鼠标悬停在天和小时上来查看这些信息",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "PHwOzi": {
+        "message": "感谢 Unsplash，AccuWeather 和 RocketLaunch.Live 提供的 API 服务。"
+    },
+    "eKCjBm": {
+        "message": "降水概率",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "5640CU": {
+        "message": "当前：显示降水概率",
+        "description": "Weather widget: form field label"
+    },
+    "AuSjzq": {
+        "message": "当前：显示紫外线风险",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "当前：显示体感温度",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "当前：显示日出/日落",
+        "description": "Weather widget: form field label"
+    },
+    "HksGis": {
+        "message": "当前：显示风速",
+        "description": "Weather widget: form field label"
+    },
+    "R4cyIr": {
+        "message": "当前：显示湿度",
+        "description": "Weather widget: form field label"
     }
 }
