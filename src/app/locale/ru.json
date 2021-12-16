@@ -426,7 +426,7 @@
         "description": "Form field label"
     },
     "VkW6D1": {
-        "message": "центр, верх или низ",
+        "message": "center (центр), top (верх) или bottom (низ)",
         "description": "Backgroud settings: form field hint (Position)"
     },
     "VPDVTF": {
