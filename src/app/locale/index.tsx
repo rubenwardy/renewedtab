@@ -6,11 +6,13 @@ type Translation = Record<string, MessageFormatElement[]>;
 const locales : { [key: string]: Translation } = {
 	"en": require("./compiled/en.json"),
 	"es": require("./compiled/es.json"),
+	"de": require("./compiled/de.json"),
 	"fr": require("./compiled/fr.json"),
 	"it": require("./compiled/it.json"),
 	"ms": require("./compiled/ms.json"),
 	"pt-br": require("./compiled/pt_BR.json"),
 	"tr": require("./compiled/tr.json"),
+	"ru": require("./compiled/ru.json"),
 	"zh-hans": require("./compiled/zh_Hans.json"),
 };
 

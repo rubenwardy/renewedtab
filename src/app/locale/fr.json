@@ -1097,5 +1097,40 @@
     "x7WADS": {
         "message": "Grille pleine page",
         "description": "Widget grid: form label for grid full width"
+    },
+    "+PNw8j": {
+        "message": "Même is vous cachez quelques informations, vous pourrez quand même le voir en survolant les jours et les heures",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "5640CU": {
+        "message": "Actuel : Montrer les précipitations",
+        "description": "Weather widget: form field label"
+    },
+    "AuSjzq": {
+        "message": "Actuel : Afficher le risque UV",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Actuel : Montrer le lever / coucher de soleil",
+        "description": "Weather widget: form field label"
+    },
+    "PHwOzi": {
+        "message": "Merci à Unsplash, AccuWeather, et RocketLaunch.Live pour leurs APIs."
+    },
+    "R4cyIr": {
+        "message": "Actuel : Afficher l'humidité",
+        "description": "Weather widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Actuel : Afficher la température ressentie",
+        "description": "Weather widget: form field label"
+    },
+    "HksGis": {
+        "message": "Actuel : Afficher le vent",
+        "description": "Weather widget: form field label"
+    },
+    "eKCjBm": {
+        "message": "Précipitation (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
     }
 }
