@@ -9,7 +9,7 @@ import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
 import { convertWeatherTemperatures, getUVRisk, Location, convertSpeed, SpeedUnit, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo, getSpeedUnitSuffix } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
-import { mergeClasses } from 'app/utils';
+import { formatNumber, mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
 import deepCopy from 'app/utils/deepcopy';
 
@@ -231,8 +231,8 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 			<div className="row row-centered">
 				<div className="col-auto"><Icon icon={day.icon} /></div>
 				<div className="col temp">
-					<span className="high">{day.maxTemp.toFixed(0)}</span>&nbsp;
-					<span className="low">{day.minTemp.toFixed(0)}</span>
+					<span className="high">{formatNumber(day.maxTemp)}</span>&nbsp;
+					<span className="low">{formatNumber(day.minTemp)}</span>
 				</div>
 			</div>
 		</div>);
@@ -247,7 +247,7 @@ function Hour(props: WeatherHour) {
 			<div>{renderHour(props.time)}</div>
 			<div className="row row-centered">
 				<div className="col-auto"><Icon icon={props.icon} /></div>
-				<div className="col temp">{props.temp.toFixed(0)}</div>
+				<div className="col temp">{formatNumber(props.temp)}</div>
 				{(props.precipitation && props.precipitation > 2) ?  (
 					<div className="col rain ml-1" title={precipitationTooltip}>
 						{props.precipitation.toFixed(0)}%
@@ -316,7 +316,9 @@ function Current(props: {
 		<div className="row weather-current h-100">
 			<div className="col h-100">
 				<div className="row row-vertical text-left h-100">
-					<FitText className="col temp">{props.current.temp.toFixed(0)}°</FitText>
+					<FitText className="col temp">
+						{formatNumber(props.current.temp)}°
+					</FitText>
 					{props.display.showFeelsLike && props.current.feels_like && (
 						<div className="col-auto">
 							<p className="mx-0">

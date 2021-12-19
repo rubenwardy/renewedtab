@@ -73,3 +73,12 @@ export function parseURL(v: string): URL | undefined {
 		return undefined;
 	}
 }
+
+
+export function formatNumber(v: number): string {
+	if (v <= 0 && v > -0.5) {
+		return "0";
+	} else {
+		return v.toFixed(0);
+	}
+}
