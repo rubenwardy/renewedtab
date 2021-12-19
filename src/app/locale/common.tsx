@@ -149,4 +149,12 @@ export const miscMessages = defineMessages({
 		defaultMessage: "Powered by {host}.",
 		description: "Credit to a website",
 	},
+
+	help: {
+		defaultMessage: "Help",
+	},
+
+	dismiss: {
+		defaultMessage: "Dismiss",
+	},
 });

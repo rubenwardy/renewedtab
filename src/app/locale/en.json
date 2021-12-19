@@ -1,1136 +1,1149 @@
 {
-    "+GMx80": {
-        "description": "Location form field: error",
-        "message": "No locations found"
-    },
-    "+PNw8j": {
-        "description": "Weather widget: form field hint (Display Options)",
-        "message": "Even if you hide some info, you can often still see it by hovering over days and hours"
-    },
-    "+TYXj6": {
-        "description": "SpaceFlights widget: today and time",
-        "message": "Today, {time}"
-    },
-    "+oSH/F": {
-        "description": "Age widget description",
-        "message": "States your current age with way too much precision"
-    },
-    "+sI+Oh": {
-        "description": "Weather widget: form field label",
-        "message": "Show hourly forecast"
-    },
-    "/4k9ry": {
-        "description": "Very High UV risk",
-        "message": "<b>Very High</b> UV"
-    },
-    "/Mpu8A": {
-        "description": "Widget grid: form label 1 for grid full width",
-        "message": "Stretch grid to cover the entire page."
-    },
-    "/dtDqf": {
-        "description": "Notes Widget",
-        "message": "Notes"
-    },
-    "0PsF7Z": {
-        "description": "Delete widget modal message",
-        "message": "Are you sure you want to permanently remove this widget?"
-    },
-    "0feb3b": {
-        "description": "Image widget: Form field hint (Link)",
-        "message": "Optional, makes image a link"
-    },
-    "0hxZWu": {
-        "description": "Form field label",
-        "message": "Icon"
-    },
-    "0l+aD2": {
-        "description": "Preset: focus description",
-        "message": "Daily goals and inspirational quotes"
-    },
-    "1s5GYl": {
-        "description": "Form field label",
-        "message": "Opacity"
-    },
-    "2/2yg+": {
-        "message": "Add"
-    },
-    "27lljH": {
-        "description": "Age widget text",
-        "message": "You are <b>{age}</b>"
-    },
-    "2AUlDo": {
-        "description": "Greeting widget: greeting, from 9pm to midnight",
-        "message": "Sleep well, {name}"
-    },
-    "2O5Rq1": {
-        "description": "Greeting widget: greeting, from 4pm to 9pm",
-        "message": "Good evening, {name}"
-    },
-    "2VPa4j": {
-        "description": "The name of the current language, to be used in the settings dialog",
-        "message": "English"
-    },
-    "2efE5y": {
-        "description": "Greeting Widget",
-        "message": "Greeting"
-    },
-    "2vJWTd": {
-        "description": "Background credits title placeholder",
-        "message": "Photo"
-    },
-    "3/EBw0": {
-        "description": "Renewed Tab website",
-        "message": "Website"
-    },
-    "3Nw7b0": {
-        "description": "Search widget: form field label",
-        "message": "Search engine name"
-    },
-    "3UG6ds": {
-        "description": "Search widget description",
-        "message": "Search widgets or the web using your favourite search engine"
-    },
-    "3ZfhWo": {
-        "message": "Permission needed to access {host}. Edit this widget to grant it."
-    },
-    "3aaibf": {
-        "message": "Add Widget"
-    },
-    "3vh5vd": {
-        "description": "Invisible widget description",
-        "message": "Shows nothing, useful for layouting purposes"
-    },
-    "3vjl5Q": {
-        "description": "Feed widget filter allow label",
-        "message": "Show / Hide"
-    },
-    "47FYwb": {
-        "message": "Cancel"
-    },
-    "4F+2K3": {
-        "description": "Backgroud mode description",
-        "message": "Random image from an Unsplash collection"
-    },
-    "4UpnpD": {
-        "description": "Form field hint (Image)",
-        "message": "Images are stored locally on your browser, and never uploaded"
-    },
-    "4cMia7": {
-        "description": "Backgroud settings: form field label (how often background images change)",
-        "message": "Show a new photo"
-    },
-    "4dzBeG": {
-        "description": "Currencies widget: form field label",
-        "message": "From"
-    },
-    "4syC1B": {
-        "message": "Help and Requests"
-    },
-    "5640CU": {
-        "description": "Weather widget: form field label",
-        "message": "Current: Show precipitation"
-    },
-    "5DCxT+": {
-        "description": "Weather widget: form field label",
-        "message": "Temperature Unit"
-    },
-    "5mVcg9": {
-        "description": "Theme settings: form field label",
-        "message": "Custom CSS"
-    },
-    "6MDM6D": {
-        "description": "Quotes Widget",
-        "message": "Quotes"
-    },
-    "6pdO6i": {
-        "description": "Bookmarks widget: error message",
-        "message": "Unable to get bookmarks"
-    },
-    "7OH6mh": {
-        "description": "Image Widget",
-        "message": "Image"
-    },
-    "7bfD9/": {
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
-        "message": "Suggest URL be added to default suggestions"
-    },
-    "7wOM6+": {
-        "description": "Year Progress widget",
-        "message": "Year Progress"
-    },
-    "8HmiSe": {
-        "description": "Feed widget: no sources error message",
-        "message": "Please specify a source"
-    },
-    "8J0Bhj": {
-        "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
-    },
-    "8xVVb5": {
-        "description": "Theme settings: form field label",
-        "message": "Primary Color"
-    },
-    "9+2gJZ": {
-        "message": "This widget requires the browser extension version."
-    },
-    "Abtyj/": {
-        "description": "Image upload error message",
-        "message": "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image."
-    },
-    "Ack5ID": {
-        "description": "A search has returned no results here (note: there may be multiple places being searched)",
-        "message": "No results"
-    },
-    "AgU+/t": {
-        "description": "SpaceFlights widget description",
-        "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
-    },
-    "AuSjzq": {
-        "description": "Weather widget: form field label",
-        "message": "Current: Show UV risk"
-    },
-    "Ay1sfO": {
-        "description": "Feed background mode: form field hint (Limit images)",
-        "message": "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image"
-    },
-    "B0kbsm": {
-        "description": "Unsplash background mode",
-        "message": "Feed"
-    },
-    "B1pyj1": {
-        "description": "Weather widget: form field label",
-        "message": "Current: Show feels like"
-    },
-    "BJYZgx": {
-        "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
-    },
-    "BiPNnl": {
-        "description": "Weather widget: form field label",
-        "message": "Wind Speed Unit"
-    },
-    "Bl74xq": {
-        "description": "Button widget description",
-        "message": "A link button"
-    },
-    "BnmONl": {
-        "description": "Weather widget: form field label",
-        "message": "Current: Show sunrise / sunset"
-    },
-    "CNpJaZ": {
-        "description": "Preset: focus",
-        "message": "Focus"
-    },
-    "CmRs9p": {
-        "description": "Search Widget",
-        "message": "Search"
-    },
-    "Cq4JWx": {
-        "description": "Preset: grid description",
-        "message": "The news, weather, and more"
-    },
-    "CshCZY": {
-        "message": "Background Type"
-    },
-    "D0+wcK": {
-        "description": "Image widget description",
-        "message": "Display an image, optionally making it a link"
-    },
-    "D3idYv": {
-        "message": "Settings"
-    },
-    "D4M6tn": {
-        "description": "Onboarding modal: title",
-        "message": "Welcome to Renewed Tab"
-    },
-    "DJRqNI": {
-        "description": "Web Comic widget description",
-        "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
-    },
-    "Ddd3ZY": {
-        "description": "Currencies widget: form field label",
-        "message": "To"
-    },
-    "Dk7Khi": {
-        "description": "Weather widget: Fahrenheit unit",
-        "message": "Fahrenheit"
-    },
-    "E4nLwR": {
-        "description": "Background expiry dropdown",
-        "message": "Every day"
-    },
-    "F1A/8i": {
-        "description": "Feed widget: form field label",
-        "message": "Sources"
-    },
-    "FCmJHd": {
-        "description": "Feed widget description",
-        "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
-    },
-    "FHzdXg": {
-        "description": "Theme settings",
-        "message": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
-    },
-    "FqCn+F": {
-        "description": "Greeting widget: greeting, from midnight to noon",
-        "message": "Good morning, {name}"
-    },
-    "G6WG/N": {
-        "description": "Invisible Widget",
-        "message": "Invisible"
-    },
-    "GSox4d": {
-        "description": "Theme settings: form field hint (Font)",
-        "message": "Any font name installed on your computer"
-    },
-    "GWRKVT": {
-        "description": "Form field label",
-        "message": "Text Color"
-    },
-    "GXkv/F": {
-        "description": "Location form field: prompt",
-        "message": "Please select a location"
-    },
-    "GcxpZV": {
-        "description": "Clock widget: date style form field label",
-        "message": "Date style"
-    },
-    "Go7At+": {
-        "description": "Short weekday name (Saturday)",
-        "message": "SAT"
-    },
-    "GqPEp+": {
-        "message": "Requires browser extension version"
-    },
-    "H00a0q": {
-        "description": "Links widget, form field hint (Link URL)",
-        "message": "Leave blank to make heading"
-    },
-    "HEvlTB": {
-        "description": "Weather widget: display subform title",
-        "message": "Display Options"
-    },
-    "HPLtg4": {
-        "description": "Currencies widget: error",
-        "message": "Unknown currency ''{currency}''"
-    },
-    "HksGis": {
-        "description": "Weather widget: form field label",
-        "message": "Current: Show wind"
-    },
-    "I48yxw": {
-        "description": "General settings: privacy",
-        "message": "Privacy"
-    },
-    "IbCXY9": {
-        "description": "Clock widget: date style type",
-        "message": "Standard ({example})"
-    },
-    "Ibm90j": {
-        "description": "Clock widget: edit hint",
-        "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
-    },
-    "IqLwUL": {
-        "description": "Widget grid: form label for grid spacing",
-        "message": "Grid Spacing"
-    },
-    "J91edI": {
-        "description": "Settings tab",
-        "message": "Import / Export"
-    },
-    "JN/uvd": {
-        "description": "Moderate UV risk",
-        "message": "<b>Moderate</b> UV"
-    },
-    "JihbEV": {
-        "description": "Theme settings: link to CSS docs",
-        "message": "CSS documentation"
-    },
-    "JvOSvX": {
-        "description": "Settings tab",
-        "message": "Background"
-    },
-    "JzanJ8": {
-        "description": "Widget grid: form label for grid columns",
-        "message": "Grid Columns"
-    },
-    "K3r6DQ": {
-        "message": "Delete"
-    },
-    "K8s82y": {
-        "description": "Age widget: form field label",
-        "message": "Birth date"
-    },
-    "KdIFGg": {
-        "description": "Search widget: error, missing query variable",
-        "message": "Missing '{query}' in search URL. Eg: https://google.com/search/?q='{query}'"
-    },
-    "KhM0zv": {
-        "description": "Daily Goal widget: edit modal hint",
-        "message": "Quotes are sourced from external sources, and are not reviewed by Renewed Tab."
-    },
-    "KsX2fE": {
-        "message": "<b>{name}</b> at {latitude} by {longitude}"
-    },
-    "KyDwm3": {
-        "description": "Top Sites widget: description",
-        "message": "Shows top sites"
-    },
-    "Kzo9ZH": {
-        "description": "Form field label",
-        "message": "Image URL"
-    },
-    "L6nTur": {
-        "description": "Onboarding: presets title",
-        "message": "Choose a Starting Point"
-    },
-    "LfHpBk": {
-        "description": "Theme settings: form field label",
-        "message": "Font Scaling"
-    },
-    "Lxc1x4": {
-        "description": "Clock Widget",
-        "message": "Clock"
-    },
-    "M0PwXU": {
-        "description": "Weather widget: wind speed tooltip",
-        "message": "Wind Speed ({unit})"
-    },
-    "M6lR5V": {
-        "description": "Widget grid: form hint for grid columns",
-        "message": "Number of columns in the widget grid. You can fit {max} columns in the current window width ({res}px)."
-    },
-    "MN3prI": {
-        "description": "Bookmarks widget: form field label",
-        "message": "Include folders as sections"
-    },
-    "MiIvsP": {
-        "message": "You can add, move, resize, and configure widgets on a grid using intuitive controls."
-    },
-    "Mihrhf": {
-        "description": "Clock widget: date style type, not shown",
-        "message": "None"
-    },
-    "N/7Stk": {
-        "message": "Created by <a>rubenwardy</a>."
-    },
-    "O8mt7g": {
-        "description": "Clock widget: date style type",
-        "message": "Numbers ({example})"
-    },
-    "OBJta4": {
-        "description": "Greeting widget: edit modal hint",
-        "message": "You can change the name by clicking it on the widget"
-    },
-    "OPzczE": {
-        "description": "Clock widget: date style type",
-        "message": "Abbreviated ({example})"
-    },
-    "OQHLB5": {
-        "description": "Form field label",
-        "message": "Color"
-    },
-    "PBMGxw": {
-        "description": "Feed background mode: form field label",
-        "message": "Limit images"
-    },
-    "PHwOzi": {
-        "message": "Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs."
-    },
-    "PM6qZ7": {
-        "message": "Show seconds"
-    },
-    "PYJFvz": {
-        "description": "Form field label, list of categories. Used by Quotes widget",
-        "message": "Categories"
-    },
-    "Q1mwPp": {
-        "message": "Consider <a>contributing or adding your language</a>."
-    },
-    "QBZZBG": {
-        "description": "Theme settings: form field hint (Custom CSS)",
-        "message": "Please note: this is an experimental feature and CSS selectors may break in future releases."
-    },
-    "QV6YlB": {
-        "description": "Currencies widget: form field label",
-        "message": "Exchange Rates"
-    },
-    "QcExtH": {
-        "description": "General settings: privacy policy button",
-        "message": "Privacy Policy"
-    },
-    "QqE4JC": {
-        "message": "Missing feed URL."
-    },
-    "R4cyIr": {
-        "description": "Weather widget: form field label",
-        "message": "Current: Show humidity"
-    },
-    "RCe+DS": {
-        "message": "Drag and Drop Widgets"
-    },
-    "RZqASt": {
-        "description": "Backgroud mode description",
-        "message": "A single color"
-    },
-    "RhyKzC": {
-        "description": "Curated background mode",
-        "message": "Curated"
-    },
-    "S3njcM": {
-        "description": "IFrame Widget",
-        "message": "IFrame"
-    },
-    "S6nfAm": {
-        "description": "Weather widget: humidity tooltip",
-        "message": "Humidity (%)"
-    },
-    "SAo61B": {
-        "description": "Bookmarks Widget",
-        "message": "Bookmarks"
-    },
-    "SG4UJU": {
-        "description": "Button Widget",
-        "message": "Button"
-    },
-    "ShQneX": {
-        "description": "Form field label",
-        "message": "Text"
-    },
-    "T/wBPw": {
-        "message": "Remove {type}"
-    },
-    "T4VxQN": {
-        "message": "Loading…"
-    },
-    "TIEfOV": {
-        "description": "Feed widget: form field hint (Filters)",
-        "message": "An article will be shown if it matches at least one 'Show' filter (if any), and no 'Hide' filters."
-    },
-    "TS11GJ": {
-        "description": "Backgroud mode description",
-        "message": "Random image from an Atom or RSS feed"
-    },
-    "TUnCKb": {
-        "description": "Text Widget",
-        "message": "Text"
-    },
-    "TZknEV": {
-        "description": "HTML widget: form field hint (HTML)",
-        "message": "Be careful with what you paste here. An attacker could get you to paste code here that steals things the extension has access to - such as browser history and top sites."
-    },
-    "TkgCJ9": {
-        "message": "You can get help or request a feature using the link below."
-    },
-    "U2Qnh7": {
-        "description": "Image background mode",
-        "message": "Image"
-    },
-    "Upkn1Q": {
-        "description": "High UV risk",
-        "message": "<b>High</b> UV"
-    },
-    "V1EIOe": {
-        "description": "IFrame widget description",
-        "message": "Shows a webpage"
-    },
-    "VPDVTF": {
-        "description": "Shown when array table form field has no rows",
-        "message": "Nothing here"
-    },
-    "Vckd1G": {
-        "description": "Short weekday name (Monday)",
-        "message": "MON"
-    },
-    "VjDvbL": {
-        "description": "Form field label",
-        "message": "URL"
-    },
-    "VkW6D1": {
-        "description": "Backgroud settings: form field hint (Position)",
-        "message": "center, top, or bottom"
-    },
-    "VxE3S8": {
-        "description": "Host URL field: help text for suggest URL button",
-        "message": "This will automatically send the URL to the Renewed Tab developers. They may then choose to add it to the suggestions for all users."
-    },
-    "W3zKGr": {
-        "description": "Weather widget: Speed unit",
-        "message": "Kilometers per hour (kph)"
-    },
-    "WF5DKA": {
-        "description": "Age widget",
-        "message": "Age"
-    },
-    "WKiXhX": {
-        "description": "Color background mode",
-        "message": "Color"
-    },
-    "WQeyl4": {
-        "message": "Grant permission to access bookmarks"
-    },
-    "WZjKFf": {
-        "message": "Warning: this may contain personal data, if any was entered into widget settings."
-    },
-    "Wi0G88": {
-        "description": "Settings tab",
-        "message": "About and Help"
-    },
-    "X18x9m": {
-        "description": "Settings tab",
-        "message": "General"
-    },
-    "X5OoHJ": {
-        "description": "Daily Goal prompt",
-        "message": "What's your goal for today?"
-    },
-    "XV4mnl": {
-        "description": "Background settings: form field hint (Show a new photo)",
-        "message": "Depending on your settings, the same photo may be chosen"
-    },
-    "XYIyWM": {
-        "description": "Widget grid: form label 2 for grid full width",
-        "message": "You should increase \"Grid Columns\" to at least {cols} to make best use of space."
-    },
-    "XrQEPN": {
-        "description": "Form field label",
-        "message": "Location"
-    },
-    "XsTD4Q": {
-        "description": "Todo List Widget",
-        "message": "Todo List"
-    },
-    "YQhLKn": {
-        "description": "Background expiry dropdown",
-        "message": "Every hour"
-    },
-    "YS3jnS": {
-        "description": "Short weekday name (Friday)",
-        "message": "FRI"
-    },
-    "YS5zRT": {
-        "description": "Search widget: searchbox placeholder text, when search engine name is known",
-        "message": "Search with {name}"
-    },
-    "YYoBQn": {
-        "description": "Theme settings: form field label",
-        "message": "Panel Blur Radius"
-    },
-    "YuNOET": {
-        "description": "HTML widget: form field label",
-        "message": "HTML"
-    },
-    "Z2/hH0": {
-        "message": "Image: {filename}"
-    },
-    "Z79HMN": {
-        "description": "Backgroud mode description",
-        "message": "Random curated backgrounds"
-    },
-    "ZRWjTk": {
-        "description": "Search widget: form field label",
-        "message": "Use browser's default search engine"
-    },
-    "ZUZeuR": {
-        "description": "Text widget description",
-        "message": "Show a message"
-    },
-    "ZZIlU9": {
-        "description": "Daily Goal Widget",
-        "message": "Daily Goal"
-    },
-    "ZeZlbR": {
-        "description": "Button widget: form field hint (Opacity)",
-        "message": "Sets the opacity of the button tinted color"
-    },
-    "a09vzt": {
-        "message": "HTTP request failed, {code} {msg}."
-    },
-    "a0L2KE": {
-        "message": "Try including the country name or initials."
-    },
-    "aXrD3p": {
-        "description": "Currencies widget",
-        "message": "Currencies"
-    },
-    "aaxFkJ": {
-        "description": "Todo List widget: prompt",
-        "message": "Create a new todo item"
-    },
-    "abwneZ": {
-        "description": "Weather widget: Speed unit",
-        "message": "Meters per second (m/s)"
-    },
-    "adRrk3": {
-        "description": "Import / export settings, reset",
-        "message": "Reset everything"
-    },
-    "amHvKE": {
-        "description": "Notes widget: prompt",
-        "message": "Enter notes here"
-    },
-    "ao/AFQ": {
-        "description": "Daily Goal widget description",
-        "message": "Reminds you about a daily goal"
-    },
-    "as6rZ1": {
-        "description": "General settings: enable sentry",
-        "message": "Enable crash reporting (using Sentry)"
-    },
-    "b2Rs2F": {
-        "description": "Backgroud settings: form field label (Brightness: Light)",
-        "message": "Change brightness of lighter images"
-    },
-    "bQFsdR": {
-        "message": "Grant permission to access {host}"
-    },
-    "btOI+Z": {
-        "message": "New Tab"
-    },
-    "cL6y1P": {
-        "description": "Form field hint (Feed URL)",
-        "message": "URL to an Atom or RSS feed"
-    },
-    "cR7nCG": {
-        "message": "Reset theme to default"
-    },
-    "cSF2y1": {
-        "description": "Bookmarks widget description",
-        "message": "Shows your bookmarks"
-    },
-    "ckvzIb": {
-        "description": "Low UV risk",
-        "message": "<b>Low</b> UV"
-    },
-    "d7dHsn": {
-        "description": "Background expiry dropdown",
-        "message": "Every 15 minutes"
-    },
-    "dGu5JQ": {
-        "description": "Feed Widget",
-        "message": "Feed"
-    },
-    "dIwFS5": {
-        "description": "Form field label",
-        "message": "Choose an image"
-    },
-    "eKCjBm": {
-        "description": "Weather widget: change of precipitation (rain, etc)",
-        "message": "Precipitation (%)"
-    },
-    "eXB4qM": {
-        "description": "Short weekday name (Wednesday)",
-        "message": "WED"
-    },
-    "ekIjqh": {
-        "message": "Grant permission to access all websites"
-    },
-    "ekW/+6": {
-        "message": "Unable to connect to the Internet"
-    },
-    "fW8Xpd": {
-        "description": "Weather widget: location needed error",
-        "message": "Location needed. Click edit to add it."
-    },
-    "fWK68w": {
-        "description": "Theme settings: form field label",
-        "message": "Font"
-    },
-    "frEJEM": {
-        "description": "Short weekday name (Thursday)",
-        "message": "THU"
-    },
-    "fz43UJ": {
-        "description": "Renewed Tab donation link",
-        "message": "Donate"
-    },
-    "gAZqVl": {
-        "description": "Onboarding: preset hint",
-        "message": "You can add (<add></add>) or remove (<remove></remove>) widgets later, or change settings (<cog></cog>) as desired."
-    },
-    "gEYo49": {
-        "description": "Backgroud settings: form field label",
-        "message": "Position"
-    },
-    "gHzZEt": {
-        "description": "Preset: focus description",
-        "message": "Just a clock and a search bar"
-    },
-    "gQAsym": {
-        "description": "Widget grid: form label 3 for grid full width",
-        "message": "Note that other widgets won't move out of the way when dragging."
-    },
-    "gSjZfg": {
-        "description": "Links Widget",
-        "message": "Links"
-    },
-    "h/ftND": {
-        "message": "Choose a file"
-    },
-    "hCBQrY": {
-        "message": "Feels like <b>{temp}°</b>"
-    },
-    "hUIQ7h": {
-        "description": "Backgroud settings: form field label",
-        "message": "Brightness"
-    },
-    "hWimZf": {
-        "description": "Search widget: form field label, enable filtering widgets",
-        "message": "Enable widget search"
-    },
-    "hktZIl": {
-        "message": "Shows the time"
-    },
-    "iFxzUm": {
-        "description": "Background credits vote",
-        "message": "Like"
-    },
-    "iH2AHA": {
-        "message": "<a>Open source</a>, licensed under GPLv3+."
-    },
-    "irdBm2": {
-        "description": "Settings tab",
-        "message": "Theme"
-    },
-    "jSHZmX": {
-        "description": "Todo List widget: description",
-        "message": "Track to do list items"
-    },
-    "kAEQyV": {
-        "message": "OK"
-    },
-    "kF06lD": {
-        "description": "Clock widget: date style type",
-        "message": "Extended ({example})"
-    },
-    "ktmuOE": {
-        "description": "Feed widget: form field hint (Title)",
-        "message": "Leave blank to use feed's title"
-    },
-    "ku7Ot7": {
-        "description": "Backgroud settings: form field label",
-        "message": "Brightness: Light"
-    },
-    "kueLs9": {
-        "description": "Links widget: form field label",
-        "message": "Links"
-    },
-    "l8+Uwz": {
-        "description": "Form has no fields",
-        "message": "Nothing to edit."
-    },
-    "lUdRdE": {
-        "message": "Error: {msg}"
-    },
-    "lY73np": {
-        "description": "Widget styling, checkbox",
-        "message": "Show panel background"
-    },
-    "lYJGY5": {
-        "description": "Image URL background mode",
-        "message": "Image URL"
-    },
-    "lkJAu6": {
-        "description": "Unsplash background mode",
-        "message": "Unsplash"
-    },
-    "lwUV0r": {
-        "description": "Daily Goal widget: edit modal hint",
-        "message": "You can change the goal by clicking it on the widget"
-    },
-    "mL3MOs": {
-        "description": "Weather widget: Speed unit",
-        "message": "Miles per hour (mph)"
-    },
-    "mSg5KK": {
-        "description": "Backgroud settings: form field label",
-        "message": "Brightness: Dark"
-    },
-    "mY9tpI": {
-        "message": "Error loading feed. Make sure it is an RSS or Atom feed."
-    },
-    "mv9TrH": {
-        "description": "HTML Widget",
-        "message": "HTML"
-    },
-    "mw6Uh+": {
-        "description": "Weather widget: form field label",
-        "message": "Show daily forecast"
-    },
-    "n0cZ3b": {
-        "description": "Credit to a website",
-        "message": "Powered by {host}."
-    },
-    "nF7bWj": {
-        "description": "Clock widget: date style type",
-        "message": "ISO ({example})"
-    },
-    "nGSwtl": {
-        "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
-        "message": "Search"
-    },
-    "nHw5cV": {
-        "description": "Todo List widget: edit modal hint",
-        "message": "Click items to edit them."
-    },
-    "nnaWVi": {
-        "description": "Weather widget: Celsius unit",
-        "message": "Celsius"
-    },
-    "o2uuHu": {
-        "message": "12 hour clock"
-    },
-    "o9vGxx": {
-        "description": "Form field label",
-        "message": "Open links in new tab"
-    },
-    "oBl48o": {
-        "description": "Import / export settings, reset confirmation",
-        "message": "Are you sure you want to reset all data?"
-    },
-    "oDog89": {
-        "description": "Notes widget description",
-        "message": "An editable text area for notes"
-    },
-    "oGS5TE": {
-        "description": "Greeting widget: greeting, from noon to 4pm",
-        "message": "Good afternoon, {name}"
-    },
-    "oJnbwn": {
-        "description": "Greeting widget: name prompt",
-        "message": "name"
-    },
-    "oRui+E": {
-        "message": "Enjoying Renewed Tab? Consider donating to help cover costs and support its development."
-    },
-    "ofl4Ui": {
-        "description": "Location form field: search",
-        "message": "Search"
-    },
-    "olBVPS": {
-        "description": "Import / export settings, export",
-        "message": "Export"
-    },
-    "or/+Da": {
-        "description": "Subheading for per-widget styling properties",
-        "message": "Styling"
-    },
-    "p7+m8N": {
-        "description": "Top Sites widget: permission request",
-        "message": "Grant permission to access top sites"
-    },
-    "p8GKKf": {
-        "description": "Top Sites Widget",
-        "message": "Top Sites"
-    },
-    "pG7wIz": {
-        "description": "Currencies widget description",
-        "message": "Shows exchange rates, supporting forex currencies and crypto (BitCoin etc)"
-    },
-    "pHo6u+": {
-        "description": "Web Comic widget: no images found error",
-        "message": "No images found on feed"
-    },
-    "pVrtrA": {
-        "description": "Backgroud mode description",
-        "message": "Use a custom image"
-    },
-    "pbEMNj": {
-        "description": "Onboarding page: previous button",
-        "message": "Previous"
-    },
-    "pqIuCa": {
-        "description": "Weather widget: form field label",
-        "message": "Show current weather"
-    },
-    "q4caWd": {
-        "description": "Backgroud settings: form field label",
-        "message": "Blur radius"
-    },
-    "q6/aVX": {
-        "description": "Edit hint shown on searchable widgets",
-        "message": "You can filter this widget using a Search widget."
-    },
-    "qCsSqt": {
-        "description": "Theme settings: form field label",
-        "message": "Panel Background Darkness"
-    },
-    "qEk9AJ": {
-        "description": "Backgroud settings: form field label (Brightness: Dark)",
-        "message": "Change brightness of darker images"
-    },
-    "qYVXqA": {
-        "description": "Background mode options",
-        "message": "{mode} Options"
-    },
-    "qoEZRi": {
-        "description": "Backgroud settings: form field label",
-        "message": "Unsplash collection"
-    },
-    "qzlLb3": {
-        "description": "Short weekday name (Sunday)",
-        "message": "SUN"
-    },
-    "rAuRqW": {
-        "message": "Translations are provided by the community."
-    },
-    "rb3Zy8": {
-        "description": "Feed widget: form field label",
-        "message": "Filter Articles"
-    },
-    "sIC2UV": {
-        "description": "Widget styling, checkbox for showing text on eg: Links",
-        "message": "Show text"
-    },
-    "sPl3nI": {
-        "description": "Form field label",
-        "message": "Title"
-    },
-    "sYvWWw": {
-        "description": "Links widget, form field hint (Icon)",
-        "message": "Optional, URL to image (18px recommended)"
-    },
-    "sx01dA": {
-        "description": "Links widget description",
-        "message": "Links, with support for headings and icons"
-    },
-    "translation_credits": {
-        "description": "Credit the translators: LANGUAGE translation by YOUR NAME",
-        "message": ""
-    },
-    "tyq8NB": {
-        "description": "Weather Widget",
-        "message": "Weather"
-    },
-    "uRYRJh": {
-        "message": "Edit {type}"
-    },
-    "ubO4zt": {
-        "description": "Web Comic Widget",
-        "message": "Web Comic"
-    },
-    "uv1bYR": {
-        "description": "Short weekday name (Tuesday)",
-        "message": "TUE"
-    },
-    "uzT59w": {
-        "description": "Preset: Grid",
-        "message": "Grid"
-    },
-    "v9UIPJ": {
-        "description": "Weather widget: wind speed tooltip",
-        "message": "Sunrise - Sunset"
-    },
-    "vVnypL": {
-        "description": "Quotes Widget description",
-        "message": "Shows a random quote, with categories"
-    },
-    "vlumg9": {
-        "description": "Create Widgets modal: search widgets placeholder",
-        "message": "Search widgets..."
-    },
-    "wEQDC6": {
-        "message": "Edit"
-    },
-    "wZq5vc": {
-        "description": "Form field label",
-        "message": "Display as icons"
-    },
-    "wogY8a": {
-        "message": "Create Widget"
-    },
-    "wr0l0L": {
-        "description": "Backgroud mode description",
-        "message": "An image from a URL"
-    },
-    "wwQ6Va": {
-        "description": "Location field",
-        "message": "Choose Location"
-    },
-    "x59fh0": {
-        "description": "Space Flights Widget",
-        "message": "Space Flights"
-    },
-    "x7WADS": {
-        "description": "Widget grid: form label for grid full width",
-        "message": "Full Page Grid"
-    },
-    "xR87uK": {
-        "description": "Widget grid: form hint for grid spacing",
-        "message": "The spacing between widgets, in pixels."
-    },
-    "xtOPHp": {
-        "description": "Form field label",
-        "message": "Link URL"
-    },
-    "xtl3ls": {
-        "description": "Links widget: form field label",
-        "message": "Enable custom icons"
-    },
-    "xvXMaZ": {
-        "description": "Greeting widget description",
-        "message": "Greets you"
-    },
-    "y1Z3or": {
-        "message": "Language"
-    },
-    "y8o0oA": {
-        "description": "Weather widget description",
-        "message": "Current and forecasted weather"
-    },
-    "yT43pK": {
-        "description": "Form field label",
-        "message": "Use icons from websites (favicons)"
-    },
-    "yUJ5MA": {
-        "description": "Preset: goals",
-        "message": "Goals"
-    },
-    "yY7Rve": {
-        "description": "Feed widget: filter show checkbox label",
-        "message": "Hide"
-    },
-    "yfgoZf": {
-        "message": "Discord / Matrix chats"
-    },
-    "ykNa5O": {
-        "message": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
-    },
-    "yvWbz6": {
-        "description": "Onboarding page: next button",
-        "message": "Next"
-    },
-    "ywSKRt": {
-        "description": "HTML widget description",
-        "message": "Custom HTML"
-    },
-    "z7UTSa": {
-        "message": "About Renewed Tab"
-    },
-    "zEj0dg": {
-        "description": "Age widget description",
-        "message": "Shows the progress through the year as a progress bar"
-    },
-    "zKofmb": {
-        "description": "Backgroud settings: form field hint (Unsplash Collection)",
-        "message": "Collection ID. Found in the URL, example: 42576559"
-    },
-    "zaQRTm": {
-        "description": "Extreme UV risk",
-        "message": "<b>Extreme</b> UV"
-    },
-    "zfsplE": {
-        "description": "Background credits vote",
-        "message": "Never show again"
-    },
-    "ziyAdj": {
-        "description": "Import / export settings, import",
-        "message": "Import"
-    },
-    "zo4ZQa": {
-        "description": "Feed widget: filter allow checkbox label",
-        "message": "Show"
-    },
-    "zsdRww": {
-        "description": "Theme settings: form field hint (Primary Color)",
-        "message": "Used for primary buttons and links"
-    }
+  "+GMx80": {
+    "description": "Location form field: error",
+    "message": "No locations found"
+  },
+  "+PNw8j": {
+    "description": "Weather widget: form field hint (Display Options)",
+    "message": "Even if you hide some info, you can often still see it by hovering over days and hours"
+  },
+  "+TYXj6": {
+    "description": "SpaceFlights widget: today and time",
+    "message": "Today, {time}"
+  },
+  "+oSH/F": {
+    "description": "Age widget description",
+    "message": "States your current age with way too much precision"
+  },
+  "+sI+Oh": {
+    "description": "Weather widget: form field label",
+    "message": "Show hourly forecast"
+  },
+  "/4k9ry": {
+    "description": "Very High UV risk",
+    "message": "<b>Very High</b> UV"
+  },
+  "/Mpu8A": {
+    "description": "Widget grid: form label 1 for grid full width",
+    "message": "Stretch grid to cover the entire page."
+  },
+  "/dtDqf": {
+    "description": "Notes Widget",
+    "message": "Notes"
+  },
+  "0PsF7Z": {
+    "description": "Delete widget modal message",
+    "message": "Are you sure you want to permanently remove this widget?"
+  },
+  "0feb3b": {
+    "description": "Image widget: Form field hint (Link)",
+    "message": "Optional, makes image a link"
+  },
+  "0hxZWu": {
+    "description": "Form field label",
+    "message": "Icon"
+  },
+  "0l+aD2": {
+    "description": "Preset: focus description",
+    "message": "Daily goals and inspirational quotes"
+  },
+  "1s5GYl": {
+    "description": "Form field label",
+    "message": "Opacity"
+  },
+  "2/2yg+": {
+    "message": "Add"
+  },
+  "27lljH": {
+    "description": "Age widget text",
+    "message": "You are <b>{age}</b>"
+  },
+  "2AUlDo": {
+    "description": "Greeting widget: greeting, from 9pm to midnight",
+    "message": "Sleep well, {name}"
+  },
+  "2O5Rq1": {
+    "description": "Greeting widget: greeting, from 4pm to 9pm",
+    "message": "Good evening, {name}"
+  },
+  "2VPa4j": {
+    "description": "The name of the current language, to be used in the settings dialog",
+    "message": "English"
+  },
+  "2efE5y": {
+    "description": "Greeting Widget",
+    "message": "Greeting"
+  },
+  "2vJWTd": {
+    "description": "Background credits title placeholder",
+    "message": "Photo"
+  },
+  "3/EBw0": {
+    "description": "Renewed Tab website",
+    "message": "Website"
+  },
+  "3Nw7b0": {
+    "description": "Search widget: form field label",
+    "message": "Search engine name"
+  },
+  "3UG6ds": {
+    "description": "Search widget description",
+    "message": "Search widgets or the web using your favourite search engine"
+  },
+  "3ZfhWo": {
+    "message": "Permission needed to access {host}. Edit this widget to grant it."
+  },
+  "3aaibf": {
+    "message": "Add Widget"
+  },
+  "3vh5vd": {
+    "description": "Invisible widget description",
+    "message": "Shows nothing, useful for layouting purposes"
+  },
+  "3vjl5Q": {
+    "description": "Feed widget filter allow label",
+    "message": "Show / Hide"
+  },
+  "47FYwb": {
+    "message": "Cancel"
+  },
+  "4F+2K3": {
+    "description": "Backgroud mode description",
+    "message": "Random image from an Unsplash collection"
+  },
+  "4UpnpD": {
+    "description": "Form field hint (Image)",
+    "message": "Images are stored locally on your browser, and never uploaded"
+  },
+  "4cMia7": {
+    "description": "Backgroud settings: form field label (how often background images change)",
+    "message": "Show a new photo"
+  },
+  "4dzBeG": {
+    "description": "Currencies widget: form field label",
+    "message": "From"
+  },
+  "4syC1B": {
+    "message": "Help and Requests"
+  },
+  "5640CU": {
+    "description": "Weather widget: form field label",
+    "message": "Current: Show precipitation"
+  },
+  "5DCxT+": {
+    "description": "Weather widget: form field label",
+    "message": "Temperature Unit"
+  },
+  "5mVcg9": {
+    "description": "Theme settings: form field label",
+    "message": "Custom CSS"
+  },
+  "6MDM6D": {
+    "description": "Quotes Widget",
+    "message": "Quotes"
+  },
+  "6pdO6i": {
+    "description": "Bookmarks widget: error message",
+    "message": "Unable to get bookmarks"
+  },
+  "7OH6mh": {
+    "description": "Image Widget",
+    "message": "Image"
+  },
+  "7bfD9/": {
+    "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
+    "message": "Suggest URL be added to default suggestions"
+  },
+  "7wOM6+": {
+    "description": "Year Progress widget",
+    "message": "Year Progress"
+  },
+  "8HmiSe": {
+    "description": "Feed widget: no sources error message",
+    "message": "Please specify a source"
+  },
+  "8J0Bhj": {
+    "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+  },
+  "8xVVb5": {
+    "description": "Theme settings: form field label",
+    "message": "Primary Color"
+  },
+  "9+2gJZ": {
+    "message": "This widget requires the browser extension version."
+  },
+  "Abtyj/": {
+    "description": "Image upload error message",
+    "message": "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image."
+  },
+  "Ack5ID": {
+    "description": "A search has returned no results here (note: there may be multiple places being searched)",
+    "message": "No results"
+  },
+  "AgU+/t": {
+    "description": "SpaceFlights widget description",
+    "message": "A list of upcoming space launches, powered by RocketLaunch.Live"
+  },
+  "AuSjzq": {
+    "description": "Weather widget: form field label",
+    "message": "Current: Show UV risk"
+  },
+  "Ay1sfO": {
+    "description": "Feed background mode: form field hint (Limit images)",
+    "message": "Controls how many of the most recent images to randomly choose from. Setting this to 1 will always choose the latest image"
+  },
+  "B0kbsm": {
+    "description": "Unsplash background mode",
+    "message": "Feed"
+  },
+  "B1pyj1": {
+    "description": "Weather widget: form field label",
+    "message": "Current: Show feels like"
+  },
+  "BJYZgx": {
+    "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
+  },
+  "BiPNnl": {
+    "description": "Weather widget: form field label",
+    "message": "Wind Speed Unit"
+  },
+  "Bl74xq": {
+    "description": "Button widget description",
+    "message": "A link button"
+  },
+  "BnmONl": {
+    "description": "Weather widget: form field label",
+    "message": "Current: Show sunrise / sunset"
+  },
+  "CNpJaZ": {
+    "description": "Preset: focus",
+    "message": "Focus"
+  },
+  "CmRs9p": {
+    "description": "Search Widget",
+    "message": "Search"
+  },
+  "Cq4JWx": {
+    "description": "Preset: grid description",
+    "message": "The news, weather, and more"
+  },
+  "CshCZY": {
+    "message": "Background Type"
+  },
+  "D0+wcK": {
+    "description": "Image widget description",
+    "message": "Display an image, optionally making it a link"
+  },
+  "D3idYv": {
+    "message": "Settings"
+  },
+  "D4M6tn": {
+    "description": "Onboarding modal: title",
+    "message": "Welcome to Renewed Tab"
+  },
+  "DJRqNI": {
+    "description": "Web Comic widget description",
+    "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
+  },
+  "Ddd3ZY": {
+    "description": "Currencies widget: form field label",
+    "message": "To"
+  },
+  "Dk7Khi": {
+    "description": "Weather widget: Fahrenheit unit",
+    "message": "Fahrenheit"
+  },
+  "E4nLwR": {
+    "description": "Background expiry dropdown",
+    "message": "Every day"
+  },
+  "F1A/8i": {
+    "description": "Feed widget: form field label",
+    "message": "Sources"
+  },
+  "FCmJHd": {
+    "description": "Feed widget description",
+    "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
+  },
+  "FHzdXg": {
+    "description": "Theme settings",
+    "message": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
+  },
+  "FqCn+F": {
+    "description": "Greeting widget: greeting, from midnight to noon",
+    "message": "Good morning, {name}"
+  },
+  "G6WG/N": {
+    "description": "Invisible Widget",
+    "message": "Invisible"
+  },
+  "GSox4d": {
+    "description": "Theme settings: form field hint (Font)",
+    "message": "Any font name installed on your computer"
+  },
+  "GWRKVT": {
+    "description": "Form field label",
+    "message": "Text Color"
+  },
+  "GXkv/F": {
+    "description": "Location form field: prompt",
+    "message": "Please select a location"
+  },
+  "GcxpZV": {
+    "description": "Clock widget: date style form field label",
+    "message": "Date style"
+  },
+  "Go7At+": {
+    "description": "Short weekday name (Saturday)",
+    "message": "SAT"
+  },
+  "GqPEp+": {
+    "message": "Requires browser extension version"
+  },
+  "H00a0q": {
+    "description": "Links widget, form field hint (Link URL)",
+    "message": "Leave blank to make heading"
+  },
+  "HEvlTB": {
+    "description": "Weather widget: display subform title",
+    "message": "Display Options"
+  },
+  "HPLtg4": {
+    "description": "Currencies widget: error",
+    "message": "Unknown currency ''{currency}''"
+  },
+  "HksGis": {
+    "description": "Weather widget: form field label",
+    "message": "Current: Show wind"
+  },
+  "I48yxw": {
+    "description": "General settings: privacy",
+    "message": "Privacy"
+  },
+  "IbCXY9": {
+    "description": "Clock widget: date style type",
+    "message": "Standard ({example})"
+  },
+  "Ibm90j": {
+    "description": "Clock widget: edit hint",
+    "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
+  },
+  "IqLwUL": {
+    "description": "Widget grid: form label for grid spacing",
+    "message": "Grid Spacing"
+  },
+  "J91edI": {
+    "description": "Settings tab",
+    "message": "Import / Export"
+  },
+  "JN/uvd": {
+    "description": "Moderate UV risk",
+    "message": "<b>Moderate</b> UV"
+  },
+  "JihbEV": {
+    "description": "Theme settings: link to CSS docs",
+    "message": "CSS documentation"
+  },
+  "JvOSvX": {
+    "description": "Settings tab",
+    "message": "Background"
+  },
+  "JzanJ8": {
+    "description": "Widget grid: form label for grid columns",
+    "message": "Grid Columns"
+  },
+  "K3r6DQ": {
+    "message": "Delete"
+  },
+  "K8s82y": {
+    "description": "Age widget: form field label",
+    "message": "Birth date"
+  },
+  "KdIFGg": {
+    "description": "Search widget: error, missing query variable",
+    "message": "Missing '{query}' in search URL. Eg: https://google.com/search/?q='{query}'"
+  },
+  "KhM0zv": {
+    "description": "Daily Goal widget: edit modal hint",
+    "message": "Quotes are sourced from external sources, and are not reviewed by Renewed Tab."
+  },
+  "KsX2fE": {
+    "message": "<b>{name}</b> at {latitude} by {longitude}"
+  },
+  "KyDwm3": {
+    "description": "Top Sites widget: description",
+    "message": "Shows top sites"
+  },
+  "Kzo9ZH": {
+    "description": "Form field label",
+    "message": "Image URL"
+  },
+  "L6nTur": {
+    "description": "Onboarding: presets title",
+    "message": "Choose a Starting Point"
+  },
+  "LfHpBk": {
+    "description": "Theme settings: form field label",
+    "message": "Font Scaling"
+  },
+  "Lxc1x4": {
+    "description": "Clock Widget",
+    "message": "Clock"
+  },
+  "M0PwXU": {
+    "description": "Weather widget: wind speed tooltip",
+    "message": "Wind Speed ({unit})"
+  },
+  "M6lR5V": {
+    "description": "Widget grid: form hint for grid columns",
+    "message": "Number of columns in the widget grid. You can fit {max} columns in the current window width ({res}px)."
+  },
+  "MN3prI": {
+    "description": "Bookmarks widget: form field label",
+    "message": "Include folders as sections"
+  },
+  "MiIvsP": {
+    "message": "You can add, move, resize, and configure widgets on a grid using intuitive controls."
+  },
+  "Mihrhf": {
+    "description": "Clock widget: date style type, not shown",
+    "message": "None"
+  },
+  "N/7Stk": {
+    "message": "Created by <a>rubenwardy</a>."
+  },
+  "O2Mjef": {
+    "description": "Review request, review button",
+    "message": "Review"
+  },
+  "O8mt7g": {
+    "description": "Clock widget: date style type",
+    "message": "Numbers ({example})"
+  },
+  "OBJta4": {
+    "description": "Greeting widget: edit modal hint",
+    "message": "You can change the name by clicking it on the widget"
+  },
+  "OPzczE": {
+    "description": "Clock widget: date style type",
+    "message": "Abbreviated ({example})"
+  },
+  "OQHLB5": {
+    "description": "Form field label",
+    "message": "Color"
+  },
+  "PBMGxw": {
+    "description": "Feed background mode: form field label",
+    "message": "Limit images"
+  },
+  "PHwOzi": {
+    "message": "Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs."
+  },
+  "PM6qZ7": {
+    "message": "Show seconds"
+  },
+  "PYJFvz": {
+    "description": "Form field label, list of categories. Used by Quotes widget",
+    "message": "Categories"
+  },
+  "Q1mwPp": {
+    "message": "Consider <a>contributing or adding your language</a>."
+  },
+  "QBZZBG": {
+    "description": "Theme settings: form field hint (Custom CSS)",
+    "message": "Please note: this is an experimental feature and CSS selectors may break in future releases."
+  },
+  "QV6YlB": {
+    "description": "Currencies widget: form field label",
+    "message": "Exchange Rates"
+  },
+  "QcExtH": {
+    "description": "General settings: privacy policy button",
+    "message": "Privacy Policy"
+  },
+  "QqE4JC": {
+    "message": "Missing feed URL."
+  },
+  "R4cyIr": {
+    "description": "Weather widget: form field label",
+    "message": "Current: Show humidity"
+  },
+  "RCe+DS": {
+    "message": "Drag and Drop Widgets"
+  },
+  "RZqASt": {
+    "description": "Backgroud mode description",
+    "message": "A single color"
+  },
+  "RhyKzC": {
+    "description": "Curated background mode",
+    "message": "Curated"
+  },
+  "S3njcM": {
+    "description": "IFrame Widget",
+    "message": "IFrame"
+  },
+  "S6nfAm": {
+    "description": "Weather widget: humidity tooltip",
+    "message": "Humidity (%)"
+  },
+  "SAo61B": {
+    "description": "Bookmarks Widget",
+    "message": "Bookmarks"
+  },
+  "SENRqu": {
+    "message": "Help"
+  },
+  "SG4UJU": {
+    "description": "Button Widget",
+    "message": "Button"
+  },
+  "ShQneX": {
+    "description": "Form field label",
+    "message": "Text"
+  },
+  "T/wBPw": {
+    "message": "Remove {type}"
+  },
+  "T4VxQN": {
+    "message": "Loading…"
+  },
+  "TDaF6J": {
+    "message": "Dismiss"
+  },
+  "TIEfOV": {
+    "description": "Feed widget: form field hint (Filters)",
+    "message": "An article will be shown if it matches at least one 'Show' filter (if any), and no 'Hide' filters."
+  },
+  "TS11GJ": {
+    "description": "Backgroud mode description",
+    "message": "Random image from an Atom or RSS feed"
+  },
+  "TUnCKb": {
+    "description": "Text Widget",
+    "message": "Text"
+  },
+  "TZknEV": {
+    "description": "HTML widget: form field hint (HTML)",
+    "message": "Be careful with what you paste here. An attacker could get you to paste code here that steals things the extension has access to - such as browser history and top sites."
+  },
+  "TkgCJ9": {
+    "message": "You can get help or request a feature using the link below."
+  },
+  "U2Qnh7": {
+    "description": "Image background mode",
+    "message": "Image"
+  },
+  "Upkn1Q": {
+    "description": "High UV risk",
+    "message": "<b>High</b> UV"
+  },
+  "V1EIOe": {
+    "description": "IFrame widget description",
+    "message": "Shows a webpage"
+  },
+  "VPDVTF": {
+    "description": "Shown when array table form field has no rows",
+    "message": "Nothing here"
+  },
+  "Vckd1G": {
+    "description": "Short weekday name (Monday)",
+    "message": "MON"
+  },
+  "VjDvbL": {
+    "description": "Form field label",
+    "message": "URL"
+  },
+  "VkW6D1": {
+    "description": "Backgroud settings: form field hint (Position)",
+    "message": "center, top, or bottom"
+  },
+  "VxE3S8": {
+    "description": "Host URL field: help text for suggest URL button",
+    "message": "This will automatically send the URL to the Renewed Tab developers. They may then choose to add it to the suggestions for all users."
+  },
+  "W3zKGr": {
+    "description": "Weather widget: Speed unit",
+    "message": "Kilometers per hour (kph)"
+  },
+  "WF5DKA": {
+    "description": "Age widget",
+    "message": "Age"
+  },
+  "WKiXhX": {
+    "description": "Color background mode",
+    "message": "Color"
+  },
+  "WQeyl4": {
+    "message": "Grant permission to access bookmarks"
+  },
+  "WZjKFf": {
+    "message": "Warning: this may contain personal data, if any was entered into widget settings."
+  },
+  "Wi0G88": {
+    "description": "Settings tab",
+    "message": "About and Help"
+  },
+  "X18x9m": {
+    "description": "Settings tab",
+    "message": "General"
+  },
+  "X5OoHJ": {
+    "description": "Daily Goal prompt",
+    "message": "What's your goal for today?"
+  },
+  "XV4mnl": {
+    "description": "Background settings: form field hint (Show a new photo)",
+    "message": "Depending on your settings, the same photo may be chosen"
+  },
+  "XYIyWM": {
+    "description": "Widget grid: form label 2 for grid full width",
+    "message": "You should increase \"Grid Columns\" to at least {cols} to make best use of space."
+  },
+  "XrQEPN": {
+    "description": "Form field label",
+    "message": "Location"
+  },
+  "XsTD4Q": {
+    "description": "Todo List Widget",
+    "message": "Todo List"
+  },
+  "YQhLKn": {
+    "description": "Background expiry dropdown",
+    "message": "Every hour"
+  },
+  "YS3jnS": {
+    "description": "Short weekday name (Friday)",
+    "message": "FRI"
+  },
+  "YS5zRT": {
+    "description": "Search widget: searchbox placeholder text, when search engine name is known",
+    "message": "Search with {name}"
+  },
+  "YYoBQn": {
+    "description": "Theme settings: form field label",
+    "message": "Panel Blur Radius"
+  },
+  "YuNOET": {
+    "description": "HTML widget: form field label",
+    "message": "HTML"
+  },
+  "Z2/hH0": {
+    "message": "Image: {filename}"
+  },
+  "Z79HMN": {
+    "description": "Backgroud mode description",
+    "message": "Random curated backgrounds"
+  },
+  "ZRWjTk": {
+    "description": "Search widget: form field label",
+    "message": "Use browser's default search engine"
+  },
+  "ZUZeuR": {
+    "description": "Text widget description",
+    "message": "Show a message"
+  },
+  "ZZIlU9": {
+    "description": "Daily Goal Widget",
+    "message": "Daily Goal"
+  },
+  "ZeZlbR": {
+    "description": "Button widget: form field hint (Opacity)",
+    "message": "Sets the opacity of the button tinted color"
+  },
+  "a09vzt": {
+    "message": "HTTP request failed, {code} {msg}."
+  },
+  "a0L2KE": {
+    "message": "Try including the country name or initials."
+  },
+  "aXrD3p": {
+    "description": "Currencies widget",
+    "message": "Currencies"
+  },
+  "aaxFkJ": {
+    "description": "Todo List widget: prompt",
+    "message": "Create a new todo item"
+  },
+  "abwneZ": {
+    "description": "Weather widget: Speed unit",
+    "message": "Meters per second (m/s)"
+  },
+  "adRrk3": {
+    "description": "Import / export settings, reset",
+    "message": "Reset everything"
+  },
+  "amHvKE": {
+    "description": "Notes widget: prompt",
+    "message": "Enter notes here"
+  },
+  "ao/AFQ": {
+    "description": "Daily Goal widget description",
+    "message": "Reminds you about a daily goal"
+  },
+  "as6rZ1": {
+    "description": "General settings: enable sentry",
+    "message": "Enable crash reporting (using Sentry)"
+  },
+  "b2Rs2F": {
+    "description": "Backgroud settings: form field label (Brightness: Light)",
+    "message": "Change brightness of lighter images"
+  },
+  "bQFsdR": {
+    "message": "Grant permission to access {host}"
+  },
+  "btOI+Z": {
+    "message": "New Tab"
+  },
+  "cL6y1P": {
+    "description": "Form field hint (Feed URL)",
+    "message": "URL to an Atom or RSS feed"
+  },
+  "cR7nCG": {
+    "message": "Reset theme to default"
+  },
+  "cSF2y1": {
+    "description": "Bookmarks widget description",
+    "message": "Shows your bookmarks"
+  },
+  "ckvzIb": {
+    "description": "Low UV risk",
+    "message": "<b>Low</b> UV"
+  },
+  "d7dHsn": {
+    "description": "Background expiry dropdown",
+    "message": "Every 15 minutes"
+  },
+  "dGu5JQ": {
+    "description": "Feed Widget",
+    "message": "Feed"
+  },
+  "dIwFS5": {
+    "description": "Form field label",
+    "message": "Choose an image"
+  },
+  "eKCjBm": {
+    "description": "Weather widget: change of precipitation (rain, etc)",
+    "message": "Precipitation (%)"
+  },
+  "eXB4qM": {
+    "description": "Short weekday name (Wednesday)",
+    "message": "WED"
+  },
+  "ekIjqh": {
+    "message": "Grant permission to access all websites"
+  },
+  "ekW/+6": {
+    "message": "Unable to connect to the Internet"
+  },
+  "fW8Xpd": {
+    "description": "Weather widget: location needed error",
+    "message": "Location needed. Click edit to add it."
+  },
+  "fWK68w": {
+    "description": "Theme settings: form field label",
+    "message": "Font"
+  },
+  "frEJEM": {
+    "description": "Short weekday name (Thursday)",
+    "message": "THU"
+  },
+  "fz43UJ": {
+    "description": "Renewed Tab donation link",
+    "message": "Donate"
+  },
+  "gAZqVl": {
+    "description": "Onboarding: preset hint",
+    "message": "You can add (<add></add>) or remove (<remove></remove>) widgets later, or change settings (<cog></cog>) as desired."
+  },
+  "gEYo49": {
+    "description": "Backgroud settings: form field label",
+    "message": "Position"
+  },
+  "gHzZEt": {
+    "description": "Preset: focus description",
+    "message": "Just a clock and a search bar"
+  },
+  "gQAsym": {
+    "description": "Widget grid: form label 3 for grid full width",
+    "message": "Note that other widgets won't move out of the way when dragging."
+  },
+  "gSjZfg": {
+    "description": "Links Widget",
+    "message": "Links"
+  },
+  "h/ftND": {
+    "message": "Choose a file"
+  },
+  "hCBQrY": {
+    "message": "Feels like <b>{temp}°</b>"
+  },
+  "hUIQ7h": {
+    "description": "Backgroud settings: form field label",
+    "message": "Brightness"
+  },
+  "hWimZf": {
+    "description": "Search widget: form field label, enable filtering widgets",
+    "message": "Enable widget search"
+  },
+  "hktZIl": {
+    "message": "Shows the time"
+  },
+  "iFxzUm": {
+    "description": "Background credits vote",
+    "message": "Like"
+  },
+  "iH2AHA": {
+    "message": "<a>Open source</a>, licensed under GPLv3+."
+  },
+  "irdBm2": {
+    "description": "Settings tab",
+    "message": "Theme"
+  },
+  "jSHZmX": {
+    "description": "Todo List widget: description",
+    "message": "Track to do list items"
+  },
+  "kAEQyV": {
+    "message": "OK"
+  },
+  "kF06lD": {
+    "description": "Clock widget: date style type",
+    "message": "Extended ({example})"
+  },
+  "ktmuOE": {
+    "description": "Feed widget: form field hint (Title)",
+    "message": "Leave blank to use feed's title"
+  },
+  "ku7Ot7": {
+    "description": "Backgroud settings: form field label",
+    "message": "Brightness: Light"
+  },
+  "kueLs9": {
+    "description": "Links widget: form field label",
+    "message": "Links"
+  },
+  "l8+Uwz": {
+    "description": "Form has no fields",
+    "message": "Nothing to edit."
+  },
+  "lQIN1l": {
+    "message": "Are you enjoying Renewed Tab? Give us a review!"
+  },
+  "lUdRdE": {
+    "message": "Error: {msg}"
+  },
+  "lY73np": {
+    "description": "Widget styling, checkbox",
+    "message": "Show panel background"
+  },
+  "lYJGY5": {
+    "description": "Image URL background mode",
+    "message": "Image URL"
+  },
+  "lkJAu6": {
+    "description": "Unsplash background mode",
+    "message": "Unsplash"
+  },
+  "lwUV0r": {
+    "description": "Daily Goal widget: edit modal hint",
+    "message": "You can change the goal by clicking it on the widget"
+  },
+  "mL3MOs": {
+    "description": "Weather widget: Speed unit",
+    "message": "Miles per hour (mph)"
+  },
+  "mSg5KK": {
+    "description": "Backgroud settings: form field label",
+    "message": "Brightness: Dark"
+  },
+  "mY9tpI": {
+    "message": "Error loading feed. Make sure it is an RSS or Atom feed."
+  },
+  "mv9TrH": {
+    "description": "HTML Widget",
+    "message": "HTML"
+  },
+  "mw6Uh+": {
+    "description": "Weather widget: form field label",
+    "message": "Show daily forecast"
+  },
+  "n0cZ3b": {
+    "description": "Credit to a website",
+    "message": "Powered by {host}."
+  },
+  "nF7bWj": {
+    "description": "Clock widget: date style type",
+    "message": "ISO ({example})"
+  },
+  "nGSwtl": {
+    "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
+    "message": "Search"
+  },
+  "nHw5cV": {
+    "description": "Todo List widget: edit modal hint",
+    "message": "Click items to edit them."
+  },
+  "nnaWVi": {
+    "description": "Weather widget: Celsius unit",
+    "message": "Celsius"
+  },
+  "o2uuHu": {
+    "message": "12 hour clock"
+  },
+  "o9vGxx": {
+    "description": "Form field label",
+    "message": "Open links in new tab"
+  },
+  "oBl48o": {
+    "description": "Import / export settings, reset confirmation",
+    "message": "Are you sure you want to reset all data?"
+  },
+  "oDog89": {
+    "description": "Notes widget description",
+    "message": "An editable text area for notes"
+  },
+  "oGS5TE": {
+    "description": "Greeting widget: greeting, from noon to 4pm",
+    "message": "Good afternoon, {name}"
+  },
+  "oJnbwn": {
+    "description": "Greeting widget: name prompt",
+    "message": "name"
+  },
+  "oRui+E": {
+    "message": "Enjoying Renewed Tab? Consider donating to help cover costs and support its development."
+  },
+  "ofl4Ui": {
+    "description": "Location form field: search",
+    "message": "Search"
+  },
+  "olBVPS": {
+    "description": "Import / export settings, export",
+    "message": "Export"
+  },
+  "or/+Da": {
+    "description": "Subheading for per-widget styling properties",
+    "message": "Styling"
+  },
+  "p7+m8N": {
+    "description": "Top Sites widget: permission request",
+    "message": "Grant permission to access top sites"
+  },
+  "p8GKKf": {
+    "description": "Top Sites Widget",
+    "message": "Top Sites"
+  },
+  "pG7wIz": {
+    "description": "Currencies widget description",
+    "message": "Shows exchange rates, supporting forex currencies and crypto (BitCoin etc)"
+  },
+  "pHo6u+": {
+    "description": "Web Comic widget: no images found error",
+    "message": "No images found on feed"
+  },
+  "pVrtrA": {
+    "description": "Backgroud mode description",
+    "message": "Use a custom image"
+  },
+  "pbEMNj": {
+    "description": "Onboarding page: previous button",
+    "message": "Previous"
+  },
+  "pqIuCa": {
+    "description": "Weather widget: form field label",
+    "message": "Show current weather"
+  },
+  "q4caWd": {
+    "description": "Backgroud settings: form field label",
+    "message": "Blur radius"
+  },
+  "q6/aVX": {
+    "description": "Edit hint shown on searchable widgets",
+    "message": "You can filter this widget using a Search widget."
+  },
+  "qCsSqt": {
+    "description": "Theme settings: form field label",
+    "message": "Panel Background Darkness"
+  },
+  "qEk9AJ": {
+    "description": "Backgroud settings: form field label (Brightness: Dark)",
+    "message": "Change brightness of darker images"
+  },
+  "qYVXqA": {
+    "description": "Background mode options",
+    "message": "{mode} Options"
+  },
+  "qoEZRi": {
+    "description": "Backgroud settings: form field label",
+    "message": "Unsplash collection"
+  },
+  "qzlLb3": {
+    "description": "Short weekday name (Sunday)",
+    "message": "SUN"
+  },
+  "rAuRqW": {
+    "message": "Translations are provided by the community."
+  },
+  "rb3Zy8": {
+    "description": "Feed widget: form field label",
+    "message": "Filter Articles"
+  },
+  "sIC2UV": {
+    "description": "Widget styling, checkbox for showing text on eg: Links",
+    "message": "Show text"
+  },
+  "sPl3nI": {
+    "description": "Form field label",
+    "message": "Title"
+  },
+  "sYvWWw": {
+    "description": "Links widget, form field hint (Icon)",
+    "message": "Optional, URL to image (18px recommended)"
+  },
+  "sx01dA": {
+    "description": "Links widget description",
+    "message": "Links, with support for headings and icons"
+  },
+  "translation_credits": {
+    "description": "Credit the translators: LANGUAGE translation by YOUR NAME",
+    "message": ""
+  },
+  "tyq8NB": {
+    "description": "Weather Widget",
+    "message": "Weather"
+  },
+  "uRYRJh": {
+    "message": "Edit {type}"
+  },
+  "ubO4zt": {
+    "description": "Web Comic Widget",
+    "message": "Web Comic"
+  },
+  "uv1bYR": {
+    "description": "Short weekday name (Tuesday)",
+    "message": "TUE"
+  },
+  "uzT59w": {
+    "description": "Preset: Grid",
+    "message": "Grid"
+  },
+  "v9UIPJ": {
+    "description": "Weather widget: wind speed tooltip",
+    "message": "Sunrise - Sunset"
+  },
+  "vVnypL": {
+    "description": "Quotes Widget description",
+    "message": "Shows a random quote, with categories"
+  },
+  "vlumg9": {
+    "description": "Create Widgets modal: search widgets placeholder",
+    "message": "Search widgets..."
+  },
+  "wEQDC6": {
+    "message": "Edit"
+  },
+  "wZq5vc": {
+    "description": "Form field label",
+    "message": "Display as icons"
+  },
+  "wogY8a": {
+    "message": "Create Widget"
+  },
+  "wr0l0L": {
+    "description": "Backgroud mode description",
+    "message": "An image from a URL"
+  },
+  "wwQ6Va": {
+    "description": "Location field",
+    "message": "Choose Location"
+  },
+  "x59fh0": {
+    "description": "Space Flights Widget",
+    "message": "Space Flights"
+  },
+  "x7WADS": {
+    "description": "Widget grid: form label for grid full width",
+    "message": "Full Page Grid"
+  },
+  "xR87uK": {
+    "description": "Widget grid: form hint for grid spacing",
+    "message": "The spacing between widgets, in pixels."
+  },
+  "xtOPHp": {
+    "description": "Form field label",
+    "message": "Link URL"
+  },
+  "xtl3ls": {
+    "description": "Links widget: form field label",
+    "message": "Enable custom icons"
+  },
+  "xvXMaZ": {
+    "description": "Greeting widget description",
+    "message": "Greets you"
+  },
+  "y1Z3or": {
+    "message": "Language"
+  },
+  "y8o0oA": {
+    "description": "Weather widget description",
+    "message": "Current and forecasted weather"
+  },
+  "yT43pK": {
+    "description": "Form field label",
+    "message": "Use icons from websites (favicons)"
+  },
+  "yUJ5MA": {
+    "description": "Preset: goals",
+    "message": "Goals"
+  },
+  "yY7Rve": {
+    "description": "Feed widget: filter show checkbox label",
+    "message": "Hide"
+  },
+  "yfgoZf": {
+    "message": "Discord / Matrix chats"
+  },
+  "ykNa5O": {
+    "message": "Thanks to Font-Awesome for icons, React for UI, and WebPack for builds."
+  },
+  "yvWbz6": {
+    "description": "Onboarding page: next button",
+    "message": "Next"
+  },
+  "ywSKRt": {
+    "description": "HTML widget description",
+    "message": "Custom HTML"
+  },
+  "z7UTSa": {
+    "message": "About Renewed Tab"
+  },
+  "zEj0dg": {
+    "description": "Age widget description",
+    "message": "Shows the progress through the year as a progress bar"
+  },
+  "zKofmb": {
+    "description": "Backgroud settings: form field hint (Unsplash Collection)",
+    "message": "Collection ID. Found in the URL, example: 42576559"
+  },
+  "zaQRTm": {
+    "description": "Extreme UV risk",
+    "message": "<b>Extreme</b> UV"
+  },
+  "zfsplE": {
+    "description": "Background credits vote",
+    "message": "Never show again"
+  },
+  "ziyAdj": {
+    "description": "Import / export settings, import",
+    "message": "Import"
+  },
+  "zo4ZQa": {
+    "description": "Feed widget: filter allow checkbox label",
+    "message": "Show"
+  },
+  "zsdRww": {
+    "description": "Theme settings: form field hint (Primary Color)",
+    "message": "Used for primary buttons and links"
+  }
 }

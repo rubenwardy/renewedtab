@@ -1,23 +1,37 @@
+import { defineMessages } from "@formatjs/intl";
 import { usePromise, useStorage } from "app/hooks";
-import { getFeedbackURLFromInfo, getInstallInfo } from "app/utils/webext";
+import { miscMessages } from "app/locale/common";
+import { getInstallInfo } from "app/utils/webext";
 import React from "react";
+import { useIntl } from "react-intl";
 import { Alert, AlertButton } from "./Alert";
+
+
+const messages = defineMessages({
+	review_request: {
+		defaultMessage: "Are you enjoying Renewed Tab? Give us a review!",
+	},
+
+	review: {
+		defaultMessage: "Review",
+		description: "Review request, review button"
+	},
+})
 
 function ReviewRequesterImpl(props: { onDone: () => void }) {
 	const [installInfo] = usePromise(getInstallInfo, []);
 	const storeURL = installInfo?.storeURL;
-	const feedbackURL = installInfo && getFeedbackURLFromInfo(installInfo, "feedback");
+	const intl = useIntl();
 
 	const reviewButtons: AlertButton[] = [
-		{ text: "Review", url: storeURL ?? undefined },
-		{ text: "Help", url: "https://renewedtab.com/help/" },
-		{ text: "Feedback", url: feedbackURL ?? undefined },
-		{ text: "Dismiss", icon: "fa-times" },
+		{ text: intl.formatMessage(messages.review), url: storeURL ?? undefined },
+		{ text: intl.formatMessage(miscMessages.help), url: "https://renewedtab.com/help/" },
+		{ text: intl.formatMessage(miscMessages.dismiss), icon: "fa-times" },
 	];
 
 	return (
 		<Alert
-			message="Are you enjoying Renewed Tab? Give us a review!"
+			message={intl.formatMessage(messages.review_request)}
 			buttons={reviewButtons} onButtonClick={props.onDone} />);
 }
 
