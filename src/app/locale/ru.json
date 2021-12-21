@@ -1125,5 +1125,8 @@
     "VxE3S8": {
         "message": "Автоматически отправит URL разработчикам обновленной вкладки. Затем они могут добавить его к предложениям для всех пользователей.",
         "description": "Host URL field: help text for suggest URL button"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> @ {latitude} , {longitude}"
     }
 }
