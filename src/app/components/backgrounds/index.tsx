@@ -2,7 +2,7 @@ import { ActualBackgroundProps, BackgroundProvider, getBackgroundProvider, getSc
 import { CacheExpiry } from "app/backgrounds/messages";
 import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
-import { clearLocalStorage } from "app/Storage";
+import { clearLocalStorage } from "app/storage";
 import { enumToValue } from "app/utils/enum";
 import { fromTypedJSON, toTypedJSON } from "app/utils/TypedJSON";
 import React, { useMemo } from "react";

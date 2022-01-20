@@ -1,5 +1,5 @@
 import { fetchBinaryAsDataURL, getAPI } from "app/hooks";
-import { storage } from "app/Storage";
+import { storage } from "app/storage";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";

@@ -1,6 +1,6 @@
 import { FileInfo } from "app/components/forms/ImageUploadField";
 import { schemaMessages } from "app/locale/common";
-import { largeStorage } from "app/Storage";
+import { largeStorage } from "app/storage";
 import { ImageHandle, type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
 import { ActualBackgroundProps, BackgroundProvider } from ".";

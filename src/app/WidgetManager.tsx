@@ -1,4 +1,4 @@
-import { IStorage } from "./Storage";
+import { IStorage } from "./storage";
 import { Vector2 } from "./utils/Vector2";
 import { WidgetTypes } from "./widgets";
 import { getInitialTheme, Widget, WidgetTheme } from "./Widget";

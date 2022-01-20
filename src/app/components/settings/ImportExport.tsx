@@ -1,6 +1,6 @@
 import { usePromise } from "app/hooks";
 import { miscMessages } from "app/locale/common";
-import { storage } from "app/Storage";
+import { storage } from "app/storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useRef } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";

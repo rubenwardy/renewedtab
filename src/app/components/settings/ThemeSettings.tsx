@@ -1,4 +1,4 @@
-import { storage } from "app/Storage";
+import { storage } from "app/storage";
 import Color from "app/utils/Color";
 import Schema, { type } from "app/utils/Schema";
 import React, { useMemo } from "react";

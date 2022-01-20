@@ -1,6 +1,6 @@
 import { TippyTopImage } from "common/api/icons";
 import { fetchBinaryAsDataURL, fetchCheckCors, getAPI } from "./hooks/http";
-import { cacheStorage } from "./Storage";
+import { cacheStorage } from "./storage";
 import { firstPromise } from "./utils";
 
 

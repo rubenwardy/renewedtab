@@ -1,4 +1,4 @@
-import { IStorage } from "app/Storage";
+import { IStorage } from "app/storage";
 
 export default class DummyStorage implements IStorage {
 	private values: { [key: string]: any } = {};

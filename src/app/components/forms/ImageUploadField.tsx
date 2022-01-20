@@ -1,6 +1,6 @@
 import { useLargeStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
-import { largeStorage } from "app/Storage";
+import { largeStorage } from "app/storage";
 import { readBlobAsDataURL } from "app/utils/blob";
 import { ImageHandle } from "app/utils/Schema";
 import uuid from "app/utils/uuid";

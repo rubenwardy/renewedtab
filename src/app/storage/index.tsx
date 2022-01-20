@@ -1,4 +1,4 @@
-import { fromTypedJSON, toTypedJSON } from "./utils/TypedJSON";
+import { fromTypedJSON, toTypedJSON } from "../utils/TypedJSON";
 
 
 /**

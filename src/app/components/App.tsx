@@ -9,7 +9,7 @@ import { defineMessages, FormattedMessage, IntlProvider, useIntl } from "react-i
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
-import { storage } from "app/Storage";
+import { storage } from "app/storage";
 import * as Sentry from "@sentry/react";
 import Onboarding from "./onboarding";
 import { useBackground } from "app/hooks/background";

@@ -1,4 +1,4 @@
-import { cacheStorage, IStorage, largeStorage, storage } from "app/Storage";
+import { cacheStorage, IStorage, largeStorage, storage } from "app/storage";
 import debounce from "app/utils/debounce";
 import { useMemo, useState } from "react";
 import { useForceUpdate } from ".";
