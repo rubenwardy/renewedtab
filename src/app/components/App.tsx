@@ -86,13 +86,15 @@ export default function App() {
 					{createIsOpen && (<CreateWidgetDialog
 							manager={widgetManager}
 							onClose={() => setCreateOpen(false)} />)}
-					<SettingsDialog
-							isOpen={settingsIsOpen}
-							onClose={() => setSettingsOpen(false)}
-							background={background} setBackground={setBackground}
-							theme={theme} setTheme={setTheme}
-							locale={locale} setLocale={setLocale}
-							grid={gridSettings ?? undefined} setGrid={setGridSettings} />
+					{gridSettings && (
+						<SettingsDialog
+								isOpen={settingsIsOpen}
+								onClose={() => setSettingsOpen(false)}
+								background={background} setBackground={setBackground}
+								theme={theme} setTheme={setTheme}
+								locale={locale} setLocale={setLocale}
+								grid={gridSettings} setGrid={setGridSettings} />)}
+
 					{loaded && gridSettings &&
 						<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
 					{onboardingIsOpen && (

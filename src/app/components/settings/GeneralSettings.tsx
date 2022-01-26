@@ -19,7 +19,7 @@ export interface GeneralSettingsProps {
 	locale: string;
 	setLocale: (locale: string) => void;
 
-	grid?: WidgetGridSettings;
+	grid: WidgetGridSettings;
 	setGrid: (grid: WidgetGridSettings) => void;
 }
 
@@ -45,7 +45,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 	}
 
 	const gridSettingsSchema = useMemo(
-		() => makeGridSettingsSchema(props.grid!),
+		() => makeGridSettingsSchema(props.grid),
 		[ force ]);
 
 	return (
@@ -55,7 +55,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				setLocale={props.setLocale} />
 
 			<Form
-				values={props.grid!}
+				values={props.grid}
 				schema={gridSettingsSchema}
 				onChange={handleSetGridValue} />
 
