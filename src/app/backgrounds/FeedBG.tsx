@@ -2,7 +2,7 @@ import { fetchFeed, getAPI } from "app/hooks";
 import { schemaMessages } from "app/locale/common";
 import { AutocompleteItem, type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundCredit, BackgroundProvider } from ".";
+import { ActualBackgroundProps, BackgroundCredit, BackgroundProvider } from "./common";
 import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 

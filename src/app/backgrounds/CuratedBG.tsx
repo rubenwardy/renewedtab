@@ -3,7 +3,7 @@ import { storage } from "app/storage";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundProvider, getCreditsFromBackgroundInfo } from ".";
+import { ActualBackgroundProps, BackgroundProvider, getCreditsFromBackgroundInfo } from "./common";
 import { backgroundMessages, CacheExpiry, cacheExpiryMessages } from "./messages";
 
 

@@ -67,6 +67,10 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 						values={{mode: translatedTitle}}
 						description="Background mode options" />
 			</h3>
+			{selectedProvider.formHint &&
+					<p className="text-muted">
+						<MyFormattedMessage message={selectedProvider.formHint} />
+					</p>}
 			<Form
 					values={props.background.values}
 					schema={getSchemaForProvider(selectedProvider.id)}

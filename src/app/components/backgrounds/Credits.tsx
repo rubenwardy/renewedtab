@@ -1,4 +1,4 @@
-import { BackgroundCredit } from "app/backgrounds";
+import { BackgroundCredit } from "app/backgrounds/common";
 import { buildAPIURL, fetchCheckCors, useStorage } from "app/hooks";
 import { useDelay } from "app/hooks/delay";
 import { BackgroundInfo } from "common/api/backgrounds";

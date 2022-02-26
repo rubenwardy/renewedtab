@@ -56,6 +56,11 @@ export const schemaMessages = defineMessages({
 		description: "Form field label",
 	},
 
+	colors: {
+		defaultMessage: "Colors",
+		description: "Form field label",
+	},
+
 	textColor: {
 		defaultMessage: "Text Color",
 		description: "Form field label",

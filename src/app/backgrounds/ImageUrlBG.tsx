@@ -1,7 +1,7 @@
 import { schemaMessages } from "app/locale/common";
 import { type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
-import { ActualBackgroundProps, BackgroundProvider } from ".";
+import { ActualBackgroundProps, BackgroundProvider } from "./common";
 import { backgroundMessages } from "./messages";
 
 

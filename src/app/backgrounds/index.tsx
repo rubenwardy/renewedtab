@@ -1,76 +1,20 @@
-import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import Schema from "app/utils/Schema";
-import { BackgroundInfo } from "common/api/backgrounds";
+
+
 import { CuratedBG } from "./CuratedBG";
 import { ColorBG } from "./ColorBG";
 import { FeedBG } from "./FeedBG";
 import { ImageBG } from "./ImageBG";
 import { ImageUrlBG } from "./ImageUrlBG";
 import { UnsplashBG } from "./UnsplashBG";
-
-
-interface Link {
-	text: string;
-	url?: string;
-}
-
-
-export interface BackgroundCredit {
-	info?: BackgroundInfo;
-	title?: Link;
-	author?: Link;
-	site?: Link;
-	enableVoting?: boolean;
-}
-
-
-export function getCreditsFromBackgroundInfo(info: BackgroundInfo, enableVoting?: boolean): BackgroundCredit {
-	return {
-		info, enableVoting,
-
-		title: (info.title || info.links.photo) ? {
-			text: info.title ?? "",
-			url: info.links.photo
-		} : undefined,
-
-		author: info.author ? {
-			text: info.author,
-			url: info.links.author
-		} : undefined,
-
-		site: info.site ? {
-			text: info.site,
-			url: info.links.site
-		} : undefined,
-	};
-}
-
-
-export interface ActualBackgroundProps {
-	image?: string;
-	color?: string;
-	brightnessDark?: number;
-	brightnessLight?: number;
-	blur?: number;
-	credits?: BackgroundCredit;
-	position?: string;
-}
-
-export interface BackgroundProvider<T> {
-	id: string;
-	title: MyMessageDescriptor;
-	description: MyMessageDescriptor;
-	schema: Schema<T>;
-	defaultValues: T;
-	isBrowserOnly?: boolean;
-	enableCaching?: boolean;
-	get: (values: T) => Promise<ActualBackgroundProps>;
-}
+import { GradientBG } from "./GradientBG";
+import { BackgroundProvider } from "./common";
 
 
 export const backgroundProviders: Record<string, BackgroundProvider<any>> = {
 	"Curated": CuratedBG,
 	"Color": ColorBG,
+	"Gradient": GradientBG,
 	"Image": ImageBG,
 	"ImageUrl": ImageUrlBG,
 	"Unsplash": UnsplashBG,

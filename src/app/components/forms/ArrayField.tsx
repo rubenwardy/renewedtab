@@ -48,7 +48,7 @@ function createFromSchema(schema: UncheckedSchema): any {
 		.forEach(([key, entry]) => {
 			if (entry!.type == "string" || entry!.type == "url") {
 				retval[key] = "";
-			} else if (entry!.type == "number") {
+			} else if (entry!.type == "number" || entry!.type == "unit_number") {
 				retval[key] = 0;
 			}
 		});

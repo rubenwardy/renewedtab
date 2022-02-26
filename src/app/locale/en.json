@@ -165,12 +165,20 @@
   "8J0Bhj": {
     "message": "Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
   },
+  "8xPAKF": {
+    "description": "Form field hint (Stop)",
+    "message": "From 0-100%, position of color on gradient"
+  },
   "8xVVb5": {
     "description": "Theme settings: form field label",
     "message": "Primary Color"
   },
   "9+2gJZ": {
     "message": "This widget requires the browser extension version."
+  },
+  "ATbgo4": {
+    "description": "Form field option, radial gradient",
+    "message": "Radial"
   },
   "Abtyj/": {
     "description": "Image upload error message",
@@ -200,8 +208,16 @@
     "description": "Weather widget: form field label",
     "message": "Current: Show feels like"
   },
+  "B3NCWb": {
+    "description": "Form field label",
+    "message": "Colors"
+  },
   "BJYZgx": {
     "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
+  },
+  "BfX7n6": {
+    "description": "Gradient background disclaimer on Firefox",
+    "message": "Note: Firefox may show artifacts such as lines on gradient backgrounds. This isn't something that we can fix."
   },
   "BiPNnl": {
     "description": "Weather widget: form field label",
@@ -214,6 +230,10 @@
   "BnmONl": {
     "description": "Weather widget: form field label",
     "message": "Current: Show sunrise / sunset"
+  },
+  "C7WJrL": {
+    "description": "Form field option, vertical gradient",
+    "message": "Vertical"
   },
   "CNpJaZ": {
     "description": "Preset: focus",
@@ -256,6 +276,10 @@
   "E4nLwR": {
     "description": "Background expiry dropdown",
     "message": "Every day"
+  },
+  "EpPEVJ": {
+    "description": "Gradient background mode",
+    "message": "Gradient"
   },
   "F1A/8i": {
     "description": "Feed widget: form field label",
@@ -366,6 +390,10 @@
   "KhM0zv": {
     "description": "Daily Goal widget: edit modal hint",
     "message": "Quotes are sourced from external sources, and are not reviewed by Renewed Tab."
+  },
+  "KjUKUz": {
+    "description": "Backgroud mode description",
+    "message": "A gradient of colors"
   },
   "KsX2fE": {
     "message": "<b>{name}</b> at {latitude} by {longitude}"
@@ -692,6 +720,10 @@
   "bQFsdR": {
     "message": "Grant permission to access {host}"
   },
+  "bfWes8": {
+    "description": "Form field label",
+    "message": "Gradient Type"
+  },
   "btOI+Z": {
     "message": "New Tab"
   },
@@ -735,6 +767,10 @@
   },
   "ekW/+6": {
     "message": "Unable to connect to the Internet"
+  },
+  "exTzGh": {
+    "description": "Form field option, horizontal gradient",
+    "message": "Horizontal"
   },
   "fW8Xpd": {
     "description": "Weather widget: location needed error",
@@ -867,6 +903,10 @@
   "mw6Uh+": {
     "description": "Weather widget: form field label",
     "message": "Show daily forecast"
+  },
+  "n+w6I2": {
+    "description": "Form field label. Gradient stop (%)",
+    "message": "Stop"
   },
   "n0cZ3b": {
     "description": "Credit to a website",
