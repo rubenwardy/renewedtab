@@ -1,4 +1,3 @@
-import { usePromise } from "app/hooks/promises";
 import { getLanguages } from "app/locale";
 import { mergeClasses } from "app/utils";
 import React, { ChangeEvent, useMemo } from "react";
