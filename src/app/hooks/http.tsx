@@ -2,7 +2,7 @@ import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { readBlobAsDataURL } from "app/utils/blob";
-import { Feed, parseFeed } from "app/utils/Feed";
+import { Feed, FeedSource, parseFeed } from "app/utils/Feed";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
 import { usePromise } from "./promises";
@@ -39,9 +39,9 @@ export async function fetchCheckCors(request: Request, init?: RequestInit): Prom
 	try {
 		return await fetch(request, init);
 	} catch (e) {
-		if (typeof(e) == "object" && typeof (e as Error).message == "string" &&
-				((e as Error).message.includes("NetworkError") ||
-					(e as Error).message.includes("Failed to fetch"))) {
+		if (typeof (e) == "object" && typeof (e as Error).message == "string" &&
+			((e as Error).message.includes("NetworkError") ||
+				(e as Error).message.includes("Failed to fetch"))) {
 			await checkHostPermission(request.url);
 			throw new UserError(miscMessages.no_network);
 		}
@@ -144,7 +144,7 @@ export async function getAPI<T>(path: string, args: any): Promise<T> { // eslint
  * @return {[response, error]]} - Response and error
  */
 export function useAPI<T>(path: string, args: any, // eslint-disable-line
-		dependents?: any[]): [(T | null), (string | null)] {
+	dependents?: any[]): [(T | null), (string | null)] {
 	return usePromise(() => getAPI(path, args), dependents ?? []);
 }
 
@@ -198,6 +198,40 @@ export async function fetchFeed(url: string): Promise<Feed> {
 	return feed;
 }
 
+export async function fetchMultiFeed(sources: FeedSource[]): Promise<Feed> {
+	if (sources.length == 0 || sources.some(x => !x.url)) {
+		throw new UserError(messages.missingFeedURL);
+	}
+
+	const allPromises = await Promise.allSettled(sources.map(x => fetchFeed(x.url)));
+
+	function isFullfilled<T>(promise: PromiseSettledResult<T>): promise is PromiseFulfilledResult<T> {
+		return promise.status == "fulfilled";
+	}
+
+	const allFeeds =
+		allPromises
+			.filter(isFullfilled)
+			.map((promise, i) => {
+				const feed = promise.value;
+				feed.source = sources[i];
+				return feed;
+			});
+
+	const MAX_ARTICLES = 100;
+	return {
+		articles:
+			allFeeds
+				.flatMap(x => x.articles)
+				.sort((a, b) => (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0))
+				.slice(0, MAX_ARTICLES),
+	};
+}
+
 export function useFeed(url: string, dependents?: any[]): [Feed | null, any] {
 	return usePromise(() => fetchFeed(url), dependents ?? []);
+}
+
+export function useMultiFeed(sources: FeedSource[], dependents?: any[]): [Feed | null, any] {
+	return usePromise(() => fetchMultiFeed(sources), dependents ?? []);
 }

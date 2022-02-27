@@ -1,10 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { mergeClasses, parseURL } from 'app/utils';
-import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
-import Icon from './Icon';
+import WebsiteIcon from './WebsiteIcon';
 
 
-interface Option {
+export interface TabOption {
 	id: string;
 	title: string;
 	url?: string;
@@ -13,25 +12,22 @@ interface Option {
 interface TabsProps {
 	value: string;
 	onChanged: (v: string) => void;
-	options: Option[];
+	options: TabOption[];
 	useWebsiteIcons?: boolean;
 	useRootPathForIcons?: boolean;
 }
 
 
-function Tab(props: { option: Option, selected: boolean, useRootPathForIcons: boolean, onClick: () => void, useWebsiteIcons: boolean}) {
+function Tab(props: { option: TabOption, selected: boolean, useRootPathForIcons: boolean, onClick: () => void, useWebsiteIcons: boolean}) {
 	const url = parseURL(props.option.url ?? "");
 	if (url && props.useRootPathForIcons) {
 		url.pathname = "/";
 	}
-	const iconPromise = useMemo(
-		() => (props.useWebsiteIcons && url) ? getWebsiteIconOrNull(url.toString()) : "",
-		[url, props.useWebsiteIcons]);
 
 	return (
 		<button className={mergeClasses("tab", props.selected && "selected")}
 				onClick={() => props.onClick()}>
-			{props.useWebsiteIcons && <Icon icon={iconPromise} />}
+			{props.useWebsiteIcons && <WebsiteIcon url={url} />}
 			{props.option.title}
 		</button>);
 }

@@ -3,7 +3,7 @@ import { usePromise } from 'app/hooks';
 import { mergeClasses } from 'app/utils';
 
 
-interface IconProps {
+export interface IconProps {
 	icon: string | Promise<string | undefined>;
 	requiresIcons?: boolean;
 	defaultIcon?: string;

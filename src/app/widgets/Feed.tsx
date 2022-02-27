@@ -5,13 +5,15 @@ import { WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
-import { getAPI, useFeed, useForceUpdateValue } from 'app/hooks';
+import { getAPI, useMultiFeed, useForceUpdateValue } from 'app/hooks';
 import ErrorView from 'app/components/ErrorView';
 import uuid from 'app/utils/uuid';
-import { Tabs } from 'app/components/Tabs';
+import { TabOption, Tabs } from 'app/components/Tabs';
 import UserError from 'app/utils/UserError';
 import { useGlobalSearch } from 'app/hooks/globalSearch';
 import { parseURL, queryMatchesAny } from 'app/utils';
+import { Article, FeedSource } from 'app/utils/Feed';
+import WebsiteIcon from 'app/components/WebsiteIcon';
 
 
 const messages = defineMessages({
@@ -32,6 +34,11 @@ const messages = defineMessages({
 
 	sources: {
 		defaultMessage: "Sources",
+		description: "Feed widget: form field label",
+	},
+
+	combineSources: {
+		defaultMessage: "Combine sources into single tab",
 		description: "Feed widget: form field label",
 	},
 
@@ -73,14 +80,9 @@ interface Filter {
 	text: string;
 }
 
-interface FeedSource {
-	id: string;
-	title: string;
-	url: string;
-}
-
 interface FeedProps {
 	sources: FeedSource[];
+	combineSources: boolean;
 	filters: Filter[];
 	openInNewTab: boolean;
 	useWebsiteIcons: boolean;
@@ -88,13 +90,35 @@ interface FeedProps {
 
 
 interface FeedPanelProps extends FeedProps {
-	onGotTitle: (title: string) => void;
+	onGotTitle: (source: FeedSource, title: string) => void;
+}
+
+
+function FeedArticle({ article, feedProps: props }: { article: Article, feedProps: FeedProps }) {
+	if (props.sources.length == 1) {
+		return (<>{article.title}</>);
+	} else if (props.useWebsiteIcons) {
+		return (
+			<div className="row">
+				<span className="col-auto mr-1">
+					<WebsiteIcon url={article.feed.source!.url} />
+				</span>
+				<span className="col">{article.title}</span>
+			</div>);
+	} else {
+		return (
+			<>
+				{article.title}
+				<p className="mt-1 mb-0 text-muted">
+					{article.feed.source?.title || article.feed.title}
+				</p>
+			</>);
+	}
 }
 
 
 function FeedPanel(props: FeedPanelProps) {
-	const source = props.sources[0];
-	const [feed, error] = useFeed(source.url, [source.url]);
+	const [feed, error] = useMultiFeed(props.sources, [props.sources.length]);
 	const { query } = useGlobalSearch();
 	const target = props.openInNewTab ? "_blank" : undefined;
 
@@ -107,10 +131,15 @@ function FeedPanel(props: FeedPanelProps) {
 	}
 
 	useEffect(() => {
-		if (source.title == "" && feed.title) {
-			props.onGotTitle(feed.title);
-		}
-	}, [feed.title ?? ""]);
+		const seen: any = {};
+
+		(feed?.articles ?? []).map(x => x.feed).forEach(subfeed => {
+			if (subfeed.title && subfeed.source && !subfeed.source.title && !seen[subfeed.source.id]) {
+				seen[subfeed.source.id] = true;
+				props.onGotTitle(subfeed.source, subfeed.title);
+			}
+		});
+	}, [feed]);
 
 	const allowFilters = props.filters
 		.filter(filter => filter.isAllowed === true || filter.isAllowed == "true")
@@ -132,7 +161,7 @@ function FeedPanel(props: FeedPanelProps) {
 		.map(article => (
 			<li key={article.link}>
 				<a href={article.link} target={target} rel="noreferrer">
-					{article.title}
+					<FeedArticle article={article} feedProps={props} />
 				</a>
 			</li>));
 
@@ -150,15 +179,30 @@ function FeedPanel(props: FeedPanelProps) {
 
 function Feed(widget: WidgetProps<FeedProps>) {
 	const props = widget.props;
-	const [selectedId, setSelectedId] = useState(props.sources[0]?.id ?? "");
-	const selected = props.sources.find(x => x.id == selectedId) ?? props.sources[0];
+	const showAll = widget.props.combineSources;
+	const showTabs = !showAll;
+
+	const [selectedId, setSelectedId] = useState(showAll ? "*" : (props.sources[0]?.id ?? ""));
+	const selectedSource = props.sources.find(x => x.id == selectedId);
+	const sources: FeedSource[] = selectedId == "*" ? props.sources : (selectedSource ? [selectedSource] : []);
 	const [force, forceUpdate] = useForceUpdateValue();
 
-	const options = useMemo(() => props.sources.filter(x => x.url).map(x => ({
-		id: x.id,
-		title: x.title || parseURL(x.url)?.hostname || "?",
-		url: x.url,
-	})), [force, props.sources, props.sources.length]);
+	const options = useMemo<TabOption[]>(() => {
+		const ret: TabOption[] = props.sources.filter(x => x.url).map(x => ({
+			id: x.id,
+			title: x.title || parseURL(x.url)?.hostname || "?",
+			url: x.url,
+		}));
+		if (showAll) {
+			ret.unshift({
+				id: "*",
+				title: "All",
+				url: "",
+			});
+		}
+
+		return ret;
+	}, [force, props.sources, props.sources.length]);
 
 	if (props.sources.length == 0) {
 		return (
@@ -167,14 +211,15 @@ function Feed(widget: WidgetProps<FeedProps>) {
 
 	return (
 		<Panel {...widget.theme} flush={true}>
-			<Tabs value={selectedId} options={options} onChanged={setSelectedId}
-				useWebsiteIcons={props.useWebsiteIcons}
-				useRootPathForIcons={true} />
+			{showTabs && (
+				<Tabs value={selectedId} options={options} onChanged={setSelectedId}
+					useWebsiteIcons={props.useWebsiteIcons}
+					useRootPathForIcons={true} />)}
 			<FeedPanel {...props}
-				key={selected.url}
-				sources={[selected]}
-				onGotTitle={title => {
-					selected.title = title;
+				key={sources.map(x => x.url).join(",")}
+				sources={sources}
+				onGotTitle={(source, title) => {
+					source.title = title;
 					widget.save();
 					forceUpdate();
 				}} />
@@ -215,6 +260,7 @@ const widget: WidgetType<FeedProps> = {
 				url: "https://www.theregister.com/headlines.atom",
 			},
 		],
+		combineSources: false,
 		filters: [],
 		openInNewTab: false,
 		useWebsiteIcons: false,
@@ -225,6 +271,7 @@ const widget: WidgetType<FeedProps> = {
 			return {
 				sources: type.array(sourceSchema, messages.sources),
 				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
+				combineSources: type.boolean(messages.combineSources),
 				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
 			};
@@ -232,6 +279,7 @@ const widget: WidgetType<FeedProps> = {
 			return {
 				sources: type.array(sourceSchema, messages.sources),
 				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
+				combineSources: type.boolean(messages.combineSources),
 				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 			};
 		}

@@ -53,3 +53,13 @@ export function calculateDecimalAge(dateOfBirth: Date): number {
 
 	return integerPart + fractionalPart;
 }
+
+
+export function parseDate(v: (string | undefined)): (Date | undefined) {
+	if (v == undefined) {
+		return undefined;
+	}
+
+	const ret = new Date(v);
+	return !isNaN(ret.getTime()) ? ret : undefined;
+}

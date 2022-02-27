@@ -1,9 +1,12 @@
-export interface Article {
+import { parseDate } from "./dates";
+
+
+export interface FeedSource {
+	id: string;
 	title: string;
-	link?: string;
-	image?: string;
-	alt?: string;
+	url: string;
 }
+
 
 export enum FeedType {
 	Rss,
@@ -14,6 +17,17 @@ export interface Feed {
 	title?: string;
 	link?: string;
 	articles: Article[];
+	source?: FeedSource;
+}
+
+
+export interface Article {
+	feed: Feed;
+	title: string;
+	link?: string;
+	image?: string;
+	alt?: string;
+	date?: Date;
 }
 
 function cleanURL(url: string) {
@@ -53,8 +67,13 @@ function getImage(el: Element, parseXML: XMLParser): ([string, string | undefine
 
 
 export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
-	const articles: Article[] = [];
 	if (root.tagName == "rss") {
+		const feed: Feed = {
+			title: root.querySelector("channel > title")?.textContent ?? undefined,
+			link: root.querySelector("channel > link")?.textContent ?? undefined,
+			articles: [],
+		};
+
 		root.querySelectorAll("item").forEach(el => {
 			const img = getImage(el, parseXML);
 			const title = el.querySelector("title")?.textContent;
@@ -62,20 +81,24 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 				return;
 			}
 
-			articles.push({
+			feed.articles.push({
 				title: escapeHTMLtoText(title, parseXML).trim(),
 				link: el.querySelector("link")?.textContent?.trim() ?? undefined,
 				image: img && img[0],
 				alt: img && img[1],
+				date: parseDate(el.querySelector("pubDate")?.textContent?.trim() ?? undefined),
+				feed: feed
 			});
 		});
 
-		return {
-			title: root.querySelector("channel > title")?.textContent ?? undefined,
-			link: root.querySelector("channel > link")?.textContent ?? undefined,
-			articles: articles,
-		};
+		return feed;
 	} else if (root.tagName == "feed") {
+		const feed: Feed = {
+			title: root.getElementsByTagName("title")[0]?.textContent ?? undefined,
+			link: root.querySelector("link")?.getAttribute("href") ?? undefined,
+			articles: [],
+		};
+
 		root.querySelectorAll("entry").forEach(el => {
 			const img = getImage(el, parseXML);
 			const title = el.querySelector("title")?.textContent;
@@ -83,19 +106,17 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 				return;
 			}
 
-			articles.push({
+			feed.articles.push({
 				title: escapeHTMLtoText(title, parseXML).trim(),
 				link: el.querySelector("link")?.getAttribute("href")?.trim(),
 				image: img && img[0],
 				alt: img && img[1],
+				date: parseDate(el.querySelector("updated")?.textContent?.trim() ?? undefined),
+				feed: feed,
 			});
 		});
 
-		return {
-			title: root.getElementsByTagName("title")[0]?.textContent ?? undefined,
-			link: root.querySelector("link")?.getAttribute("href") ?? undefined,
-			articles: articles
-		};
+		return feed;
 	} else {
 		return null;
 	}
