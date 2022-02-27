@@ -3,15 +3,16 @@ const file = fs.readFileSync("votes.csv", "UTF-8");
 
 // Used to remove duplicates
 const votesLookup = {};
+const errors = [];
 
-file.split(/\r?\n/).forEach(line => {
+file.split(/\r?\n/).forEach((line, lineNo) => {
 	const parts = line.split(",").map(part => part.trim());
 	if (parts.length == 1) {
 		return null;
 	}
 
 	if (parts[2] != "good" && parts[2] != "bad") {
-		throw new Error(`${line}: vote is neither good nor bad`);
+		errors.push(`Line ${lineNo + 1}: vote is neither good nor bad`);
 	}
 
 	const vote = {
@@ -52,3 +53,8 @@ backgrounds.forEach(bg => {
 });
 
 console.log(`\n\nThere are ${votes.length} votes on ${backgrounds.length} backgrounds`);
+
+if (errors.length > 0) {
+	console.log("\n\nErrors:");
+	errors.forEach(x => console.log("-", x));
+}
