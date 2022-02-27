@@ -211,12 +211,15 @@ export async function fetchMultiFeed(sources: FeedSource[]): Promise<Feed> {
 
 	const allFeeds =
 		allPromises
-			.filter(isFullfilled)
 			.map((promise, i) => {
+				if (!isFullfilled(promise)) {
+					return undefined;
+				}
+
 				const feed = promise.value;
 				feed.source = sources[i];
 				return feed;
-			});
+			}).filter(x => x);
 
 	const MAX_ARTICLES = 100;
 	return {
