@@ -31,7 +31,7 @@ const localeAliases : { [key: string]: string } = {
 
 defineMessage({
 	id: "languageName",
-	defaultMessage: "English",
+	defaultMessage: "",
 	description: "The name of the current language, to be used in the settings dialog"
 }) as MessageDescriptor;
 
