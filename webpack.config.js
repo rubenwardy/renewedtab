@@ -4,7 +4,7 @@ const fs = require("fs");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const formatjs = require("@formatjs/ts-transformer");
+const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
 const {GitRevisionPlugin} = require('git-revision-webpack-plugin');
 const gitRevisionPlugin = new GitRevisionPlugin({
 	lightweightTags: true,
@@ -76,29 +76,49 @@ module.exports = {
 				"webext": true,
 			},
 		}),
+		new ForkTsCheckerPlugin({
+			typescript: {
+				configFile: path.resolve(__dirname, "tsconfig.app.json"),
+			},
+			// eslint: {
+			// 	files: './**/*.{ts,tsx}',
+			// },
+		}),
 	],
 	module: {
 		rules: [
 			{
-				test: /\.tsx?$/,
-				use: [
-					{
-						loader: "ts-loader",
-						options: {
-							configFile: "tsconfig.app.json",
-							getCustomTransformers() {
-								return {
-									before: [
-										formatjs.transform({
-											overrideIdFn: '[sha512:contenthash:base64:6]',
-										}),
-									],
-								};
+				test: /\.[t|j]sx?$/,
+				loader: 'babel-loader',
+				options: {
+					babelrc: false,
+					cacheDirectory: true,
+					presets: [
+						[
+							'@babel/preset-typescript',
+							{
+								isTSX: true,
+								allExtensions: true,
 							},
-						},
-					},
-				],
-				exclude: /node_modules/,
+						],
+						[
+							'@babel/preset-env',
+							{
+								targets: { browsers: ['Chrome 96'] },
+							},
+						],
+					],
+					plugins: [
+						'@babel/transform-react-jsx',
+						[
+							"formatjs",
+							{
+								"idInterpolationPattern": "[sha512:contenthash:base64:6]",
+								"ast": true
+							}
+						],
+					],
+				},
 			},
 			{
 				test: /\.s?[ac]ss$/i,

@@ -1,8 +1,5 @@
 {
 	"extends": "./tsconfig.json",
-	"compilerOptions": {
-		"module": "ES2015"
-	},
 	"exclude": [
 		"src/server",
 		"tests"
