@@ -49,20 +49,34 @@ function escapeHTMLtoText(html: string, parseXML: XMLParser): string {
 function getImage(el: Element, parseXML: XMLParser): ([string, string | undefined] | undefined) {
 	const enclosure = el.querySelector("enclosure[type^='image/'][url]");
 	if (enclosure) {
-		return [ cleanURL(enclosure.getAttribute("url")!), undefined ];
+		return [cleanURL(enclosure.getAttribute("url")!), undefined];
 	}
 
-	const html = el.querySelector("description, summary")?.textContent ?? undefined
+	const mediaGroup = Array.from(el.getElementsByTagName("media:content"))
+		.filter(x => x.getAttribute("url") &&
+			(!x.hasAttribute("medium") || x.getAttribute("medium") == "image"));
+	if (mediaGroup.length > 0) {
+		return [cleanURL(mediaGroup[0].getAttribute("url")!), undefined];
+	}
+
+	const tags = el.querySelector("StoryImage, fullimage");
+	if (tags && tags.textContent) {
+		return [cleanURL(tags.textContent), undefined];
+	}
+
+	const html = el.getElementsByTagName("content:encoded")[0]?.textContent ??
+		el.querySelector("description, summary, content")?.textContent ?? undefined;
 	if (!html) {
 		return undefined;
 	}
 
-	const img = parseXML(html, "text/html").querySelector("img");
-	if (!img) {
+	const imgs = Array.from(parseXML(html, "text/html").querySelectorAll("img[src]"))
+		.filter(x => !x.getAttribute("src")?.startsWith("http://feeds.feedburner.com/~ff/rss/"));
+	if (imgs.length == 0) {
 		return undefined;
 	}
 
-	return [ cleanURL(img.getAttribute("src")!), img.getAttribute("alt") ?? ""];
+	return [cleanURL(imgs[0].getAttribute("src")!), imgs[0].getAttribute("alt") ?? ""];
 }
 
 

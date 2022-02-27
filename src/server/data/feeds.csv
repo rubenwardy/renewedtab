@@ -3,7 +3,7 @@ The Register, https://www.theregister.com/headlines.atom
 New York Times, https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
 CNN, http://rss.cnn.com/rss/cnn_topstories.rss
 Huffington Post, https://www.huffpost.com/section/front-page/feed?x=1
-USA Today, http://rssfeeds.usatoday.com/UsatodaycomNation-TopStories
+USA Today, http://rssfeeds.usatoday.com/usatodaycomnation-topstories&x=1
 LifeHacker, https://lifehacker.com/rss
 Politico, http://www.politico.com/rss/politicopicks.xml
 Yahoo News, https://www.yahoo.com/news/rss
@@ -17,6 +17,6 @@ Medium: Politics, https://medium.com/feed/topic/politics
 Medium: Relationships, https://medium.com/feed/topic/relationships
 Hacker News, https://news.ycombinator.com/rss
 Product Hunt, https://www.producthunt.com/feed
-Knowhere, https://knowherenews.com/static/rss.xml
 NDTV, https://feeds.feedburner.com/ndtvnews-top-stories?format=xml
 Reddit,  https://www.reddit.com/.rss
+CSS Tricks, https://css-tricks.com/feed/

@@ -198,7 +198,9 @@ export async function fetchFeed(url: string): Promise<Feed> {
 	return feed;
 }
 
-export async function fetchMultiFeed(sources: FeedSource[]): Promise<Feed> {
+type FeedErrors = { source: FeedSource, error: UserError }[];
+
+export async function fetchMultiFeed(sources: FeedSource[]): Promise<[Feed, FeedErrors]> {
 	if (sources.length == 0 || sources.some(x => !x.url)) {
 		throw new UserError(messages.missingFeedURL);
 	}
@@ -208,33 +210,50 @@ export async function fetchMultiFeed(sources: FeedSource[]): Promise<Feed> {
 	function isFullfilled<T>(promise: PromiseSettledResult<T>): promise is PromiseFulfilledResult<T> {
 		return promise.status == "fulfilled";
 	}
+	function isRejected<T>(promise: PromiseSettledResult<T>): promise is PromiseRejectedResult {
+		return promise.status == "rejected";
+	}
+
+	const pairedPromises =
+		allPromises.map((promise, i) => ({ source: sources[i], promise: promise }));
 
 	const allFeeds =
-		allPromises
-			.map((promise, i) => {
-				if (!isFullfilled(promise)) {
-					return undefined;
-				}
-
-				const feed = promise.value;
-				feed.source = sources[i];
+		pairedPromises
+			.filter(({ promise }) => isFullfilled(promise))
+			.map(({ source, promise }) => {
+				const feed = (promise as PromiseFulfilledResult<Feed>).value;
+				feed.source = source;
 				return feed;
-			}).filter(x => x);
+			});
+
+	if (allFeeds.length == 0) {
+		throw (allPromises[0] as PromiseRejectedResult).reason;
+	}
+
+	const errors = pairedPromises
+		.filter(({ promise }) => isRejected(promise))
+		.map(({ source, promise }) => ({ source: source, error: (promise as PromiseRejectedResult).reason }));
+	errors.forEach(({ error }) => {
+		console.log(error.messageDescriptor);
+		if (!(error instanceof UserError)) {
+			throw error;
+		}
+	})
 
 	const MAX_ARTICLES = 100;
-	return {
+	return [{
 		articles:
 			allFeeds
 				.flatMap(x => x.articles)
 				.sort((a, b) => (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0))
 				.slice(0, MAX_ARTICLES),
-	};
+	}, errors];
 }
 
 export function useFeed(url: string, dependents?: any[]): [Feed | null, any] {
 	return usePromise(() => fetchFeed(url), dependents ?? []);
 }
 
-export function useMultiFeed(sources: FeedSource[], dependents?: any[]): [Feed | null, any] {
+export function useMultiFeed(sources: FeedSource[], dependents?: any[]): [[Feed, FeedErrors] | null, any] {
 	return usePromise(() => fetchMultiFeed(sources), dependents ?? []);
 }

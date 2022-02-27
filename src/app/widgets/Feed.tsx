@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
 import { WidgetProps, WidgetType } from 'app/Widget';
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI, useMultiFeed, useForceUpdateValue } from 'app/hooks';
@@ -14,6 +14,7 @@ import { useGlobalSearch } from 'app/hooks/globalSearch';
 import { parseURL, queryMatchesAny } from 'app/utils';
 import { Article, FeedSource } from 'app/utils/Feed';
 import WebsiteIcon from 'app/components/WebsiteIcon';
+import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 
 
 const messages = defineMessages({
@@ -40,6 +41,16 @@ const messages = defineMessages({
 	combineSources: {
 		defaultMessage: "Combine sources into single tab",
 		description: "Feed widget: form field label",
+	},
+
+	showImages: {
+		defaultMessage: "Show images",
+		description: "Feed widget: form field label",
+	},
+
+	showImagesHint: {
+		defaultMessage: "Experimental. This does not work with all feed sources, due to missing image information. Images may also be large, and take a while to load.",
+		description: "Feed widget: form field hint (Show Images)",
 	},
 
 	filters: {
@@ -86,6 +97,7 @@ interface FeedProps {
 	filters: Filter[];
 	openInNewTab: boolean;
 	useWebsiteIcons: boolean;
+	showImages: boolean;
 }
 
 
@@ -95,13 +107,31 @@ interface FeedPanelProps extends FeedProps {
 
 
 function FeedArticle({ article, feedProps: props }: { article: Article, feedProps: FeedProps }) {
-	if (props.sources.length == 1) {
+	if (props.showImages) {
+		return (
+			<div className="row row-gap-3">
+				<div className="col-3">
+					<div className="ratio ratio-4x3">
+						{article.image
+							? (<img className="thumbnail" loading="lazy" src={article.image} />)
+							: (<div className="thumbnail" />)}
+					</div>
+				</div>
+				<div className="col">
+					{article.title}
+					{props.sources.length != 1 && (
+						<p className="mt-1 mb-0 text-muted">
+							{article.feed.source?.title || article.feed.title}
+						</p>)}
+				</div>
+			</div>);
+	} else if (props.sources.length == 1) {
 		return (<>{article.title}</>);
 	} else if (props.useWebsiteIcons) {
 		return (
-			<div className="row">
-				<span className="col-auto mr-1">
-					<WebsiteIcon url={article.feed.source!.url} />
+			<div className="row row-gap-3">
+				<span className="col-auto">
+					<WebsiteIcon url={article.feed.source!.url} className="m-0" />
 				</span>
 				<span className="col">{article.title}</span>
 			</div>);
@@ -118,17 +148,20 @@ function FeedArticle({ article, feedProps: props }: { article: Article, feedProp
 
 
 function FeedPanel(props: FeedPanelProps) {
-	const [feed, error] = useMultiFeed(props.sources, [props.sources.length]);
+	const [info, error] = useMultiFeed(props.sources, [props.sources.length]);
 	const { query } = useGlobalSearch();
 	const target = props.openInNewTab ? "_blank" : undefined;
+	const intl = useIntl();
 
-	if (!feed) {
-		useEffect(() => {}, [""]);
+	if (!info) {
+		useEffect(() => { }, [""]);
 		return (
 			<div className="panel-inset">
 				<ErrorView error={error} loading={true} panel={false} />
 			</div>);
 	}
+
+	const [feed, errors] = info;
 
 	useEffect(() => {
 		const seen: any = {};
@@ -154,9 +187,9 @@ function FeedPanel(props: FeedPanelProps) {
 		.filter(article => {
 			const title = article.title.toLowerCase();
 			return article.link &&
-					(allowFilters.length == 0 ||
-						allowFilters.some(filter => title.includes(filter))) &&
-					!blockFilters.some(filter => title.includes(filter));
+				(allowFilters.length == 0 ||
+					allowFilters.some(filter => title.includes(filter))) &&
+				!blockFilters.some(filter => title.includes(filter));
 		})
 		.map(article => (
 			<li key={article.link}>
@@ -167,12 +200,23 @@ function FeedPanel(props: FeedPanelProps) {
 
 	return (
 		<ul className="links">
+			{errors.map(({ source, error }, i) => (
+				<li key={`err-${i}`} className="section error">
+					<FormattedMessage
+						defaultMessage="Failed to load {source}: {error}"
+						description="Feed error message"
+						values={{
+							source: source.title ?? source.url,
+							error: error.messageDescriptor ? myFormatMessage(intl, error.messageDescriptor) : error.message,
+						}} />
+				</li>
+			))}
 			{rows}
 			{rows.length == 0 && feed.articles.length > 0 && (
-					<li className="section">
-						<FormattedMessage {...miscMessages.noResults} />
-					</li>
-				)}
+				<li className="section">
+					<FormattedMessage {...miscMessages.noResults} />
+				</li>
+			)}
 		</ul>);
 }
 
@@ -264,6 +308,7 @@ const widget: WidgetType<FeedProps> = {
 		filters: [],
 		openInNewTab: false,
 		useWebsiteIcons: false,
+		showImages: false,
 	},
 
 	async schema() {
@@ -274,6 +319,7 @@ const widget: WidgetType<FeedProps> = {
 				combineSources: type.boolean(messages.combineSources),
 				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
+				showImages: type.boolean(messages.showImages, messages.showImagesHint),
 			};
 		} else {
 			return {
@@ -281,6 +327,7 @@ const widget: WidgetType<FeedProps> = {
 				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
 				combineSources: type.boolean(messages.combineSources),
 				openInNewTab: type.boolean(schemaMessages.openInNewTab),
+				showImages: type.boolean(messages.showImages, messages.showImagesHint),
 			};
 		}
 	},

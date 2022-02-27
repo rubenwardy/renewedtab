@@ -121,9 +121,23 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 	height: 100%;
 }
 
+.row-gap-1 {
+	gap: 0.25rem;
+}
+
+.row-gap-2 {
+	gap: 0.5rem;
+}
+
+.row-gap-3 {
+	gap: 0.75rem;
+}
+
 .col {
 	display: block;
 	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
 }
 
 .col-auto {
@@ -136,6 +150,14 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 .col-2 {
 	flex-basis: 16.66%;
+}
+
+.col-3 {
+	flex-basis: 24.99%;
+}
+
+.col-4 {
+	flex-basis: 33.32%;
 }
 
 .row {
@@ -201,5 +223,34 @@ $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 	li {
 		list-style: none;
+	}
+}
+
+
+.ratio-4x3 {
+	--aspect-ratio: calc(3 / 4 * 100%);
+}
+
+.ratio {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		display: block;
+		content: "";
+		padding-top: var(--aspect-ratio);
+	}
+
+	& > * {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	img {
+		object-fit: cover;
 	}
 }
