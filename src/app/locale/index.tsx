@@ -3,18 +3,22 @@ import { defineMessage, MessageDescriptor, MessageFormatElement } from "react-in
 type Translation = Record<string, MessageFormatElement[]>;
 
 
-const locales : { [key: string]: Translation } = {
-	"en": require("./compiled/en.json"),
-	"es": require("./compiled/es.json"),
-	"de": require("./compiled/de.json"),
-	"fr": require("./compiled/fr.json"),
-	"it": require("./compiled/it.json"),
-	"ms": require("./compiled/ms.json"),
-	"pt-br": require("./compiled/pt_BR.json"),
-	"tr": require("./compiled/tr.json"),
-	"ru": require("./compiled/ru.json"),
-	"zh-hans": require("./compiled/zh_Hans.json"),
+const getLocales = async () => (await import(/* webpackChunkName: "locale" */ "./locale_data")).default;
+
+
+const availableLocales: Record<string, string> = {
+	"en": "English",
+	"es": "Español",
+	"de": "Deutsch",
+	"fr": "Français",
+	"it": "Italiano",
+	"ms": "Bahasa Melayu",
+	"pt-br": "Português (do Brasil)",
+	"tr": "Türkçe",
+	"ru": "Русский",
+	"zh-hans": "汉语",
 };
+
 
 // Locales will automatically resolve to more generic locales (ie: es-MX to es),
 // but not the other way around.
@@ -25,22 +29,11 @@ const localeAliases : { [key: string]: string } = {
 };
 
 
-const languageName = defineMessage({
+defineMessage({
+	id: "languageName",
 	defaultMessage: "English",
 	description: "The name of the current language, to be used in the settings dialog"
 }) as MessageDescriptor;
-
-
-// Set fallbacks
-for (const lang in locales) {
-	if (lang != "en") {
-		for (const [key, value] of Object.entries(locales["en"])) {
-			if (typeof locales[lang][key] === "undefined" && key != languageName.id!) {
-				locales[lang][key] = value;
-			}
-		}
-	}
-}
 
 
 /**
@@ -48,15 +41,10 @@ for (const lang in locales) {
  *
  * @returns Dictionary of language locale to textual name
  */
-export function getLanguages() {
+export function getLanguages(): Record<string, string> {
 	const ret: { [key: string]: string } = {};
-	for (const key in locales) {
-		const text = locales[key][languageName.id!] as any;
-		if (text) {
-			ret[key] = `${text[0].value} (${key})`;
-		} else {
-			ret[key] = key;
-		}
+	for (const [key, name] of Object.entries(availableLocales)) {
+		ret[key] = `${name} (${key})`;
 	}
 	return ret;
 }
@@ -68,8 +56,13 @@ export function getLanguages() {
  * @param locale ISO locale string
  * @returns React-Intl translation
  */
-export function getTranslation(locale: string): Translation {
-	return locales[locale] ?? locales.en;
+export async function getTranslation(locale: string): Promise<Translation | undefined> {
+	if (locale == "en") {
+		return undefined;
+	} else {
+		const locales = await getLocales();
+		return locales[locale];
+	}
 }
 
 
@@ -85,7 +78,7 @@ export function getUserLocale(): string {
 	for (const lang of langs) {
 		// Find exact matches, eg: es-mx
 		const langAliased = localeAliases[lang] ?? lang;
-		if (locales[langAliased]) {
+		if (availableLocales[langAliased]) {
 			return langAliased;
 		}
 
@@ -93,7 +86,7 @@ export function getUserLocale(): string {
 		const idx = lang.indexOf("-");
 		const shortLang = lang.substring(0, idx);
 		const shortLangAliased = localeAliases[shortLang] ?? shortLang;
-		if (idx && locales[shortLangAliased]) {
+		if (idx && availableLocales[shortLangAliased]) {
 			return shortLangAliased;
 		}
 	}

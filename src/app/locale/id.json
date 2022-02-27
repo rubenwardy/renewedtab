@@ -63,7 +63,7 @@
         "message": "Anda berusia <b>{age}</b> tahun",
         "description": "Age widget text"
     },
-    "2VPa4j": {
+    "languageName": {
         "message": "Bahasa Indonesia",
         "description": "The name of the current language, to be used in the settings dialog"
     },

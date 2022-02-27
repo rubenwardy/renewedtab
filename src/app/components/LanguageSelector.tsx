@@ -1,6 +1,7 @@
+import { usePromise } from "app/hooks/promises";
 import { getLanguages } from "app/locale";
 import { mergeClasses } from "app/utils";
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useMemo } from "react";
 import { FormattedMessage } from "react-intl";
 
 
@@ -21,8 +22,8 @@ export default function LanguageSelector(props: LanguageSelectorProps) {
 		}
 	}
 
-	const langs = Object.entries(getLanguages()).sort(
-		([,x], [,y]) => x.localeCompare(y, undefined, { sensitivity: "base" }));
+	const langs = useMemo(() => Object.entries(getLanguages()).sort(
+		([,x], [,y]) => x.localeCompare(y, undefined, { sensitivity: "base" })), []);
 
 	return (
 		<div className={mergeClasses("field", props.className)}>

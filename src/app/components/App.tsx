@@ -46,7 +46,7 @@ export default function App() {
 	const loaded = loadingRes != null;
 	const [actualLocale, setLocale] = useStorage<string>("locale", getUserLocale());
 	const locale = actualLocale ?? "en"
-	const messages = getTranslation(locale);
+	const [messages] = usePromise(() => getTranslation(locale), [locale]);
 	const [background, setBackground] = useBackground();
 	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});
 	const [createIsOpen, setCreateOpen] = useState(false);
@@ -76,7 +76,7 @@ export default function App() {
 	classes.push(isLocked ? "locked" : "unlocked");
 
 	return (
-		<IntlProvider locale={locale} defaultLocale="en" messages={messages}>
+		<IntlProvider locale={locale} defaultLocale="en" messages={messages ?? undefined}>
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
 				<div className={classes.join(" ")}>
