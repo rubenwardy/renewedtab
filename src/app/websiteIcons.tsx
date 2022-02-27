@@ -70,18 +70,18 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 	const icons = html.querySelectorAll(ICON_SELECTORS);
 
 	let topScore = -1;
-	let topIcon : (string | null) = null;
+	let topIcon: (string | null) = null;
 	for (const icon of icons.values()) {
 		const href = icon.tagName.toLowerCase() == "meta"
-				? icon.getAttribute("content")
-				: icon.getAttribute("href");
+			? icon.getAttribute("content")
+			: icon.getAttribute("href");
 		if (!href || href.startsWith("data:")) {
 			continue;
 		}
 
 		const sizes = icon.getAttribute("sizes")
-				?.split(" ")
-				.map(size => size.split("x").map(x => parseInt(x))) ?? [];
+			?.split(" ")
+			.map(size => size.split("x").map(x => parseInt(x))) ?? [];
 
 		const sizeScores = sizes.map(size => Math.min(...size));
 
@@ -107,7 +107,7 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 
 
 const SUBDOMAIN_REMOVAL = new Set([
-	"feeds", "rss", "feedrss", "feedsrss", "rssfeeds", "atom" ]);
+	"feeds", "rss", "feedrss", "feedsrss", "rssfeeds", "atom"]);
 
 
 function getParentDomainIfWhitelisted(urlStr: string): string | undefined {
@@ -137,13 +137,13 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 	const parentURL = getParentDomainIfWhitelisted(url)
 
 	const data = await firstPromise([
-			() => fetchTippyTops(url),
-			() => fetchIconURL(url),
-			url != rootURL.toString() && (() =>  fetchIconURL(rootURL.toString())),
-			parentURL ? (() => fetchTippyTops(parentURL)) : undefined,
-			parentURL ? (() => fetchIconURL(parentURL)) : undefined,
-			() => fetchBinaryAsDataURL(new URL("/favicon.ico", url).toString(), validateIcon),
-		]);
+		() => fetchTippyTops(url),
+		() => fetchIconURL(url),
+		url != rootURL.toString() && (() => fetchIconURL(rootURL.toString())),
+		parentURL ? (() => fetchTippyTops(parentURL)) : undefined,
+		parentURL ? (() => fetchIconURL(parentURL)) : undefined,
+		() => fetchBinaryAsDataURL(new URL("/favicon.ico", url).toString(), validateIcon),
+	]);
 	if (data) {
 		await cacheStorage.set(key, {
 			url: data,

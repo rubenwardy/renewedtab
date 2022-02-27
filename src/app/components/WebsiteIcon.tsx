@@ -1,4 +1,4 @@
-import { getWebsiteIconOrNull } from "app/WebsiteIcon";
+import { getWebsiteIconOrNull } from "app/websiteIcons";
 import React, { useMemo } from "react";
 import Icon, { IconProps } from './Icon';
 

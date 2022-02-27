@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { useElementSize } from 'app/hooks';
 import deepCopy from 'app/utils/deepcopy';
-import { getWebsiteIconOrNull } from 'app/WebsiteIcon';
+import { getWebsiteIconOrNull } from 'app/websiteIcons';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetTheme } from 'app/Widget';
@@ -57,7 +57,7 @@ export interface LinkBoxProps {
 }
 
 
-export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme })  {
+export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
 	const { query } = useGlobalSearch();
 	const useIconBar = props.widgetTheme.useIconBar ?? false;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
@@ -92,7 +92,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 		if (link.url.trim() != "") {
 			return (
 				<li key={link.id} data-hostname={parseURL(link.url)?.hostname} data-url={link.url}
-						data-title={link.title} data-icon={link.icon}>
+					data-title={link.title} data-icon={link.icon}>
 					<a href={link.url} target={target} rel="noreferrer">
 						{icon}
 						<span className="title">
@@ -104,7 +104,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 		} else {
 			return (
 				<li key={link.id} className="section"
-						data-title={link.title} data-icon={link.icon}>
+					data-title={link.title} data-icon={link.icon}>
 					{icon}
 					<span className="title">{link.title}</span>
 				</li>);
