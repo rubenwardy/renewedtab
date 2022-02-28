@@ -189,7 +189,7 @@ export async function fetchFeed(url: string): Promise<Feed> {
 
 	const data = await fetchXML(makeProxy(url));
 
-	const feed = parseFeed(data.children[0],
+	const feed = parseFeed(data.children[0], url,
 		(s, l) => new window.DOMParser().parseFromString(s, l as any));
 	if (!feed) {
 		throw new UserError(messages.errorLoadingFeed);

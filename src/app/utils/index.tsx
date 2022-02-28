@@ -75,6 +75,15 @@ export function parseURL(v: string): URL | undefined {
 }
 
 
+export function relativeURLToAbsolute(url: (string | null | undefined | false), base: string): (string | undefined) {
+	if (!url) {
+		return undefined;
+	}
+
+	return new URL(url, base).toString();
+}
+
+
 export function formatNumber(v: number): string {
 	if (v <= 0 && v > -0.5) {
 		return "0";

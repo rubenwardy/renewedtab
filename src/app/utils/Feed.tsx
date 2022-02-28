@@ -1,3 +1,4 @@
+import { relativeURLToAbsolute } from ".";
 import { parseDate } from "./dates";
 
 
@@ -80,11 +81,11 @@ function getImage(el: Element, parseXML: XMLParser): ([string, string | undefine
 }
 
 
-export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
+export function parseFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed | null {
 	if (root.tagName == "rss") {
 		const feed: Feed = {
 			title: root.querySelector("channel > title")?.textContent ?? undefined,
-			link: root.querySelector("channel > link")?.textContent ?? undefined,
+			link: relativeURLToAbsolute(root.querySelector("channel > link")?.textContent, baseURL),
 			articles: [],
 		};
 
@@ -97,9 +98,9 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 
 			feed.articles.push({
 				title: escapeHTMLtoText(title, parseXML).trim(),
-				link: el.querySelector("link")?.textContent?.trim() ?? undefined,
-				image: img && img[0],
-				alt: img && img[1],
+				link: relativeURLToAbsolute(el.querySelector("link")?.textContent?.trim(), baseURL),
+				image: relativeURLToAbsolute(img?.[0], baseURL),
+				alt: img?.[1],
 				date: parseDate(el.querySelector("pubDate")?.textContent?.trim() ?? undefined),
 				feed: feed
 			});
@@ -109,7 +110,7 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 	} else if (root.tagName == "feed") {
 		const feed: Feed = {
 			title: root.getElementsByTagName("title")[0]?.textContent ?? undefined,
-			link: root.querySelector("link")?.getAttribute("href") ?? undefined,
+			link: relativeURLToAbsolute(root.querySelector("link")?.getAttribute("href"), baseURL),
 			articles: [],
 		};
 
@@ -122,9 +123,9 @@ export function parseFeed(root: Element, parseXML: XMLParser): Feed | null {
 
 			feed.articles.push({
 				title: escapeHTMLtoText(title, parseXML).trim(),
-				link: el.querySelector("link")?.getAttribute("href")?.trim(),
-				image: img && img[0],
-				alt: img && img[1],
+				link: relativeURLToAbsolute(el.querySelector("link")?.getAttribute("href")?.trim(), baseURL),
+				image: relativeURLToAbsolute(img?.[0], baseURL),
+				alt: img?.[1],
 				date: parseDate(el.querySelector("updated")?.textContent?.trim() ?? undefined),
 				feed: feed,
 			});
