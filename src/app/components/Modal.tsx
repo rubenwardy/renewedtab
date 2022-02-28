@@ -8,6 +8,7 @@ export interface ModalProps {
 	children: ReactNode[] | ReactNode;
 	lighterBg?: boolean;
 	wide?: boolean;
+	tall?: boolean;
 }
 
 export default function Modal(props: ModalProps) {
@@ -52,10 +53,11 @@ export default function Modal(props: ModalProps) {
 
 	return ReactDOM.createPortal((
 		<aside className={bgClasses} onMouseDown={handleMouseDown}
-				onMouseUp={handleMouseUp} style={style}>
-			<div className={mergeClasses("flush modal", props.wide === true && "modal-wide")}
-					onMouseDown={(e) => e.stopPropagation()}
-					onMouseUp={(e) => e.stopPropagation()}>
+			onMouseUp={handleMouseUp} style={style}>
+			<div className={mergeClasses("flush modal",
+				props.wide === true && "modal-wide", props.tall == true && "modal-tall")}
+				onMouseDown={(e) => e.stopPropagation()}
+				onMouseUp={(e) => e.stopPropagation()}>
 				<div className="modal-header">
 					<h2>{props.title}</h2>
 					{props.onClose && (

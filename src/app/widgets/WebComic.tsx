@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import { AutocompleteItem, type } from 'app/utils/Schema';
 import { WidgetProps, WidgetType } from 'app/Widget';
-import { defineMessages } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
 import { getAPI, useFeed } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';
 import UserError from 'app/utils/UserError';
+import Modal from "app/components/Modal";
 
 
 const messages = defineMessages({
@@ -27,13 +28,17 @@ const messages = defineMessages({
 	}
 });
 
+
 interface WebComicProps {
 	url: string;
 }
 
+
 function WebComic(widget: WidgetProps<WebComicProps>) {
 	const props = widget.props;
 	const [feed, error] = useFeed(props.url, [props.url]);
+	const [fullscreen, setFullscreen] = useState(false);
+	useEffect(() => setFullscreen(false), [feed]);
 
 	if (!feed) {
 		return (<ErrorView error={error} loading={true} />);
@@ -45,13 +50,27 @@ function WebComic(widget: WidgetProps<WebComicProps>) {
 	}
 
 	const title = article.title;
-	return (
-		<Panel {...widget.theme} className="image-caption" invisClassName="image-caption text-shadow">
-			<a href={article.link} title={article.alt ?? ""}>
-				<img src={article.image} alt={article.alt ?? ""} />
-			</a>
-			<h2><a href={article.link}>{title}</a></h2>
-		</Panel>);
+
+	if (fullscreen) {
+		return (
+			<Modal title={article.title} onClose={() => setFullscreen(false)}
+				wide={true} tall={true}>
+
+				<div className="modal-body text-center">
+					<a href={article.link} title={article.alt ?? ""}>
+						<img src={article.image} alt={article.alt ?? ""} />
+					</a>
+				</div>
+			</Modal>);
+	} else {
+		return (
+			<Panel {...widget.theme} className="image-caption" invisClassName="image-caption text-shadow">
+				<a onClick={() => setFullscreen(true)} title={article.alt ?? ""}>
+					<img src={article.image} alt={article.alt ?? ""} />
+				</a>
+				<h2><a href={article.link}>{title}</a></h2>
+			</Panel>);
+	}
 }
 
 
