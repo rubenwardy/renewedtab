@@ -1,5 +1,5 @@
 import React from "react";
-import { defineMessages, FormattedMessage } from "react-intl";
+import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import Button from "../Button";
 
 
@@ -25,6 +25,7 @@ const messages = defineMessages({
 
 
 export default function AboutSettings() {
+	const intl = useIntl();
 	return (
 		<div className="modal-body">
 			<h3>
@@ -39,33 +40,34 @@ export default function AboutSettings() {
 			</p>
 			<p>
 				<FormattedMessage
-						defaultMessage="Created by <a>rubenwardy</a>."
-						values={{
-							a: (chunk: any) => (<a href="https://rubenwardy.com">{chunk}</a>)
-						}} />&nbsp;
+					defaultMessage="Created by <a>rubenwardy</a>."
+					values={{
+						a: (chunk: any) => (<a href="https://rubenwardy.com">{chunk}</a>)
+					}} />&nbsp;
 
 				<FormattedMessage
-						defaultMessage="<a>Open source</a>, licensed under GPLv3+."
-						values={{
-							a: (chunk: any) => (<a href="https://gitlab.com/renewedtab/renewedtab/">{chunk}</a>)
-						}} />
+					defaultMessage="<a>Open source</a>, licensed under GPLv3+."
+					values={{
+						a: (chunk: any) => (<a href="https://gitlab.com/renewedtab/renewedtab/">{chunk}</a>)
+					}} />
 			</p>
-			<p>
-				<FormattedMessage
+			{intl.locale != intl.defaultLocale && (
+				<p>
+					<FormattedMessage
 						id="translation_credits"
 						defaultMessage=""
 						description="Credit the translators: LANGUAGE translation by YOUR NAME" />
-			</p>
+				</p>)}
 			<p>
 				<FormattedMessage
-						defaultMessage="Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs." />
+					defaultMessage="Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs." />
 				&nbsp;
 				<FormattedMessage
-						defaultMessage="Thanks to Font-Awesome for icons, React for UI, and WebPack for builds." />
+					defaultMessage="Thanks to Font-Awesome for icons, React for UI, and WebPack for builds." />
 			</p>
 			<p>
 				<FormattedMessage
-						defaultMessage="Enjoying Renewed Tab? Consider donating to help cover costs and support its development." />
+					defaultMessage="Enjoying Renewed Tab? Consider donating to help cover costs and support its development." />
 			</p>
 			<p>
 				<Button href="https://renewedtab.com/" icon="fas fa-globe-europe"
@@ -80,15 +82,15 @@ export default function AboutSettings() {
 
 			<h3 className="mt-6">
 				<FormattedMessage
-						defaultMessage="Help and Requests" />
+					defaultMessage="Help and Requests" />
 			</h3>
 			<p>
 				<FormattedMessage
-						defaultMessage="You can get help or request a feature using the link below." />
+					defaultMessage="You can get help or request a feature using the link below." />
 			</p>
 			<p>
 				<Button href="https://renewedtab.com/help/"
-						label={messages.help_requests} />
+					label={messages.help_requests} />
 			</p>
 		</div>);
 }
