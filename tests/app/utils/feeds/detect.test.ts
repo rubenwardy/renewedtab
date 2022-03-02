@@ -1,8 +1,8 @@
 import fs from "fs";
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
-import { FeedType } from "app/utils/Feed";
-import { detectFeed } from "app/utils/detectFeed";
+import { FeedType } from "app/utils/feeds";
+import { detectFeed } from "app/utils/feeds/detect";
 
 
 function loadFromFile(urlStr: string): (Element | null) {

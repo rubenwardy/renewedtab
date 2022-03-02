@@ -1,0 +1,52 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "rubenwardy’s blog",
+    "description": "Computer science student and open source contributor. Programming tutorials and projects.",
+    "home_page_url": "/",
+    "feed_url": "/feed.json",
+    "icon": "/static/rubenwardy.png",
+    "favicon": "/favicon.ico",
+    "expired": false,
+    "items": [
+
+        {
+            "id": "/2021/05/15/my-computer",
+            "title": "My Computer and Server",
+            "content_text": "article 1",
+            "url": "/2021/05/15/my-computer/",
+            "summary": "<p>I’ve been asked a few times what my theme is and what my specs are, so I\nthought I’d put this together.</p>",
+            "date_published": "2021-05-15 00:00:00 -0500"
+
+        },
+
+        {
+            "id": "/2021/05/08/mozilla-bleach-markdown",
+            "title": "Securing Markdown user content with Mozilla Bleach",
+            "content_text": "article 2",
+            "url": "/2021/05/08/mozilla-bleach-markdown/",
+            "image": "/one/two/image.png",
+            "summary": "<p>Markdown is a common choice for rich text formatting due to its readability and\nease-of-use. Unlike a lot of markup, it aims to match natural text. It’s even\neasy for beginner users, and there are WYSIWYG editors available.</p>",
+            "date_published": "2021-05-08 00:00:00 -0500"
+
+        },
+
+        {
+            "id": "/2020/09/13/return-to-android-dev",
+            "title": "ForumMate: My return to Android app development",
+            "content_text": "article 3",
+            "url": "/2020/09/13/return-to-android-dev/",
+            "summary": "<p>I worked as an Android developer just over two years ago, creating native apps\nfor clients using Java and Kotlin. During that time, Kotlin was gaining\nprominence and had just been made official by Google. Google also introduced\nArchitecture Components that year, later renamed to JetPack. Since then, the\nAndroid ecosystem has changed significantly, with Kotlin and JetPack gaining\nsignificant maturity and development. Out with Realm, Activities, and\nModel-View-Presenter (MVP), in with Room, fragment-based architecture, and MVVM.\n<a href=\"/2020/05/06/android-complete-recyclerview-data-binding/\">Data-binding</a> and\nMVVM are pretty awesome and breathe a whole new life into Android app development.</p>",
+            "date_published": "2020-09-13 00:00:00 -0500"
+
+        },
+
+        {
+            "id": "/2020/07/26/sol3-script-sandbox",
+            "title": "Writing a Lua sandbox using sol3",
+            "content_text": "article 4",
+            "url": "/2020/07/26/sol3-script-sandbox/",
+            "summary": "<p>Sandboxes can protect the user’s computer from malicious or buggy scripts.\nBut sandboxes are difficult to get right; you need to be very careful with what\nyou expose, and make sure you test for vulnerabilities.\nThe <a href=\"http://lua-users.org/wiki/SandBoxes\">Sandboxes</a> on the Lua wiki is required\nreading, as it contains very helpful advice.</p>",
+            "date_published": "2020-07-26 00:00:00 -0500"
+        }
+    ]
+}

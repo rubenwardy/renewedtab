@@ -22,7 +22,7 @@ export const schemaMessages = defineMessages({
 	},
 
 	rssUrlHint: {
-		defaultMessage: "URL to an Atom or RSS feed",
+		defaultMessage: "URL to an Atom, JSONFeed, or RSS feed",
 		description: "Form field hint (Feed URL)",
 	},
 

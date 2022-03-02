@@ -13,7 +13,7 @@ const messages = defineMessages({
 	},
 
 	description: {
-		defaultMessage: "Random image from an Atom or RSS feed",
+		defaultMessage: "Random image from an Atom, JSONFeed, or RSS feed",
 		description: "Backgroud mode description",
 	},
 

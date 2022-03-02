@@ -1,15 +1,15 @@
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
 import fs from "fs";
-import { Feed, parseFeed } from "app/utils/Feed";
+import { Feed, parseFeed } from "app/utils/feeds";
 
 
-function parseTestFeed(name: string): Feed | null {
+function parseTestFeed(name: string, base?: string): Feed | null {
 	const text = fs.readFileSync("tests/data/" + name).toString();
-	const document = new JSDOM(text, { contentType: "application/xml" });
-	return parseFeed(document.window.document.children[0],
+	return parseFeed(text, base ?? "https://example.com/",
 		(s, l) => new JSDOM(s, { contentType: l }).window.document);
 }
+
 
 describe("Feed", () => {
 	it("parsesXML", () => {
@@ -17,8 +17,6 @@ describe("Feed", () => {
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("NASA Image of the Day");
 		expect(feed!.link).to.equal("http://www.nasa.gov/");
-
-
 
 		expect(feed!.articles[0].title).to.equal("Detecting X-Rays From Uranus");
 		expect(feed!.articles[0].link).to.equal("http://www.nasa.gov/image-feature/detecting-x-rays-from-uranus");
@@ -34,6 +32,7 @@ describe("Feed", () => {
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("xkcd.com");
 		expect(feed!.link).to.equal("https://xkcd.com/");
+		expect(feed!.articles).length(4);
 
 		expect(feed!.articles[0].title).to.equal("Fuzzy Blob");
 		expect(feed!.articles[0].link).to.equal("https://xkcd.com/2472/");
@@ -46,5 +45,37 @@ describe("Feed", () => {
 		expect(feed!.articles[2].title).to.equal("Next Slide Please");
 		expect(feed!.articles[2].link).to.equal("https://xkcd.com/2470/");
 		expect(feed!.articles[2].image).to.equal("https://imgs.xkcd.com/comics/next_slide_please.png");
+	});
+
+	it("parsesAtom test", () => {
+		const feed = parseTestFeed("atomOrder.atom");
+		expect(feed).to.exist;
+		expect(feed!.title).to.equal("xkcd.com");
+		expect(feed!.link).to.equal("https://xkcd.com/");
+		expect(feed!.articles).length(1);
+
+		expect(feed!.articles[0].title).to.equal("Fuzzy Blob");
+		expect(feed!.articles[0].link).to.equal("https://xkcd.com/2472/");
+		expect(feed!.articles[0].image).to.equal("https://imgs.xkcd.com/comics/fuzzy_blob.png");
+	});
+
+	it("parseJson", () => {
+		const feed = parseTestFeed("ruben.json", "https://blog.rubenwardy.com");
+		expect(feed).to.exist;
+		expect(feed!.title).to.equal("rubenwardy’s blog");
+		expect(feed!.link).to.equal("https://blog.rubenwardy.com/");
+		expect(feed!.articles).length(4);
+
+		expect(feed!.articles[0].title).to.equal("My Computer and Server");
+		expect(feed!.articles[0].link).to.equal("https://blog.rubenwardy.com/2021/05/15/my-computer/");
+		expect(feed!.articles[0].image).to.be.undefined;
+
+		expect(feed!.articles[1].title).to.equal("Securing Markdown user content with Mozilla Bleach");
+		expect(feed!.articles[1].link).to.equal("https://blog.rubenwardy.com/2021/05/08/mozilla-bleach-markdown/");
+		expect(feed!.articles[1].image).to.equal("https://blog.rubenwardy.com/one/two/image.png");
+
+		expect(feed!.articles[2].title).to.equal("ForumMate: My return to Android app development");
+		expect(feed!.articles[2].link).to.equal("https://blog.rubenwardy.com/2020/09/13/return-to-android-dev/");
+		expect(feed!.articles[2].image).to.be.undefined;
 	});
 });

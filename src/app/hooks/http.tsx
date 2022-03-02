@@ -2,7 +2,7 @@ import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { readBlobAsDataURL } from "app/utils/blob";
-import { Feed, FeedSource, parseFeed } from "app/utils/Feed";
+import { Feed, FeedSource, parseFeed } from "app/utils/feeds";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
 import { usePromise } from "./promises";
@@ -18,7 +18,7 @@ const messages = defineMessages({
 	},
 
 	errorLoadingFeed: {
-		defaultMessage: "Error loading feed. Make sure it is an RSS or Atom feed.",
+		defaultMessage: "Error loading feed. Make sure it is an RSS, JSONFeed, or Atom feed.",
 	},
 })
 
@@ -187,9 +187,23 @@ export async function fetchFeed(url: string): Promise<Feed> {
 		throw new UserError(messages.missingFeedURL);
 	}
 
-	const data = await fetchXML(makeProxy(url));
+	const response = await fetchCheckCors(new Request(url, {
+		method: "GET",
+		headers: {
+			"Accept": "application/json",
+		}
+	}));
 
-	const feed = parseFeed(data.children[0], url,
+	const str = await response.text();
+	if (!response.ok) {
+		if (response.headers.get("content-type")?.startsWith("text/html")) {
+			throw new UserError(bindValuesToDescriptor(messages.httpRequestFailed, { code: response.status, msg: response.statusText }));
+		} else {
+			throw new UserError(str);
+		}
+	}
+
+	const feed = parseFeed(str, url,
 		(s, l) => new window.DOMParser().parseFromString(s, l as any));
 	if (!feed) {
 		throw new UserError(messages.errorLoadingFeed);

@@ -1,4 +1,4 @@
-import { FeedType } from "./Feed";
+import { FeedType } from ".";
 
 interface FeedInfo {
 	type: FeedType;

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<entry>
+		<title>Fuzzy Blob</title>
+		<link href="https://xkcd.com/2472/" rel="alternate">
+		</link>
+		<updated>2021-06-04T00:00:00Z</updated>
+		<id>https://xkcd.com/2472/</id>
+		<summary type="html">&lt;img src="https://imgs.xkcd.com/comics/fuzzy_blob.png" title="If there's no dome, how do
+			you explain the irregularities the board discovered in the zoning permits issued in that area!?" alt="If
+			there's no dome, how do you explain the irregularities the board discovered in the zoning permits issued in
+			that area!?" /&gt;</summary>
+	</entry>
+	<title>xkcd.com</title>
+	<link href="https://xkcd.com/" rel="alternate">
+	</link>
+	<id>https://xkcd.com/</id>
+	<updated>2021-06-04T00:00:00Z</updated>
+</feed>

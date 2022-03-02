@@ -10,7 +10,7 @@ import RequestHostPermission from "../RequestHostPermission";
 const messages = defineMessages({
 	suggestURL: {
 		defaultMessage: "Suggest URL be added to default suggestions",
-		description: "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
+		description: "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
 	},
 
 	suggestHelpText: {
@@ -96,5 +96,3 @@ export default function FeedURLField(props: FieldProps<string>) {
 			{/* <URLSubmitter url={value} autocomplete={autocomplete ?? undefined} /> */}
 		</>);
 }
-
-
