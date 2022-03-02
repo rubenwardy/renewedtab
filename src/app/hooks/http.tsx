@@ -190,7 +190,10 @@ export async function fetchFeed(url: string): Promise<Feed> {
 	const response = await fetchCheckCors(new Request(url, {
 		method: "GET",
 		headers: {
-			"Accept": "application/json",
+			"Accept": [
+				"application/json", "application/feed+json",
+				"application/xml", "text/xml",
+				"application/rss+xml", "application/atom+xml"].join(", "),
 		}
 	}));
 
