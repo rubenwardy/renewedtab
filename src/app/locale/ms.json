@@ -1132,5 +1132,58 @@
     "R4cyIr": {
         "message": "Semasa: Tunjuk kelembapan",
         "description": "Weather widget: form field label"
+    },
+    "C7WJrL": {
+        "message": "Menegak",
+        "description": "Form field option, vertical gradient"
+    },
+    "BfX7n6": {
+        "message": "Nota: Firefox mungkin menunjukkan artifak seperti garisan pada latar belakang cerunan. Ini bukan sesuatu yang kami boleh baiki.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "EpPEVJ": {
+        "message": "Cerunan",
+        "description": "Gradient background mode"
+    },
+    "KjUKUz": {
+        "message": "Cerunan pelbagai warna",
+        "description": "Backgroud mode description"
+    },
+    "O2Mjef": {
+        "message": "Nilai",
+        "description": "Review request, review button"
+    },
+    "SENRqu": {
+        "message": "Bantuan"
+    },
+    "TDaF6J": {
+        "message": "Abai"
+    },
+    "bfWes8": {
+        "message": "Jenis Cerunan",
+        "description": "Form field label"
+    },
+    "exTzGh": {
+        "message": "Melintang",
+        "description": "Form field option, horizontal gradient"
+    },
+    "8xPAKF": {
+        "message": "Dari 0-100%, kedudukan warna dalam cerunan",
+        "description": "Form field hint (Stop)"
+    },
+    "ATbgo4": {
+        "message": "Jejarian",
+        "description": "Form field option, radial gradient"
+    },
+    "B3NCWb": {
+        "message": "Warna",
+        "description": "Form field label"
+    },
+    "lQIN1l": {
+        "message": "Adakah anda menikmati Renewed Tab? Berikan kami penilaian!"
+    },
+    "n+w6I2": {
+        "message": "Berhenti",
+        "description": "Form field label. Gradient stop (%)"
     }
 }
