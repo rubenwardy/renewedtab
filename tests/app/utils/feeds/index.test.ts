@@ -25,7 +25,7 @@ describe("Feed", () => {
 		expect(feed!.articles[1].title).to.equal("Administrator Bill Nelson Gives His First State of NASA Address");
 		expect(feed!.articles[1].link).to.equal("http://www.nasa.gov/image-feature/administrator-bill-nelson-gives-his-first-state-of-nasa-address");
 		expect(feed!.articles[1].image).to.equal("http://www.nasa.gov/sites/default/files/thumbnails/image/51221294498_8a0636de32_o.jpeg");
-	})
+	});
 
 	it("parsesAtom", () => {
 		const feed = parseTestFeed("xkcd.atom");
@@ -77,5 +77,21 @@ describe("Feed", () => {
 		expect(feed!.articles[2].title).to.equal("ForumMate: My return to Android app development");
 		expect(feed!.articles[2].link).to.equal("https://blog.rubenwardy.com/2020/09/13/return-to-android-dev/");
 		expect(feed!.articles[2].image).to.be.undefined;
+	});
+
+	it("parsesRDF", () => {
+		const feed = parseTestFeed("feed.rdf");
+		expect(feed).to.exist;
+		expect(feed!.title).to.equal("XML.com");
+		expect(feed!.link).to.equal("http://xml.com/pub");
+		expect(feed!.articles).length(2);
+
+		expect(feed!.articles[0].title).to.equal("Processing Inclusions with XSLT");
+		expect(feed!.articles[0].link).to.equal("http://xml.com/pub/2000/08/09/xslt/xslt.html");
+		expect(feed!.articles[0].image).to.be.undefined;
+
+		expect(feed!.articles[1].title).to.equal("Putting RDF to Work");
+		expect(feed!.articles[1].link).to.equal("http://xml.com/pub/2000/08/09/rdfdb/index.html");
+		expect(feed!.articles[1].image).to.be.undefined;
 	});
 });

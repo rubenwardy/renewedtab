@@ -166,7 +166,7 @@ interface JSONFeed {
 }
 
 
-function parseJSONFeed(json: JSONFeed, baseURL: string): Feed {
+function parseJSONFeed(json: JSONFeed, baseURL: string, parseXML: XMLParser): Feed {
 	const feed: Feed = {
 		title: json.title,
 		link: relativeURLToAbsolute(json.home_page_url, baseURL),
@@ -175,7 +175,7 @@ function parseJSONFeed(json: JSONFeed, baseURL: string): Feed {
 
 	feed.articles = json.items.map(item => {
 		return {
-			title: (item.title ?? item.content_text ?? item.content_html)!,
+			title: item.title ?? item.content_text ?? escapeHTMLtoText(item.content_html!, parseXML),
 			link: relativeURLToAbsolute(item.url, baseURL),
 			image: relativeURLToAbsolute(item.image, baseURL),
 			date: parseDate(item.date_published),
@@ -199,12 +199,12 @@ export function parseFeed(body: string, baseURL: string, parseXML: XMLParser): F
 	}
 
 	if (json) {
-		return parseJSONFeed(json, baseURL);
+		return parseJSONFeed(json, baseURL, parseXML);
 	}
 
 	const document = parseXML(body, "application/xml");
 	const root = document.children[0];
-	if (root.tagName == "rss") {
+	if (root.tagName == "rss" || root.tagName.toLowerCase().includes("rdf")) {
 		return parseRSSFeed(root, baseURL, parseXML);
 	} else if (root.tagName == "feed") {
 		return parseAtomFeed(root, baseURL, parseXML);
