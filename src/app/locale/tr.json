@@ -1132,5 +1132,58 @@
     },
     "PHwOzi": {
         "message": "Unsplash, AccuWeather ve RocketLaunch.Live'a APIları için teşekkür ederiz."
+    },
+    "BfX7n6": {
+        "message": "Dikkat: Firefox'ta gradyan arkaplanlar üzerinde şeritle ve benzeri görsel hatalar oluşabilir. Bu bizim düzeltebileceğimiz bir şey değil.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "bfWes8": {
+        "message": "Gradyan Tipi",
+        "description": "Form field label"
+    },
+    "8xPAKF": {
+        "message": "Gradyan içinde rengin konumu, %0-100 arasında",
+        "description": "Form field hint (Stop)"
+    },
+    "ATbgo4": {
+        "message": "Radyal",
+        "description": "Form field option, radial gradient"
+    },
+    "B3NCWb": {
+        "message": "Renkler",
+        "description": "Form field label"
+    },
+    "lQIN1l": {
+        "message": "Renewed Tab'i sevdiniz mi? Bir inceleme bırakın!"
+    },
+    "n+w6I2": {
+        "message": "Geçiş",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "C7WJrL": {
+        "message": "Dikey",
+        "description": "Form field option, vertical gradient"
+    },
+    "EpPEVJ": {
+        "message": "Gradyan",
+        "description": "Gradient background mode"
+    },
+    "KjUKUz": {
+        "message": "Renklerden oluşan bir gradyan",
+        "description": "Backgroud mode description"
+    },
+    "O2Mjef": {
+        "message": "İnceleme",
+        "description": "Review request, review button"
+    },
+    "SENRqu": {
+        "message": "Yardım"
+    },
+    "TDaF6J": {
+        "message": "Tamam"
+    },
+    "exTzGh": {
+        "message": "Yatay",
+        "description": "Form field option, horizontal gradient"
     }
 }
