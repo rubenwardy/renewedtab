@@ -30,14 +30,6 @@
         "message": "显示一个图像，可选择给其添加一个超链接",
         "description": "Image widget description"
     },
-    "FCmJHd": {
-        "message": "显示一个 Atom 或 RSS 源，对关注新闻、网站和博客很有用",
-        "description": "Feed widget description"
-    },
-    "FHzdXg": {
-        "message": "以下的设置是<b>实验性的</b>；这意味着你在更改它们时可能会遇到 bug 和怪异的情况，一些更新也可能会破坏你的主题。",
-        "description": "Theme settings"
-    },
     "GXkv/F": {
         "message": "请选择一个位置",
         "description": "Location form field: prompt"
@@ -185,10 +177,6 @@
         "message": "图像",
         "description": "Image Widget"
     },
-    "7bfD9/": {
-        "message": "建议将 URL 添加到默认建议",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "7wOM6+": {
         "message": "年进度",
         "description": "Year Progress widget"
@@ -248,10 +236,6 @@
     "D4M6tn": {
         "message": "欢迎来到 Renewed Tab",
         "description": "Onboarding modal: title"
-    },
-    "DJRqNI": {
-        "message": "显示来自 Atom 或 RSS feed 的最新图片，对网络漫画很有用。",
-        "description": "Web Comic widget description"
     },
     "Ddd3ZY": {
         "message": "到",
@@ -530,10 +514,6 @@
     "T4VxQN": {
         "message": "加载中…"
     },
-    "TS11GJ": {
-        "message": "来自Atom或RSS订阅源的随机图像",
-        "description": "Backgroud mode description"
-    },
     "TUnCKb": {
         "message": "文本",
         "description": "Text Widget"
@@ -687,9 +667,6 @@
         "message": "亮度：深",
         "description": "Backgroud settings: form field label"
     },
-    "mY9tpI": {
-        "message": "加载订阅源时出错。请确保它是一个RSS或Atom订阅源网址。"
-    },
     "Wi0G88": {
         "message": "关于我们和帮助",
         "description": "Settings tab"
@@ -795,10 +772,6 @@
     },
     "btOI+Z": {
         "message": "新标签页"
-    },
-    "cL6y1P": {
-        "message": "Atom或RSS的网址",
-        "description": "Form field hint (Feed URL)"
     },
     "cR7nCG": {
         "message": "恢复默认主题设置"
@@ -1132,5 +1105,9 @@
     "R4cyIr": {
         "message": "当前：显示湿度",
         "description": "Weather widget: form field label"
+    },
+    "2j5LN5": {
+        "message": "建议将 URL 添加到默认建议",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

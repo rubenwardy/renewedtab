@@ -27,6 +27,14 @@
     "description": "Widget grid: form label 1 for grid full width",
     "message": "Stretch grid to cover the entire page."
   },
+  "/Mx09O": {
+    "description": "Feed widget: form field hint (Show Images)",
+    "message": "Experimental. This does not work with all feed sources, due to missing image information. Images may also be large, and take a while to load."
+  },
+  "/aA+Xf": {
+    "description": "Feed widget: form field label",
+    "message": "Show images"
+  },
   "/dtDqf": {
     "description": "Notes Widget",
     "message": "Notes"
@@ -69,6 +77,10 @@
   "2efE5y": {
     "description": "Greeting Widget",
     "message": "Greeting"
+  },
+  "2j5LN5": {
+    "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds",
+    "message": "Suggest URL be added to default suggestions"
   },
   "2vJWTd": {
     "description": "Background credits title placeholder",
@@ -134,6 +146,10 @@
     "description": "Theme settings: form field label",
     "message": "Custom CSS"
   },
+  "5mfAB9": {
+    "description": "Form field hint (Feed URL)",
+    "message": "URL to an Atom, JSONFeed, or RSS feed"
+  },
   "6MDM6D": {
     "description": "Quotes Widget",
     "message": "Quotes"
@@ -145,10 +161,6 @@
   "7OH6mh": {
     "description": "Image Widget",
     "message": "Image"
-  },
-  "7bfD9/": {
-    "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds",
-    "message": "Suggest URL be added to default suggestions"
   },
   "7wOM6+": {
     "description": "Year Progress widget",
@@ -257,10 +269,6 @@
     "description": "Onboarding modal: title",
     "message": "Welcome to Renewed Tab"
   },
-  "DJRqNI": {
-    "description": "Web Comic widget description",
-    "message": "Shows the most recent image from an Atom or RSS feed, useful for WebComics."
-  },
   "Ddd3ZY": {
     "description": "Currencies widget: form field label",
     "message": "To"
@@ -280,14 +288,6 @@
   "F1A/8i": {
     "description": "Feed widget: form field label",
     "message": "Sources"
-  },
-  "FCmJHd": {
-    "description": "Feed widget description",
-    "message": "Shows an Atom or RSS feed, useful for following the news, websites, and blogs"
-  },
-  "FHzdXg": {
-    "description": "Theme settings",
-    "message": "The following settings are <b>experimental</b>; this means that you may encounter bugs and weirdness when changing them, and updates may break your themes."
   },
   "FqCn+F": {
     "description": "Greeting widget: greeting, from midnight to noon",
@@ -410,6 +410,10 @@
     "description": "Theme settings: form field label",
     "message": "Font Scaling"
   },
+  "Lnvfz8": {
+    "description": "Feed error message",
+    "message": "Failed to load {source}: {error}"
+  },
   "Lxc1x4": {
     "description": "Clock Widget",
     "message": "Clock"
@@ -435,6 +439,14 @@
   },
   "N/7Stk": {
     "message": "Created by <a>rubenwardy</a>."
+  },
+  "NjoFru": {
+    "description": "Backgroud mode description",
+    "message": "Random image from an Atom, JSONFeed, or RSS feed"
+  },
+  "NwRs1d": {
+    "description": "Feed widget description",
+    "message": "Shows an Atom, JSONFeed, RSS feed - useful for following the news, websites, and blogs"
   },
   "O2Mjef": {
     "description": "Review request, review button",
@@ -538,10 +550,6 @@
   "TIEfOV": {
     "description": "Feed widget: form field hint (Filters)",
     "message": "An article will be shown if it matches at least one 'Show' filter (if any), and no 'Hide' filters."
-  },
-  "TS11GJ": {
-    "description": "Backgroud mode description",
-    "message": "Random image from an Atom or RSS feed"
   },
   "TUnCKb": {
     "description": "Text Widget",
@@ -723,9 +731,8 @@
   "btOI+Z": {
     "message": "New Tab"
   },
-  "cL6y1P": {
-    "description": "Form field hint (Feed URL)",
-    "message": "URL to an Atom or RSS feed"
+  "c7zm0j": {
+    "message": "Error loading feed. Make sure it is an RSS, JSONFeed, or Atom feed."
   },
   "cR7nCG": {
     "message": "Reset theme to default"
@@ -806,6 +813,10 @@
   },
   "h/ftND": {
     "message": "Choose a file"
+  },
+  "h00yCR": {
+    "description": "Web Comic widget description",
+    "message": "Shows the recent images from an Atom, JSONFeed, or RSS feed - useful for WebComics."
   },
   "hCBQrY": {
     "message": "Feels like <b>{temp}°</b>"
@@ -892,9 +903,6 @@
   "mSg5KK": {
     "description": "Backgroud settings: form field label",
     "message": "Brightness: Dark"
-  },
-  "mY9tpI": {
-    "message": "Error loading feed. Make sure it is an RSS or Atom feed."
   },
   "mv9TrH": {
     "description": "HTML Widget",
@@ -1165,6 +1173,10 @@
   "zKofmb": {
     "description": "Backgroud settings: form field hint (Unsplash Collection)",
     "message": "Collection ID. Found in the URL, example: 42576559"
+  },
+  "zPAzlS": {
+    "description": "Feed widget: form field label",
+    "message": "Combine sources into single tab"
   },
   "zaQRTm": {
     "description": "Extreme UV risk",

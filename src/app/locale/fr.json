@@ -122,17 +122,9 @@
     "D3idYv": {
         "message": "Paramètres"
     },
-    "DJRqNI": {
-        "message": "Affiche l'image la plus récente d'un fil Atom ou RSS, utile pour les WebComics.",
-        "description": "Web Comic widget description"
-    },
     "Dk7Khi": {
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
-    },
-    "FHzdXg": {
-        "message": "Ces paramètres sont <b>expérimentaux</b> ; vous pourriez faire face à des bogues où des comportemens anormaux en les modifiants. Les mises à jour pourraient également affecter vos thèmes.",
-        "description": "Theme settings"
     },
     "G6WG/N": {
         "message": "Invisible",
@@ -383,10 +375,6 @@
     "bQFsdR": {
         "message": "Accorder l'autorisation d'accéder à {host}"
     },
-    "cL6y1P": {
-        "message": "URL vers un flux Atom ou RSS",
-        "description": "Form field hint (Feed URL)"
-    },
     "cR7nCG": {
         "message": "Réinitialiser le thème par défaut"
     },
@@ -439,17 +427,9 @@
     "KsX2fE": {
         "message": "<b>{name}</b> à {latitude} par {longitude}"
     },
-    "7bfD9/": {
-        "message": "Proposer une URL à ajouter à la liste des suggestions par défaut",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "Abtyj/": {
         "message": "L'image est supérieure à 2 MB ({dataSizeMB}MB). Pour accélérer le chargement, vous pouvez utiliser une image plus petite.",
         "description": "Image upload error message"
-    },
-    "FCmJHd": {
-        "message": "Montrer un fil Atom ou RSS, utile pour suivre les actualités, sites web et blogs",
-        "description": "Feed widget description"
     },
     "L6nTur": {
         "message": "Choisissez un point de départ",
@@ -696,10 +676,6 @@
         "message": "Un article sera affiché s'il correspond à au moins un filtre « Afficher » (le cas échéant) et aucun filtre « Masquer ».",
         "description": "Feed widget: form field hint (Filters)"
     },
-    "TS11GJ": {
-        "message": "Image aléatoire provenant d'Atom ou d'un flux RSS",
-        "description": "Backgroud mode description"
-    },
     "y1Z3or": {
         "message": "Langue"
     },
@@ -893,9 +869,6 @@
     "mSg5KK": {
         "message": "Luminosité : Sombre",
         "description": "Backgroud settings: form field label"
-    },
-    "mY9tpI": {
-        "message": "Erreur de chargement du flux. Soyez sûr que ce soit un flux RSS ou Atom."
     },
     "mv9TrH": {
         "message": "HTML",
@@ -1132,5 +1105,9 @@
     "eKCjBm": {
         "message": "Précipitation (%)",
         "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "2j5LN5": {
+        "message": "Proposer une URL à ajouter à la liste des suggestions par défaut",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

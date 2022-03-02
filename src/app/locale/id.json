@@ -11,19 +11,12 @@
         "message": "Gunakan mesin penelusuran default browser",
         "description": "Search widget: form field label"
     },
-    "cL6y1P": {
-        "message": "URL feed Atom atau RSS",
-        "description": "Form field hint (Feed URL)"
-    },
     "hktZIl": {
         "message": "Menampilkan waktu"
     },
     "kF06lD": {
         "message": "Dipanjangkan ({example})",
         "description": "Clock widget: date style type"
-    },
-    "mY9tpI": {
-        "message": "Terjadi kesalahan memuat feed. Periksa apakah itu sebuah feed RSS atau Atom."
     },
     "mv9TrH": {
         "message": "HTML",
@@ -138,10 +131,6 @@
     "Dk7Khi": {
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
-    },
-    "FHzdXg": {
-        "message": "Pengaturan berikut adalah <b>eksperimental</b>; artinya Anda dapat mengalami bug dan keanehan ketika mengubahnya, dan pembaruan dapat merusak tema Anda.",
-        "description": "Theme settings"
     },
     "GSox4d": {
         "message": "Nama font apapun yang terpasang pada komputer Anda",
@@ -591,10 +580,6 @@
     },
     "8J0Bhj": {
         "message": "Selamat datang di <a>Renewed Tab</a>: halaman Tab Baru yang dapat disesuaikan, dengan widget-widget dan latar belakang indah."
-    },
-    "DJRqNI": {
-        "message": "Menampilkan gambar yang paling akhir dari feed Atom atau RSS, berguna untuk WebComics.",
-        "description": "Web Comic widget description"
     },
     "K8s82y": {
         "message": "Tanggal lahir",

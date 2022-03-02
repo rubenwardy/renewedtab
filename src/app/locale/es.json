@@ -648,16 +648,9 @@
     "bQFsdR": {
         "message": "Otorga permiso para acceder a {host}"
     },
-    "cL6y1P": {
-        "message": "URL a un Atom o RSS feed",
-        "description": "Form field hint (Feed URL)"
-    },
     "nF7bWj": {
         "message": "ISO ({example})",
         "description": "Clock widget: date style type"
-    },
-    "mY9tpI": {
-        "message": "Error al cargar el feed. Asegúrese de que sea un feed RSS o Atom."
     },
     "oBl48o": {
         "message": "¿Estás seguro de que quieres borrar todos los datos?",
@@ -714,10 +707,6 @@
     "4F+2K3": {
         "message": "Una imagen aleatoria de una colección Unsplash",
         "description": "Backgroud mode description"
-    },
-    "7bfD9/": {
-        "message": "Sugerir URL que se agregue a las sugerencias predeterminadas",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
     },
     "d7dHsn": {
         "message": "Cada 15 minutos",
@@ -855,10 +844,6 @@
         "message": "Ma",
         "description": "Short weekday name (Tuesday)"
     },
-    "FCmJHd": {
-        "message": "Muestra un feed Atom o RSS, útil para seguir las noticias, los sitios web y los blogs",
-        "description": "Feed widget description"
-    },
     "GSox4d": {
         "message": "Cualquier nombre de tipografía instalado en su computadora",
         "description": "Theme settings: form field hint (Font)"
@@ -874,10 +859,6 @@
     "XV4mnl": {
         "message": "Dependiendo de su configuración, se puede elegir la misma foto",
         "description": "Background settings: form field hint (Show a new photo)"
-    },
-    "FHzdXg": {
-        "message": "Las siguientes configuraciones son <b>experimentales</b>; esto significa que puede encontrar errores y rarezas al cambiarlos, y las actualizaciones pueden romper sus temas.",
-        "description": "Theme settings"
     },
     "zEj0dg": {
         "message": "Muestra el progreso a lo largo del año como una barra de progreso",
@@ -918,10 +899,6 @@
     "8J0Bhj": {
         "message": "Bienvenido a <a>Renewed Tab</a>: una página de Nueva Pestaña personalizable, con widgets y fondos hermosos."
     },
-    "TS11GJ": {
-        "message": "Imagen aleatoria de un feed Atom o RSS",
-        "description": "Backgroud mode description"
-    },
     "gAZqVl": {
         "message": "Puede agregar (<add></add>) o eliminar (<remove></remove>) widgets más tarde, o cambiar las configuraciones (<cog></cog>) como desee.",
         "description": "Onboarding: preset hint"
@@ -940,10 +917,6 @@
     "oDog89": {
         "message": "Un área de texto editable para notas",
         "description": "Notes widget description"
-    },
-    "DJRqNI": {
-        "message": "Muestra la imagen más reciente de un feed Atom o RSS, útil para WebComics.",
-        "description": "Web Comic widget description"
     },
     "TIEfOV": {
         "message": "Se mostrará un artículo si coincide por lo menos con un filtro 'Mostrar' (si lo hay), y no coincide con filtros 'Ocultar'.",
@@ -1170,5 +1143,9 @@
     "exTzGh": {
         "message": "Horizontal",
         "description": "Form field option, horizontal gradient"
+    },
+    "2j5LN5": {
+        "message": "Sugerir URL que se agregue a las sugerencias predeterminadas",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

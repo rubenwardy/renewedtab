@@ -94,10 +94,6 @@
         "message": "Immagine casuale da una collezione Unsplash",
         "description": "Backgroud mode description"
     },
-    "7bfD9/": {
-        "message": "Suggerisci l'aggiunta dell'URL tra quelli predefiniti",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "YS5zRT": {
         "message": "Cerca con {name}",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"
@@ -263,10 +259,6 @@
     "ZZIlU9": {
         "message": "Obiettivo Giornaliero",
         "description": "Daily Goal Widget"
-    },
-    "cL6y1P": {
-        "message": "URL di un feed Atom o RSS",
-        "description": "Form field hint (Feed URL)"
     },
     "cSF2y1": {
         "message": "Mostra i tuoi segnalibri",
@@ -642,9 +634,6 @@
         "message": "Luminosità: Scura",
         "description": "Backgroud settings: form field label"
     },
-    "mY9tpI": {
-        "message": "Errore a caricare il feed. Assicurati sia un feed Atom o RSS."
-    },
     "nGSwtl": {
         "message": "Cerca",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
@@ -676,10 +665,6 @@
         "message": "Farhenheit",
         "description": "Weather widget: Fahrenheit unit"
     },
-    "FCmJHd": {
-        "message": "Mostra un feed Atom o RSS, utile per seguire le notizie, i siti, e i blog",
-        "description": "Feed widget description"
-    },
     "pVrtrA": {
         "message": "Usa un'immagine personalizzata",
         "description": "Backgroud mode description"
@@ -687,10 +672,6 @@
     "pbEMNj": {
         "message": "Indietro",
         "description": "Onboarding page: previous button"
-    },
-    "FHzdXg": {
-        "message": "Le seguenti impostazioni sono <b>sperimentali</b>; questo significa che potresti imbatterti in errori e stranezze al cambiarle, e che gli aggiornamenti potrebbero rompere i tuoi temi.",
-        "description": "Theme settings"
     },
     "CNpJaZ": {
         "message": "Focus",
@@ -717,10 +698,6 @@
     "D4M6tn": {
         "message": "Benvenuto/a su Renewed Tab",
         "description": "Onboarding modal: title"
-    },
-    "DJRqNI": {
-        "message": "Mostra l'immagine più recente di un feed Atom o RSS; utile per i fumetti web.",
-        "description": "Web Comic widget description"
     },
     "GSox4d": {
         "message": "Il nome di qualsiasi carattere installato sul tuo computer",
@@ -971,10 +948,6 @@
         "message": "Gestisce tra quante delle immagini più recenti dovrà scegliere. Impostando questo a 1 sceglierà sempre l'immagine più recente",
         "description": "Feed background mode: form field hint (Limit images)"
     },
-    "TS11GJ": {
-        "message": "Immagine casuale da un feed Atom o RSS",
-        "description": "Backgroud mode description"
-    },
     "pqIuCa": {
         "message": "Mostra il meteo attuale",
         "description": "Weather widget: form field label"
@@ -1132,5 +1105,9 @@
     "zaQRTm": {
         "message": "<b>Estremi</b> UV",
         "description": "Extreme UV risk"
+    },
+    "2j5LN5": {
+        "message": "Suggerisci l'aggiunta dell'URL tra quelli predefiniti",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

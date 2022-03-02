@@ -23,10 +23,6 @@
         "message": "Unsplash to'plamidan ixtiyoriy rasm",
         "description": "Backgroud mode description"
     },
-    "7bfD9/": {
-        "message": "Kiritilgan URL odatiy joydan o'rin oladi",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "9+2gJZ": {
         "message": "Vidjet uchun brauzeringiz qo'shimchalar versiyasi kerak."
     },
@@ -41,14 +37,6 @@
     "Cq4JWx": {
         "message": "Yangiliklar, ob-havo va boshqalar",
         "description": "Preset: grid description"
-    },
-    "DJRqNI": {
-        "message": "Atom va RSS'dan eng so'nggi rasmlarni ko'rsatish, WebComics uchun foydali.",
-        "description": "Web Comic widget description"
-    },
-    "FHzdXg": {
-        "message": "Quyidagi sozlamalar <b>Sinov jarayonida</b>; bu mavzularni yangilash va o'zgartirishlar vaqtida ularni buzib qo'yishi mumkin.",
-        "description": "Theme settings"
     },
     "Ibm90j": {
         "message": "Vaqt sizning tizim vaqt zonasiga asoslangan. Agar vaqt noto'g'ri ko'rsatilayotgan bo'lsa kompyuteringiz yoki brauzeringiz sozlamalaridan unin to'g'rilang.",
@@ -273,10 +261,6 @@
         "message": "Yashirin",
         "description": "Invisible Widget"
     },
-    "FCmJHd": {
-        "message": "Atom yoki RSS ko'satish, yangiliklar, vebsaytlar va bloglarni ko'rish uchun foydali",
-        "description": "Feed widget description"
-    },
     "GSox4d": {
         "message": "Kompyuteringizga o'rnatilgan istalgan shrift nomi",
         "description": "Theme settings: form field hint (Font)"
@@ -436,5 +420,9 @@
     "S3njcM": {
         "message": "IFrame",
         "description": "IFrame Widget"
+    },
+    "2j5LN5": {
+        "message": "Kiritilgan URL odatiy joydan o'rin oladi",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

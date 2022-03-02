@@ -141,10 +141,6 @@
         "message": "華氏",
         "description": "Weather widget: Fahrenheit unit"
     },
-    "FHzdXg": {
-        "message": "以下設定是<b>實驗性的</b>；意味着您可能在修改他們時遇到臭蟲和奇怪的事情，也可能因升級而破壞您的主題。",
-        "description": "Theme settings"
-    },
     "K3r6DQ": {
         "message": "刪除"
     },

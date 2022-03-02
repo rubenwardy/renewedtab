@@ -193,10 +193,6 @@
         "message": "Искать",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
     },
-    "7bfD9/": {
-        "message": "Предложить URL, чтобы добавить к вариантам по умолчанию",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "kAEQyV": {
         "message": "ОК"
     },
@@ -228,10 +224,6 @@
     "Dk7Khi": {
         "message": "Фаренгейт",
         "description": "Weather widget: Fahrenheit unit"
-    },
-    "DJRqNI": {
-        "message": "Показывает последнее изображение из канала Atom или RSS, что полезно для веб-комиксов.",
-        "description": "Web Comic widget description"
     },
     "HEvlTB": {
         "message": "Показать опции",
@@ -619,9 +611,6 @@
         "message": "Включить поиск виджетов",
         "description": "Search widget: form field label, enable filtering widgets"
     },
-    "mY9tpI": {
-        "message": "Ошибка загрузки ленты. Убедитесь, что это канал RSS или Atom."
-    },
     "p7+m8N": {
         "message": "Предоставьте разрешения для доступа к топ сайтам",
         "description": "Top Sites widget: permission request"
@@ -637,10 +626,6 @@
     "Ay1sfO": {
         "message": "Управляет произвольным выбором количества последних изображений. При установке значения 1 всегда будет выбираться последнее изображение",
         "description": "Feed background mode: form field hint (Limit images)"
-    },
-    "FHzdXg": {
-        "message": "Следующие настройки являются <b>экспериментальными</b>; это означает, что вы можете столкнуться с ошибками и странностями при их изменении, а обновления могут нарушить работу ваших тем.",
-        "description": "Theme settings"
     },
     "+PNw8j": {
         "message": "Даже если скроете какую-то информацию, вы зачастую можете увидеть её, наведя указатель мыши на часы и дни",
@@ -732,10 +717,6 @@
     },
     "BJYZgx": {
         "message": "Используйте теги перемещения (<move></move>) и изменения размера (<resize></resize>)."
-    },
-    "FCmJHd": {
-        "message": "Показывает канал Atom или RSS, полезно для отслеживания новостей, веб-сайтов и блогов",
-        "description": "Feed widget description"
     },
     "KhM0zv": {
         "message": "Котировки получены из внешних источников и не изменяются в Renewed Tab.",
@@ -843,10 +824,6 @@
     "aXrD3p": {
         "message": "Валюты",
         "description": "Currencies widget"
-    },
-    "cL6y1P": {
-        "message": "URL Atom или RSS-ленты",
-        "description": "Form field hint (Feed URL)"
     },
     "a0L2KE": {
         "message": "Попробуйте указать название страны или сокращение."
@@ -1057,10 +1034,6 @@
     "yfgoZf": {
         "message": "Чаты Discord / Matrix"
     },
-    "TS11GJ": {
-        "message": "Случайное изображение из Atom или RSS-канала",
-        "description": "Backgroud mode description"
-    },
     "TkgCJ9": {
         "message": "Вы можете получить помощь или запросить функцию, используя ссылку ниже."
     },
@@ -1128,5 +1101,9 @@
     },
     "KsX2fE": {
         "message": "<b>{name}</b> @ {latitude} , {longitude}"
+    },
+    "2j5LN5": {
+        "message": "Предложить URL, чтобы добавить к вариантам по умолчанию",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

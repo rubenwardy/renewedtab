@@ -111,10 +111,6 @@
         "message": "이미지",
         "description": "Image Widget"
     },
-    "7bfD9/": {
-        "message": "기본 제안에 제안할 URL을 추가합니다",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "7wOM6+": {
         "message": "올해 목표",
         "description": "Year Progress widget"
@@ -209,5 +205,9 @@
     "Cq4JWx": {
         "message": "뉴스, 날씨 등",
         "description": "Preset: grid description"
+    },
+    "2j5LN5": {
+        "message": "기본 제안에 제안할 URL을 추가합니다",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

@@ -123,10 +123,6 @@
         "message": "As imagens são armazenadas localmente no seu navegador e nunca são enviadas",
         "description": "Form field hint (Image)"
     },
-    "7bfD9/": {
-        "message": "Sugerir que o URL seja adicionado às sugestões padrão",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "BJYZgx": {
         "message": "Use a alça de movimentação (<move> </move>) e a alça de redimensionamento (<resize> </resize>)."
     },
@@ -141,17 +137,9 @@
         "message": "Escolha a Localização",
         "description": "Location form field: prompt"
     },
-    "DJRqNI": {
-        "message": "Mostra a imagem mais recente de um feed Atom ou RSS, útil para WebComics.",
-        "description": "Web Comic widget description"
-    },
     "Dk7Khi": {
         "message": "Fahrenheit",
         "description": "Weather widget: Fahrenheit unit"
-    },
-    "FHzdXg": {
-        "message": "As configurações a seguir são <b> experimentais </b>; isso significa que você pode encontrar bugs e estranhezas ao alterá-los, e as atualizações podem quebrar seus temas.",
-        "description": "Theme settings"
     },
     "G6WG/N": {
         "message": "Invisível",
@@ -443,10 +431,6 @@
     "bQFsdR": {
         "message": "Conceda permissão para acessar {host}"
     },
-    "cL6y1P": {
-        "message": "URL para um feed Atom ou RSS",
-        "description": "Form field hint (Feed URL)"
-    },
     "cR7nCG": {
         "message": "Redefinir o tema para o padrão"
     },
@@ -517,9 +501,6 @@
     "lwUV0r": {
         "message": "Você pode alterar a meta clicando nele no widget",
         "description": "Daily Goal widget: edit modal hint"
-    },
-    "mY9tpI": {
-        "message": "Erro ao carregar feed. Certifique-se de que é um feed RSS ou Atom."
     },
     "nGSwtl": {
         "message": "Buscador",
@@ -785,10 +766,6 @@
         "message": "Progresso do ano",
         "description": "Year Progress widget"
     },
-    "FCmJHd": {
-        "message": "Mostra um feed Atom ou RSS, útil para acompanhar notícias, sites e blogs",
-        "description": "Feed widget description"
-    },
     "0PsF7Z": {
         "message": "Tem certeza de que deseja remover este widget permanentemente?",
         "description": "Delete widget modal message"
@@ -989,10 +966,6 @@
         "message": "Curado",
         "description": "Curated background mode"
     },
-    "TS11GJ": {
-        "message": "Imagem aleatória de um feed Atom ou RSS",
-        "description": "Backgroud mode description"
-    },
     "mL3MOs": {
         "message": "Milhas por hora (mph)",
         "description": "Weather widget: Speed unit"
@@ -1038,5 +1011,9 @@
     "lY73np": {
         "message": "Mostrar fundo do painel",
         "description": "Widget styling, checkbox"
+    },
+    "2j5LN5": {
+        "message": "Sugerir que o URL seja adicionado às sugestões padrão",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

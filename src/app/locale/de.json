@@ -88,14 +88,6 @@
     "CshCZY": {
         "message": "Hintergrund Typ"
     },
-    "DJRqNI": {
-        "message": "Zeigt das neueste Bild von einem Atom / RSS Feed, nützlich für WebComics.",
-        "description": "Web Comic widget description"
-    },
-    "FHzdXg": {
-        "message": "Die folgenden Einstellungen sind <b>experimentell</b>; das heisst, dass es zu Fehler und Inkonsistenzen kommen kann, falls sie diese ändern. Ausserdem könnten Aktualisierungen ihre Gestaltungselemente zurücksetzen.",
-        "description": "Theme settings"
-    },
     "9+2gJZ": {
         "message": "Dieses Widget benötigt die Browsererweiterungsversion."
     },
@@ -258,10 +250,6 @@
     },
     "QqE4JC": {
         "message": "Fehlende Feed-URL."
-    },
-    "cL6y1P": {
-        "message": "URL zu einem Atom / RSS Feed",
-        "description": "Form field hint (Feed URL)"
     },
     "OQHLB5": {
         "message": "Farbe",
@@ -442,10 +430,6 @@
         "message": "Eigenes CSS",
         "description": "Theme settings: form field label"
     },
-    "7bfD9/": {
-        "message": "Füge diese URL zu den Standardvorschlägen hinzu",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
-    },
     "Bl74xq": {
         "message": "Ein Link Button",
         "description": "Button widget description"
@@ -489,10 +473,6 @@
     "E4nLwR": {
         "message": "täglich",
         "description": "Background expiry dropdown"
-    },
-    "FCmJHd": {
-        "message": "Zeigt einen Atom / RSS Feed, nützlich um Nachrichten, Webseiten und Blogs zu verfolgen",
-        "description": "Feed widget description"
     },
     "0l+aD2": {
         "message": "Tägliche Ziele und inspirierende Zitate",
@@ -644,10 +624,6 @@
     "RhyKzC": {
         "message": "Zusammengestellt",
         "description": "Curated background mode"
-    },
-    "TS11GJ": {
-        "message": "Zufälliges Bild aus einem Atom / RSS Feed",
-        "description": "Backgroud mode description"
     },
     "Upkn1Q": {
         "message": "<b>Hohe</b> UV-Belastung",
@@ -902,9 +878,6 @@
         "message": "Helligkeit: hell",
         "description": "Backgroud settings: form field label"
     },
-    "mY9tpI": {
-        "message": "Beim Laden des Feeds ist ein Fehler aufgetreten. Prüfen Sie, ob es ein RSS / Atom Feed ist."
-    },
     "nF7bWj": {
         "message": "DIN/ISO ({example})",
         "description": "Clock widget: date style type"
@@ -1132,5 +1105,9 @@
     "zsdRww": {
         "message": "Wird für die übergeordneten Schaltflächen und Links verwendet",
         "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "2j5LN5": {
+        "message": "Füge diese URL zu den Standardvorschlägen hinzu",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }

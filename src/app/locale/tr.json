@@ -72,9 +72,6 @@
     "kAEQyV": {
         "message": "Tamam"
     },
-    "mY9tpI": {
-        "message": "Besleme yüklenirken hata oluştu. Beslemenizin bir RSS veya Atom beslemesi olduğundan emin olun."
-    },
     "o2uuHu": {
         "message": "12 saatlik saat"
     },
@@ -456,10 +453,6 @@
         "message": "İkon",
         "description": "Form field label"
     },
-    "FHzdXg": {
-        "message": "Aşağıdaki ayarlar <b>deneyseldir</b>; yani bu ayarları değiştirirken çeşitli hatalar ve acayip şeylerle karşılaşabilirsiniz, ve güncellemeler temalarınızı bozabilir.",
-        "description": "Theme settings"
-    },
     "ZUZeuR": {
         "message": "Bir mesaj göster",
         "description": "Text widget description"
@@ -524,10 +517,6 @@
         "message": "Şu anki ve tahmin edilen hava durumları",
         "description": "Weather widget description"
     },
-    "cL6y1P": {
-        "message": "Bir Atom veya RSS beslemesi URL'i",
-        "description": "Form field hint (Feed URL)"
-    },
     "Bl74xq": {
         "message": "Bir link butonu",
         "description": "Button widget description"
@@ -556,10 +545,6 @@
         "message": "Özel ikonlar kullan",
         "description": "Links widget: form field label"
     },
-    "DJRqNI": {
-        "message": "Bir Atom veya RSS beslemesindeki en son görüntüyü gösterir, WebComic'ler için kullanışlıdır.",
-        "description": "Web Comic widget description"
-    },
     "ofl4Ui": {
         "message": "Ara",
         "description": "Location form field: search"
@@ -574,10 +559,6 @@
     "Ibm90j": {
         "message": "Saat sisteminizin saat dilimine göre gösterilir. Saat yanlışsa bilgisayar ve tarayıcı ayarlarından saat diliminizin doğru ayarlandığına emin olun.",
         "description": "Clock widget: edit hint"
-    },
-    "7bfD9/": {
-        "message": "URL'in varsayılan önerilere eklenmesini öner",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/Atom feeds"
     },
     "KsX2fE": {
         "message": "{latitude}' {longitude} konumundaki <b>{name}</b>"
@@ -749,10 +730,6 @@
         "message": "Haberler, hava durumu, ve daha fazlası",
         "description": "Preset: grid description"
     },
-    "FCmJHd": {
-        "message": "Bir Atom veya RSS beslemesi gösterir. Haberleri, siteleri ve blogları takip etmek için kullanılır",
-        "description": "Feed widget description"
-    },
     "b2Rs2F": {
         "message": "Açık renkli görüntülerin parlaklığını değiştirir",
         "description": "Backgroud settings: form field label (Brightness: Light)"
@@ -904,10 +881,6 @@
     "RhyKzC": {
         "message": "Seçilmiş",
         "description": "Curated background mode"
-    },
-    "TS11GJ": {
-        "message": "Bir atom veya RSS beslemesinden rastgele resim",
-        "description": "Backgroud mode description"
     },
     "mL3MOs": {
         "message": "Mil/saat (mph)",
@@ -1185,5 +1158,9 @@
     "exTzGh": {
         "message": "Yatay",
         "description": "Form field option, horizontal gradient"
+    },
+    "2j5LN5": {
+        "message": "URL'in varsayılan önerilere eklenmesini öner",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     }
 }
