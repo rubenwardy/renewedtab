@@ -11,6 +11,10 @@
     "description": "SpaceFlights widget: today and time",
     "message": "Today, {time}"
   },
+  "+g7L/A": {
+    "description": "Feed widget description",
+    "message": "Shows Atom, JSONFeed, and RSS feeds - useful for following the news, websites, and blogs"
+  },
   "+oSH/F": {
     "description": "Age widget description",
     "message": "States your current age with way too much precision"
@@ -443,10 +447,6 @@
   "NjoFru": {
     "description": "Backgroud mode description",
     "message": "Random image from an Atom, JSONFeed, or RSS feed"
-  },
-  "NwRs1d": {
-    "description": "Feed widget description",
-    "message": "Shows an Atom, JSONFeed, RSS feed - useful for following the news, websites, and blogs"
   },
   "O2Mjef": {
     "description": "Review request, review button",
