@@ -231,6 +231,38 @@ main > .widget {
 	}
 }
 
+.image-carousel-control {
+	height: 100%;
+	color:rgba(255, 255, 255, 0.45);
+
+	padding: 0.4rem;
+	margin: 0;
+	font-size: 2rem;
+	line-height: 1.5;
+	border-radius: 0;
+	background: transparent;
+	border: 1px solid transparent;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+	cursor: pointer;
+	box-sizing: border-box;
+	text-align: center;
+
+	&[disabled] {
+		color:rgba(255, 255, 255, 0.2);
+		cursor: unset;
+	}
+
+	&:not([disabled]):hover {
+		color: white;
+		text-decoration: none;
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+}
+
+.modal .image-carousel-control {
+	padding: 2rem;
+}
+
 .widget-dailygoal {
 	.btn {
 		visibility: collapse;
