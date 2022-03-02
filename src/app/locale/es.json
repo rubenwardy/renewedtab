@@ -1132,5 +1132,43 @@
     "eKCjBm": {
         "message": "Precipitación (%)",
         "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "KjUKUz": {
+        "message": "Un degradado de colores",
+        "description": "Backgroud mode description"
+    },
+    "SENRqu": {
+        "message": "Ayuda"
+    },
+    "TDaF6J": {
+        "message": "Descartar"
+    },
+    "bfWes8": {
+        "message": "Tipo de degradado",
+        "description": "Form field label"
+    },
+    "B3NCWb": {
+        "message": "Colores",
+        "description": "Form field label"
+    },
+    "ATbgo4": {
+        "message": "Radial",
+        "description": "Form field option, radial gradient"
+    },
+    "C7WJrL": {
+        "message": "Vertical",
+        "description": "Form field option, vertical gradient"
+    },
+    "EpPEVJ": {
+        "message": "Degradado",
+        "description": "Gradient background mode"
+    },
+    "O2Mjef": {
+        "message": "Revisar",
+        "description": "Review request, review button"
+    },
+    "exTzGh": {
+        "message": "Horizontal",
+        "description": "Form field option, horizontal gradient"
     }
 }
