@@ -42,7 +42,7 @@ Sentry.init({
 
 		try {
 			const url = new URL(crumb.data!.url);
-			for (const key of [ "lat", "long" ]) {
+			for (const key of ["lat", "long"]) {
 				if (url.searchParams.has(key)) {
 					url.searchParams.set(key, "*****");
 				}
@@ -58,21 +58,25 @@ Sentry.init({
 });
 
 render(
-  <App />,
-  document.getElementById("app")
+	<App />,
+	document.getElementById("app")
 );
 
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
-	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock,
-	faLockOpen, faQuestionCircle, faGripVertical, faLanguage, faTint, faSun,
-	faWind, faLongArrowAltRight, faClone, faSearch, faUmbrella } from '@fortawesome/free-solid-svg-icons'
+import {
+	faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
+	faCaretLeft, faCaretRight, faEllipsisH, faCircle, faGlobeEurope, faBan,
+	faThumbsUp, faLock, faLockOpen, faQuestionCircle, faGripVertical,
+	faLanguage, faTint, faSun, faWind, faLongArrowAltRight, faClone, faSearch,
+	faUmbrella
+} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
-	faEllipsisH, faCircle, faGlobeEurope, faBan, faThumbsUp, faLock, faLockOpen,
-	faQuestionCircle, faGripVertical, faLanguage, faTint, faSun, faWind,
-	faLongArrowAltRight, faClone, faSearch, faUmbrella);
+	faCaretLeft, faCaretRight, faEllipsisH, faCircle, faGlobeEurope, faBan,
+	faThumbsUp, faLock, faLockOpen, faQuestionCircle, faGripVertical,
+	faLanguage, faTint, faSun, faWind, faLongArrowAltRight, faClone, faSearch,
+	faUmbrella);
 dom.watch();
 
 
@@ -93,7 +97,7 @@ font.href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
 font.rel = "preload";
 font.as = "style";
 document.body.appendChild(font);
-font.onload = function() {
+font.onload = () => {
 	console.log("Font loaded");
 	font.onload = null;
 	font.rel = 'stylesheet';
