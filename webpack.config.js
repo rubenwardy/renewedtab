@@ -4,8 +4,8 @@ const fs = require("fs");
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ForkTsCheckerPlugin = require('fork-ts-checker-webpack-plugin');
-const {GitRevisionPlugin} = require('git-revision-webpack-plugin');
+const ForkTsCheckerPlugin = require("fork-ts-checker-webpack-plugin");
+const {GitRevisionPlugin} = require("git-revision-webpack-plugin");
 const gitRevisionPlugin = new GitRevisionPlugin({
 	lightweightTags: true,
 });
@@ -80,36 +80,33 @@ module.exports = {
 			typescript: {
 				configFile: path.resolve(__dirname, "tsconfig.app.json"),
 			},
-			// eslint: {
-			// 	files: './**/*.{ts,tsx}',
-			// },
 		}),
 	],
 	module: {
 		rules: [
 			{
 				test: /\.[t|j]sx?$/,
-				loader: 'babel-loader',
+				loader: "babel-loader",
 				options: {
 					babelrc: false,
 					cacheDirectory: true,
 					presets: [
 						[
-							'@babel/preset-typescript',
+							"@babel/preset-typescript",
 							{
 								isTSX: true,
 								allExtensions: true,
 							},
 						],
 						[
-							'@babel/preset-env',
+							"@babel/preset-env",
 							{
-								targets: { browsers: ['Chrome 96'] },
+								targets: { browsers: ["Chrome 78", "Firefox 70"] },
 							},
 						],
 					],
 					plugins: [
-						'@babel/transform-react-jsx',
+						"@babel/transform-react-jsx",
 						[
 							"formatjs",
 							{
