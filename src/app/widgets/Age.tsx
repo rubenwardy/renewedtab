@@ -51,7 +51,7 @@ function Age(widget: WidgetProps<AgeProps>) {
 	}, [props.birthDate]);
 
 	return (
-		<Panel {...widget.theme} className="vertical-middle">
+		<Panel {...widget.theme} className="vertical-middle" invisClassName="vertical-middle">
 			<FormattedMessage {...messages.current_age}
 				values={{
 					b: (chunks: any) => <strong>&nbsp;{chunks}&nbsp;</strong>,
