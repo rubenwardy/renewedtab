@@ -21,11 +21,6 @@ const messages = defineMessages({
 		defaultMessage: "HTML",
 		description: "HTML widget: form field label",
 	},
-
-	htmlHint: {
-		defaultMessage: "Be careful with what you paste here. An attacker could get you to paste code here that steals things the extension has access to - such as browser history and top sites.",
-		description: "HTML widget: form field hint (HTML)"
-	}
 });
 
 interface HTMLProps {
@@ -49,7 +44,7 @@ const widget: WidgetType<HTMLProps> = {
 		html: "Hello <b>World</b>"
 	},
 	schema: {
-		html: type.textarea(messages.html, messages.htmlHint),
+		html: type.textarea(messages.html),
 	},
 };
 export default widget;
