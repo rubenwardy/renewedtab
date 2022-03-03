@@ -90,10 +90,14 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
 
 		if (link.url.trim() != "") {
+			const attr = (typeof browser !== "undefined" && link.url.startsWith("chrome://")) ? {
+				onClick: () => browser.tabs.update(undefined, { url: link.url }),
+			} : { href: link.url };
+
 			return (
 				<li key={link.id} data-hostname={parseURL(link.url)?.hostname} data-url={link.url}
 					data-title={link.title} data-icon={link.icon}>
-					<a href={link.url} target={target} rel="noreferrer">
+					<a {...attr} target={target} rel="noreferrer">
 						{icon}
 						<span className="title">
 							{(!props.widgetTheme.useIconBar || props.widgetTheme.showText) &&
