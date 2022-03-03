@@ -3,10 +3,8 @@
 
 	.widget-strip {
 		position: absolute;
-		top: -30px;
+		bottom: 100%;
 		left: 0;
-
-		max-height: 30px;
 
 		display: flex;
 		flex-flow: row;
