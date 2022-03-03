@@ -87,18 +87,3 @@ if (typeof browser !== "undefined") {
 
 	setUninstallURL().catch(console.error);
 }
-
-
-/**
- * Load Roboto font without blocking rendering
- */
-const font = document.createElement("link")
-font.href = "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
-font.rel = "preload";
-font.as = "style";
-document.body.appendChild(font);
-font.onload = () => {
-	console.log("Font loaded");
-	font.onload = null;
-	font.rel = 'stylesheet';
-}

@@ -9,6 +9,34 @@
 	--color-primary-light-highlight: #96e7fa;
 }
 
+/* Roboto regular */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("roboto/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Roboto italic */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("roboto/Roboto-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Roboto bold */
+
+@font-face {
+    font-family: "Roboto";
+    src: url("roboto/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
 @import "mixins";
 
 html, body, #app {
