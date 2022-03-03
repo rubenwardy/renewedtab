@@ -43,10 +43,8 @@ export default function App() {
 	}, []);
 
 	const [query, setQuery] = useState("");
-	const loaded = loadingRes != null;
-	const [actualLocale, setLocale] = useStorage<string>("locale", getUserLocale());
-	const locale = actualLocale ?? "en"
-	const [messages] = usePromise(() => getTranslation(locale), [locale]);
+	const [locale, setLocale] = useStorage<string>("locale", getUserLocale());
+	const [messages] = usePromise(() => locale ? getTranslation(locale) : Promise.reject(null), [locale]);
 	const [background, setBackground] = useBackground();
 	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});
 	const [createIsOpen, setCreateOpen] = useState(false);
@@ -56,13 +54,14 @@ export default function App() {
 	const [rawGridSettings, setGridSettings] = useStorage<WidgetGridSettings>(
 		"grid_settings", { ...defaultGridSettings });
 	const [onboardingIsOpen, setOnboardingIsOpen] = useState<boolean | undefined>(undefined);
+	const loaded = loadingRes != null && messages != null;
 	useEffect(() => {
 		if (loaded && onboardingIsOpen == undefined) {
 			setOnboardingIsOpen(widgetManager.widgets.length == 0);
 		}
 	}, [loaded]);
 
-	const gridSettings = rawGridSettings && { ...defaultGridSettings, ...rawGridSettings};
+	const gridSettings = rawGridSettings && { ...defaultGridSettings, ...rawGridSettings };
 
 	if (theme) {
 		applyTheme(theme);
@@ -76,7 +75,7 @@ export default function App() {
 	classes.push(isLocked ? "locked" : "unlocked");
 
 	return (
-		<IntlProvider locale={locale} defaultLocale="en" messages={messages ?? undefined}>
+		<IntlProvider locale={(messages && locale) ? locale : "en"} defaultLocale="en" messages={messages ?? undefined}>
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
 				<div className={classes.join(" ")}>
@@ -84,31 +83,31 @@ export default function App() {
 						<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 					</Sentry.ErrorBoundary>
 					{createIsOpen && (<CreateWidgetDialog
-							manager={widgetManager}
-							onClose={() => setCreateOpen(false)} />)}
+						manager={widgetManager}
+						onClose={() => setCreateOpen(false)} />)}
 					{gridSettings && (
 						<SettingsDialog
-								isOpen={settingsIsOpen}
-								onClose={() => setSettingsOpen(false)}
-								background={background} setBackground={setBackground}
-								theme={theme} setTheme={setTheme}
-								locale={locale} setLocale={setLocale}
-								grid={gridSettings} setGrid={setGridSettings} />)}
+							isOpen={settingsIsOpen}
+							onClose={() => setSettingsOpen(false)}
+							background={background} setBackground={setBackground}
+							theme={theme} setTheme={setTheme}
+							locale={locale ?? "en"} setLocale={setLocale}
+							grid={gridSettings} setGrid={setGridSettings} />)}
 
 					{loaded && gridSettings &&
 						<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
 					{onboardingIsOpen && (
 						<Onboarding
-								onClose={() => setOnboardingIsOpen(false)}
-								locale={locale} setLocale={setLocale}
-								manager={widgetManager} />)}
+							onClose={() => setOnboardingIsOpen(false)}
+							locale={locale ?? "en"} setLocale={setLocale}
+							manager={widgetManager} />)}
 					<ReviewRequester />
 
 					<footer className="text-shadow">
 						{isLocked && (
 							<a onClick={() => setIsLocked(false)} tabIndex={0}>
 								<i className={"large fas mr-1 " +
-										(isLocked ? "fa-lock" : "fa-lock")} />
+									(isLocked ? "fa-lock" : "fa-lock")} />
 							</a>)}
 
 						{!isLocked && (
@@ -116,7 +115,7 @@ export default function App() {
 								<a onClick={() => setCreateOpen(true)} tabIndex={0}>
 									<i className="fas fa-plus mr-1" />
 									<FormattedMessage
-											defaultMessage="Add Widget" />
+										defaultMessage="Add Widget" />
 								</a>
 								<a onClick={() => setSettingsOpen(true)} className="ml-3">
 									<i className="large fas fa-cog" />

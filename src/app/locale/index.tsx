@@ -22,7 +22,7 @@ const availableLocales: Record<string, string> = {
 
 // Locales will automatically resolve to more generic locales (ie: es-MX to es),
 // but not the other way around.
-const localeAliases : { [key: string]: string } = {
+const localeAliases: { [key: string]: string } = {
 	"pt": "pt-br",
 	"zh": "zh-hans",
 	"zh-hant": "zh-hans",
@@ -56,9 +56,9 @@ export function getLanguages(): Record<string, string> {
  * @param locale ISO locale string
  * @returns React-Intl translation
  */
-export async function getTranslation(locale: string): Promise<Translation | undefined> {
+export async function getTranslation(locale: string): Promise<Translation | null> {
 	if (locale == "en") {
-		return undefined;
+		return {};
 	} else {
 		const locales = await getLocales();
 		return locales[locale];
