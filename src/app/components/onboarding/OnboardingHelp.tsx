@@ -54,6 +54,22 @@ export default function OnboardingHelp() {
 									resize: () => <span className="fake-resizable-handle" />,
 								}} />
 						</p>
+						<p>
+							<FormattedMessage
+								defaultMessage=
+									"Once you're done, use the lock (<lock></lock>) to make the widgets read only."
+								values={{
+									lock: () => <i className="fas fa-lock" />,
+								}} />
+						</p>
+						<p className="text-muted">
+							<FormattedMessage
+								defaultMessage=
+									"Don't worry, you can unlock at a later point"
+								values={{
+									lock: () => <i className="fas fa-lock" />,
+								}} />
+						</p>
 					</div>
 				</div>
 			</div>
