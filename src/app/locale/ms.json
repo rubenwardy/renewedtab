@@ -1162,5 +1162,40 @@
     "2j5LN5": {
         "message": "Cadangkan URL untuk ditambah ke himpunan cadangan",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "Lnvfz8": {
+        "message": "Gagal untuk memuatkan {source}: {error}",
+        "description": "Feed error message"
+    },
+    "NjoFru": {
+        "message": "Imej rawak daripada suapan Atom, JSONFeed, atau RSS",
+        "description": "Backgroud mode description"
+    },
+    "/aA+Xf": {
+        "message": "Tunjuk imej",
+        "description": "Feed widget: form field label"
+    },
+    "+g7L/A": {
+        "message": "Tunjukkan suapan Atom, JSONFeed, dan RSS - berguna untuk mengikuti berita, laman sesawang, dan blog",
+        "description": "Feed widget description"
+    },
+    "/Mx09O": {
+        "message": "Dalam uji kaji. Ini tidak berfungsi dengan semua sumber suapan, kerana ketiadaan maklumat imej. Imej juga boleh jadi besar, dan mengambil masa untuk dimuatkan.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "5mfAB9": {
+        "message": "URL ke suapan Atom, JSONFeed, atau RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "c7zm0j": {
+        "message": "Gagal memuatkan suapan. Pastikan ia suapan jenis RSS, JSONFeed, atau Atom."
+    },
+    "h00yCR": {
+        "message": "Tunjuk imej terbaru daripada suapan Atom, JSONFeed, atau RSS - berguna untuk Komik Sesawang.",
+        "description": "Web Comic widget description"
+    },
+    "zPAzlS": {
+        "message": "Gabung pelbagai sumber ke dalam tab tunggal",
+        "description": "Feed widget: form field label"
     }
 }
