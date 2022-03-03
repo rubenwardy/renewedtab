@@ -135,11 +135,13 @@ export default function Background(props: BackgroundProps) {
 	const credits = actualBg.credits ? { ... actualBg.credits } as CreditsProps : undefined;
 	if (credits) {
 		credits.setIsHovered = props.setWidgetsHidden;
-		credits.onVoted = () => {
-			if (provider.enableCaching) {
-				window.localStorage.removeItem("_bg-cache");
+		credits.onVoted = (isPositive) => {
+			if (!isPositive) {
+				if (provider.enableCaching) {
+					window.localStorage.removeItem("_bg-cache");
+				}
+				forceUpdate();
 			}
-			forceUpdate();
 		};
 	}
 

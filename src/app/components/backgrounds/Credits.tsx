@@ -46,7 +46,7 @@ function reportVote(info: BackgroundInfo, isPositive: boolean) {
 
 export interface CreditsProps extends BackgroundCredit {
 	setIsHovered?: (value: boolean) => void;
-	onVoted?: () => void;
+	onVoted?: (isPositive: boolean) => void;
 }
 
 
@@ -67,7 +67,7 @@ function CreditsVote(props: CreditsProps) {
 		});
 
 		if (props.onVoted) {
-			props.onVoted();
+			props.onVoted(isPositive);
 		}
 	}
 
