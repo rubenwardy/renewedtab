@@ -387,10 +387,6 @@
     "MiIvsP": {
         "message": "Você pode adicionar, mover, redimensionar e configurar widgets em uma grade usando controles intuitivos."
     },
-    "TZknEV": {
-        "message": "Cuidado com o que você cola aqui. Um invasor pode fazer você colar um código aqui que rouba itens aos quais a extensão tem acesso - como o histórico do navegador e os principais sites.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "WQeyl4": {
         "message": "Conceda permissão para acessar favoritos"
     },

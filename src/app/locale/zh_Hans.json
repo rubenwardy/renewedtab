@@ -403,10 +403,6 @@
         "message": "如果一篇文章至少符合一个“显示”过滤器（如果有的话），并且没有“隐藏”过滤器，它就会被显示。",
         "description": "Feed widget: form field hint (Filters)"
     },
-    "TZknEV": {
-        "message": "请小心你在这里粘贴的内容。攻击者可能会让你在这里粘贴代码，窃取扩展程序可以访问的东西——例如浏览器历史和最常访问网站。",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "VkW6D1": {
         "message": "center, top, or bottom (中间，顶部或底部)",
         "description": "Backgroud settings: form field hint (Position)"

@@ -605,10 +605,6 @@
         "message": "Durchsuchen Sie Ihre lokalen Widgets oder das Web mit Ihrer Lieblingssuchmaschine",
         "description": "Search widget description"
     },
-    "TZknEV": {
-        "message": "Seien Sie vorsichtig mit der Quelle, aus der Sie hier einen Ausdruck einfügen. Es könnte sich dabei auch um einen gefährlichen Code handeln, der die Daten ausspäht, auf die diese Erweiterung Zugriff hat, z. B. Ihren Browserverlauf oder die meistbesuchten Websites.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "B0kbsm": {
         "message": "Feed",
         "description": "Unsplash background mode"

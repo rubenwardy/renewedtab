@@ -686,10 +686,6 @@
     "RCe+DS": {
         "message": "Widget Tarik dan Lepas"
     },
-    "TZknEV": {
-        "message": "Hati-hati dengan apa anda tampal di sini. Penyerang boleh yakinkan anda untuk menampal kod di sini yang mampu mencuri apa yang sambungan ini boleh capai - seperti sejarah pelayar dan tapak teratas.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "YuNOET": {
         "message": "HTML",
         "description": "HTML widget: form field label"

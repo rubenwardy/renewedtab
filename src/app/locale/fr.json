@@ -679,10 +679,6 @@
     "y1Z3or": {
         "message": "Langue"
     },
-    "TZknEV": {
-        "message": "Faites attention à ce que vous collez ici. Un pirate pourrait vous faire coller ici du code qui vole des éléments auxquels l'extension a accès, comme l'historique du navigateur et les meilleurs sites.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "Upkn1Q": {
         "message": "Indice UV <b>élevé</b>",
         "description": "High UV risk"

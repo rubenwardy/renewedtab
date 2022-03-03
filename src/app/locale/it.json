@@ -572,10 +572,6 @@
         "message": "Testo",
         "description": "Text Widget"
     },
-    "TZknEV": {
-        "message": "Fai attenzione a quello che incolli qui. Un attaccante potrebbe spingerti a inserire del codice ideato per appropriarsi delle cose alle quali l'estensione ha accesso - come la cronologia e i siti più visitati.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "kF06lD": {
         "message": "Esteso ({example})",
         "description": "Clock widget: date style type"

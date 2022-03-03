@@ -985,10 +985,6 @@
         "message": "Las imágenes se almacenan localmente en su navegador y nunca se suben",
         "description": "Form field hint (Image)"
     },
-    "TZknEV": {
-        "message": "Tenga cuidado con lo que pegue aquí. Un atacante podría hacer que pegue código aquí para robar cosas a las que tiene acceso la extensión, como el historial del navegador y sus sitios web principales.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "ZRWjTk": {
         "message": "Utilizar el buscador predeterminado del navegador",
         "description": "Search widget: form field label"

@@ -667,10 +667,6 @@
     "MiIvsP": {
         "message": "Anlaşılabilir kontrolleri kullanarak ızgaraya araç ekleyebilir, araçları hareket ettirebilir, boyutlandırabilir ve ayarlayabilirsiniz."
     },
-    "TZknEV": {
-        "message": "Buraya ne yapıştırdığınıza dikkat edin. Bir saldırgan sizden buraya bu uzantının erişebildiği şeyleri çalabilecek bir kod yapıştırmanızı isteyebilir - örneğin tarayıcı geçmişi ve sık kullanılan siteler.",
-        "description": "HTML widget: form field hint (HTML)"
-    },
     "YuNOET": {
         "message": "HTML",
         "description": "HTML widget: form field label"

@@ -555,10 +555,6 @@
     "description": "Text Widget",
     "message": "Text"
   },
-  "TZknEV": {
-    "description": "HTML widget: form field hint (HTML)",
-    "message": "Be careful with what you paste here. An attacker could get you to paste code here that steals things the extension has access to - such as browser history and top sites."
-  },
   "TkgCJ9": {
     "message": "You can get help or request a feature using the link below."
   },
@@ -888,6 +884,9 @@
     "description": "The name of the current language, to be used in the settings dialog",
     "message": ""
   },
+  "lhwL6C": {
+    "message": "Once you're done, use the lock (<lock></lock>) to make the widgets read only."
+  },
   "lkJAu6": {
     "description": "Unsplash background mode",
     "message": "Unsplash"
@@ -1177,6 +1176,9 @@
   "zPAzlS": {
     "description": "Feed widget: form field label",
     "message": "Combine sources into single tab"
+  },
+  "zXtUcf": {
+    "message": "Don't worry, you can unlock at a later point"
   },
   "zaQRTm": {
     "description": "Extreme UV risk",
