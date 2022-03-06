@@ -3,11 +3,12 @@ import Panel from "app/components/Panel";
 import { usePromise } from "app/hooks";
 import { useGlobalSearch } from "app/hooks/globalSearch";
 import { schemaMessages } from "app/locale/common";
+import { getProbableURL } from "app/utils";
 import { type } from "app/utils/Schema";
 import UserError from "app/utils/UserError";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { defineMessages, useIntl } from "react-intl";
 
 
@@ -153,6 +154,9 @@ function Search(widget: WidgetProps<SearchProps>) {
 	const props = widget.props;
 	const intl = useIntl();
 	const enableGlobalSearch = props.enableGlobalSearch ?? true;
+	const [query, setQuery] = enableGlobalSearch
+		? [globalSearch.query, globalSearch.setQuery] : useState("");
+	const directURL = getProbableURL(query);
 
 	const [settings, error] = usePromise(() => getSearchEngineSettings(props), []);
 	const ref = useRef<HTMLInputElement>(null);
@@ -163,8 +167,9 @@ function Search(widget: WidgetProps<SearchProps>) {
 	function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 
-		const query = ref.current?.value;
-		if (query) {
+		if (directURL) {
+			window.location.href = directURL;
+		} else if (query) {
 			settings?.onSearch(query);
 		}
 	}
@@ -176,15 +181,14 @@ function Search(widget: WidgetProps<SearchProps>) {
 	return (
 		<Panel {...widget.theme} flush={true}>
 			<form onSubmit={onSubmit}>
-				<i className="icon fas fa-search" />
-				<input autoFocus={true} placeholder={placeholder}
-						value={enableGlobalSearch ? globalSearch.query : undefined}
-						onChange={
-							enableGlobalSearch
-								? (e => globalSearch.setQuery(e.target.value))
-								: undefined}
-						type="search" name="q" ref={ref}
-						autoComplete="off"
+				<span key={directURL ?? "icon"} className="icon">
+					<i className={directURL !== null
+						? "fas fa-globe-europe"
+						: "fas fa-search"} />
+				</span>
+				<input ref={ref} type="search" name="q" autoComplete="off"
+						autoFocus={true} placeholder={placeholder}
+						value={query} onChange={e => setQuery(e.target.value)}
 						className="large invisible" />
 			</form>
 		</Panel>);

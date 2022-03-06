@@ -1,3 +1,6 @@
+import TLDS from "./tlds.json";
+
+
 /**
  * Combine multiple strings representing className lists.
  *
@@ -71,6 +74,19 @@ export function parseURL(v: string): URL | undefined {
 		return new URL(v);
 	} catch (e) {
 		return undefined;
+	}
+}
+
+
+export function getProbableURL(v: string): string | null {
+	const startsWithHttp = v.startsWith("http://") || v.startsWith("https://");
+
+	const url = parseURL(startsWithHttp ? v : `http://${v}`);
+	if (url && (startsWithHttp ||
+			TLDS.some(tld => url.hostname.endsWith(`.${tld}`) || v.endsWith("/")))) {
+		return url.toString();
+	} else {
+		return null;
 	}
 }
 

@@ -15,7 +15,7 @@ const messages = defineMessages({
 	},
 
 	description: {
-		defaultMessage: "Links, with support for headings and icons",
+		defaultMessage: "Links, with support for headings and icons (speed dial)",
 		description: "Links widget description",
 	},
 
