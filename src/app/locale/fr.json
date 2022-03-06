@@ -1105,5 +1105,99 @@
     "2j5LN5": {
         "message": "Proposer une URL à ajouter à la liste des suggestions par défaut",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "/Mx09O": {
+        "message": "Expérimental. Ça ne marche pas avec tous les sources de flux, à cause du manque d'informations sur les images. Les images peuvent également être grandes, ce qui va prendre du temps au chargement.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "c7zm0j": {
+        "message": "Erreur lors du chargement du flux. Assurez-vous qu'il s'agit d'un flux RSS, JSONFeed ou Atom."
+    },
+    "lhwL6C": {
+        "message": "Une fois que vous avez fini, cliquez sur le cadenas (<lock></lock>) pour mettre les widgets en lecture seule."
+    },
+    "+g7L/A": {
+        "message": "Afficher les flux Atom, JSONFeed et RSS - utile pour suivre les actualités, sites internet, et blogs",
+        "description": "Feed widget description"
+    },
+    "O2Mjef": {
+        "message": "Revoir",
+        "description": "Review request, review button"
+    },
+    "KjUKUz": {
+        "message": "Dégradé de couleurs",
+        "description": "Backgroud mode description"
+    },
+    "SENRqu": {
+        "message": "Aide"
+    },
+    "8xPAKF": {
+        "message": "De 0 à 100%, position de la couleur sur le dégradé",
+        "description": "Form field hint (Stop)"
+    },
+    "B3NCWb": {
+        "message": "Couleurs",
+        "description": "Form field label"
+    },
+    "C7WJrL": {
+        "message": "Vertical",
+        "description": "Form field option, vertical gradient"
+    },
+    "TDaF6J": {
+        "message": "Fermer"
+    },
+    "exTzGh": {
+        "message": "Horizontal",
+        "description": "Form field option, horizontal gradient"
+    },
+    "n+w6I2": {
+        "message": "Arrêter",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "bfWes8": {
+        "message": "Type de dégradé",
+        "description": "Form field label"
+    },
+    "zXtUcf": {
+        "message": "Ne vous inquiétez pas, vous pouvez à tout moment débloquer"
+    },
+    "/aA+Xf": {
+        "message": "Afficher les images",
+        "description": "Feed widget: form field label"
+    },
+    "ATbgo4": {
+        "message": "Radial",
+        "description": "Form field option, radial gradient"
+    },
+    "5mfAB9": {
+        "message": "URL vers un flux Atom, JSONFeed ou RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "BfX7n6": {
+        "message": "Note : Firefox peut afficher des artefacts tels que des lignes sur des arrière-plans dégradés. Ce n'est pas quelque chose que nous pouvons régler.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "Lnvfz8": {
+        "message": "Échec du chargement de {source} : {error}",
+        "description": "Feed error message"
+    },
+    "NjoFru": {
+        "message": "Image aléatoire depuis un flux Atom, JSONFeed ou RSS",
+        "description": "Backgroud mode description"
+    },
+    "EpPEVJ": {
+        "message": "Dégradé",
+        "description": "Gradient background mode"
+    },
+    "lQIN1l": {
+        "message": "Vous appréciez Renewed Tab ? Publiez un avis !"
+    },
+    "h00yCR": {
+        "message": "Affiche les images récentes d'un flux Atom, JSONFeed ou RSS - utile pour WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "zPAzlS": {
+        "message": "Combinez les sources dans un seul onglet",
+        "description": "Feed widget: form field label"
     }
 }
