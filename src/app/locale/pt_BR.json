@@ -1,6 +1,6 @@
 {
     "+oSH/F": {
-        "message": "Afirma sua idade atual com muita precisão",
+        "message": "Indica sua idade atual com muita precisão",
         "description": "Age widget description"
     },
     "/dtDqf": {
@@ -1011,5 +1011,193 @@
     "2j5LN5": {
         "message": "Sugerir que o URL seja adicionado às sugestões padrão",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "KdIFGg": {
+        "message": "Falta '{query}' no URL de pesquisa. Por exemplo: https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "R4cyIr": {
+        "message": "Atual: Mostrar umidade",
+        "description": "Weather widget: form field label"
+    },
+    "h00yCR": {
+        "message": "Mostra as imagens recentes de um feed Atom, JSONFeed ou RSS - útil para WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "+g7L/A": {
+        "message": "Mostra feeds Atom, JSONFeed e RSS - úteis para acompanhar as notícias de sites e blogs",
+        "description": "Feed widget description"
+    },
+    "/aA+Xf": {
+        "message": "Mostrar imagens",
+        "description": "Feed widget: form field label"
+    },
+    "B1pyj1": {
+        "message": "Atual: Show parece",
+        "description": "Weather widget: form field label"
+    },
+    "B3NCWb": {
+        "message": "Cores",
+        "description": "Form field label"
+    },
+    "bfWes8": {
+        "message": "Tipo de gradiente",
+        "description": "Form field label"
+    },
+    "c7zm0j": {
+        "message": "Erro ao carregar o feed. Verifique se é um feed RSS, JSONFeed ou Atom."
+    },
+    "lhwL6C": {
+        "message": "Quando terminar, use o cadeado (<lock></lock>) para tornar os widgets somente leitura."
+    },
+    "zXtUcf": {
+        "message": "Não se preocupe, você pode desbloquear mais tarde"
+    },
+    "5640CU": {
+        "message": "Atual: Mostrar precipitação",
+        "description": "Weather widget: form field label"
+    },
+    "8HmiSe": {
+        "message": "Especifique uma fonte",
+        "description": "Feed widget: no sources error message"
+    },
+    "AuSjzq": {
+        "message": "Atual: Mostrar risco UV",
+        "description": "Weather widget: form field label"
+    },
+    "8xPAKF": {
+        "message": "De 0-100%, posição da cor no gradiente",
+        "description": "Form field hint (Stop)"
+    },
+    "BfX7n6": {
+        "message": "Nota: O Firefox pode mostrar artefatos como linhas em fundos gradientes. Isso não é algo que podemos consertar.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "BnmONl": {
+        "message": "Atual: Mostrar nascer / pôr do sol",
+        "description": "Weather widget: form field label"
+    },
+    "C7WJrL": {
+        "message": "Vertical",
+        "description": "Form field option, vertical gradient"
+    },
+    "EpPEVJ": {
+        "message": "Gradiente",
+        "description": "Gradient background mode"
+    },
+    "HksGis": {
+        "message": "Atual: Mostrar vento",
+        "description": "Weather widget: form field label"
+    },
+    "KjUKUz": {
+        "message": "Um gradiente de cores",
+        "description": "Backgroud mode description"
+    },
+    "O2Mjef": {
+        "message": "Análise",
+        "description": "Review request, review button"
+    },
+    "PHwOzi": {
+        "message": "Obrigado ao Unsplash, AccuWeather e RocketLaunch.Live por suas APIs."
+    },
+    "TDaF6J": {
+        "message": "Dispensar"
+    },
+    "eKCjBm": {
+        "message": "Precipitação (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "exTzGh": {
+        "message": "Horizontal",
+        "description": "Form field option, horizontal gradient"
+    },
+    "gQAsym": {
+        "message": "Observe se outros widgets não sairão do caminho ao arrastar.",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "hWimZf": {
+        "message": "Ativar pesquisa de widgets",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "lQIN1l": {
+        "message": "Você está gostando da Aba Renovada? Dê-nos uma avaliação!"
+    },
+    "ATbgo4": {
+        "message": "Radial",
+        "description": "Form field option, radial gradient"
+    },
+    "Ack5ID": {
+        "message": "Nenhum Resultado",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "/Mpu8A": {
+        "message": "Estique a grade para cobrir toda a página.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "XYIyWM": {
+        "message": "Você deve aumentar \"Grid Columns\" para pelo menos {cols} para fazer o melhor uso do espaço.",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "/Mx09O": {
+        "message": "Experimental. Isso não funciona com todas as fontes de feed, devido à falta de informações de imagem. As imagens também podem ser grandes e demorar um pouco para carregar.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "5mfAB9": {
+        "message": "URL para um feed Atom, JSONFeed ou RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "Lnvfz8": {
+        "message": "Falha ao carregar {source}: {error}",
+        "description": "Feed error message"
+    },
+    "NjoFru": {
+        "message": "Imagem aleatória de um feed Atom, JSONFeed ou RSS",
+        "description": "Backgroud mode description"
+    },
+    "SENRqu": {
+        "message": "Ajuda"
+    },
+    "n+w6I2": {
+        "message": "Pare",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "n0cZ3b": {
+        "message": "Desenvolvido por {host}.",
+        "description": "Credit to a website"
+    },
+    "nHw5cV": {
+        "message": "Clique nos itens para editá-los.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "o9vGxx": {
+        "message": "Abra links em nova aba",
+        "description": "Form field label"
+    },
+    "oRui+E": {
+        "message": "Gostando da guia renovada? Considere doar para ajudar a cobrir os custos e apoiar seu desenvolvimento."
+    },
+    "q6/aVX": {
+        "message": "Você pode filtrar este widget usando um widget de Pesquisa.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "sIC2UV": {
+        "message": "Mostrar texto",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "x7WADS": {
+        "message": "Grade de página inteira",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "zPAzlS": {
+        "message": "Combine fontes em uma única guia",
+        "description": "Feed widget: form field label"
+    },
+    "+PNw8j": {
+        "message": "Mesmo se você ocultar algumas informações,você ainda poderá vê-las passando o mouse sobre dias e horas",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "3UG6ds": {
+        "message": "Pesquise widgets ou na web usando seu mecanismo de pesquisa favorito",
+        "description": "Search widget description"
     }
 }
