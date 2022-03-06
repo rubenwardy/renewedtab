@@ -1158,5 +1158,46 @@
     "2j5LN5": {
         "message": "URL'in varsayılan önerilere eklenmesini öner",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "c7zm0j": {
+        "message": "Besleme yüklenemedi. RSS, JSONFeed veya Atom beslemesi olduğundan emin olun."
+    },
+    "Lnvfz8": {
+        "message": "{source} yüklenemedi: {error}",
+        "description": "Feed error message"
+    },
+    "NjoFru": {
+        "message": "Bir Atom, JSONFeed veya RSS beslemesinden rastgele görüntü",
+        "description": "Backgroud mode description"
+    },
+    "+g7L/A": {
+        "message": "Atom, JSONFeed ve RSS beslemelerini gösterir - haberler, internet siteleri ve blogları takip edebilirsiniz",
+        "description": "Feed widget description"
+    },
+    "5mfAB9": {
+        "message": "Bir Atom, JSONFeed veya RSS beslemesi URL'i",
+        "description": "Form field hint (Feed URL)"
+    },
+    "lhwL6C": {
+        "message": "İşiniz bittiğinde kilit özelliğini (<lock></lock>) kullanarak araçları salt okunur hale getirebilirsiniz."
+    },
+    "zXtUcf": {
+        "message": "Endişelenmeyin, daha sonra kilidi kaldırabilirsiniz"
+    },
+    "/Mx09O": {
+        "message": "Deneysel. Bulunmayan görüntü bilgisi sebebiyle bütün besleme kaynaklarıyla çalışmaz. Görüntüler büyük olabilir, yüklenmeleri uzun sürebilir.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "/aA+Xf": {
+        "message": "Görüntüleri göster",
+        "description": "Feed widget: form field label"
+    },
+    "h00yCR": {
+        "message": "Bir ATom, JSONFeed veya RSS beslemesinden yakın zamanda paylaşılan görüntüleri gösterir - WebComicler için kullanışlıdır.",
+        "description": "Web Comic widget description"
+    },
+    "zPAzlS": {
+        "message": "Kaynakları tek sekmede birleştir",
+        "description": "Feed widget: form field label"
     }
 }
