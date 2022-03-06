@@ -1193,5 +1193,11 @@
     "zPAzlS": {
         "message": "Gabung pelbagai sumber ke dalam tab tunggal",
         "description": "Feed widget: form field label"
+    },
+    "lhwL6C": {
+        "message": "Apabila anda selesai, gunakan kunci (<lock></lock>) untuk membuatkan widget sebagai baca sahaja."
+    },
+    "zXtUcf": {
+        "message": "Jangan risau, anda boleh membuka kunci pada waktu kemudian"
     }
 }
