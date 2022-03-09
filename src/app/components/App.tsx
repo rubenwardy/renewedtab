@@ -117,7 +117,7 @@ export default function App() {
 									<FormattedMessage
 										defaultMessage="Add Widget" />
 								</a>
-								<a onClick={() => setSettingsOpen(true)} className="ml-3">
+								<a id="open-settings" onClick={() => setSettingsOpen(true)} className="ml-3">
 									<i className="large fas fa-cog" />
 								</a>
 								<a onClick={() => setIsLocked(true)} className="ml-3">

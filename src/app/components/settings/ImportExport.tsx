@@ -80,12 +80,12 @@ export default function ImportExport() {
 			<textarea className="fullwidth" readOnly
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
 			<input ref={ref} type="file" className="display-none"
-				accept=".json,application/json"
+				accept=".json,application/json" name="import-file"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
 			<p className="buttons mt-4">
-				<Button variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
-				<Button onClick={() => ref.current?.click()} label={messages.import} />
-				<Button href={`data:text/plain;base64,${encode(data ?? "")}`}
+				<Button id="reset" variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
+				<Button id="import" onClick={() => ref.current?.click()} label={messages.import} />
+				<Button id="export" href={`data:text/plain;base64,${encode(data ?? "")}`}
 						download="renewedtab.json" label={messages.export} />
 			</p>
 		</div>);

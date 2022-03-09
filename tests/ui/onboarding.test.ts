@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { By } from "selenium-webdriver";
-import { driver, utils } from "./setup-selenium";
+import { utils } from "./setup-selenium";
 
 
 describe("Onboarding", function() {

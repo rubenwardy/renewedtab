@@ -1,0 +1,310 @@
+{
+	"background": {
+		"mode": 0,
+		"values": {
+			"color": "#336699",
+			"url": "https://rubenwardy.com/static/ruben-64.jpg",
+			"position": "bottom",
+			"collection": "1977528"
+		}
+	},
+	"goal": null,
+	"locale": "en",
+	"locked": false,
+	"name": "Andrew",
+	"review_request": {
+		"dismissed": true,
+		"installDate": {
+			"__type__": "date",
+			"value": "2021-06-25T20:15:49.181Z"
+		}
+	},
+	"widgets": [
+		{
+			"id": 1,
+			"type": "Clock",
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 0
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 2
+			},
+			"props": {
+				"showSeconds": false,
+				"hour12": false,
+				"dateStyle": "None"
+			},
+			"theme": {
+				"showPanelBG": false,
+				"textColor": "#ffffff"
+			}
+		},
+		{
+			"id": 2,
+			"type": "Greeting",
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 2
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 1
+			},
+			"props": {},
+			"theme": {
+				"showPanelBG": false
+			}
+		},
+		{
+			"id": 11,
+			"type": "TopSites",
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 3
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 2
+			},
+			"props": {},
+			"theme": {
+				"showPanelBG": false,
+				"useIconBar": true
+			}
+		},
+		{
+			"id": 4,
+			"type": "Age",
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 5
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 1
+			},
+			"props": {
+				"birthDate": {
+					"__type__": "date",
+					"value": "1997-01-01T00:00:00.000Z"
+				}
+			},
+			"theme": {
+				"showPanelBG": true,
+				"useIconBar": false,
+				"color": null
+			}
+		},
+		{
+			"id": 10,
+			"type": "SpaceFlights",
+			"position": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 5
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 3
+			},
+			"props": {},
+			"theme": {
+				"showPanelBG": true,
+				"useIconBar": false,
+				"color": null
+			}
+		},
+		{
+			"id": 13,
+			"type": "YearProgress",
+			"position": {
+				"__type__": "vec2",
+				"x": 10,
+				"y": 5
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 1
+			},
+			"props": {},
+			"theme": {
+				"showPanelBG": true,
+				"color": ""
+			}
+		},
+		{
+			"id": 5,
+			"type": "Links",
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 6
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 5
+			},
+			"props": {
+				"links": [
+					{
+						"id": "346bc836-d25a-4ade-8183-e1fb6ecbf03b",
+						"title": "Minetest",
+						"url": "",
+						"icon": ""
+					},
+					{
+						"id": "a2a8d521-acf9-4242-9d00-51461b304ea1",
+						"title": "ContentDB",
+						"url": "https://content.minetest.net/admin/audit/",
+						"icon": ""
+					},
+					{
+						"id": "01ac2800-536a-4bcc-bac2-51c1969f3697",
+						"title": "Grafana",
+						"url": "https://monitor.rubenwardy.com/",
+						"icon": ""
+					},
+					{
+						"id": "4459f58c-d333-4ce7-b87c-cf5b0e51435d",
+						"title": "Interesting",
+						"url": "",
+						"icon": ""
+					},
+					{
+						"id": "1b34a3fe-7842-416c-860b-397d993396d0",
+						"title": "UX Collective",
+						"url": "https://uxdesign.cc/",
+						"icon": ""
+					}
+				],
+				"useWebsiteIcons": true,
+				"enableCustomIcons": false
+			},
+			"theme": {
+				"showPanelBG": true,
+				"useIconBar": null,
+				"color": null
+			}
+		},
+		{
+			"id": 8,
+			"type": "Feed",
+			"position": {
+				"__type__": "vec2",
+				"x": 10,
+				"y": 6
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 5
+			},
+			"props": {
+				"title": "BBC News",
+				"url": "https://feeds.bbci.co.uk/news/rss.xml",
+				"filters": [
+					{
+						"id": "bc0518ca-7908-4aaa-bfd7-fcfa23589a5a",
+						"text": "super league"
+					},
+					{
+						"id": "3d98d2d0-279a-45ce-9897-570359dd2c56",
+						"text": "football"
+					},
+					{
+						"id": "09091295-5eeb-4cd5-bb29-bfb6426cb51f",
+						"text": "hancock"
+					},
+					{
+						"id": "5aa8b7df-d94f-4ab9-9282-71333aaa821b",
+						"text": "euro 2021"
+					},
+					{
+						"id": "c1ab7049-87c5-4b37-aab7-b5b70713baa7",
+						"text": "euro 2020"
+					},
+					{
+						"id": "4be14897-fd36-4f86-b713-a9133d7c1ac7",
+						"text": "afghan"
+					},
+					{
+						"id": "f2894611-ba35-43d7-92db-376f507eb14a",
+						"text": "taliban"
+					}
+				]
+			},
+			"theme": {
+				"showPanelBG": true,
+				"useIconBar": false,
+				"color": null
+			}
+		},
+		{
+			"id": 7,
+			"type": "Weather",
+			"position": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 8
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 5,
+				"y": 3
+			},
+			"props": {
+				"url": "https://www.bbc.co.uk/weather/2654675",
+				"location": {
+					"name": "Bristol",
+					"latitude": 51.4538022,
+					"longitude": -2.5972985
+				},
+				"unit": 0
+			},
+			"theme": {
+				"showPanelBG": true,
+				"useIconBar": false,
+				"color": null
+			}
+		},
+		{
+			"id": 12,
+			"type": "Quotes",
+			"position": {
+				"__type__": "vec2",
+				"x": 0,
+				"y": 11
+			},
+			"size": {
+				"__type__": "vec2",
+				"x": 15,
+				"y": 3
+			},
+			"props": {
+				"categories": {
+					"inspire": true,
+					"life": true,
+					"love": true,
+					"funny": false
+				}
+			},
+			"theme": {
+				"showPanelBG": false,
+				"textColor": "#ffffff"
+			}
+		}
+	]
+}

@@ -78,7 +78,7 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 			const tab = SettingsTab[tabName as SettingsTabType];
 			const isSelected = tab == currentTab;
 			return (
-				<a key={tabName} onClick={() => setTab(tab)}
+				<a id={`tab-${tabName}`} key={tabName} onClick={() => setTab(tab)}
 						className={isSelected ? "active" : undefined}>
 					<FormattedMessage {...tabTitles[tab]} />
 				</a>)

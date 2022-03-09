@@ -1,19 +1,16 @@
 import { expect } from "chai";
 import { By } from "selenium-webdriver";
 import { Modal } from "./components/Modal";
+import { selectFocusPreset } from "./components/OnboardingModal";
 import { Widget } from "./components/Widget";
-import { driver, utils } from "./setup-selenium";
+import { utils } from "./setup-selenium";
 
 
 describe("Widget", function() {
 	this.timeout(30000);
 
 	it("can delete", async () => {
-		await utils.click(By.css(".carousel-next"));
-		await utils.click(By.css(".carousel-next"));
-		await utils.click(By.css(".presets li:first-child a"));
-		await utils.noSuchElement(By.css(".modal"));
-		await utils.sleep(1000);
+		await selectFocusPreset();
 
 		expect(await utils.count(By.className("widget"))).to.eq(2);
 
@@ -29,11 +26,7 @@ describe("Widget", function() {
 	});
 
 	it("can edit", async () => {
-		await utils.click(By.css(".carousel-next"));
-		await utils.click(By.css(".carousel-next"));
-		await utils.click(By.css(".presets li:first-child a"));
-		await utils.noSuchElement(By.css(".modal"));
-		await utils.sleep(1000);
+		await selectFocusPreset();
 
 		expect(await utils.count(By.className("widget"))).to.eq(2);
 

@@ -45,6 +45,11 @@ export default class UITestUtils {
 		return (await resolved.findElements(selector)).length;
 	}
 
+	async sendKeys(selector: By, ...text: (string | number)[]): Promise<void> {
+		const element = await this.resolveElement(selector);
+		await element.sendKeys(...text);
+	}
+
 	sleep(ms: number): Promise<void> {
 		return new Promise((resolve) => {
 			setTimeout(resolve, ms);
