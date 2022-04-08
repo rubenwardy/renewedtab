@@ -15,10 +15,13 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 					<div>
 						<p className="mt-0 mb-4">
 							<FormattedMessage
-									defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
+									defaultMessage="Welcome to <a>Renewed Tab</a>."
 									values={{
 										a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
 									}} />
+							<FormattedMessage
+									id="appDescription"
+									defaultMessage="A customisable New Tab page, with widgets and beautiful backgrounds" />
 						</p>
 						<LanguageSelector
 							className="mt-6"

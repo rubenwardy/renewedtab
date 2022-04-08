@@ -1,4 +1,4 @@
-import { defineMessage, MessageDescriptor, MessageFormatElement } from "react-intl";
+import { defineMessages, MessageDescriptor, MessageFormatElement } from "react-intl";
 
 type Translation = Record<string, MessageFormatElement[]>;
 
@@ -6,18 +6,7 @@ type Translation = Record<string, MessageFormatElement[]>;
 const getLocales = async () => (await import(/* webpackChunkName: "locale" */ "./locale_data")).default;
 
 
-const availableLocales: Record<string, string> = {
-	"en": "English",
-	"es": "Español",
-	"de": "Deutsch",
-	"fr": "Français",
-	"it": "Italiano",
-	"ms": "Bahasa Melayu",
-	"pt-br": "Português (do Brasil)",
-	"tr": "Türkçe",
-	"ru": "Русский",
-	"zh-hans": "汉语",
-};
+const availableLocales: Record<string, string> = require("./enabledLocales.json")
 
 
 // Locales will automatically resolve to more generic locales (ie: es-MX to es),
@@ -29,10 +18,17 @@ const localeAliases: { [key: string]: string } = {
 };
 
 
-defineMessage({
-	id: "languageName",
-	defaultMessage: "",
-	description: "The name of the current language, to be used in the settings dialog"
+defineMessages({
+	appName: {
+		id: "appName",
+		defaultMessage: "Renewed Tab",
+		description: "The name of the app",
+	},
+	lang: {
+		id: "languageName",
+		defaultMessage: "",
+		description: "The name of the current language, to be used in the settings dialog",
+	},
 }) as MessageDescriptor;
 
 

@@ -8,16 +8,16 @@ function readJSON(path) {
 	return JSON.parse(fs.readFileSync(path).toString());
 }
 
-const english = readJSON("src/app/locale/en.json");
+const english = readJSON("src/app/locale/locales/en.json");
 
-const dir = fs.opendirSync('src/app/locale');
+const dir = fs.opendirSync("src/app/locale/locales");
 
 let hasError = false;
 
 let item;
 while ((item = dir.readSync()) !== null) {
 	if (item.name.endsWith(".json") && item.name != "en.json") {
-		const path = 'src/app/locale/' + item.name;
+		const path = "src/app/locale/locales/" + item.name;
 
 		const current = readJSON(path);
 

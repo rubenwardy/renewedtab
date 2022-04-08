@@ -1,12 +1,13 @@
 {
 	"manifest_version": 2,
-	"name": "Renewed Tab",
+	"name": "__MSG_appName__",
 	"version": "1.14.0",
-	"description": "A customisable New Tab page, with widgets and beautiful backgrounds",
+	"description": "__MSG_appDescription__",
 	"author": "rubenwardy",
 	"homepage_url": "https://renewedtab.com/",
 	"offline_enabled": true,
 	"minimum_chrome_version": "78",
+	"default_locale": "en",
 	"icons": {
 		"32": "icon-32.png",
 		"48": "icon-48.png",

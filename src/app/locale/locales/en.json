@@ -192,6 +192,9 @@
     "description": "Form field option, radial gradient",
     "message": "Radial"
   },
+  "AUwTXH": {
+    "message": "Welcome to <a>Renewed Tab</a>."
+  },
   "Abtyj/": {
     "description": "Image upload error message",
     "message": "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image."
@@ -347,6 +350,10 @@
   "I48yxw": {
     "description": "General settings: privacy",
     "message": "Privacy"
+  },
+  "IUkOqX": {
+    "description": "Theme settings: base theme",
+    "message": "Theme"
   },
   "IbCXY9": {
     "description": "Clock widget: date style type",
@@ -717,6 +724,14 @@
     "description": "Daily Goal widget description",
     "message": "Reminds you about a daily goal"
   },
+  "appDescription": {
+    "description": "App description",
+    "message": "A customisable New Tab page, with widgets and beautiful backgrounds"
+  },
+  "appName": {
+    "description": "The name of the app",
+    "message": "Renewed Tab"
+  },
   "as6rZ1": {
     "description": "General settings: enable sentry",
     "message": "Enable crash reporting (using Sentry)"
@@ -1029,6 +1044,10 @@
     "description": "Background mode options",
     "message": "{mode} Options"
   },
+  "qeZ4dR": {
+    "description": "Theme name: dark",
+    "message": "Dark"
+  },
   "qoEZRi": {
     "description": "Backgroud settings: form field label",
     "message": "Unsplash collection"
@@ -1059,6 +1078,10 @@
   "translation_credits": {
     "description": "Credit the translators: LANGUAGE translation by YOUR NAME",
     "message": ""
+  },
+  "tweLij": {
+    "description": "Theme name: light",
+    "message": "Light"
   },
   "tyq8NB": {
     "description": "Weather Widget",
