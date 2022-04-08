@@ -86,6 +86,10 @@
     "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds",
     "message": "Suggest URL be added to default suggestions"
   },
+  "2s4stS": {
+    "description": "Onboarding modal: title",
+    "message": "Welcome to <a>Renewed Tab</a>"
+  },
   "2vJWTd": {
     "description": "Background credits title placeholder",
     "message": "Photo"
@@ -192,9 +196,6 @@
     "description": "Form field option, radial gradient",
     "message": "Radial"
   },
-  "AUwTXH": {
-    "message": "Welcome to <a>Renewed Tab</a>."
-  },
   "Abtyj/": {
     "description": "Image upload error message",
     "message": "Image is larger than 2MB ({dataSizeMB}MB). To achieve better load times, you should use a smaller image."
@@ -275,10 +276,6 @@
   },
   "D3idYv": {
     "message": "Settings"
-  },
-  "D4M6tn": {
-    "description": "Onboarding modal: title",
-    "message": "Welcome to Renewed Tab"
   },
   "Ddd3ZY": {
     "description": "Currencies widget: form field label",

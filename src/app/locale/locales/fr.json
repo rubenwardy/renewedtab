@@ -457,10 +457,6 @@
     "BJYZgx": {
         "message": "Utiliser le mouvement (<move></move>) et le redimensionnement (<resize></resize>)."
     },
-    "D4M6tn": {
-        "message": "Bienvenue sur Renewed Tab",
-        "description": "Onboarding modal: title"
-    },
     "0PsF7Z": {
         "message": "Êtes-vous d'enlever définitivement ce composant ?",
         "description": "Delete widget modal message"
