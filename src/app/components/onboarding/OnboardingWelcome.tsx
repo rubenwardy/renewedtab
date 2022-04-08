@@ -21,7 +21,8 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 									}} />
 							<FormattedMessage
 									id="appDescription"
-									defaultMessage="A customisable New Tab page, with widgets and beautiful backgrounds" />
+									defaultMessage="A customisable New Tab page, with widgets and beautiful backgrounds"
+									description="App description" />
 						</p>
 						<LanguageSelector
 							className="mt-6"

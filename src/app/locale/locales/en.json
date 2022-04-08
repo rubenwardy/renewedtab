@@ -351,10 +351,6 @@
     "description": "General settings: privacy",
     "message": "Privacy"
   },
-  "IUkOqX": {
-    "description": "Theme settings: base theme",
-    "message": "Theme"
-  },
   "IbCXY9": {
     "description": "Clock widget: date style type",
     "message": "Standard ({example})"
@@ -1044,10 +1040,6 @@
     "description": "Background mode options",
     "message": "{mode} Options"
   },
-  "qeZ4dR": {
-    "description": "Theme name: dark",
-    "message": "Dark"
-  },
   "qoEZRi": {
     "description": "Backgroud settings: form field label",
     "message": "Unsplash collection"
@@ -1078,10 +1070,6 @@
   "translation_credits": {
     "description": "Credit the translators: LANGUAGE translation by YOUR NAME",
     "message": ""
-  },
-  "tweLij": {
-    "description": "Theme name: light",
-    "message": "Light"
   },
   "tyq8NB": {
     "description": "Weather Widget",
