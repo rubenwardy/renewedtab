@@ -939,10 +939,6 @@
         "message": "可选的，图片的网址（建议使用18px）",
         "description": "Links widget, form field hint (Icon)"
     },
-    "sx01dA": {
-        "message": "链接，支持标题和图标",
-        "description": "Links widget description"
-    },
     "uRYRJh": {
         "message": "编辑{type}"
     },

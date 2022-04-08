@@ -917,10 +917,6 @@
         "message": "Facultatif, URL de l'image (18 pixels recommandé)",
         "description": "Links widget, form field hint (Icon)"
     },
-    "sx01dA": {
-        "message": "Liens, avec prise en charge des en-têtes et des icônes",
-        "description": "Links widget description"
-    },
     "tyq8NB": {
         "message": "Météo",
         "description": "Weather Widget"

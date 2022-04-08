@@ -50,6 +50,12 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 
 	return (
 		<div className="modal-body">
+			<p>
+				<FormattedMessage
+					defaultMessage="<b>Widgets also have settings</b>: hover over a widget and click the pencil to customise it."
+					description="General settings: help message"
+					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
+			</p>
 			<LanguageSelector
 				locale={props.locale}
 				setLocale={props.setLocale} />

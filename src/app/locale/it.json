@@ -327,10 +327,6 @@
         "message": "Opzionale, URL dell'immagine (consigliata da 18px)",
         "description": "Links widget, form field hint (Icon)"
     },
-    "sx01dA": {
-        "message": "Collegamenti, con titoli e icone supportate",
-        "description": "Links widget description"
-    },
     "translation_credits": {
         "message": "Traduzione italiana di Zughy",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"

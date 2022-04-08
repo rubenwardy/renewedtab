@@ -583,10 +583,6 @@
         "message": "Opcional, URL para imagem (18px recomendado)",
         "description": "Links widget, form field hint (Icon)"
     },
-    "sx01dA": {
-        "message": "Links, com suporte para títulos e ícones",
-        "description": "Links widget description"
-    },
     "translation_credits": {
         "message": "Tradução pt-br por Darck Angel Sama",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"

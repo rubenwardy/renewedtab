@@ -977,10 +977,6 @@
         "message": "Seguimiento de elementos de la lista de tareas",
         "description": "Todo List widget: description"
     },
-    "sx01dA": {
-        "message": "Enlaces, con soporte para encabezados e íconos",
-        "description": "Links widget description"
-    },
     "4UpnpD": {
         "message": "Las imágenes se almacenan localmente en su navegador y nunca se suben",
         "description": "Form field hint (Image)"

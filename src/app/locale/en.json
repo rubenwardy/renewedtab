@@ -239,6 +239,10 @@
     "description": "Button widget description",
     "message": "A link button"
   },
+  "BmzsQb": {
+    "description": "Links widget description",
+    "message": "Links, with support for headings and icons (speed dial)"
+  },
   "BnmONl": {
     "description": "Weather widget: form field label",
     "message": "Current: Show sunrise / sunset"
@@ -467,6 +471,10 @@
   "OQHLB5": {
     "description": "Form field label",
     "message": "Color"
+  },
+  "Oa5RYo": {
+    "description": "General settings: help message",
+    "message": "<b>Widgets also have settings</b>: hover over a widget and click the pencil to customise it."
   },
   "PBMGxw": {
     "description": "Feed background mode: form field label",
@@ -1047,10 +1055,6 @@
   "sYvWWw": {
     "description": "Links widget, form field hint (Icon)",
     "message": "Optional, URL to image (18px recommended)"
-  },
-  "sx01dA": {
-    "description": "Links widget description",
-    "message": "Links, with support for headings and icons"
   },
   "translation_credits": {
     "description": "Credit the translators: LANGUAGE translation by YOUR NAME",

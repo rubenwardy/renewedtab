@@ -483,10 +483,6 @@
         "message": "Pilihan, URL ke imej (digalakkan 18px)",
         "description": "Links widget, form field hint (Icon)"
     },
-    "sx01dA": {
-        "message": "Pautan, dengan sokongan untuk pengepala dan ikon",
-        "description": "Links widget description"
-    },
     "translation_credits": {
         "message": "Terjemahan bahasa Melayu oleh Yaya MNH48.",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
