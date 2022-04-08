@@ -1,3 +1,4 @@
+import { miscMessages } from "app/locale/common";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import { OnboardingPageProps } from ".";
@@ -15,11 +16,11 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 					<div>
 						<p className="mt-0 mb-4">
 							<FormattedMessage
-									defaultMessage="Welcome to <a>Renewed Tab</a>."
-									values={{
-										a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
-									}} />
-							<FormattedMessage
+								{...miscMessages.welcome}
+								values={{
+									a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
+								}} />
+							. <FormattedMessage
 									id="appDescription"
 									defaultMessage="A customisable New Tab page, with widgets and beautiful backgrounds"
 									description="App description" />

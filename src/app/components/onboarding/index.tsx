@@ -1,3 +1,4 @@
+import { miscMessages } from "app/locale/common";
 import { WidgetManager } from "app/WidgetManager";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
@@ -6,14 +7,6 @@ import Modal from "../Modal";
 import OnboardingHelp from "./OnboardingHelp";
 import OnboardingPresets, { presets } from "./OnboardingPresets";
 import OnboardingWelcome from "./OnboardingWelcome";
-
-
-const messages = defineMessages({
-	title: {
-		defaultMessage: "Welcome to Renewed Tab",
-		description: "Onboarding modal: title",
-	},
-});
 
 interface OnboardingProps {
 	onClose: () => void;
@@ -48,8 +41,8 @@ export default function Onboarding(props: OnboardingProps) {
 	};
 
 	return (
-		<Modal title={intl.formatMessage(messages.title)} {...props}
-				wide={true} onClose={undefined} lighterBg={true}>
+		<Modal title={intl.formatMessage(miscMessages.welcome,  { a: (chunk: any) => chunk })}
+				{...props} wide={true} onClose={undefined} lighterBg={true}>
 			<Carousel>
 				<OnboardingWelcome {...pageProps} />
 				<OnboardingHelp />

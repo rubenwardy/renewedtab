@@ -162,4 +162,9 @@ export const miscMessages = defineMessages({
 	dismiss: {
 		defaultMessage: "Dismiss",
 	},
+
+	welcome: {
+		defaultMessage: "Welcome to <a>Renewed Tab</a>",
+		description: "Onboarding modal: title",
+	},
 });
