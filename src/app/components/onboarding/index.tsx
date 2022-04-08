@@ -1,7 +1,7 @@
 import { miscMessages } from "app/locale/common";
 import { WidgetManager } from "app/WidgetManager";
 import React from "react";
-import { defineMessages, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import Carousel from "../Carousel";
 import Modal from "../Modal";
 import OnboardingHelp from "./OnboardingHelp";
