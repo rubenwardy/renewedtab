@@ -187,7 +187,7 @@ export async function fetchFeed(url: string): Promise<Feed> {
 		throw new UserError(messages.missingFeedURL);
 	}
 
-	const response = await fetchCheckCors(new Request(url, {
+	const response = await fetchCheckCors(new Request(makeProxy(url), {
 		method: "GET",
 		headers: {
 			"Accept": [
