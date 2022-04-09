@@ -1135,5 +1135,13 @@
     "2j5LN5": {
         "message": "Sugerir URL que se agregue a las sugerencias predeterminadas",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
+    },
+    "appDescription": {
+        "message": "Una página de Nueva Pestaña personalizable, con widgets y fondos hermosos",
+        "description": "App description"
     }
 }

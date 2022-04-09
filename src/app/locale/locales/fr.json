@@ -1191,5 +1191,13 @@
     "zPAzlS": {
         "message": "Combinez les sources dans un seul onglet",
         "description": "Feed widget: form field label"
+    },
+    "appDescription": {
+        "message": "Une page Nouvel onglet personnalisable avec des widgets et de magnifiques fonds d'écran",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
     }
 }

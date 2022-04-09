@@ -1097,5 +1097,13 @@
     "2j5LN5": {
         "message": "Füge diese URL zu den Standardvorschlägen hinzu",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "appDescription": {
+        "message": "Einer frei gestaltbaren „Neuer Tab“ Seite, mit praktischen Widgets und faszinierenden Wallpapers",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
     }
 }

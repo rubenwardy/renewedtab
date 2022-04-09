@@ -1093,5 +1093,13 @@
     "2j5LN5": {
         "message": "Предложить URL, чтобы добавить к вариантам по умолчанию",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "appDescription": {
+        "message": "настраиваемую страницу Новая Вкладка с виджетами и красивыми фонами",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
     }
 }

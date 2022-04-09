@@ -1191,5 +1191,13 @@
     "3UG6ds": {
         "message": "Pesquise widgets ou na web usando seu mecanismo de pesquisa favorito",
         "description": "Search widget description"
+    },
+    "appDescription": {
+        "message": "Uma página nova guia personalizável, com widgets e belos planos de fundo",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
     }
 }

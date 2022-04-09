@@ -591,5 +591,13 @@
     "lY73np": {
         "message": "Tampilkan latar belakang panel",
         "description": "Widget styling, checkbox"
+    },
+    "appDescription": {
+        "message": "Halaman Tab Baru yang dapat disesuaikan, dengan widget-widget dan latar belakang indah",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
     }
 }
