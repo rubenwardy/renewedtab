@@ -1191,5 +1191,25 @@
     },
     "zXtUcf": {
         "message": "Jangan risau, anda boleh membuka kunci pada waktu kemudian"
+    },
+    "2s4stS": {
+        "message": "Selamat Datang ke <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "BmzsQb": {
+        "message": "Pautan, dengan sokongan pengepala dan ikon (dail laju)",
+        "description": "Links widget description"
+    },
+    "Oa5RYo": {
+        "message": "<b>Widget juga ada tetapan</b>: lalukan tetikus atas widget dan klik pada pensel untuk menyesuaikannya.",
+        "description": "General settings: help message"
+    },
+    "appDescription": {
+        "message": "Halaman Tab Baharu yang boleh disesuaikan, dengan widget dan latar belakang indah",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
     }
 }
