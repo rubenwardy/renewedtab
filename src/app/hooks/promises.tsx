@@ -28,6 +28,7 @@ export function useRunPromise<T>(func: () => Promise<T>,
 		return () => {
 			cancelled = true;
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, dependents);
 }
 

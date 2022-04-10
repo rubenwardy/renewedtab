@@ -6,7 +6,7 @@ import { useForceUpdate } from ".";
 
 export function useWidgetProp<T>(widget: WidgetProps<any>, key: string): [ T, (v: T | undefined) => void ] {
 	const forceUpdate = useForceUpdate();
-	const save = useMemo(() => debounce(() => widget.save(), 500), [ key ]);
+	const save = useMemo(() => debounce(() => widget.save(), 500), [widget]);
 
 	const value = widget.props[key];
 	function setValue(value: T | undefined) {

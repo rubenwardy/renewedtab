@@ -147,6 +147,7 @@ function FeedArticle({ article, feedProps: props }: { article: Article, feedProp
 }
 
 
+/* eslint-disable react-hooks/rules-of-hooks */
 function FeedPanel(props: FeedPanelProps) {
 	const [info, error] = useMultiFeed(props.sources, [props.sources.length]);
 	const { query } = useGlobalSearch();
@@ -154,6 +155,7 @@ function FeedPanel(props: FeedPanelProps) {
 	const intl = useIntl();
 
 	if (!info) {
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		useEffect(() => { }, [""]);
 		return (
 			<div className="panel-inset">
@@ -172,6 +174,7 @@ function FeedPanel(props: FeedPanelProps) {
 				props.onGotTitle(subfeed.source, subfeed.title);
 			}
 		});
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [feed]);
 
 	const allowFilters = props.filters
@@ -246,6 +249,7 @@ function Feed(widget: WidgetProps<FeedProps>) {
 		}
 
 		return ret;
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [force, props.sources, props.sources.length]);
 
 	if (props.sources.length == 0) {

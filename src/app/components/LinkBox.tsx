@@ -73,7 +73,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 			ret.splice(rows * columns);
 		}
 		return ret;
-	}, [props.links, size, query]);
+	}, [props.links, props.limitItemsToAvoidScrolling, size, query]);
 
 	if (useWebsiteIcons && typeof browser !== "undefined") {
 		links

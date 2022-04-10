@@ -382,6 +382,7 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 	return (size && (size.x < limitX || size.y < limitY)) ? "sm" : "lg";
 }
 
+/* eslint-disable react-hooks/rules-of-hooks */
 
 function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
@@ -396,6 +397,7 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 		{ lat: props.location.latitude, long: props.location.longitude},
 		[props.location.latitude, props.location.longitude]);
 	if (!rawInfo) {
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		useMemo(() => 0, [null, unit])
 		return (<ErrorView error={error} loading={true} />);
 	}

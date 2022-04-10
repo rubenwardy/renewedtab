@@ -47,7 +47,7 @@ function Button(widget: WidgetProps<ButtonProps>) {
 
 	const icon = useMemo(
 		() => (props.useWebsiteIcons && getWebsiteIconOrNull(props.url)) || props.icon,
-		[props.url]);
+		[props.icon, props.url, props.useWebsiteIcons]);
 
 	const className = mergeClasses(
 		"btn btn-custom btn-brighten h-100 w-100 m-0 p-3",

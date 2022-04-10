@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 
 /**
@@ -13,7 +13,7 @@ export function useDelay(callback: (...args: any[]) => void,
 
 	const [handle, setHandle] = useState<NodeJS.Timeout | null>(null);
 
-	function start() {
+	const start = useCallback(() => {
 		if (handle) {
 			clearTimeout(handle);
 		}
@@ -22,16 +22,17 @@ export function useDelay(callback: (...args: any[]) => void,
 			callback(...args);
 			setHandle(null);
 		}, ms));
-	}
+	}, [args, callback, handle, ms]);
 
-	function cancel() {
+	const cancel = useCallback(() => {
 		if (handle) {
 			clearTimeout(handle);
 		}
-	}
+	}, [handle]);
 
 	useEffect(() => {
 		return cancel;
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return [start, cancel];

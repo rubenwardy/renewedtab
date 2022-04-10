@@ -155,6 +155,7 @@ function Search(widget: WidgetProps<SearchProps>) {
 	const intl = useIntl();
 	const enableGlobalSearch = props.enableGlobalSearch ?? true;
 	const [query, setQuery] = enableGlobalSearch
+		// eslint-disable-next-line react-hooks/rules-of-hooks
 		? [globalSearch.query, globalSearch.setQuery] : useState("");
 	const directURL = getProbableURL(query);
 

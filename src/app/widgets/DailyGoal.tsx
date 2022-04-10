@@ -47,6 +47,7 @@ function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 		if (goal && goal.time.getDate() != new Date().getDate()) {
 			setGoal(undefined);
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {

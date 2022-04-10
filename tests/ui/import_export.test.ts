@@ -18,7 +18,7 @@ describe("import/export", function() {
 		const modal = new Modal();
 		modal.clickInside(By.id("tab-ImportExport"));
 		utils.sendKeys(By.name("import-file"), filepath);
-		await utils.sleep(500);
+		await utils.sleep(1000);
 
 		await utils.noSuchElement(By.css(".modal"));
 		expect(await utils.count(By.className("widget"))).to.eq(10);

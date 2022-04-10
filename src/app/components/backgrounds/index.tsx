@@ -89,7 +89,8 @@ async function updateBackground<T>(key: string, provider: BackgroundProvider<T>,
 }
 
 
-async function loadBackground(provider: BackgroundProvider<any>, values: any): Promise<ActualBackgroundProps | undefined> {
+async function loadBackground(provider: BackgroundProvider<any>,
+		values: any): Promise<ActualBackgroundProps | undefined> {
 	const key = `${provider.id}:${JSON.stringify(toTypedJSON(values))}`;
 	const cache = loadFromCache(key, provider);
 	if (cache && values.cacheExpiry && isNotExpired(cache.fetchedAt, values.cacheExpiry ?? CacheExpiry.Hourly)) {
@@ -111,13 +112,12 @@ async function loadBackground(provider: BackgroundProvider<any>, values: any): P
 export default function Background(props: BackgroundProps) {
 	const [force, forceUpdate] = useForceUpdateValue();
 	const provider = getBackgroundProvider(props.background?.mode ?? "");
-	if (!provider) {
-		useMemo(() => ({}), [props.background, provider]);
-		usePromise(async () => {}, [provider, {}, {}]);
-		return (<div id="background" />);
-	}
 
 	const values = useMemo(() => {
+		if (!provider) {
+			return {};
+		}
+
 		const values: any = {};
 		Object.keys(getSchemaForProvider(props.background!.mode)).forEach(key => {
 			values[key] = props.background!.values[key];
@@ -126,9 +126,9 @@ export default function Background(props: BackgroundProps) {
 	}, [props.background, provider]);
 
 	const [actualBg] = usePromise(() =>
-		loadBackground(provider, values), [provider, values, force]);
+		provider ? loadBackground(provider, values) : Promise.resolve(null), [provider, values, force]);
 
-	if (!actualBg) {
+	if (!actualBg || !provider) {
 		return (<div id="background" />);
 	}
 

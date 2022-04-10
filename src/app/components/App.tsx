@@ -59,6 +59,7 @@ export default function App() {
 		if (loaded && onboardingIsOpen == undefined) {
 			setOnboardingIsOpen(widgetManager.widgets.length == 0);
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [loaded]);
 
 	const gridSettings = rawGridSettings && { ...defaultGridSettings, ...rawGridSettings };

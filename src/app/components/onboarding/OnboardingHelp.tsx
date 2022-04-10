@@ -23,7 +23,7 @@ export default function OnboardingHelp() {
 		theme: deepCopy(getInitialTheme(Notes)),
 		position: new Vector2(0, 0),
 		size: new Vector2(5, 4),
-	}), []);
+	}), [Notes]);
 
 	return (
 		<div className="modal-body onboarding">

@@ -46,7 +46,8 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 
 	const gridSettingsSchema = useMemo(
 		() => makeGridSettingsSchema(props.grid),
-		[ force ]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[props.grid, force]);
 
 	return (
 		<div className="modal-body">

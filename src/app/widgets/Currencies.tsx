@@ -57,7 +57,8 @@ function Currencies(widget: WidgetProps<CurrenciesProps>) {
 		() => widget.props.rates.filter(
 			rate => rate.from != "" && rate.to != "" &&
 				queryMatchesAny(query, rate.from, rate.to)),
-		[ widget.props.rates.length, query ]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[ widget.props.rates, widget.props.rates.length, query ]);
 
 	const intl = useIntl();
 	const [ currencies, error ] = useAPI<Record<string, CurrencyInfo>>(`/currencies/`, {}, []);

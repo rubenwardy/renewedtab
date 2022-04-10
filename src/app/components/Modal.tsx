@@ -33,8 +33,9 @@ export default function Modal(props: ModalProps) {
 
 		window.addEventListener('keydown', close);
 		return () => window.removeEventListener('keydown', close);
-	}, []);
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [props.onClose]);
 
 
 	function handleMouseDown() {

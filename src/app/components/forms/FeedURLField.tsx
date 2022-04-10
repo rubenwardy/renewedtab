@@ -74,9 +74,8 @@ export default function FeedURLField(props: FieldProps<string>) {
 
 	const host = parseURL(value)?.host ?? "";
 	const intl = useIntl();
-	const [autocomplete, ] = props.schemaEntry.autocomplete
-			? usePromise(() => props.schemaEntry.autocomplete!(intl), [])
-			: [ null, null ];
+	const [autocomplete, ] =
+		usePromise(() => props.schemaEntry.autocomplete?.(intl) ?? Promise.resolve(null), []);
 
 	return (
 		<>

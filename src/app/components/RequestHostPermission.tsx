@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useRunPromise } from "app/hooks";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import UserError from "app/utils/UserError";

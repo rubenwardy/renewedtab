@@ -1,6 +1,6 @@
 import { cacheStorage, IStorage, largeStorage, storage } from "app/storage";
 import debounce from "app/utils/debounce";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useForceUpdate } from ".";
 import { useRunPromise } from "./promises";
 
@@ -21,18 +21,18 @@ function useStorageBacking<T>(backing: IStorage, key: string,
 		() => {}, [ key ]);
 
 	const setStorage = useMemo(
-		() => debounce((key: string, val: T) => backing.set(key, val), 1000),
-		[ key ]);
+		() => debounce((val: T) => backing.set(key, val), 1000),
+		[key, backing]);
 
-	function updateValue(val: T) {
+	const updateValue = useCallback((val: T) => {
 		if (enableDebounce) {
-			setStorage(key, val);
+			setStorage(val);
 		} else {
 			backing.set(key, val)
 		}
 		setValue(val);
 		forceUpdate();
-	}
+	}, [backing, enableDebounce, forceUpdate, key, setStorage]);
 
 	return [value, updateValue];
 }
