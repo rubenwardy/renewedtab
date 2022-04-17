@@ -5,7 +5,7 @@ import { useForceUpdate, usePromise } from 'app/hooks';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { defaultLinksThemeSchema, WidgetProps, WidgetType } from 'app/Widget';
+import { defaultLinksThemeSchema, ListBoxStyle, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
@@ -45,7 +45,7 @@ function TopSitesImpl(widget: WidgetProps<any>) {
 	return (
 		<LinkBox {...props} widgetTheme={widget.theme} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe"
-			limitItemsToAvoidScrolling={widget.theme.useIconBar} />);
+			limitItemsToAvoidScrolling={widget.theme.listBoxStyle == ListBoxStyle.Icons} />);
 }
 
 function TopSites(widget: WidgetProps<Record<string, never>>) {
@@ -85,15 +85,24 @@ const widget: WidgetType<Record<string, never>> = {
 
 	initialTheme: {
 		showPanelBG: false,
-		useIconBar: true,
+		listBoxStyle: ListBoxStyle.Icons,
 	},
 	themeSchema: defaultLinksThemeSchema,
 
 	async onLoaded(widget) {
 		if (typeof widget.props.useIconBar !== "undefined") {
-			widget.theme.useIconBar = widget.props.useIconBar;
+			widget.theme.listBoxStyle = widget.props.useIconBar
+				? ListBoxStyle.Icons
+				: ListBoxStyle.Vertical;
 			widget.theme.showPanelBG = !widget.props.useIconBar;
 			delete widget.props.useIconBar;
+		}
+
+		if (typeof (widget.theme as any).useIconBar !== "undefined") {
+			widget.theme.listBoxStyle = (widget.theme as any).useIconBar
+				? ListBoxStyle.Icons
+				: ListBoxStyle.Vertical;
+			delete (widget.theme as any).useIconBar;
 		}
 	},
 };

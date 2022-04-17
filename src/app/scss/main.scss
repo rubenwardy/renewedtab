@@ -110,6 +110,17 @@ footer {
 	right: 10px;
 }
 
+.bookmarks-top-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	.panel {
+		margin: 0;
+	}
+}
+
 .credits {
 	position: fixed;
 	bottom: 0px;

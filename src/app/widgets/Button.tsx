@@ -109,10 +109,10 @@ const widget: WidgetType<ButtonProps> = {
 
 	initialTheme: {
 		showPanelBG: true,
-		useIconBar: false,
 		color: "#007DB8",
 		opacity: 40,
 	},
+
 	themeSchema: {
 		showPanelBG: type.boolean(schemaMessages.showPanelBG),
 		color: type.color(schemaMessages.color),

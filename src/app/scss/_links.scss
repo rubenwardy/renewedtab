@@ -13,7 +13,7 @@ ul.links {
 
 		.icon {
 			display: inline-block;
-			margin: 0 0.5rem 0 0;
+			margin: 0;
 			object-fit: cover;
 			max-height: 18px;
 			vertical-align: middle;
@@ -73,5 +73,25 @@ ul.links {
 	.thumbnail {
 		background-color: rgba(200, 200, 200, 0.1);
 		border-radius: 4px;
+	}
+
+	&.links-horizontal {
+		li {
+			display: inline-block;
+		}
+
+		li.section {
+			padding: 0.4rem 0.8rem;
+			line-height: inherit;
+		}
+
+		&.large li.section {
+			padding: 0.5rem 1rem;
+		}
+	}
+
+	&.links-align li a {
+		display: flex;
+		align-items: center;
 	}
 }

@@ -4,11 +4,11 @@ import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetType } from 'app/Widget';
-import UserError from 'app/utils/UserError';
+import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
+import { getBookmarks } from "app/utils/bookmarks";
 
 
 const messages = defineMessages({
@@ -30,11 +30,6 @@ const messages = defineMessages({
 		defaultMessage: "Include folders as sections",
 		description: "Bookmarks widget: form field label",
 	},
-
-	errFetchBookmarks: {
-		defaultMessage: "Unable to get bookmarks",
-		description: "Bookmarks widget: error message",
-	},
 });
 
 interface BookmarksProps {
@@ -42,56 +37,6 @@ interface BookmarksProps {
 	openInNewTab: boolean;
 }
 
-async function tryGetSubTree(id: string): Promise<browser.bookmarks.BookmarkTreeNode | null> {
-	try {
-		const toolbar_subtree = await browser.bookmarks.getSubTree(id);
-		if (!toolbar_subtree || !toolbar_subtree[0]) {
-			return null;
-		}
-		return toolbar_subtree[0]
-	} catch (ex: any) {
-		return null;
-	}
-}
-
-async function getBookmarks(includeFolders: boolean): Promise<Link[]> {
-	const ret: Link[] = [];
-
-	function addAllChildren(children: browser.bookmarks.BookmarkTreeNode[]) {
-		children.filter(child => child.url && child.type != "separator").forEach(child => {
-			ret.push({
-				id: child.id,
-				title: child.title,
-				icon: "",
-				url: child.url!,
-			});
-		});
-	}
-
-	const bookmarks = await tryGetSubTree("1") ?? await tryGetSubTree("toolbar_____");
-	if (!bookmarks) {
-		throw new UserError(messages.errFetchBookmarks);
-	}
-
-	addAllChildren(bookmarks.children!);
-
-	if (includeFolders) {
-		bookmarks.children!
-			.filter(child => child.children)
-			.forEach(folder => {
-				ret.push({
-					id: folder.id,
-					title: folder.title,
-					icon: "",
-					url: "",
-				});
-
-				addAllChildren(folder.children!);
-			});
-	}
-
-	return ret;
-}
 
 function BookmarksImpl(widget: WidgetProps<BookmarksProps>) {
 	const props = widget.props;
@@ -155,15 +100,24 @@ const widget: WidgetType<BookmarksProps> = {
 	},
 	initialTheme: {
 		showPanelBG: false,
-		useIconBar: true,
+		listBoxStyle: ListBoxStyle.Icons,
 	},
 	themeSchema: defaultLinksThemeSchema,
 
 	async onLoaded(widget: Widget<any>) {
 		if (typeof widget.props.useIconBar !== "undefined") {
-			widget.theme.useIconBar = widget.props.useIconBar;
+			widget.theme.listBoxStyle = widget.props.useIconBar
+				? ListBoxStyle.Icons
+				: ListBoxStyle.Vertical;
 			widget.theme.showPanelBG = !widget.props.useIconBar;
 			delete widget.props.useIconBar;
+		}
+
+		if (typeof (widget.theme as any).useIconBar !== "undefined") {
+			widget.theme.listBoxStyle = (widget.theme as any).useIconBar
+				? ListBoxStyle.Icons
+				: ListBoxStyle.Vertical;
+			delete (widget.theme as any).useIconBar;
 		}
 	}
 };

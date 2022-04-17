@@ -3,7 +3,7 @@ import { miscMessages, schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
-import { defaultLinksThemeSchema, Widget, WidgetProps, WidgetType } from 'app/Widget';
+import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -117,9 +117,18 @@ const widget: WidgetType<LinkBoxProps> = {
 		}
 
 		if (typeof widget.props.useIconBar !== "undefined") {
-			widget.theme.useIconBar = widget.props.useIconBar;
+			widget.theme.listBoxStyle = widget.props.useIconBar
+				? ListBoxStyle.Icons
+				: ListBoxStyle.Vertical;
 			widget.theme.showPanelBG = !widget.props.useIconBar;
 			delete widget.props.useIconBar;
+		}
+
+		if (typeof (widget.theme as any).useIconBar !== "undefined") {
+			widget.theme.listBoxStyle = (widget.theme as any).useIconBar
+				? ListBoxStyle.Icons
+				: ListBoxStyle.Vertical;
+			delete (widget.theme as any).useIconBar;
 		}
 	},
 };

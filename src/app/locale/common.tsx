@@ -36,8 +36,8 @@ export const schemaMessages = defineMessages({
 		description: "Widget styling, checkbox",
 	},
 
-	useIconBar: {
-		defaultMessage: "Display as icons",
+	listBoxStyle: {
+		defaultMessage: "List box style",
 		description: "Form field label",
 	},
 
@@ -166,5 +166,10 @@ export const miscMessages = defineMessages({
 	welcome: {
 		defaultMessage: "Welcome to <a>Renewed Tab</a>",
 		description: "Onboarding modal: title",
+	},
+
+	errFetchBookmarks: {
+		defaultMessage: "Unable to get bookmarks",
+		description: "Bookmarks widget: error message",
 	},
 });

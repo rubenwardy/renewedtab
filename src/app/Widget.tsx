@@ -1,16 +1,41 @@
 import { MessageDescriptor } from "@formatjs/intl";
-import { IntlShape } from "react-intl";
+import { defineMessages, IntlShape } from "react-intl";
 import { schemaMessages } from "./locale/common";
 import { MyMessageDescriptor } from "./locale/MyMessageDescriptor";
+import { enumToValue } from "./utils/enum";
 import Schema, { type } from "./utils/Schema";
 import { Vector2 } from "./utils/Vector2";
 
 
 type ReactFC<T> = ((props: T) => (JSX.Element | null));
 
+
+export enum ListBoxStyle {
+	Vertical,
+	Horizontal,
+	Icons,
+}
+
+
+export const listBoxStyleMessages = defineMessages({
+	[ListBoxStyle.Vertical]: {
+		defaultMessage: "Vertical",
+		description: "List box style (ie: list/bookmark widgets)",
+	},
+	[ListBoxStyle.Horizontal]: {
+		defaultMessage: "Horizontal",
+		description: "List box style (ie: list/bookmark widgets)",
+	},
+	[ListBoxStyle.Icons]: {
+		defaultMessage: "Icons",
+		description: "List box style (ie: list/bookmark widgets)",
+	},
+});
+
+
 export interface WidgetTheme {
 	showPanelBG: boolean;
-	useIconBar?: boolean;
+	listBoxStyle?: ListBoxStyle;
 	showText?: boolean;
 	color?: string;
 	textColor?: string;
@@ -92,16 +117,18 @@ export const defaultThemeSchema: Schema<WidgetTheme> = {
 
 
 export function defaultLinksThemeSchema(widget: Widget<unknown>): Schema<WidgetTheme> {
-	if (widget.theme.useIconBar) {
+	const listBoxStyle = enumToValue(ListBoxStyle,
+			widget.theme.listBoxStyle ?? ListBoxStyle.Vertical);
+	if (listBoxStyle !== ListBoxStyle.Vertical) {
 		return {
 			showPanelBG: type.boolean(schemaMessages.showPanelBG),
-			useIconBar: type.boolean(schemaMessages.useIconBar),
 			showText: type.boolean(schemaMessages.showText),
+			listBoxStyle: type.selectEnum(ListBoxStyle, listBoxStyleMessages, schemaMessages.listBoxStyle),
 		};
 	} else {
 		return {
 			showPanelBG: type.boolean(schemaMessages.showPanelBG),
-			useIconBar: type.boolean(schemaMessages.useIconBar),
+			listBoxStyle: type.selectEnum(ListBoxStyle, listBoxStyleMessages, schemaMessages.listBoxStyle),
 		};
 	}
 }
@@ -151,7 +178,7 @@ export async function getSchemaForWidget<T>(widget: Widget<T>,
 export function getInitialTheme(type: WidgetType<unknown>): WidgetTheme {
 	const defaultInitial: WidgetTheme =  {
 		showPanelBG: true,
-		useIconBar: false,
+		listBoxStyle: ListBoxStyle.Vertical,
 		color: undefined,
 		textColor: undefined,
 		showText: true,

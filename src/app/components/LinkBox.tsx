@@ -5,11 +5,12 @@ import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/websiteIcons';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import Schema, { type } from 'app/utils/Schema';
-import { WidgetTheme } from 'app/Widget';
+import { ListBoxStyle, WidgetTheme } from 'app/Widget';
 import Panel from './Panel';
 import Icon from './Icon';
 import { useGlobalSearch } from 'app/hooks/globalSearch';
-import { parseURL, queryMatchesAny } from 'app/utils';
+import { mergeClasses, parseURL, queryMatchesAny } from 'app/utils';
+import { enumToValue } from "app/utils/enum";
 
 
 const messages = defineMessages({
@@ -59,7 +60,8 @@ export interface LinkBoxProps {
 
 export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
 	const { query } = useGlobalSearch();
-	const useIconBar = props.widgetTheme.useIconBar ?? false;
+	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
+	const showText = listBoxStyle == ListBoxStyle.Vertical || props.widgetTheme.showText;
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const [ref, size] = useElementSize();
 	const target = props.openInNewTab ? "_blank" : undefined;
@@ -84,10 +86,11 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	}
 
 	const linkElements = links.map(link => {
-		const requiresIcons = (useIconBar || useWebsiteIcons) && link.url.trim() != "";
+		const requiresIcons = (listBoxStyle == ListBoxStyle.Icons || useWebsiteIcons) && link.url.trim() != "";
 		const icon = link.icon && (
 			<Icon icon={link.icon} requiresIcons={requiresIcons}
-				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
+				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon}
+				className={showText ? "mr-2" : undefined} />);
 
 		if (link.url.trim() != "") {
 			const attr = (typeof browser !== "undefined" && link.url.startsWith("chrome://")) ? {
@@ -99,10 +102,8 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 					data-title={link.title} data-icon={link.icon}>
 					<a {...attr} target={target} rel="noreferrer">
 						{icon}
-						<span className="title">
-							{(!props.widgetTheme.useIconBar || props.widgetTheme.showText) &&
-								link.title}
-						</span>
+						{showText && (
+							<span className="title">{link.title}</span>)}
 					</a>
 				</li>);
 		} else {
@@ -115,9 +116,15 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 		}
 	});
 
+	const ulClasses = mergeClasses(
+		listBoxStyle == ListBoxStyle.Icons && "iconbar",
+		listBoxStyle == ListBoxStyle.Vertical && "links links-align large",
+		listBoxStyle == ListBoxStyle.Horizontal && "links links-align links-horizontal",
+	);
+
 	return (
 		<Panel {...props.widgetTheme} flush={true}>
-			<ul className={useIconBar ? "iconbar" : "links large"} ref={ref}>
+			<ul className={ulClasses} ref={ref}>
 				{linkElements}
 				{linkElements.length == 0 && props.links.length > 0 && (
 					<li className="section">

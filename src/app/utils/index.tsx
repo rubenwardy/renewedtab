@@ -82,8 +82,8 @@ export function getProbableURL(v: string): string | null {
 	const startsWithHttp = v.startsWith("http://") || v.startsWith("https://");
 
 	const url = parseURL(startsWithHttp ? v : `http://${v}`);
-	if (url && (startsWithHttp ||
-			TLDS.some(tld => url.hostname.endsWith(`.${tld}`) || v.endsWith("/")))) {
+	if (url && (startsWithHttp || v.endsWith("/") ||
+			TLDS.some(tld => url.hostname.endsWith(`.${tld}`)))) {
 		return url.toString();
 	} else {
 		return null;
