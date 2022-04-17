@@ -61,7 +61,7 @@ export interface LinkBoxProps {
 export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
 	const { query } = useGlobalSearch();
 	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
-	const showText = listBoxStyle == ListBoxStyle.Vertical || props.widgetTheme.showText;
+	const showText = listBoxStyle == ListBoxStyle.Vertical || (props.widgetTheme.showText ?? true);
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const [ref, size] = useElementSize();
 	const target = props.openInNewTab ? "_blank" : undefined;

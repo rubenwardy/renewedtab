@@ -19,6 +19,9 @@ export interface GeneralSettingsProps {
 	locale: string;
 	setLocale: (locale: string) => void;
 
+	showBookmarksBar: boolean;
+	setShowBookmarksBar: (value: boolean) => void;
+
 	grid: WidgetGridSettings;
 	setGrid: (grid: WidgetGridSettings) => void;
 }
@@ -60,6 +63,30 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 			<LanguageSelector
 				locale={props.locale}
 				setLocale={props.setLocale} />
+
+			<h3 className="label">
+				<FormattedMessage
+					defaultMessage="Bookmarks Bar"
+					description="General settings: bookmarks bar" />
+			</h3>
+			<div className="field">
+				<label className="inline" htmlFor="sshow-bookmarks-bar">
+					<input name="show-bookmarks-bar" className="mr-2"
+						type="checkbox" checked={props.showBookmarksBar}
+						onChange={e => props.setShowBookmarksBar(e.target.checked)} />
+					<FormattedMessage
+						defaultMessage="Show bookmarks bar"
+						description="General settings: bookmarks bar" />
+				</label>
+				<p className="text-muted">
+					<FormattedMessage
+						defaultMessage="Show a bookmarks bar at the top of the page."
+						description="General settings: bookmarks bar" />&nbsp;
+					<FormattedMessage
+						defaultMessage="Note that you can instead use the Bookmarks widget for fine-grained control."
+						description="General settings: bookmarks bar" />
+				</p>
+			</div>
 
 			<Form
 				values={props.grid}

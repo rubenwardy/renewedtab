@@ -1,5 +1,6 @@
 import { LinkBoxProps } from "app/components/LinkBox";
 import { Vector2 } from "app/utils/Vector2";
+import { ListBoxStyle } from "app/Widget";
 import { WidgetManager } from "app/WidgetManager";
 import { expect } from "chai";
 import DummyStorage from "./DummyStorage";
@@ -54,10 +55,10 @@ describe("WidgetManager::create", () => {
 
 		const widget1 = wm.createWidget<LinkBoxProps>("Links");
 		const widget2 = wm.createWidget<LinkBoxProps>("Links");
-		expect(widget1.theme.useIconBar).is.false;
-		widget1.theme.useIconBar = true;
-		expect(widget1.theme.useIconBar).is.true;
-		expect(widget2.theme.useIconBar).is.false;
+		expect(widget1.theme.listBoxStyle).is.eq(ListBoxStyle.Vertical);
+		widget1.theme.listBoxStyle = ListBoxStyle.Icons;
+		expect(widget1.theme.listBoxStyle).is.eq(ListBoxStyle.Icons);
+		expect(widget2.theme.listBoxStyle).is.eq(ListBoxStyle.Vertical);
 	});
 });
 
@@ -120,6 +121,6 @@ describe("WidgetManager::load", () => {
 		expect(widget.props).not.to.haveOwnProperty("useIconBar");
 		expect(widget.theme).not.null;
 		expect(widget.theme.showPanelBG).to.be.true;
-		expect(widget.theme.useIconBar).to.be.false;
+		expect(widget.theme.listBoxStyle).to.eq(ListBoxStyle.Vertical);
 	});
 });

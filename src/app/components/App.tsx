@@ -14,6 +14,7 @@ import * as Sentry from "@sentry/react";
 import Onboarding from "./onboarding";
 import { useBackground } from "app/hooks/background";
 import { GlobalSearchContext } from "app/hooks/globalSearch";
+import BookmarksTopBar from "./BookmarksTopBar";
 
 
 const messages = defineMessages({
@@ -44,6 +45,7 @@ export default function App() {
 
 	const [query, setQuery] = useState("");
 	const [locale, setLocale] = useStorage<string>("locale", getUserLocale());
+	const [showBookmarksBar, setShowBookmarksBar] = useStorage("showBookmarksBar", true);
 	const [messages] = usePromise(() => locale ? getTranslation(locale) : Promise.reject(null), [locale]);
 	const [background, setBackground] = useBackground();
 	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});
@@ -80,6 +82,7 @@ export default function App() {
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
 				<div className={classes.join(" ")}>
+					{showBookmarksBar && <BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />}
 					<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 						<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 					</Sentry.ErrorBoundary>
@@ -93,6 +96,7 @@ export default function App() {
 							background={background} setBackground={setBackground}
 							theme={theme} setTheme={setTheme}
 							locale={locale ?? "en"} setLocale={setLocale}
+							showBookmarksBar={showBookmarksBar ?? false} setShowBookmarksBar={setShowBookmarksBar}
 							grid={gridSettings} setGrid={setGridSettings} />)}
 
 					{loaded && gridSettings &&
