@@ -1,3 +1,4 @@
+import { miscMessages } from "app/locale/common";
 import deepCopy from "app/utils/deepcopy";
 import { Vector2 } from "app/utils/Vector2";
 import { getInitialTheme, WidgetProps } from "app/Widget";
@@ -5,6 +6,7 @@ import { WidgetTypes } from "app/widgets";
 import { NotesProps } from "app/widgets/Notes";
 import React, { useMemo } from "react";
 import { FormattedMessage } from "react-intl";
+import Button, { ButtonVariant } from "../Button";
 import { WidgetContainer } from "../WidgetContainer";
 
 
@@ -57,18 +59,20 @@ export default function OnboardingHelp() {
 						<p>
 							<FormattedMessage
 								defaultMessage=
-									"Once you're done, use the lock (<lock></lock>) to make the widgets read only."
+									"Once you're done, click <button></button> to make the widgets read only."
 								values={{
-									lock: () => <i className="fas fa-lock" />,
-								}} />
+									check: () => (<><br /><i className="fas fa-check" /></>),
+									button: () => (
+										<Button icon="fas fa-check" small={true}
+											className="m-1"
+											variant={ButtonVariant.Secondary}
+											label={miscMessages.finishEditing} />)
+								}}	/>
 						</p>
 						<p className="text-muted">
 							<FormattedMessage
 								defaultMessage=
-									"Don't worry, you can unlock at a later point"
-								values={{
-									lock: () => <i className="fas fa-lock" />,
-								}} />
+									"Don't worry, you can unlock at a later point" />
 						</p>
 					</div>
 				</div>

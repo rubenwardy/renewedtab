@@ -67,16 +67,16 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core'
 import {
 	faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
 	faCaretLeft, faCaretRight, faEllipsisH, faCircle, faGlobeEurope, faBan,
-	faThumbsUp, faLock, faLockOpen, faQuestionCircle, faGripVertical,
-	faLanguage, faTint, faSun, faWind, faLongArrowAltRight, faClone, faSearch,
-	faUmbrella
+	faThumbsUp, faQuestionCircle, faGripVertical, faLanguage, faTint, faSun,
+	faWind, faLongArrowAltRight, faClone, faSearch, faUmbrella,
+	faCircleQuestion, faQuestion, faCheck
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
 	faCaretLeft, faCaretRight, faEllipsisH, faCircle, faGlobeEurope, faBan,
-	faThumbsUp, faLock, faLockOpen, faQuestionCircle, faGripVertical,
+	faThumbsUp, faCheck, faQuestionCircle, faGripVertical,
 	faLanguage, faTint, faSun, faWind, faLongArrowAltRight, faClone, faSearch,
-	faUmbrella);
+	faUmbrella, faCircleQuestion, faQuestion);
 dom.watch();
 
 

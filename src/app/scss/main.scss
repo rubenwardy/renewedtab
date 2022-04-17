@@ -77,7 +77,22 @@ a, .link {
 	}
 }
 
-footer, .credits {
+.unlocked .credits {
+	bottom: 50px;
+}
+
+.bookmarks-top-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	.panel {
+		margin: 0;
+	}
+}
+
+.credits {
 	font-size: 80%;
 	color: rgba(255, 255, 255, 0.4);
 
@@ -99,30 +114,7 @@ footer, .credits {
 			text-decoration: none !important;
 		}
 	}
-}
 
-.locked footer {
-	opacity: 0.3;
-}
-
-footer {
-	position: fixed;
-	bottom: 12px;
-	right: 10px;
-}
-
-.bookmarks-top-bar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-
-	.panel {
-		margin: 0;
-	}
-}
-
-.credits {
 	position: fixed;
 	bottom: 0px;
 	left: 15px;
@@ -184,7 +176,7 @@ main .scroll-wrap {
 	width: 100%;
 	height: auto;
 	overflow: auto;
-	padding: 20px 0;
+	padding: 40px 0;
 	justify-content: space-around;
 }
 
@@ -215,14 +207,6 @@ main .scroll-wrap {
 		overflow: auto;
 	}
 
-	footer {
-		display: block;
-		padding: 2em 0;
-		text-align: center;
-		transform: none;
-		position: static;
-	}
-
 	main {
 		margin: none;
 		padding: 1em;
@@ -247,6 +231,7 @@ main .scroll-wrap {
 }
 
 
+
 @import "buttons";
 @import "panel";
 @import "widget";
@@ -266,3 +251,30 @@ main .scroll-wrap {
 
 @import "~react-grid-layout/css/styles.css";
 @import "~react-resizable/css/styles.css";
+
+
+#unlock-widgets {
+	display: block;
+	position: fixed;
+	bottom: 2px;
+	right: 2px;
+
+	color: rgba(255, 255, 255, 0.65);
+	font-size: 0.825rem;
+	line-height: 1.5;
+	opacity: 0.3;
+}
+
+.edit-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	flex-direction: row;
+	gap: 0.25rem;
+	padding: 0.25rem 0.5rem;
+	z-index: 100;
+	background: var(--color-background);
+}

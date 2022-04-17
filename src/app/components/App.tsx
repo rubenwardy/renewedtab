@@ -5,7 +5,7 @@ import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGri
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { usePromise, useStorage } from "app/hooks";
-import { defineMessages, FormattedMessage, IntlProvider, useIntl } from "react-intl";
+import { defineMessage, defineMessages, IntlProvider, useIntl } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
@@ -15,6 +15,8 @@ import Onboarding from "./onboarding";
 import { useBackground } from "app/hooks/background";
 import { GlobalSearchContext } from "app/hooks/globalSearch";
 import BookmarksTopBar from "./BookmarksTopBar";
+import Button, { ButtonVariant } from "./Button";
+import { miscMessages } from "app/locale/common";
 
 
 const messages = defineMessages({
@@ -52,10 +54,11 @@ export default function App() {
 	const [createIsOpen, setCreateOpen] = useState(false);
 	const [settingsIsOpen, setSettingsOpen] = useState(false);
 	const [widgetsHidden, setWidgetsHidden] = useState(false);
-	const [isLocked, setIsLocked] = useStorage<boolean>("locked", false);
+	const [isLockedRaw, setIsLocked] = useStorage<boolean>("locked", false);
 	const [rawGridSettings, setGridSettings] = useStorage<WidgetGridSettings>(
 		"grid_settings", { ...defaultGridSettings });
 	const [onboardingIsOpen, setOnboardingIsOpen] = useState<boolean | undefined>(undefined);
+	const isLocked = (isLockedRaw || onboardingIsOpen) ?? true;
 	const loaded = loadingRes != null && messages != null;
 	useEffect(() => {
 		if (loaded && onboardingIsOpen == undefined) {
@@ -82,7 +85,7 @@ export default function App() {
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
 				<div className={classes.join(" ")}>
-					{showBookmarksBar && <BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />}
+					{showBookmarksBar && !onboardingIsOpen && <BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />}
 					<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 						<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 					</Sentry.ErrorBoundary>
@@ -108,28 +111,43 @@ export default function App() {
 							manager={widgetManager} />)}
 					<ReviewRequester />
 
-					<footer className="text-shadow">
-						{isLocked && (
-							<a onClick={() => setIsLocked(false)} tabIndex={0}>
-								<i className={"large fas mr-1 " +
-									(isLocked ? "fa-lock" : "fa-lock")} />
-							</a>)}
+					{isLocked && !onboardingIsOpen && (
+						<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
+							tabIndex={0} variant={ButtonVariant.None}
+							className="text-shadow" icon="fas fa-pen" />)}
 
-						{!isLocked && (
-							<>
-								<a onClick={() => setCreateOpen(true)} tabIndex={0}>
-									<i className="fas fa-plus mr-1" />
-									<FormattedMessage
-										defaultMessage="Add Widget" />
-								</a>
-								<a id="open-settings" onClick={() => setSettingsOpen(true)} className="ml-3">
-									<i className="large fas fa-cog" />
-								</a>
-								<a onClick={() => setIsLocked(true)} className="ml-3">
-									<i className="large fas mr-1 fa-lock-open" />
-								</a>
-							</>)}
-					</footer>
+					{!isLocked && (
+						<aside className="edit-bar">
+							<Button onClick={() => setCreateOpen(true)}
+								variant={ButtonVariant.Secondary}
+								icon="fa fa-plus" small={true}
+								label={defineMessage({
+									defaultMessage: "Add Widget",
+								})} />
+
+							<Button onClick={() => setSettingsOpen(true)}
+								variant={ButtonVariant.Secondary}
+								icon="fa fa-cog" small={true}
+								id="open-settings"
+								label={defineMessage({
+									defaultMessage: "Settings",
+								})} />
+
+							<div className="col" />
+
+							<Button href="https://renewedtab.com/help/"
+								variant={ButtonVariant.Secondary}
+								icon="fa fa-question" small={true}
+								target="_blank"
+								label={defineMessage({
+									defaultMessage: "Help",
+								})} />
+
+							<Button onClick={() => setIsLocked(true)}
+								variant={ButtonVariant.Secondary}
+								icon="fa fa-check" small={true}
+								label={miscMessages.finishEditing} />
+						</aside>)}
 				</div>
 			</GlobalSearchContext.Provider>
 		</IntlProvider>);

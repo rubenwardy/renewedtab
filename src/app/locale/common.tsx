@@ -174,11 +174,16 @@ export const miscMessages = defineMessages({
 	},
 
 	permissionLabel: {
-		defaultMessage: "Grant permission to access bookmarks",
+		defaultMessage: "Grant permission to access bookmarks and fetch icons from websites",
 	},
 
 	hideBookmarksBar: {
 		defaultMessage: "Hide",
 		description: "Hide"
+	},
+
+	finishEditing: {
+		defaultMessage: "Finish Editing",
+		description: "Edit bar button to make the grid readonly"
 	},
 });
