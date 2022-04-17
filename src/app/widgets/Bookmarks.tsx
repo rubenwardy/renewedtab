@@ -1,5 +1,5 @@
 import ErrorView from 'app/components/ErrorView';
-import LinkBox, { Link } from 'app/components/LinkBox';
+import LinkBox from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { useForceUpdate, usePromise } from 'app/hooks';
 import { type } from 'app/utils/Schema';
@@ -41,20 +41,14 @@ interface BookmarksProps {
 function BookmarksImpl(widget: WidgetProps<BookmarksProps>) {
 	const props = widget.props;
 
-	const [sites, error] = usePromise(() => getBookmarks(props.includeFolders), []);
-	if (!sites) {
+	const [links, error] = usePromise(() => getBookmarks(props.includeFolders), []);
+	if (!links) {
 		return (<ErrorView error={error} />);
 	}
 
-	const links: Link[] = sites.map((site) => ({
-		id: site.url,
-		title: site.title,
-		icon: "",
-		url: site.url,
-	}));
-
 	return (
-		<LinkBox {...props} widgetTheme={widget.theme} links={links} useWebsiteIcons={true}
+		<LinkBox {...props} widgetTheme={widget.theme}  useWebsiteIcons={true}
+			links={links.filter(x => !x.children)}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 

@@ -172,4 +172,13 @@ export const miscMessages = defineMessages({
 		defaultMessage: "Unable to get bookmarks",
 		description: "Bookmarks widget: error message",
 	},
+
+	permissionLabel: {
+		defaultMessage: "Grant permission to access bookmarks",
+	},
+
+	hideBookmarksBar: {
+		defaultMessage: "Hide",
+		description: "Hide"
+	},
 });

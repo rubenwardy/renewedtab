@@ -1,59 +1,20 @@
 import { usePromise, useForceUpdate } from "app/hooks";
+import { miscMessages } from "app/locale/common";
 import { getBookmarks } from "app/utils/bookmarks";
 import { ListBoxStyle, WidgetTheme } from "app/Widget";
 import React from "react";
-import { defineMessages, useIntl } from "react-intl";
+import { useIntl } from "react-intl";
 import Button, { ButtonVariant } from "./Button";
 import ErrorView from "./ErrorView";
-import LinkBox, { Link } from "./LinkBox";
+import LinkBox from "./LinkBox";
 import RequestPermission from "./RequestPermission";
 
-const messages = defineMessages({
-	title: {
-		defaultMessage: "Bookmarks",
-		description: "Bookmarks Widget",
-	},
 
-	description: {
-		defaultMessage: "Shows your bookmarks",
-		description: "Bookmarks widget description",
-	},
-
-	permissionLabel: {
-		defaultMessage: "Grant permission to access bookmarks",
-	},
-
-	includeFolders: {
-		defaultMessage: "Include folders as sections",
-		description: "Bookmarks widget: form field label",
-	},
-
-	hideBookmarksBar: {
-		defaultMessage: "Hide",
-		description: "Hide"
-	}
-});
-
-
-interface BookmarksProps {
-	includeFolders: boolean;
-	openInNewTab: boolean;
-	widgetTheme: WidgetTheme;
-}
-
-
-function BookmarksImpl(props: BookmarksProps) {
-	const [sites, error] = usePromise(() => getBookmarks(props.includeFolders), []);
-	if (!sites) {
+function BookmarksImpl(props: { widgetTheme: WidgetTheme }) {
+	const [links, error] = usePromise(() => getBookmarks(false), []);
+	if (!links) {
 		return (<ErrorView error={error} />);
 	}
-
-	const links: Link[] = sites.map((site) => ({
-		id: site.url,
-		title: site.title,
-		icon: "",
-		url: site.url,
-	}));
 
 	return (
 		<LinkBox {...props} links={links} useWebsiteIcons={true}
@@ -75,10 +36,10 @@ export default function BookmarksTopBar(props: { onHide: () => void }) {
 			<aside className="bookmarks-top-bar">
 				<div className="panel text-muted">
 					<RequestPermission permissions={permissions}
-							label={intl.formatMessage(messages.permissionLabel)}
+							label={intl.formatMessage(miscMessages.permissionLabel)}
 							onResult={forceUpdate} />
 					<Button variant={ButtonVariant.Outline} onClick={props.onHide}
-						label={messages.hideBookmarksBar} small={true}
+						label={miscMessages.hideBookmarksBar} small={true}
 						className="ml-5" />
 				</div>
 			</aside>);
@@ -86,7 +47,7 @@ export default function BookmarksTopBar(props: { onHide: () => void }) {
 
 	return (
 		<aside className="bookmarks-top-bar">
-			<BookmarksImpl includeFolders={false} openInNewTab={false}
-				widgetTheme={{ showPanelBG: true, listBoxStyle: ListBoxStyle.Horizontal }}  />
+			<BookmarksImpl widgetTheme={{
+				showPanelBG: true, listBoxStyle: ListBoxStyle.Horizontal }}  />
 		</aside>);
 }

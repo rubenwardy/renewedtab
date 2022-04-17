@@ -10,6 +10,7 @@ ul.links {
 		margin: 0;
 		list-style: none;
 		padding: 0;
+		position: relative;
 
 		.icon {
 			display: inline-block;
@@ -20,12 +21,14 @@ ul.links {
 		}
 
 		&.section {
-			display: block;
 			padding: 0.4rem 0.8rem 0.2rem 0.8rem;
-			font-size: 0.9rem;
-			line-height: 1.5;
-			color: white;
-			opacity: 0.5;
+
+			> .title {
+				font-size: 0.9rem;
+				line-height: 1.5;
+				color: white;
+				opacity: 0.5;
+			}
 
 			&:first-child {
 				padding-top: 0.8rem;
@@ -54,6 +57,27 @@ ul.links {
 				text-decoration: none;
 			}
 		}
+
+		.dropdown {
+			position: absolute;
+			left: 0;
+			top: 100%;
+			visibility: collapse;
+			min-width: 250px;
+			z-index: 200;
+
+			background: var(--color-background);
+			border-radius: 0 3px 3px 3px;
+
+			.dropdown {
+				top: 0;
+				left: 100%;
+			}
+		}
+
+		&:hover > .dropdown {
+			visibility: visible;
+		}
 	}
 
 	&.large {
@@ -76,13 +100,13 @@ ul.links {
 	}
 
 	&.links-horizontal {
-		li {
-			display: inline-block;
-		}
+		display: flex;
+		flex-direction: row;
 
-		li.section {
+		> li.section {
 			padding: 0.4rem 0.8rem;
 			line-height: inherit;
+			opacity: 1;
 		}
 
 		&.large li.section {
@@ -97,6 +121,11 @@ ul.links {
 }
 
 
-.bookmarks-top-bar .panel {
-	border-radius: 0;
+.bookmarks-top-bar {
+	z-index: 100;
+
+	.panel {
+		border-radius: 0;
+		overflow: visible;
+	}
 }

@@ -31,6 +31,8 @@ export interface Link {
 	title: string;
 	icon?: string | Promise<string | undefined>;
 	url: string;
+
+	children?: Link[];
 }
 
 
@@ -58,34 +60,13 @@ export interface LinkBoxProps {
 }
 
 
-export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
-	const { query } = useGlobalSearch();
+function LinkLists(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
 	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
-	const showText = listBoxStyle == ListBoxStyle.Vertical || (props.widgetTheme.showText ?? true);
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
-	const [ref, size] = useElementSize();
+	const showText = listBoxStyle == ListBoxStyle.Vertical || (props.widgetTheme.showText ?? true);
 	const target = props.openInNewTab ? "_blank" : undefined;
 
-	const links = useMemo<Link[]>(() => {
-		const ret = deepCopy(props.links.filter(link =>
-			queryMatchesAny(query, link.title, link.url)));
-		if (size && props.limitItemsToAvoidScrolling) {
-			const rows = Math.max(1, Math.floor((size.y + 10) / 120));
-			const columns = Math.floor((size.x + 10) / 105);
-			ret.splice(rows * columns);
-		}
-		return ret;
-	}, [props.links, props.limitItemsToAvoidScrolling, size, query]);
-
-	if (useWebsiteIcons && typeof browser !== "undefined") {
-		links
-			.filter(link => link.url.length > 0 && (link.icon == "" || link.icon == undefined))
-			.forEach(link => {
-				link.icon = getWebsiteIconOrNull(link.url);
-			});
-	}
-
-	const linkElements = links.map(link => {
+	const ret = props.links.map(link => {
 		const requiresIcons = (listBoxStyle == ListBoxStyle.Icons || useWebsiteIcons) && link.url.trim() != "";
 		const icon = link.icon && (
 			<Icon icon={link.icon} requiresIcons={requiresIcons}
@@ -106,6 +87,20 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 							<span className="title">{link.title}</span>)}
 					</a>
 				</li>);
+		} else if (link.children) {
+			return (
+				<li key={link.id} data-title={link.title} data-icon={link.icon}>
+					<a>
+						{icon}
+						<span className="title">{link.title}</span>
+					</a>
+					{link.children && (
+						<div className="dropdown">
+							<ul className="links links-align">
+								<LinkLists {...props} links={link.children} />
+							</ul>
+						</div>)}
+				</li>);
 		} else {
 			return (
 				<li key={link.id} className="section"
@@ -116,17 +111,47 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 		}
 	});
 
+	return (<>{ret}</>);
+}
+
+
+export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
+	const { query } = useGlobalSearch();
+	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
+	const useWebsiteIcons = props.useWebsiteIcons ?? false;
+	const [ref, size] = useElementSize();
+
+	const links = useMemo<Link[]>(() => {
+		const ret = deepCopy(props.links.filter(link =>
+			queryMatchesAny(query, link.title, link.url)));
+		if (size && props.limitItemsToAvoidScrolling) {
+			const rows = Math.max(1, Math.floor((size.y + 10) / 120));
+			const columns = Math.floor((size.x + 10) / 105);
+			ret.splice(rows * columns);
+		}
+		return ret;
+	}, [props.links, props.limitItemsToAvoidScrolling, size, query]);
+
+	if (useWebsiteIcons && typeof browser !== "undefined") {
+		links
+			.filter(link => link.url.length > 0 && (link.icon == "" || link.icon == undefined))
+			.forEach(link => {
+				link.icon = getWebsiteIconOrNull(link.url);
+			});
+	}
+
+
 	const ulClasses = mergeClasses(
 		listBoxStyle == ListBoxStyle.Icons && "iconbar",
-		listBoxStyle == ListBoxStyle.Vertical && "links links-align large",
+		listBoxStyle == ListBoxStyle.Vertical && "links large",
 		listBoxStyle == ListBoxStyle.Horizontal && "links links-align links-horizontal",
 	);
 
 	return (
 		<Panel {...props.widgetTheme} flush={true}>
 			<ul className={ulClasses} ref={ref}>
-				{linkElements}
-				{linkElements.length == 0 && props.links.length > 0 && (
+				<LinkLists {...props} links={links} />
+				{links.length == 0 && props.links.length > 0 && (
 					<li className="section">
 						<FormattedMessage {...miscMessages.noResults} />
 					</li>)}
