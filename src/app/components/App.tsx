@@ -85,7 +85,9 @@ export default function App() {
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
 				<div className={classes.join(" ")}>
-					{showBookmarksBar && !onboardingIsOpen && <BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />}
+					{showBookmarksBar && !onboardingIsOpen &&
+						typeof browser !== "undefined" && (
+						<BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />)}
 					<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
 						<Background background={background} setWidgetsHidden={setWidgetsHidden} />
 					</Sentry.ErrorBoundary>
