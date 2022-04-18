@@ -99,6 +99,11 @@
 	}
 }
 
+.grid-full-page .widget-bottom-strip .widget-strip {
+	top: 100%;
+	bottom: unset;
+	border-radius: 0 0 0.25rem 0.25rem;
+}
 
 @supports (backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)) {
 	.widget .widget-strip {

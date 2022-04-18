@@ -11,6 +11,7 @@ import { WidgetProps } from "app/Widget";
 import Schema, { type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
+import { mergeClasses } from "app/utils";
 
 
 type ResizeHandle = 's' | 'w' | 'e' | 'n' | 'sw' | 'nw' | 'se' | 'ne';
@@ -115,7 +116,10 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		};
 
 		return (
-			<div key={widget.id} className={`widget widget-${widget.type.toLowerCase()}`}
+			<div key={widget.id}
+					className={mergeClasses("widget",
+						widget.position?.y == 0 && "widget-bottom-strip",
+						`widget-${widget.type.toLowerCase()}`)}
 					data-widget-id={props.id}>
 				<ErrorBoundary>
 					<WidgetContainer {...props} />
@@ -149,7 +153,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 
 	const wrapStyle: CSSProperties = {
 		height: props.fullPage ? "100%" : undefined,
-		padding: props.fullPage ? "20px 0 40px 0" : undefined,
+		padding: props.fullPage ? "0 0 40px 0" : undefined,
 	};
 
 	const gridStyle: CSSProperties = props.fullPage
@@ -160,12 +164,13 @@ export default function WidgetGrid(props: WidgetGridProps) {
 
 	return (
 		<main>
-			<div className='scroll-wrap' style={wrapStyle}>
+			<div className="scroll-wrap" style={wrapStyle}>
 				<ReactGridLayout
 						// Clear cache when fullPage changes
 						key={props.fullPage ? "one" : "two"}
 
-						className={gridClassNames} style={gridStyle}
+						className={mergeClasses(gridClassNames, props.fullPage && "grid-full-page")}
+						style={gridStyle}
 						isDraggable={!props.isLocked} isResizable={!props.isLocked}
 						layout={layout} onLayoutChange={onLayoutChange}
 						cols={gridColumns} rowHeight={cellSize}
