@@ -273,8 +273,13 @@ main .scroll-wrap {
 
 	display: flex;
 	flex-direction: row;
-	gap: 0.25rem;
-	padding: 0.25rem 0.5rem;
+	gap: 0.5rem;
+	padding: 0.5rem 0.8rem;
 	z-index: 100;
 	background: var(--color-background);
+	align-items: center;
+
+	.btn {
+		margin: 0;
+	}
 }

@@ -117,6 +117,9 @@
 	&:hover {
 		border: 2px dashed rgba(15, 15, 15, 0.3);
 		margin: -2px;
+
+		// This is needed to get widget-strip to render above other widgets
+		z-index: 100;
 	}
 
 	&:hover, &.fake {
