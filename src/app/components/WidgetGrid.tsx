@@ -196,12 +196,12 @@ export function makeGridSettingsSchema(values: WidgetGridSettings): Schema<Widge
 	const maxColumns = Math.floor((screenWidth - 10 + values.spacing) / (50 + values.spacing));
 
 	return {
-		// fullPage: type.boolean(messages.fullPageLabel, [
-		// 	messages.fullPageHint1,
-		// 	bindValuesToDescriptor(messages.fullPageHint2, {
-		// 		cols: Math.floor(maxColumns * 0.85),
-		// 	}),
-		// 	messages.fullPageHint3]),
+		fullPage: type.boolean(messages.fullPageLabel, [
+			messages.fullPageHint1,
+			bindValuesToDescriptor(messages.fullPageHint2, {
+				cols: Math.floor(maxColumns * 0.85),
+			}),
+			messages.fullPageHint3]),
 		columns: type.number(messages.columnsLabel, bindValuesToDescriptor(messages.columnsHint, {
 			max: maxColumns,
 			res: screenWidth,

@@ -88,6 +88,12 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				</p>
 			</div>
 
+			<h3 className="label">
+				<FormattedMessage
+					defaultMessage="Full Page Mode"
+					description="General settings: full width mode" />
+			</h3>
+
 			<Form
 				values={props.grid}
 				schema={gridSettingsSchema}
