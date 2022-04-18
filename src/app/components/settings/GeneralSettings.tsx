@@ -34,6 +34,8 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 		setSentryEnabled(e.target.checked);
 	}
 
+	const isBrowserExtension = typeof browser !== "undefined";
+
 
 	return (
 		<div className="modal-body">
@@ -46,29 +48,31 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				locale={props.locale}
 				setLocale={props.setLocale} />
 
-			<h3 className="label">
-				<FormattedMessage
-					defaultMessage="Bookmarks Bar"
-					description="General settings: bookmarks bar" />
-			</h3>
-			<div className="field">
-				<label className="inline" htmlFor="sshow-bookmarks-bar">
-					<input name="show-bookmarks-bar" className="mr-2"
-						type="checkbox" checked={props.showBookmarksBar}
-						onChange={e => props.setShowBookmarksBar(e.target.checked)} />
+			{isBrowserExtension && (<>
+				<h3 className="label">
 					<FormattedMessage
-						defaultMessage="Show bookmarks bar"
+						defaultMessage="Bookmarks Bar"
 						description="General settings: bookmarks bar" />
-				</label>
-				<p className="text-muted">
-					<FormattedMessage
-						defaultMessage="Show a bookmarks bar at the top of the page."
-						description="General settings: bookmarks bar" />&nbsp;
-					<FormattedMessage
-						defaultMessage="Note that you can instead use the Bookmarks widget for fine-grained control."
-						description="General settings: bookmarks bar" />
-				</p>
-			</div>
+				</h3>
+				<div className="field">
+					<label className="inline" htmlFor="sshow-bookmarks-bar">
+						<input name="show-bookmarks-bar" className="mr-2"
+							type="checkbox" checked={props.showBookmarksBar}
+							onChange={e => props.setShowBookmarksBar(e.target.checked)} />
+						<FormattedMessage
+							defaultMessage="Show bookmarks bar"
+							description="General settings: bookmarks bar" />
+					</label>
+					<p className="text-muted">
+						<FormattedMessage
+							defaultMessage="Show a bookmarks bar at the top of the page."
+							description="General settings: bookmarks bar" />&nbsp;
+						<FormattedMessage
+							defaultMessage="Note that you can instead use the Bookmarks widget for fine-grained control."
+							description="General settings: bookmarks bar" />
+					</p>
+				</div>
+			</>)}
 
 			<h3 className="label mt-6">
 				<FormattedMessage
