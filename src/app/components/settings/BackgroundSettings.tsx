@@ -30,7 +30,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 				return (
 					<div key={key}>
 						<Radio value={key} disabled={isDisabled} />
-						<MyFormattedMessage message={provider.title} />:&nbsp;
+						<MyFormattedMessage message={provider.title} />{": "}
 						<span className="text-muted">
 							<MyFormattedMessage
 								message={isDisabled ? miscMessages.requiresBrowserVersion : provider.description} />

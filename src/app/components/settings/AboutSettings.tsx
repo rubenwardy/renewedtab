@@ -43,8 +43,8 @@ export default function AboutSettings() {
 					defaultMessage="Created by <a>rubenwardy</a>."
 					values={{
 						a: (chunk: any) => (<a href="https://rubenwardy.com">{chunk}</a>)
-					}} />&nbsp;
-
+					}} />
+				{" "}
 				<FormattedMessage
 					defaultMessage="<a>Open source</a>, licensed under GPLv3+."
 					values={{
@@ -61,7 +61,7 @@ export default function AboutSettings() {
 			<p>
 				<FormattedMessage
 					defaultMessage="Thanks to Unsplash, AccuWeather, and RocketLaunch.Live for their APIs." />
-				&nbsp;
+				{" "}
 				<FormattedMessage
 					defaultMessage="Thanks to Font-Awesome for icons, React for UI, and WebPack for builds." />
 			</p>

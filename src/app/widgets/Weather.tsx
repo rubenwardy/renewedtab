@@ -231,7 +231,8 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 			<div className="row row-centered">
 				<div className="col-auto"><Icon icon={day.icon} /></div>
 				<div className="col temp">
-					<span className="high">{formatNumber(day.maxTemp)}</span>&nbsp;
+					<span className="high">{formatNumber(day.maxTemp)}</span>
+					{" "}
 					<span className="low">{formatNumber(day.minTemp)}</span>
 				</div>
 			</div>

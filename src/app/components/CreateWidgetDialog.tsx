@@ -40,7 +40,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 				<a onClick={() => select(widget.key)}>
 					{widget.title}
 					<span className="text-muted ml-1">
-						&nbsp;
+						{" "}
 						{widget.description}
 					</span>
 				</a>
@@ -53,7 +53,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 				<li key={widget.key} className="text text-muted">
 					{widget.title}
 					<span className="ml-1">
-						&nbsp;
+						{" "}
 						<FormattedMessage {...miscMessages.requiresBrowserVersion} />
 					</span>
 				</li>)));

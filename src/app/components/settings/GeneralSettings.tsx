@@ -66,7 +66,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 					<p className="text-muted">
 						<FormattedMessage
 							defaultMessage="Show a bookmarks bar at the top of the page."
-							description="General settings: bookmarks bar" />&nbsp;
+							description="General settings: bookmarks bar" />{" "}
 						<FormattedMessage
 							defaultMessage="Note that you can instead use the Bookmarks widget for fine-grained control."
 							description="General settings: bookmarks bar" />

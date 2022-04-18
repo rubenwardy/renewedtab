@@ -111,7 +111,7 @@ export function Credits(props: CreditsProps) {
 				<a className="line-2" href={props.title?.url}>{title}</a>
 				<span className="line-1">
 					{props.author && (<a href={props.author?.url}>{props.author?.text}</a>)}
-					{props.author && props.site && (<>&nbsp;/&nbsp;</>)}
+					{props.author && props.site && (<>{" / "}</>)}
 					<a href={props.site?.url} className="mr-2">{props.site?.text}</a>
 				</span>
 
