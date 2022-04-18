@@ -130,7 +130,7 @@ export default function App() {
 
 							<p className="col m-0 pl-2 text-muted">
 								<FormattedMessage
-									defaultMessage="Make sure to check out settings, as you can configure many things." />
+									defaultMessage="Make sure to check out Settings" />
 							</p>
 
 							<Button onClick={() => setCreateOpen(true)}

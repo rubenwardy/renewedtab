@@ -45,6 +45,11 @@ const messages = defineMessages({
 		description: "Widget grid: form label 3 for grid full width",
 	},
 
+	fullPageHint4: {
+		defaultMessage: "This is <b>experimental and may be harder to use</b>.",
+		description: "Widget grid: form label 4 for grid full width",
+	},
+
 	columnsLabel: {
 		defaultMessage: "Grid Columns",
 		description: "Widget grid: form label for grid columns",
@@ -198,10 +203,14 @@ export function makeGridSettingsSchema(values: WidgetGridSettings): Schema<Widge
 	return {
 		fullPage: type.boolean(messages.fullPageLabel, [
 			messages.fullPageHint1,
+			messages.fullPageHint3,
+			bindValuesToDescriptor(messages.fullPageHint4, {
+				b: (chunk: any) => (<b>{chunk}</b>),
+			}),
 			bindValuesToDescriptor(messages.fullPageHint2, {
 				cols: Math.floor(maxColumns * 0.85),
 			}),
-			messages.fullPageHint3]),
+		]),
 		columns: type.number(messages.columnsLabel, bindValuesToDescriptor(messages.columnsHint, {
 			max: maxColumns,
 			res: screenWidth,
