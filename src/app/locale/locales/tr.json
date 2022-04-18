@@ -1193,11 +1193,23 @@
         "description": "Feed widget: form field label"
     },
     "appDescription": {
-        "message": "Araçlar ve güzel arkaplanlar içeren, özelleştirilebilir bir Yeni Sekme sayfası",
+        "message": "Araçlar ve güzel arka planlar içeren, özelleştirilebilir bir Yeni Sekme sayfası",
         "description": "App description"
     },
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "2s4stS": {
+        "message": "<a>Renewed Tab</a>'e hoş geldiniz",
+        "description": "Onboarding modal: title"
+    },
+    "BmzsQb": {
+        "message": "Linkler; başlık ve ikon desteği vardır (hızlı arama)",
+        "description": "Links widget description"
+    },
+    "Oa5RYo": {
+        "message": "<b>Araçların da ayarları var</b>: farenizi bir aracın üzerine götürün ve özelleştirmek için kaleme tıklayın.",
+        "description": "General settings: help message"
     }
 }
