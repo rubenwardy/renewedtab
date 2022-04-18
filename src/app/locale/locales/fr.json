@@ -1199,5 +1199,17 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "BmzsQb": {
+        "message": "Liens, avec prise en charge des en-têtes et des icônes (numérotation rapide)",
+        "description": "Links widget description"
+    },
+    "Oa5RYo": {
+        "message": "<b>Les widgets ont également des paramètres</b> : survolez un widget et cliquez sur le crayon pour le personnaliser.",
+        "description": "General settings: help message"
+    },
+    "2s4stS": {
+        "message": "Bienvenue sur <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
     }
 }
