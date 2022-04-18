@@ -1,10 +1,8 @@
-import { useForceUpdateValue } from "app/hooks";
-import React, { ChangeEvent, useMemo, useState } from "react";
+import { miscMessages } from "app/locale/common";
+import React, { ChangeEvent, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
-import { Form } from "../forms";
 import LanguageSelector from "../LanguageSelector";
-import { makeGridSettingsSchema, WidgetGridSettings } from "../WidgetGrid";
 
 
 const messages = defineMessages({
@@ -21,17 +19,12 @@ export interface GeneralSettingsProps {
 
 	showBookmarksBar: boolean;
 	setShowBookmarksBar: (value: boolean) => void;
-
-	grid: WidgetGridSettings;
-	setGrid: (grid: WidgetGridSettings) => void;
 }
 
 
 export default function GeneralSettings(props: GeneralSettingsProps) {
 	const [sentryEnabled, setSentryEnabled] =
 		useState(localStorage.getItem("_sentry-opt-out") != "yes");
-	const [force, forceUpdate] = useForceUpdateValue();
-
 	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
 		if (e.target.checked) {
 			localStorage.removeItem("_sentry-opt-out");
@@ -41,24 +34,13 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 		setSentryEnabled(e.target.checked);
 	}
 
-	function handleSetGridValue(key: string, val: any) {
-		(props.grid as any)[key] = val;
-		props.setGrid({ ...props.grid! });
-		forceUpdate();
-	}
-
-	const gridSettingsSchema = useMemo(
-		() => makeGridSettingsSchema(props.grid),
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[props.grid, force]);
 
 	return (
 		<div className="modal-body">
 			<p>
 				<FormattedMessage
-					defaultMessage="<b>Widgets also have settings</b>: hover over a widget and click the pencil to customise it."
-					description="General settings: help message"
-					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
+						{...miscMessages.widgetsHaveSettings}
+						values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
 			</p>
 			<LanguageSelector
 				locale={props.locale}
@@ -87,17 +69,6 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						description="General settings: bookmarks bar" />
 				</p>
 			</div>
-
-			<h3 className="label">
-				<FormattedMessage
-					defaultMessage="Full Page Mode"
-					description="General settings: full width mode" />
-			</h3>
-
-			<Form
-				values={props.grid}
-				schema={gridSettingsSchema}
-				onChange={handleSetGridValue} />
 
 			<h3 className="label mt-6">
 				<FormattedMessage

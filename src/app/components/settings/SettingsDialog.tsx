@@ -6,10 +6,12 @@ import ImportExport from "./ImportExport";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { ThemeSettings, ThemeSettingsProps } from "./ThemeSettings";
 import GeneralSettings, { GeneralSettingsProps } from "./GeneralSettings";
+import GridSettings, { GridSettingsProps } from "./GridSettings";
 
 
 export enum SettingsTab {
 	General,
+	Grid,
 	Background,
 	Theme,
 	ImportExport,
@@ -22,6 +24,11 @@ declare type SettingsTabType = keyof typeof SettingsTab;
 export const tabTitles = defineMessages({
 	[SettingsTab.General]: {
 		defaultMessage: "General",
+		description: "Settings tab",
+	},
+
+	[SettingsTab.Grid]: {
+		defaultMessage: "Widget Grid",
 		description: "Settings tab",
 	},
 
@@ -51,6 +58,8 @@ function getComponentForTab(tab: SettingsTab) {
 	switch (tab) {
 	case SettingsTab.General:
 		return GeneralSettings;
+	case SettingsTab.Grid:
+		return GridSettings;
 	case SettingsTab.Background:
 		return BackgroundSettings;
 	case SettingsTab.Theme:
@@ -64,7 +73,7 @@ function getComponentForTab(tab: SettingsTab) {
 
 
 interface SettingsDialogProps extends BackgroundSettingsProps,
-		ThemeSettingsProps, GeneralSettingsProps {
+		ThemeSettingsProps, GeneralSettingsProps, GridSettingsProps {
 	isOpen: boolean;
 	onClose: () => void;
 }

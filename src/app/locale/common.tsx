@@ -186,4 +186,9 @@ export const miscMessages = defineMessages({
 		defaultMessage: "Finish Editing",
 		description: "Edit bar button to make the grid readonly"
 	},
+
+	widgetsHaveSettings: {
+		defaultMessage:"<b>Widgets also have settings</b>: hover over a widget and click the pencil to customise it.",
+		description: "General settings: help message",
+	},
 });

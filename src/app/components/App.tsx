@@ -5,7 +5,7 @@ import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGri
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { usePromise, useStorage } from "app/hooks";
-import { defineMessage, defineMessages, IntlProvider, useIntl } from "react-intl";
+import { defineMessage, defineMessages, FormattedMessage, IntlProvider, useIntl } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
@@ -120,6 +120,19 @@ export default function App() {
 
 					{!isLocked && (
 						<aside className="edit-bar">
+							<Button href="https://renewedtab.com/help/"
+								variant={ButtonVariant.Secondary}
+								icon="fa fa-question" small={true}
+								target="_blank"
+								label={defineMessage({
+									defaultMessage: "Help",
+								})} />
+
+							<p className="col m-0 pl-2 text-muted">
+								<FormattedMessage
+									defaultMessage="Make sure to check out settings, as you can configure many things." />
+							</p>
+
 							<Button onClick={() => setCreateOpen(true)}
 								variant={ButtonVariant.Secondary}
 								icon="fa fa-plus" small={true}
@@ -133,16 +146,6 @@ export default function App() {
 								id="open-settings"
 								label={defineMessage({
 									defaultMessage: "Settings",
-								})} />
-
-							<div className="col" />
-
-							<Button href="https://renewedtab.com/help/"
-								variant={ButtonVariant.Secondary}
-								icon="fa fa-question" small={true}
-								target="_blank"
-								label={defineMessage({
-									defaultMessage: "Help",
 								})} />
 
 							<Button onClick={() => setIsLocked(true)}
