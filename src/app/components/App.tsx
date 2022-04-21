@@ -5,7 +5,7 @@ import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGri
 import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { usePromise, useStorage } from "app/hooks";
-import { defineMessage, defineMessages, FormattedMessage, IntlProvider, useIntl } from "react-intl";
+import { defineMessage, defineMessages, IntlProvider, useIntl } from "react-intl";
 import { getTranslation, getUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";

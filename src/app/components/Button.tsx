@@ -13,7 +13,7 @@ export enum ButtonVariant {
 }
 
 
-interface ButtonProps {
+export interface ButtonProps {
 	// Any default button properties.
 	[ key: string ]: any;
 

@@ -2,20 +2,16 @@ import { usePromise } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { storage } from "app/storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
-import React, { useRef } from "react";
+import React from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
+import ImportButton from "../ImportButton";
 
 
 const messages = defineMessages({
 	reset: {
 		defaultMessage: "Reset everything",
 		description: "Import / export settings, reset",
-	},
-
-	import: {
-		defaultMessage: "Import",
-		description: "Import / export settings, import",
 	},
 
 	export: {
@@ -41,15 +37,6 @@ async function getStoredData(): Promise<string> {
 	return JSON.stringify(data);
 }
 
-async function handleImport(file: File) {
-	const json = new TextDecoder("utf-8").decode(await file.arrayBuffer());
-	const data = JSON.parse(json);
-	for (const [key, value] of Object.entries(data)) {
-		await storage.set(key, value);
-	}
-
-	location.reload();
-}
 
 function encode(str: string) {
 	// Escapes needed to fix `#` in data.
@@ -58,7 +45,6 @@ function encode(str: string) {
 
 
 export default function ImportExport() {
-	const ref = useRef<HTMLInputElement>(null);
 	const [data, error] = usePromise(() => getStoredData(), []);
 	const intl = useIntl();
 
@@ -79,12 +65,10 @@ export default function ImportExport() {
 			</p>
 			<textarea className="fullwidth" readOnly
 				value={data ?? (error ? error.toString() : intl.formatMessage(miscMessages.loading))} />
-			<input ref={ref} type="file" className="display-none"
-				accept=".json,application/json" name="import-file"
-				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
+
 			<p className="buttons mt-4">
 				<Button id="reset" variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
-				<Button id="import" onClick={() => ref.current?.click()} label={messages.import} />
+				<ImportButton />
 				<Button id="export" href={`data:text/plain;base64,${encode(data ?? "")}`}
 						download="renewedtab.json" label={messages.export} />
 			</p>

@@ -2,6 +2,8 @@ import { fromTypedJSON } from "app/utils/TypedJSON";
 import React from "react";
 import { defineMessage, FormattedMessage, MessageDescriptor } from "react-intl";
 import { OnboardingPageProps } from ".";
+import { ButtonVariant } from "../Button";
+import ImportButton from "../ImportButton";
 
 
 interface Preset {
@@ -100,6 +102,13 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 						add: () => <i className="fas fa-plus" />,
 						remove: () => <i className="fas fa-trash" />,
 						cog: () => <i className="fas fa-cog" />,
+					}} />
+			</p>
+			<p className="text-muted">
+				<FormattedMessage
+					defaultMessage="Alternatively: <import></import>"
+					values={{
+						import: () => <ImportButton small={true} variant={ButtonVariant.Secondary} />,
 					}} />
 			</p>
 		</div>);
