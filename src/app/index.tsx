@@ -69,14 +69,14 @@ import {
 	faCaretLeft, faCaretRight, faEllipsisH, faCircle, faGlobeEurope, faBan,
 	faThumbsUp, faQuestionCircle, faGripVertical, faLanguage, faTint, faSun,
 	faWind, faLongArrowAltRight, faClone, faSearch, faUmbrella,
-	faCircleQuestion, faQuestion, faCheck
+	faCircleQuestion, faQuestion, faCheck, faFolder
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faPlus, faCog, faTimes, faPen, faTrash, faCaretUp, faCaretDown,
 	faCaretLeft, faCaretRight, faEllipsisH, faCircle, faGlobeEurope, faBan,
 	faThumbsUp, faCheck, faQuestionCircle, faGripVertical,
 	faLanguage, faTint, faSun, faWind, faLongArrowAltRight, faClone, faSearch,
-	faUmbrella, faCircleQuestion, faQuestion);
+	faUmbrella, faCircleQuestion, faQuestion, faFolder);
 dom.watch();
 
 

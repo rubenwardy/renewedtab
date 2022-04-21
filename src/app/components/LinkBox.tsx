@@ -101,13 +101,15 @@ function LinkLists(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
 							</ul>
 						</div>)}
 				</li>);
-		} else {
+		} else if (link.title != "") {
 			return (
 				<li key={link.id} className="section"
 					data-title={link.title} data-icon={link.icon}>
 					{icon}
 					<span className="title">{link.title}</span>
 				</li>);
+		} else {
+			return (<li key={link.id} className="separator" />);
 		}
 	});
 

@@ -35,6 +35,11 @@ ul.links {
 			}
 		}
 
+		&.separator {
+			--color: rgba(200, 200, 200, 0.1);
+			border-top: 2px solid var(--color);
+		}
+
 		&.text {
 			display: block;
 			text-decoration: none;
@@ -102,11 +107,22 @@ ul.links {
 	&.links-horizontal {
 		display: flex;
 		flex-direction: row;
+		height: 100%;
+
+		> li > a {
+			height: 100%;
+			box-sizing: border-box;
+		}
 
 		> li.section {
 			padding: 0.4rem 0.8rem;
 			line-height: inherit;
 			opacity: 1;
+		}
+
+		> li.separator {
+			border-top: none;
+			border-left: 1px solid var(--color);
 		}
 
 		&.large li.section {
@@ -127,5 +143,25 @@ ul.links {
 	.panel {
 		border-radius: 0;
 		overflow: visible;
+	}
+
+	ul.links-horizontal {
+		padding-left: 0.32rem;
+
+		.icon {
+			width: 16px;
+			height: 16px;
+		}
+
+		> li > a {
+			padding: 0.6rem 0.53rem;
+		}
+
+		> li > .title, > li > a > .title {
+			font-size: 83%;
+			max-width: 110px;
+			@include line_clamp(1);
+			word-break: break-all;
+		}
 	}
 }

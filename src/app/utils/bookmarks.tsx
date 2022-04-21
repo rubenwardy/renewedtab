@@ -17,13 +17,21 @@ async function tryGetSubTree(id: string): Promise<browser.bookmarks.BookmarkTree
 
 
 function convertToLinks(bookmark: browser.bookmarks.BookmarkTreeNode): Link {
+	if (bookmark.type == "separator") {
+		return {
+			id: bookmark.id,
+			title: "",
+			icon: "",
+			url: "",
+		};
+	}
+
 	return {
 		id: bookmark.id,
 		title: bookmark.title,
-		icon: "",
+		icon: bookmark.children ? "fa-folder" : "",
 		url: bookmark.url ?? "",
-		children: bookmark.children
-			?.filter(x => x.type != "separator").map(x => convertToLinks(x))
+		children: bookmark.children?.map(x => convertToLinks(x))
 			?? undefined,
 	};
 }
