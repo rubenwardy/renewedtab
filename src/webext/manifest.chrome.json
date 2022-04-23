@@ -16,12 +16,6 @@
 	"chrome_url_overrides" : {
 		"newtab": "app/webext.html"
 	},
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "{166411f2-402a-4bca-a3da-38b795ec8007}",
-			"strict_min_version": "78.0"
-		}
-	},
 	"permissions": [
 		"storage",
 		"search"

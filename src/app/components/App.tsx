@@ -47,7 +47,7 @@ export default function App() {
 
 	const [query, setQuery] = useState("");
 	const [locale, setLocale] = useStorage<string>("locale", getUserLocale());
-	const [showBookmarksBar, setShowBookmarksBar] = useStorage("showBookmarksBar", true);
+	const [showBookmarksBar, setShowBookmarksBar] = useStorage("showBookmarksBar", app_version.target == "chrome");
 	const [messages] = usePromise(() => locale ? getTranslation(locale) : Promise.reject(null), [locale]);
 	const [background, setBackground] = useBackground();
 	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});

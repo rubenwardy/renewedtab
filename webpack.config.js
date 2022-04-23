@@ -13,6 +13,11 @@ const gitRevisionPlugin = new GitRevisionPlugin({
 const isProd = process.env.NODE_ENV === "production";
 const dest = path.resolve(__dirname, "dist/webext/app");
 
+const target = process.env.TARGET ?? "firefox";
+if (target !== "firefox" && target !== "chrome") {
+	throw new Error(`Unknown target: ${target}`);
+}
+
 const configFile = path.resolve(__dirname, "config.json");
 function getConfig() {
 	const config = JSON.parse(fs.readFileSync(configFile).toString());
@@ -21,13 +26,13 @@ function getConfig() {
 	return {
 		API_URL: JSON.stringify(config.API_URL),
 		PROXY_URL: JSON.stringify(config.PROXY_URL),
-		SENTRY_DSN: JSON.stringify(config.SENTRY_DSN)
+		SENTRY_DSN: JSON.stringify(config.SENTRY_DSN),
 	};
 }
 
 const mode = isProd ? "production" : "development";
 
-console.log(`Webpack is building in ${mode}`);
+console.log(`Webpack is building in ${mode} for ${target}`);
 
 module.exports = {
 	mode: mode,
@@ -40,14 +45,16 @@ module.exports = {
 				is_debug: !isProd,
 				commit: JSON.stringify(gitRevisionPlugin.commithash()),
 				environment: JSON.stringify(gitRevisionPlugin.version().includes("-") ? "development" : "production"),
+				target: JSON.stringify(target),
 			},
 			config: getConfig(),
 		}),
 		new CopyPlugin({
 			patterns: [
-				{ from: "src/webext/", to: path.resolve(__dirname, "dist/webext/") },
+				{ from: "src/webext/", to: path.resolve(__dirname, "dist/webext/"), globOptions: { ignore: ["**/webext/manifest.*"] }  },
 				{ from: "src/app/public/", to: dest },
 				{ from: "node_modules/webextension-polyfill/dist/browser-polyfill.min.js", to: dest },
+				{ from: `src/webext/manifest.${target}.json`, to: path.resolve(__dirname, "dist/webext/manifest.json") },
 			]
 		}),
 		new MiniCssExtractPlugin({

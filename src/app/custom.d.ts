@@ -3,6 +3,7 @@ interface Version {
 	is_debug: boolean;
 	commit: string;
 	environment: string;
+	target: ("firefox" | "chrome");
 }
 
 
