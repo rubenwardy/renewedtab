@@ -12,6 +12,10 @@ ul.links {
 		padding: 0;
 		position: relative;
 
+		.title {
+			white-space: pre;
+		}
+
 		.icon {
 			display: inline-block;
 			margin: 0;
