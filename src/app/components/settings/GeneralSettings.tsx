@@ -10,6 +10,16 @@ const messages = defineMessages({
 		defaultMessage: "Privacy Policy",
 		description: "General settings: privacy policy button",
 	},
+
+	bookmarksBar: {
+		defaultMessage: "Bookmarks Bar",
+		description: "General settings: bookmarks bar",
+	},
+
+	firefoxBookmarksBar: {
+		defaultMessage: "You can show the bookmarks bar only on the New Tab page by Right-clicking next to the address bar > Bookmarks Toolbar > Only Show on New Tab. <a>See more</a>",
+		description: "General settings: Help for Firefox bookmarks bar",
+	},
 })
 
 
@@ -36,7 +46,6 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 
 	const isBrowserExtension = typeof browser !== "undefined";
 
-
 	return (
 		<div className="modal-body">
 			<p>
@@ -48,11 +57,19 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				locale={props.locale}
 				setLocale={props.setLocale} />
 
-			{isBrowserExtension && (<>
+			{isBrowserExtension && app_version.target == "firefox" && (<>
 				<h3 className="label">
-					<FormattedMessage
-						defaultMessage="Bookmarks Bar"
-						description="General settings: bookmarks bar" />
+					<FormattedMessage {...messages.bookmarksBar} />
+				</h3>
+				<p className="text-muted">
+					<FormattedMessage {...messages.firefoxBookmarksBar}
+						values={{ a: (chunk: any) => (<a href="https://renewedtab.com/help/firefox-bookmarks/">{chunk}</a>) }} />
+				</p>
+			</>)}
+
+			{isBrowserExtension && app_version.target == "chrome" && (<>
+				<h3 className="label">
+					<FormattedMessage {...messages.bookmarksBar} />
 				</h3>
 				<div className="field">
 					<label className="inline" htmlFor="sshow-bookmarks-bar">
@@ -68,7 +85,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 							defaultMessage="Show a bookmarks bar at the top of the page."
 							description="General settings: bookmarks bar" />{" "}
 						<FormattedMessage
-							defaultMessage="Note that you can instead use the Bookmarks widget for fine-grained control."
+							defaultMessage="Alternatively, you could use a Bookmarks widget for fine-grained control."
 							description="General settings: bookmarks bar" />
 					</p>
 				</div>
