@@ -226,9 +226,6 @@
         "message": "Colore",
         "description": "Color background mode"
     },
-    "WQeyl4": {
-        "message": "Concedi il permesso di accedere ai segnalibri"
-    },
     "WZjKFf": {
         "message": "Attenzione: potrebbe contenere dati personali, in caso siano stati immessi nelle impostazioni di qualche widget."
     },
@@ -350,10 +347,6 @@
         "message": "Cerca un widget...",
         "description": "Create Widgets modal: search widgets placeholder"
     },
-    "wZq5vc": {
-        "message": "Mostra come icone",
-        "description": "Form field label"
-    },
     "wogY8a": {
         "message": "Crea Widget"
     },
@@ -418,10 +411,6 @@
     "or/+Da": {
         "message": "Stile",
         "description": "Subheading for per-widget styling properties"
-    },
-    "p7+m8N": {
-        "message": "Concedi il permesso di accedere ai siti più visitati",
-        "description": "Top Sites widget: permission request"
     },
     "rb3Zy8": {
         "message": "Filtra Articoli",

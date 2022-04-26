@@ -613,10 +613,6 @@
     "a09vzt": {
         "message": "Error en la solicitud HTTP, {code} {msg}."
     },
-    "wZq5vc": {
-        "message": "Mostrar como iconos",
-        "description": "Form field label"
-    },
     "0PsF7Z": {
         "message": "¿Estás seguro que quieres eliminar este widget permanentemente?",
         "description": "Delete widget modal message"
@@ -638,9 +634,6 @@
     "TkgCJ9": {
         "message": "Puede obtener ayuda o solicitar una función utilizando el enlace a continuación."
     },
-    "WQeyl4": {
-        "message": "Otorgar permiso para acceder a los marcadores"
-    },
     "bQFsdR": {
         "message": "Otorga permiso para acceder a {host}"
     },
@@ -659,10 +652,6 @@
     "pG7wIz": {
         "message": "Muestra tasas de cambio, compatible con divisas forex y criptomonedas (BitCoin, etc.)",
         "description": "Currencies widget description"
-    },
-    "p7+m8N": {
-        "message": "Otorgue permiso para obtener sus sitios web más visitados",
-        "description": "Top Sites widget: permission request"
     },
     "qCsSqt": {
         "message": "Panel de oscuridad del fondo",

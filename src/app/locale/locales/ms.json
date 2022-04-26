@@ -269,9 +269,6 @@
         "message": "Warna",
         "description": "Color background mode"
     },
-    "WQeyl4": {
-        "message": "Berikan kebenaran untuk mencapai tanda buku"
-    },
     "Wi0G88": {
         "message": "Perihal dan Bantuan",
         "description": "Settings tab"
@@ -440,10 +437,6 @@
         "message": "Penggayaan",
         "description": "Subheading for per-widget styling properties"
     },
-    "p7+m8N": {
-        "message": "Berikan kebenaran untuk mencapai tapak teratas",
-        "description": "Top Sites widget: permission request"
-    },
     "p8GKKf": {
         "message": "Tapak Teratas",
         "description": "Top Sites Widget"
@@ -497,10 +490,6 @@
     "ubO4zt": {
         "message": "Komik Sesawang",
         "description": "Web Comic Widget"
-    },
-    "wZq5vc": {
-        "message": "Paparkan sebagai ikon",
-        "description": "Form field label"
     },
     "wogY8a": {
         "message": "Cipta Widget"
@@ -1185,9 +1174,6 @@
     "zPAzlS": {
         "message": "Gabung pelbagai sumber ke dalam tab tunggal",
         "description": "Feed widget: form field label"
-    },
-    "lhwL6C": {
-        "message": "Apabila anda selesai, gunakan kunci (<lock></lock>) untuk membuatkan widget sebagai baca sahaja."
     },
     "zXtUcf": {
         "message": "Jangan risau, anda boleh membuka kunci pada waktu kemudian"

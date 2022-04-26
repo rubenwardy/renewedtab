@@ -42,9 +42,6 @@
     "TkgCJ9": {
         "message": "Aşağıdaki linki kullanarak yardım alabilir veya bir özellik talep edebilirsiniz."
     },
-    "WQeyl4": {
-        "message": "Yer işaretlerine erişmek için izin verin"
-    },
     "WZjKFf": {
         "message": "Uyarı: araç ayarlarına kişisel bilgi girdiyseniz burası kişisel bilgi içerebilir."
     },
@@ -257,10 +254,6 @@
         "message": "Beslemede görüntü bulunamadı",
         "description": "Web Comic widget: no images found error"
     },
-    "p7+m8N": {
-        "message": "Sık kullanılan sitelerinize erişmek için izin verin",
-        "description": "Top Sites widget: permission request"
-    },
     "xvXMaZ": {
         "message": "Sizi selamlar",
         "description": "Greeting widget description"
@@ -312,10 +305,6 @@
     "sYvWWw": {
         "message": "İsteğe bağlı, URL'den görüntü (18px önerilir)",
         "description": "Links widget, form field hint (Icon)"
-    },
-    "wZq5vc": {
-        "message": "İkonlar olarak göster",
-        "description": "Form field label"
     },
     "dIwFS5": {
         "message": "Bir görüntü seç",
@@ -1169,9 +1158,6 @@
     "5mfAB9": {
         "message": "Bir Atom, JSONFeed veya RSS beslemesi URL'i",
         "description": "Form field hint (Feed URL)"
-    },
-    "lhwL6C": {
-        "message": "İşiniz bittiğinde kilit özelliğini (<lock></lock>) kullanarak araçları salt okunur hale getirebilirsiniz."
     },
     "zXtUcf": {
         "message": "Endişelenmeyin, daha sonra kilidi kaldırabilirsiniz"

@@ -150,6 +150,10 @@
     "description": "Weather widget: form field label",
     "message": "Temperature Unit"
   },
+  "5MMUNJ": {
+    "description": "Widget grid: form label 4 for grid full width",
+    "message": "This is <b>experimental and may be harder to use</b>."
+  },
   "5mVcg9": {
     "description": "Theme settings: form field label",
     "message": "Custom CSS"
@@ -165,6 +169,10 @@
   "6pdO6i": {
     "description": "Bookmarks widget: error message",
     "message": "Unable to get bookmarks"
+  },
+  "6wEkCM": {
+    "description": "General settings: bookmarks bar",
+    "message": "Alternatively, you could use a Bookmarks widget for fine-grained control."
   },
   "7OH6mh": {
     "description": "Image Widget",
@@ -255,6 +263,10 @@
     "description": "Form field option, vertical gradient",
     "message": "Vertical"
   },
+  "CN0kVN": {
+    "description": "Settings tab",
+    "message": "Widget Grid"
+  },
   "CNpJaZ": {
     "description": "Preset: focus",
     "message": "Focus"
@@ -289,9 +301,17 @@
     "description": "Background expiry dropdown",
     "message": "Every day"
   },
+  "Ekvvsi": {
+    "description": "Chrome-only, a bar for bookmarks at the top",
+    "message": "Bookmarks Bar"
+  },
   "EpPEVJ": {
     "description": "Gradient background mode",
     "message": "Gradient"
+  },
+  "EscvnU": {
+    "description": "List box style (ie: list/bookmark widgets)",
+    "message": "Icons"
   },
   "F1A/8i": {
     "description": "Feed widget: form field label",
@@ -325,6 +345,10 @@
     "description": "Short weekday name (Saturday)",
     "message": "SAT"
   },
+  "GpfSpy": {
+    "description": "General settings: bookmarks bar",
+    "message": "Show bookmarks bar"
+  },
   "GqPEp+": {
     "message": "Requires browser extension version"
   },
@@ -347,6 +371,10 @@
   "I48yxw": {
     "description": "General settings: privacy",
     "message": "Privacy"
+  },
+  "IKpSw0": {
+    "description": "List box style (ie: list/bookmark widgets)",
+    "message": "Horizontal"
   },
   "IbCXY9": {
     "description": "Clock widget: date style type",
@@ -508,12 +536,19 @@
   "QqE4JC": {
     "message": "Missing feed URL."
   },
+  "R1jLoC": {
+    "description": "List box style (ie: list/bookmark widgets)",
+    "message": "Vertical"
+  },
   "R4cyIr": {
     "description": "Weather widget: form field label",
     "message": "Current: Show humidity"
   },
   "RCe+DS": {
     "message": "Drag and Drop Widgets"
+  },
+  "RVGNBh": {
+    "message": "Once you're done, click <button></button> to make the widgets read only."
   },
   "RZqASt": {
     "description": "Backgroud mode description",
@@ -609,9 +644,6 @@
   "WKiXhX": {
     "description": "Color background mode",
     "message": "Color"
-  },
-  "WQeyl4": {
-    "message": "Grant permission to access bookmarks"
   },
   "WZjKFf": {
     "message": "Warning: this may contain personal data, if any was entered into widget settings."
@@ -769,6 +801,10 @@
     "description": "Form field label",
     "message": "Choose an image"
   },
+  "dOlhtQ": {
+    "description": "General settings: Help for Firefox bookmarks bar",
+    "message": "You can show the bookmarks bar only on the New Tab page by Right-clicking next to the address bar > Bookmarks Toolbar > Only Show on New Tab. <a>See more</a>"
+  },
   "eKCjBm": {
     "description": "Weather widget: change of precipitation (rain, etc)",
     "message": "Precipitation (%)"
@@ -819,9 +855,17 @@
     "description": "Widget grid: form label 3 for grid full width",
     "message": "Note that other widgets won't move out of the way when dragging."
   },
+  "gS3mti": {
+    "description": "Form field label",
+    "message": "List box style"
+  },
   "gSjZfg": {
     "description": "Links Widget",
     "message": "Links"
+  },
+  "gXcVyS": {
+    "description": "Edit bar button to make the grid readonly",
+    "message": "Finish Editing"
   },
   "h/ftND": {
     "message": "Choose a file"
@@ -854,6 +898,9 @@
   "irdBm2": {
     "description": "Settings tab",
     "message": "Theme"
+  },
+  "j0VHNa": {
+    "message": "Grant permission to access bookmarks and fetch icons from websites"
   },
   "jSHZmX": {
     "description": "Todo List widget: description",
@@ -899,9 +946,6 @@
   "languageName": {
     "description": "The name of the current language, to be used in the settings dialog",
     "message": ""
-  },
-  "lhwL6C": {
-    "message": "Once you're done, use the lock (<lock></lock>) to make the widgets read only."
   },
   "lkJAu6": {
     "description": "Unsplash background mode",
@@ -989,10 +1033,6 @@
     "description": "Subheading for per-widget styling properties",
     "message": "Styling"
   },
-  "p7+m8N": {
-    "description": "Top Sites widget: permission request",
-    "message": "Grant permission to access top sites"
-  },
   "p8GKKf": {
     "description": "Top Sites Widget",
     "message": "Top Sites"
@@ -1045,12 +1085,19 @@
     "description": "Short weekday name (Sunday)",
     "message": "SUN"
   },
+  "r8bU6m": {
+    "description": "General settings: bookmarks bar",
+    "message": "Show a bookmarks bar at the top of the page."
+  },
   "rAuRqW": {
     "message": "Translations are provided by the community."
   },
   "rb3Zy8": {
     "description": "Feed widget: form field label",
     "message": "Filter Articles"
+  },
+  "sFyAdH": {
+    "message": "Alternatively: <import></import>"
   },
   "sIC2UV": {
     "description": "Widget styling, checkbox for showing text on eg: Links",
@@ -1060,9 +1107,17 @@
     "description": "Form field label",
     "message": "Title"
   },
+  "sX3mXR": {
+    "description": "Hide",
+    "message": "Hide"
+  },
   "sYvWWw": {
     "description": "Links widget, form field hint (Icon)",
     "message": "Optional, URL to image (18px recommended)"
+  },
+  "tSMpM0": {
+    "description": "Top Sites widget: permission request",
+    "message": "Grant permission to access top sites and fetch icons from websites"
   },
   "translation_credits": {
     "description": "Credit the translators: LANGUAGE translation by YOUR NAME",
@@ -1101,10 +1156,6 @@
   },
   "wEQDC6": {
     "message": "Edit"
-  },
-  "wZq5vc": {
-    "description": "Form field label",
-    "message": "Display as icons"
   },
   "wogY8a": {
     "message": "Create Widget"

@@ -383,9 +383,6 @@
     "MiIvsP": {
         "message": "Você pode adicionar, mover, redimensionar e configurar widgets em uma grade usando controles intuitivos."
     },
-    "WQeyl4": {
-        "message": "Conceda permissão para acessar favoritos"
-    },
     "WZjKFf": {
         "message": "Aviso: pode conter dados pessoais, se algum foi inserido nas configurações do widget."
     },
@@ -521,10 +518,6 @@
         "message": "Estilo",
         "description": "Subheading for per-widget styling properties"
     },
-    "p7+m8N": {
-        "message": "Conceda permissão para acessar os principais sites",
-        "description": "Top Sites widget: permission request"
-    },
     "p8GKKf": {
         "message": "Melhores sites",
         "description": "Top Sites Widget"
@@ -611,10 +604,6 @@
     },
     "wEQDC6": {
         "message": "Editar"
-    },
-    "wZq5vc": {
-        "message": "Exibir como ícones",
-        "description": "Form field label"
     },
     "wogY8a": {
         "message": "Criar widget"
@@ -1038,9 +1027,6 @@
     },
     "c7zm0j": {
         "message": "Erro ao carregar o feed. Verifique se é um feed RSS, JSONFeed ou Atom."
-    },
-    "lhwL6C": {
-        "message": "Quando terminar, use o cadeado (<lock></lock>) para tornar os widgets somente leitura."
     },
     "zXtUcf": {
         "message": "Não se preocupe, você pode desbloquear mais tarde"

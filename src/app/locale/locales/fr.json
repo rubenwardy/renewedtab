@@ -308,9 +308,6 @@
         "message": "Général",
         "description": "Settings tab"
     },
-    "WQeyl4": {
-        "message": "Accorder l'autorisation d'accéder aux favoris"
-    },
     "XrQEPN": {
         "message": "Position",
         "description": "Form field label"
@@ -525,10 +522,6 @@
     },
     "wEQDC6": {
         "message": "Éditer"
-    },
-    "wZq5vc": {
-        "message": "Afficher comme des icônes",
-        "description": "Form field label"
     },
     "wogY8a": {
         "message": "Créer un widget"
@@ -886,10 +879,6 @@
         "message": "Stylisation",
         "description": "Subheading for per-widget styling properties"
     },
-    "p7+m8N": {
-        "message": "Accorder les permissions pour accéder aux sites les plus visités",
-        "description": "Top Sites widget: permission request"
-    },
     "p8GKKf": {
         "message": "Sites les plus visités",
         "description": "Top Sites Widget"
@@ -1104,9 +1093,6 @@
     },
     "c7zm0j": {
         "message": "Erreur lors du chargement du flux. Assurez-vous qu'il s'agit d'un flux RSS, JSONFeed ou Atom."
-    },
-    "lhwL6C": {
-        "message": "Une fois que vous avez fini, cliquez sur le cadenas (<lock></lock>) pour mettre les widgets en lecture seule."
     },
     "+g7L/A": {
         "message": "Afficher les flux Atom, JSONFeed et RSS - utile pour suivre les actualités, sites internet, et blogs",

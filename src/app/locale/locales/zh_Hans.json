@@ -667,9 +667,6 @@
         "message": "一般的",
         "description": "Settings tab"
     },
-    "WQeyl4": {
-        "message": "授予访问您书签的权限"
-    },
     "X5OoHJ": {
         "message": "你今天的目标是什么？",
         "description": "Daily Goal prompt"
@@ -864,10 +861,6 @@
         "message": "样式",
         "description": "Subheading for per-widget styling properties"
     },
-    "p7+m8N": {
-        "message": "允许获取你最常访问的网站",
-        "description": "Top Sites widget: permission request"
-    },
     "p8GKKf": {
         "message": "最常访问的网站",
         "description": "Top Sites Widget"
@@ -957,10 +950,6 @@
     "vlumg9": {
         "message": "搜索小部件...",
         "description": "Create Widgets modal: search widgets placeholder"
-    },
-    "wZq5vc": {
-        "message": "显示为图标",
-        "description": "Form field label"
     },
     "wogY8a": {
         "message": "创建小部件"

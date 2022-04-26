@@ -607,10 +607,6 @@
         "message": "Включить поиск виджетов",
         "description": "Search widget: form field label, enable filtering widgets"
     },
-    "p7+m8N": {
-        "message": "Предоставьте разрешения для доступа к топ сайтам",
-        "description": "Top Sites widget: permission request"
-    },
     "xR87uK": {
         "message": "Расстояние между виджетами в пикселях.",
         "description": "Widget grid: form hint for grid spacing"
@@ -672,9 +668,6 @@
     "X5OoHJ": {
         "message": "Какова ваша цель на сегодня?",
         "description": "Daily Goal prompt"
-    },
-    "WQeyl4": {
-        "message": "Предоставить разрешения для доступа к закладкам"
     },
     "TUnCKb": {
         "message": "Текст",
@@ -901,10 +894,6 @@
     "pVrtrA": {
         "message": "Использовать своё изображение",
         "description": "Backgroud mode description"
-    },
-    "wZq5vc": {
-        "message": "Показать иконками",
-        "description": "Form field label"
     },
     "q4caWd": {
         "message": "Радиус размытия",

@@ -354,9 +354,6 @@
         "message": "Links",
         "description": "Links Widget"
     },
-    "WQeyl4": {
-        "message": "Erteilen Sie die Zugriffsberechtigung auf Ihre Lesezeichen/Favoriten"
-    },
     "WZjKFf": {
         "message": "Achtung: dies kann personenbezogene Daten enthalten, wenn welche in die Widgeteinstellungen eingetragen wurden."
     },
@@ -1053,10 +1050,6 @@
         "message": "Deutsche Übersetzung von Stephan \"Steff\" Franke",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
-    "p7+m8N": {
-        "message": "Erteilen Sie die Zugriffsberechtigung für Ihre \"Meistbesuchten Websites\"",
-        "description": "Top Sites widget: permission request"
-    },
     "rAuRqW": {
         "message": "Die Übersetzungen wurden durch die User Community erstellt."
     },
@@ -1074,10 +1067,6 @@
     "uzT59w": {
         "message": "Gitternetz",
         "description": "Preset: Grid"
-    },
-    "wZq5vc": {
-        "message": "Anzeige als Symbole",
-        "description": "Form field label"
     },
     "y1Z3or": {
         "message": "Sprache"
