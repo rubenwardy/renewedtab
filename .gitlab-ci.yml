@@ -41,19 +41,19 @@ ui-chrome:
     SELENIUM_REMOTE_URL: http://selenium__standalone-chrome:4444/wd/hub/
     SENTRY_DSN: ""
 
-# ui-firefox:
-#   stage: test
-#   dependencies: []
-#   interruptible: true
-#   services:
-#     - selenium/standalone-firefox
-#   script:
-#     - unset SENTRY_DSN
-#     - npm run build:app
-#     - npm run uitest-and-server
-#   variables:
-#     SELENIUM_BROWSER: firefox
-#     SELENIUM_REMOTE_URL: http://selenium__standalone-firefox:4444/wd/hub/
+ui-firefox:
+  stage: test
+  dependencies: []
+  interruptible: true
+  services:
+    - selenium/standalone-firefox
+  script:
+    - unset SENTRY_DSN
+    - npm run build:app
+    - npm run uitest-and-server
+  variables:
+    SELENIUM_BROWSER: firefox
+    SELENIUM_REMOTE_URL: http://selenium__standalone-firefox:4444/wd/hub/
 
 webext:
   stage: package
