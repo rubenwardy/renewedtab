@@ -5,7 +5,7 @@
 	font-size: 0.9375rem;
 	line-height: 1.5;
 	color: white;
-	background: rgba(15, 15, 15, 0.5);
+	background: rgba(15, 15, 15, 0.7);
 	border-radius: 0.25rem;
 	box-shadow: 0px 4px 12px 0 HSL(243deg 62% 18% / 20%), 0px 2px 6px 0 HSL(243deg 62% 18% / 15%);
 
@@ -30,6 +30,11 @@
 	margin: 0 auto;
 	left: 50%;
 	transform: translate(-50%, 0);
+}
+
+
+.unlocked .alert {
+	bottom: 50px;
 }
 
 @supports (backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)) {
