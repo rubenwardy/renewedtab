@@ -123,7 +123,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		return (
 			<div key={widget.id}
 					className={mergeClasses("widget",
-						widget.position?.y == 0 && "widget-bottom-strip",
+						widget.position?.y == 0 && "widget-bar-bottom",
 						`widget-${widget.type.toLowerCase()}`)}
 					data-widget-id={props.id}>
 				<ErrorBoundary>

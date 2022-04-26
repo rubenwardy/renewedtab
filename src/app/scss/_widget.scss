@@ -1,7 +1,7 @@
 .widget {
 	position: relative;
 
-	.widget-strip {
+	.widget-bar {
 		position: absolute;
 		bottom: 100%;
 		left: 0;
@@ -99,14 +99,14 @@
 	}
 }
 
-.grid-full-page .widget-bottom-strip .widget-strip {
+.grid-full-page .widget-bar-bottom .widget-bar {
 	top: 100%;
 	bottom: unset;
 	border-radius: 0 0 0.25rem 0.25rem;
 }
 
 @supports (backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)) {
-	.widget .widget-strip {
+	.widget .widget-bar {
 		background: none;
 		backdrop-filter: brightness(calc(100% - var(--panel-opacity) / 1.666666667))
 				contrast(110%) saturate(140%) blur(var(--panel-blur));
@@ -118,7 +118,7 @@
 		border: 2px dashed rgba(15, 15, 15, 0.3);
 		margin: -2px;
 
-		// This is needed to get widget-strip to render above other widgets
+		// This is needed to get widget-bar to render above other widgets
 		z-index: 100;
 	}
 
@@ -131,13 +131,13 @@
 			border-color: rgba(255, 255, 255, 0.6);
 		}
 
-		.widget-strip {
+		.widget-bar {
 			opacity: 0.8;
 			visibility: visible;
 		}
 	}
 
-	.widget-strip:hover, &.fake .widget-strip {
+	.widget-bar:hover, &.fake .widget-bar {
 		.collapsed {
 			display: none;
 		}

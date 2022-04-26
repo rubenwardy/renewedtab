@@ -122,7 +122,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 	if (typeof browser === "undefined" && props.typeDef.isBrowserOnly === true) {
 		return (
 			<>
-				<div className="widget-strip">
+				<div className="widget-bar">
 					<i className="widget-handle fas fa-grip-vertical" />
 					<span className="widget-title widget-handle">
 						<i className="fas fa-grip-vertical mr-3" />
@@ -155,7 +155,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 	const Child = props.typeDef.Component;
 	return (
 		<div className="widget-inner" onKeyPress={onKeyPress}>
-			<div className="widget-strip">
+			<div className="widget-bar">
 				<i className="widget-handle fas fa-grip-vertical" />
 				<div className="widget-title widget-handle">
 					<FormattedMessage {...props.typeDef.title} />
