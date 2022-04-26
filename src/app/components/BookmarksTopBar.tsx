@@ -3,7 +3,7 @@ import { miscMessages } from "app/locale/common";
 import { getBookmarks } from "app/utils/bookmarks";
 import { ListBoxStyle, WidgetTheme } from "app/Widget";
 import React from "react";
-import { useIntl } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "./Button";
 import ErrorView from "./ErrorView";
 import LinkBox from "./LinkBox";
@@ -34,10 +34,16 @@ export default function BookmarksTopBar(props: { onHide: () => void }) {
 
 		return (
 			<aside className="bookmarks-top-bar">
-				<div className="panel text-muted">
+				<div className="panel">
+					<span className="mr-4">
+						<FormattedMessage
+							{...miscMessages.bookmarksBar} />
+					</span>
+
 					<RequestPermission permissions={permissions}
-							label={intl.formatMessage(miscMessages.permissionLabel)}
+							label={intl.formatMessage(miscMessages.bookmarksPermissionLabel)}
 							onResult={forceUpdate} />
+
 					<Button variant={ButtonVariant.Outline} onClick={props.onHide}
 						label={miscMessages.hideBookmarksBar} small={true}
 						className="ml-5" />

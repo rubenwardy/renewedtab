@@ -22,7 +22,7 @@ const messages = defineMessages({
 	},
 
 	permissionLabel: {
-		defaultMessage: "Grant permission to access top sites",
+		defaultMessage: "Grant permission to access top sites and fetch icons from websites",
 		description: "Top Sites widget: permission request",
 	},
 });

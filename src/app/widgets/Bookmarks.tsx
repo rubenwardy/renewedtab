@@ -22,10 +22,6 @@ const messages = defineMessages({
 		description: "Bookmarks widget description",
 	},
 
-	permissionLabel: {
-		defaultMessage: "Grant permission to access bookmarks",
-	},
-
 	includeFolders: {
 		defaultMessage: "Include folders as sections",
 		description: "Bookmarks widget: form field label",
@@ -65,7 +61,7 @@ function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 		return (
 			<div className="panel text-muted">
 				<RequestPermission permissions={permissions}
-						label={intl.formatMessage(messages.permissionLabel)}
+						label={intl.formatMessage(miscMessages.bookmarksPermissionLabel)}
 						onResult={forceUpdate} />
 			</div>);
 	}

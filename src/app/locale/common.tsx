@@ -173,8 +173,13 @@ export const miscMessages = defineMessages({
 		description: "Bookmarks widget: error message",
 	},
 
-	permissionLabel: {
+	bookmarksPermissionLabel: {
 		defaultMessage: "Grant permission to access bookmarks and fetch icons from websites",
+	},
+
+	bookmarksBar: {
+		defaultMessage: "Bookmarks Bar",
+		description: "Chrome-only, a bar for bookmarks at the top",
 	},
 
 	hideBookmarksBar: {
