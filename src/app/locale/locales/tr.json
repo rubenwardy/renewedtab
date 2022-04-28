@@ -1197,5 +1197,9 @@
     "Oa5RYo": {
         "message": "<b>Araçların da ayarları var</b>: farenizi bir aracın üzerine götürün ve özelleştirmek için kaleme tıklayın.",
         "description": "General settings: help message"
+    },
+    "5MMUNJ": {
+        "message": "Bu <b>deneysel ve kullanımı zor olabilir</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
     }
 }
