@@ -1197,5 +1197,70 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "5MMUNJ": {
+        "message": "Fungsi ini <b>dalam uji kaji dan mungkin lebih susah untuk digunakan</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "CN0kVN": {
+        "message": "Grid Widget",
+        "description": "Settings tab"
+    },
+    "6wEkCM": {
+        "message": "Pilihan lainnya, anda boleh gunakan widget Tanda Buku untuk kawalan lebih halus.",
+        "description": "General settings: bookmarks bar"
+    },
+    "Ekvvsi": {
+        "message": "Bar Tanda Buku",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EscvnU": {
+        "message": "Ikon",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "Tunjuk bar tanda buku",
+        "description": "General settings: bookmarks bar"
+    },
+    "IKpSw0": {
+        "message": "Melintang",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "R1jLoC": {
+        "message": "Menegak",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "RVGNBh": {
+        "message": "Apabila anda selesai, klik <button></button> untuk jadikan widget sebagai baca sahaja."
+    },
+    "dOlhtQ": {
+        "message": "Anda boleh tunjukkan bar tanda buku di halaman Tab Baharu sahaja dengan Mengklik-kanan di sebelah bar alamat > Bar alatan Tandabuku > Hanya Tunjuk dalam Tab Baru. <a>Lihat lebih lanjut</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "gS3mti": {
+        "message": "Gaya kotak senarai",
+        "description": "Form field label"
+    },
+    "gXcVyS": {
+        "message": "Selesai Edit",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "j0VHNa": {
+        "message": "Berikan kebenaran untuk mencapai tanda buku dan mendapatkan ikon dari laman sesawang"
+    },
+    "r8bU6m": {
+        "message": "Tunjuk bar tanda buku di bahagian teratas halaman.",
+        "description": "General settings: bookmarks bar"
+    },
+    "sFyAdH": {
+        "message": "Pilihan lainnya: <import></import>"
+    },
+    "sX3mXR": {
+        "message": "Sembunyi",
+        "description": "Hide"
+    },
+    "tSMpM0": {
+        "message": "Berikan kebenaran untuk mencapai tapak teratas dan mendapatkan ikon dari laman sesawang",
+        "description": "Top Sites widget: permission request"
     }
 }
