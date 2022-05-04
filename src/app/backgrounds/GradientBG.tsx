@@ -69,7 +69,7 @@ export const GradientBG : BackgroundProvider<GradientBGProps> = {
 	id: "Gradient",
 	title: messages.title,
 	description: messages.description,
-	formHint: messages.firefoxNote,
+	formHint: app_version.target == "firefox" ? messages.firefoxNote : undefined,
 	schema: {
 		gradientType: type.selectEnum(GradientType, gradientTypeMessages, messages.gradientType),
 		gradientColors: type.array(gradientColorSchema, schemaMessages.colors),
