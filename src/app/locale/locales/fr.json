@@ -1197,5 +1197,70 @@
     "2s4stS": {
         "message": "Bienvenue sur <a>Renewed Tab</a>",
         "description": "Onboarding modal: title"
+    },
+    "5MMUNJ": {
+        "message": "Ceci est <b>expérimental et peut être plus difficile à utiliser</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6wEkCM": {
+        "message": "Vous pourriez également utiliser un widget Signets pour un contrôle plus fin.",
+        "description": "General settings: bookmarks bar"
+    },
+    "CN0kVN": {
+        "message": "Grille des widgets",
+        "description": "Settings tab"
+    },
+    "EscvnU": {
+        "message": "Icones",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "Ekvvsi": {
+        "message": "Barre de Signets",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "IKpSw0": {
+        "message": "Horizontal",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "Afficher la barre de signets",
+        "description": "General settings: bookmarks bar"
+    },
+    "R1jLoC": {
+        "message": "Vertical",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "RVGNBh": {
+        "message": "Une fois que vous avez terminé, cliquez sur <button></button> pour rendre les widgets en lecture seule."
+    },
+    "dOlhtQ": {
+        "message": "Vous pouvez afficher la barre de signets uniquement sur la page Nouvel onglet en cliquant avec le bouton droit de la souris à côté de la barre d'adresse > Barre d'outils des favoris > Afficher uniquement sur le nouvel onglet. <a>En savoir plus</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "gXcVyS": {
+        "message": "Terminer l'édition",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "gS3mti": {
+        "message": "Style de liste",
+        "description": "Form field label"
+    },
+    "j0VHNa": {
+        "message": "Accordez la permission d'accéder aux signets et de récupérer les icônes des sites Web"
+    },
+    "sFyAdH": {
+        "message": "Alternativement : <import></import>"
+    },
+    "sX3mXR": {
+        "message": "Cacher",
+        "description": "Hide"
+    },
+    "r8bU6m": {
+        "message": "Afficher une barre de signets en haut de la page.",
+        "description": "General settings: bookmarks bar"
+    },
+    "tSMpM0": {
+        "message": "Accordez l'autorisation d'accéder aux sites les plus visités et de récupérer les icônes des sites Web",
+        "description": "Top Sites widget: permission request"
     }
 }
