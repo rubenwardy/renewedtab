@@ -70,8 +70,7 @@ function LinkLists(props: LinkBoxProps & { widgetTheme: WidgetTheme }) {
 		const requiresIcons = (listBoxStyle == ListBoxStyle.Icons || useWebsiteIcons) && link.url.trim() != "";
 		const icon = link.icon && (
 			<Icon icon={link.icon} requiresIcons={requiresIcons}
-				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon}
-				className={showText ? "mr-2" : undefined} />);
+				defaultIcon={props.defaultIcon} errorIcon={props.errorIcon} />);
 
 		if (link.url.trim() != "") {
 			const attr = (typeof browser !== "undefined" && link.url.startsWith("chrome://")) ? {

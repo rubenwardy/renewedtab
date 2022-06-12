@@ -18,7 +18,7 @@ ul.links {
 
 		.icon {
 			display: inline-block;
-			margin: 0;
+			margin: 0 0.5rem 0 0;
 			object-fit: cover;
 			max-height: 18px;
 			vertical-align: middle;
@@ -122,6 +122,13 @@ ul.links {
 			padding: 0.4rem 0.8rem;
 			line-height: inherit;
 			opacity: 1;
+
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: left;
+				height: 100%;
+			}
 		}
 
 		> li.separator {
