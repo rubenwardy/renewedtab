@@ -65,7 +65,7 @@ function getGreeting(): MessageDescriptor {
 
 
 function Greeting(widget: WidgetProps<Record<string, never>>) {
-	const [name, setName] = useStorage<string | undefined>("name");
+	const [name, setName] = useStorage<string | undefined>("name", undefined, true);
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
 		setName(e.target.value);

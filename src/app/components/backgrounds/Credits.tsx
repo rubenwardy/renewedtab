@@ -53,7 +53,7 @@ export interface CreditsProps extends BackgroundCredit {
 
 function CreditsVote(props: CreditsProps) {
 	const intl = useIntl();
-	const [votes, setVotes] = useStorage<Record<string, boolean>>("background_votes", {}, false);
+	const [votes, setVotes] = useStorage<Record<string, boolean>>("background_votes", {});
 	const isPositive: (boolean | undefined) = votes?.[props.info!.id] ?? undefined;
 
 	function handleClick(isPositive: boolean) {

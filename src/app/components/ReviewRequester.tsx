@@ -45,7 +45,7 @@ interface ReviewRequestInfo {
 export default function ReviewRequester() {
 	const [reviewRequestInfo, setReviewRequestInfo] = useStorage<ReviewRequestInfo>("review_request", {
 		dismissed: false
-	}, false);
+	});
 
 	if (!reviewRequestInfo || reviewRequestInfo.dismissed || typeof browser === "undefined") {
 		return (<></>);

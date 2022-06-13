@@ -7,10 +7,6 @@ import { useRunPromise } from "./promises";
 
 function useStorageBacking<T>(backing: IStorage, key: string,
 		defaultValue?: (T | null), enableDebounce?: boolean): [T | null, (val: T) => void] {
-	if (enableDebounce === undefined) {
-		enableDebounce = true;
-	}
-
 	// For table values
 	const forceUpdate = useForceUpdate();
 
