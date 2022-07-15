@@ -80,8 +80,8 @@ async function fetchIconURL(url: string): Promise<string | undefined> {
 		}
 
 		const sizes = icon.getAttribute("sizes")
-			?.split(" ")
-			.map(size => size.split("x").map(x => parseInt(x))) ?? [];
+			?.split(" ")?.map(
+				size => size.split("x").map(x => parseInt(x))) ?? [];
 
 		const sizeScores = sizes.map(size => Math.min(...size));
 
