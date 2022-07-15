@@ -218,6 +218,7 @@ async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
 	};
 }
 
+
 export const getWeatherInfo: (key: string) => Promise<WeatherInfo>
 	= makeKeyCache(fetchWeatherInfo, 2 * 60)
 
@@ -226,6 +227,7 @@ async function fetchWeatherInfoByCoords(lat: number, long: number): Promise<Weat
 	const location = await getLocationFromCoords(lat, long);
 	return await getWeatherInfo(location[0].key);
 }
+
 
 export const getWeatherInfoByCoords: (lat: number, long: number) => Promise<WeatherInfo>
 	= makeKeyCache(fetchWeatherInfoByCoords, 1 * 60,

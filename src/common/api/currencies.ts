@@ -2,6 +2,8 @@ export interface CurrencyInfo {
 	code: string;
 	description: string;
 	is_crypto: boolean;
+
+	// This is actually the value of 1 USD
 	value_in_usd: number;
 }
 
