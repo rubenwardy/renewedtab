@@ -1094,5 +1094,25 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "5mfAB9": {
+        "message": "Atom，JSON和RSS订阅源的URL",
+        "description": "Form field hint (Feed URL)"
+    },
+    "+g7L/A": {
+        "message": "显示来自Atom，JSON和RSS订阅的信息 - 用于追踪新闻，网站和博客的最新消息",
+        "description": "Feed widget description"
+    },
+    "2s4stS": {
+        "message": "欢迎使用<a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "/aA+Xf": {
+        "message": "显示图片",
+        "description": "Feed widget: form field label"
+    },
+    "/Mx09O": {
+        "message": "实验性的。由于缺少图片信息，这可能不适用于所有的订阅源。此外图片可能过大，并且需要一定的时间来加载。",
+        "description": "Feed widget: form field hint (Show Images)"
     }
 }
