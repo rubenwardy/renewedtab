@@ -91,7 +91,7 @@
         "description": "Image Widget"
     },
     "8J0Bhj": {
-        "message": "Bienvenue à <a>Renewed Tab</a>  : une page Nouvel onglet personnalisable avec des widgets et de magnifiques fonds d'écran."
+        "message": "Bienvenue sur <a>Renewed Tab</a>  : une page Nouvel onglet personnalisable avec des widgets et de magnifiques fonds d'écran."
     },
     "8xVVb5": {
         "message": "Couleur principale",
@@ -1238,7 +1238,7 @@
         "description": "General settings: Help for Firefox bookmarks bar"
     },
     "gXcVyS": {
-        "message": "Terminer l'édition",
+        "message": "Valider les modifications",
         "description": "Edit bar button to make the grid readonly"
     },
     "gS3mti": {
