@@ -9,7 +9,7 @@ fi
 
 if [ ! -z "$(git status --porcelain)" ]; then
 	echo "Working directory isn't clean"
-	# exit 1
+	exit 1
 fi
 
 type=$1
