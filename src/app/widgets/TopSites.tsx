@@ -10,6 +10,38 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
 
+function createDebugData(): browser.topSites.MostVisitedURL[] {
+	const data = [
+		{
+			title: "GitLab",
+			url: "https://gitlab.com",
+		},
+		{
+			title: "GitHub",
+			url: "https://github.com",
+		},
+		{
+			title: "Minetest",
+			url: "https://www.minetest.net",
+		},
+		{
+			title: "Youtube",
+			url: "https://youtube.com",
+		},
+		{
+			title: "Google",
+			url: "https://google.com",
+		},
+		{
+			title: "TopSites Test",
+			url: "https://en.wikipedia.org",
+		},
+	];
+
+	return [ ...data, ...data, ...data ];
+}
+
+
 const messages = defineMessages({
 	title: {
 		defaultMessage: "Top Sites",
@@ -27,10 +59,20 @@ const messages = defineMessages({
 	},
 });
 
+
+async function getTopSites(): Promise<browser.topSites.MostVisitedURL[]> {
+	if (app_version.is_debug) {
+		return createDebugData();
+	} else {
+		return await browser.topSites.get();
+	}
+}
+
+
 function TopSitesImpl(widget: WidgetProps<any>) {
 	const props = widget.props;
 
-	const [sites, error] = usePromise(() => browser.topSites.get(), []);
+	const [sites, error] = usePromise(getTopSites, []);
 	if (!sites) {
 		return (<ErrorView error={error} loading={true} />);
 	}
