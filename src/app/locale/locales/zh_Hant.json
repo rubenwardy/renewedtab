@@ -213,5 +213,9 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "0PsF7Z": {
+        "message": "您確定要永久消除這個介面工具嗎?",
+        "description": "Delete widget modal message"
     }
 }
