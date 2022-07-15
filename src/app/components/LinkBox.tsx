@@ -149,8 +149,8 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	);
 
 	return (
-		<Panel {...props.widgetTheme} flush={true}>
-			<ul className={ulClasses} ref={ref}>
+		<Panel {...props.widgetTheme} flush={true} ref={ref}>
+			<ul className={ulClasses}>
 				<LinkLists {...props} links={links} />
 				{links.length == 0 && props.links.length > 0 && (
 					<li className="section">
