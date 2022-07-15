@@ -1201,5 +1201,66 @@
     "5MMUNJ": {
         "message": "Bu <b>deneysel ve kullanımı zor olabilir</b>.",
         "description": "Widget grid: form label 4 for grid full width"
+    },
+    "RVGNBh": {
+        "message": "İşiniz bittiğinde, <button></button>'a tıklayarak araçları salt okunur yapabilirsiniz."
+    },
+    "6wEkCM": {
+        "message": "Alternatif olarak, ince detaylı kontrol için Yer İşaretleri aracını kullanabilirsiniz.",
+        "description": "General settings: bookmarks bar"
+    },
+    "CN0kVN": {
+        "message": "Araç Izgarası",
+        "description": "Settings tab"
+    },
+    "Ekvvsi": {
+        "message": "Yer İşaretleri Çubuğu",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EscvnU": {
+        "message": "İkonlar",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "Yer işaretleri çubuğunu göster",
+        "description": "General settings: bookmarks bar"
+    },
+    "IKpSw0": {
+        "message": "Yatay",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "R1jLoC": {
+        "message": "Dikey",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "dOlhtQ": {
+        "message": "Yer işaretleri çubuğunu sadece Yeni Sekme sayfasında göstermek için; adres çubuğunun yanına sağ tık > Yer İşaretleri Çubuğu > Sadece Yeni Sekmede Göster. <a>Daha fazla bilgi</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "gS3mti": {
+        "message": "Liste kutusu stili",
+        "description": "Form field label"
+    },
+    "gXcVyS": {
+        "message": "Düzenlemeyi Bitir",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "j0VHNa": {
+        "message": "Yer işaretlerine erişmek ve internet sitelerinden ikon almak için izin ver"
+    },
+    "r8bU6m": {
+        "message": "Sayfanın üstünde yer işaretleri çubuğu göster.",
+        "description": "General settings: bookmarks bar"
+    },
+    "sFyAdH": {
+        "message": "Alternatif olarak: <import></import>"
+    },
+    "sX3mXR": {
+        "message": "Gizle",
+        "description": "Hide"
+    },
+    "tSMpM0": {
+        "message": "Sık kullanılan sitelere erişmek ve internet sitesi ikonlarını almak için izin ver",
+        "description": "Top Sites widget: permission request"
     }
 }

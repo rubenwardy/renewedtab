@@ -1132,5 +1132,59 @@
     "appDescription": {
         "message": "Una página de Nueva Pestaña personalizable, con widgets y fondos hermosos",
         "description": "App description"
+    },
+    "Ekvvsi": {
+        "message": "Barra de favoritos",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EscvnU": {
+        "message": "Iconos",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "Mostrar la barra de favoritos",
+        "description": "General settings: bookmarks bar"
+    },
+    "IKpSw0": {
+        "message": "Horizontal",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "R1jLoC": {
+        "message": "Vertical",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "gXcVyS": {
+        "message": "Terminar de editar",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "n+w6I2": {
+        "message": "Parar",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "sFyAdH": {
+        "message": "Alternativamente: <import></import>"
+    },
+    "sX3mXR": {
+        "message": "Ocultar",
+        "description": "Hide"
+    },
+    "/aA+Xf": {
+        "message": "Mostrar imágenes",
+        "description": "Feed widget: form field label"
+    },
+    "5mfAB9": {
+        "message": "URL de un feed Atom, JSONFeed o RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "h00yCR": {
+        "message": "Muestra las imágenes recientes de un feed Atom, JSONFeed o RSS - útil para WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "2s4stS": {
+        "message": "Bienvenido a <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "c7zm0j": {
+        "message": "Error al cargar el feed. Asegúrese de que es un feed RSS, JSONFeed o Atom."
     }
 }

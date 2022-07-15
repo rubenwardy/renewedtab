@@ -1,0 +1,238 @@
+{
+    "2O5Rq1": {
+        "message": "Bună seara, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "Lxc1x4": {
+        "message": "Ceas",
+        "description": "Clock Widget"
+    },
+    "SENRqu": {
+        "message": "Ajutor"
+    },
+    "o2uuHu": {
+        "message": "Format ceas 12 ore"
+    },
+    "sFyAdH": {
+        "message": "Alternativ: <import></import>"
+    },
+    "y1Z3or": {
+        "message": "Limba"
+    },
+    "zXtUcf": {
+        "message": "Nu îți face griji, poți edita oricând"
+    },
+    "2s4stS": {
+        "message": "Bun venit la <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "8J0Bhj": {
+        "message": "Bun venit la <a>Renewed Tab</a>: o  filă nouă personalizabilă, cu widget-uri și fundaluri frumoase."
+    },
+    "rAuRqW": {
+        "message": "Traducerile sunt oferite de comunitate."
+    },
+    "Q1mwPp": {
+        "message": "Ajută la <a>traducerea suplimentului în limba ta</a>."
+    },
+    "yvWbz6": {
+        "message": "Următorul",
+        "description": "Onboarding page: next button"
+    },
+    "RCe+DS": {
+        "message": "Trageți și plasați widget-uri"
+    },
+    "MiIvsP": {
+        "message": "Puteți adăuga, muta, redimensiona și configura widget-uri pe o grilă folosind comenzi intuitive."
+    },
+    "BJYZgx": {
+        "message": "Utilizați funcția de mutare (<move></move>) și de redimensionare (<resize></resize>)."
+    },
+    "RVGNBh": {
+        "message": "După ce ai terminat, apasă pe butonul <button></button> pentru a ieși din modul de editare."
+    },
+    "gXcVyS": {
+        "message": "Terminați editarea",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "pbEMNj": {
+        "message": "Anterior",
+        "description": "Onboarding page: previous button"
+    },
+    "L6nTur": {
+        "message": "Alege o temă pentru început",
+        "description": "Onboarding: presets title"
+    },
+    "CNpJaZ": {
+        "message": "Concentrat",
+        "description": "Preset: focus"
+    },
+    "gHzZEt": {
+        "message": "Doar un ceas și o bară de căutare",
+        "description": "Preset: focus description"
+    },
+    "uzT59w": {
+        "message": "Grilă",
+        "description": "Preset: Grid"
+    },
+    "Cq4JWx": {
+        "message": "Știri, vremea și multe altele",
+        "description": "Preset: grid description"
+    },
+    "yUJ5MA": {
+        "message": "Obiective",
+        "description": "Preset: goals"
+    },
+    "0l+aD2": {
+        "message": "Obiective zilnice și citate inspiraționale",
+        "description": "Preset: focus description"
+    },
+    "gAZqVl": {
+        "message": "Poți să adaugi (<add></add>) sau să elimini(<remove></remove>) widget-uri mai târziu sau poți modifica setările (<cog></cog>) după cum dorești.",
+        "description": "Onboarding: preset hint"
+    },
+    "FqCn+F": {
+        "message": "Bună dimineața, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "oGS5TE": {
+        "message": "Buna ziua, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "3aaibf": {
+        "message": "Adaugă widget"
+    },
+    "D3idYv": {
+        "message": "Setări"
+    },
+    "YS5zRT": {
+        "message": "Caută cu {name}",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "wEQDC6": {
+        "message": "Editează"
+    },
+    "gSjZfg": {
+        "message": "Link-uri",
+        "description": "Links Widget"
+    },
+    "aaxFkJ": {
+        "message": "Creați o nouă sarcină de rezolvat",
+        "description": "Todo List widget: prompt"
+    },
+    "amHvKE": {
+        "message": "Introduceți notița aici",
+        "description": "Notes widget: prompt"
+    },
+    "XsTD4Q": {
+        "message": "Listă de sarcini",
+        "description": "Todo List Widget"
+    },
+    "/dtDqf": {
+        "message": "Notițe",
+        "description": "Notes Widget"
+    },
+    "tyq8NB": {
+        "message": "Meteo",
+        "description": "Weather Widget"
+    },
+    "47FYwb": {
+        "message": "Anulează"
+    },
+    "6pdO6i": {
+        "message": "Nu se pot obține marcajele",
+        "description": "Bookmarks widget: error message"
+    },
+    "C7WJrL": {
+        "message": "Vertical",
+        "description": "Form field option, vertical gradient"
+    },
+    "Ekvvsi": {
+        "message": "Bara de marcaje",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EscvnU": {
+        "message": "Iconițe",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "Arată bara de marcaje",
+        "description": "General settings: bookmarks bar"
+    },
+    "IKpSw0": {
+        "message": "Orizontal",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "MN3prI": {
+        "message": "Include folderele ca secțiuni",
+        "description": "Bookmarks widget: form field label"
+    },
+    "R1jLoC": {
+        "message": "Vertical",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "T/wBPw": {
+        "message": "Șterge {type}"
+    },
+    "SAo61B": {
+        "message": "Marcaje",
+        "description": "Bookmarks Widget"
+    },
+    "gS3mti": {
+        "message": "Stilul de afișare a casetei",
+        "description": "Form field label"
+    },
+    "or/+Da": {
+        "message": "Personalizare",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "r8bU6m": {
+        "message": "Afișează o bară de marcaje în partea de sus a paginii.",
+        "description": "General settings: bookmarks bar"
+    },
+    "vlumg9": {
+        "message": "Caută widgeturi..",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "wogY8a": {
+        "message": "Adaugă widget"
+    },
+    "Ack5ID": {
+        "message": "Nu există rezultate",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "+oSH/F": {
+        "message": "Arată vârsta actuală cu o precizie detaliată",
+        "description": "Age widget description"
+    },
+    "K3r6DQ": {
+        "message": "Șterge"
+    },
+    "cSF2y1": {
+        "message": "Arată marcajele",
+        "description": "Bookmarks widget description"
+    },
+    "j0VHNa": {
+        "message": "Acordă permisiunea de a accesa marcajele și de a prelua pictograme de pe site-uri web"
+    },
+    "q6/aVX": {
+        "message": "Poți filtra acest widget folosind widgetul de căutare.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "o9vGxx": {
+        "message": "Deschide linkurile într-o filă nouă",
+        "description": "Form field label"
+    },
+    "lY73np": {
+        "message": "Afișează fundalul panoului",
+        "description": "Widget styling, checkbox"
+    },
+    "sIC2UV": {
+        "message": "Afișează textul",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "exTzGh": {
+        "message": "Orizontal",
+        "description": "Form field option, horizontal gradient"
+    }
+}
