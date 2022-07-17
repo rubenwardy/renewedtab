@@ -18,8 +18,8 @@ export const serverConfig = (function() {
 
 export const IS_DEBUG = process.env.NODE_ENV !== "production";
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK ?? serverConfig.DISCORD_WEBHOOK;
-export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.15.2; +https://renewedtab.com/)";
-export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.15.2; +https://renewedtab.com/)";
+export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.15.3; +https://renewedtab.com/)";
+export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.15.3; +https://renewedtab.com/)";
 const SENTRY_DSN = process.env.SENTRY_DSN;
 const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
 export const ACCUWEATHER_API_KEY =
