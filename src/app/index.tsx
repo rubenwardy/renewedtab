@@ -21,8 +21,18 @@ Sentry.init({
 	release: `renewedtab@${app_version.version}`,
 
 	beforeSend(event) {
+		const exceptions = event.exception?.values ?? [];
+
 		// Drop expected UserError exceptions
-		if ((event.exception?.values ?? []).some(x => x.type == "UserError")) {
+		if (exceptions.some(x => x.type == "UserError")) {
+			return null;
+		}
+
+		const whitelistedMessages = [
+			"ResizeObserver loop completed with undelivered notifications",
+			"ResizeObserver loop limit exceeded",
+		];
+		if (exceptions.some(x => x.value && whitelistedMessages.some(y => x.value!.includes(y)))) {
 			return null;
 		}
 

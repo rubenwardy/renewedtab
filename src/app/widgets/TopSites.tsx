@@ -38,7 +38,7 @@ function createDebugData(): browser.topSites.MostVisitedURL[] {
 		},
 	];
 
-	return [ ...data, ...data, ...data ];
+	return [ ...data ];
 }
 
 
