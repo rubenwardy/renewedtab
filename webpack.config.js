@@ -34,6 +34,8 @@ const mode = isProd ? "production" : "development";
 
 console.log(`Webpack is building in ${mode} for ${target}`);
 
+const manifestTarget = target == "edge" ? "chrome" : target;
+
 module.exports = {
 	mode: mode,
 	entry: "./src/app/index",
@@ -54,7 +56,7 @@ module.exports = {
 				{ from: "src/webext/", to: path.resolve(__dirname, "dist/webext/"), globOptions: { ignore: ["**/webext/manifest.*"] }  },
 				{ from: "src/app/public/", to: dest },
 				{ from: "node_modules/webextension-polyfill/dist/browser-polyfill.min.js", to: dest },
-				{ from: `src/webext/manifest.${target}.json`, to: path.resolve(__dirname, "dist/webext/manifest.json") },
+				{ from: `src/webext/manifest.${manifestTarget}.json`, to: path.resolve(__dirname, "dist/webext/manifest.json") },
 			]
 		}),
 		new MiniCssExtractPlugin({
