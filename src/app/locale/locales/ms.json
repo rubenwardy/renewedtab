@@ -19,7 +19,7 @@
         "description": "Bookmarks widget: error message"
     },
     "8J0Bhj": {
-        "message": "Selamat datang ke <a>Renewed Tab</a>: halaman Tab Baharu yang boleh diubahsuai, dengan widget dan latar yang cantik."
+        "message": "Selamat datang ke <a>Renewed Tab</a>: halaman Tab Baharu yang boleh disesuaikan, dengan widget dan latar yang permai."
     },
     "+oSH/F": {
         "message": "Menyatakan umur anda dengan terlampau tepat",
@@ -411,7 +411,7 @@
         "description": "Daily Goal widget: edit modal hint"
     },
     "nGSwtl": {
-        "message": "Cari",
+        "message": "Gelintar",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
     },
     "o2uuHu": {
@@ -651,7 +651,7 @@
         "description": "Onboarding page: next button"
     },
     "CNpJaZ": {
-        "message": "Tumpuan",
+        "message": "Tumpu",
         "description": "Preset: focus"
     },
     "BJYZgx": {
@@ -1005,7 +1005,7 @@
         "description": "Feed widget: no sources error message"
     },
     "KdIFGg": {
-        "message": "URL carian tiada '{query}' yang wajib disertakan. Cth. https://google.com/search/?q='{query}'",
+        "message": "URL gelintar tiada '{query}' yang wajib disertakan. Cth. https://google.com/search/?q='{query}'",
         "description": "Search widget: error, missing query variable"
     },
     "hWimZf": {
@@ -1191,7 +1191,7 @@
         "description": "General settings: help message"
     },
     "appDescription": {
-        "message": "Halaman Tab Baharu yang boleh disesuaikan, dengan widget dan latar belakang indah",
+        "message": "Halaman Tab Baharu yang boleh disesuaikan, dengan widget dan latar yang permai",
         "description": "App description"
     },
     "appName": {
