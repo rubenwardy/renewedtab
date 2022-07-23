@@ -59,6 +59,7 @@ Make sure to run `npm install`.
 * Web extension
 	* Firefox: `npm run start:firefox`
 	* Chrome: `npm run start:chrome`
+	* Edge: `npm run start:edge`
 
 ### Production
 

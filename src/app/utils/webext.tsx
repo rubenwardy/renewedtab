@@ -8,8 +8,10 @@ export interface InstallInfo {
 
 
 function getReviewURL(browserName: string): string {
-	if (browserName.toLowerCase() == "chrome") {
+	if (browserName == "chrome") {
 		return "https://chrome.google.com/webstore/detail/renewed-tab/laljofodhebajcajogbolahbjdcnfgkf";
+	} else if (browserName == "edge") {
+		return "https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home";
 	} else {
 		return "https://addons.mozilla.org/addon/renewed-tab/";
 	}
@@ -32,10 +34,10 @@ export async function getInstallInfo(): Promise<InstallInfo> {
 			ret.browser = browserInfo.name;
 			ret.browserVersion = browserInfo.version;
 		} else {
-			ret.browser = "Chrome";
+			ret.browser = app_version.target ?? "chrome";
 		}
 
-		ret.storeURL = getReviewURL(ret.browser);
+		ret.storeURL = getReviewURL(ret.browser.toLowerCase());
 	} catch (e) {
 		console.error(e);
 	}

@@ -14,7 +14,7 @@ const isProd = process.env.NODE_ENV === "production";
 const dest = path.resolve(__dirname, "dist/webext/app");
 
 const target = process.env.TARGET ?? "firefox";
-if (target !== "firefox" && target !== "chrome") {
+if (target !== "firefox" && target !== "chrome" && target !== "edge") {
 	throw new Error(`Unknown target: ${target}`);
 }
 
@@ -108,7 +108,7 @@ module.exports = {
 						[
 							"@babel/preset-env",
 							{
-								targets: { browsers: ["Chrome 78", "Firefox 70"] },
+								targets: { browsers: ["Chrome 78", "Firefox 70", "Edge 96"] },
 							},
 						],
 					],

@@ -70,6 +70,7 @@ webext:
     paths:
       - chrome.zip
       - firefox.zip
+      - edge.zip
       - main.js.map
 
 pages:

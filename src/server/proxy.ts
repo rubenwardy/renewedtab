@@ -23,7 +23,7 @@ function checkProxyURL(url: URL) {
 	if (!hostAllowed) {
 		throw new UserError(`Accessing host ${url.hostname} is not allowed on the web version. ` +
 			`For security reasons, the web version may only access pre-approved domains. ` +
-			`Consider using the Chrome/Firefox extension instead.`);
+			`Consider using the Chrome/Firefox/Edge extension instead.`);
 	}
 }
 
