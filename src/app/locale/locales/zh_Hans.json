@@ -1,6 +1,6 @@
 {
     "+GMx80": {
-        "message": "找不到位置",
+        "message": "找不到该位置",
         "description": "Location form field: error"
     },
     "/Mpu8A": {
@@ -86,7 +86,7 @@
         "message": "添加"
     },
     "27lljH": {
-        "message": "你<b>{age}</b>岁了",
+        "message": "你已经<b>{age}</b>岁了",
         "description": "Age widget text"
     },
     "2AUlDo": {
@@ -94,7 +94,7 @@
         "description": "Greeting widget: greeting, from 9pm to midnight"
     },
     "languageName": {
-        "message": "汉语",
+        "message": "简体中文",
         "description": "The name of the current language, to be used in the settings dialog"
     },
     "2efE5y": {
@@ -254,7 +254,7 @@
         "description": "Greeting widget: greeting, from midnight to noon"
     },
     "G6WG/N": {
-        "message": "不可见的",
+        "message": "占位符",
         "description": "Invisible Widget"
     },
     "GSox4d": {
@@ -273,7 +273,7 @@
         "message": "需要使用浏览器扩展版本"
     },
     "H00a0q": {
-        "message": "留空以制作标题",
+        "message": "留空以生成标题",
         "description": "Links widget, form field hint (Link URL)"
     },
     "HEvlTB": {
@@ -404,7 +404,7 @@
         "description": "Backgroud settings: form field hint (Position)"
     },
     "VxE3S8": {
-        "message": "这将自动发送网址给更新标签的开发者。然后他们可以选择将其添加到对所有用户的建议中。",
+        "message": "这将自动发送网址给 Renewed Tab 的开发者。然后他们可以选择将其添加到对所有用户的建议中。",
         "description": "Host URL field: help text for suggest URL button"
     },
     "Kzo9ZH": {
@@ -574,11 +574,11 @@
         "description": "Settings tab"
     },
     "jSHZmX": {
-        "message": "追踪待办事项清单项目",
+        "message": "追踪待办事项的清单",
         "description": "Todo List widget: description"
     },
     "kAEQyV": {
-        "message": "好的"
+        "message": "确定"
     },
     "kF06lD": {
         "message": "延伸的（{example}）",
@@ -624,7 +624,7 @@
         "description": "Widget grid: form label 2 for grid full width"
     },
     "mv9TrH": {
-        "message": "超文本标记语言",
+        "message": "HTML",
         "description": "HTML Widget"
     },
     "mw6Uh+": {
@@ -660,11 +660,11 @@
         "description": "Backgroud settings: form field label"
     },
     "Wi0G88": {
-        "message": "关于我们和帮助",
+        "message": "关于和帮助",
         "description": "Settings tab"
     },
     "X18x9m": {
-        "message": "一般的",
+        "message": "通用",
         "description": "Settings tab"
     },
     "X5OoHJ": {
@@ -696,7 +696,7 @@
         "description": "Theme settings: form field label"
     },
     "YuNOET": {
-        "message": "超文本标记语言",
+        "message": "HTML",
         "description": "HTML widget: form field label"
     },
     "Z2/hH0": {
@@ -749,7 +749,7 @@
         "description": "Daily Goal widget description"
     },
     "as6rZ1": {
-        "message": "启用崩溃报告（通过Sentry）",
+        "message": "启用崩溃报告（由Sentry提供）",
         "description": "General settings: enable sentry"
     },
     "b2Rs2F": {
@@ -866,7 +866,7 @@
         "description": "Top Sites Widget"
     },
     "pG7wIz": {
-        "message": "显示汇率，支持外汇货币和加密货币（比特币等）",
+        "message": "显示汇率，支持外汇货币和加密货币（例如比特币等）",
         "description": "Currencies widget description"
     },
     "pHo6u+": {
@@ -971,7 +971,7 @@
         "description": "Widget grid: form label for grid full width"
     },
     "translation_credits": {
-        "message": "由 Ganache72 翻译为简体中文",
+        "message": "由 Ganache72，wasdjkl，rubenwardy和 yhdsl 翻译为简体中文",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
     "xR87uK": {
@@ -1112,7 +1112,152 @@
         "description": "Feed widget: form field label"
     },
     "/Mx09O": {
-        "message": "实验性的。由于缺少图片信息，这可能不适用于所有的订阅源。此外图片可能过大，并且需要一定的时间来加载。",
+        "message": "实验性的。由于缺少图片信息，这可能不适用于所有的订阅源。此外图片可能过大，可能需要一定的时间来加载。",
         "description": "Feed widget: form field hint (Show Images)"
+    },
+    "Lnvfz8": {
+        "message": "无法加载 {source}: {error}",
+        "description": "Feed error message"
+    },
+    "KjUKUz": {
+        "message": "渐变色彩",
+        "description": "Backgroud mode description"
+    },
+    "NjoFru": {
+        "message": "来自Atom，JSONFeed或RSS订阅源的随机图像",
+        "description": "Backgroud mode description"
+    },
+    "zXtUcf": {
+        "message": "不必担心，稍后您仍可以解锁"
+    },
+    "CN0kVN": {
+        "message": "部件网格",
+        "description": "Settings tab"
+    },
+    "Ekvvsi": {
+        "message": "书签栏",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EscvnU": {
+        "message": "图标",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "显示书签栏",
+        "description": "General settings: bookmarks bar"
+    },
+    "R1jLoC": {
+        "message": "垂直",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "IKpSw0": {
+        "message": "水平",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "RVGNBh": {
+        "message": "当你完成编辑后，点击<button></button>按钮将布局设为只读。"
+    },
+    "5MMUNJ": {
+        "message": "这是一个<b>实验性的</b>选项，并且可能会很难操控。",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6wEkCM": {
+        "message": "或者，你可以创建一个书签部件进行更加细致的调整。",
+        "description": "General settings: bookmarks bar"
+    },
+    "dOlhtQ": {
+        "message": "你可以通过右击 地址栏 > 书签栏 > 仅在新标签页显示 来仅在新标签页显示书签栏。<a>显示更多</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "gS3mti": {
+        "message": "列表框形状",
+        "description": "Form field label"
+    },
+    "gXcVyS": {
+        "message": "完成编辑",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "j0VHNa": {
+        "message": "授予访问书签以及从读取网站图标的权限"
+    },
+    "r8bU6m": {
+        "message": "在页面最顶端显示一个书签栏。",
+        "description": "General settings: bookmarks bar"
+    },
+    "sFyAdH": {
+        "message": "此外：<import></import>"
+    },
+    "sX3mXR": {
+        "message": "隐藏",
+        "description": "Hide"
+    },
+    "tSMpM0": {
+        "message": "授予访问热门网站和读取网站图标的权限",
+        "description": "Top Sites widget: permission request"
+    },
+    "8xPAKF": {
+        "message": "对于每个渐变色，可以调整的范围为 0-100%",
+        "description": "Form field hint (Stop)"
+    },
+    "ATbgo4": {
+        "message": "径向 (Radial)",
+        "description": "Form field option, radial gradient"
+    },
+    "B3NCWb": {
+        "message": "色彩",
+        "description": "Form field label"
+    },
+    "BfX7n6": {
+        "message": "注意：在Firefox上可能会导致渐变背景上出现线条之类的色彩错误。这不是我们能够解决的。",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "BmzsQb": {
+        "message": "一个链接，支持标题和图标（九宫格）",
+        "description": "Links widget description"
+    },
+    "C7WJrL": {
+        "message": "垂直 (Vertical)",
+        "description": "Form field option, vertical gradient"
+    },
+    "O2Mjef": {
+        "message": "评论",
+        "description": "Review request, review button"
+    },
+    "EpPEVJ": {
+        "message": "渐变",
+        "description": "Gradient background mode"
+    },
+    "Oa5RYo": {
+        "message": "<b>部件也可以进行调整</b>：将鼠标悬停在小部件上，单击铅笔图标进行调整。",
+        "description": "General settings: help message"
+    },
+    "exTzGh": {
+        "message": "水平 (Horizontal)",
+        "description": "Form field option, horizontal gradient"
+    },
+    "bfWes8": {
+        "message": "渐变类型",
+        "description": "Form field label"
+    },
+    "lQIN1l": {
+        "message": "你喜欢Renewed Tab吗？给我们一个评论吧！"
+    },
+    "n+w6I2": {
+        "message": "比例",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "zPAzlS": {
+        "message": "合并订阅源到单个选项卡中",
+        "description": "Feed widget: form field label"
+    },
+    "SENRqu": {
+        "message": "获取帮助"
+    },
+    "c7zm0j": {
+        "message": "无法加载订阅。请确保这是一个有效的RSS, JSONFeed或Atom订阅源。"
+    },
+    "h00yCR": {
+        "message": "显示来自Atom，JSON或RSS订阅源的最新网络漫画。",
+        "description": "Web Comic widget description"
     }
 }
