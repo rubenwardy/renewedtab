@@ -701,7 +701,7 @@
         "description": "Preset: focus description"
     },
     "hCBQrY": {
-        "message": "Ressemble à <b>{temp}°</b>"
+        "message": "Ressenti <b>{temp}°</b>"
     },
     "jSHZmX": {
         "message": "Suivre les éléments de la liste des tâches",
@@ -791,7 +791,7 @@
         "description": "Background mode options"
     },
     "translation_credits": {
-        "message": "Traduction en français de lanhild, EricPorlier et AirSThib",
+        "message": "Traduction en français de AFCMS, Athozus, EricPorlier et lanhild",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
     "kAEQyV": {
