@@ -1186,5 +1186,17 @@
     },
     "c7zm0j": {
         "message": "Error al cargar el feed. Asegúrese de que es un feed RSS, JSONFeed o Atom."
+    },
+    "Lnvfz8": {
+        "message": "Error al cargar {source}: {error}",
+        "description": "Feed error message"
+    },
+    "Oa5RYo": {
+        "message": "<b>Los widgets también tienen configuraciones</b>: coloque el cursor sobre un widget y haga clic en el lápiz para personalizarlo.",
+        "description": "General settings: help message"
+    },
+    "5MMUNJ": {
+        "message": "Esto es <b>experimental y puede ser más difícil de usar</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
     }
 }
