@@ -20,8 +20,8 @@ export interface WeatherDay {
 	icon?: string, // <deprecated
 	minTemp: number;
 	maxTemp: number;
-	sunrise: string;
-	sunset: string;
+	sunrise?: string;
+	sunset?: string;
 	precipitation?: number;
 	wind_speed?: number;
 }

@@ -49,8 +49,8 @@ export interface AccuDay {
 	Day: AccuPartSummary;
 	Night: AccuPartSummary;
 	Sun: {
-		Rise: string;
-		Set: string;
+		Rise?: string;
+		Set?: string;
 	};
 }
 

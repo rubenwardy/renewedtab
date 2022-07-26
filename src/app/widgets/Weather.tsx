@@ -215,7 +215,7 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 	const windTooltip = intl.formatMessage(messages.windTooltip, { unit: speedUnit });
 
 	const tooltip = [
-		day.sunrise &&
+		day.sunrise && day.sunset &&
 			`${sunriseTooltip}: ${day.sunrise} - ${day.sunset}`,
 		day.precipitation &&
 			`${precipitationTooltip}: ${day.precipitation}%`,

@@ -179,8 +179,8 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 		icon: getLegacyIcon(day.Day.Icon, day.Day.IconPhrase),
 		minTemp: day.Temperature.Minimum.Value,
 		maxTemp: day.Temperature.Maximum.Value,
-		sunrise: dateToLocaltime(day.Sun.Rise),
-		sunset: dateToLocaltime(day.Sun.Set),
+		sunrise: day.Sun.Rise ? dateToLocaltime(day.Sun.Rise) : undefined,
+		sunset: day.Sun.Set ? dateToLocaltime(day.Sun.Set) : undefined,
 		precipitation: day.Day.PrecipitationProbability,
 		wind_speed: Math.round(100 * day.Day.Wind.Speed.Value / 3.6) / 100,
 	}));
