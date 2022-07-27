@@ -28,10 +28,12 @@ function makeFieldEle<T>(props: FormProps<T>, key: stringKeyOf<T>, entry: Schema
 				props.onChange?.call(null, key, val);
 			}} />);
 
+	const className = mergeClasses("field",
+		typeof entry.type == "string" && `field-${entry.type}`);
 	if (props.table) {
-		return (<td key={key} className="field">{field}</td>);
+		return (<td key={key} className={className}>{field}</td>);
 	} else {
-		return (<div key={key} className="field">{field}</div>);
+		return (<div key={key} className={className}>{field}</div>);
 	}
 }
 

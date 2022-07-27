@@ -45,7 +45,7 @@ function LocationQuery(props: { query: string, onSelect: (loc: Location) => void
 			<a onClick={() => props.onSelect(location)}>{location.name}</a>
 		</li>));
 
-	return (<ul className="links large">{items}</ul>);
+	return (<ul className="links large locations">{items}</ul>);
 }
 
 

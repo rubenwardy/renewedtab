@@ -133,6 +133,7 @@ export default function App() {
 							<Button onClick={() => setCreateOpen(true)}
 								variant={ButtonVariant.Secondary}
 								icon="fa fa-plus" small={true}
+								id="add-widget"
 								label={defineMessage({
 									defaultMessage: "Add Widget",
 								})} />

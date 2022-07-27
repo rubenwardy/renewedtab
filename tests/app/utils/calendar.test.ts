@@ -1,7 +1,5 @@
 import { expect } from "chai";
-import { JSDOM } from "jsdom";
 import fs from "fs";
-import { Feed, parseFeed } from "app/utils/feeds";
 import { getEventsBetweenDates } from "app/utils/calendar";
 
 

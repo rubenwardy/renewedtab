@@ -1,0 +1,9 @@
+{
+	"mochaExplorer.files": "tests/**/*.test.ts",
+	"mochaExplorer.require": "ts-node/register",
+	"mochaExplorer.configFile": ".mocharc.json",
+	"mochaExplorer.env": {
+		"TS_NODE_FILES": "1",
+		"NODE_PATH": "src"
+	}
+}

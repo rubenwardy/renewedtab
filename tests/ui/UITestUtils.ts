@@ -1,52 +1,56 @@
 
-import webdriver, { By, until, WebElement } from "selenium-webdriver";
+import webdriver, { By, Locator, until, WebElement } from "selenium-webdriver";
 
-export type ElementOrSelector = By | WebElement;
+export type ElementOrLocator = Locator | WebElement;
 
 const TIMEOUT = 5000;
 
 export default class UITestUtils {
 	constructor(private readonly driver: webdriver.WebDriver) {}
 
-	async findElement(selector: By): Promise<WebElement> {
-		return await this.driver.wait(until.elementLocated(selector), TIMEOUT);
+	async findElement(locator: Locator): Promise<WebElement> {
+		return await this.driver.wait(until.elementLocated(locator), TIMEOUT);
 	}
 
-	async click(selector: ElementOrSelector): Promise<void> {
-		const btn = await this.resolveElement(selector);
+	async findElements(locator: Locator): Promise<WebElement[]> {
+		return await this.driver.findElements(locator);
+	}
+
+	async click(locator: ElementOrLocator): Promise<void> {
+		const btn = await this.resolveElement(locator);
 		await btn.click();
 	}
 
-	async clickInside(element: ElementOrSelector, selector: By) {
+	async clickInside(element: ElementOrLocator, locator: Locator) {
 		const resolved = await this.resolveElement(element);
-		const btn = await resolved.findElement(selector);
+		const btn = await resolved.findElement(locator);
 		await btn.click();
 	}
 
-	async elementTextContains(selector: ElementOrSelector, value: string): Promise<void> {
+	async elementTextContains(selector: ElementOrLocator, value: string): Promise<void> {
 		const element = await this.resolveElement(selector);
 		await this.driver.wait(until.elementTextContains(element, value), TIMEOUT);
 	}
 
-	async noSuchElement(selector: By): Promise<void> {
+	async noSuchElement(locator: Locator): Promise<void> {
 		await this.sleep(500);
 		const impl = async () =>
-			(await this.driver.findElements(selector)).length == 0;
+			(await this.driver.findElements(locator)).length == 0;
 
 		await this.driver.wait(impl, TIMEOUT);
 	}
 
-	async count(selector: By): Promise<number> {
-		return (await this.driver.findElements(selector)).length
+	async count(locator: Locator): Promise<number> {
+		return (await this.driver.findElements(locator)).length
 	}
 
-	async countInside(element: ElementOrSelector, selector: By): Promise<number> {
+	async countInside(element: ElementOrLocator, locator: Locator): Promise<number> {
 		const resolved = await this.resolveElement(element);
-		return (await resolved.findElements(selector)).length;
+		return (await resolved.findElements(locator)).length;
 	}
 
-	async sendKeys(selector: By, ...text: (string | number)[]): Promise<void> {
-		const element = await this.resolveElement(selector);
+	async sendKeys(locator: Locator, ...text: (string | number)[]): Promise<void> {
+		const element = await this.resolveElement(locator);
 		await element.sendKeys(...text);
 	}
 
@@ -56,12 +60,12 @@ export default class UITestUtils {
 		});
 	}
 
-	private async resolveElement(selector: ElementOrSelector):
+	private async resolveElement(locator: ElementOrLocator):
 			Promise<webdriver.WebElement> {
-		if (selector instanceof By) {
-			return await this.findElement(selector);
+		if (locator instanceof WebElement) {
+			return locator;
 		} else {
-			return selector;
+			return await this.findElement(locator);
 		}
 	}
 }

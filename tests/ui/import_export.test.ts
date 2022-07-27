@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { By, Key } from "selenium-webdriver";
+import { By } from "selenium-webdriver";
 import { Modal } from "./components/Modal";
 import { selectFocusPreset } from "./components/OnboardingModal";
 import { utils } from "./setup-selenium";

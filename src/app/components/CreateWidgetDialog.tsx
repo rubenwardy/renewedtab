@@ -36,7 +36,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	let widgets = widgetTypes
 		.filter((widget) => isBrowser || widget.isBrowserOnly !== true)
 		.map((widget) => (
-			<li key={widget.key}>
+			<li key={widget.key} data-widget-type={widget.key}>
 				<a onClick={() => select(widget.key)}>
 					{widget.title}
 					<span className="text-muted ml-1">

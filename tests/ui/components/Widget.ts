@@ -1,12 +1,16 @@
-import { By, WebElement } from "selenium-webdriver";
+import { By, Locator, WebElement } from "selenium-webdriver";
 import { driver, utils } from "../setup-selenium";
 
 
 export class Widget {
-	constructor(readonly id: number) {}
+	rootCSS: string;
 
-	get rootCSS() {
-		return `.widget[data-widget-id="${this.id}"]`;
+	constructor(id_or_css: (string | number)) {
+		if (typeof(id_or_css) == "string") {
+			this.rootCSS = id_or_css;
+		} else {
+			this.rootCSS = `.widget[data-widget-id="${id_or_css}"]`;
+		}
 	}
 
 	getRoot(): Promise<WebElement> {
@@ -32,5 +36,10 @@ export class Widget {
 			document.querySelectorAll(".widget.fake").forEach(el => el.classList.remove("fake"));
 			document.querySelector('${this.rootCSS}').classList.add("fake");
 		`);
+	}
+
+	async findElement(selector: Locator): Promise<WebElement> {
+		const root = await this.getRoot();
+		return await root.findElement(selector);
 	}
 }

@@ -1,4 +1,4 @@
-import { By, WebElement } from "selenium-webdriver";
+import { By, Locator, WebElement } from "selenium-webdriver";
 import { utils } from "../setup-selenium";
 
 export class Modal {
@@ -24,5 +24,10 @@ export class Modal {
 
 	async count(selector: By): Promise<number> {
 		return await utils.countInside(await this.getRoot(), selector)
+	}
+
+	async findElement(selector: Locator): Promise<WebElement> {
+		const root = await this.getRoot();
+		return await root.findElement(selector);
 	}
 }
