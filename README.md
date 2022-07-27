@@ -21,6 +21,13 @@ Renewed Tab has 3 components:
 * A **webext**, found at `src/webext`. This contains the manifest.json,
   and will wrap the web app when compiled.
 
+### Dependencies
+
+* Node 16+ and NPM
+* SASS
+
+Make sure to run `npm install`
+
 ### Configure
 
 Copy `config.example.json` to `config.json`.
