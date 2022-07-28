@@ -1,14 +1,33 @@
+export const ONE_HOUR_MS = 60*60*1000;
+export const ONE_DAY_MS = 24*ONE_HOUR_MS;
+export const ONE_WEEK_MS = 7*ONE_DAY_MS;
+
+
 export function toYear(date: Date, year: number): Date {
 	const newDate = new Date(date);
 	newDate.setFullYear(year);
 	return newDate;
 }
 
+
+export function setEndOfDay(date: Date): Date {
+	date.setHours(23);
+	date.setMinutes(59);
+	date.setSeconds(59);
+	return date;
+}
+
+
 export function setMidnight(date: Date): Date {
 	date.setHours(0);
 	date.setMinutes(0);
 	date.setSeconds(0);
 	return date;
+}
+
+export function isMidnight(date: Date): boolean {
+	return date.getHours() == 0 && date.getMinutes() == 0 &&
+		date.getSeconds() == 0;
 }
 
 

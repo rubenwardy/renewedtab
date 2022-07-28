@@ -64,14 +64,14 @@ webext:
   script:
     - npm run package:webext
     - mv web-ext-artifacts/*.zip .
-    - mv dist/webext/app/main.js.map main.js.map
+    - mv dist/webext/app/*.js.map .
   artifacts:
     expire_in: 1 week
     paths:
       - chrome.zip
       - firefox.zip
       - edge.zip
-      - main.js.map
+      - "*.js.map"
 
 pages:
   stage: deploy
@@ -98,7 +98,7 @@ sentry:
     - mkdir -p dist
     - mv chrome.zip dist/chrome.zip
     - pushd dist && unzip chrome.zip && popd
-    - mv main.js.map dist/app/main.js.map
+    - mv *.js.map dist/app/
     - sentry-cli releases new ${VERSION}
     - sentry-cli releases set-commits --auto $VERSION
     - sentry-cli releases deploys ${VERSION} new -e production

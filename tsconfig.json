@@ -8,7 +8,7 @@
 		"typeRoots": [
 			"./node_modules/@types",
 			"./node_modules/web-ext-types",
-			"src/app/custom.d.ts"
+			"src/@types"
 		],
 		"baseUrl": "src",
 		"esModuleInterop": true,
