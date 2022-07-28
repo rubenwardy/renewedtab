@@ -44,12 +44,21 @@ ul.links {
 			border-top: 2px solid var(--color);
 		}
 
+		/* No idea what this is for */
 		&.text {
 			display: block;
 			text-decoration: none;
 			padding: 0.5rem 1rem;
 			font-size: 1.171875rem;
 			line-height: 1.5;
+			background: red !important;
+		}
+
+		&.text-only {
+			display: block;
+			padding: 0.4rem 0.8rem;
+			color: rgba(255, 255, 255, 0.9);
+			text-decoration: none;
 		}
 
 		a {

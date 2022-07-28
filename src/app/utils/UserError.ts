@@ -9,6 +9,8 @@ export default class UserError extends Error {
 
 		if ((message as any).defaultMessage) {
 			this.messageDescriptor = message as MyMessageDescriptor
+		} else {
+			this.message = message.toString();
 		}
 	}
 }

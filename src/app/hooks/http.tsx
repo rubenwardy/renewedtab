@@ -2,9 +2,11 @@ import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { readBlobAsDataURL } from "app/utils/blob";
+import { ONE_WEEK_MS, setEndOfDay } from "app/utils/dates";
 import { Feed, FeedSource, parseFeed } from "app/utils/feeds";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
+import type { CalendarEvent } from "../utils/calendar";
 import { usePromise } from "./promises";
 
 
@@ -20,6 +22,10 @@ const messages = defineMessages({
 	errorLoadingFeed: {
 		defaultMessage: "Error loading feed. Make sure it is an RSS, JSONFeed, or Atom feed.",
 	},
+
+	missingCalendarURL: {
+		defaultMessage: "Missing calendar URL. Edit this widget to add it"
+	}
 })
 
 
@@ -47,6 +53,20 @@ export async function fetchCheckCors(request: Request, init?: RequestInit): Prom
 		}
 		throw e;
 	}
+}
+
+
+async function fetchText(url: string) {
+	const response = await fetchCheckCors(new Request(url, {
+		method: "GET",
+	}));
+
+	if (!response.ok) {
+		console.error(response);
+		throw new UserError(response.statusText ?? `Error ${response.status}`);
+	}
+
+	return await response.text();
 }
 
 
@@ -85,6 +105,18 @@ async function fetchXML(url: string) {
 
 	const xml = new window.DOMParser().parseFromString(str, "text/xml");
 	return xml;
+}
+
+
+/**
+* Downloads plain text document from a URL.
+*
+* @param {string} url - The URL
+* @param {any[]} dependents - A list of dependent variables for the URL.
+* @return {[response, error]]} - Response and error
+*/
+export function useText(url: string, dependents?: any[]): [(string | null), (string | null)] {
+	return usePromise(() => fetchText(makeProxy(url)), dependents ?? []);
 }
 
 
@@ -215,6 +247,17 @@ export async function fetchFeed(url: string): Promise<Feed> {
 	return feed;
 }
 
+
+function isFullfilled<T>(promise: PromiseSettledResult<T>): promise is PromiseFulfilledResult<T> {
+	return promise.status == "fulfilled";
+}
+
+
+function isRejected<T>(promise: PromiseSettledResult<T>): promise is PromiseRejectedResult {
+	return promise.status == "rejected";
+}
+
+
 type FeedErrors = { source: FeedSource, error: UserError }[];
 
 export async function fetchMultiFeed(sources: FeedSource[]): Promise<[Feed, FeedErrors]> {
@@ -223,13 +266,6 @@ export async function fetchMultiFeed(sources: FeedSource[]): Promise<[Feed, Feed
 	}
 
 	const allPromises = await Promise.allSettled(sources.map(x => fetchFeed(x.url)));
-
-	function isFullfilled<T>(promise: PromiseSettledResult<T>): promise is PromiseFulfilledResult<T> {
-		return promise.status == "fulfilled";
-	}
-	function isRejected<T>(promise: PromiseSettledResult<T>): promise is PromiseRejectedResult {
-		return promise.status == "rejected";
-	}
 
 	const pairedPromises =
 		allPromises.map((promise, i) => ({ source: sources[i], promise: promise }));
@@ -273,4 +309,58 @@ export function useFeed(url: string, dependents?: any[]): [Feed | null, any] {
 
 export function useMultiFeed(sources: FeedSource[], dependents?: any[]): [[Feed, FeedErrors] | null, any] {
 	return usePromise(() => fetchMultiFeed(sources), dependents ?? []);
+}
+
+
+async function fetchCalendar(calendar: any, url: string): Promise<CalendarEvent[]> {
+	const start = new Date();
+	const end = new Date(start.valueOf() + 4*ONE_WEEK_MS);
+	setEndOfDay(end);
+
+	const text = await fetchText(url);
+
+	return calendar.getEventsBetweenDates(text, start, end)
+}
+
+
+
+type CalendarErrors = { url: string, error: UserError }[];
+
+async function fetchMultiCalendar(urls: string[]): Promise<[CalendarEvent[], CalendarErrors]> {
+	if (urls.length == 0 || urls.some(x => x == "")) {
+		throw new UserError(messages.missingCalendarURL);
+	}
+
+	const calendar = await import(/* webpackChunkName: "calendar" */ "../utils/calendar");
+	const promises = await Promise.allSettled(
+		urls.map(x => fetchCalendar(calendar, x)));
+
+	const events: CalendarEvent[] =
+		promises
+			.filter(promise => isFullfilled(promise))
+			.flatMap(promise => {
+				const events = (promise as PromiseFulfilledResult<CalendarEvent[]>).value;
+				return events;
+			})
+			.sort((a, b) => a.start.valueOf() - b.start.valueOf());
+
+	const errors: { url: string, error: any }[] = promises
+		.map((promise, i) => ({ url: urls[i], promise: promise }))
+		.filter(({ promise}) => isRejected(promise))
+		.map(({url, promise})  => ({
+			url, error: (promise as PromiseRejectedResult).reason
+		}));
+
+	errors.forEach(({ error }) => {
+		if (!(error instanceof UserError)) {
+			throw error;
+		}
+	});
+
+	return [events, errors];
+}
+
+
+export function useMultiCalendar(sources: string[], dependents?: any[]): [[CalendarEvent[], CalendarErrors] | null, any] {
+	return usePromise(() => fetchMultiCalendar(sources), dependents ?? []);
 }
