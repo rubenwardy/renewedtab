@@ -146,7 +146,7 @@ function LocationModal(props: LocationModalProps) {
 				{typeof query == "string" && query != "" &&
 					<LocationQuery query={query} onSelect={handleSelect} />}
 				<Button variant={ButtonVariant.Secondary} onClick={props.cancel}
-					label={miscMessages.cancel} />
+					label={miscMessages.cancel} data-action="cancel" />
 			</div>
 		</Modal>);
 }
