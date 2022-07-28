@@ -66,6 +66,10 @@
   "2/2yg+": {
     "message": "Add"
   },
+  "20tqYI": {
+    "description": "CalendarSchedule widget: form field hint (Calendar URL)",
+    "message": "URL to an iCal (.ics) file for a calendar"
+  },
   "27lljH": {
     "description": "Age widget text",
     "message": "You are <b>{age}</b>"
@@ -182,6 +186,10 @@
     "description": "Year Progress widget",
     "message": "Year Progress"
   },
+  "7zYGs9": {
+    "description": "CalendarSchedule Widget",
+    "message": "Calendar Schedule"
+  },
   "8HmiSe": {
     "description": "Feed widget: no sources error message",
     "message": "Please specify a source"
@@ -235,6 +243,10 @@
   "B3NCWb": {
     "description": "Form field label",
     "message": "Colors"
+  },
+  "B4LnaC": {
+    "description": "CalendarSchedule widget: description",
+    "message": "Show upcoming events from an iCal (.ics) URL (Such as Google Calendar)"
   },
   "BJYZgx": {
     "message": "Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
@@ -466,12 +478,19 @@
     "description": "Bookmarks widget: form field label",
     "message": "Include folders as sections"
   },
+  "MdUPbJ": {
+    "description": "Days of the week, separated by commas",
+    "message": "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+  },
   "MiIvsP": {
     "message": "You can add, move, resize, and configure widgets on a grid using intuitive controls."
   },
   "Mihrhf": {
     "description": "Clock widget: date style type, not shown",
     "message": "None"
+  },
+  "MtrTNy": {
+    "message": "Tomorrow"
   },
   "N/7Stk": {
     "message": "Created by <a>rubenwardy</a>."
@@ -867,6 +886,10 @@
     "description": "Edit bar button to make the grid readonly",
     "message": "Finish Editing"
   },
+  "grbGxs": {
+    "description": "CalendarSchedule: no events",
+    "message": "No events"
+  },
   "h/ftND": {
     "message": "Choose a file"
   },
@@ -924,6 +947,9 @@
   "kueLs9": {
     "description": "Links widget: form field label",
     "message": "Links"
+  },
+  "l7u0by": {
+    "message": "Please read <a>the tutorial</a>. You can use any cloud calendar that supports iCal, including Google Calendar and Outlook."
   },
   "l8+Uwz": {
     "description": "Form has no fields",
@@ -991,6 +1017,10 @@
     "description": "Todo List widget: edit modal hint",
     "message": "Click items to edit them."
   },
+  "nlnYxI": {
+    "description": "CalendarSchedule widget: form field label",
+    "message": "Max number of days"
+  },
   "nnaWVi": {
     "description": "Weather widget: Celsius unit",
     "message": "Celsius"
@@ -1017,6 +1047,9 @@
   "oJnbwn": {
     "description": "Greeting widget: name prompt",
     "message": "name"
+  },
+  "oPO8GY": {
+    "message": "Missing calendar URL. Edit this widget to add it"
   },
   "oRui+E": {
     "message": "Enjoying Renewed Tab? Consider donating to help cover costs and support its development."
@@ -1076,6 +1109,10 @@
   "qYVXqA": {
     "description": "Background mode options",
     "message": "{mode} Options"
+  },
+  "qfkgCx": {
+    "description": "CalendarSchedule widget: form field hint (max number of days)",
+    "message": "How far into the future to look for events. Set to 1 to only show today's events, 2 for today and tomorrow, etc."
   },
   "qoEZRi": {
     "description": "Backgroud settings: form field label",
@@ -1156,6 +1193,10 @@
   },
   "wEQDC6": {
     "message": "Edit"
+  },
+  "wETxDh": {
+    "description": "CalendarSchedule widget: form field label",
+    "message": "Calendars"
   },
   "wogY8a": {
     "message": "Create Widget"
@@ -1239,6 +1280,9 @@
   "zPAzlS": {
     "description": "Feed widget: form field label",
     "message": "Combine sources into single tab"
+  },
+  "zWgbGg": {
+    "message": "Today"
   },
   "zXtUcf": {
     "message": "Don't worry, you can unlock at a later point"
