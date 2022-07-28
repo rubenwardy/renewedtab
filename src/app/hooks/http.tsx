@@ -1,8 +1,9 @@
 import { checkHostPermission } from "app/components/RequestHostPermission";
 import { miscMessages } from "app/locale/common";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
+import { clampNumber } from "app/utils";
 import { readBlobAsDataURL } from "app/utils/blob";
-import { ONE_WEEK_MS, setEndOfDay } from "app/utils/dates";
+import { ONE_DAY_MS, setEndOfDay } from "app/utils/dates";
 import { Feed, FeedSource, parseFeed } from "app/utils/feeds";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
@@ -312,9 +313,11 @@ export function useMultiFeed(sources: FeedSource[], dependents?: any[]): [[Feed,
 }
 
 
-async function fetchCalendar(calendar: any, url: string): Promise<CalendarEvent[]> {
+async function fetchCalendar(calendar: any, url: string, limitToDays: number): Promise<CalendarEvent[]> {
+	limitToDays = clampNumber(Math.floor(limitToDays), 1, 28);
+
 	const start = new Date();
-	const end = new Date(start.valueOf() + 4*ONE_WEEK_MS);
+	const end = new Date(start.valueOf() + (limitToDays - 1)*ONE_DAY_MS);
 	setEndOfDay(end);
 
 	const text = await fetchText(url);
@@ -326,14 +329,14 @@ async function fetchCalendar(calendar: any, url: string): Promise<CalendarEvent[
 
 type CalendarErrors = { url: string, error: UserError }[];
 
-async function fetchMultiCalendar(urls: string[]): Promise<[CalendarEvent[], CalendarErrors]> {
+async function fetchMultiCalendar(urls: string[], limitToDays: number): Promise<[CalendarEvent[], CalendarErrors]> {
 	if (urls.length == 0 || urls.some(x => x == "")) {
 		throw new UserError(messages.missingCalendarURL);
 	}
 
 	const calendar = await import(/* webpackChunkName: "calendar" */ "../utils/calendar");
 	const promises = await Promise.allSettled(
-		urls.map(x => fetchCalendar(calendar, x)));
+		urls.map(x => fetchCalendar(calendar, x, limitToDays)));
 
 	const events: CalendarEvent[] =
 		promises
@@ -361,6 +364,7 @@ async function fetchMultiCalendar(urls: string[]): Promise<[CalendarEvent[], Cal
 }
 
 
-export function useMultiCalendar(sources: string[], dependents?: any[]): [[CalendarEvent[], CalendarErrors] | null, any] {
-	return usePromise(() => fetchMultiCalendar(sources), dependents ?? []);
+export function useMultiCalendar(sources: string[], limitToDays: number,
+		dependents?: any[]): [[CalendarEvent[], CalendarErrors] | null, any] {
+	return usePromise(() => fetchMultiCalendar(sources, limitToDays), dependents ?? []);
 }

@@ -28,12 +28,22 @@ const messages = defineMessages({
 
 	calendars: {
 		defaultMessage: "Calendars",
-		description: "CalendarSchedule widget",
+		description: "CalendarSchedule widget: form field label",
 	},
 
 	urlHint: {
-		defaultMessage: "URL to an .ics file for a calendar",
-		description: "CalendarSchedule widget",
+		defaultMessage: "URL to an iCal (.ics) file for a calendar",
+		description: "CalendarSchedule widget: form field hint (Calendar URL)",
+	},
+
+	limitToDays: {
+		defaultMessage: "Max number of days",
+		description: "CalendarSchedule widget: form field label",
+	},
+
+	limitToDaysHint: {
+		defaultMessage: "How far into the future to look for events. Set to 1 to only show today's events, 2 for today and tomorrow, etc.",
+		description: "CalendarSchedule widget: form field hint (max number of days)",
 	},
 
 	editHint: {
@@ -44,6 +54,7 @@ const messages = defineMessages({
 
 interface CalendarScheduleProps {
 	calendars: { url: string }[];
+	limitToDays: number;
 }
 
 
@@ -51,8 +62,9 @@ interface CalendarScheduleProps {
 function CalendarSchedule(widget: WidgetProps<CalendarScheduleProps>) {
 	const intl = useIntl();
 	const { query } = useGlobalSearch();
-	const [pair, error] = useMultiCalendar(widget.props.calendars.map(x => x.url),
-		[widget.props.calendars]);
+	const [pair, error] = useMultiCalendar(
+		widget.props.calendars.map(x => x.url), widget.props.limitToDays,
+		[widget.props.calendars, widget.props.limitToDays]);
 	if (!pair) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		useMemo(() => {}, [[], ""]);
@@ -150,10 +162,12 @@ const widget: WidgetType<CalendarScheduleProps> = {
 		a: (chunk: any) => (<a href="https://renewedtab.com/help/calendar/">{chunk}</a>),
 	}),
 	initialProps: {
-		calendars: []
+		calendars: [],
+		limitToDays: 7,
 	},
 	schema: {
 		calendars: type.unorderedArray(calendarSchema, messages.calendars),
+		limitToDays: type.number(messages.limitToDays, messages.limitToDaysHint, 1, 28),
 	},
 };
 export default widget;
