@@ -1,9 +1,9 @@
 
-import webdriver, { By, Locator, until, WebElement } from "selenium-webdriver";
+import webdriver, { Locator, until, WebElement } from "selenium-webdriver";
 
 export type ElementOrLocator = Locator | WebElement;
 
-const TIMEOUT = 5000;
+const TIMEOUT = 10000;
 
 export default class UITestUtils {
 	constructor(private readonly driver: webdriver.WebDriver) {}
