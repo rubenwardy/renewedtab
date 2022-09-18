@@ -1198,5 +1198,15 @@
     "5MMUNJ": {
         "message": "Esto es <b>experimental y puede ser más difícil de usar</b>.",
         "description": "Widget grid: form label 4 for grid full width"
+    },
+    "MdUPbJ": {
+        "message": "Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado",
+        "description": "Days of the week, separated by commas"
+    },
+    "MtrTNy": {
+        "message": "Mañana"
+    },
+    "zWgbGg": {
+        "message": "Hoy"
     }
 }

@@ -1262,5 +1262,49 @@
     "tSMpM0": {
         "message": "Accordez l'autorisation d'accéder aux sites les plus visités et de récupérer les icônes des sites Web",
         "description": "Top Sites widget: permission request"
+    },
+    "20tqYI": {
+        "message": "URL vers un fichier iCal (.isc) pour un calendrier",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "MdUPbJ": {
+        "message": "Dimanche, Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi",
+        "description": "Days of the week, separated by commas"
+    },
+    "grbGxs": {
+        "message": "Aucun événement",
+        "description": "CalendarSchedule: no events"
+    },
+    "l7u0by": {
+        "message": "Veuillez lire <a>le tutoriel</a>. Vous pouvez utiliser n'importe quel calendrier sur Internet qui supporte iCal, dont Google Calendar et Outlook."
+    },
+    "wETxDh": {
+        "message": "Calendriers",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "7zYGs9": {
+        "message": "Planification du Calendrier",
+        "description": "CalendarSchedule Widget"
+    },
+    "B4LnaC": {
+        "message": "Afficher les événements prochains depuis l'URL (comme Google Calendar) d'un fichier iCal (.ics)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "MtrTNy": {
+        "message": "Demain"
+    },
+    "nlnYxI": {
+        "message": "Nombre maximum de jours",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "URL de calendrier manquant. Éditez ce widget pour l'ajouter"
+    },
+    "qfkgCx": {
+        "message": "Jusqu'à quand dans le futur afficher les événements. Entrez 1 pour afficher seulement les événements d'aujourd'hui, 2 pour demain, etc.",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "zWgbGg": {
+        "message": "Aujourd'hui"
     }
 }
