@@ -1208,5 +1208,60 @@
     },
     "zWgbGg": {
         "message": "Hoy"
+    },
+    "zPAzlS": {
+        "message": "Combinar fuentes en una sola pestaña",
+        "description": "Feed widget: form field label"
+    },
+    "20tqYI": {
+        "message": "URL de un archivo iCal (.ics) para un calendario",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "nlnYxI": {
+        "message": "Número máximo de días",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "Falta la URL del calendario. Edite este widget para añadirlo"
+    },
+    "qfkgCx": {
+        "message": "Cuánto tiempo en el futuro para buscar eventos. Establezca 1 para mostrar sólo los eventos de hoy, 2 para hoy y mañana, etc.",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "6wEkCM": {
+        "message": "También puede utilizar un widget de marcadores para tener un control más preciso.",
+        "description": "General settings: bookmarks bar"
+    },
+    "CN0kVN": {
+        "message": "Cuadrícula de widgets",
+        "description": "Settings tab"
+    },
+    "+g7L/A": {
+        "message": "Muestra feeds Atom, JSONFeed y RSS, útiles para seguir las noticias, los sitios web y los blogs",
+        "description": "Feed widget description"
+    },
+    "r8bU6m": {
+        "message": "Mostrar una barra de marcadores en la parte superior de la página.",
+        "description": "General settings: bookmarks bar"
+    },
+    "8xPAKF": {
+        "message": "De 0 a 100%, posición del color en el gradiente",
+        "description": "Form field hint (Stop)"
+    },
+    "BmzsQb": {
+        "message": "Enlaces, con soporte de encabezados e iconos (marcación rápida)",
+        "description": "Links widget description"
+    },
+    "NjoFru": {
+        "message": "Imagen aleatoria de un feed Atom, JSONFeed o RSS",
+        "description": "Backgroud mode description"
+    },
+    "B4LnaC": {
+        "message": "Mostrar los próximos eventos desde una URL de iCal (.ics) (como Google Calendar)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "wETxDh": {
+        "message": "Calendarios",
+        "description": "CalendarSchedule widget: form field label"
     }
 }
