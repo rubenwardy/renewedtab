@@ -1166,7 +1166,7 @@
         "description": "General settings: bookmarks bar"
     },
     "dOlhtQ": {
-        "message": "你可以通过右击 地址栏 > 书签栏 > 仅在新标签页显示 来仅在新标签页显示书签栏。<a>显示更多</a>",
+        "message": "你可以通过右击 \"地址栏 > 书签栏 > 仅在新标签页显示\" 来仅在新标签页显示书签栏。<a>显示更多</a>",
         "description": "General settings: Help for Firefox bookmarks bar"
     },
     "gS3mti": {
@@ -1259,5 +1259,52 @@
     "h00yCR": {
         "message": "显示来自Atom，JSON或RSS订阅源的最新网络漫画。",
         "description": "Web Comic widget description"
+    },
+    "20tqYI": {
+        "message": "为日历提供一个指向 iCal (.ics) 的 URL",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "B4LnaC": {
+        "message": "显示从 iCal (.ics) URL 中获取的代办日程 (例如 Google 日历)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "grbGxs": {
+        "message": "无日程",
+        "description": "CalendarSchedule: no events"
+    },
+    "l7u0by": {
+        "message": "请阅读这个<a>教程</a>。你可以使用任何支持 iCal 的云日历服务，包括 Google 日历和 Outlook。"
+    },
+    "qfkgCx": {
+        "message": "显示未来多长时间的代办日程。设置为 1 仅显示今天的代办日程，2 则显示今天和明天的代办日程，等等。",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "7zYGs9": {
+        "message": "日程",
+        "description": "CalendarSchedule Widget"
+    },
+    "MdUPbJ": {
+        "message": "星期日, 星期一, 星期二, 星期三, 星期四, 星期五, 星期六",
+        "description": "Days of the week, separated by commas"
+    },
+    "MtrTNy": {
+        "message": "明天"
+    },
+    "TDaF6J": {
+        "message": "撤销"
+    },
+    "nlnYxI": {
+        "message": "最长日程天数",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "缺少日历 URL。请编辑这个部件来添加它"
+    },
+    "wETxDh": {
+        "message": "日历",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "zWgbGg": {
+        "message": "今天"
     }
 }
