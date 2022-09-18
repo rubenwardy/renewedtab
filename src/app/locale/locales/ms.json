@@ -1262,5 +1262,49 @@
     "tSMpM0": {
         "message": "Berikan kebenaran untuk mencapai tapak teratas dan mendapatkan ikon dari laman sesawang",
         "description": "Top Sites widget: permission request"
+    },
+    "20tqYI": {
+        "message": "URL ke suatu fail iCal (.ics) untuk suatu kalendar",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "B4LnaC": {
+        "message": "Tunjuk peristiwa mendatang daripada suatu URL iCal (.ics) (Seperti Google Calendar)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "MdUPbJ": {
+        "message": "Ahad, Isnin, Selasa, Rabu, Khamis, Jumaat, Sabtu",
+        "description": "Days of the week, separated by commas"
+    },
+    "l7u0by": {
+        "message": "Sila baca <a>tutorial</a>. Anda boleh guna sebarang kalendar awan yang menyokong iCal, termasuk Google Calendar dan Outlook."
+    },
+    "7zYGs9": {
+        "message": "Jadual Kalendar",
+        "description": "CalendarSchedule Widget"
+    },
+    "MtrTNy": {
+        "message": "Esok"
+    },
+    "grbGxs": {
+        "message": "Tiada peristiwa",
+        "description": "CalendarSchedule: no events"
+    },
+    "nlnYxI": {
+        "message": "Jumlah hari maksimum",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "URL kalendar tiada isi. Edit widget ini untuk menambahnya"
+    },
+    "qfkgCx": {
+        "message": "Berapa jauh ke masa hadapan untuk mencari peristiwa. Tetapkan kepada 1 untuk tunjuk peristiwa hari ini sahaja, 2 untuk hari ini dan esok, dll.",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "wETxDh": {
+        "message": "Kalendar",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "zWgbGg": {
+        "message": "Hari Ini"
     }
 }
