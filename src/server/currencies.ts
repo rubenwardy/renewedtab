@@ -2,6 +2,7 @@ import { CurrencyInfo } from "common/api/currencies";
 import { UA_DEFAULT } from "server";
 import { makeSingleCache } from "./cache";
 import fetchCatch, {Request} from "./http";
+import UserError from "./UserError";
 
 
 const shitCoins: Record<string, string> = {
@@ -19,7 +20,7 @@ const shitCoins: Record<string, string> = {
 
 
 async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
-	const ret = await fetchCatch(new Request("https://api.exchangerate.host/symbols", {
+	const response = await fetchCatch(new Request("https://api.exchangerate.host/symbols", {
 		method: "GET",
 		size: 0.1 * 1000 * 1000,
 		timeout: 10000,
@@ -29,9 +30,13 @@ async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
 		},
 	}));
 
+	if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
+		throw new UserError(await response.text());
+	}
+
 	const retval: Record<string, CurrencyInfo> = {};
 
-	Object.entries((await ret.json()).symbols as Record<string, CurrencyInfo>)
+	Object.entries((await response.json()).symbols as Record<string, CurrencyInfo>)
 		.forEach(([key, {code, description}]) => {
 			retval[key] = {
 				code,
@@ -59,7 +64,7 @@ async function fetchForexRates(rates: Record<string, number>): Promise<void> {
 	url.searchParams.set("base", "USD");
 	url.searchParams.set("places", "10");
 
-	const ret = await fetchCatch(new Request(url, {
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		timeout: 10000,
 		headers: {
@@ -68,7 +73,11 @@ async function fetchForexRates(rates: Record<string, number>): Promise<void> {
 		},
 	}));
 
-	const json = await ret.json();
+	if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
+		throw new UserError(await response.text());
+	}
+
+	const json = await response.json();
 	Object.entries(json.rates as Record<string, string>).forEach(([key, value]) => {
 		rates[key] = parseFloat(value);
 	});
@@ -82,7 +91,7 @@ async function fetchCryptoRates(rates: Record<string, number>): Promise<void> {
 	url.searchParams.set("places", "10");
 	url.searchParams.set("symbols", Object.keys(shitCoins).join(","));
 
-	const ret = await fetchCatch(new Request(url, {
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		timeout: 10000,
 		headers: {
@@ -91,7 +100,11 @@ async function fetchCryptoRates(rates: Record<string, number>): Promise<void> {
 		},
 	}));
 
-	const json = await ret.json();
+	if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
+		throw new UserError(await response.text());
+	}
+
+	const json = await response.json();
 	Object.entries(json.rates as Record<string, string>).forEach(([key, value]) => {
 		rates[key] = parseFloat(value);
 	});

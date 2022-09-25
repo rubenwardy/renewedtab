@@ -93,6 +93,11 @@ export interface AccuCurrentAPI {
 
 
 export async function handleAccuError(response: Response) {
+	if (!(response.headers.get("content-type") ?? "").includes("application/json")) {
+		const text = await response.text();
+		throw new Error(`Invalid accuweather response: ${text}`);
+	}
+
 	const error = await response.json() as AccuError;
 	console.log("Failed at ", response.url, ":", error);
 	if (error.Message && error.Message.includes("requests has been exceeded")) {

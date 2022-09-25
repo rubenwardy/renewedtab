@@ -51,9 +51,9 @@ Sentry.init({
 
 	beforeSend(event) {
 		// Drop expected UserError exceptions
-		if ((event.exception?.values ?? []).some(x => x.type == "UserError")) {
-			return null;
-		}
+		// if ((event.exception?.values ?? []).some(x => x.type == "UserError")) {
+		// 	return null;
+		// }
 
 		return event;
 	}

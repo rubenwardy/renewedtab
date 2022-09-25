@@ -60,14 +60,21 @@ async function fetchQuotes(category: string): Promise<Quote[]> {
 			}
 		}));
 
+	const isJson = (response.headers.get("content-type") ?? "").includes("application/json");
+	if (!response.ok) {
+		if (isJson) {
+			const json = await response.json();
+			const message = json.error?.message ?? "Unable to get quotes";
+			throw new UserError(message);
+		} else {
+			throw new Error(await response.text());
+		}
+	}
+
 	const json = await response.json();
 	const quotes = json?.contents?.quotes;
-	if (!response.ok || !quotes) {
-		if (json.error && json.error.message) {
-			throw new UserError(json.error.message)
-		} else {
-			throw new UserError("Unable to get quotes");
-		}
+	if (!quotes) {
+		throw new Error("No quotes in response");
 	}
 
 	return quotes.map((quote: any) => ({
