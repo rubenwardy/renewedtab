@@ -401,8 +401,11 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 	}
 
 	const category = categories[Math.floor(Math.random() * categories.length)];
-	const quote = await getQuote(category);
-	res.json({ ...quote, category: category });
+	const quotes = await getQuote(category);
+	quotes.forEach(quote => {
+		(quote as any).category = category;
+	});
+	res.json(quotes);
 });
 
 app.get("/api/currencies/", async (req: express.Request, res: express.Response) => {
