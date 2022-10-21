@@ -164,10 +164,6 @@
         "message": "Privacidade",
         "description": "General settings: privacy"
     },
-    "Ibm90j": {
-        "message": "A hora é baseada no fuso horário do seu sistema. Se a hora estiver errada, verifique se o fuso horário está definido corretamente nas configurações do computador e do navegador.",
-        "description": "Clock widget: edit hint"
-    },
     "IqLwUL": {
         "message": "Espaçamento de grade",
         "description": "Widget grid: form label for grid spacing"

@@ -541,10 +541,6 @@
     "wEQDC6": {
         "message": "Düzenle"
     },
-    "Ibm90j": {
-        "message": "Saat sisteminizin saat dilimine göre gösterilir. Saat yanlışsa bilgisayar ve tarayıcı ayarlarından saat diliminizin doğru ayarlandığına emin olun.",
-        "description": "Clock widget: edit hint"
-    },
     "KsX2fE": {
         "message": "{latitude}' {longitude} konumundaki <b>{name}</b>"
     },

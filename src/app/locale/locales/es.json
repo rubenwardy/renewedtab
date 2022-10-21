@@ -861,10 +861,6 @@
         "message": "Tenga en cuenta: esta es una función experimental y los selectores de CSS pueden fallar en versiones futuras.",
         "description": "Theme settings: form field hint (Custom CSS)"
     },
-    "Ibm90j": {
-        "message": "La hora se basa en la zona horaria de su sistema. Si la hora es incorrecta, asegúrese de tener la zona horaria configurada correctamente en las configuraciones de su computadora y navegador.",
-        "description": "Clock widget: edit hint"
-    },
     "LfHpBk": {
         "message": "Escala de tipografía",
         "description": "Theme settings: form field label"

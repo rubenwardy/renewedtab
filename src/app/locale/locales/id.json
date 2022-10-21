@@ -148,10 +148,6 @@
         "message": "Standar ({example})",
         "description": "Clock widget: date style type"
     },
-    "Ibm90j": {
-        "message": "Waktu berdasarkan zona waktu sistem. Jika waktunya salah, periksa bahwa Anda telah mengatur zona waktu pada komputer Anda dan pengaturan browser dengan benar.",
-        "description": "Clock widget: edit hint"
-    },
     "J91edI": {
         "message": "Impor / Ekspor",
         "description": "Settings tab"

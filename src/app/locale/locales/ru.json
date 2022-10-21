@@ -292,10 +292,6 @@
         "message": "Стандартно ({example})",
         "description": "Clock widget: date style type"
     },
-    "Ibm90j": {
-        "message": "Время зависит от часового пояса вашей системы. Если время неверное, убедитесь, что у вас правильно установлен часовой пояс в настройках компьютера и браузера.",
-        "description": "Clock widget: edit hint"
-    },
     "JN/uvd": {
         "message": "<b>Умеренный</b> УФ",
         "description": "Moderate UV risk"

@@ -389,10 +389,6 @@
         "message": "新聞、天氣等",
         "description": "Preset: grid description"
     },
-    "Ibm90j": {
-        "message": "該時間基於您系統的時區顯示。如果時間不對，請確保您的電腦和瀏覽器設定中的時區正確。",
-        "description": "Clock widget: edit hint"
-    },
     "HksGis": {
         "message": "當前：顯示風速",
         "description": "Weather widget: form field label"

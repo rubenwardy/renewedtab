@@ -545,10 +545,6 @@
         "message": "Pilih Lokasi",
         "description": "Location field"
     },
-    "Ibm90j": {
-        "message": "Masa dipaparkan berdasarkan zon waktu sistem anda. Jika masa dipaparkan salah, sila pastikan zon waktu ditetapkan dengan betul di tetapan pelayar dan komputer anda.",
-        "description": "Clock widget: edit hint"
-    },
     "KsX2fE": {
         "message": "<b>{name}</b> di {latitude}, {longitude}"
     },
@@ -1275,9 +1271,6 @@
         "message": "Ahad, Isnin, Selasa, Rabu, Khamis, Jumaat, Sabtu",
         "description": "Days of the week, separated by commas"
     },
-    "l7u0by": {
-        "message": "Sila baca <a>tutorial</a>. Anda boleh guna sebarang kalendar awan yang menyokong iCal, termasuk Google Calendar dan Outlook."
-    },
     "7zYGs9": {
         "message": "Jadual Kalendar",
         "description": "CalendarSchedule Widget"
@@ -1306,5 +1299,9 @@
     },
     "zWgbGg": {
         "message": "Hari Ini"
+    },
+    "pWdLkT": {
+        "message": "Sila baca <a>tutorial</a>. Anda boleh guna sebarang kalendar awan yang menyokong iCal, termasuk Google Calendar dan Outlook.",
+        "description": "CalendarSchedule widget: edit hint"
     }
 }

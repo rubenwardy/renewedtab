@@ -734,10 +734,6 @@
         "message": "Categorie",
         "description": "Form field label, list of categories. Used by Quotes widget"
     },
-    "Ibm90j": {
-        "message": "L'ora si basa sul fuso orario del tuo sistema. Se risultasse errata, assicurati che il fuso orario nelle impostazioni del computer e del browser sia impostato correttamente.",
-        "description": "Clock widget: edit hint"
-    },
     "IqLwUL": {
         "message": "Spaziatura Griglia",
         "description": "Widget grid: form label for grid spacing"

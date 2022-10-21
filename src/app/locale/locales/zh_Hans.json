@@ -38,10 +38,6 @@
         "message": "日期格式",
         "description": "Clock widget: date style form field label"
     },
-    "Ibm90j": {
-        "message": "该时间基于您系统的时区。如果时间不对，请确保你的电脑和浏览器设置中的时区是正确的。",
-        "description": "Clock widget: edit hint"
-    },
     "JzanJ8": {
         "message": "网格列",
         "description": "Widget grid: form label for grid columns"
@@ -1272,9 +1268,6 @@
         "message": "无日程",
         "description": "CalendarSchedule: no events"
     },
-    "l7u0by": {
-        "message": "请阅读这个<a>教程</a>。你可以使用任何支持 iCal 的云日历服务，包括 Google 日历和 Outlook。"
-    },
     "qfkgCx": {
         "message": "显示未来多长时间的代办日程。设置为 1 仅显示今天的代办日程，2 则显示今天和明天的代办日程，等等。",
         "description": "CalendarSchedule widget: form field hint (max number of days)"
@@ -1306,5 +1299,9 @@
     },
     "zWgbGg": {
         "message": "今天"
+    },
+    "pWdLkT": {
+        "message": "请阅读这个<a>教程</a>。你可以使用任何支持 iCal 的云日历服务，包括 Google 日历和 Outlook。",
+        "description": "CalendarSchedule widget: edit hint"
     }
 }

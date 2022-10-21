@@ -392,10 +392,6 @@
     "description": "Clock widget: date style type",
     "message": "Standard ({example})"
   },
-  "Ibm90j": {
-    "description": "Clock widget: edit hint",
-    "message": "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings."
-  },
   "IqLwUL": {
     "description": "Widget grid: form label for grid spacing",
     "message": "Grid Spacing"
@@ -551,6 +547,10 @@
   "QcExtH": {
     "description": "General settings: privacy policy button",
     "message": "Privacy Policy"
+  },
+  "QkI7Lb": {
+    "description": "An option when selecting a time zone",
+    "message": "Browser's time zone ({browserTimeZone})"
   },
   "QqE4JC": {
     "message": "Missing feed URL."
@@ -925,6 +925,9 @@
   "j0VHNa": {
     "message": "Grant permission to access bookmarks and fetch icons from websites"
   },
+  "jGWq1h": {
+    "message": "Time Zone"
+  },
   "jSHZmX": {
     "description": "Todo List widget: description",
     "message": "Track to do list items"
@@ -947,9 +950,6 @@
   "kueLs9": {
     "description": "Links widget: form field label",
     "message": "Links"
-  },
-  "l7u0by": {
-    "message": "Please read <a>the tutorial</a>. You can use any cloud calendar that supports iCal, including Google Calendar and Outlook."
   },
   "l8+Uwz": {
     "description": "Form has no fields",
@@ -1081,6 +1081,10 @@
   "pVrtrA": {
     "description": "Backgroud mode description",
     "message": "Use a custom image"
+  },
+  "pWdLkT": {
+    "description": "CalendarSchedule widget: edit hint",
+    "message": "Please read <a>the tutorial</a>. You can use any cloud calendar that supports iCal, including Google Calendar and Outlook."
   },
   "pbEMNj": {
     "description": "Onboarding page: previous button",

@@ -38,10 +38,6 @@
         "message": "Yangiliklar, ob-havo va boshqalar",
         "description": "Preset: grid description"
     },
-    "Ibm90j": {
-        "message": "Vaqt sizning tizim vaqt zonasiga asoslangan. Agar vaqt noto'g'ri ko'rsatilayotgan bo'lsa kompyuteringiz yoki brauzeringiz sozlamalaridan unin to'g'rilang.",
-        "description": "Clock widget: edit hint"
-    },
     "L6nTur": {
         "message": "Boshlanish nuqtasini tanlash",
         "description": "Onboarding: presets title"

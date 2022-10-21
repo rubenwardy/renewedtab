@@ -172,7 +172,7 @@ const widget: WidgetType<CalendarScheduleProps> = {
 			b: (chunk: any) => (<strong>{chunk}</strong>),
 		}),
 	],
-	// isBrowserOnly: true,
+	isBrowserOnly: true,
 	initialProps: {
 		calendars: [],
 		limitToDays: 7,

@@ -413,10 +413,6 @@
         "message": "Confidentialité",
         "description": "General settings: privacy"
     },
-    "Ibm90j": {
-        "message": "L'heure est basée sur le fuseau horaire de votre système. Si l'heure est incorrecte, assurez-vous que le fuseau horaire est correctement défini dans les paramètres de votre ordinateur et de votre navigateur.",
-        "description": "Clock widget: edit hint"
-    },
     "MN3prI": {
         "message": "Inclure les dossiers en tant que sections",
         "description": "Bookmarks widget: form field label"
@@ -1275,9 +1271,6 @@
         "message": "Aucun événement",
         "description": "CalendarSchedule: no events"
     },
-    "l7u0by": {
-        "message": "Veuillez lire <a>le tutoriel</a>. Vous pouvez utiliser n'importe quel calendrier sur Internet qui supporte iCal, dont Google Calendar et Outlook."
-    },
     "wETxDh": {
         "message": "Calendriers",
         "description": "CalendarSchedule widget: form field label"
@@ -1306,5 +1299,9 @@
     },
     "zWgbGg": {
         "message": "Aujourd'hui"
+    },
+    "pWdLkT": {
+        "message": "Veuillez lire <a>le tutoriel</a>. Vous pouvez utiliser n'importe quel calendrier sur Internet qui supporte iCal, dont Google Calendar et Outlook.",
+        "description": "CalendarSchedule widget: edit hint"
     }
 }

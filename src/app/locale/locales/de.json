@@ -357,10 +357,6 @@
     "WZjKFf": {
         "message": "Achtung: dies kann personenbezogene Daten enthalten, wenn welche in die Widgeteinstellungen eingetragen wurden."
     },
-    "Ibm90j": {
-        "message": "Die Zeit wird auf Basis der Systemzeitzone angezeigt. Falls die Zeit falsch ist, stellen sie sicher, dass die Zeitzone korrekt in den Computer- und Browsereinstellungen gesetzt ist.",
-        "description": "Clock widget: edit hint"
-    },
     "T/wBPw": {
         "message": "Entfernen {type}"
     },
