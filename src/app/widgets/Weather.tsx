@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react';
-import { useAPI, useElementSize } from 'app/hooks';
+import React, { useMemo, useRef } from 'react';
+import { useAPI } from 'app/hooks/http';
+import { useElementSize } from 'app/hooks/elementSize';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetProps, WidgetType } from 'app/Widget';
@@ -388,7 +389,8 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 function Weather(widget: WidgetProps<WeatherProps>) {
 	const props = widget.props;
 	const unit = props.unit ?? TemperatureUnit.Celsius;
-	const [ref, size] = useElementSize<HTMLDivElement>();
+	const ref = useRef(null);
+	const size = useElementSize(ref);
 
 	if (!props.location) {
 		return (<ErrorView error={new UserError(messages.locationNeeded)} />);

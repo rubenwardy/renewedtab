@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { useElementSize } from 'app/hooks';
+import { useElementSize } from 'app/hooks/elementSize';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/websiteIcons';
 import { miscMessages, schemaMessages } from 'app/locale/common';
@@ -120,7 +120,8 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	const { query } = useGlobalSearch();
 	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
-	const [ref, size] = useElementSize();
+	const ref = useRef(null);
+	const size = useElementSize(ref);
 
 	const links = useMemo<Link[]>(() => {
 		const ret = deepCopy(props.links.filter(link =>

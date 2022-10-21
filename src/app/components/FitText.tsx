@@ -1,6 +1,6 @@
-import React, { CSSProperties } from "react"
-import { useElementSize } from "app/hooks"
+import React, { CSSProperties, useRef } from "react"
 import { clampNumber, mergeClasses } from "app/utils";
+import { useElementSize } from "app/hooks/elementSize";
 
 interface FitTextProps extends  React.HTMLAttributes<HTMLDivElement>{
 	children: string[] | string;
@@ -30,7 +30,8 @@ const MAGIC_NUMBER = 0.7;
 export default function FitText(props: FitTextProps) {
 	const children = typeof props.children == "string" ? [ props.children ] : props.children
 
-	const [ref, size] = useElementSize();
+	const ref = useRef(null);
+	const size = useElementSize(ref);
 	const style: CSSProperties = {};
 	if (size) {
 		const desiredHeight = size.y;
