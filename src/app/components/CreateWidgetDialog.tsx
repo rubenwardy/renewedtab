@@ -50,7 +50,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		widgets = widgets.concat(widgetTypes
 			.filter((widget) => widget.isBrowserOnly === true)
 			.map((widget) => (
-				<li key={widget.key} className="text text-muted">
+				<li key={widget.key} className="text-disabled text-muted">
 					{widget.title}
 					<span className="ml-1">
 						{" "}

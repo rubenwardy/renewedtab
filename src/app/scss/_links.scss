@@ -44,14 +44,13 @@ ul.links {
 			border-top: 2px solid var(--color);
 		}
 
-		/* No idea what this is for */
-		&.text {
+		/* Used for disable options in Create Widget menu */
+		&.text-disabled {
 			display: block;
 			text-decoration: none;
 			padding: 0.5rem 1rem;
 			font-size: 1.171875rem;
 			line-height: 1.5;
-			background: red !important;
 		}
 
 		&.text-only {
