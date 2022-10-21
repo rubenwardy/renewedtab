@@ -102,7 +102,7 @@ function WebComic(widget: WidgetProps<WebComicProps>) {
 					<ImageCarousel hasPrev={page + 1 < feed.articles.length} hasNext={page > 0} onNavigate={handleNavigate}>
 						<a href={article.link} title={article.alt ?? ""} className="max-w-100 p-5">
 							<img
-								className="max-w-100 border-box"
+								className="max-w-100 border-box m-center"
 								key={article.image}
 								src={article.image}
 								alt={article.alt ?? ""} />

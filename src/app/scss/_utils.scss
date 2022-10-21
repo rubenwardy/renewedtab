@@ -15,6 +15,10 @@
 	max-width: 100% !important;
 }
 
+.m-center {
+	margin: 0 auto;
+}
+
 $margins: (0, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 2rem);
 
 @for $i from 1 to 8 {
