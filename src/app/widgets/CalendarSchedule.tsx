@@ -47,8 +47,14 @@ const messages = defineMessages({
 	},
 
 	editHint: {
-		defaultMessage: "Please read <a>the tutorial</a>. You can use any cloud calendar that supports iCal, including Google Calendar and Outlook."
+		defaultMessage: "Please read <a>the tutorial</a>. You can use any cloud calendar that supports iCal, including Google Calendar and Outlook.",
+		description: "CalendarSchedule widget: edit hint",
 	},
+
+	experimental: {
+		defaultMessage: "<b>This widget is experimental</b>: There may be issues with events appearing, and it may cause the page to freeze.",
+		description: "CalendarSchedule widget disclaimer",
+	}
 });
 
 
@@ -158,9 +164,15 @@ const widget: WidgetType<CalendarScheduleProps> = {
 	title: messages.title,
 	description: messages.description,
 	defaultSize: new Vector2(5, 4),
-	editHint: bindValuesToDescriptor(messages.editHint, {
-		a: (chunk: any) => (<a href="https://renewedtab.com/help/calendar/">{chunk}</a>),
-	}),
+	editHint: [
+		bindValuesToDescriptor(messages.editHint, {
+			a: (chunk: any) => (<a href="https://renewedtab.com/help/calendar/">{chunk}</a>),
+		}),
+		bindValuesToDescriptor(messages.experimental, {
+			b: (chunk: any) => (<strong>{chunk}</strong>),
+		}),
+	],
+	// isBrowserOnly: true,
 	initialProps: {
 		calendars: [],
 		limitToDays: 7,
