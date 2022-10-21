@@ -23,6 +23,7 @@ import QuoteCategoriesField from "./QuoteCategoriesField";
 import SubFormField from "./SubFormField";
 import FeedURLField from "./FeedURLField";
 import HostAllField from "./HostAllField";
+import TimeZoneField from "./TimeZoneField";
 
 export interface FieldComponent<T> extends React.FC<FieldProps<T>> {
 	noParentLabel?: boolean;
@@ -68,6 +69,8 @@ export function makeField(type: Type): FieldComponent<any> {
 		return TextField;
 	} else if (type == "subform") {
 		return SubFormField;
+	} else if (type == "time_zone") {
+		return TimeZoneField;
 	} else {
 		throw new Error(`Unknown schema type ${type.toString()}`);
 	}

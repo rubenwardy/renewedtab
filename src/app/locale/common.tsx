@@ -99,7 +99,11 @@ export const schemaMessages = defineMessages({
 	openInNewTab: {
 		defaultMessage: "Open links in new tab",
 		description: "Form field label",
-	}
+	},
+
+	timeZone: {
+		defaultMessage: "Time Zone",
+	},
 });
 
 

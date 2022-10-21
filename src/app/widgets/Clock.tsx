@@ -30,11 +30,6 @@ const messages = defineMessages({
 		defaultMessage: "Shows the time",
 	},
 
-	editHint: {
-		defaultMessage: "The time is based on your system's timezone. If the time is wrong, make sure that you have the timezone set correctly in your computer and browser settings.",
-		description: "Clock widget: edit hint",
-	},
-
 	showSeconds: {
 		defaultMessage: "Show seconds",
 	},
@@ -83,7 +78,7 @@ const dateStyleMessages = defineMessages({
 });
 
 
-function renderDate(intl: IntlShape, date: Date, dateStyle: DateStyle): string {
+function renderDate(intl: IntlShape, date: Date, dateStyle: DateStyle, timeZone: string | undefined): string {
 	const dateStyleString = enumToString(DateStyle, dateStyle).toLowerCase() as any;
 
 	if (dateStyle == DateStyle.ISO) {
@@ -92,11 +87,13 @@ function renderDate(intl: IntlShape, date: Date, dateStyle: DateStyle): string {
 		return `${date.getFullYear()}-${month}-${day}`;
 	} else if (intl.locale == "en") {
 		return new Intl.DateTimeFormat(undefined, {
-			dateStyle: dateStyleString
+			dateStyle: dateStyleString,
+			timeZone,
 		} as any).format(date);
 	} else {
 		return intl.formatDate(date, {
 			dateStyle: dateStyleString,
+			timeZone,
 		});
 	}
 }
@@ -106,7 +103,9 @@ interface ClockProps {
 	showSeconds: boolean;
 	hour12: boolean;
 	dateStyle: DateStyle;
+	timeZone?: string;
 }
+
 
 function Clock(widget: WidgetProps<ClockProps>) {
 	const props = widget.props;
@@ -123,6 +122,8 @@ function Clock(widget: WidgetProps<ClockProps>) {
 		};
 	}, []);
 
+
+	const timeZone = (props.timeZone != "" && props.timeZone != "auto") ? props.timeZone : undefined;
 	const dateStyle = enumToValue(DateStyle, props.dateStyle);
 
 	return (
@@ -135,12 +136,13 @@ function Clock(widget: WidgetProps<ClockProps>) {
 							minute: "numeric",
 							second: props.showSeconds ? "numeric" : undefined,
 							hourCycle: props.hour12 ? "h12" : "h23",
+							timeZone,
 						})}
 					</FitText>
 				</div>
 				<div className="col-auto date">
 					{dateStyle != undefined && dateStyle != DateStyle.None &&
-								renderDate(intl, time, dateStyle)}
+								renderDate(intl, time, dateStyle, timeZone)}
 				</div>
 			</div>
 		</Panel>);
@@ -151,7 +153,6 @@ const widget: WidgetType<ClockProps> = {
 	Component: Clock,
 	title: messages.title,
 	description: messages.description,
-	editHint: messages.editHint,
 
 	defaultSize: new Vector2(15, 2),
 
@@ -159,6 +160,7 @@ const widget: WidgetType<ClockProps> = {
 		showSeconds: false,
 		hour12: false,
 		dateStyle: DateStyle.None,
+		timeZone: undefined,
 	},
 
 	initialTheme: {
@@ -170,7 +172,10 @@ const widget: WidgetType<ClockProps> = {
 		textColor: type.color(schemaMessages.textColor),
 	},
 
-	async schema(_widget, intl) {
+	async schema(widget, intl) {
+		const timeZone = (widget.props.timeZone != "" && widget.props.timeZone != "auto")
+			? widget.props.timeZone : undefined;
+
 		const dateStyleMessagesWithExamples: Record<string, MyMessageDescriptor> = {};
 		dateStyleMessagesWithExamples[DateStyle.None] = dateStyleMessages[DateStyle.None];
 		Object.entries(dateStyleMessages)
@@ -179,12 +184,13 @@ const widget: WidgetType<ClockProps> = {
 				dateStyleMessagesWithExamples[key] = {
 					...value,
 					values: {
-						example: renderDate(intl, new Date(), parseInt(key)),
+						example: renderDate(intl, new Date(), parseInt(key), timeZone),
 					}
 				} as MyMessageDescriptor;
 			});
 
 		return {
+			timeZone: type.timeZone(schemaMessages.timeZone),
 			showSeconds: type.boolean(messages.showSeconds),
 			hour12: type.boolean(messages.hour12),
 			dateStyle: type.selectEnum(DateStyle, dateStyleMessagesWithExamples, messages.showDate),

@@ -5,7 +5,7 @@ type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[])
 export type Type = JSType | "url_feed" | "host_all" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
 	"color" | "color_pair" | "image" | "unit_number" | "textarea" |
-	"quote_categories" | "enum" | "select" | "subform";
+	"quote_categories" | "enum" | "select" | "subform" | "time_zone";
 
 
 export type AutocompleteItem = {label: string, value: string};
@@ -71,6 +71,7 @@ export namespace type {
 	export const string = makeTypeFunc("string");
 	export const textarea = makeTypeFunc("textarea");
 	export const json = makeTypeFunc("json");
+	export const timeZone = makeTypeFunc("time_zone");
 
 	export const number = (label: MyMessageDescriptor, hint?: MyMessageDescriptor, min?: number, max?: number): SchemaEntry => ({
 		type: "number",
