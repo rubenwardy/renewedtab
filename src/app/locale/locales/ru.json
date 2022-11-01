@@ -1086,5 +1086,25 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "+g7L/A": {
+        "message": "Показывает Atom, JSONFeed и RSS - полезно для просмотра новостей, вебсайтов и блогов",
+        "description": "Feed widget description"
+    },
+    "20tqYI": {
+        "message": "Ссылка на iCal (.ics) файл для календаря",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "2s4stS": {
+        "message": "Добро пожаловать в <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "/aA+Xf": {
+        "message": "Показывать изображения",
+        "description": "Feed widget: form field label"
+    },
+    "/Mx09O": {
+        "message": "Експериментально. Не работаент со всеми источниками из-за пропущенной информации об изображениях. Изображения так же могут быть большими, и прогружаться долго.",
+        "description": "Feed widget: form field hint (Show Images)"
     }
 }
