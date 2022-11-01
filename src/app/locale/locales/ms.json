@@ -1133,7 +1133,7 @@
         "description": "Form field label. Gradient stop (%)"
     },
     "2j5LN5": {
-        "message": "Cadangkan URL untuk ditambah ke himpunan cadangan",
+        "message": "Cadangkan URL untuk ditambah ke cadangan lalai",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "Lnvfz8": {
@@ -1303,5 +1303,12 @@
     "pWdLkT": {
         "message": "Sila baca <a>tutorial</a>. Anda boleh guna sebarang kalendar awan yang menyokong iCal, termasuk Google Calendar dan Outlook.",
         "description": "CalendarSchedule widget: edit hint"
+    },
+    "QkI7Lb": {
+        "message": "Zon waktu pelayar ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "jGWq1h": {
+        "message": "Zon Waktu"
     }
 }
