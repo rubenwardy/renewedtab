@@ -96,17 +96,21 @@ app.get('/metrics', async (req, res) => {
 });
 
 
-app.get("/proxy/", async (req: express.Request, res: express.Response) => {
-	if (!req.query.url) {
-		writeClientError(res, "Missing URL");
-		return;
+app.get("/proxy/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		if (!req.query.url) {
+			writeClientError(res, "Missing URL");
+			return;
+		}
+
+		notifyAPIRequest("proxy");
+
+		const url = new URL(req.query.url as string);
+		const result = await handleProxy(url);
+		res.status(result.status).type(result.contentType).send(result.text);
+	} catch (e: any) {
+		next(e);
 	}
-
-	notifyAPIRequest("proxy");
-
-	const url = new URL(req.query.url as string);
-	const result = await handleProxy(url);
-	res.status(result.status).type(result.contentType).send(result.text);
 });
 
 
@@ -128,190 +132,224 @@ function parseLocation(req: express.Request) {
 }
 
 
-app.get("/api/weather/", async (req: express.Request, res: express.Response) => {
-	const location = parseLocation(req);
-	if (!location) {
-		writeClientError(res, "Missing location");
-		return;
+app.get("/api/weather/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		const location = parseLocation(req);
+		if (!location) {
+			writeClientError(res, "Missing location");
+			return;
+		}
+
+		notifyAPIRequest("weather");
+
+		res.json(await getWeatherInfoByCoords(location.latitude, location.longitude));
+	} catch (e: any) {
+		next(e);
 	}
-
-	notifyAPIRequest("weather");
-
-	res.json(await getWeatherInfoByCoords(location.latitude, location.longitude));
 });
 
 
-app.get("/api/geocode/", async (req: express.Request, res: express.Response) => {
-	if (!req.query.q) {
-		writeClientError(res, "Missing query");
-		return;
+app.get("/api/geocode/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		if (!req.query.q) {
+			writeClientError(res, "Missing query");
+			return;
+		}
+
+		notifyAPIRequest("geocode");
+
+		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
+	} catch (e: any) {
+		next(e);
 	}
-
-	notifyAPIRequest("geocode");
-
-	res.json(await getCoordsFromQuery((req.query.q as string).trim()));
 });
 
 
-app.get("/api/geolookup/", async (req: express.Request, res: express.Response) => {
-	const location = parseLocation(req);
-	if (!location) {
-		writeClientError(res, "Missing location");
-		return;
+app.get("/api/geolookup/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		const location = parseLocation(req);
+		if (!location) {
+			writeClientError(res, "Missing location");
+			return;
+		}
+
+		notifyAPIRequest("geolookup");
+
+		res.json(await getLocationFromCoords(location.latitude, location.longitude));
+	} catch (e: any) {
+		next(e);
 	}
-
-	notifyAPIRequest("geolookup");
-
-	res.json(await getLocationFromCoords(location.latitude, location.longitude));
 });
 
 
-app.get("/api/background/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("background");
+app.get("/api/background/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("background");
 
-	res.json(await getBackground());
+		res.json(await getBackground());
+	} catch (e: any) {
+		next(e);
+	}
 });
 
 
 const backgroundVoteStream = fs.createWriteStream(
 	path.resolve(SAVE_ROOT, "votes.csv"), { flags: "a" });
-app.post("/api/background/vote/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("vote");
 
-	const background = req.body.background;
-	const isPositive = req.body.is_positive;
-	if (background?.id == undefined || isPositive === undefined) {
-		writeClientError(res, "Missing background.id or is_positive");
-		return;
+app.post("/api/background/vote/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("vote");
+
+		const background = req.body.background;
+		const isPositive = req.body.is_positive;
+		if (background?.id == undefined || isPositive === undefined) {
+			writeClientError(res, "Missing background.id or is_positive");
+			return;
+		}
+
+		const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+		const url = background.url ?? "";
+		const line =
+			`${ip}, ${background.id}, ${isPositive ? 'good' : 'bad'}, ${url}\n`;
+		backgroundVoteStream.write(line);
+
+		res.json({ success: true });
+	} catch (e: any) {
+		next(e);
 	}
-
-	const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
-	const url = background.url ?? "";
-	const line =
-		`${ip}, ${background.id}, ${isPositive ? 'good' : 'bad'}, ${url}\n`;
-	backgroundVoteStream.write(line);
-
-	res.json({ success: true });
 });
 
 
 const reCollectionID = /[\/\? ]/;
-app.get("/api/unsplash/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("unsplash");
+app.get("/api/unsplash/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("unsplash");
 
-	const collection = req.query.collection as (string | undefined);
-	if (!collection) {
-		writeClientError(res, "Missing collection ID");
-		return;
+		const collection = req.query.collection as (string | undefined);
+		if (!collection) {
+			writeClientError(res, "Missing collection ID");
+			return;
+		}
+
+		if (reCollectionID.test(collection)) {
+			writeClientError(res, "Invalid collection ID");
+			return;
+		}
+
+		res.json(await getImageFromUnsplash(collection));
+	} catch (e: any) {
+		next(e);
 	}
-
-	if (reCollectionID.test(collection)) {
-		writeClientError(res, "Invalid collection ID");
-		return;
-	}
-
-	res.json(await getImageFromUnsplash(collection));
 });
 
 
-app.get("/api/space-flights/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("spaceflights");
-	notifyUpstreamRequest("RocketLaunch.live");
+app.get("/api/space-flights/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("spaceflights");
+		notifyUpstreamRequest("RocketLaunch.live");
 
-	const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {
-		method: "GET",
-		size: 0.1 * 1000 * 1000,
-		timeout: 10000,
-		headers: {
-			"User-Agent": UA_DEFAULT,
-			"Accept": "application/json",
-		},
-	}));
+		const ret = await fetchCatch(new Request("https://fdo.rocketlaunch.live/json/launches/next/5", {
+			method: "GET",
+			size: 0.1 * 1000 * 1000,
+			timeout: 10000,
+			headers: {
+				"User-Agent": UA_DEFAULT,
+				"Accept": "application/json",
+			},
+		}));
 
-	const json = await ret.json();
+		const json = await ret.json();
 
-	// Stupid API keeps changing
-	const result = json.response?.result ?? json.result;
+		// Stupid API keeps changing
+		const result = json.response?.result ?? json.result;
 
-	function mapProvider(provider: string): string {
-		if (provider.toLowerCase() == "united launch alliance (ula)") {
-			return "United Launch Alliance";
-		} else {
-			return provider;
+		function mapProvider(provider: string): string {
+			if (provider.toLowerCase() == "united launch alliance (ula)") {
+				return "United Launch Alliance";
+			} else {
+				return provider;
+			}
 		}
+
+		const launches: SpaceLaunch[] = result.map((launch: any) => ({
+			id: launch.id,
+			name: launch.name,
+			provider: mapProvider(launch.provider?.name),
+			vehicle: launch.vehicle?.name,
+			win_open: launch.win_open,
+			win_close: launch.win_close,
+			date_str: launch.date_str,
+			link: `https://rocketlaunch.live/launch/${launch.slug}`,
+		}));
+
+		res.json(launches);
+	} catch (e: any) {
+		next(e);
 	}
-
-	const launches: SpaceLaunch[] = result.map((launch: any) => ({
-		id: launch.id,
-		name: launch.name,
-		provider: mapProvider(launch.provider?.name),
-		vehicle: launch.vehicle?.name,
-		win_open: launch.win_open,
-		win_close: launch.win_close,
-		date_str: launch.date_str,
-		link: `https://rocketlaunch.live/launch/${launch.slug}`,
-	}));
-
-	res.json(launches);
 });
 
 const feedbackStream = fs.createWriteStream(
 	path.resolve(SAVE_ROOT, "feedback.txt"), { flags: "a" });
-app.post("/api/feedback/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("feedback");
 
-	if (!req.body.event) {
-		writeClientError(res, "Missing event");
-		return;
-	}
+app.post("/api/feedback/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("feedback");
 
-	feedbackStream.write(JSON.stringify(req.body) + "\n\n");
-
-	if (DISCORD_WEBHOOK) {
-		let comments = req.body.comments;
-
-		const extraIds = [ "missing_features", "difficult", "buggy" ];
-		for (const id of extraIds) {
-			const value = req.body[`extra-${id}`];
-			if (value && value != "") {
-				comments += `\n\n${id}:\n${value}`;
-			}
+		if (!req.body.event) {
+			writeClientError(res, "Missing event");
+			return;
 		}
 
-		const reasons = (typeof req.body.reason === "string") ? [ req.body.reason ] : req.body.reason;
-		let content = `
-			**Feedback**
-			Event: ${req.body.event}
-			Info: ${req.body.version ? "v" + req.body.version : ""} / ${req.body.browser} / ${req.body.platform}
-			${reasons ? `Reasons: ${reasons.join(", ")}
-					${req.body.other_reason}` : ""}
-			${req.body.email ? `Email: ${req.body.email}` : ""}
+		feedbackStream.write(JSON.stringify(req.body) + "\n\n");
 
-			${comments}
-		`;
+		if (DISCORD_WEBHOOK) {
+			let comments = req.body.comments;
 
-		// Only allow at most two new lines in a row, ignoring whitespace
-		content = content.replace(/\n\s*\n/g, "\n\n");
+			const extraIds = [ "missing_features", "difficult", "buggy" ];
+			for (const id of extraIds) {
+				const value = req.body[`extra-${id}`];
+				if (value && value != "") {
+					comments += `\n\n${id}:\n${value}`;
+				}
+			}
 
-		notifyUpstreamRequest("Discord.com");
+			const reasons = (typeof req.body.reason === "string") ? [ req.body.reason ] : req.body.reason;
+			let content = `
+				**Feedback**
+				Event: ${req.body.event}
+				Info: ${req.body.version ? "v" + req.body.version : ""} / ${req.body.browser} / ${req.body.platform}
+				${reasons ? `Reasons: ${reasons.join(", ")}
+						${req.body.other_reason}` : ""}
+				${req.body.email ? `Email: ${req.body.email}` : ""}
 
-		await fetchCatch(new Request(DISCORD_WEBHOOK, {
-			method: "POST",
-			timeout: 10000,
-			headers: {
-				"User-Agent": UA_DEFAULT,
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				content: content.replace(/\t/g, "").substr(0, 2000)
-			}),
-		}));
-	}
+				${comments}
+			`;
 
-	if (req.query.r) {
-		res.redirect("https://renewedtab.com/feedback/thanks/");
-	} else {
-		res.json({ success: true });
+			// Only allow at most two new lines in a row, ignoring whitespace
+			content = content.replace(/\n\s*\n/g, "\n\n");
+
+			notifyUpstreamRequest("Discord.com");
+
+			await fetchCatch(new Request(DISCORD_WEBHOOK, {
+				method: "POST",
+				timeout: 10000,
+				headers: {
+					"User-Agent": UA_DEFAULT,
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					content: content.replace(/\t/g, "").substr(0, 2000)
+				}),
+			}));
+		}
+
+		if (req.query.r) {
+			res.redirect("https://renewedtab.com/feedback/thanks/");
+		} else {
+			res.json({ success: true });
+		}
+	} catch (e: any) {
+		next(e);
 	}
 });
 
@@ -330,115 +368,154 @@ function readAutocompleteFromFile(filename: string) {
 const feeds = readAutocompleteFromFile("feeds");
 const webcomics = readAutocompleteFromFile("webcomics");
 const feeds_background = readAutocompleteFromFile("feeds_background");
-app.get("/api/feeds/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("autocomplete:feeds");
-	res.json(feeds);
-});
-app.get("/api/webcomics/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("autocomplete:webcomic");
-	res.json(webcomics);
-});
-app.get("/api/feeds/background/", async (_req: express.Request, res: express.Response) => {
-	notifyAPIRequest("autocomplete:feeds_background");
-	res.json(feeds_background);
-});
 
-app.post("/api/autocomplete/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("autocomplete:suggest");
-
-	if (!req.body.url) {
-		writeClientError(res, "Missing URL");
-		return;
+app.get("/api/feeds/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("autocomplete:feeds");
+		res.json(feeds);
+	} catch (e: any) {
+		next(e);
 	}
-	if (!DISCORD_WEBHOOK) {
-		writeClientError(res, "Server doesn't have suggestions enabled, missing DISCORD_WEBHOOK");
-		return;
+});
+
+app.get("/api/webcomics/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("autocomplete:webcomic");
+		res.json(webcomics);
+	} catch (e: any) {
+		next(e);
 	}
-
-	const content = `
-		**URL Suggestion**
-		Url: ${req.body.url}
-	`;
-
-	notifyUpstreamRequest("Discord.com");
-
-	await fetchCatch(new Request(DISCORD_WEBHOOK, {
-		method: "POST",
-		timeout: 10000,
-		headers: {
-			"User-Agent": UA_DEFAULT,
-			"Content-Type": "application/json",
-		},
-		body: JSON.stringify({
-			content: content.replace(/\t/g, "").substr(0, 2000)
-		}),
-	}));
-
-	res.json({ success: true });
 });
 
-
-app.get("/api/quote-categories/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("quote-categories");
-
-	const quoteCategories = await getQuoteCategories();
-	res.json(quoteCategories);
-});
-
-
-app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("quotes");
-
-	let categories: (string[] | undefined);
-
-	const queryArg = req.query.categories;
-	if (queryArg instanceof Array) {
-		categories = queryArg as string[];
-	} else if (typeof queryArg == "string") {
-		categories = [ queryArg as string ];
-	} else {
-		categories = [ "inspire", "life", "love", "funny" ];
+app.get("/api/feeds/background/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("autocomplete:feeds_background");
+		res.json(feeds_background);
+	} catch (e: any) {
+		next(e);
 	}
-
-	const category = categories[Math.floor(Math.random() * categories.length)];
-	const quotes = await getQuote(category);
-	quotes.forEach(quote => {
-		(quote as any).category = category;
-	});
-	res.json(quotes);
 });
 
-app.get("/api/currencies/", async (req: express.Request, res: express.Response) => {
-	notifyAPIRequest("currency");
-	res.json(await getCurrencies());
+app.post("/api/autocomplete/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("autocomplete:suggest");
+
+		if (!req.body.url) {
+			writeClientError(res, "Missing URL");
+			return;
+		}
+		if (!DISCORD_WEBHOOK) {
+			writeClientError(res, "Server doesn't have suggestions enabled, missing DISCORD_WEBHOOK");
+			return;
+		}
+
+		const content = `
+			**URL Suggestion**
+			Url: ${req.body.url}
+		`;
+
+		notifyUpstreamRequest("Discord.com");
+
+		await fetchCatch(new Request(DISCORD_WEBHOOK, {
+			method: "POST",
+			timeout: 10000,
+			headers: {
+				"User-Agent": UA_DEFAULT,
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				content: content.replace(/\t/g, "").substr(0, 2000)
+			}),
+		}));
+
+		res.json({ success: true });
+	} catch (e: any) {
+		next(e);
+	}
+});
+
+
+app.get("/api/quote-categories/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("quote-categories");
+
+		const quoteCategories = await getQuoteCategories();
+		res.json(quoteCategories);
+	} catch (e: any) {
+		next(e);
+	}
+});
+
+
+app.get("/api/quotes/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("quotes");
+
+		let categories: (string[] | undefined);
+
+		const queryArg = req.query.categories;
+		if (queryArg instanceof Array) {
+			categories = queryArg as string[];
+		} else if (typeof queryArg == "string") {
+			categories = [ queryArg as string ];
+		} else {
+			categories = [ "inspire", "life", "love", "funny" ];
+		}
+
+		const category = categories[Math.floor(Math.random() * categories.length)];
+		const quotes = await getQuote(category);
+		quotes.forEach(quote => {
+			(quote as any).category = category;
+		});
+		res.json(quotes);
+	} catch (e: any) {
+		next(e);
+	}
+});
+
+
+app.get("/api/currencies/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("currency");
+		res.json(await getCurrencies());
+	} catch (e: any) {
+		next(e);
+	}
 });
 
 
 const TIPPY_TOP_URL = "https://mozilla.github.io/tippy-top-sites/data/icons-top2000.json";
 let icons: (TippyTopImage[] | undefined) = undefined;
-app.get("/api/website-icons/", async (req, res: express.Response) => {
-	if (!icons) {
-		const response = await fetchCatch(new Request(TIPPY_TOP_URL), {
-			method: "GET",
-			timeout: 10000,
-			headers: {
-				"User-Agent": UA_DEFAULT,
-				"Accept": "application/json",
-			},
-		});
-		icons = (await response.json()) as TippyTopImage[];
-		icons.push({
-			domains: [ "minetest.net", "wiki.minetest.net", "forum.minetest.net" ],
-			image_url: "https://www.minetest.net/media/icon.svg",
-		}, {
-			domains: [ "feeds.bbci.co.uk" ],
-			image_url: "https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/5.2.0/apple-touch-icon.png",
-		});
+
+app.get("/api/website-icons/", async (req, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		if (!icons) {
+			const response = await fetchCatch(new Request(TIPPY_TOP_URL), {
+				method: "GET",
+				timeout: 10000,
+				headers: {
+					"User-Agent": UA_DEFAULT,
+					"Accept": "application/json",
+				},
+			});
+			icons = (await response.json()) as TippyTopImage[];
+			icons.push({
+				domains: [ "minetest.net", "wiki.minetest.net", "forum.minetest.net" ],
+				image_url: "https://www.minetest.net/media/icon.svg",
+			}, {
+				domains: [ "feeds.bbci.co.uk" ],
+				image_url: "https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/5.2.0/apple-touch-icon.png",
+			});
+		}
+		res.json(icons);
+	} catch (e: any) {
+		next(e);
 	}
-	res.json(icons);
 });
 
+
 app.use(Sentry.Handlers.errorHandler());
+
 
 app.use(function (err: any, _req: any, res: any, next: any) {
 	console.error(err.stack);
@@ -449,6 +526,7 @@ app.use(function (err: any, _req: any, res: any, next: any) {
 	}
 	next();
 });
+
 
 app.listen(PORT, () => {
 	console.log(`⚡️[server]: Server is running in ${IS_DEBUG ? "debug" : "prod"} at http://localhost:${PORT}`);
