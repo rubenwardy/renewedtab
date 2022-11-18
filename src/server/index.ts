@@ -447,7 +447,7 @@ app.get("/api/quote-categories/", async (req: express.Request, res: express.Resp
 });
 
 
-app.get("/api/quotes/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+app.get("/api/quotes/", async (req: express.Request, res: express.Response, _next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("quotes");
 
@@ -469,7 +469,8 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response, next
 		});
 		res.json(quotes);
 	} catch (e: any) {
-		next(e);
+		// next(e);
+		res.json([]);
 	}
 });
 
