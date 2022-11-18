@@ -4,6 +4,10 @@ export { Request, Response } from "node-fetch";
 
 export default async function fetchCatch(url: RequestInfo, init?: RequestInit): Promise<Response> {
 	try {
+		init = init ?? {};
+		if (!init.timeout) {
+			init.timeout = 20000;
+		}
 		return await fetch(url, init);
 	} catch (e) {
 		let host = "?";
