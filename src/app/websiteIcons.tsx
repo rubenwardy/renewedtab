@@ -127,7 +127,6 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 	const key = "favicon-" + new URL(url).hostname;
 	const value = await cacheStorage.get<CachedIcon>(key);
 	if (value) {
-		console.log(`Loaded favicon for ${key} from cache`);
 		return value.url;
 	}
 
