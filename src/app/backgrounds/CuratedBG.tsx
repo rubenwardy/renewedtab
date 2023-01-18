@@ -17,6 +17,10 @@ const messages = defineMessages({
 		defaultMessage: "Random curated backgrounds",
 		description: "Backgroud mode description",
 	},
+
+	formHint: {
+		defaultMessage: "You can hover over the credits in the bottom left to like or skip a background image.",
+	},
 });
 
 async function getBackgroundInfo(votes: Record<string, boolean>): Promise<(BackgroundInfo | undefined)> {
@@ -47,6 +51,7 @@ export const CuratedBG : BackgroundProvider<CuratedBGProps> = {
 	id: "Curated",
 	title: messages.title,
 	description: messages.description,
+	formHint: messages.formHint,
 	schema: {
 		cacheExpiry: type.selectEnum(CacheExpiry, cacheExpiryMessages, backgroundMessages.cacheExpiry),
 		brightnessDark: type.unit_number(backgroundMessages.brightnessDark, "%", backgroundMessages.brightnessDarkHint, 0, 150),
