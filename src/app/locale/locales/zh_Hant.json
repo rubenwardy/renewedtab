@@ -12,10 +12,10 @@
         "description": "Search widget: form field label"
     },
     "3ZfhWo": {
-        "message": "需要額外授權以訪問 {host}。編輯這個部件以授權。"
+        "message": "需要額外授權以訪問 {host}。編輯這個小工具以取得授權。"
     },
     "3aaibf": {
-        "message": "加入 Widget"
+        "message": "新增小工具"
     },
     "4UpnpD": {
         "message": "圖片會被保存在您的瀏覽器中，永遠不會被上傳",
@@ -45,14 +45,14 @@
         "description": "Image Widget"
     },
     "8J0Bhj": {
-        "message": "歡迎來到 <a>Renewed Tab</a>：一個可自定的新分頁頁面，擁有 widgets 和美麗的背景。"
+        "message": "歡迎來到 <a>Renewed Tab</a>：一個可自定的新分頁頁面，擁有許多小工具和美麗的背景。"
     },
     "8xVVb5": {
         "message": "主要顏色",
         "description": "Theme settings: form field label"
     },
     "9+2gJZ": {
-        "message": "這個部件只在瀏覽器版中提供。"
+        "message": "這個小工具只在瀏覽器版中提供。"
     },
     "Bl74xq": {
         "message": "一個連結按鍵",
@@ -116,7 +116,7 @@
         "description": "Form field label"
     },
     "Lxc1x4": {
-        "message": "時鍾",
+        "message": "時鐘",
         "description": "Clock Widget"
     },
     "N/7Stk": {
@@ -184,7 +184,7 @@
         "description": "Clock widget: date style type, not shown"
     },
     "OBJta4": {
-        "message": "您可以通過點擊這個部件來更改您的名稱",
+        "message": "您可以通過點擊這個小工具來更改您的名稱",
         "description": "Greeting widget: edit modal hint"
     },
     "OQHLB5": {
@@ -215,7 +215,7 @@
         "description": "The name of the app"
     },
     "0PsF7Z": {
-        "message": "您確定要永久消除這個介面工具嗎?",
+        "message": "您確定要永久消除這個小工具嗎?",
         "description": "Delete widget modal message"
     },
     "7wOM6+": {
@@ -263,7 +263,7 @@
         "description": "Background credits title placeholder"
     },
     "3UG6ds": {
-        "message": "用你最愛的搜尋引擎搜尋 widgets 或網站",
+        "message": "用你最愛的搜尋引擎搜尋小工具或網站",
         "description": "Search widget description"
     },
     "ATbgo4": {
@@ -287,7 +287,7 @@
         "description": "Widget grid: form label 4 for grid full width"
     },
     "6wEkCM": {
-        "message": "或者，你可以使用書籤 widget 以進行更細緻的調整。",
+        "message": "或者，你可以使用書籤小工具以進行更細緻的調整。",
         "description": "General settings: bookmarks bar"
     },
     "/Mpu8A": {
@@ -461,7 +461,7 @@
         "description": "Bookmarks widget: form field label"
     },
     "MiIvsP": {
-        "message": "您可以直覺的在網格上新增、移動、縮放 widgets。"
+        "message": "您可以直覺的在網格上新增、移動、縮放小工具。"
     },
     "CN0kVN": {
         "message": "網格",
@@ -514,5 +514,801 @@
     "MdUPbJ": {
         "message": "週日, 週一, 週二, 週三, 週四, 週五, 週六",
         "description": "Days of the week, separated by commas"
+    },
+    "NjoFru": {
+        "message": "來自 Atom, JSONFeed 或 RSS 來源的隨機圖片",
+        "description": "Backgroud mode description"
+    },
+    "S6nfAm": {
+        "message": "溼度 (%)",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "SAo61B": {
+        "message": "書籤",
+        "description": "Bookmarks Widget"
+    },
+    "SENRqu": {
+        "message": "取得幫助"
+    },
+    "RhyKzC": {
+        "message": "精選",
+        "description": "Curated background mode"
+    },
+    "Vckd1G": {
+        "message": "週一",
+        "description": "Short weekday name (Monday)"
+    },
+    "Q1mwPp": {
+        "message": "考慮<a>貢獻或加入你的語言</a>。"
+    },
+    "YYoBQn": {
+        "message": "背景模糊半徑",
+        "description": "Theme settings: form field label"
+    },
+    "YuNOET": {
+        "message": "HTML",
+        "description": "HTML widget: form field label"
+    },
+    "Z2/hH0": {
+        "message": "圖片：{filename}"
+    },
+    "Z79HMN": {
+        "message": "隨機的精選背景圖片",
+        "description": "Backgroud mode description"
+    },
+    "YS5zRT": {
+        "message": "使用 {name} 搜尋",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "TUnCKb": {
+        "message": "文字",
+        "description": "Text Widget"
+    },
+    "O8mt7g": {
+        "message": "數字 ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "ZUZeuR": {
+        "message": "顯示訊息",
+        "description": "Text widget description"
+    },
+    "aXrD3p": {
+        "message": "貨幣",
+        "description": "Currencies widget"
+    },
+    "ZRWjTk": {
+        "message": "使用瀏覽器的預設搜尋引擎",
+        "description": "Search widget: form field label"
+    },
+    "ZZIlU9": {
+        "message": "每日目標",
+        "description": "Daily Goal Widget"
+    },
+    "XYIyWM": {
+        "message": "建議將“網格欄”增加到至少 {cols} 欄，以充分利用空間。",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "TIEfOV": {
+        "message": "如果一篇文章至少符合一個“顯示”過濾器（如果有），並且沒有符合“隱藏”過濾器，則該文章將被顯示。",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "XrQEPN": {
+        "message": "位置",
+        "description": "Form field label"
+    },
+    "XsTD4Q": {
+        "message": "待辦事項",
+        "description": "Todo List Widget"
+    },
+    "exTzGh": {
+        "message": "水平",
+        "description": "Form field option, horizontal gradient"
+    },
+    "VPDVTF": {
+        "message": "這裡什麼都沒有",
+        "description": "Shown when array table form field has no rows"
+    },
+    "VjDvbL": {
+        "message": "網址",
+        "description": "Form field label"
+    },
+    "VkW6D1": {
+        "message": "中央，頂部或底部",
+        "description": "Backgroud settings: form field hint (Position)"
+    },
+    "ktmuOE": {
+        "message": "留空以使用訂閱來源的標題",
+        "description": "Feed widget: form field hint (Title)"
+    },
+    "ku7Ot7": {
+        "message": "亮度：淺",
+        "description": "Backgroud settings: form field label"
+    },
+    "kueLs9": {
+        "message": "連結",
+        "description": "Links widget: form field label"
+    },
+    "l8+Uwz": {
+        "message": "沒有選項可以編輯。",
+        "description": "Form has no fields"
+    },
+    "lUdRdE": {
+        "message": "錯誤：{msg}"
+    },
+    "lQIN1l": {
+        "message": "喜歡 Renewed Tab 嗎？給我們一個評論吧！"
+    },
+    "qEk9AJ": {
+        "message": "更改較暗圖像的亮度",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "qYVXqA": {
+        "message": "{mode}選項",
+        "description": "Background mode options"
+    },
+    "qCsSqt": {
+        "message": "小工具背景亮度",
+        "description": "Theme settings: form field label"
+    },
+    "sIC2UV": {
+        "message": "顯示文字",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "sPl3nI": {
+        "message": "標題",
+        "description": "Form field label"
+    },
+    "rb3Zy8": {
+        "message": "篩選文章",
+        "description": "Feed widget: form field label"
+    },
+    "vVnypL": {
+        "message": "隨機顯示名言，可選分類",
+        "description": "Quotes Widget description"
+    },
+    "vlumg9": {
+        "message": "搜尋小工具...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "wEQDC6": {
+        "message": "編輯"
+    },
+    "U2Qnh7": {
+        "message": "圖片",
+        "description": "Image background mode"
+    },
+    "wogY8a": {
+        "message": "新增小工具"
+    },
+    "wr0l0L": {
+        "message": "來自網路的圖片",
+        "description": "Backgroud mode description"
+    },
+    "xvXMaZ": {
+        "message": "顯示問候語",
+        "description": "Greeting widget description"
+    },
+    "T/wBPw": {
+        "message": "移除 {type}"
+    },
+    "WF5DKA": {
+        "message": "年齡",
+        "description": "Age widget"
+    },
+    "ykNa5O": {
+        "message": "感謝 Font-Awesome 提供的圖標，React 提供的使用者界面，以及 WebPack 提供的構建技術。"
+    },
+    "yvWbz6": {
+        "message": "往後",
+        "description": "Onboarding page: next button"
+    },
+    "ywSKRt": {
+        "message": "自定 HTML",
+        "description": "HTML widget description"
+    },
+    "hCBQrY": {
+        "message": "體感溫度 <b>{temp}°</b>"
+    },
+    "lY73np": {
+        "message": "顯示背景",
+        "description": "Widget styling, checkbox"
+    },
+    "lYJGY5": {
+        "message": "圖片網址",
+        "description": "Image URL background mode"
+    },
+    "lkJAu6": {
+        "message": "Unsplash",
+        "description": "Unsplash background mode"
+    },
+    "S3njcM": {
+        "message": "嵌入網頁",
+        "description": "IFrame Widget"
+    },
+    "V1EIOe": {
+        "message": "顯示一個網頁",
+        "description": "IFrame widget description"
+    },
+    "W3zKGr": {
+        "message": "公里每小時 (kph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "Upkn1Q": {
+        "message": "紫外線指數<b>高</b>",
+        "description": "High UV risk"
+    },
+    "WKiXhX": {
+        "message": "顏色",
+        "description": "Color background mode"
+    },
+    "abwneZ": {
+        "message": "公尺每秒 (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "adRrk3": {
+        "message": "恢復預設",
+        "description": "Import / export settings, reset"
+    },
+    "amHvKE": {
+        "message": "輸入筆記",
+        "description": "Notes widget: prompt"
+    },
+    "a0L2KE": {
+        "message": "嘗試包括國家名稱或縮寫。"
+    },
+    "aaxFkJ": {
+        "message": "建立一個新的待辦事項",
+        "description": "Todo List widget: prompt"
+    },
+    "ao/AFQ": {
+        "message": "提醒你每天的目標",
+        "description": "Daily Goal widget description"
+    },
+    "fW8Xpd": {
+        "message": "需要位置。請點擊編輯來增加位置資訊。",
+        "description": "Weather widget: location needed error"
+    },
+    "fWK68w": {
+        "message": "字型",
+        "description": "Theme settings: form field label"
+    },
+    "frEJEM": {
+        "message": "週四",
+        "description": "Short weekday name (Thursday)"
+    },
+    "ekW/+6": {
+        "message": "無法連結到網際網路"
+    },
+    "fz43UJ": {
+        "message": "捐獻",
+        "description": "Renewed Tab donation link"
+    },
+    "gAZqVl": {
+        "message": "你可以稍後添加 (<add></add>) 或移除 (<remove></remove>) 小工具，或根據需求更改設定 (<cog></cog>)。",
+        "description": "Onboarding: preset hint"
+    },
+    "zaQRTm": {
+        "message": "紫外線指數<b>極高</b>",
+        "description": "Extreme UV risk"
+    },
+    "zPAzlS": {
+        "message": "合併訂閱來源到單一分頁中",
+        "description": "Feed widget: form field label"
+    },
+    "QqE4JC": {
+        "message": "缺少訂閱來源的網址。"
+    },
+    "RCe+DS": {
+        "message": "拖曳小工具"
+    },
+    "RZqASt": {
+        "message": "單一顏色",
+        "description": "Backgroud mode description"
+    },
+    "ShQneX": {
+        "message": "文字",
+        "description": "Form field label"
+    },
+    "T4VxQN": {
+        "message": "載入中…"
+    },
+    "R4cyIr": {
+        "message": "目前：顯示溼度",
+        "description": "Weather widget: form field label"
+    },
+    "QBZZBG": {
+        "message": "請注意：這是一個實驗性的功能，CSS 選擇器在未來的版本中可能會失效。",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "X18x9m": {
+        "message": "一般",
+        "description": "Settings tab"
+    },
+    "YQhLKn": {
+        "message": "每小時",
+        "description": "Background expiry dropdown"
+    },
+    "YS3jnS": {
+        "message": "週五",
+        "description": "Short weekday name (Friday)"
+    },
+    "ckvzIb": {
+        "message": "紫外線指數<b>低</b>",
+        "description": "Low UV risk"
+    },
+    "d7dHsn": {
+        "message": "每 15 分鐘",
+        "description": "Background expiry dropdown"
+    },
+    "dGu5JQ": {
+        "message": "訂閱來源",
+        "description": "Feed Widget"
+    },
+    "wwQ6Va": {
+        "message": "選擇位置",
+        "description": "Location field"
+    },
+    "QcExtH": {
+        "message": "隱私權政策",
+        "description": "General settings: privacy policy button"
+    },
+    "QV6YlB": {
+        "message": "匯率",
+        "description": "Currencies widget: form field label"
+    },
+    "jSHZmX": {
+        "message": "追蹤待辦清單事項",
+        "description": "Todo List widget: description"
+    },
+    "kAEQyV": {
+        "message": "確定"
+    },
+    "irdBm2": {
+        "message": "主題",
+        "description": "Settings tab"
+    },
+    "nF7bWj": {
+        "message": "國際標準組織 ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "nGSwtl": {
+        "message": "搜尋",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "o2uuHu": {
+        "message": "12 小時制"
+    },
+    "OPzczE": {
+        "message": "簡寫 ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "QkI7Lb": {
+        "message": "瀏覽器時區 ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "jGWq1h": {
+        "message": "時區"
+    },
+    "translation_credits": {
+        "message": "由 odeeew 翻譯為正體中文",
+        "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+    },
+    "O2Mjef": {
+        "message": "評論",
+        "description": "Review request, review button"
+    },
+    "sYvWWw": {
+        "message": "非必要，圖片網址 (至少 18px)",
+        "description": "Links widget, form field hint (Icon)"
+    },
+    "y1Z3or": {
+        "message": "語言"
+    },
+    "y8o0oA": {
+        "message": "目前天氣及預測",
+        "description": "Weather widget description"
+    },
+    "yT43pK": {
+        "message": "使用網站圖標 (favicons)",
+        "description": "Form field label"
+    },
+    "yUJ5MA": {
+        "message": "目標",
+        "description": "Preset: goals"
+    },
+    "yY7Rve": {
+        "message": "隱藏",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "yfgoZf": {
+        "message": "Discord / Matrix 聊天室"
+    },
+    "z7UTSa": {
+        "message": "關於 Renewed Tab"
+    },
+    "pWdLkT": {
+        "message": "請閱讀<a>教學</a>。您可以使用任何支持 iCal 的雲端日曆，包括 Google 日曆和 Outlook。",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "zfsplE": {
+        "message": "不再顯示",
+        "description": "Background credits vote"
+    },
+    "ziyAdj": {
+        "message": "匯入",
+        "description": "Import / export settings, import"
+    },
+    "R1jLoC": {
+        "message": "垂直",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "RVGNBh": {
+        "message": "完成編輯後，點擊 <button></button>確定。"
+    },
+    "SG4UJU": {
+        "message": "按鈕",
+        "description": "Button Widget"
+    },
+    "TDaF6J": {
+        "message": "取消"
+    },
+    "WZjKFf": {
+        "message": "警告：如果在小工具設置中輸入過個人資料的話，這也會包含在其中。"
+    },
+    "as6rZ1": {
+        "message": "啟用當機報告 (由 Sentry 提供)",
+        "description": "General settings: enable sentry"
+    },
+    "zEj0dg": {
+        "message": "以進度條的形式顯示今年的進度",
+        "description": "Age widget description"
+    },
+    "zKofmb": {
+        "message": "收藏 ID 。可以在網址中找到，例如：42576559",
+        "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    },
+    "sFyAdH": {
+        "message": "或者：<import></import>"
+    },
+    "lwUV0r": {
+        "message": "點擊小工具可以修改目標",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "mL3MOs": {
+        "message": "英里每小時 (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "q4caWd": {
+        "message": "模糊半徑",
+        "description": "Backgroud settings: form field label"
+    },
+    "r8bU6m": {
+        "message": "在頁面頂端顯示書籤列。",
+        "description": "General settings: bookmarks bar"
+    },
+    "gEYo49": {
+        "message": "位置",
+        "description": "Backgroud settings: form field label"
+    },
+    "gS3mti": {
+        "message": "清單樣式",
+        "description": "Form field label"
+    },
+    "pqIuCa": {
+        "message": "顯示目前天氣",
+        "description": "Weather widget: form field label"
+    },
+    "dOlhtQ": {
+        "message": "如果希望僅在新標籤頁顯示書籤工具列，你可以在網址列旁點擊滑鼠右鍵 > 書籤工具列 > 僅在新標籤頁顯示。 <a>顯示更多</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "gHzZEt": {
+        "message": "只有時鐘和搜尋列",
+        "description": "Preset: focus description"
+    },
+    "gXcVyS": {
+        "message": "編輯完成",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "j0VHNa": {
+        "message": "授予存取書籤和從網站獲取圖標的權限"
+    },
+    "tSMpM0": {
+        "message": "授予存取常用網站和讀取網站圖標的權限",
+        "description": "Top Sites widget: permission request"
+    },
+    "zXtUcf": {
+        "message": "別擔心，您可以稍後解鎖"
+    },
+    "zo4ZQa": {
+        "message": "匯入",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "zsdRww": {
+        "message": "用於主要按鈕及連結",
+        "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "gSjZfg": {
+        "message": "連結",
+        "description": "Links Widget"
+    },
+    "TkgCJ9": {
+        "message": "您可以使用下面的網址獲得幫助或請求功能。"
+    },
+    "Wi0G88": {
+        "message": "關於和幫助",
+        "description": "Settings tab"
+    },
+    "cR7nCG": {
+        "message": "恢復預設主題"
+    },
+    "PBMGxw": {
+        "message": "限制圖片數量",
+        "description": "Feed background mode: form field label"
+    },
+    "eXB4qM": {
+        "message": "週三",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "ekIjqh": {
+        "message": "授予存取所有網站的權限"
+    },
+    "cSF2y1": {
+        "message": "顯示書籤",
+        "description": "Bookmarks widget description"
+    },
+    "dIwFS5": {
+        "message": "選擇一個圖片",
+        "description": "Form field label"
+    },
+    "eKCjBm": {
+        "message": "降雨機率 (%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "hWimZf": {
+        "message": "啟用小工具搜尋",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "hktZIl": {
+        "message": "顯示時間"
+    },
+    "iFxzUm": {
+        "message": "喜歡",
+        "description": "Background credits vote"
+    },
+    "iH2AHA": {
+        "message": "<a>開放源始碼</a>，根據 GPLv3+ 協議。"
+    },
+    "kF06lD": {
+        "message": "完整 ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "h/ftND": {
+        "message": "選擇一個檔案"
+    },
+    "h00yCR": {
+        "message": "顯示來自 Atom、JSONFeed 或 RSS 來源的最新網路漫畫。",
+        "description": "Web Comic widget description"
+    },
+    "hUIQ7h": {
+        "message": "亮度",
+        "description": "Backgroud settings: form field label"
+    },
+    "nHw5cV": {
+        "message": "點擊項目以進行編輯。",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "nnaWVi": {
+        "message": "攝氏",
+        "description": "Weather widget: Celsius unit"
+    },
+    "qoEZRi": {
+        "message": "Unsplash 收藏",
+        "description": "Backgroud settings: form field label"
+    },
+    "mSg5KK": {
+        "message": "亮度：深",
+        "description": "Backgroud settings: form field label"
+    },
+    "mw6Uh+": {
+        "message": "顯示每日預報",
+        "description": "Weather widget: form field label"
+    },
+    "n+w6I2": {
+        "message": "漸層結束",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "n0cZ3b": {
+        "message": "由 {host} 提供。",
+        "description": "Credit to a website"
+    },
+    "qzlLb3": {
+        "message": "週日",
+        "description": "Short weekday name (Sunday)"
+    },
+    "q6/aVX": {
+        "message": "您可以使用搜索小工具來篩選小工具。",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "rAuRqW": {
+        "message": "翻譯由社群提供。"
+    },
+    "tyq8NB": {
+        "message": "天氣",
+        "description": "Weather Widget"
+    },
+    "uRYRJh": {
+        "message": "編輯 {type}"
+    },
+    "ubO4zt": {
+        "message": "網路漫畫",
+        "description": "Web Comic Widget"
+    },
+    "uv1bYR": {
+        "message": "週二",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "uzT59w": {
+        "message": "網格",
+        "description": "Preset: Grid"
+    },
+    "Oa5RYo": {
+        "message": "<b>小工具也可以調整設定</b>：將滑鼠停留在在小工具上，單點鉛筆圖示即可進入設定。",
+        "description": "General settings: help message"
+    },
+    "X5OoHJ": {
+        "message": "你今天的目標是什麼？",
+        "description": "Daily Goal prompt"
+    },
+    "XV4mnl": {
+        "message": "根據你的設定，可能會顯示相同的圖片",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "ZeZlbR": {
+        "message": "設定按鈕顏色的透明度",
+        "description": "Button widget: form field hint (Opacity)"
+    },
+    "a09vzt": {
+        "message": "HTTP 請求失敗，{code} {msg}。"
+    },
+    "oBl48o": {
+        "message": "你確定要重置所有設定嗎？",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "oDog89": {
+        "message": "一個作為筆記的文字編輯區域",
+        "description": "Notes widget description"
+    },
+    "o9vGxx": {
+        "message": "在新分頁打開連結",
+        "description": "Form field label"
+    },
+    "oGS5TE": {
+        "message": "午安，{name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "oJnbwn": {
+        "message": "名稱",
+        "description": "Greeting widget: name prompt"
+    },
+    "oRui+E": {
+        "message": "喜歡 Renewed Tab 嗎？歡迎透過捐獻幫助我們的開發工作。"
+    },
+    "pG7wIz": {
+        "message": "顯示匯率，支援外匯貨幣和加密貨幣 (例如比特幣等)",
+        "description": "Currencies widget description"
+    },
+    "pHo6u+": {
+        "message": "訂閱來源中沒有圖片",
+        "description": "Web Comic widget: no images found error"
+    },
+    "pVrtrA": {
+        "message": "使用自定圖片",
+        "description": "Backgroud mode description"
+    },
+    "x59fh0": {
+        "message": "太空航班",
+        "description": "Space Flights Widget"
+    },
+    "ofl4Ui": {
+        "message": "搜尋",
+        "description": "Location form field: search"
+    },
+    "olBVPS": {
+        "message": "匯出",
+        "description": "Import / export settings, export"
+    },
+    "or/+Da": {
+        "message": "樣式",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "p8GKKf": {
+        "message": "最常開啟的網站",
+        "description": "Top Sites Widget"
+    },
+    "MtrTNy": {
+        "message": "明天"
+    },
+    "PHwOzi": {
+        "message": "感謝 Unsplash，AccuWeather 和 RocketLaunch.Live 提供的 API 服務。"
+    },
+    "mv9TrH": {
+        "message": "HTML",
+        "description": "HTML Widget"
+    },
+    "VxE3S8": {
+        "message": "這會自動將網址發送給 Renewed Tab 的開發人員。然後他們可以選擇將其添加到所有用戶的建議中。",
+        "description": "Host URL field: help text for suggest URL button"
+    },
+    "b2Rs2F": {
+        "message": "更改淺色圖像的亮度",
+        "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "btOI+Z": {
+        "message": "新分頁"
+    },
+    "c7zm0j": {
+        "message": "無法載入來源。請確定這是一個有效的 RSS, JSONFeed 或 Atom訂閱來源。"
+    },
+    "gQAsym": {
+        "message": "請注意，其他小工具在拖動時不會移開。",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "oPO8GY": {
+        "message": "缺少日曆網址。編輯此小工具來添加"
+    },
+    "qfkgCx": {
+        "message": "顯示未來事件的天數。設置為 1 只顯示今天的事件，2 代表今天和明天，依此類推。",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "sX3mXR": {
+        "message": "隱藏",
+        "description": "Hide"
+    },
+    "bQFsdR": {
+        "message": "授予存取 {host} 的權限"
+    },
+    "wETxDh": {
+        "message": "日曆",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "x7WADS": {
+        "message": "滿版網格",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "xR87uK": {
+        "message": "小工具之間的間距，單位是像素。",
+        "description": "Widget grid: form hint for grid spacing"
+    },
+    "xtOPHp": {
+        "message": "連結網址",
+        "description": "Form field label"
+    },
+    "xtl3ls": {
+        "message": "啟用自定圖標",
+        "description": "Links widget: form field label"
+    },
+    "zWgbGg": {
+        "message": "今天"
+    },
+    "nlnYxI": {
+        "message": "最長天數",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "bfWes8": {
+        "message": "漸層類型",
+        "description": "Form field label"
+    },
+    "grbGxs": {
+        "message": "沒有行程",
+        "description": "CalendarSchedule: no events"
+    },
+    "pbEMNj": {
+        "message": "往前",
+        "description": "Onboarding page: previous button"
+    },
+    "v9UIPJ": {
+        "message": "日出 - 日落",
+        "description": "Weather widget: wind speed tooltip"
     }
 }
