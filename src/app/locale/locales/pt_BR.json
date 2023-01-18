@@ -1181,5 +1181,17 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "dOlhtQ": {
+        "message": "Você pode mostrar a a barra de favoritos apenas na página de Nova Guia com Clique direito perto da barra de endereço > Barra de favoritos > Mostart apenas na nova guia. <a>Ver mais</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "2s4stS": {
+        "message": "Bem-vindo(a) a <a>Renewed Tab.</a>",
+        "description": "Onboarding modal: title"
+    },
+    "20tqYI": {
+        "message": "URL para um arquivo iCal (.ics) para um calendário",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
     }
 }
