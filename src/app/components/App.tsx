@@ -6,7 +6,7 @@ import SettingsDialog from "./settings/SettingsDialog";
 import Background from "./backgrounds";
 import { usePromise, useStorage } from "app/hooks";
 import { defineMessage, defineMessages, IntlProvider, useIntl } from "react-intl";
-import { getTranslation, getUserLocale } from "app/locale";
+import { getTranslation, detectUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "./settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
 import { storage } from "app/storage";
@@ -46,7 +46,7 @@ export default function App() {
 	}, []);
 
 	const [query, setQuery] = useState("");
-	const [locale, setLocale] = useStorage<string>("locale", getUserLocale());
+	const [locale, setLocale] = useStorage<string>("locale", detectUserLocale());
 	const [showBookmarksBar, setShowBookmarksBar] = useStorage("showBookmarksBar", app_version.target == "chrome");
 	const [messages] = usePromise(() => locale ? getTranslation(locale) : Promise.reject(null), [locale]);
 	const [background, setBackground] = useBackground();

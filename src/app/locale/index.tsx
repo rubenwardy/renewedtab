@@ -13,8 +13,9 @@ const availableLocales: Record<string, string> = require("./enabledLocales.json"
 // but not the other way around.
 const localeAliases: { [key: string]: string } = {
 	"pt": "pt-br",
-	"zh": "zh-hans",
-	"zh-hant": "zh-hans",
+	"zh": "zh-cn",
+	"zh-hant": "zh-tw",
+	"zh-hans": "zh-cn",
 };
 
 
@@ -57,7 +58,7 @@ export async function getTranslation(locale: string): Promise<Translation | null
 		return {};
 	} else {
 		const locales = await getLocales();
-		return locales[locale];
+		return locales[localeAliases[locale.toLowerCase()] ?? locale];
 	}
 }
 
@@ -67,7 +68,7 @@ export async function getTranslation(locale: string): Promise<Translation | null
  *
  * @returns Locale string, to be used with getTranslation
  */
-export function getUserLocale(): string {
+export function detectUserLocale(): string {
 	const rawLangs = navigator.languages ? navigator.languages : [navigator.language];
 	const langs = rawLangs.map(lang => lang.toLowerCase());
 
