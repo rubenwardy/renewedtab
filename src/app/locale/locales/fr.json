@@ -451,7 +451,7 @@
         "message": "Utiliser le mouvement (<move></move>) et le redimensionnement (<resize></resize>)."
     },
     "0PsF7Z": {
-        "message": "Êtes-vous d'enlever définitivement ce composant ?",
+        "message": "Êtes-vous sûr de vouloir supprimer définitivement ce composant ?",
         "description": "Delete widget modal message"
     },
     "0l+aD2": {
@@ -1045,7 +1045,7 @@
         "description": "Widget grid: form label for grid full width"
     },
     "+PNw8j": {
-        "message": "Même is vous cachez quelques informations, vous pourrez quand même le voir en survolant les jours et les heures",
+        "message": "Même si vous cachez quelques informations, vous pourrez quand même le voir en survolant les jours et les heures",
         "description": "Weather widget: form field hint (Display Options)"
     },
     "5640CU": {
@@ -1303,5 +1303,12 @@
     "pWdLkT": {
         "message": "Veuillez lire <a>le tutoriel</a>. Vous pouvez utiliser n'importe quel calendrier sur Internet qui supporte iCal, dont Google Calendar et Outlook.",
         "description": "CalendarSchedule widget: edit hint"
+    },
+    "jGWq1h": {
+        "message": "Fuseau horaire"
+    },
+    "QkI7Lb": {
+        "message": "Fuseau horaire du navigateur ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
     }
 }
