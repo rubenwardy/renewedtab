@@ -1162,7 +1162,7 @@
         "description": "General settings: bookmarks bar"
     },
     "dOlhtQ": {
-        "message": "你可以通过右击 \"地址栏 > 书签栏 > 仅在新标签页显示\" 来仅在新标签页显示书签栏。<a>显示更多</a>",
+        "message": "希望仅在新标签页显示书签栏，你可以右击 \"地址栏 > 书签栏 > 仅在新标签页显示\"。<a>显示更多</a>",
         "description": "General settings: Help for Firefox bookmarks bar"
     },
     "gS3mti": {
@@ -1239,7 +1239,7 @@
         "message": "你喜欢Renewed Tab吗？给我们一个评论吧！"
     },
     "n+w6I2": {
-        "message": "比例",
+        "message": "渐变停止点（比例）",
         "description": "Form field label. Gradient stop (%)"
     },
     "zPAzlS": {
@@ -1303,5 +1303,12 @@
     "pWdLkT": {
         "message": "请阅读这个<a>教程</a>。你可以使用任何支持 iCal 的云日历服务，包括 Google 日历和 Outlook。",
         "description": "CalendarSchedule widget: edit hint"
+    },
+    "QkI7Lb": {
+        "message": "浏览器时区 ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "jGWq1h": {
+        "message": "时区"
     }
 }
