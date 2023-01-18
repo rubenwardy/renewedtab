@@ -1259,5 +1259,35 @@
     "wETxDh": {
         "message": "Calendarios",
         "description": "CalendarSchedule widget: form field label"
+    },
+    "BfX7n6": {
+        "message": "Nota: Firefox puede mostrar artefactos como líneas en los fondos degradados. Esto no es algo que podamos arreglar.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "/Mx09O": {
+        "message": "Experimental. Esto no funciona con todas los feeds, debido a la falta de información de las imágenes. Las imágenes también pueden ser grandes y tardar en cargarse.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "QkI7Lb": {
+        "message": "Zona horaria del navegador ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "jGWq1h": {
+        "message": "Zona horaria"
+    },
+    "pWdLkT": {
+        "message": "Por favor, lea <a>el tutorial</a>. Puede usar cualquier calendario en la nube que soporte iCal, incluyendo Google Calendar y Outlook.",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "7zYGs9": {
+        "message": "Calendario",
+        "description": "CalendarSchedule Widget"
+    },
+    "grbGxs": {
+        "message": "No hay eventos",
+        "description": "CalendarSchedule: no events"
+    },
+    "j0VHNa": {
+        "message": "Permitir el acceso a los marcadores y la obtención de iconos de los sitios web"
     }
 }
