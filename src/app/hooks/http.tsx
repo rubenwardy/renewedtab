@@ -313,6 +313,7 @@ export function useMultiFeed(sources: FeedSource[], dependents?: any[]): [[Feed,
 }
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchCalendar(calendar: any, url: string, limitToDays: number): Promise<CalendarEvent[]> {
 	limitToDays = clampNumber(Math.floor(limitToDays), 1, 28);
 
@@ -329,38 +330,40 @@ async function fetchCalendar(calendar: any, url: string, limitToDays: number): P
 
 type CalendarErrors = { url: string, error: UserError }[];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchMultiCalendar(urls: string[], limitToDays: number): Promise<[CalendarEvent[], CalendarErrors]> {
 	if (urls.length == 0 || urls.some(x => x == "")) {
 		throw new UserError(messages.missingCalendarURL);
 	}
 
-	const calendar = await import(/* webpackChunkName: "calendar" */ "../utils/calendar");
-	const promises = await Promise.allSettled(
-		urls.map(x => fetchCalendar(calendar, x, limitToDays)));
+	// const calendar = await import(/* webpackChunkName: "calendar" */ "../utils/calendar");
+	// const promises = await Promise.allSettled(
+	// 	urls.map(x => fetchCalendar(calendar, x, limitToDays)));
 
-	const events: CalendarEvent[] =
-		promises
-			.filter(promise => isFullfilled(promise))
-			.flatMap(promise => {
-				const events = (promise as PromiseFulfilledResult<CalendarEvent[]>).value;
-				return events;
-			})
-			.sort((a, b) => a.start.valueOf() - b.start.valueOf());
+	// const events: CalendarEvent[] =
+	// 	promises
+	// 		.filter(promise => isFullfilled(promise))
+	// 		.flatMap(promise => {
+	// 			const events = (promise as PromiseFulfilledResult<CalendarEvent[]>).value;
+	// 			return events;
+	// 		})
+	// 		.sort((a, b) => a.start.valueOf() - b.start.valueOf());
 
-	const errors: { url: string, error: any }[] = promises
-		.map((promise, i) => ({ url: urls[i], promise: promise }))
-		.filter(({ promise}) => isRejected(promise))
-		.map(({url, promise})  => ({
-			url, error: (promise as PromiseRejectedResult).reason
-		}));
+	// const errors: { url: string, error: any }[] = promises
+	// 	.map((promise, i) => ({ url: urls[i], promise: promise }))
+	// 	.filter(({ promise}) => isRejected(promise))
+	// 	.map(({url, promise})  => ({
+	// 		url, error: (promise as PromiseRejectedResult).reason
+	// 	}));
 
-	errors.forEach(({ error }) => {
-		if (!(error instanceof UserError)) {
-			throw error;
-		}
-	});
+	// errors.forEach(({ error }) => {
+	// 	if (!(error instanceof UserError)) {
+	// 		throw error;
+	// 	}
+	// });
 
-	return [events, errors];
+	// return [events, errors];
+	return Promise.reject();
 }
 
 
