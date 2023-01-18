@@ -108,7 +108,7 @@ async function upload(zipPath) {
 	console.log("Uploading to Chrome Web Store...")
 	const res = await webstore.uploadExisting(myZipFile, token);
 	console.log(res);
-	await webstore.publish();
+	// await webstore.publish();
 }
 
 if (process.argv.length < 3) {

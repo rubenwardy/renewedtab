@@ -44,6 +44,3 @@ echo " NODE_ENV=production npm run start:firefox"
 echo " NODE_ENV=production npm run start:chrome"
 echo ""
 echo "and then push the commit and tag."
-
-echo ""
-echo "WARNING: Make sure you edit the chrome store page before pushing the tag"
