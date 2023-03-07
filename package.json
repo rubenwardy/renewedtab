@@ -45,8 +45,8 @@
 		"@babel/plugin-transform-react-jsx": "^7.17.3",
 		"@babel/preset-env": "^7.16.11",
 		"@babel/preset-typescript": "^7.16.7",
-		"@fortawesome/fontawesome-svg-core": "^6.2.1",
-		"@fortawesome/free-solid-svg-icons": "^6.0.0",
+		"@fortawesome/fontawesome-svg-core": "^6.3.0",
+		"@fortawesome/free-solid-svg-icons": "^6.3.0",
 		"@sentry/node": "^7.7.0",
 		"@sentry/react": "^7.7.0",
 		"@sentry/tracing": "^7.7.0",
@@ -101,7 +101,7 @@
 		"selenium-webdriver": "*",
 		"start-server-and-test": "^1.14.0",
 		"ts-node": "^10.6.0",
-		"web-ext": "^6.7.0",
+		"web-ext": "^6.8.0",
 		"web-ext-types": "^3.2.1",
 		"webextension-polyfill-ts": "^0.26.0"
 	}

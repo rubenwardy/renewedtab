@@ -109,6 +109,11 @@
 			&.active:hover {
 				background: rgba(255, 255, 255, 0.15);
 			}
+
+			.svg-inline--fa, .fas {
+				text-align: center;
+				min-width: 1.5rem;
+			}
 		}
 	}
 

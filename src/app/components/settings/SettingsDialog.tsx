@@ -18,6 +18,14 @@ export enum SettingsTab {
 	About,
 }
 
+export const TabIcons: {[index: string]:any} = {
+	"General": "gear",
+	"Grid": "grip",
+	"Background": "image",
+	"Theme": "paint-brush",
+	"ImportExport": "right-left",
+	"About": "question",
+}
 
 declare type SettingsTabType = keyof typeof SettingsTab;
 
@@ -89,6 +97,7 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 			return (
 				<a id={`tab-${tabName}`} key={tabName} onClick={() => setTab(tab)}
 						className={isSelected ? "active" : undefined}>
+						<i className={`fas fa-${TabIcons[tabName]} mr-1`}> </i>
 					<FormattedMessage {...tabTitles[tab]} />
 				</a>)
 		});
