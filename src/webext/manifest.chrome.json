@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2,
+	"manifest_version": 3,
 	"name": "__MSG_appName__",
 	"version": "1.16.0",
 	"description": "__MSG_appDescription__",
@@ -21,8 +21,10 @@
 		"search"
 	],
 	"optional_permissions": [
-		"<all_urls>",
 		"bookmarks",
 		"topSites"
+	],
+	"optional_host_permissions": [
+		"*://*/*"
 	]
 }
