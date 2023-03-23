@@ -13,6 +13,7 @@ import UserError from 'app/utils/UserError';
 import { formatNumber, mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
 import deepCopy from 'app/utils/deepcopy';
+import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 
 
 const messages = defineMessages({
@@ -115,6 +116,11 @@ const messages = defineMessages({
 		defaultMessage: "Show daily forecast",
 		description: "Weather widget: form field label",
 	},
+
+	askForDonations: {
+		defaultMessage: "Find this useful? Consider <a>donating</a> to cover the costs of the weather API, and support future Renewed Tab development.",
+		description: "Weather widget: asking for donations",
+	}
 });
 
 const temperatureUnitMessages = defineMessages({
@@ -492,6 +498,9 @@ const widget: WidgetType<WeatherProps> = {
 	description: messages.description,
 	defaultSize: new Vector2(5, 3),
 	initialProps: initialProps,
+	editHint: bindValuesToDescriptor(messages.askForDonations, {
+		a: (chunk: any) => (<a href="https://renewedtab.com/donate/">{chunk}</a>),
+	}),
 	schema: {
 		location: type.location(schemaMessages.location),
 		unit: type.selectEnum(TemperatureUnit, temperatureUnitMessages, messages.temperatureUnit),
