@@ -301,6 +301,9 @@
   "D3idYv": {
     "message": "Settings"
   },
+  "DVGnNH": {
+    "message": "You can hover over the credits in the bottom left to like or skip a background image."
+  },
   "Ddd3ZY": {
     "description": "Currencies widget: form field label",
     "message": "To"
@@ -917,6 +920,10 @@
   },
   "iH2AHA": {
     "message": "<a>Open source</a>, licensed under GPLv3+."
+  },
+  "ilIuh2": {
+    "description": "Weather widget: asking for donations",
+    "message": "Find this useful? Consider <a>donating</a> to cover the costs of the weather API, and support future Renewed Tab development."
   },
   "irdBm2": {
     "description": "Settings tab",
