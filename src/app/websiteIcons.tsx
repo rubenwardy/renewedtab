@@ -1,5 +1,5 @@
 import { TippyTopImage } from "common/api/icons";
-import { fetchBinaryAsDataURL, fetchCheckCors, getAPI } from "./hooks/http";
+import { fetchBinaryAsDataURL, fetchCheckCors, fetchAPI } from "./hooks/http";
 import { cacheStorage } from "./storage";
 import { firstPromise } from "./utils";
 
@@ -38,7 +38,7 @@ function validateIcon(res: Response) {
 
 async function fetchTippyTops(url: string): Promise<string | undefined> {
 	if (!tippytops) {
-		tippytops = getAPI("/website-icons/", {});
+		tippytops = fetchAPI("/website-icons/", {});
 	}
 
 	const data = await tippytops;

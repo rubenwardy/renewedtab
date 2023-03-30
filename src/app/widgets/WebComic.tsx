@@ -5,7 +5,7 @@ import { WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages } from 'react-intl';
 import { schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
-import { getAPI, useFeed } from 'app/hooks/http';
+import { fetchAPI, useFeed } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';
 import UserError from 'app/utils/UserError';
 import Modal from "app/components/Modal";
@@ -138,7 +138,7 @@ const widget: WidgetType<WebComicProps> = {
 	},
 	schema: {
 		url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
-			() => getAPI<AutocompleteItem[]>("webcomics/", {})),
+			() => fetchAPI<AutocompleteItem[]>("webcomics/", {})),
 	},
 };
 export default widget;

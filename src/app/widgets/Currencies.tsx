@@ -1,6 +1,6 @@
 import ErrorView from 'app/components/ErrorView';
 import Panel from 'app/components/Panel';
-import { getAPI, useAPI } from 'app/hooks';
+import { fetchAPI, useAPI } from 'app/hooks';
 import { useGlobalSearch } from 'app/hooks/globalSearch';
 import { miscMessages } from 'app/locale/common';
 import { bindValuesToDescriptor } from 'app/locale/MyMessageDescriptor';
@@ -123,7 +123,7 @@ const widget: WidgetType<CurrenciesProps> = {
 	},
 
 	async schema() {
-		const json = (await getAPI("/currencies/", {})) as Record<string, CurrencyInfo>;
+		const json = (await fetchAPI("/currencies/", {})) as Record<string, CurrencyInfo>;
 
 		const currencyOptions: Record<string, string> = {};
 		currencyOptions[""] = "";

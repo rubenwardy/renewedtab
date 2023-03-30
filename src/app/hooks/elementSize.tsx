@@ -1,5 +1,5 @@
 import { Vector2 } from "app/utils/Vector2";
-import { useState, useCallback, useEffect, RefObject } from "react";
+import { useState, RefObject, useLayoutEffect } from "react";
 
 
 /**
@@ -11,30 +11,28 @@ export function useElementSize<T extends HTMLElement>(ref: RefObject<T>):
 		(Vector2 | undefined) {
 	const [size, setSize] = useState<Vector2 | undefined>(undefined);
 
-	const updateSize = useCallback((node: T) => {
-		const newSize = new Vector2(node.clientWidth, node.clientHeight);
-		if (size == undefined || !newSize.equals(size)) {
-			setSize(newSize);
-		}
-	}, [size]);
-
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (typeof ResizeObserver != "function") {
 			return;
 		}
 
 		const observer = new ResizeObserver(entries => {
 			for (const entry of entries) {
-				updateSize(entry.target as T);
+				const newSize = new Vector2(entry.target.clientWidth, entry.target.clientHeight);
+				setSize(newSize);
 			}
 		});
 
 		if (ref.current) {
+			const newSize = new Vector2(ref.current.clientWidth, ref.current.clientHeight);
+			setSize(newSize);
 			observer.observe(ref.current);
 		}
 
 		return () => observer.disconnect();
-	}, [updateSize, ref]);
+	// ref.current is definitely needed here
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [setSize, ref, ref.current]);
 
 	return size;
 }

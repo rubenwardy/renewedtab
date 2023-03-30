@@ -5,7 +5,7 @@ import { WidgetEditComponentProps, WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
-import { getAPI, useMultiFeed, useForceUpdateValue } from 'app/hooks';
+import { fetchAPI, useMultiFeed, useForceUpdateValue } from 'app/hooks';
 import ErrorView from 'app/components/ErrorView';
 import uuid from 'app/utils/uuid';
 import { TabOption, Tabs } from 'app/components/Tabs';
@@ -336,7 +336,7 @@ const filterSchema: Schema<Filter> = {
 const sourceSchema: Schema<FeedSource> = {
 	title: type.string(schemaMessages.title, messages.titleHint),
 	url: type.urlFeed(schemaMessages.url, schemaMessages.rssUrlHint,
-		() => getAPI<AutocompleteItem[]>("feeds/", {})),
+		() => fetchAPI<AutocompleteItem[]>("feeds/", {})),
 };
 
 

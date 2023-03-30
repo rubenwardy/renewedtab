@@ -1,4 +1,4 @@
-import { fetchBinaryAsDataURL, getAPI } from "app/hooks";
+import { fetchBinaryAsDataURL, fetchAPI } from "app/hooks";
 import { storage } from "app/storage";
 import { type } from "app/utils/Schema";
 import { BackgroundInfo } from "common/api/backgrounds";
@@ -24,7 +24,7 @@ const messages = defineMessages({
 });
 
 async function getBackgroundInfo(votes: Record<string, boolean>): Promise<(BackgroundInfo | undefined)> {
-	const backgrounds = await getAPI<BackgroundInfo[]>("background/", {});
+	const backgrounds = await fetchAPI<BackgroundInfo[]>("background/", {});
 	if (backgrounds && backgrounds.length > 0) {
 		for (let i = 0; i < backgrounds.length; i++) {
 			if (votes[backgrounds[i].id] !== false) {

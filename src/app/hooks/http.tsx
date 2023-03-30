@@ -163,7 +163,7 @@ export function buildAPIURL(path: string, args?: Record<string, any>): URL {
  * @param {any[]} dependents - A list of dependent variables for the URL.
  * @return {[response, error]]} - Response and error
  */
-export async function getAPI<T>(path: string, args: any): Promise<T> { // eslint-disable-line
+export async function fetchAPI<T>(path: string, args: any): Promise<T> { // eslint-disable-line
 	return fetchJSON(buildAPIURL(path, args).toString());
 }
 
@@ -178,7 +178,7 @@ export async function getAPI<T>(path: string, args: any): Promise<T> { // eslint
  */
 export function useAPI<T>(path: string, args: any, // eslint-disable-line
 	dependents?: any[]): [(T | null), (string | null)] {
-	return usePromise(() => getAPI(path, args), dependents ?? []);
+	return usePromise(() => fetchAPI(path, args), dependents ?? []);
 }
 
 

@@ -1,5 +1,4 @@
 import React, { useMemo, useRef } from 'react';
-import { useAPI } from 'app/hooks/http';
 import { useElementSize } from 'app/hooks/elementSize';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
@@ -14,6 +13,7 @@ import { formatNumber, mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
 import deepCopy from 'app/utils/deepcopy';
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
+import { fetchAPI, usePromise } from "app/hooks";
 
 
 const messages = defineMessages({
@@ -390,27 +390,12 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 	return (size && (size.x < limitX || size.y < limitY)) ? "sm" : "lg";
 }
 
-/* eslint-disable react-hooks/rules-of-hooks */
 
-function Weather(widget: WidgetProps<WeatherProps>) {
+function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, rawInfo: WeatherInfo }) {
 	const props = widget.props;
 	const unit = props.unit ?? TemperatureUnit.Celsius;
 	const ref = useRef(null);
 	const size = useElementSize(ref);
-
-	if (!props.location) {
-		return (<ErrorView error={new UserError(messages.locationNeeded)} />);
-	}
-
-	const [rawInfo, error] = useAPI<WeatherInfo>("/weather/",
-		{ lat: props.location.latitude, long: props.location.longitude},
-		[props.location.latitude, props.location.longitude]);
-	if (!rawInfo) {
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-		useMemo(() => 0, [null, unit])
-		return (<ErrorView error={error} loading={true} />);
-	}
-
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
 	const numberOfColumns = size ? size.x / 75 : 5;
@@ -455,6 +440,25 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 			{props.display.showDailyForecast && (
 				<div className="row forecasts">{daily}</div>)}
 		</Panel>);
+}
+
+
+function Weather(widget: WidgetProps<WeatherProps>) {
+	const props = widget.props;
+	const [rawInfo, error] = usePromise<WeatherInfo>(async () => {
+		if (!props.location) {
+			throw new UserError(messages.locationNeeded);
+		}
+
+		return fetchAPI("/weather/",
+			{lat: props.location.latitude, long: props.location.longitude})
+	}, [props.location, props.location?.latitude, props.location?.longitude])
+
+	if (rawInfo) {
+		return (<WeatherImpl widget={widget} rawInfo={rawInfo} />);
+	} else {
+		return (<ErrorView error={error} loading={true} />);
+	}
 }
 
 
