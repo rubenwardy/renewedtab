@@ -507,6 +507,9 @@ app.get("/api/website-icons/", async (req, res: express.Response, next: (e: unkn
 				domains: [ "feeds.bbci.co.uk" ],
 				image_url: "https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/5.2.0/apple-touch-icon.png",
 			});
+
+			icons.find(x => x.domains.includes("github.com"))!.image_url =
+				"https://github.githubassets.com/favicons/favicon-dark.svg";
 		}
 		res.json(icons);
 	} catch (e: any) {
