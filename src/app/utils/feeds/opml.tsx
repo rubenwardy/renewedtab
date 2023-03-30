@@ -8,6 +8,7 @@ export function parseOPML(data: string, parseXML: XMLParser): FeedSource[] {
 		id: uuid(),
 		title: x.getAttribute("title") ?? x.getAttribute("text") ?? "",
 		url: x.getAttribute("xmlUrl")!,
+		htmlUrl: x.getAttribute("htmlUrl") ?? undefined,
 	}));
 }
 
@@ -35,7 +36,8 @@ export function makeOPML(sources: FeedSource[]) {
 		x => `<outline type="rss"
 			text="${quoteattr(x.title)}"
 			title="${quoteattr(x.title)}"
-			xmlUrl="${quoteattr(x.url)}" />`);
+			xmlUrl="${quoteattr(x.url)}"
+			htmlUrl="${quoteattr(x.htmlUrl ?? '')}" />`);
 
 	return `<?xml version="1.0" encoding="UTF-8"?>
 		<opml version="1.0">

@@ -104,7 +104,7 @@ interface FeedProps {
 
 
 interface FeedPanelProps extends FeedProps {
-	onGotTitle: (source: FeedSource, title: string) => void;
+	onGotTitle: (source: FeedSource, title: (string | undefined), htmlUrl: (string | undefined)) => void;
 }
 
 
@@ -171,9 +171,9 @@ function FeedPanel(props: FeedPanelProps) {
 		const seen: any = {};
 
 		(feed?.articles ?? []).map(x => x.feed).forEach(subfeed => {
-			if (subfeed.title && subfeed.source && !subfeed.source.title && !seen[subfeed.source.id]) {
+			if (subfeed.source && !seen[subfeed.source.id]) {
 				seen[subfeed.source.id] = true;
-				props.onGotTitle(subfeed.source, subfeed.title);
+				props.onGotTitle(subfeed.source, subfeed.title, subfeed.link);
 			}
 		});
 	// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -241,6 +241,7 @@ function Feed(widget: WidgetProps<FeedProps>) {
 			id: x.id,
 			title: x.title || parseURL(x.url)?.hostname || "?",
 			url: x.url,
+			link: x.htmlUrl,
 		}));
 		if (showAll) {
 			ret.unshift({
@@ -268,8 +269,13 @@ function Feed(widget: WidgetProps<FeedProps>) {
 			<FeedPanel {...props}
 				key={sources.map(x => x.url).join(",")}
 				sources={sources}
-				onGotTitle={(source, title) => {
-					source.title = title;
+				onGotTitle={(source, title, htmlUrl) => {
+					if (title && !source.title) {
+						source.title = title;
+					}
+					if (htmlUrl && !source.htmlUrl) {
+						source.htmlUrl = htmlUrl;
+					}
 					widget.save();
 					forceUpdate();
 				}} />

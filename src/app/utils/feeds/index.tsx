@@ -6,6 +6,7 @@ export interface FeedSource {
 	id: string;
 	title: string;
 	url: string;
+	htmlUrl?: string;
 }
 
 
@@ -115,9 +116,10 @@ function parseRSSFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed
 
 
 function parseAtomFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed | null {
+	const rootLinks = getChildrenWithTagName(root, "link");
 	const feed: Feed = {
 		title: getChildrenWithTagName(root, "title")[0]?.textContent ?? undefined,
-		link: relativeURLToAbsolute(getChildrenWithTagName(root, "link")[0]?.getAttribute("href"), baseURL),
+		link: relativeURLToAbsolute(rootLinks.find(x => x.getAttribute("type")?.includes("html"))?.getAttribute("href"), baseURL),
 		articles: [],
 	};
 

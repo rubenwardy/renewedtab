@@ -6,7 +6,12 @@ import WebsiteIcon from './WebsiteIcon';
 export interface TabOption {
 	id: string;
 	title: string;
+
+	// URL to get WebsiteIcon from
 	url?: string;
+
+	// Link when double clicking
+	link?: string;
 }
 
 interface TabsProps {
@@ -26,7 +31,11 @@ function Tab(props: { option: TabOption, selected: boolean, useRootPathForIcons:
 
 	return (
 		<button className={mergeClasses("tab", props.selected && "selected")}
-				onClick={() => props.onClick()}>
+				onClick={() => props.onClick()} onDoubleClick={() => {
+					if (props.option.link) {
+						window.location.href = props.option.link;
+					}
+				}}>
 			{props.useWebsiteIcons && <WebsiteIcon url={url} />}
 			{props.option.title}
 		</button>);
