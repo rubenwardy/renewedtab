@@ -39,7 +39,7 @@ function cleanURL(url: string) {
 	}
 }
 
-type XMLParser = (source: string, lang: string) => Document;
+export type XMLParser = (source: string, lang: string) => Document;
 
 function escapeHTMLtoText(html: string, parseXML: XMLParser): string {
 	const root = parseXML(`<span>${html}</span>`, "text/html");

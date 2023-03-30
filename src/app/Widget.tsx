@@ -42,6 +42,10 @@ export interface WidgetTheme {
 	opacity?: number;
 }
 
+export interface WidgetEditComponentProps<T> extends WidgetProps<T> {
+	onChange: () => void;
+}
+
 export interface WidgetType<T> {
 	Component: ReactFC<WidgetProps<T>>;
 
@@ -70,6 +74,11 @@ export interface WidgetType<T> {
 	 * Hint to be shown in the WidgetEditor.
 	 */
 	editHint?: MyMessageDescriptor;
+
+	/**
+	 * A component to be shown in the WidgetEditor.
+	 */
+	editHeaderComponent?: ReactFC<WidgetEditComponentProps<T>>;
 
 	/**
 	 * Initial values for shared theme settings

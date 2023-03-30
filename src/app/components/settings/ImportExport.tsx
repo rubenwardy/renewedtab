@@ -14,11 +14,6 @@ const messages = defineMessages({
 		description: "Import / export settings, reset",
 	},
 
-	export: {
-		defaultMessage: "Export",
-		description: "Import / export settings, export",
-	},
-
 	confirmReset: {
 		defaultMessage: "Are you sure you want to reset all data?",
 		description: "Import / export settings, reset confirmation",
@@ -70,7 +65,7 @@ export default function ImportExport() {
 				<Button id="reset" variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
 				<ImportButton />
 				<Button id="export" href={`data:text/plain;base64,${encode(data ?? "")}`}
-						download="renewedtab.json" label={messages.export} />
+						download="renewedtab.json" label={miscMessages.export} />
 			</p>
 		</div>);
 }

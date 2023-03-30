@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+    <head>
+        <title>Andrew subscriptions in feedly Cloud</title>
+    </head>
+    <body>
+        <outline text="Electronics" title="Electronics">
+            <outline type="rss" text="Adafruit Industries – Makers, hackers, artists, designers and engineers!" title="Adafruit Industries – Makers, hackers, artists, designers and engineers!" xmlUrl="http://www.adafruit.com/blog/feed/" htmlUrl="https://blog.adafruit.com"/>
+            <outline type="rss" text="Evil Mad Scientist Laboratories" title="Evil Mad Scientist Laboratories" xmlUrl="http://www.evilmadscientist.com/backend/geeklog.rss" htmlUrl="https://www.evilmadscientist.com"/>
+            <outline type="rss" text="Arduino Blog" title="Arduino Blog" xmlUrl="http://www.arduino.cc/blog/?feed=rss2" htmlUrl="https://blog.arduino.cc"/>
+            <outline type="rss" text="EEVblog" title="EEVblog" xmlUrl="http://www.eevblog.com/feed/" htmlUrl="https://www.eevblog.com"/>
+        </outline>
+        <outline text="Tech" title="Tech">
+            <outline type="rss" text="rubenwardy’s blog" title="rubenwardy’s blog" xmlUrl="https://blog.rubenwardy.com/feed.xml" htmlUrl="https://blog.rubenwardy.com/"/>
+            <outline type="rss" text="CSS-Tricks" title="CSS-Tricks" xmlUrl="http://feeds.feedburner.com/CssTricks" htmlUrl="https://css-tricks.com"/>
+            <outline type="rss" text="The Verge" title="The Verge" xmlUrl="http://www.theverge.com/rss/full.xml" htmlUrl="https://www.theverge.com/"/>
+            <outline type="rss" text="Daring Fireball" title="Daring Fireball" xmlUrl="http://daringfireball.net/index.xml" htmlUrl="https://daringfireball.net/"/>
+            <outline type="rss" text="Minetest Blog" title="Minetest Blog" xmlUrl="https://blog.minetest.net/feed.rss" htmlUrl="https://blog.minetest.net/"/>
+            <outline type="rss" text="The Register" title="The Register" xmlUrl="http://www.theregister.co.uk/excerpts.rss" htmlUrl="https://www.theregister.com/"/>
+        </outline>
+    </body>
+</opml>

@@ -48,6 +48,8 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 	const isWide = Object.values(schema as Record<string, SchemaEntry>)
 		.some(field => field.type == "array" || field.type == "unordered_array");
 
+	const EditHeaderComponent = props.typeDef.editHeaderComponent;
+
 	return (
 		<Modal title={title} wide={isWide} {...props}>
 			<div className="modal-body">
@@ -55,6 +57,9 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 					<p className="text-muted">
 						<MyFormattedMessage message={props.typeDef.editHint} />
 					</p>}
+
+				{EditHeaderComponent && (
+					<EditHeaderComponent {...props} onChange={onChange} />)}
 
 				<Form
 						values={props.props}

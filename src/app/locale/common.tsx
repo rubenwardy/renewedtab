@@ -200,4 +200,14 @@ export const miscMessages = defineMessages({
 		defaultMessage:"<b>Widgets also have settings</b>: hover over a widget and click the pencil to customise it.",
 		description: "General settings: help message",
 	},
+
+	export: {
+		defaultMessage: "Export",
+		description: "Import / export settings, export",
+	},
+
+	import: {
+		defaultMessage: "Import",
+		description: "Import / export settings, import",
+	},
 });

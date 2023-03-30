@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { AutocompleteItem, type } from 'app/utils/Schema';
-import { WidgetProps, WidgetType } from 'app/Widget';
+import { WidgetEditComponentProps, WidgetProps, WidgetType } from 'app/Widget';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import Panel from 'app/components/Panel';
@@ -15,6 +15,8 @@ import { parseURL, queryMatchesAny } from 'app/utils';
 import { Article, FeedSource } from 'app/utils/feeds';
 import WebsiteIcon from 'app/components/WebsiteIcon';
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
+import Button, { ButtonVariant } from "app/components/Button";
+import { makeOPML, parseOPML } from "app/utils/feeds/opml";
 
 
 const messages = defineMessages({
@@ -275,6 +277,55 @@ function Feed(widget: WidgetProps<FeedProps>) {
 }
 
 
+function encode(str: string) {
+	// Escapes needed to fix `#` in data.
+	return btoa(unescape(encodeURIComponent(str)));
+}
+
+
+function FeedsImportExport(widget: WidgetEditComponentProps<FeedProps>) {
+	const handleImport = useCallback(async (file: File) => {
+		const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
+		const sources = parseOPML(text, (s, l) => new window.DOMParser().parseFromString(s, l as any));
+
+		// Avoid duplicates
+		const urls = new Set();
+		widget.props.sources.forEach(x => urls.add(x.url));
+
+		widget.props.sources = [
+			...widget.props.sources,
+			...sources.filter(x => !urls.has(x.url))
+		];
+		widget.onChange();
+	}, [widget]);
+
+	const exportData = useMemo(() => {
+		const data = makeOPML(widget.props.sources);
+		return `data:text/plain;base64,${encode(data ?? "")}`
+	}, [widget.props.sources]);
+
+	const ref = useRef<HTMLInputElement>(null);
+	return (
+		<div className="buttons row-centered mb-4">
+			<p className="col my-0 text-muted">
+				<FormattedMessage {...miscMessages.globalSearchEditHint} />
+			</p>
+			<input ref={ref} type="file" className="display-none"
+				accept=".opml,application/xml" name="import-file"
+				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
+			<Button id="import"
+				variant={ButtonVariant.Secondary}
+				onClick={() => ref.current?.click()}
+				label={miscMessages.import} />
+			<Button id="export"
+				variant={ButtonVariant.Secondary}
+				href={exportData}
+				download="renewedtab-feeds.opml"
+				label={miscMessages.export} />
+		</div>);
+}
+
+
 const filterSchema: Schema<Filter> = {
 	isAllowed: type.select({ false: "Hide", true: "Allow" },
 		{ false: messages.hide, true: messages.show }, messages.isAllowed),
@@ -293,8 +344,8 @@ const widget: WidgetType<FeedProps> = {
 	Component: Feed,
 	title: messages.title,
 	description: messages.description,
-	editHint: miscMessages.globalSearchEditHint,
 	defaultSize: new Vector2(5, 4),
+	editHeaderComponent: FeedsImportExport,
 	initialProps: {
 		sources: [
 			{

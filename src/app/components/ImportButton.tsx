@@ -1,15 +1,7 @@
 import { storage } from "app/storage";
 import React, { useRef } from "react";
-import { defineMessages } from "react-intl";
 import Button, { ButtonProps } from "./Button";
-
-
-const messages = defineMessages({
-	import: {
-		defaultMessage: "Import",
-		description: "Import / export settings, import",
-	},
-});
+import { miscMessages } from "app/locale/common";
 
 
 async function handleImport(file: File) {
@@ -29,6 +21,6 @@ export default function ImportButton(props: ButtonProps) {
 		<input ref={ref} type="file" className="display-none"
 			accept=".json,application/json" name="import-file"
 			onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
-		<Button id="import" onClick={() => ref.current?.click()} label={messages.import} {...props} />
+		<Button id="import" onClick={() => ref.current?.click()} label={miscMessages.import} {...props} />
 	</>);
 }
