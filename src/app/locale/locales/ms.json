@@ -1310,5 +1310,12 @@
     },
     "jGWq1h": {
         "message": "Zon Waktu"
+    },
+    "DVGnNH": {
+        "message": "Anda boleh melalukan tetikus di atas penghargaan di sebelah bawah kiri untuk menyukai atau melangkau imej latar belakang."
+    },
+    "ilIuh2": {
+        "message": "Anda rasa ini berguna? Apa kata anda <a>menderma</a> untuk menanggung kos API cuaca, dan menyokong pembangunan Renewed Tab masa hadapan.",
+        "description": "Weather widget: asking for donations"
     }
 }
