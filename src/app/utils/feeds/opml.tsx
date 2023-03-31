@@ -46,7 +46,7 @@ export function makeOPML(sources: FeedSource[]) {
 			</head>
 			<body>
 				<outline text="Feeds" title="Feeds">
-					${inner}
+					${inner.join("\n")}
 				</outline>
 			</body>
 		</opml>
