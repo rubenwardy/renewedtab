@@ -398,7 +398,8 @@ function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, r
 	const size = useElementSize(ref);
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-	const numberOfColumns = size ? size.x / 75 : 5;
+	const columnWidth = props.display.showHourlyForecast ? 80 : 75;
+	const numberOfColumns = size ? size.x / columnWidth : 5;
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
