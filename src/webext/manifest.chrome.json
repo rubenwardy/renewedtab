@@ -6,7 +6,7 @@
 	"author": "rubenwardy",
 	"homepage_url": "https://renewedtab.com/",
 	"offline_enabled": true,
-	"minimum_chrome_version": "78",
+	"minimum_chrome_version": "100",
 	"default_locale": "en",
 	"icons": {
 		"32": "icon-32.png",
