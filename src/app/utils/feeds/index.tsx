@@ -117,9 +117,11 @@ function parseRSSFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed
 
 function parseAtomFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed | null {
 	const rootLinks = getChildrenWithTagName(root, "link");
+	const linkEle = rootLinks.find(x => x.getAttribute("type")?.includes("html")) ??
+		rootLinks.find(x => x.getAttribute("rel") == "alternate");
 	const feed: Feed = {
 		title: getChildrenWithTagName(root, "title")[0]?.textContent ?? undefined,
-		link: relativeURLToAbsolute(rootLinks.find(x => x.getAttribute("type")?.includes("html"))?.getAttribute("href"), baseURL),
+		link: relativeURLToAbsolute(linkEle?.getAttribute("href"), baseURL),
 		articles: [],
 	};
 

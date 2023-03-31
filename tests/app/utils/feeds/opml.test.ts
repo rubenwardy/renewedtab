@@ -3,7 +3,6 @@ import { expect } from "chai";
 import { JSDOM } from "jsdom";
 import { FeedSource } from "app/utils/feeds";
 import { makeOPML, parseOPML } from "app/utils/feeds/opml";
-import { faAudioDescription } from "@fortawesome/free-solid-svg-icons";
 
 
 function parseTestOPML(name: string): FeedSource[] {
@@ -29,42 +28,52 @@ describe("parseOPML", () => {
 				{
 					"title": "Adafruit Industries – Makers, hackers, artists, designers and engineers!",
 					"url": "http://www.adafruit.com/blog/feed/",
+					"htmlUrl": "https://blog.adafruit.com",
 				},
 				{
 					"title": "Evil Mad Scientist Laboratories",
 					"url": "http://www.evilmadscientist.com/backend/geeklog.rss",
+					"htmlUrl": "https://www.evilmadscientist.com",
 				},
 				{
 					"title": "Arduino Blog",
 					"url": "http://www.arduino.cc/blog/?feed=rss2",
+					"htmlUrl": "https://blog.arduino.cc",
 				},
 				{
 					"title": "EEVblog",
 					"url": "http://www.eevblog.com/feed/",
+					"htmlUrl": "https://www.eevblog.com",
 				},
 				{
 					"title": "rubenwardy’s blog",
 					"url": "https://blog.rubenwardy.com/feed.xml",
+					"htmlUrl": "https://blog.rubenwardy.com/",
 				},
 				{
 					"title": "CSS-Tricks",
 					"url": "http://feeds.feedburner.com/CssTricks",
+					"htmlUrl": "https://css-tricks.com",
 				},
 				{
 					"title": "The Verge",
 					"url": "http://www.theverge.com/rss/full.xml",
+					"htmlUrl": "https://www.theverge.com/",
 				},
 				{
 					"title": "Daring Fireball",
 					"url": "http://daringfireball.net/index.xml",
+					"htmlUrl": "https://daringfireball.net/",
 				},
 				{
 					"title": "Minetest Blog",
 					"url": "https://blog.minetest.net/feed.rss",
+					"htmlUrl": "https://blog.minetest.net/",
 				},
 				{
 					"title": "The Register",
 					"url": "http://www.theregister.co.uk/excerpts.rss",
+					"htmlUrl": "https://www.theregister.com/",
 				},
 			]
 		);
