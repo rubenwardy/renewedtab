@@ -6,6 +6,7 @@ import { defineMessages } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { Form } from "../forms";
 import { ColorPair } from "../forms/ColorFields";
+import { schemaMessages } from "app/locale/common";
 
 
 const messages = defineMessages({
@@ -21,11 +22,6 @@ const messages = defineMessages({
 	fontHint: {
 		defaultMessage: "Any font name installed on your computer",
 		description: "Theme settings: form field hint (Font)",
-	},
-
-	fontScaling: {
-		defaultMessage: "Font Scaling",
-		description: "Theme settings: form field label",
 	},
 
 	panelBlurRadius: {
@@ -126,7 +122,7 @@ function getThemeSchema(): Schema<ThemeConfig> {
 	if (supportsBackdropFilter) {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
-			fontScaling: type.unit_number(messages.fontScaling, "%", undefined, 80, 200),
+			fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
 			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px", undefined, 0),
 			panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
 			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
@@ -135,7 +131,7 @@ function getThemeSchema(): Schema<ThemeConfig> {
 	} else {
 		return {
 			fontFamily: type.string(messages.font, messages.fontHint),
-			fontScaling: type.unit_number(messages.fontScaling, "%", undefined, 80, 200),
+			fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
 			panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
 			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
 			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),

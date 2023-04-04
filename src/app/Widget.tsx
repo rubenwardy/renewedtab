@@ -40,6 +40,7 @@ export interface WidgetTheme {
 	color?: string;
 	textColor?: string;
 	opacity?: number;
+	fontScaling?: number;
 }
 
 export interface WidgetEditComponentProps<T> extends WidgetProps<T> {
@@ -122,6 +123,11 @@ export interface WidgetProps<T> extends Widget<T> {
 
 export const defaultThemeSchema: Schema<WidgetTheme> = {
 	showPanelBG: type.boolean(schemaMessages.showPanelBG),
+	fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
+};
+
+export const onlyPanelThemeSchema: Schema<WidgetTheme> = {
+	showPanelBG: type.boolean(schemaMessages.showPanelBG),
 };
 
 
@@ -133,11 +139,13 @@ export function defaultLinksThemeSchema(widget: Widget<unknown>): Schema<WidgetT
 			showPanelBG: type.boolean(schemaMessages.showPanelBG),
 			showText: type.boolean(schemaMessages.showText),
 			listBoxStyle: type.selectEnum(ListBoxStyle, listBoxStyleMessages, schemaMessages.listBoxStyle),
+			fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
 		};
 	} else {
 		return {
 			showPanelBG: type.boolean(schemaMessages.showPanelBG),
 			listBoxStyle: type.selectEnum(ListBoxStyle, listBoxStyleMessages, schemaMessages.listBoxStyle),
+			fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
 		};
 	}
 }
@@ -191,6 +199,7 @@ export function getInitialTheme(type: WidgetType<unknown>): WidgetTheme {
 		color: undefined,
 		textColor: undefined,
 		showText: true,
+		fontScaling: 100,
 	};
 
 	if (typeof type.initialTheme !== "undefined") {

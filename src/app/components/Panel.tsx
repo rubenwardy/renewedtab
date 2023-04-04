@@ -46,6 +46,10 @@ function PanelImpl(props: PanelProps, ref: Ref<HTMLDivElement>) {
 		className.push("scrollable");
 	}
 
+	if (props.fontScaling && props.fontScaling != 100) {
+		style.fontSize = `${props.fontScaling}%`;
+	}
+
 	return (
 		<div className={className.join(" ")} style={style} ref={ref}>
 			{props.children}

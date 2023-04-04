@@ -25,6 +25,7 @@ const widget: WidgetType<Record<string, never>> = {
 	Component: Invisible,
 	title: messages.title,
 	description: messages.description,
+	themeSchema: {},
 	defaultSize: new Vector2(5, 5),
 	initialProps: {},
 	schema: {},

@@ -104,6 +104,11 @@ export const schemaMessages = defineMessages({
 	timeZone: {
 		defaultMessage: "Time Zone",
 	},
+
+	fontScaling: {
+		defaultMessage: "Font Scaling",
+		description: "Theme settings: form field label",
+	},
 });
 
 

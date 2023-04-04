@@ -2,7 +2,7 @@ import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { WidgetProps, WidgetType } from 'app/Widget';
+import { onlyPanelThemeSchema, WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';
 import { defineMessages } from 'react-intl';
 
@@ -36,6 +36,7 @@ const widget: WidgetType<IFrameProps> = {
 	title: messages.title,
 	description: messages.description,
 	defaultSize: new Vector2(5, 4),
+	themeSchema: onlyPanelThemeSchema,
 	initialProps: {
 		url: "https://example.com",
 	},
