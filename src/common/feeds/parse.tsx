@@ -1,19 +1,7 @@
-import { relativeURLToAbsolute } from "..";
-import { parseDate } from "../dates";
+import { FeedSource } from ".";
+import { relativeURLToAbsolute } from "../../app/utils";
+import { parseDate } from "../../app/utils/dates";
 
-
-export interface FeedSource {
-	id: string;
-	title: string;
-	url: string;
-	htmlUrl?: string;
-}
-
-
-export enum FeedType {
-	Rss,
-	Atom,
-}
 
 export interface Feed {
 	title?: string;
@@ -21,7 +9,6 @@ export interface Feed {
 	articles: Article[];
 	source?: FeedSource;
 }
-
 
 export interface Article {
 	feed: Feed;

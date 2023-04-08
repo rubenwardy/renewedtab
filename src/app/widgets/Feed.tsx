@@ -12,11 +12,12 @@ import { TabOption, Tabs } from 'app/components/Tabs';
 import UserError from 'app/utils/UserError';
 import { useGlobalSearch } from 'app/hooks/globalSearch';
 import { parseURL, queryMatchesAny } from 'app/utils';
-import { Article, FeedSource } from 'app/utils/feeds';
+import { Article } from 'common/feeds/parse';
 import WebsiteIcon from 'app/components/WebsiteIcon';
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import Button, { ButtonVariant } from "app/components/Button";
-import { makeOPML, parseOPML } from "app/utils/feeds/opml";
+import { makeOPML, parseOPML } from "common/feeds/opml";
+import { FeedSource } from "common/feeds";
 
 
 const messages = defineMessages({

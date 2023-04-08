@@ -1,8 +1,8 @@
 import fs from "fs";
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
-import { FeedSource } from "app/utils/feeds";
-import { makeOPML, parseOPML } from "app/utils/feeds/opml";
+import { FeedSource } from "common/feeds/parse";
+import { makeOPML, parseOPML } from "common/feeds/opml";
 
 
 function parseTestOPML(name: string): FeedSource[] {

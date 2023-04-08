@@ -83,6 +83,9 @@ function writeClientError(res: express.Response, msg: string) {
 import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
 import { TippyTopImage } from "common/api/icons";
 import UserError from "./UserError";
+import { FeedType } from "common/feeds";
+import { detectFeed } from "common/feeds/detect";
+import { JSDOM } from "jsdom";
 
 app.get('/metrics', async (req, res) => {
 	try {
@@ -512,6 +515,52 @@ app.get("/api/website-icons/", async (req, res: express.Response, next: (e: unkn
 				"https://github.githubassets.com/favicons/favicon-dark.svg";
 		}
 		res.json(icons);
+	} catch (e: any) {
+		next(e);
+	}
+});
+
+
+app.get("/api/detect-feed/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		if (typeof req.query.url != "string") {
+			writeClientError(res, "Missing URL");
+			return;
+		}
+
+		notifyAPIRequest("detect-feed");
+
+		const feeds = await detectFeed(req.query.url as string, async (url) => {
+			notifyUpstreamRequest("proxy");
+			const response = await fetchCatch(url, {
+				method: "GET",
+				size: 5 * 1000 * 1000,
+				timeout: 10000,
+				headers: {
+					"User-Agent": UA_PROXY,
+					"Accept": "text/html, application/json, application/xml, text/xml, application/rss+xml, application/atom+xml",
+				},
+			});
+			if (!response.ok) {
+				throw new UserError("Error fetching " + url + ": " + response.status);
+			}
+			const text = await response.text();
+
+			const isHTML = response.headers.get("content-type")?.startsWith("text/html");
+			console.log(response.headers.get("content-type"));
+			console.log(url, isHTML ? "html" : "xml");
+			const document = new JSDOM(text, { contentType: isHTML ? "text/html" : "application/xml" });
+			console.log("Fetching ", url, document.window.document.children[0]);
+			return document.window.document.children[0];
+		});
+
+		res.json(feeds.map(feed => ({
+			type: FeedType[feed.type]?.toLowerCase(),
+			title: feed.title,
+			url: feed.url,
+			number_of_articles: feed.numberOfArticles,
+			number_of_images: feed.numberOfImages,
+		 })));
 	} catch (e: any) {
 		next(e);
 	}

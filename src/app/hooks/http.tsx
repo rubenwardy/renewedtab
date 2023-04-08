@@ -4,11 +4,12 @@ import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { clampNumber } from "app/utils";
 import { readBlobAsDataURL } from "app/utils/blob";
 import { ONE_DAY_MS, setEndOfDay } from "app/utils/dates";
-import { Feed, FeedSource, parseFeed } from "app/utils/feeds";
+import { Feed, parseFeed } from "common/feeds/parse";
 import UserError from "app/utils/UserError";
 import { defineMessages } from "react-intl";
 import type { CalendarEvent } from "../utils/calendar";
 import { usePromise } from "./promises";
+import { FeedSource } from "common/feeds";
 
 
 const messages = defineMessages({

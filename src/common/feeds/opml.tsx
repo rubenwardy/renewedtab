@@ -1,5 +1,6 @@
-import { FeedSource, XMLParser } from ".";
-import uuid from "../uuid";
+import { FeedSource } from ".";
+import { XMLParser } from "./parse";
+import uuid from "../../app/utils/uuid";
 
 
 export function parseOPML(data: string, parseXML: XMLParser): FeedSource[] {

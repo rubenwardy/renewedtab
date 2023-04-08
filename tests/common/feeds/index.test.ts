@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
 import fs from "fs";
-import { Feed, parseFeed } from "app/utils/feeds";
+import { Feed, parseFeed } from "common/feeds/parse";
 
 
 function parseTestFeed(name: string, base?: string): Feed | null {
