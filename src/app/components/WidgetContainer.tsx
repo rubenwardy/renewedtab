@@ -116,6 +116,7 @@ enum WidgetMode {
 export function WidgetContainer<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 	const close = () => setMode(WidgetMode.View);
+	const intl = useIntl();
 
 	switch (mode) {
 	case WidgetMode.Edit:
@@ -157,13 +158,16 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		}
 	}
 
+	const widgetTitle = intl.formatMessage(props.typeDef.title);
+	const widgetTitleLabel = intl.formatMessage(miscMessages.typeWidget, { name:  widgetTitle });
 	const Child = props.typeDef.Component;
 	return (
-		<div className="widget-inner" onKeyPress={onKeyPress}>
+		<div className="widget-inner" onKeyPress={onKeyPress} tabIndex={0}
+				role="region" aria-label={widgetTitleLabel}>
 			<div className="widget-bar">
 				<i className="widget-handle fas fa-grip-vertical" />
 				<div className="widget-title widget-handle">
-					<FormattedMessage {...props.typeDef.title} />
+					{widgetTitle}
 				</div>
 				<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>
 					<i className="fas fa-trash" />

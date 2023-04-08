@@ -1,6 +1,8 @@
 import { mergeClasses } from "app/utils";
-import React, { CSSProperties, ReactNode, useEffect, useState } from "react";
+import uuid from "app/utils/uuid";
+import React, { CSSProperties, ReactNode, useEffect, useMemo, useState } from "react";
 import ReactDOM from "react-dom";
+import { useIntl } from "react-intl";
 
 export interface ModalProps {
 	title: string;
@@ -12,6 +14,7 @@ export interface ModalProps {
 }
 
 export default function Modal(props: ModalProps) {
+	const intl = useIntl();
 	const [mounted, setMounted] = useState(false);
 	useEffect(() => {
 		window.requestAnimationFrame(() => setMounted(true));
@@ -49,6 +52,8 @@ export default function Modal(props: ModalProps) {
 		setDidClickBegin(false);
 	}
 
+	const modalTitleId = useMemo(() => `modal-title-${uuid()}`, []);
+
 	const bgClasses = mergeClasses("modal-bg",
 		props.lighterBg && "modal-bg-lighter");
 
@@ -56,13 +61,16 @@ export default function Modal(props: ModalProps) {
 		<aside className={bgClasses} onMouseDown={handleMouseDown}
 			onMouseUp={handleMouseUp} style={style}>
 			<div className={mergeClasses("flush modal",
-				props.wide === true && "modal-wide", props.tall == true && "modal-tall")}
-				onMouseDown={(e) => e.stopPropagation()}
-				onMouseUp={(e) => e.stopPropagation()}>
+					props.wide === true && "modal-wide", props.tall == true && "modal-tall")}
+					onMouseDown={(e) => e.stopPropagation()}
+					onMouseUp={(e) => e.stopPropagation()}
+					role="dialog" aria-modal={true}
+					aria-labelledby={modalTitleId}>
 				<div className="modal-header">
-					<h2>{props.title}</h2>
+					<h2 id={modalTitleId}>{props.title}</h2>
 					{props.onClose && (
-						<button className="btn modal-close" onClick={props.onClose}>
+						<button className="btn modal-close" onClick={props.onClose}
+								aria-label={intl.formatMessage({ defaultMessage: "Close" })}>
 							<i className="fas fa-times" />
 						</button>)}
 				</div>

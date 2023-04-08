@@ -31,6 +31,7 @@ function Tab(props: { option: TabOption, selected: boolean, useRootPathForIcons:
 
 	return (
 		<button className={mergeClasses("tab", props.selected && "selected")}
+				role="tab" aria-selected={props.selected}
 				onClick={() => props.onClick()} onDoubleClick={() => {
 					if (props.option.link) {
 						window.location.href = props.option.link;
@@ -44,7 +45,7 @@ function Tab(props: { option: TabOption, selected: boolean, useRootPathForIcons:
 
 export function Tabs(props: TabsProps) {
 	return (
-		<ul className="tabs">
+		<ul className="tabs" role="tablist">
 			{props.options.map(option => (
 				<li key={option.id}>
 					<Tab option={option} selected={props.value == option.id}

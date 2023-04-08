@@ -95,11 +95,12 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 			const tab = SettingsTab[tabName as SettingsTabType];
 			const isSelected = tab == currentTab;
 			return (
-				<a id={`tab-${tabName}`} key={tabName} onClick={() => setTab(tab)}
-						className={isSelected ? "active" : undefined}>
+				<button id={`tab-${tabName}`} key={tabName} onClick={() => setTab(tab)}
+						className={isSelected ? "active" : undefined}
+						role="tab" aria-controls={"settings-panel"} aria-selected={isSelected}>
 						<i className={`fas fa-${TabIcons[tabName]} mr-1`}> </i>
 					<FormattedMessage {...tabTitles[tab]} />
-				</a>)
+				</button>)
 		});
 
 	const intl = useIntl();
@@ -113,10 +114,12 @@ export default function SettingsDialog(props: SettingsDialogProps) {
 		<Modal title={intl.formatMessage({ defaultMessage: "Settings "})}
 				wide={true} {...props}>
 			<div className="modal-flex">
-				<nav>
+				<nav role="tablist">
 					{tabs}
 				</nav>
-				<Tab {...props} />
+				<div className="modal-body" id="settings-panel" role="tabpanel">
+					<Tab {...props} />
+				</div>
 			</div>
 		</Modal>);
 }

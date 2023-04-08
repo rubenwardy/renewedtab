@@ -17,7 +17,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 	const intl = useIntl();
 
 	if (!props.background) {
-		return (<div className="modal-body">Loading...</div>);
+		return (<>Loading...</>);
 	}
 
 	const isBrowser = typeof browser !== "undefined";
@@ -52,7 +52,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 	const selectedProvider = getBackgroundProvider(props.background.mode)!;
 	const translatedTitle = myFormatMessage(intl, selectedProvider.title);
 	return (
-		<div className="modal-body">
+		<>
 			<label htmlFor="mode">
 				<FormattedMessage
 						defaultMessage="Background Type" />
@@ -75,5 +75,5 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 					values={props.background.values}
 					schema={getSchemaForProvider(selectedProvider.id)}
 					onChange={handleSetValue} />
-		</div>);
+		</>);
 }

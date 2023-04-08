@@ -27,7 +27,7 @@ const messages = defineMessages({
 export default function AboutSettings() {
 	const intl = useIntl();
 	return (
-		<div className="modal-body">
+		<>
 			<h3>
 				<FormattedMessage defaultMessage="About Renewed Tab" />
 			</h3>
@@ -92,5 +92,5 @@ export default function AboutSettings() {
 				<Button href="https://renewedtab.com/help/"
 					label={messages.help_requests} />
 			</p>
-		</div>);
+		</>);
 }

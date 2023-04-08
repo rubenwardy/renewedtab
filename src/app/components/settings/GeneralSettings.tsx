@@ -42,7 +42,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 	const isBrowserExtension = typeof browser !== "undefined";
 
 	return (
-		<div className="modal-body">
+		<>
 			<p>
 				<FormattedMessage
 						{...miscMessages.widgetsHaveSettings}
@@ -107,5 +107,5 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						href="https://renewedtab.com/privacy_policy/" />
 				</p>
 			</div>
-		</div>);
+		</>);
 }

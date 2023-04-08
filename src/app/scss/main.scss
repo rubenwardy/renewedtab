@@ -146,7 +146,7 @@ a, .link {
 		}
 	}
 
-	&:hover {
+	&:hover, &:focus-within {
 		.line-1.oneline {
 			overflow: auto;
 			max-height: none !important;

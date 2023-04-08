@@ -60,15 +60,17 @@ ul.links {
 			text-decoration: none;
 		}
 
-		a {
-			display: block;
+		a, button {
+			all: unset;
+			display: block !important;
+			width: 100%;
 			padding: 0.4rem 0.8rem;
 			color: rgba(255, 255, 255, 0.9);
 			text-decoration: none;
 			transition: color 0.2s ease-in-out,
-					background-color 0.2s ease-in-out;
+				background-color 0.2s ease-in-out;
 
-			&:hover {
+			&:hover, &:focus {
 				color: white;
 				background: rgba(255, 255, 255, 0.1);
 				text-decoration: none;
@@ -92,7 +94,7 @@ ul.links {
 			}
 		}
 
-		&:hover > .dropdown {
+		&:hover > .dropdown, &:focus-within > .dropdown {
 			visibility: visible;
 		}
 	}
@@ -104,7 +106,7 @@ ul.links {
 			line-height: 1.5;
 		}
 
-		a {
+		a, button {
 			padding: 0.5rem 1rem;
 			font-size: 1.171875rem;
 			line-height: 1.5;
@@ -121,7 +123,7 @@ ul.links {
 		flex-direction: row;
 		height: 100%;
 
-		> li > a {
+		> li > a, > li > button {
 			height: 100%;
 			box-sizing: border-box;
 		}
@@ -149,7 +151,7 @@ ul.links {
 		}
 	}
 
-	&.links-align li a {
+	&.links-align li a, &.links-align li button {
 		display: flex;
 		align-items: center;
 	}

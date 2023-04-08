@@ -84,7 +84,7 @@ export default function App() {
 		<IntlProvider locale={(messages && locale) ? locale : "en"} defaultLocale="en" messages={messages ?? undefined}>
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
-				<div className={classes.join(" ")}>
+				<main className={classes.join(" ")}>
 					{showBookmarksBar && !onboardingIsOpen &&
 						typeof browser !== "undefined" && (
 						<BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />)}
@@ -116,10 +116,11 @@ export default function App() {
 					{isLocked && !onboardingIsOpen && (
 						<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
 							tabIndex={0} variant={ButtonVariant.None}
-							className="text-shadow" icon="fas fa-pen" />)}
+							className="text-shadow" icon="fas fa-pen"
+							title={"Enter edit mode"} />)}
 
 					{!isLocked && (
-						<aside className="edit-bar">
+						<aside className="edit-bar" role="toolbar">
 							<Button href="https://renewedtab.com/help/"
 								variant={ButtonVariant.Secondary}
 								icon="fa fa-question" small={true}
@@ -151,7 +152,7 @@ export default function App() {
 								icon="fa fa-check" small={true}
 								label={miscMessages.finishEditing} />
 						</aside>)}
-				</div>
+				</main>
 			</GlobalSearchContext.Provider>
 		</IntlProvider>);
 }

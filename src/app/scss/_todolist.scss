@@ -9,7 +9,7 @@
 			margin: 0 0 0 0.5em;
 		}
 
-		&:hover .btn {
+		&:hover .btn, &:focus-within .btn {
 			visibility: visible;
 		}
 

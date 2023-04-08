@@ -215,4 +215,9 @@ export const miscMessages = defineMessages({
 		defaultMessage: "Import",
 		description: "Import / export settings, import",
 	},
+
+	typeWidget: {
+		defaultMessage: "{name} Widget",
+		description: "Name of widget",
+	},
 });

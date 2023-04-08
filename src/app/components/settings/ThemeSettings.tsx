@@ -101,7 +101,7 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 	}
 
 	return (
-		<div className="modal-body">
+		<>
 			<p>
 				<Button variant={ButtonVariant.Secondary} onClick={resetTheme}
 					label={messages.resetTheme} />
@@ -111,7 +111,7 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 			<Button href="https://renewedtab.com/help/css/" target="_blank"
 				variant={ButtonVariant.Secondary}
 				label={messages.customCSSLink} />
-		</div>);
+		</>);
 }
 
 

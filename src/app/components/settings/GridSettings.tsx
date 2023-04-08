@@ -27,7 +27,7 @@ export default function GridSettings(props: GridSettingsProps) {
 		[props.grid, force]);
 
 	return (
-		<div className="modal-body">
+		<>
 			<p>
 				<FormattedMessage
 					{...miscMessages.widgetsHaveSettings}
@@ -38,5 +38,5 @@ export default function GridSettings(props: GridSettingsProps) {
 				values={props.grid}
 				schema={gridSettingsSchema}
 				onChange={handleSetGridValue} />
-		</div>);
+		</>);
 }

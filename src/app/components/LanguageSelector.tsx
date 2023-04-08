@@ -30,7 +30,7 @@ export default function LanguageSelector(props: LanguageSelectorProps) {
 				<i className="fas fa-language mr-2" />
 				<FormattedMessage defaultMessage="Language" />
 			</label>
-			<select value={props.locale} onChange={onLocaleChange}>
+			<select name="locale" value={props.locale} onChange={onLocaleChange}>
 				{langs.map(([key, title]) =>
 					<option key={key} value={key}>{title}</option>)}
 			</select>

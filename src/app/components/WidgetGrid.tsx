@@ -163,7 +163,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 		: { width: Math.ceil(gridWidth / 2) * 2 };
 
 	return (
-		<main>
+		<section>
 			<div className="scroll-wrap" style={wrapStyle}>
 				<ReactGridLayout
 						// Clear cache when fullPage changes
@@ -187,7 +187,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 					{widgets}
 				</ReactGridLayout>
 			</div>
-		</main>);
+		</section>);
 }
 
 export function makeGridSettingsSchema(values: WidgetGridSettings): Schema<WidgetGridSettings> {

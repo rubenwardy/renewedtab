@@ -37,13 +37,13 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		.filter((widget) => isBrowser || widget.isBrowserOnly !== true)
 		.map((widget) => (
 			<li key={widget.key} data-widget-type={widget.key}>
-				<a onClick={() => select(widget.key)}>
+				<button onClick={() => select(widget.key)}>
 					{widget.title}
 					<span className="text-muted ml-1">
 						{" "}
 						{widget.description}
 					</span>
-				</a>
+				</button>
 			</li>));
 
 	if (!isBrowser) {
@@ -68,10 +68,10 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		<Modal title={intl.formatMessage({ defaultMessage: "Create Widget" })} wide={true}  {...props}>
 			<input type="search" placeholder={placeholder} autoFocus={true}
 				value={query} onChange={(e) => setQuery(e.target.value)} />
-			<ul className="links large">
+			<ul className="links large" role="menu">
 				{widgets}
 				{widgets.length == 0 && (
-					<li className="section">
+					<li className="section" role="menuitem">
 						<FormattedMessage {...miscMessages.noResults} />
 					</li>)}
 			</ul>
