@@ -228,4 +228,8 @@ export const miscMessages = defineMessages({
 	moveUp: {
 		defaultMessage: "Move up",
 	},
+
+	duplicate: {
+		defaultMessage: "Duplicate",
+	},
 });

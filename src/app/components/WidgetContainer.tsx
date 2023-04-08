@@ -169,15 +169,23 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 				<div className="widget-title widget-handle">
 					{widgetTitle}
 				</div>
-				<a className="btn widget-delete" onClick={() => setMode(WidgetMode.Delete)}>
-					<i className="fas fa-trash" />
-				</a>
-				<a className="btn" onClick={props.duplicate}>
-					<i className="fas fa-clone" />
-				</a>
-				<a className="btn widget-edit" onClick={() => setMode(WidgetMode.Edit)}>
-					<i className="fas fa-pen" />
-				</a>
+
+				<Button variant={ButtonVariant.None}
+					className="widget-delete"
+					onClick={() => setMode(WidgetMode.Delete)}
+					icon="fa fa-trash"
+					title={miscMessages.delete} />
+
+				<Button variant={ButtonVariant.None}
+					onClick={props.duplicate}
+					icon="fas fa-clone"
+					title={miscMessages.duplicate} />
+
+				<Button variant={ButtonVariant.None}
+					className="btn widget-edit"
+					onClick={() => setMode(WidgetMode.Edit)}
+					icon="fas fa-pen"
+					title={miscMessages.edit} />
 			</div>
 			<ErrorBoundary>
 				<Child {...props} />

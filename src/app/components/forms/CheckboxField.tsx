@@ -12,7 +12,8 @@ export default function CheckboxField(props: FieldProps<boolean>) {
 
 	return (
 		<>
-			<input type="checkbox" checked={value ?? false} onChange={handleChange} />
+			<input name={props.name} type="checkbox"
+				checked={value ?? false} onChange={handleChange} />
 			<label className="inline ml-2" htmlFor={props.name}>
 				<MyFormattedMessage message={props.schemaEntry.label} />
 			</label>

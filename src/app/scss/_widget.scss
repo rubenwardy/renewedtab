@@ -6,7 +6,7 @@
 		bottom: 100%;
 		left: 0;
 
-		display: flex;
+		display: none;
 		flex-flow: row;
 		align-items: center;
 		visibility: collapse;
@@ -133,6 +133,10 @@
 			opacity: 0.8;
 			visibility: visible;
 		}
+	}
+
+	.widget-bar {
+		display: flex;
 	}
 
 	.widget-bar:hover, &.fake .widget-bar {
