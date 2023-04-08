@@ -15,7 +15,7 @@ async function handleImport(file: File) {
 }
 
 
-export default function ImportButton(props: ButtonProps) {
+export default function ImportButton(props: Partial<ButtonProps>) {
 	const ref = useRef<HTMLInputElement>(null);
 	return (<>
 		<input ref={ref} type="file" className="display-none"

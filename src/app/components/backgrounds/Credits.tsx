@@ -50,9 +50,7 @@ export interface CreditsProps extends BackgroundCredit {
 }
 
 
-
 function CreditsVote(props: CreditsProps) {
-	const intl = useIntl();
 	const [votes, setVotes] = useStorage<Record<string, boolean>>("background_votes", {});
 	const isPositive: (boolean | undefined) = votes?.[props.info!.id] ?? undefined;
 
@@ -71,19 +69,18 @@ function CreditsVote(props: CreditsProps) {
 		}
 	}
 
-
 	return (
 		<>
 			<Button onClick={() => handleClick(true)}
 					variant={ButtonVariant.None} small={true}
 					active={isPositive === true}
-					title={intl.formatMessage(messages.like)}
+					title={messages.like}
 					icon="fas fa-thumbs-up" />
 
 			<Button onClick={() => handleClick(false)}
 					variant={ButtonVariant.None} small={true}
 					active={isPositive === false}
-					title={intl.formatMessage(messages.block)}
+					title={messages.block}
 					icon="fas fa-ban" />
 		</>);
 }

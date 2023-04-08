@@ -24,6 +24,11 @@ const messages = defineMessages({
 		defaultMessage: "No locations found",
 		description: "Location form field: error",
 	},
+
+	searchUsingGPS: {
+		defaultMessage: "Search using GPS location",
+		description: "Location form field: search using GPS",
+	},
 });
 
 
@@ -133,6 +138,7 @@ function LocationModal(props: LocationModalProps) {
 					<input type="text" ref={ref} autoFocus={true}
 						onKeyPress={onKeyPress} />
 					<Button variant={ButtonVariant.Secondary} icon="icon_location.svg"
+						title={messages.searchUsingGPS}
 						onClick={() => doGeoLocation().catch(e => alert(e.message))}/>
 					<Button onClick={handleSearch} label={messages.search} />
 				</div>

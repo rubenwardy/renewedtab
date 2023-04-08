@@ -71,6 +71,7 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 					onFinished={onFinished} minWidth="50%" />
 			<Button small={true} icon="fas fa-times"
 					variant={ButtonVariant.None}
+					title={miscMessages.delete}
 					onClick={props.delete} />
 		</li>);
 }

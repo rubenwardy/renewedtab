@@ -23,6 +23,11 @@ const messages = defineMessages({
 	newTab: {
 		defaultMessage: "New Tab",
 	},
+
+	unlockWidgets: {
+		defaultMessage: "Enter edit mode",
+		description: "Button to enter edit mode",
+	},
 });
 
 
@@ -48,7 +53,7 @@ export default function App() {
 	const [query, setQuery] = useState("");
 	const [locale, setLocale] = useStorage<string>("locale", detectUserLocale());
 	const [showBookmarksBar, setShowBookmarksBar] = useStorage("showBookmarksBar", app_version.target == "chrome");
-	const [messages] = usePromise(() => locale ? getTranslation(locale) : Promise.reject(null), [locale]);
+	const [localeMessages] = usePromise(() => locale ? getTranslation(locale) : Promise.reject(null), [locale]);
 	const [background, setBackground] = useBackground();
 	const [theme, setTheme] = useStorage<ThemeConfig>("theme", {});
 	const [createIsOpen, setCreateOpen] = useState(false);
@@ -59,7 +64,7 @@ export default function App() {
 		"grid_settings", { ...defaultGridSettings });
 	const [onboardingIsOpen, setOnboardingIsOpen] = useState<boolean | undefined>(undefined);
 	const isLocked = (isLockedRaw || onboardingIsOpen) ?? true;
-	const loaded = loadingRes != null && messages != null;
+	const loaded = loadingRes != null && localeMessages != null;
 	useEffect(() => {
 		if (loaded && onboardingIsOpen == undefined) {
 			setOnboardingIsOpen(widgetManager.widgets.length == 0);
@@ -81,7 +86,7 @@ export default function App() {
 	classes.push(isLocked ? "locked" : "unlocked");
 
 	return (
-		<IntlProvider locale={(messages && locale) ? locale : "en"} defaultLocale="en" messages={messages ?? undefined}>
+		<IntlProvider locale={(localeMessages && locale) ? locale : "en"} defaultLocale="en" messages={localeMessages ?? undefined}>
 			<GlobalSearchContext.Provider value={{ query, setQuery }}>
 				<Title />
 				<main className={classes.join(" ")}>
@@ -117,7 +122,7 @@ export default function App() {
 						<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
 							tabIndex={0} variant={ButtonVariant.None}
 							className="text-shadow" icon="fas fa-pen"
-							title={"Enter edit mode"} />)}
+							title={messages.unlockWidgets} />)}
 
 					{!isLocked && (
 						<aside className="edit-bar" role="toolbar">

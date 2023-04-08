@@ -220,4 +220,12 @@ export const miscMessages = defineMessages({
 		defaultMessage: "{name} Widget",
 		description: "Name of widget",
 	},
+
+	moveDown: {
+		defaultMessage: "Move down",
+	},
+
+	moveUp: {
+		defaultMessage: "Move up",
+	},
 });

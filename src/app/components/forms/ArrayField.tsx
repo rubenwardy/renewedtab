@@ -24,10 +24,12 @@ function ArrayRow<T extends { id: string }>(props: RowProps<T>) {
 				<td>
 					{props.idx > 0 &&
 						<Button small={true} variant={ButtonVariant.None}
+							title={miscMessages.moveUp}
 							icon="fas fa-caret-up" onClick={() => props.onMove!(true)} />}
 
 					{!props.isLast &&
 						<Button small={true} variant={ButtonVariant.None}
+							title={miscMessages.moveDown}
 							icon="fas fa-caret-down" onClick={() => props.onMove!(false)} />}
 				</td>)}
 
@@ -35,6 +37,7 @@ function ArrayRow<T extends { id: string }>(props: RowProps<T>) {
 
 			<td>
 				<Button small={true} variant={ButtonVariant.Danger}
+					title={miscMessages.delete}
 					icon="fas fa-trash" onClick={props.onDelete} />
 			</td>
 		</tr>);

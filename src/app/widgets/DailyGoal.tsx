@@ -2,6 +2,7 @@ import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
 import { useWidgetProp } from "app/hooks/widget";
+import { miscMessages } from "app/locale/common";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";
 import React, { ChangeEvent, useEffect } from "react";
@@ -71,6 +72,7 @@ function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 				{goal &&
 					(<Button small={true} className="ml-2" icon="fas fa-times"
 							variant={ButtonVariant.None}
+							title={miscMessages.delete}
 							onClick={() => setGoal(undefined)} />)}
 			</div>
 		</Panel>);

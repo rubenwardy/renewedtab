@@ -1,7 +1,7 @@
 import { MessageDescriptor } from "@formatjs/intl";
 import { mergeClasses } from "app/utils";
 import React from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 
 export enum ButtonVariant {
@@ -12,8 +12,7 @@ export enum ButtonVariant {
 	Danger,
 }
 
-
-export interface ButtonProps {
+interface ButtonPropsBase {
 	// Any default button properties.
 	[ key: string ]: any;
 
@@ -23,8 +22,18 @@ export interface ButtonProps {
 	active?: boolean;
 
 	icon?: string;
-	label?: MessageDescriptor;
 }
+
+interface ButtonPropsBaseWithLabel extends ButtonPropsBase {
+	label: MessageDescriptor;
+	title?: MessageDescriptor;
+}
+
+interface ButtonPropsBaseWithAlt extends ButtonPropsBase {
+	title: MessageDescriptor;
+}
+
+export type ButtonProps = ButtonPropsBaseWithLabel | ButtonPropsBaseWithAlt;
 
 
 function ButtonIcon(props: { icon: string, className?: string}) {
@@ -38,6 +47,7 @@ function ButtonIcon(props: { icon: string, className?: string}) {
 
 export default function Button(props: ButtonProps) {
 	const Tag = props.href ? "a" : "button";
+	const intl = useIntl();
 
 	const variant = props.variant ?? ButtonVariant.Primary;
 	const variantName = ButtonVariant[variant]!.toString().toLowerCase();
@@ -54,14 +64,19 @@ export default function Button(props: ButtonProps) {
 		? <FormattedMessage {...props.label} />
 		: props.label);
 
+	const title = props.title && (typeof props.title == "string"
+		? props.title
+		: intl.formatMessage(props.title));
+
 	const props2 = { ...props };
 	delete props2.small;
 	delete props2.variant;
 	delete props2.active;
 	delete props2.icon;
 	delete props2.label;
+	delete props2.title;
 	return (
-		<Tag {...props2} className={className}>
+		<Tag {...props2} className={className} title={title}>
 			{props.icon &&
 				(<ButtonIcon icon={props.icon} className={label ? "mr-2" : undefined} />)}
 			{label}
