@@ -476,9 +476,15 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 		quotes.forEach(quote => {
 			(quote as any).category = category;
 		});
+		if (quotes.length == 0) {
+			res.removeHeader("expires");
+			res.append("max-age", "0");
+		}
 		res.json(quotes);
 	} catch (e: any) {
 		// next(e);
+		res.removeHeader("expires");
+		res.append("max-age", "0");
 		res.json([]);
 	}
 });
@@ -578,6 +584,10 @@ app.use(Sentry.Handlers.errorHandler());
 
 app.use(function (err: any, _req: any, res: any, next: any) {
 	console.error(err.stack);
+
+	res.removeHeader("expires");
+	res.append("max-age", "0");
+
 	if (err instanceof UserError) {
 		writeClientError(res, err.message);
 	} else {
