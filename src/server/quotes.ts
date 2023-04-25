@@ -1,5 +1,5 @@
 import { Quote, QuoteCategory } from "common/api/quotes";
-import { UA_DEFAULT } from "server";
+import { QUOTES_REST_API_KEY, UA_DEFAULT } from "server";
 import { makeKeyCache } from "./cache";
 import fetchCatch, { Request } from "./http";
 import { notifyUpstreamRequest } from "./metrics";
@@ -57,6 +57,7 @@ async function fetchQuotes(category: string): Promise<Quote[]> {
 			headers: {
 				"User-Agent": UA_DEFAULT,
 				"Accept": "application/json",
+				"Authorization": `Bearer ${QUOTES_REST_API_KEY}`,
 			}
 		}));
 

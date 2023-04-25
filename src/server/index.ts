@@ -24,7 +24,8 @@ const SENTRY_DSN = process.env.SENTRY_DSN;
 const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
 export const ACCUWEATHER_API_KEY =
 	process.env.ACCUWEATHER_API_KEY ?? serverConfig.ACCUWEATHER_API_KEY;
-
+export const QUOTES_REST_API_KEY =
+	process.env.QUOTES_REST_API_KEY ?? serverConfig.QUOTES_REST_API_KEY;
 
 
 

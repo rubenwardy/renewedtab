@@ -2,6 +2,7 @@
 	"API_URL": "https://api.renewedtab.com/",
 	"PROXY_URL": "https://api.renewedtab.com/proxy/",
 	"ACCUWEATHER_API_KEY": "",
+	"QUOTES_REST_API_KEY": "",
 	"UNSPLASH_ACCESS_KEY": "",
 	"OWNER_EMAIL": "your@email.com",
 	"SENTRY_DSN": "",
