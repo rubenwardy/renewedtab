@@ -1,9 +1,5 @@
 import { Quote, QuoteCategory } from "common/api/quotes";
-import { QUOTES_REST_API_KEY, UA_DEFAULT } from "server";
 import { makeKeyCache } from "./cache";
-import fetchCatch, { Request } from "./http";
-import { notifyUpstreamRequest } from "./metrics";
-import UserError from "./UserError";
 
 
 export async function getQuoteCategories(): Promise<QuoteCategory[]> {
@@ -12,80 +8,26 @@ export async function getQuoteCategories(): Promise<QuoteCategory[]> {
 			"id": "inspire",
 			"text": "Inspiring"
 		},
-		{
-			"id": "management",
-			"text": "Management"
-		},
-		{
-			"id": "sports",
-			"text": "Sports"
-		},
-		{
-			"id": "life",
-			"text": "Life"
-		},
-		{
-			"id": "funny",
-			"text": "Funny"
-		},
-		{
-			"id": "love",
-			"text": "Love"
-		},
-		{
-			"id": "art",
-			"text": "Art"
-		},
-		{
-			"id": "students",
-			"text": "For students"
-		}
 	] as QuoteCategory[];
 }
 
 
-async function fetchQuotes(category: string): Promise<Quote[]> {
-	notifyUpstreamRequest("Quotes.rest");
+import quotes from "./data/quotes.json";
 
-	const url = new URL("https://quotes.rest/qod");
-	url.searchParams.set("category", category);
-	console.log(url.toString())
 
-	const response = await fetchCatch(
-		new Request(url.toString(), {
-			method: "GET",
-			headers: {
-				"User-Agent": UA_DEFAULT,
-				"Accept": "application/json",
-				"Authorization": `Bearer ${QUOTES_REST_API_KEY}`,
-			}
-		}));
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function fetchQuotes(_category: string): Promise<Quote[]> {
+	// TODO: use quote API
 
-	const isJson = (response.headers.get("content-type") ?? "").includes("application/json");
-	if (!response.ok) {
-		if (isJson) {
-			const json = await response.json();
-			const message = json.error?.message ?? "Unable to get quotes";
-			throw new UserError(message);
-		} else {
-			throw new Error(await response.text());
+	// Random quote
+	const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+	return [
+		{
+			"text": quote.quote,
+			"author": quote.author,
 		}
-	}
-
-	const json = await response.json();
-	const quotes = json?.contents?.quotes;
-	if (!quotes) {
-		throw new Error("No quotes in response");
-	}
-
-	return quotes.map((quote: any) => ({
-		author: quote.author,
-		text: quote.quote,
-		credit: {
-			url: "https://theysaidso.com",
-			text: "theysaidso.com",
-		}
-	} as Quote));
+	];
 }
 
 

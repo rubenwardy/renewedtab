@@ -24,8 +24,6 @@ const SENTRY_DSN = process.env.SENTRY_DSN;
 const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
 export const ACCUWEATHER_API_KEY =
 	process.env.ACCUWEATHER_API_KEY ?? serverConfig.ACCUWEATHER_API_KEY;
-export const QUOTES_REST_API_KEY =
-	process.env.QUOTES_REST_API_KEY ?? serverConfig.QUOTES_REST_API_KEY;
 
 
 
@@ -463,7 +461,14 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 		} else if (typeof queryArg == "string") {
 			categories = [ queryArg as string ];
 		} else {
-			categories = [ "inspire", "life", "love", "funny" ];
+			categories = [ "inspire" ];
+		}
+
+		const quoteCategories = await getQuoteCategories();
+		// filter out unknown categories
+		categories = categories.filter(x => quoteCategories.find(y => y.id == x));
+		if (categories.length == 0) {
+			categories.push("inspire");
 		}
 
 		const category = categories[Math.floor(Math.random() * categories.length)];

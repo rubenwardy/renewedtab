@@ -50,7 +50,6 @@ Copy `config.example.json` to `config.json`.
   These are optional, but will prevent some features from working.
 	* The settings:
 		* `ACCUWEATHER_API_KEY`: AccuWeather.com
-		* `QUOTES_REST_API_KEY`: API key for quotes.rest
 		* `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
 	* You can set the above server settings in `config.json`, or using
 	  environment variables (recommended for production).
