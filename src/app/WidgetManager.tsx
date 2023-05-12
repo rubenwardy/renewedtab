@@ -27,21 +27,25 @@ export class WidgetManager {
 			this.widgets.reduce((max, widget) => Math.max(widget.id, max), 0);
 
 		for (const widget of this.widgets) {
-			widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
-			widget.size = widget.size ?? WidgetTypes[widget.type].defaultSize;
+			await this.afterLoad(widget);
+		}
+	}
 
-			const widgetType = WidgetTypes[widget.type];
+	private async afterLoad(widget: Widget<unknown>) {
+		widget.position = widget.position ? new Vector2(widget.position.x, widget.position.y) : undefined;
+		widget.size = widget.size ?? WidgetTypes[widget.type].defaultSize;
 
-			const initialTheme = getInitialTheme(widgetType);
-			if (widget.theme == undefined) {
-				widget.theme = deepCopy(initialTheme);
-			} else {
-				widget.theme = { ...initialTheme, ...widget.theme };
-			}
+		const widgetType = WidgetTypes[widget.type];
 
-			if (widgetType.onLoaded) {
-				await widgetType.onLoaded(widget);
-			}
+		const initialTheme = getInitialTheme(widgetType);
+		if (widget.theme == undefined) {
+			widget.theme = deepCopy(initialTheme);
+		} else {
+			widget.theme = { ...initialTheme, ...widget.theme };
+		}
+
+		if (widgetType.onLoaded) {
+			await widgetType.onLoaded(widget);
 		}
 	}
 
@@ -91,6 +95,7 @@ export class WidgetManager {
 				? { ...widgetData.props } : widget.props;
 			widget.theme = widgetData.theme
 				? { ...widgetData.theme } : widget.theme;
+			this.afterLoad(widget);
 			return widget;
 		});
 	}
