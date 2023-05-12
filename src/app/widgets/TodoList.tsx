@@ -69,7 +69,7 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 			<input type="checkbox" checked={props.item.completed} onChange={onChecked} />
 			<AutoWidthInput onChange={onTextChanged} value={props.item.text ?? ""}
 					onFinished={onFinished} minWidth="50%" />
-			<Button small={true} icon="fas fa-times"
+			<Button small={true} icon="fas fa-times" data-cf="todo-delete"
 					variant={ButtonVariant.None}
 					title={miscMessages.delete}
 					onClick={props.delete} />
@@ -115,14 +115,13 @@ function TodoList(widget: WidgetProps<TodoListProps>) {
 				{filteredList.length == 0 && list.length > 0 && (
 					<li className="text-muted">
 						<FormattedMessage {...miscMessages.noResults} />
-					</li>
-				)}
+					</li>)}
 
 				<li>
 					<input type="checkbox" disabled />
 					<AutoWidthInput onChange={(e) => setNewItemText(e.target.value)}
 							value={newItemText} onFinished={createItem}
-							minWidth="50%"
+							minWidth="50%" name="todo-new-item"
 							placeholder={list.length == 0 ? intl.formatMessage(messages.placeholder) : undefined} />
 				</li>
 			</ul>

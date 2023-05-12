@@ -5,6 +5,9 @@ config*.json
 !*.example.json
 compiled
 src/webext/_locales
+cypress/downloads
+cypress/screenshots
+cypress/videos
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,linux

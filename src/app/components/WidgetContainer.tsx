@@ -78,7 +78,8 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 						onChange={onChange} />
 			</div>
 			<div className="modal-footer buttons">
-				<Button onClick={props.onClose} label={miscMessages.ok} />
+				<Button onClick={props.onClose} label={miscMessages.ok}
+					data-cy="edit-ok" />
 			</div>
 		</Modal>);
 }
@@ -97,10 +98,11 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 					description="Delete widget modal message" />
 			</div>
 			<div className="modal-footer buttons">
-				<Button variant={ButtonVariant.Secondary}
+				<Button variant={ButtonVariant.Secondary} data-cy="cancel"
 					onClick={props.onClose} label={miscMessages.cancel} />
 				<Button variant={ButtonVariant.Danger} autoFocus={true}
-					onClick={props.remove} label={miscMessages.delete} />
+					onClick={props.remove} label={miscMessages.delete}
+					data-cy="delete" />
 			</div>
 		</Modal>);
 }
@@ -178,6 +180,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 
 				<Button variant={ButtonVariant.None}
 					onClick={props.duplicate}
+					data-cy="widget-duplicate"
 					icon="fas fa-clone"
 					title={miscMessages.duplicate} />
 

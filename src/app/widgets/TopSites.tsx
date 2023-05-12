@@ -61,7 +61,7 @@ const messages = defineMessages({
 
 
 async function getTopSites(): Promise<browser.topSites.MostVisitedURL[]> {
-	if (app_version.is_debug) {
+	if (app_version.is_debug && (browser as any).is_ui_test == undefined) {
 		return createDebugData();
 	} else {
 		return await browser.topSites.get();

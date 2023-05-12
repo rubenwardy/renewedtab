@@ -121,11 +121,12 @@ export default function App() {
 					{isLocked && !onboardingIsOpen && (
 						<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
 							tabIndex={0} variant={ButtonVariant.None}
+							data-cy="start-editing"
 							className="text-shadow" icon="fas fa-pen"
 							title={messages.unlockWidgets} />)}
 
 					{!isLocked && (
-						<aside className="edit-bar" role="toolbar">
+						<aside className="edit-bar" role="toolbar" data-cy="edit-bar">
 							<Button href="https://renewedtab.com/help/"
 								variant={ButtonVariant.Secondary}
 								icon="fa fa-question" small={true}
@@ -155,6 +156,7 @@ export default function App() {
 							<Button onClick={() => setIsLocked(true)}
 								variant={ButtonVariant.Secondary}
 								icon="fa fa-check" small={true}
+								data-cy="finish-editing"
 								label={miscMessages.finishEditing} />
 						</aside>)}
 				</main>

@@ -33,7 +33,7 @@ function makeFieldEle<T>(props: FormProps<T>, key: stringKeyOf<T>, entry: Schema
 	if (props.table) {
 		return (<td key={key} className={className}>{field}</td>);
 	} else {
-		return (<div key={key} className={className}>{field}</div>);
+		return (<div key={key} className={className} data-cy={`field-${key}`}>{field}</div>);
 	}
 }
 

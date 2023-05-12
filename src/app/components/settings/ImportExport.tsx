@@ -64,8 +64,9 @@ export default function ImportExport() {
 			<p className="buttons mt-4">
 				<Button id="reset" variant={ButtonVariant.Danger} onClick={handleReset} label={messages.reset} />
 				<ImportButton />
-				<Button id="export" href={`data:text/plain;base64,${encode(data ?? "")}`}
-						download="renewedtab.json" label={miscMessages.export} />
+				<Button data-cy="export"
+					href={`data:text/plain;base64,${encode(data ?? "")}`}
+					download="renewedtab.json" label={miscMessages.export} />
 			</p>
 		</div>);
 }

@@ -3,7 +3,8 @@
 	"exclude": [
 		"src/app",
 		"src/webext",
-		"tests"
+		"tests",
+		"cypress"
 	]
 }
 //

@@ -79,7 +79,7 @@ function LocationLookup(props: { query: Location, onSelect: (loc: Location) => v
 
 function getGeoLocation(): Promise<GeolocationPosition> {
 	return new Promise((resolve, reject) => {
-		navigator.geolocation.getCurrentPosition(resolve, reject);
+		window.navigator.geolocation.getCurrentPosition(resolve, reject);
 	});
 }
 
@@ -136,11 +136,12 @@ function LocationModal(props: LocationModalProps) {
 			<div className="modal-body">
 				<div className="field-group mt-1">
 					<input type="text" ref={ref} autoFocus={true}
-						onKeyPress={onKeyPress} />
+						data-cy="location-query" onKeyPress={onKeyPress} />
 					<Button variant={ButtonVariant.Secondary} icon="icon_location.svg"
-						title={messages.searchUsingGPS}
+						title={messages.searchUsingGPS} data-cy="location-gps"
 						onClick={() => doGeoLocation().catch(e => alert(e.message))}/>
-					<Button onClick={handleSearch} label={messages.search} />
+					<Button onClick={handleSearch} label={messages.search}
+						data-cy="location-search" />
 				</div>
 				{query == "" && (
 					<p className="text-muted mt-2">
@@ -152,7 +153,8 @@ function LocationModal(props: LocationModalProps) {
 				{typeof query == "string" && query != "" &&
 					<LocationQuery query={query} onSelect={handleSelect} />}
 				<Button variant={ButtonVariant.Secondary} onClick={props.cancel}
-					label={miscMessages.cancel} data-action="cancel" />
+					label={miscMessages.cancel} data-action="cancel"
+					data-cy="location-cancel" />
 			</div>
 		</Modal>);
 }
@@ -194,7 +196,8 @@ export default function LocationField(props: FieldProps<Location>) {
 						<div className="text-muted">{info}</div>
 					</div>
 				</div>
-				<Button onClick={() => setModalOpen(true)} label={miscMessages.edit} />
+				<Button data-cy="location-edit"
+					onClick={() => setModalOpen(true)} label={miscMessages.edit} />
 			</div>
 
 			{isModalOpen &&

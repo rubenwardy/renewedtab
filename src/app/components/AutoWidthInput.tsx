@@ -2,6 +2,7 @@ import React, { ChangeEvent, CSSProperties, KeyboardEvent, useRef } from "react"
 
 
 interface AutoWidthInputProps {
+	name?: string;
 	value: string;
 	placeholder?: string;
 	onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -35,7 +36,7 @@ export default function AutoWidthInput(props: AutoWidthInputProps) {
 			</span>
 			<input type="text" className="invisible" onChange={handleChange}
 					onBlur={props.onFinished} value={props.value ?? ""}
-					onKeyPress={onKeyPress}
+					onKeyPress={onKeyPress} name={props.name}
 					placeholder={props.placeholder} />
 		</span>);
 }

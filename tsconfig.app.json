@@ -2,6 +2,7 @@
 	"extends": "./tsconfig.json",
 	"exclude": [
 		"src/server",
-		"tests"
+		"tests",
+		"cypress"
 	]
 }

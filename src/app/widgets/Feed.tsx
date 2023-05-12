@@ -324,7 +324,7 @@ function FeedsImportExport(widget: WidgetEditComponentProps<FeedProps>) {
 				variant={ButtonVariant.Secondary}
 				onClick={() => ref.current?.click()}
 				label={miscMessages.import} />
-			<Button id="export"
+			<Button id="export" data-cy="export-opml"
 				variant={ButtonVariant.Secondary}
 				href={exportData}
 				download="renewedtab-feeds.opml"

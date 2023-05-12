@@ -125,7 +125,7 @@ export default function ArrayField<T extends { id: string }>(props: FieldProps<T
 
 	return (
 		<>
-			{isOrdered && (
+			{(rows.length > 0 && isOrdered) && (
 				<>
 					<Button small={true} variant={ButtonVariant.Secondary}
 						icon="fas fa-plus" className="float-right mr-0"
@@ -157,10 +157,9 @@ export default function ArrayField<T extends { id: string }>(props: FieldProps<T
 				</tbody>
 			</table>
 
-			{(rows.length > 0 || !isOrdered) &&
-				<Button small={true}  variant={ButtonVariant.Secondary}
-					icon="fas fa-plus" className="float-right mr-0"
-					label={miscMessages.add} onClick={() => handleAdd(false)} />}
+			<Button small={true}  variant={ButtonVariant.Secondary}
+				icon="fas fa-plus" className="float-right mr-0" data-cy="add-row"
+				label={miscMessages.add} onClick={() => handleAdd(false)} />
 
 			<div className="clear-both" />
 		</>);

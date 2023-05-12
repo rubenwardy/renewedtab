@@ -7,6 +7,7 @@ import ImportButton from "../ImportButton";
 
 
 interface Preset {
+	id: string;
 	title: MessageDescriptor;
 	description: MessageDescriptor;
 	preview: string;
@@ -20,7 +21,7 @@ interface PresetProps extends Preset {
 function Preset(props: PresetProps) {
 	return (
 		<li>
-			<a onClick={props.onClick}>
+			<a onClick={props.onClick} data-cy={`preset-${props.id}`}>
 				<div className="preset-preview">
 					<img src={props.preview} />
 				</div>
@@ -38,6 +39,7 @@ function Preset(props: PresetProps) {
 
 export const presets: Preset[] = [
 	{
+		id: "focus",
 		title: defineMessage({
 			defaultMessage: "Focus",
 			description: "Preset: focus",
@@ -50,6 +52,7 @@ export const presets: Preset[] = [
 		widgets: fromTypedJSON(require("./presets/focus.json")).widgets,
 	},
 	{
+		id: "grid",
 		title: defineMessage({
 			defaultMessage: "Grid",
 			description: "Preset: Grid",
@@ -62,6 +65,7 @@ export const presets: Preset[] = [
 		widgets: fromTypedJSON(require("./presets/grid.json")).widgets,
 	},
 	{
+		id: "goals",
 		title: defineMessage({
 			defaultMessage: "Goals",
 			description: "Preset: goals",
@@ -91,7 +95,7 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 			</h3>
 			<ul className="presets">
 				{presets.map(preset => (
-					<Preset key={preset.title.id} {...preset}
+					<Preset key={preset.id} {...preset}
 						onClick={() => applyPreset(preset)} />))}
 			</ul>
 			<p className="text-muted mt-4">

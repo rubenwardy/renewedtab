@@ -436,10 +436,10 @@ function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, r
 				</div>)}
 
 			{props.display.showHourlyForecast && (
-				<div className="row forecasts">{hourly}</div>)}
+				<div className="row forecasts" data-cy="weather-hourly">{hourly}</div>)}
 
 			{props.display.showDailyForecast && (
-				<div className="row forecasts">{daily}</div>)}
+				<div className="row forecasts" data-cy="weather-daily">{daily}</div>)}
 		</Panel>);
 }
 
