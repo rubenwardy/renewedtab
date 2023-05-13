@@ -1,5 +1,4 @@
-import { IS_DEBUG } from "server";
-
+import { IS_DEBUG } from "./config";
 
 type AnyFunc<R> = (...args: any[]) => R;
 type GetKeyFunc = (...args: any[]) => string;

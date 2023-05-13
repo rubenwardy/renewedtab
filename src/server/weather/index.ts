@@ -1,11 +1,11 @@
 import { WeatherDay, WeatherHour, WeatherInfo } from "common/api/weather";
 import fetchCatch, { Request } from "../http";
-import { ACCUWEATHER_API_KEY, UA_DEFAULT } from "..";
 import { notifyUpstreamRequest } from "../metrics";
 import { makeKeyCache } from "../cache";
 import { getLocationFromCoords } from "./geocode";
 import { handleAccuError, AccuCurrentAPI, AccuHourlyAPI, AccuDailyAPI } from "./accu";
 import UserError from "server/UserError";
+import { ACCUWEATHER_API_KEY, UA_DEFAULT } from "server/config";
 
 
 const ACCU_ICONS_TO_OWM: Record<string, string> = {

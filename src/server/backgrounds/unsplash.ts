@@ -1,11 +1,9 @@
 import { BackgroundInfo } from "common/api/backgrounds";
 import fetchCatch, { Request } from "../http";
-import { serverConfig, UA_DEFAULT } from "..";
 import { notifyUpstreamRequest } from "server/metrics";
 import UserError from "server/UserError";
+import { UA_DEFAULT, UNSPLASH_ACCESS_KEY } from "server/config";
 
-const UNSPLASH_ACCESS_KEY =
-	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;
 
 interface UnsplashImage {
 	id: string;

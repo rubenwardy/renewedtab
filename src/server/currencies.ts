@@ -1,8 +1,8 @@
 import { CurrencyInfo } from "common/api/currencies";
-import { UA_DEFAULT } from "server";
 import { makeSingleCache } from "./cache";
 import fetchCatch, {Request} from "./http";
 import UserError from "./UserError";
+import { UA_DEFAULT } from "./config";
 
 
 const shitCoins: Record<string, string> = {

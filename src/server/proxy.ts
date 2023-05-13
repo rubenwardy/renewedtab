@@ -1,14 +1,18 @@
 import fetchCatch, { Request } from "./http";
-import { serverConfig, UA_PROXY } from ".";
+import { autocompleteFeeds, autocompleteWebcomics, autocompleteBackgroundFeeds } from "./data";
 import { makeKeyCache } from "./cache";
 import UserError from "./UserError";
+import { UA_PROXY, serverConfig } from "./config";
 
-const PROXY_ALLOWED_HOSTS: string[] = serverConfig.PROXY_ALLOWED_HOSTS ?? [
-	"feeds.bbci.co.uk",
-	"fdo.rocketlaunch.live",
-	"theregister.com",
-	"www.nasa.gov",
-];
+
+const PROXY_ALLOWED_HOSTS_SET = new Set(serverConfig.PROXY_ALLOWED_HOSTS ?? []);
+[
+	...autocompleteFeeds,
+	...autocompleteWebcomics,
+	...autocompleteBackgroundFeeds,
+].map(x => new URL(x.value).hostname).forEach(x => PROXY_ALLOWED_HOSTS_SET.add(x));
+const PROXY_ALLOWED_HOSTS = [...PROXY_ALLOWED_HOSTS_SET];
+console.log(PROXY_ALLOWED_HOSTS);
 
 export interface Result {
 	status: number;

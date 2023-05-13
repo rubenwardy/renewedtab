@@ -5,38 +5,10 @@ import fetchCatch, { Request } from "./http";
 import * as Sentry from "@sentry/node";
 import * as Tracing from "@sentry/tracing";
 
-
-// Settings
-
-const PORT = process.env.PORT ?? 8000;
-export const serverConfig = (function() {
-	if (!fs.existsSync("config.json")) {
-		return {};
-	}
-	return JSON.parse(fs.readFileSync("config.json").toString());
-})();
-
-export const IS_DEBUG = process.env.NODE_ENV !== "production";
-const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK ?? serverConfig.DISCORD_WEBHOOK;
-export const UA_DEFAULT = "Mozilla/5.0 (compatible; Renewed Tab App/1.17.1; +https://renewedtab.com/)";
-export const UA_PROXY = "Mozilla/5.0 (compatible; Renewed Tab Proxy/1.17.1; +https://renewedtab.com/)";
-const SENTRY_DSN = process.env.SENTRY_DSN;
-const SAVE_ROOT = process.env.SAVE_ROOT ?? serverConfig.SAVE_ROOT ?? ".";
-export const ACCUWEATHER_API_KEY =
-	process.env.ACCUWEATHER_API_KEY ?? serverConfig.ACCUWEATHER_API_KEY;
-
+import { SENTRY_DSN, SAVE_ROOT, UA_DEFAULT, DISCORD_WEBHOOK, UA_PROXY, PORT, IS_DEBUG } from "./config";
 
 
 // App
-
-import { getWeatherInfoByCoords } from "./weather";
-import { getBackground } from "./backgrounds";
-import { handleProxy } from "./proxy";
-import { getCoordsFromQuery, getLocationFromCoords } from "./weather/geocode";
-import getImageFromUnsplash from "./backgrounds/unsplash";
-import SpaceLaunch from "common/api/SpaceLaunch";
-import { getQuote, getQuoteCategories } from "./quotes";
-import { getCurrencies } from "./currencies";
 
 const app = express();
 
@@ -78,13 +50,22 @@ function writeClientError(res: express.Response, msg: string) {
 	res.status(400).type("text").send(msg);
 }
 
-
 import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
 import { TippyTopImage } from "common/api/icons";
 import UserError from "./UserError";
 import { FeedType } from "common/feeds";
 import { detectFeed } from "common/feeds/detect";
 import { JSDOM } from "jsdom";
+import { handleProxy } from "./proxy";
+import { getWeatherInfoByCoords } from "./weather";
+import { getBackground } from "./backgrounds";
+import { getCoordsFromQuery, getLocationFromCoords } from "./weather/geocode";
+import getImageFromUnsplash from "./backgrounds/unsplash";
+import SpaceLaunch from "common/api/SpaceLaunch";
+import { getQuote, getQuoteCategories } from "./quotes";
+import { getCurrencies } from "./currencies";
+import { autocompleteFeeds, autocompleteWebcomics, autocompleteBackgroundFeeds } from "./data";
+
 
 app.get('/metrics', async (req, res) => {
 	try {
@@ -356,25 +337,10 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response, n
 });
 
 
-function readAutocompleteFromFile(filename: string) {
-	return fs.readFileSync(`src/server/data/${filename}.csv`)
-		.toString()
-		.split(/\r?\n/)
-		.map(x => x.split(","))
-		.filter(x => x.length == 2)
-		.map(([label, value]) => ({ label: label.trim(), value: value.trim() }))
-		.sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: "base" }));
-}
-
-
-const feeds = readAutocompleteFromFile("feeds");
-const webcomics = readAutocompleteFromFile("webcomics");
-const feeds_background = readAutocompleteFromFile("feeds_background");
-
 app.get("/api/feeds/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("autocomplete:feeds");
-		res.json(feeds);
+		res.json(autocompleteFeeds);
 	} catch (e: any) {
 		next(e);
 	}
@@ -383,7 +349,7 @@ app.get("/api/feeds/", async (_req: express.Request, res: express.Response, next
 app.get("/api/webcomics/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("autocomplete:webcomic");
-		res.json(webcomics);
+		res.json(autocompleteWebcomics);
 	} catch (e: any) {
 		next(e);
 	}
@@ -392,7 +358,7 @@ app.get("/api/webcomics/", async (_req: express.Request, res: express.Response, 
 app.get("/api/feeds/background/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("autocomplete:feeds_background");
-		res.json(feeds_background);
+		res.json(autocompleteBackgroundFeeds);
 	} catch (e: any) {
 		next(e);
 	}
