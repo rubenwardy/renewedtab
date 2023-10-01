@@ -51,6 +51,7 @@ Copy `config.example.json` to `config.json`.
 	* The settings:
 		* `ACCUWEATHER_API_KEY`: AccuWeather.com
 		* `UNSPLASH_ACCESS_KEY`: [Unsplash](https://unsplash.com/oauth/applications)
+		* `EXCHANGERATE_API_KEY`: for currency exchange rates
 	* You can set the above server settings in `config.json`, or using
 	  environment variables (recommended for production).
 

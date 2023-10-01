@@ -2,25 +2,24 @@ import { CurrencyInfo } from "common/api/currencies";
 import { makeSingleCache } from "./cache";
 import fetchCatch, {Request} from "./http";
 import UserError from "./UserError";
-import { UA_DEFAULT } from "./config";
+import { EXCHANGERATE_API_KEY, UA_DEFAULT } from "./config";
 
 
-const shitCoins: Record<string, string> = {
-	"BTC": "Bitcoin",
-	"ETH": "Ethereum",
-	"USDT": "Tether",
-	"BNB": "Binance Coin",
-	"ADA": "Cardana",
-	"DOGE": "Dogecoin",
-	"XRP": "XRP",
-	"USDC": "USD Coin",
-	"DOT": "Polkadot",
-	"UNI": "Uniswap",
-};
+const shitCoins = new Set([
+ 	"BTC", "ETH", "USDT", "BNB", "ADA", "DOGE", "XRP", "USDC", "DOT", "UNI",
+]);
 
 
+/**
+ * Get info about symbols, like the description
+ *
+ * @returns Map of currency key to info
+ */
 async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
-	const response = await fetchCatch(new Request("https://api.exchangerate.host/symbols", {
+	const url = new URL("http://api.exchangerate.host/list");
+	url.searchParams.set("access_key", EXCHANGERATE_API_KEY);
+
+	const response = await fetchCatch(new Request(url, {
 		method: "GET",
 		size: 0.1 * 1000 * 1000,
 		timeout: 10000,
@@ -30,39 +29,37 @@ async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
 		},
 	}));
 
-	if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
+	if (!response.headers.get("content-type")?.includes("application/json")) {
 		throw new UserError(await response.text());
 	}
 
-	const retval: Record<string, CurrencyInfo> = {};
+	const json = await response.json();
+	if (!response) {
+		throw new UserError(json?.error?.info ?? "Unknown error from upstream API");
+	}
 
-	Object.entries((await response.json()).symbols as Record<string, CurrencyInfo>)
-		.forEach(([key, {code, description}]) => {
+	const retval: Record<string, CurrencyInfo> = {};
+	Object.entries(json.currencies as Record<string, string>)
+		.forEach(([key, description]) => {
 			retval[key] = {
-				code,
+				code: key,
 				description,
 				value_in_usd: NaN,
-				is_crypto: false,
+				is_crypto: shitCoins.has(key),
 			 };
 		});
-
-	Object.entries(shitCoins).forEach(([code, description]) => {
-		retval[code] = {
-			code,
-			description,
-			value_in_usd: NaN,
-			is_crypto: true,
-		}
-	});
 
 	return retval;
 }
 
 
-async function fetchForexRates(rates: Record<string, number>): Promise<void> {
-	const url = new URL("https://api.exchangerate.host/latest");
+async function fetchLiveValues(rates: Record<string, number>): Promise<void> {
+	const url = new URL("http://api.exchangerate.host/live")
+	url.searchParams.set("access_key", EXCHANGERATE_API_KEY);
 	url.searchParams.set("base", "USD");
 	url.searchParams.set("places", "10");
+
+	// TODO: this API only returns BTC, use another API for crypto
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
@@ -73,40 +70,18 @@ async function fetchForexRates(rates: Record<string, number>): Promise<void> {
 		},
 	}));
 
-	if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
+	if (!response.headers.get("content-type")?.includes("application/json")) {
 		throw new UserError(await response.text());
 	}
 
 	const json = await response.json();
-	Object.entries(json.rates as Record<string, string>).forEach(([key, value]) => {
-		rates[key] = parseFloat(value);
-	});
-}
-
-
-async function fetchCryptoRates(rates: Record<string, number>): Promise<void> {
-	const url = new URL("https://api.exchangerate.host/latest");
-	url.searchParams.set("base", "USD");
-	url.searchParams.set("source", "crypto");
-	url.searchParams.set("places", "10");
-	url.searchParams.set("symbols", Object.keys(shitCoins).join(","));
-
-	const response = await fetchCatch(new Request(url, {
-		method: "GET",
-		timeout: 10000,
-		headers: {
-			"User-Agent": UA_DEFAULT,
-			"Accept": "application/json",
-		},
-	}));
-
-	if (!response.ok || !response.headers.get("content-type")?.includes("application/json")) {
-		throw new UserError(await response.text());
+	if (!response) {
+		throw new UserError(json?.error?.info ?? "Unknown error from upstream API");
 	}
 
-	const json = await response.json();
-	Object.entries(json.rates as Record<string, string>).forEach(([key, value]) => {
-		rates[key] = parseFloat(value);
+	Object.entries(json.quotes as Record<string, string>).forEach(([key, value]) => {
+		const withoutUSD = key.slice(3);
+		rates[withoutUSD] = parseFloat(value);
 	});
 }
 
@@ -115,8 +90,7 @@ async function fetchCurrencies(): Promise<Record<string, CurrencyInfo>> {
 	const symbols = await fetchSymbols();
 
 	const rates: Record<string, number> = {};
-	await fetchForexRates(rates);
-	await fetchCryptoRates(rates);
+	await fetchLiveValues(rates);
 
 	for (const key in symbols)  {
 		const currency = symbols[key];
@@ -130,4 +104,4 @@ async function fetchCurrencies(): Promise<Record<string, CurrencyInfo>> {
 }
 
 
-export const getCurrencies = makeSingleCache(fetchCurrencies, 15);
+export const getCurrencies = makeSingleCache(fetchCurrencies, 120);
