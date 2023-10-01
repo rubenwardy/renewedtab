@@ -92,6 +92,8 @@ async function fetchCurrencies(): Promise<Record<string, CurrencyInfo>> {
 	const rates: Record<string, number> = {};
 	await fetchLiveValues(rates);
 
+	rates["USD"] = 1;
+
 	for (const key in symbols)  {
 		const currency = symbols[key];
 		currency.value_in_usd = rates[key];
