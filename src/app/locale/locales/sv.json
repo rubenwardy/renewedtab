@@ -1,0 +1,1092 @@
+{
+    "K3r6DQ": {
+        "message": "Ta bort"
+    },
+    "K8s82y": {
+        "message": "Födelsedatum",
+        "description": "Age widget: form field label"
+    },
+    "ubO4zt": {
+        "message": "Webbserie",
+        "description": "Web Comic Widget"
+    },
+    "uzT59w": {
+        "message": "Rutnät",
+        "description": "Preset: Grid"
+    },
+    "B0kbsm": {
+        "message": "Flöde",
+        "description": "Unsplash background mode"
+    },
+    "+sI+Oh": {
+        "message": "Visa prognosen per timma",
+        "description": "Weather widget: form field label"
+    },
+    "JvOSvX": {
+        "message": "Bakgrund",
+        "description": "Settings tab"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
+    },
+    "dGu5JQ": {
+        "message": "Flöde",
+        "description": "Feed Widget"
+    },
+    "dIwFS5": {
+        "message": "Välj en bild",
+        "description": "Form field label"
+    },
+    "eXB4qM": {
+        "message": "ONS",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "uv1bYR": {
+        "message": "TIS",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "ShQneX": {
+        "message": "Text",
+        "description": "Form field label"
+    },
+    "T/wBPw": {
+        "message": "Ta bort {typ}"
+    },
+    "T4VxQN": {
+        "message": "Laddar…"
+    },
+    "btOI+Z": {
+        "message": "Ny flik"
+    },
+    "AuSjzq": {
+        "message": "Aktuellt: Visa UV-strålning",
+        "description": "Weather widget: form field label"
+    },
+    "+TYXj6": {
+        "message": "Idag, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "Visar Atom, JSONFeed och RSS-flöden - användbart för att följa nyheter, hemsidor och bloggar",
+        "description": "Feed widget description"
+    },
+    "/aA+Xf": {
+        "message": "Visa bilder",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Anteckningar",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "Är du säker att du vill radera denna widget permanent?",
+        "description": "Delete widget modal message"
+    },
+    "0feb3b": {
+        "message": "Valfri, gör bilden till en länk",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Ikon",
+        "description": "Form field label"
+    },
+    "1s5GYl": {
+        "message": "Opacitet",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Lägg till"
+    },
+    "20tqYI": {
+        "message": "URL till en iCal-fil (.ics) för en kalender",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "27lljH": {
+        "message": "Du är <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "Sov gott, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "God eftermiddag, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "Hälsning",
+        "description": "Greeting Widget"
+    },
+    "2s4stS": {
+        "message": "Välkommen till <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "2vJWTd": {
+        "message": "Foto",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "Hemsida",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Namn på sökmotor",
+        "description": "Search widget: form field label"
+    },
+    "3ZfhWo": {
+        "message": "Behörighet krävs för att få åtkomst till {host}. Redigera denna widget för att bevilja detta."
+    },
+    "3aaibf": {
+        "message": "Lägg till widget"
+    },
+    "3vh5vd": {
+        "message": "Visar ingenting, användbart för layouter",
+        "description": "Invisible widget description"
+    },
+    "3vjl5Q": {
+        "message": "Visa / Göm",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "Avbryt"
+    },
+    "4UpnpD": {
+        "message": "Bilder lagras lokalt i din webbläsare, och laddas aldrig upp",
+        "description": "Form field hint (Image)"
+    },
+    "4cMia7": {
+        "message": "Visa en ny bild",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "Från",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Hjälp och Förslag"
+    },
+    "5DCxT+": {
+        "message": "Temperaturenhet",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "Anpassad CSS",
+        "description": "Theme settings: form field label"
+    },
+    "5mfAB9": {
+        "message": "URL till ett Atom, JSONFeed eller RSS-flöde",
+        "description": "Form field hint (Feed URL)"
+    },
+    "6MDM6D": {
+        "message": "Citat",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "Kunde inte få bokmärken",
+        "description": "Bookmarks widget: error message"
+    },
+    "6wEkCM": {
+        "message": "Alternativt kan du använda en Bokmärkeswidget för bättre kontroll.",
+        "description": "General settings: bookmarks bar"
+    },
+    "7OH6mh": {
+        "message": "Bild",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "Årsutveckling",
+        "description": "Year Progress widget"
+    },
+    "7zYGs9": {
+        "message": "Kalenderschema",
+        "description": "CalendarSchedule Widget"
+    },
+    "8HmiSe": {
+        "message": "Vänligen välj en källa",
+        "description": "Feed widget: no sources error message"
+    },
+    "8xPAKF": {
+        "message": "Från 0-100%, position av färgen på lutning",
+        "description": "Form field hint (Stop)"
+    },
+    "8xVVb5": {
+        "message": "Primärfärg",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "Denna widget kräver webbläsartilläggsversionen."
+    },
+    "3UG6ds": {
+        "message": "Sök widgetar eller webben med din favoritsökmotor",
+        "description": "Search widget description"
+    },
+    "B3NCWb": {
+        "message": "Färger",
+        "description": "Form field label"
+    },
+    "BiPNnl": {
+        "message": "Vindhastighetsenhet",
+        "description": "Weather widget: form field label"
+    },
+    "Bl74xq": {
+        "message": "En länkknapp",
+        "description": "Button widget description"
+    },
+    "BmzsQb": {
+        "message": "Länkar, med stöd för rubriker och ikoner (\"speed dial\")",
+        "description": "Links widget description"
+    },
+    "C7WJrL": {
+        "message": "Vertikal",
+        "description": "Form field option, vertical gradient"
+    },
+    "CN0kVN": {
+        "message": "Widgetrutnät",
+        "description": "Settings tab"
+    },
+    "CNpJaZ": {
+        "message": "Fokus",
+        "description": "Preset: focus"
+    },
+    "CmRs9p": {
+        "message": "Sök",
+        "description": "Search Widget"
+    },
+    "Cq4JWx": {
+        "message": "Nyheter, vädret och mer",
+        "description": "Preset: grid description"
+    },
+    "CshCZY": {
+        "message": "Bakgrundstyp"
+    },
+    "D0+wcK": {
+        "message": "Visa en bild, med valfri länk",
+        "description": "Image widget description"
+    },
+    "D3idYv": {
+        "message": "Inställningar"
+    },
+    "Ddd3ZY": {
+        "message": "Till",
+        "description": "Currencies widget: form field label"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "E4nLwR": {
+        "message": "Varje dag",
+        "description": "Background expiry dropdown"
+    },
+    "Ekvvsi": {
+        "message": "Bokmärkesfält",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EpPEVJ": {
+        "message": "Gradient",
+        "description": "Gradient background mode"
+    },
+    "EscvnU": {
+        "message": "Ikoner",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "F1A/8i": {
+        "message": "Källor",
+        "description": "Feed widget: form field label"
+    },
+    "FqCn+F": {
+        "message": "God morgon, {name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "G6WG/N": {
+        "message": "Osynlig",
+        "description": "Invisible Widget"
+    },
+    "GWRKVT": {
+        "message": "Textfärg",
+        "description": "Form field label"
+    },
+    "GXkv/F": {
+        "message": "Vänligen välj en plats",
+        "description": "Location form field: prompt"
+    },
+    "GcxpZV": {
+        "message": "Datumstil",
+        "description": "Clock widget: date style form field label"
+    },
+    "GpfSpy": {
+        "message": "Visa bokmärkesfält",
+        "description": "General settings: bookmarks bar"
+    },
+    "H00a0q": {
+        "message": "Lämna tomt för att göra en rubrik",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "HEvlTB": {
+        "message": "Visningsinställningar",
+        "description": "Weather widget: display subform title"
+    },
+    "HPLtg4": {
+        "message": "Okänd valuta \"{currency}\"",
+        "description": "Currencies widget: error"
+    },
+    "I48yxw": {
+        "message": "Integritet",
+        "description": "General settings: privacy"
+    },
+    "IKpSw0": {
+        "message": "Horisontell",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "IqLwUL": {
+        "message": "Rutnätsmellanrum",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "J91edI": {
+        "message": "Importera / Exportera",
+        "description": "Settings tab"
+    },
+    "JihbEV": {
+        "message": "CSS-dokumentation",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "B1pyj1": {
+        "message": "Aktuellt: Visa \"känns som\"",
+        "description": "Weather widget: form field label"
+    },
+    "Go7At+": {
+        "message": "LÖR",
+        "description": "Short weekday name (Saturday)"
+    },
+    "GqPEp+": {
+        "message": "Kräver webbläsartilläggsversionen"
+    },
+    "HksGis": {
+        "message": "Aktuellt: Visa vind",
+        "description": "Weather widget: form field label"
+    },
+    "IbCXY9": {
+        "message": "Standard ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "KjUKUz": {
+        "message": "En gradient av färger",
+        "description": "Backgroud mode description"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> vid {latitud} och {longitude}"
+    },
+    "KyDwm3": {
+        "message": "Visar mest besökta sidor",
+        "description": "Top Sites widget: description"
+    },
+    "Kzo9ZH": {
+        "message": "Bild-URL",
+        "description": "Form field label"
+    },
+    "L6nTur": {
+        "message": "Välj en startpunkt",
+        "description": "Onboarding: presets title"
+    },
+    "LfHpBk": {
+        "message": "Typsnittsskalning",
+        "description": "Theme settings: form field label"
+    },
+    "Lnvfz8": {
+        "message": "Kunde inte ladda {source}: {error}",
+        "description": "Feed error message"
+    },
+    "Lxc1x4": {
+        "message": "Klocka",
+        "description": "Clock Widget"
+    },
+    "MN3prI": {
+        "message": "Inkludera mappar som sektioner",
+        "description": "Bookmarks widget: form field label"
+    },
+    "MdUPbJ": {
+        "message": "Söndag, Måndag, Tisdag, Onsdag, Torsdag, Fredag, Lördag",
+        "description": "Days of the week, separated by commas"
+    },
+    "Mihrhf": {
+        "message": "Inget",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "MtrTNy": {
+        "message": "Imogron"
+    },
+    "N/7Stk": {
+        "message": "Skapad av <a>rubenwardy</a>."
+    },
+    "OQHLB5": {
+        "message": "Färg",
+        "description": "Form field label"
+    },
+    "PBMGxw": {
+        "message": "Begränsa bilder",
+        "description": "Feed background mode: form field label"
+    },
+    "PHwOzi": {
+        "message": "Stort tack till Unsplash, AccuWeather och RocketLaunch.Live för deras APIer."
+    },
+    "PM6qZ7": {
+        "message": "Visa sekunder"
+    },
+    "PYJFvz": {
+        "message": "Kategorier",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "QV6YlB": {
+        "message": "Valutakurs",
+        "description": "Currencies widget: form field label"
+    },
+    "QcExtH": {
+        "message": "Integritetspolicy",
+        "description": "General settings: privacy policy button"
+    },
+    "QkI7Lb": {
+        "message": "Webbläsarens tidszon ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "R1jLoC": {
+        "message": "Vertikal",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "O8mt7g": {
+        "message": "Siffror ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "OBJta4": {
+        "message": "Du kan ändra namnet genom att trycka på widgeten",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "OPzczE": {
+        "message": "Förkortad ({example}",
+        "description": "Clock widget: date style type"
+    },
+    "QqE4JC": {
+        "message": "Saknar flödes-URL-"
+    },
+    "R4cyIr": {
+        "message": "Aktuellt: Visa fukthalt",
+        "description": "Weather widget: form field label"
+    },
+    "RCe+DS": {
+        "message": "Dra och släpp widgetar"
+    },
+    "RVGNBh": {
+        "message": "När du är färdig kan du trycka på <button></button> för att fästa widgetarna."
+    },
+    "RZqASt": {
+        "message": "Enkel färg",
+        "description": "Backgroud mode description"
+    },
+    "S3njcM": {
+        "message": "iframe",
+        "description": "IFrame Widget"
+    },
+    "S6nfAm": {
+        "message": "Fukthalt (%)",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "SAo61B": {
+        "message": "Bokmärken",
+        "description": "Bookmarks Widget"
+    },
+    "SENRqu": {
+        "message": "Hjälp"
+    },
+    "SG4UJU": {
+        "message": "Knapp",
+        "description": "Button Widget"
+    },
+    "TUnCKb": {
+        "message": "Text",
+        "description": "Text Widget"
+    },
+    "U2Qnh7": {
+        "message": "Bild",
+        "description": "Image background mode"
+    },
+    "Upkn1Q": {
+        "message": "<b>Hög</b> UV-strålning",
+        "description": "High UV risk"
+    },
+    "V1EIOe": {
+        "message": "Visar en hemsida",
+        "description": "IFrame widget description"
+    },
+    "VPDVTF": {
+        "message": "Inget här",
+        "description": "Shown when array table form field has no rows"
+    },
+    "Vckd1G": {
+        "message": "MÅN",
+        "description": "Short weekday name (Monday)"
+    },
+    "VjDvbL": {
+        "message": "URL",
+        "description": "Form field label"
+    },
+    "VkW6D1": {
+        "message": "centrerad, topp och botten",
+        "description": "Backgroud settings: form field hint (Position)"
+    },
+    "W3zKGr": {
+        "message": "Kilometer per timma (km/h)",
+        "description": "Weather widget: Speed unit"
+    },
+    "WF5DKA": {
+        "message": "Ålder",
+        "description": "Age widget"
+    },
+    "WKiXhX": {
+        "message": "Färg",
+        "description": "Color background mode"
+    },
+    "Wi0G88": {
+        "message": "Om och Hjälp",
+        "description": "Settings tab"
+    },
+    "X18x9m": {
+        "message": "Generellt",
+        "description": "Settings tab"
+    },
+    "X5OoHJ": {
+        "message": "Vad är ditt mål för idag?",
+        "description": "Daily Goal prompt"
+    },
+    "XrQEPN": {
+        "message": "Ort",
+        "description": "Form field label"
+    },
+    "XsTD4Q": {
+        "message": "Att-göra lista",
+        "description": "Todo List Widget"
+    },
+    "YQhLKn": {
+        "message": "Varje timma",
+        "description": "Background expiry dropdown"
+    },
+    "YS3jnS": {
+        "message": "FRE",
+        "description": "Short weekday name (Friday)"
+    },
+    "YS5zRT": {
+        "message": "Sök med {name}",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "YYoBQn": {
+        "message": "Paneloskärperadie",
+        "description": "Theme settings: form field label"
+    },
+    "YuNOET": {
+        "message": "HTML",
+        "description": "HTML widget: form field label"
+    },
+    "Z2/hH0": {
+        "message": "Bild: {filename}"
+    },
+    "Z79HMN": {
+        "message": "Slumpmässiga utvalda bakgrunder",
+        "description": "Backgroud mode description"
+    },
+    "ZUZeuR": {
+        "message": "Visa ett meddelande",
+        "description": "Text widget description"
+    },
+    "ZZIlU9": {
+        "message": "Dagligt mål",
+        "description": "Daily Goal Widget"
+    },
+    "ZeZlbR": {
+        "message": "Ställer in opaciteten för knappens färgning",
+        "description": "Button widget: form field hint (Opacity)"
+    },
+    "a09vzt": {
+        "message": "HTTP-förfrågan misslyckades, {code} {msg}."
+    },
+    "aXrD3p": {
+        "message": "Valuta",
+        "description": "Currencies widget"
+    },
+    "abwneZ": {
+        "message": "Meter per sekund (m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "adRrk3": {
+        "message": "Återställ allt",
+        "description": "Import / export settings, reset"
+    },
+    "amHvKE": {
+        "message": "Skriv anteckningar här",
+        "description": "Notes widget: prompt"
+    },
+    "ao/AFQ": {
+        "message": "Påminner dig om ett dagligt mål",
+        "description": "Daily Goal widget description"
+    },
+    "bfWes8": {
+        "message": "Gradienttyp",
+        "description": "Form field label"
+    },
+    "a0L2KE": {
+        "message": "Försök att inkludera namnet på landet eller initialer."
+    },
+    "exTzGh": {
+        "message": "Horisontell",
+        "description": "Form field option, horizontal gradient"
+    },
+    "fWK68w": {
+        "message": "Typsnitt",
+        "description": "Theme settings: form field label"
+    },
+    "frEJEM": {
+        "message": "TORS",
+        "description": "Short weekday name (Thursday)"
+    },
+    "fz43UJ": {
+        "message": "Donera",
+        "description": "Renewed Tab donation link"
+    },
+    "gEYo49": {
+        "message": "Position",
+        "description": "Backgroud settings: form field label"
+    },
+    "gHzZEt": {
+        "message": "Endast klocka och sökruta",
+        "description": "Preset: focus description"
+    },
+    "gSjZfg": {
+        "message": "Länkar",
+        "description": "Links Widget"
+    },
+    "gXcVyS": {
+        "message": "Slutför redigering",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "grbGxs": {
+        "message": "Inga händelser",
+        "description": "CalendarSchedule: no events"
+    },
+    "h/ftND": {
+        "message": "Välj en fil"
+    },
+    "hCBQrY": {
+        "message": "Känns som <b>{temp}°</b>"
+    },
+    "hUIQ7h": {
+        "message": "Ljusstyrka",
+        "description": "Backgroud settings: form field label"
+    },
+    "hWimZf": {
+        "message": "Aktivera widgetsök",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "hktZIl": {
+        "message": "Visar tiden"
+    },
+    "iFxzUm": {
+        "message": "Gilla",
+        "description": "Background credits vote"
+    },
+    "iH2AHA": {
+        "message": "<a>Open source</a>, licenserad under GPLv3+."
+    },
+    "irdBm2": {
+        "message": "Tema",
+        "description": "Settings tab"
+    },
+    "jGWq1h": {
+        "message": "Tidszon"
+    },
+    "kAEQyV": {
+        "message": "Ok"
+    },
+    "ktmuOE": {
+        "message": "Lämna tomt för att använda flödets titel",
+        "description": "Feed widget: form field hint (Title)"
+    },
+    "kueLs9": {
+        "message": "Länkar",
+        "description": "Links widget: form field label"
+    },
+    "l8+Uwz": {
+        "message": "Inget att redigera.",
+        "description": "Form has no fields"
+    },
+    "lQIN1l": {
+        "message": "Tycker du om Renewed Tab? Ge oss en recension!"
+    },
+    "lUdRdE": {
+        "message": "Fel: {msg}"
+    },
+    "lYJGY5": {
+        "message": "Bild-URL",
+        "description": "Image URL background mode"
+    },
+    "languageName": {
+        "message": "Svenska",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "lkJAu6": {
+        "message": "Unsplash",
+        "description": "Unsplash background mode"
+    },
+    "mL3MOs": {
+        "message": "Miles per timma (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mv9TrH": {
+        "message": "HTML",
+        "description": "HTML Widget"
+    },
+    "n+w6I2": {
+        "message": "Stopp",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "nF7bWj": {
+        "message": "ISO ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "nHw5cV": {
+        "message": "Tryck på saker för att redigera dem.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "nnaWVi": {
+        "message": "Celsius",
+        "description": "Weather widget: Celsius unit"
+    },
+    "o2uuHu": {
+        "message": "12-timmarsklocka"
+    },
+    "o9vGxx": {
+        "message": "Öppna länkar i ny flik",
+        "description": "Form field label"
+    },
+    "oBl48o": {
+        "message": "Är du säker att du vill återställa all data?",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "oGS5TE": {
+        "message": "God eftermiddag, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "oJnbwn": {
+        "message": "Namn",
+        "description": "Greeting widget: name prompt"
+    },
+    "ofl4Ui": {
+        "message": "Sök",
+        "description": "Location form field: search"
+    },
+    "olBVPS": {
+        "message": "Exportera",
+        "description": "Import / export settings, export"
+    },
+    "or/+Da": {
+        "message": "Stil",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "p8GKKf": {
+        "message": "Mest besökta sidor",
+        "description": "Top Sites Widget"
+    },
+    "pHo6u+": {
+        "message": "Inga bilder hittades i flöde",
+        "description": "Web Comic widget: no images found error"
+    },
+    "pVrtrA": {
+        "message": "Använd en anpassad bild",
+        "description": "Backgroud mode description"
+    },
+    "uRYRJh": {
+        "message": "Redigera {type}"
+    },
+    "tyq8NB": {
+        "message": "Väder",
+        "description": "Weather Widget"
+    },
+    "sX3mXR": {
+        "message": "Göm",
+        "description": "Hide"
+    },
+    "sPl3nI": {
+        "message": "Titel",
+        "description": "Form field label"
+    },
+    "sFyAdH": {
+        "message": "Alternativt: <import></import>"
+    },
+    "rb3Zy8": {
+        "message": "Filtrera artikla",
+        "description": "Feed widget: form field label"
+    },
+    "rAuRqW": {
+        "message": "Översättningar är skrivna av gemenskapen."
+    },
+    "qzlLb3": {
+        "message": "SÖN",
+        "description": "Short weekday name (Sunday)"
+    },
+    "qoEZRi": {
+        "message": "Unsplash-samling",
+        "description": "Backgroud settings: form field label"
+    },
+    "q4caWd": {
+        "message": "Oskärperadie",
+        "description": "Backgroud settings: form field label"
+    },
+    "pbEMNj": {
+        "message": "Föregående",
+        "description": "Onboarding page: previous button"
+    },
+    "nlnYxI": {
+        "message": "Högst antal dagar",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "qYVXqA": {
+        "message": "{mode} inställningar",
+        "description": "Background mode options"
+    },
+    "+GMx80": {
+        "message": "Inga platser hittades",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Även om du gömmer viss information kan du oftast fortfarande se detta genom att hovra över dagarna och timmarna",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "+oSH/F": {
+        "message": "Anger din nuvarande ålder med alldeles för stor precision",
+        "description": "Age widget description"
+    },
+    "/4k9ry": {
+        "message": "<b>Väldigt hög</b> UV-strålning",
+        "description": "Very High UV risk"
+    },
+    "/Mpu8A": {
+        "message": "Sträck rutnät för att täcka hela sidan.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/Mx09O": {
+        "message": "Experimentellt. Detta fungerar inte med alla flödeskällor på grund av bristande bildinformation. Bilder kan även vara stora och ta lång tid att ladda.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "0l+aD2": {
+        "message": "Dagliga mål och inspirerande citat",
+        "description": "Preset: focus description"
+    },
+    "2j5LN5": {
+        "message": "Föreslå URL bli tillagd till standardförslag",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "4F+2K3": {
+        "message": "Slumpmässig bild från en Unsplash-samling",
+        "description": "Backgroud mode description"
+    },
+    "vlumg9": {
+        "message": "Sök widgetar...",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "wEQDC6": {
+        "message": "Redigera"
+    },
+    "wETxDh": {
+        "message": "Kalendrar",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "wogY8a": {
+        "message": "Skapa widget"
+    },
+    "wr0l0L": {
+        "message": "En bild från en URL",
+        "description": "Backgroud mode description"
+    },
+    "wwQ6Va": {
+        "message": "Visa plats",
+        "description": "Location field"
+    },
+    "x59fh0": {
+        "message": "Rymdresor",
+        "description": "Space Flights Widget"
+    },
+    "xvXMaZ": {
+        "message": "Välkomnar dig",
+        "description": "Greeting widget description"
+    },
+    "y1Z3or": {
+        "message": "Språk"
+    },
+    "yUJ5MA": {
+        "message": "Mål",
+        "description": "Preset: goals"
+    },
+    "yY7Rve": {
+        "message": "Göm",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "yfgoZf": {
+        "message": "Discord- / Matrixchatt"
+    },
+    "ykNa5O": {
+        "message": "Tack till Font Awesome för ikoner, React för gränssnittet och WebPack för byggning."
+    },
+    "yvWbz6": {
+        "message": "Nästa",
+        "description": "Onboarding page: next button"
+    },
+    "ywSKRt": {
+        "message": "Anpassad HTML",
+        "description": "HTML widget description"
+    },
+    "z7UTSa": {
+        "message": "Om Renewed Tab"
+    },
+    "zWgbGg": {
+        "message": "Idag"
+    },
+    "zfsplE": {
+        "message": "Visa aldrig igen",
+        "description": "Background credits vote"
+    },
+    "ziyAdj": {
+        "message": "Importera",
+        "description": "Import / export settings, import"
+    },
+    "zo4ZQa": {
+        "message": "Visa",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "zXtUcf": {
+        "message": "Oroa dig inte, du kan låsa upp det igen"
+    },
+    "5MMUNJ": {
+        "message": "Detta är <b>experimentellt och kan vara svårare att använda</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "8J0Bhj": {
+        "message": "Välkommen till <a>Renewed Tab</a>: en anpassningsbar \"Ny flik\"-sida, med widgetar och underbara bakgunder."
+    },
+    "Abtyj/": {
+        "message": "Bilden är större än 2MB ({dataSizeMB}MB). För att få bättre laddningstider borde du använda en mindre bild.",
+        "description": "Image upload error message"
+    },
+    "Ack5ID": {
+        "message": "Inga resultat",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "B4LnaC": {
+        "message": "Visa uppkommande händelser från en iCal-URL (.ics, t.ex. Google Kalender)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "BfX7n6": {
+        "message": "Notera: Firefox kanske visar artefakter såsom linjer på gradienta bakgrunder. Detta är inte något vi kan fixa.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "GSox4d": {
+        "message": "Valfri typsnittsnamn som är installerad på din dator",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "JN/uvd": {
+        "message": "<b>Medel</b> UV-strålning",
+        "description": "Moderate UV risk"
+    },
+    "JzanJ8": {
+        "message": "Rutnätskolumner",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "KhM0zv": {
+        "message": "Citat kommer från externa källor och kontrolleras inte av Renewed Tab.",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "M0PwXU": {
+        "message": "Vindhastighet ({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "NjoFru": {
+        "message": "Slumpmässig bild från ett Atom, JSONFeed eller RSS-flöde",
+        "description": "Backgroud mode description"
+    },
+    "Q1mwPp": {
+        "message": "Överväg att <a>bidra till översättningen av ditt språk</a>."
+    },
+    "as6rZ1": {
+        "message": "Aktivera crashrapporter (med Sentry)",
+        "description": "General settings: enable sentry"
+    },
+    "ckvzIb": {
+        "message": "<b>Låg</b> UV-strålning",
+        "description": "Low UV risk"
+    },
+    "d7dHsn": {
+        "message": "Varje 15:e minut",
+        "description": "Background expiry dropdown"
+    },
+    "fW8Xpd": {
+        "message": "Plats krävs. Tryck på redigera för att lägga till.",
+        "description": "Weather widget: location needed error"
+    },
+    "gAZqVl": {
+        "message": "Du kan lägga till (<add></add>) eller ta bort (<remove></remove>) widgetar senare, eller ändra inställningar (<cog></cog>) som önskat.",
+        "description": "Onboarding: preset hint"
+    },
+    "lY73np": {
+        "message": "Visa panelbakgrund",
+        "description": "Widget styling, checkbox"
+    },
+    "mw6Uh+": {
+        "message": "Visa daglig prognos",
+        "description": "Weather widget: form field label"
+    },
+    "nGSwtl": {
+        "message": "Sök",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "oDog89": {
+        "message": "En redigerbar textruta för anteckningar",
+        "description": "Notes widget description"
+    },
+    "sIC2UV": {
+        "message": "Visa text",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "v9UIPJ": {
+        "message": "Soluppgång - Solnedgång",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "x7WADS": {
+        "message": "Fullständigt sidrutnät",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "zaQRTm": {
+        "message": "<b>Väldigt hög</b> UV-strålning",
+        "description": "Extreme UV risk"
+    },
+    "BJYZgx": {
+        "message": "Använd förflyttningshandtaget (<move></move>) och zoomningshandtaget (<resize></resize>)"
+    },
+    "Oa5RYo": {
+        "message": "<b>Widgetar har även inställningar</b>: hovra över en widget och tryck på pennan för att anpassa den.",
+        "description": "General settings: help message"
+    },
+    "WZjKFf": {
+        "message": "Varning: denna kan innehålla personlig data om det var inmatat i widgetinställningar."
+    },
+    "ZRWjTk": {
+        "message": "Använd sökmotorn i din webbläsare",
+        "description": "Search widget: form field label"
+    },
+    "aaxFkJ": {
+        "message": "Skapa en ny sak att göra",
+        "description": "Todo List widget: prompt"
+    },
+    "bQFsdR": {
+        "message": "Bevilja behörigheter för att komma åt {host}"
+    },
+    "pqIuCa": {
+        "message": "Visa nuvarande väder",
+        "description": "Weather widget: form field label"
+    }
+}
