@@ -1090,5 +1090,9 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "+g7L/A": {
+        "message": "Zeigt Atom, JSONFeed und RSS Feeds an - nützlich um Nachrichten, Webseiten oder Blogs zu folgen",
+        "description": "Feed widget description"
     }
 }
