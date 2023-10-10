@@ -1,0 +1,141 @@
+{
+    "/Mpu8A": {
+        "message": "Розтягнути сітку, щоб закрити всю сторінку.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/aA+Xf": {
+        "message": "Показати зображення",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Примітки",
+        "description": "Notes Widget"
+    },
+    "+TYXj6": {
+        "message": "Сьогодні, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+sI+Oh": {
+        "message": "Показати почасовий прогноз погоди",
+        "description": "Weather widget: form field label"
+    },
+    "+oSH/F": {
+        "message": "Показує ваш поточний вік з дуже високою точністю",
+        "description": "Age widget description"
+    },
+    "2/2yg+": {
+        "message": "Додати"
+    },
+    "2vJWTd": {
+        "message": "Фото",
+        "description": "Background credits title placeholder"
+    },
+    "3Nw7b0": {
+        "message": "Пошукова система",
+        "description": "Search widget: form field label"
+    },
+    "3aaibf": {
+        "message": "Додати віджет"
+    },
+    "20tqYI": {
+        "message": "URL до iCal (.ics) файлу для календаря",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "27lljH": {
+        "message": "Вам <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "На добраніч, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Добрий вечір, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "8HmiSe": {
+        "message": "Будь ласка, вкажіть джерело",
+        "description": "Feed widget: no sources error message"
+    },
+    "6wEkCM": {
+        "message": "Крім того, ви можете використовувати віджет закладок для більш детального контролю.",
+        "description": "General settings: bookmarks bar"
+    },
+    "B3NCWb": {
+        "message": "Кольори",
+        "description": "Form field label"
+    },
+    "CmRs9p": {
+        "message": "Пошук",
+        "description": "Search Widget"
+    },
+    "D3idYv": {
+        "message": "Налаштування"
+    },
+    "Dk7Khi": {
+        "message": "Фаренгейт",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "GSox4d": {
+        "message": "Будь-яка назва шрифту, встановленого на вашому комп’ютері",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "KjUKUz": {
+        "message": "Градієнт кольорів",
+        "description": "Backgroud mode description"
+    },
+    "RZqASt": {
+        "message": "Один колір",
+        "description": "Backgroud mode description"
+    },
+    "Wi0G88": {
+        "message": "Опис та Допомога",
+        "description": "Settings tab"
+    },
+    "WF5DKA": {
+        "message": "Вік",
+        "description": "Age widget"
+    },
+    "lQIN1l": {
+        "message": "Вам подобається Renewed Tab? Залиште нам відгук!"
+    },
+    "wr0l0L": {
+        "message": "Зображення з URL",
+        "description": "Backgroud mode description"
+    },
+    "z7UTSa": {
+        "message": "Про Renewed Tab"
+    },
+    "zsdRww": {
+        "message": "Використовується для основних кнопок і посилань",
+        "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "0PsF7Z": {
+        "message": "Ви впевнені, що хочете остаточно видалити цей віджет?",
+        "description": "Delete widget modal message"
+    },
+    "5DCxT+": {
+        "message": "Одиниці температури",
+        "description": "Weather widget: form field label"
+    },
+    "0hxZWu": {
+        "message": "Іконка",
+        "description": "Form field label"
+    },
+    "3vjl5Q": {
+        "message": "Показати / Сховати",
+        "description": "Feed widget filter allow label"
+    },
+    "0l+aD2": {
+        "message": "Щоденні цілі та надихаючі цитати",
+        "description": "Preset: focus description"
+    },
+    "4cMia7": {
+        "message": "Показати нове фото",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "oDog89": {
+        "message": "Текстова область для нотаток, яку можна редагувати",
+        "description": "Notes widget description"
+    }
+}
