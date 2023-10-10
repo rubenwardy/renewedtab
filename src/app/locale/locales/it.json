@@ -393,7 +393,7 @@
         "description": "Clock widget: date style type"
     },
     "oDog89": {
-        "message": "Un area di testo modificabile per gli appunti",
+        "message": "Un'area di testo modificabile per gli appunti",
         "description": "Notes widget description"
     },
     "oJnbwn": {
@@ -635,7 +635,7 @@
         "description": "Currencies widget description"
     },
     "pHo6u+": {
-        "message": "Nessun'immagine trovata nel feed",
+        "message": "Nessuna immagine trovata nel feed",
         "description": "Web Comic widget: no images found error"
     },
     "Ddd3ZY": {
@@ -1090,5 +1090,232 @@
     "appName": {
         "message": "Renewed Tab",
         "description": "The name of the app"
+    },
+    "+g7L/A": {
+        "message": "Mostra feed Atom, JSONFeed ed RSS - utile per seguire notizie, siti web e blog",
+        "description": "Feed widget description"
+    },
+    "5mfAB9": {
+        "message": "URL a un feed Atom, JSONFeed o RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "R1jLoC": {
+        "message": "Verticale",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "RVGNBh": {
+        "message": "Quando hai terminato, fai clic su <button></button> per rendere i widget di sola lettura."
+    },
+    "ATbgo4": {
+        "message": "Radiale",
+        "description": "Form field option, radial gradient"
+    },
+    "B3NCWb": {
+        "message": "Colori",
+        "description": "Form field label"
+    },
+    "8xPAKF": {
+        "message": "Da 0 a 100%, posizione del colore nel gradiente",
+        "description": "Form field hint (Stop)"
+    },
+    "grbGxs": {
+        "message": "Nessun evento",
+        "description": "CalendarSchedule: no events"
+    },
+    "TDaF6J": {
+        "message": "Ignora"
+    },
+    "CN0kVN": {
+        "message": "Griglia dei widget",
+        "description": "Settings tab"
+    },
+    "sFyAdH": {
+        "message": "In alternativa: <import></import>"
+    },
+    "bfWes8": {
+        "message": "Tipo di gradiente",
+        "description": "Form field label"
+    },
+    "/Mx09O": {
+        "message": "Sperimentale. Non funziona con tutti i feed, a causa della mancanza di informazioni sull'immagine. Le immagini potrebbero essere grandi e richiedere molto tempo per il caricamento.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "/aA+Xf": {
+        "message": "Mostra le immagini",
+        "description": "Feed widget: form field label"
+    },
+    "Lnvfz8": {
+        "message": "Errore durante il caricamento di {source}: {error}",
+        "description": "Feed error message"
+    },
+    "BmzsQb": {
+        "message": "Link, con supporto di titoli e icone (selezione rapida)",
+        "description": "Links widget description"
+    },
+    "C7WJrL": {
+        "message": "Verticale",
+        "description": "Form field option, vertical gradient"
+    },
+    "EpPEVJ": {
+        "message": "Gradiente",
+        "description": "Gradient background mode"
+    },
+    "2s4stS": {
+        "message": "Ti diamo il benvenuto in <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "lQIN1l": {
+        "message": "Ti sta piacendo Renewed Tab? Scrivi una recensione!"
+    },
+    "20tqYI": {
+        "message": "URL a un file iCal (.ics) per un calendario",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "7zYGs9": {
+        "message": "Calendario",
+        "description": "CalendarSchedule Widget"
+    },
+    "B4LnaC": {
+        "message": "Mostra gli eventi in arrivo da un URL iCal (.ics) (Ad esempio Google Calendar)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "MtrTNy": {
+        "message": "Domani"
+    },
+    "zWgbGg": {
+        "message": "Oggi"
+    },
+    "Ekvvsi": {
+        "message": "Barra dei segnalibri",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EscvnU": {
+        "message": "Icone",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "NjoFru": {
+        "message": "Immagine casuale da un feed Atom, JSONFeed o RSS",
+        "description": "Backgroud mode description"
+    },
+    "Oa5RYo": {
+        "message": "<b>Anche i widget hanno delle impostazioni</b>: passa sopra il widget e fai clic sulla matita per personalizzarlo.",
+        "description": "General settings: help message"
+    },
+    "QkI7Lb": {
+        "message": "Fuso orario del browser ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "SENRqu": {
+        "message": "Aiuto"
+    },
+    "O2Mjef": {
+        "message": "Fai una recensione",
+        "description": "Review request, review button"
+    },
+    "gS3mti": {
+        "message": "Stile delle liste",
+        "description": "Form field label"
+    },
+    "ilIuh2": {
+        "message": "Ti è utile? Considera una <a>donazione</a> per coprire i costi delle API meteo e per supportare lo sviluppo futuro di Renewed Tab.",
+        "description": "Weather widget: asking for donations"
+    },
+    "jGWq1h": {
+        "message": "Fuso orario"
+    },
+    "nlnYxI": {
+        "message": "Numero massimo di giorni",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "URL del calendario mancante. Modifica questo widget per aggiungerlo"
+    },
+    "qfkgCx": {
+        "message": "Quanti giorni futuri includere cercando gli eventi. Imposta 1 per mostrare solo gli eventi di oggi, 2 per quelli di oggi e domani, ecc.",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "sX3mXR": {
+        "message": "Nascondi",
+        "description": "Hide"
+    },
+    "wETxDh": {
+        "message": "Calendari",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "gXcVyS": {
+        "message": "Applica le modifiche",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "n+w6I2": {
+        "message": "Punti di stop",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "5MMUNJ": {
+        "message": "Questo <b>è sperimentale e potrebbe essere difficile da usare</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6wEkCM": {
+        "message": "In alternativa, puoi usare un widget Segnalibri per un controllo più granulare.",
+        "description": "General settings: bookmarks bar"
+    },
+    "BfX7n6": {
+        "message": "Nota: Firefox potrebbe mostrare degli artefatti come delle linee negli sfondi con gradiente. Non è un qualcosa a cui possiamo rimediare.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "DVGnNH": {
+        "message": "Puoi passare sui ringraziamenti in basso a sinistra per mettere un mi piace o per saltare un'immagine di sfondo."
+    },
+    "GpfSpy": {
+        "message": "Mostra la barra dei segnalibri",
+        "description": "General settings: bookmarks bar"
+    },
+    "IKpSw0": {
+        "message": "Orizzontale",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "KjUKUz": {
+        "message": "Un gradiente di colori",
+        "description": "Backgroud mode description"
+    },
+    "MdUPbJ": {
+        "message": "Domenica, Lunedì, Martedì, Mercoledì, Giovedì, Venerdì, Sabato",
+        "description": "Days of the week, separated by commas"
+    },
+    "c7zm0j": {
+        "message": "Errore durante il caricamento del feed. Verifica che sia un fedd RSS, JSONFeed o Atom."
+    },
+    "dOlhtQ": {
+        "message": "Puoi mostrare la barra dei segnalibri solo nelle pagina Nuova scheda facendo clic col tasto destro vicino alla barra degli indirizzi > Barra dei segnalibri > Mostra solo in Nuova scheda. <a>Approfondisci</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "exTzGh": {
+        "message": "Orizzontale",
+        "description": "Form field option, horizontal gradient"
+    },
+    "h00yCR": {
+        "message": "Mostra le immagini recenti di un feed Atom, JSONFeed o RSS - utile per WebComics.",
+        "description": "Web Comic widget description"
+    },
+    "j0VHNa": {
+        "message": "Concedi il permesso di accedere ai segnalibri e al recupero delle icone dei siti web"
+    },
+    "pWdLkT": {
+        "message": "Leggi <a>il tutorial</a>. Puoi usare qualsiasi calendario online che supporta iCal, inclusi Google Calendar e Outlook.",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "r8bU6m": {
+        "message": "Mostra una barra dei segnalibri all'inizio della pagina.",
+        "description": "General settings: bookmarks bar"
+    },
+    "tSMpM0": {
+        "message": "Concedi il permesso di accedere ai siti più visitati e al recupero delle icone dei siti",
+        "description": "Top Sites widget: permission request"
+    },
+    "zPAzlS": {
+        "message": "Combina le fonti in un'unica tab",
+        "description": "Feed widget: form field label"
+    },
+    "zXtUcf": {
+        "message": "Non ti preoccupare, lo potrai sbloccare successivamente"
     }
 }
