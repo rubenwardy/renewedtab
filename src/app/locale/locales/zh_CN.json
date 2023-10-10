@@ -1310,5 +1310,12 @@
     },
     "jGWq1h": {
         "message": "时区"
+    },
+    "DVGnNH": {
+        "message": "您可以通过悬停鼠标于左下角的制作人员名单上以点赞或跳过当前的背景图像。"
+    },
+    "ilIuh2": {
+        "message": "该小部件是否好用？考虑通过<a>捐赠</a>来支付天气 API 的费用，并且支持 Renewed Tab 未来的发展。",
+        "description": "Weather widget: asking for donations"
     }
 }
