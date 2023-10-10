@@ -50,7 +50,7 @@
         "description": "Renewed Tab website"
     },
     "3Nw7b0": {
-        "message": "Nama enjin gelintar",
+        "message": "Nama enjin carian",
         "description": "Search widget: form field label"
     },
     "3aaibf": {
@@ -290,7 +290,7 @@
         "description": "Todo List Widget"
     },
     "YS5zRT": {
-        "message": "Gelintar menggunakan {name}",
+        "message": "Cari guna {name}",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"
     },
     "YYoBQn": {
@@ -305,7 +305,7 @@
         "description": "Backgroud mode description"
     },
     "ZRWjTk": {
-        "message": "Gunakan enjin gelintar lalai pelayar",
+        "message": "Gunakan enjin carian lalai pelayar",
         "description": "Search widget: form field label"
     },
     "ZUZeuR": {
@@ -411,7 +411,7 @@
         "description": "Daily Goal widget: edit modal hint"
     },
     "nGSwtl": {
-        "message": "Gelintar",
+        "message": "Cari",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
     },
     "o2uuHu": {
@@ -696,7 +696,7 @@
         "description": "Preset: focus description"
     },
     "vlumg9": {
-        "message": "Cari widget...",
+        "message": "Gelintar widget...",
         "description": "Create Widgets modal: search widgets placeholder"
     },
     "7wOM6+": {
@@ -712,7 +712,7 @@
         "description": "Backgroud settings: form field label (Brightness: Light)"
     },
     "gHzZEt": {
-        "message": "Hanya ada jam dan bar gelintar",
+        "message": "Hanya ada jam dan bar carian",
         "description": "Preset: focus description"
     },
     "hUIQ7h": {
@@ -993,7 +993,7 @@
         "description": "A search has returned no results here (note: there may be multiple places being searched)"
     },
     "3UG6ds": {
-        "message": "Cari widget atau gelintar sesawang menggunakan enjin gelintar kegemaran anda",
+        "message": "Gelintar widget atau cari atas sesawang menggunakan enjin carian kegemaran anda",
         "description": "Search widget description"
     },
     "8HmiSe": {
@@ -1001,11 +1001,11 @@
         "description": "Feed widget: no sources error message"
     },
     "KdIFGg": {
-        "message": "URL gelintar tiada '{query}' yang wajib disertakan. Cth. https://google.com/search/?q='{query}'",
+        "message": "URL carian tiada '{query}' yang wajib disertakan. Cth. https://google.com/search/?q='{query}'",
         "description": "Search widget: error, missing query variable"
     },
     "hWimZf": {
-        "message": "Dayakan carian widget",
+        "message": "Dayakan gelintaran widget",
         "description": "Search widget: form field label, enable filtering widgets"
     },
     "n0cZ3b": {
