@@ -183,7 +183,7 @@
         "description": "Weather Widget"
     },
     "ubO4zt": {
-        "message": "Web Comic",
+        "message": "Çevrimiçi Çizgi Roman",
         "description": "Web Comic Widget"
     },
     "x59fh0": {
@@ -1167,7 +1167,7 @@
         "description": "Feed widget: form field label"
     },
     "h00yCR": {
-        "message": "Bir ATom, JSONFeed veya RSS beslemesinden yakın zamanda paylaşılan görüntüleri gösterir - WebComicler için kullanışlıdır.",
+        "message": "Bir Atom, JSONFeed veya RSS beslemesinden yakın zamanda paylaşılan görüntüleri gösterir - Çevrimiçi çizgi romanlar için kullanışlıdır.",
         "description": "Web Comic widget description"
     },
     "zPAzlS": {
@@ -1258,5 +1258,64 @@
     "tSMpM0": {
         "message": "Sık kullanılan sitelere erişmek ve internet sitesi ikonlarını almak için izin ver",
         "description": "Top Sites widget: permission request"
+    },
+    "zWgbGg": {
+        "message": "Bugün"
+    },
+    "MtrTNy": {
+        "message": "Yarın"
+    },
+    "QkI7Lb": {
+        "message": "Tarayıcı zaman dilimi ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "jGWq1h": {
+        "message": "Zaman Dilimi"
+    },
+    "pWdLkT": {
+        "message": "Lütfen <a>öğreticiyi</a> okuyun. Google Takvim ve Outlook dahil iCal destekleyen herhangi bir bulut takvim uygulamasını kullanabilirsiniz.",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "20tqYI": {
+        "message": "Bir takvim için bir iCal (.ics) dosyasının URL'si",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "qfkgCx": {
+        "message": "Etkinlikler için ne kadar ileri bakılacak? 1'e ayarlandığında sadece bugünün etkinlikleri gösterilir, 2'ye ayarlandığında bugün ve yarın, vb.",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "wETxDh": {
+        "message": "Takvimler",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "7zYGs9": {
+        "message": "Takvim",
+        "description": "CalendarSchedule Widget"
+    },
+    "B4LnaC": {
+        "message": "Bir iCal (.ics) URL'sinden yaklaşan etkinlikleri göster (Google Takvim gibi)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "grbGxs": {
+        "message": "Etkinlik yok",
+        "description": "CalendarSchedule: no events"
+    },
+    "nlnYxI": {
+        "message": "En fazla gün sayısı",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "Takvim URL'si eksik. Bu aracı düzenleyerek ekleyin"
+    },
+    "DVGnNH": {
+        "message": "Bir arkaplan görselini beğenmek veya atlamak için farenizi sol alt taraftaki bilgilerin üstüne götürebilirsiniz."
+    },
+    "MdUPbJ": {
+        "message": "Pazar, Pazartesi, Salı, Çarşamba, Perşembe, Cuma, Cumartesi",
+        "description": "Days of the week, separated by commas"
+    },
+    "ilIuh2": {
+        "message": "Bunu yararlı buldunuz mu? <a>Bağış yaparak</a> hava durumu API'sının ücretlerini karşılamayı ve Renewed Tab'in geliştirilmesine katkı sağlamayı düşünebilirsiniz.",
+        "description": "Weather widget: asking for donations"
     }
 }
