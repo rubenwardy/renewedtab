@@ -1,0 +1,246 @@
+{
+    "/aA+Xf": {
+        "message": "نمایش تصاویر",
+        "description": "Feed widget: form field label"
+    },
+    "0feb3b": {
+        "message": "اختیاری، تصویر را به یک پیوند تبدیل می‌کند",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "آیکون",
+        "description": "Form field label"
+    },
+    "1s5GYl": {
+        "message": "میزان تار بودن",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "افزودن"
+    },
+    "20tqYI": {
+        "message": "آدرس یک فایل iCal (.ics) برای تقویم",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "27lljH": {
+        "message": "شما <b>{age}</b> هستید",
+        "description": "Age widget text"
+    },
+    "2O5Rq1": {
+        "message": "عصر بخیر، {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2vJWTd": {
+        "message": "تصویر",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "سایت اینترنتی",
+        "description": "Renewed Tab website"
+    },
+    "3aaibf": {
+        "message": "افزودن ویجت"
+    },
+    "3vjl5Q": {
+        "message": "نمایش / پنهان کردن",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "لغو"
+    },
+    "4F+2K3": {
+        "message": "تصویر تصادفی از مجموعه Unsplash",
+        "description": "Backgroud mode description"
+    },
+    "4cMia7": {
+        "message": "نمایش عکس جدید",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "از",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "کمک و درخواست"
+    },
+    "5640CU": {
+        "message": "اکنون: نمایش بارش",
+        "description": "Weather widget: form field label"
+    },
+    "5DCxT+": {
+        "message": "واحد دما",
+        "description": "Weather widget: form field label"
+    },
+    "5MMUNJ": {
+        "message": "این <b>آزمایشی است و ممکن است استفاده از آن دشوارتر باشد</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "5mVcg9": {
+        "message": "CSS سفارشی",
+        "description": "Theme settings: form field label"
+    },
+    "6MDM6D": {
+        "message": "نقل قول ها",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "دریافت نشانک ها ممکن نیست",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "تصویر",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "پیشرفت سال",
+        "description": "Year Progress widget"
+    },
+    "7zYGs9": {
+        "message": "برنامه زمانی تقویم",
+        "description": "CalendarSchedule Widget"
+    },
+    "8HmiSe": {
+        "message": "لطفا یک منبع را مشخص کنید",
+        "description": "Feed widget: no sources error message"
+    },
+    "8xPAKF": {
+        "message": "از 0-100٪، موقعیت رنگ بر روی گرادیان",
+        "description": "Form field hint (Stop)"
+    },
+    "8xVVb5": {
+        "message": "رنگ اولیه",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "این ویجت به نسخه افزونه مرورگر نیاز دارد."
+    },
+    "Ack5ID": {
+        "message": "بدون نتیجه",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "AgU+/t": {
+        "message": "فهرستی از پرتاب‌های فضایی آینده، با پشتیبانی RocketLaunch.Live",
+        "description": "SpaceFlights widget description"
+    },
+    "AuSjzq": {
+        "message": "فعلی: نشان دادن خطر UV",
+        "description": "Weather widget: form field label"
+    },
+    "B0kbsm": {
+        "message": "خوراک",
+        "description": "Unsplash background mode"
+    },
+    "B1pyj1": {
+        "message": "فعلی: نمایش احساس مشابه",
+        "description": "Weather widget: form field label"
+    },
+    "B3NCWb": {
+        "message": "رنگ‌ها",
+        "description": "Form field label"
+    },
+    "BJYZgx": {
+        "message": "از دسته حرکت (<move></move>) و دسته تغییر اندازه (<resize></resize>) استفاده کنید."
+    },
+    "BiPNnl": {
+        "message": "واحد سرعت باد",
+        "description": "Weather widget: form field label"
+    },
+    "Bl74xq": {
+        "message": "یک دکمه پیوند",
+        "description": "Button widget description"
+    },
+    "BmzsQb": {
+        "message": "پیوندها با پشتیبانی از سرفصل ها و نمادها (شماره گیری سریع)",
+        "description": "Links widget description"
+    },
+    "C7WJrL": {
+        "message": "عمودی",
+        "description": "Form field option, vertical gradient"
+    },
+    "+GMx80": {
+        "message": "هیچ مکانی یافت نشد",
+        "description": "Location form field: error"
+    },
+    "+TYXj6": {
+        "message": "امروز، {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+sI+Oh": {
+        "message": "نمایش پیش‌بینی ساعتی",
+        "description": "Weather widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "یادداشت‌ها",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "آیا مطمئن هستید که می‌خواهید این ویجت را برای همیشه حذف کنید؟",
+        "description": "Delete widget modal message"
+    },
+    "0l+aD2": {
+        "message": "اهداف روزانه و نقل قول های الهام بخش",
+        "description": "Preset: focus description"
+    },
+    "2AUlDo": {
+        "message": "خوب بخوابی، {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2efE5y": {
+        "message": "خوش آمدید",
+        "description": "Greeting Widget"
+    },
+    "3Nw7b0": {
+        "message": "نام موتور جستجو",
+        "description": "Search widget: form field label"
+    },
+    "3UG6ds": {
+        "message": "ویجتBها یا وب را با استفاده از موتور جستجوی مورد علاقه خود جستجو کنید",
+        "description": "Search widget description"
+    },
+    "3ZfhWo": {
+        "message": "برای دسترسی به {host} مجوز لازم است. برای اعطای آن، این ویجت را ویرایش کنید."
+    },
+    "3vh5vd": {
+        "message": "چیزی را نشان نمی دهد، برای اهداف چیدمان مفید است",
+        "description": "Invisible widget description"
+    },
+    "4UpnpD": {
+        "message": "تصاویر به صورت محلی در مرورگر شما ذخیره می شوند و هرگز آپلود نمی شوند",
+        "description": "Form field hint (Image)"
+    },
+    "5mfAB9": {
+        "message": "URL به فید Atom، JSONFeed یا RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "6wEkCM": {
+        "message": "از طرف دیگر، می‌توانید از ویجت نشانک‌ها برای کنترل دقیق استفاده کنید.",
+        "description": "General settings: bookmarks bar"
+    },
+    "8J0Bhj": {
+        "message": "به <a>Renewed Tab</a> خوش آمدید: یک برگه جدید قابل تنظیم، با ویجت ها و پس زمینه‌ی زیبا."
+    },
+    "ATbgo4": {
+        "message": "شعاعی",
+        "description": "Form field option, radial gradient"
+    },
+    "Abtyj/": {
+        "message": "تصویر بزرگتر از 2 مگابایت ({dataSizeMB} مگابایت) است. برای رسیدن به زمان بارگذاری بهتر، باید از یک تصویر کوچکتر استفاده کنید.",
+        "description": "Image upload error message"
+    },
+    "Ay1sfO": {
+        "message": "تعداد زیادی از جدیدترین تصاویر را برای انتخاب تصادفی کنترل می کند. با تنظیم این گزینه روی 1 همیشه آخرین تصویر انتخاب می شود",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "B4LnaC": {
+        "message": "نمایش رویدادهای آینده از URL iCal (.ics) (مانند تقویم گوگل)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "BfX7n6": {
+        "message": "توجه: فایرفاکس ممکن است مصنوعاتی مانند خطوط روی پس‌زمینه گرادیان را نشان دهد. این چیزی نیست که بتوانیم آن را اصلاح کنیم.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "BnmONl": {
+        "message": "فعلی: نمایش طلوع / غروب خورشید",
+        "description": "Weather widget: form field label"
+    }
+}
