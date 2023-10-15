@@ -51,7 +51,7 @@
         "description": "Form field label"
     },
     "T/wBPw": {
-        "message": "Ta bort {typ}"
+        "message": "Ta bort {type}"
     },
     "T4VxQN": {
         "message": "Laddar…"
@@ -375,7 +375,7 @@
         "description": "Backgroud mode description"
     },
     "KsX2fE": {
-        "message": "<b>{name}</b> vid {latitud} och {longitude}"
+        "message": "<b>{name}</b> vid {latitude} och {longitude}"
     },
     "KyDwm3": {
         "message": "Visar mest besökta sidor",

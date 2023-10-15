@@ -820,7 +820,7 @@
         "description": "Clock Widget"
     },
     "M0PwXU": {
-        "message": "Скорост на вятъра ({единица})",
+        "message": "Скорост на вятъра ({unit})",
         "description": "Weather widget: wind speed tooltip"
     },
     "M6lR5V": {
