@@ -1310,5 +1310,12 @@
     "QkI7Lb": {
         "message": "Fuseau horaire du navigateur ({browserTimeZone})",
         "description": "An option when selecting a time zone"
+    },
+    "DVGnNH": {
+        "message": "Vous pouvez survolez les crédits en bas à gauche pour aimer ou passer un fond d'écran."
+    },
+    "ilIuh2": {
+        "message": "Vous trouvez cela utile ? Pensez à <a>faire un don</a> pour couvrir les frais de l'API de météo, et soutenir le développement futur de Renewed Tab.",
+        "description": "Weather widget: asking for donations"
     }
 }
