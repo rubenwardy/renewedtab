@@ -1,0 +1,243 @@
+{
+    "+TYXj6": {
+        "message": "Tänään, (aika)",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "Näytä Atom, JSONFeedi ja RSS feedit - hyödyllinen seurataksesi uutisia, nettisivuja ja blogeja",
+        "description": "Feed widget description"
+    },
+    "+oSH/F": {
+        "message": "Ilmoittaa nykyisen ikäsi aivan liian tarkasti",
+        "description": "Age widget description"
+    },
+    "/4k9ry": {
+        "message": "<b>Hyvin korkea</b> UV",
+        "description": "Very High UV risk"
+    },
+    "/Mpu8A": {
+        "message": "Venytä ruudukko peittämään koko sivun.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/aA+Xf": {
+        "message": "Näytä kuvat",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Muistiinpanot",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "Haluatko varmasti poistaa tämän widgetin pysyvästi?",
+        "description": "Delete widget modal message"
+    },
+    "0hxZWu": {
+        "message": "Kuvake",
+        "description": "Form field label"
+    },
+    "0l+aD2": {
+        "message": "Päivittäiset tavoitteet ja inspiroivat lainaukset",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "Peittävyys",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Lisää"
+    },
+    "27lljH": {
+        "message": "Olet <b>{ikä}</b>",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "Nuku hyvin, {nimi}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Hyvää iltaa, {nimi}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "Tervehdys",
+        "description": "Greeting Widget"
+    },
+    "2j5LN5": {
+        "message": "Ehdotuksen URL-osoite lisätään oletusehdotuksiin",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "2s4stS": {
+        "message": "Tervetuloa <a>Uusittuun välilehteen</a>",
+        "description": "Onboarding modal: title"
+    },
+    "2vJWTd": {
+        "message": "Kuva",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "Nettisivu",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Hakukoneen nimi",
+        "description": "Search widget: form field label"
+    },
+    "3aaibf": {
+        "message": "Lisää widgetti"
+    },
+    "3vh5vd": {
+        "message": "Ei näytä mitään, hyödyllinen asettelutarkoituksiin",
+        "description": "Invisible widget description"
+    },
+    "3vjl5Q": {
+        "message": "Näytä / Piilota",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "Peruuta"
+    },
+    "4cMia7": {
+        "message": "Näytä uusi kuva",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "alkaen",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Avut ja pyynnöt"
+    },
+    "5DCxT+": {
+        "message": "Lämpötilayksikkö",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "Mukautettu CSS",
+        "description": "Theme settings: form field label"
+    },
+    "5mfAB9": {
+        "message": "URL-osoite Atom-, JSONFeed- tai RSS-syötteeseen",
+        "description": "Form field hint (Feed URL)"
+    },
+    "6MDM6D": {
+        "message": "Sitaatti widget",
+        "description": "Quotes Widget"
+    },
+    "7OH6mh": {
+        "message": "Kuva",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "vuoden edistymis widget",
+        "description": "Year Progress widget"
+    },
+    "7zYGs9": {
+        "message": "Kalenterin aikataulu widget",
+        "description": "CalendarSchedule Widget"
+    },
+    "8J0Bhj": {
+        "message": "Tervetuloa <a>Uusittuun välilehteen</a>: muokattavalle Uusi välilehti -sivulle, jossa on widgettejä ja kauniita taustakuvia"
+    },
+    "8xVVb5": {
+        "message": "Ensisijainen väri",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "Tämä widget vaatii selaimen laajennusversion."
+    },
+    "ATbgo4": {
+        "message": "Säteittäinen",
+        "description": "Form field option, radial gradient"
+    },
+    "Ack5ID": {
+        "message": "Ei tuloksia",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "AgU+/t": {
+        "message": "Luettelo tulevista avaruuslaukaisuista, tarjoaa RocketLaunch.Live",
+        "description": "SpaceFlights widget description"
+    },
+    "AuSjzq": {
+        "message": "Nykyinen: Näytä UV-riski",
+        "description": "Weather widget: form field label"
+    },
+    "B0kbsm": {
+        "message": "Syöte",
+        "description": "Unsplash background mode"
+    },
+    "B1pyj1": {
+        "message": "Nykyinen: tuntuu kuin",
+        "description": "Weather widget: form field label"
+    },
+    "+GMx80": {
+        "message": "Ei löytynyt sijainteja",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Vaikka piilottaisit joitain tietoja, voit usein nähdä ne viemällä hiiren päivien ja tuntien päälle",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "+sI+Oh": {
+        "message": "Näytä tunnin ennuste",
+        "description": "Weather widget: form field label"
+    },
+    "/Mx09O": {
+        "message": "Kokeellinen. Tämä ei toimi kaikkien syötelähteiden kanssa puuttuvien kuvatietojen vuoksi. Kuvat voivat myös olla suuria, ja niiden lataaminen kestää hetken.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "0feb3b": {
+        "message": "Valinnainen, tekee kuvasta linkin",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "20tqYI": {
+        "message": "URL osoite iCal. (ics) tiedostoon kalenteria varten",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "3UG6ds": {
+        "message": "Hae widgeteistä tai verkosta suosikkihakukoneesi avulla",
+        "description": "Search widget description"
+    },
+    "3ZfhWo": {
+        "message": "Käyttöoikeus tarvitaan {hostin} käyttämiseen. Muokkaa tätä widgetiä myöntääksesi sen."
+    },
+    "4F+2K3": {
+        "message": "Satunnainen kuva Unsplash kokoelmasta",
+        "description": "Backgroud mode description"
+    },
+    "4UpnpD": {
+        "message": "Kuvat tallennetaan paikallisesti selaimeesi, eikä niitä koskaan ladata",
+        "description": "Form field hint (Image)"
+    },
+    "5640CU": {
+        "message": "Nykyinen: Näytä sademäärä",
+        "description": "Weather widget: form field label"
+    },
+    "5MMUNJ": {
+        "message": "Tämä on <b>kokeellinen ja voi olla vaikeampi käyttää</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6pdO6i": {
+        "message": "Kirjanmerkkejä ei voi hakea",
+        "description": "Bookmarks widget: error message"
+    },
+    "6wEkCM": {
+        "message": "Vaihtoehtoisesti voit käyttää Kirjanmerkit-widgetiä hienorakeiseen ohjaukseen.",
+        "description": "General settings: bookmarks bar"
+    },
+    "8HmiSe": {
+        "message": "Ole hyvä ja määritä lähde",
+        "description": "Feed widget: no sources error message"
+    },
+    "8xPAKF": {
+        "message": "0-100%, värin sijainti gradientissa",
+        "description": "Form field hint (Stop)"
+    },
+    "Abtyj/": {
+        "message": "Kuva on suurempi kuin 2 MB ({datankokoMB}MB). Paremman latausajan saavuttamiseksi sinun tulee käyttää pienempää kuvaa.",
+        "description": "Image upload error message"
+    },
+    "Ay1sfO": {
+        "message": "Määrittää, kuinka monesta uusimmasta kuvasta valitaan satunnaisesti. Jos asetat tämän arvoon 1, valitaan aina uusin kuva",
+        "description": "Feed background mode: form field hint (Limit images)"
+    }
+}
