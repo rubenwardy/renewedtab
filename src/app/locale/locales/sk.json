@@ -1,0 +1,157 @@
+{
+    "+GMx80": {
+        "message": "Nenašli sa žiadne miesta",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Aj keď niektoré informácie skryjete, často ich stále môžete zobraziť umiestnením kurzora myši na dni a hodiny",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "/Mpu8A": {
+        "message": "Natiahnutím mriežky pokryjete celú stranu.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/Mx09O": {
+        "message": "Experimentálne.  Toto nefunguje so všetkými zdrojmi informačných kanálov, pretože chýbajú informácie o obrázku. Obrázky môžu byť tiež veľké a ich načítanie môže chvíľu trvať.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "1s5GYl": {
+        "message": "Nepriehľadnosť",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Pridať"
+    },
+    "20tqYI": {
+        "message": "Adresa URL súboru iCal (.ics) pre kalendár",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "2j5LN5": {
+        "message": "Navrhnúť pridanie adresy URL k predvoleným návrhom",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "3ZfhWo": {
+        "message": "Na prístup k serveru {host} je potrebné povolenie. Upravte túto miniaplikáciu, aby ste ju udelili."
+    },
+    "5DCxT+": {
+        "message": "Jednotka teploty",
+        "description": "Weather widget: form field label"
+    },
+    "+TYXj6": {
+        "message": "Dnes, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "Zobrazuje kanály Atom, JSONFeed a RSS – užitočné pri sledovaní správ, webových stránok a blogov",
+        "description": "Feed widget description"
+    },
+    "+oSH/F": {
+        "message": "Uveďte svoj aktuálny vek s príliš veľkou presnosťou",
+        "description": "Age widget description"
+    },
+    "+sI+Oh": {
+        "message": "Zobraziť hodinovú predpoveď",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "<b>Veľmi vysoká</b> UV",
+        "description": "Very High UV risk"
+    },
+    "/aA+Xf": {
+        "message": "Zobraziť obrázky",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Poznámky",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "Naozaj chcete natrvalo odstrániť túto miniaplikáciu?",
+        "description": "Delete widget modal message"
+    },
+    "0feb3b": {
+        "message": "Voliteľné, vytvorí z obrázka odkaz",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Ikona",
+        "description": "Form field label"
+    },
+    "0l+aD2": {
+        "message": "Denné ciele a inšpiratívne citáty",
+        "description": "Preset: focus description"
+    },
+    "27lljH": {
+        "message": "Máte <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "Dobre sa vyspi, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Dobrý večer, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "Pozdravujem",
+        "description": "Greeting Widget"
+    },
+    "2s4stS": {
+        "message": "Vitajte na <a>Obnovenej karte</a>",
+        "description": "Onboarding modal: title"
+    },
+    "2vJWTd": {
+        "message": "Foto",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "webové stránky",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Názov vyhľadávacieho nástroja",
+        "description": "Search widget: form field label"
+    },
+    "3UG6ds": {
+        "message": "Vyhľadajte miniaplikácie alebo web pomocou svojho obľúbeného vyhľadávacieho nástroja",
+        "description": "Search widget description"
+    },
+    "3aaibf": {
+        "message": "Pridať miniaplikáciu"
+    },
+    "3vh5vd": {
+        "message": "Nezobrazuje nič, užitočné na účely rozloženia",
+        "description": "Invisible widget description"
+    },
+    "3vjl5Q": {
+        "message": "Ukázať skryť",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "Zrušiť"
+    },
+    "4F+2K3": {
+        "message": "Náhodný obrázok z kolekcie Unsplash",
+        "description": "Backgroud mode description"
+    },
+    "4UpnpD": {
+        "message": "Obrázky sú uložené lokálne vo vašom prehliadači a nikdy sa neodovzdávajú",
+        "description": "Form field hint (Image)"
+    },
+    "4cMia7": {
+        "message": "Ukázať novú fotografiu",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "Od",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Pomoc a požiadavky"
+    },
+    "5640CU": {
+        "message": "Aktuálne: Zobraziť zrážky",
+        "description": "Weather widget: form field label"
+    }
+}
