@@ -1193,5 +1193,129 @@
     "20tqYI": {
         "message": "URL para um arquivo iCal (.ics) para um calendário",
         "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "DVGnNH": {
+        "message": "Você pode passar o mouse sobre os créditos no canto inferior esquerdo para pular ou favoritar a imagem de fundo."
+    },
+    "5MMUNJ": {
+        "message": "Isso é <b>experimental e pode ser difícil de usar.</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6wEkCM": {
+        "message": "Alternativamente, você poderia usar o widget de Favoritos para um melhor controle.",
+        "description": "General settings: bookmarks bar"
+    },
+    "gXcVyS": {
+        "message": "Salvar Edição",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "Oa5RYo": {
+        "message": "<b>Widgets possuem configurações</b>: passe o mouse sobre e clique no lápis para o customizar.",
+        "description": "General settings: help message"
+    },
+    "CN0kVN": {
+        "message": "Grade dos Widgets",
+        "description": "Settings tab"
+    },
+    "MdUPbJ": {
+        "message": "Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado",
+        "description": "Days of the week, separated by commas"
+    },
+    "MtrTNy": {
+        "message": "Amanhã"
+    },
+    "ilIuh2": {
+        "message": "Achou útil? Considere fazer uma <a>doação</a> para ajudar com os custos da API da previsão do tempo, e ajudar o desenvolvimento do Renewed Tab.",
+        "description": "Weather widget: asking for donations"
+    },
+    "QkI7Lb": {
+        "message": "Fuso horário do Navegador ({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "jGWq1h": {
+        "message": "Fuso Horário"
+    },
+    "pWdLkT": {
+        "message": "Por favor leia <a>o tutorial</a>. Você pode usar qualquer serviço de calendário que suporte iCal, incluindo o Calendário Google e Outlook.",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "Ekvvsi": {
+        "message": "Barra de Favoritos",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "qfkgCx": {
+        "message": "O quão no futuro buscará por eventos. Defina 1 para mostrar somente os eventos de hoje, 2 para os eventos de amanhã, etc.",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "tSMpM0": {
+        "message": "Autorize o acesso aos sites frequentes e a criação dos seus ícones",
+        "description": "Top Sites widget: permission request"
+    },
+    "BmzsQb": {
+        "message": "Links, com suporte a ícones e títulos (speed dial)",
+        "description": "Links widget description"
+    },
+    "7zYGs9": {
+        "message": "Calendário de agendamentos",
+        "description": "CalendarSchedule Widget"
+    },
+    "B4LnaC": {
+        "message": "Mostre os próximos eventos provenientes de uma URL iCal (.ics) (Como o Calendário Google)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "EscvnU": {
+        "message": "Ícones",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "GpfSpy": {
+        "message": "Mostre a barra de favoritos",
+        "description": "General settings: bookmarks bar"
+    },
+    "IKpSw0": {
+        "message": "Horizontal",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "R1jLoC": {
+        "message": "Vertical",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "RVGNBh": {
+        "message": "Quando finalizar, clique em <button></button> para salvar as edições."
+    },
+    "grbGxs": {
+        "message": "Sem eventos",
+        "description": "CalendarSchedule: no events"
+    },
+    "j0VHNa": {
+        "message": "Autorize o acesso aos favoritos e a busca dos ícones dos sites"
+    },
+    "nlnYxI": {
+        "message": "Número máximo de dias",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "oPO8GY": {
+        "message": "Está faltando a URL do calendário. Edite este widget para adicionar"
+    },
+    "gS3mti": {
+        "message": "Lista de estilos",
+        "description": "Form field label"
+    },
+    "r8bU6m": {
+        "message": "Mostre a barra de favoritos no topo da página.",
+        "description": "General settings: bookmarks bar"
+    },
+    "sFyAdH": {
+        "message": "Alternativamente: <import></import>"
+    },
+    "sX3mXR": {
+        "message": "Esconder",
+        "description": "Hide"
+    },
+    "wETxDh": {
+        "message": "Calendários",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "zWgbGg": {
+        "message": "Hoje"
     }
 }
