@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "__MSG_appName__",
-	"version": "1.18.0",
+	"version": "1.18.1",
 	"description": "__MSG_appDescription__",
 	"author": "rubenwardy",
 	"homepage_url": "https://renewedtab.com/",
