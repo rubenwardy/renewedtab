@@ -1,6 +1,6 @@
 import { CurrencyInfo } from "common/api/currencies";
 import { makeSingleCache } from "./cache";
-import fetchCatch, {Request} from "./http";
+import fetchCatch, {Request, Response} from "./http";
 import UserError from "./UserError";
 import { EXCHANGERATE_API_KEY, UA_DEFAULT } from "./config";
 
@@ -8,6 +8,13 @@ import { EXCHANGERATE_API_KEY, UA_DEFAULT } from "./config";
 const shitCoins = new Set([
  	"BTC", "ETH", "USDT", "BNB", "ADA", "DOGE", "XRP", "USDC", "DOT", "UNI",
 ]);
+
+
+function checkError(response: Response, json: any) {
+	if (!response.ok || json?.success === false) {
+		throw new UserError("Unknown error from upstream API");
+	}
+}
 
 
 /**
@@ -34,9 +41,7 @@ async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
 	}
 
 	const json = await response.json();
-	if (!response) {
-		throw new UserError(json?.error?.info ?? "Unknown error from upstream API");
-	}
+	checkError(response, json);
 
 	const retval: Record<string, CurrencyInfo> = {};
 	Object.entries(json.currencies as Record<string, string>)
@@ -75,9 +80,7 @@ async function fetchLiveValues(rates: Record<string, number>): Promise<void> {
 	}
 
 	const json = await response.json();
-	if (!response) {
-		throw new UserError(json?.error?.info ?? "Unknown error from upstream API");
-	}
+	checkError(response, json);
 
 	Object.entries(json.quotes as Record<string, string>).forEach(([key, value]) => {
 		const withoutUSD = key.slice(3);
