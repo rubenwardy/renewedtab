@@ -1,4 +1,4 @@
-import fetchCatch, { Request } from "../http";
+import { fetchRetry, Request } from "../http";
 import { Location } from "common/api/weather";
 import { notifyUpstreamRequest } from "../metrics";
 import { makeKeyCache } from "../cache";
@@ -28,7 +28,7 @@ async function fetchLocationsFromQuery(query: string): Promise<Location[]> {
 
 	notifyUpstreamRequest("AccuWeather.com");
 
-	const response = await fetchCatch(new Request(url, {
+	const response = await fetchRetry(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,
@@ -62,7 +62,7 @@ async function fetchLocationsFromCoord(lat: number, long: number): Promise<Locat
 
 	notifyUpstreamRequest("AccuWeather.com");
 
-	const response = await fetchCatch(new Request(url, {
+	const response = await fetchRetry(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,

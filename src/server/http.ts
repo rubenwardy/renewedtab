@@ -21,3 +21,40 @@ export default async function fetchCatch(url: RequestInfo, init?: RequestInit): 
 		throw new UserError(`Error whilst connecting to ${host}`);
 	}
 }
+
+
+function isSporadicError(e: unknown): boolean {
+	const msg = String(e);
+	return msg.includes("error whilst connecting to") ||
+		msg.includes("response timeout while trying to fetch") ||
+		msg.includes("internal service error") ||
+		msg.includes("service unavailable");
+}
+
+
+function sleep(ms: number): Promise<void> {
+	return new Promise((resolve) => {
+		setTimeout(resolve, ms);
+	});
+}
+
+
+export async function fetchRetry(url: RequestInfo, init?: RequestInit): Promise<Response> {
+	let tries = 3;
+	while (1) {
+		tries--;
+
+		try {
+			return await fetchCatch(url, init);
+		} catch (e) {
+			if (!isSporadicError(e) || tries == 0) {
+				throw e;
+			}
+
+			await sleep(200);
+		}
+	}
+
+	// This is unreachable
+	throw null;
+}

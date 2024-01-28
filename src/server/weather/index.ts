@@ -1,5 +1,5 @@
 import { WeatherDay, WeatherHour, WeatherInfo } from "common/api/weather";
-import fetchCatch, { Request } from "../http";
+import { fetchRetry, Request } from "../http";
 import { notifyUpstreamRequest } from "../metrics";
 import { makeKeyCache } from "../cache";
 import { getLocationFromCoords } from "./geocode";
@@ -98,7 +98,7 @@ async function fetchCurrentForecast(key: string): Promise<AccuCurrentAPI> {
 	url.searchParams.set("details", "true");
 	url.searchParams.set("metric", "true");
 
-	const response = await fetchCatch(new Request(url, {
+	const response = await fetchRetry(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,
@@ -126,7 +126,7 @@ async function fetchHourlyForecast(key: string): Promise<WeatherHour[]> {
 	url.searchParams.set("apikey", ACCUWEATHER_API_KEY);
 	url.searchParams.set("metric", "true");
 
-	const response = await fetchCatch(new Request(url, {
+	const response = await fetchRetry(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,
@@ -160,7 +160,7 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 	url.searchParams.set("details", "true");
 	url.searchParams.set("metric", "true");
 
-	const response = await fetchCatch(new Request(url, {
+	const response = await fetchRetry(new Request(url, {
 		method: "GET",
 		headers: {
 			"User-Agent": UA_DEFAULT,
