@@ -1,0 +1,1321 @@
+{
+    "+GMx80": {
+        "message": "場所が見つかりません",
+        "description": "Location form field: error"
+    },
+    "+TYXj6": {
+        "message": "今日、{time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "ニュースやウェブサイト、ブログを購読するのに便利な、AtomやJSONフィード、RSSフィードを表示します",
+        "description": "Feed widget description"
+    },
+    "+oSH/F": {
+        "message": "あなたの現在の年齢を無駄に正確に教えます",
+        "description": "Age widget description"
+    },
+    "+sI+Oh": {
+        "message": "時間ごとの天気予報を表示",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "<b>非常に強い</b>紫外線",
+        "description": "Very High UV risk"
+    },
+    "/aA+Xf": {
+        "message": "画像を表示",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "メモ",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "このウィジェットを完全に削除してもよろしいですか？",
+        "description": "Delete widget modal message"
+    },
+    "0feb3b": {
+        "message": "オプション、画像をリンクにします",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "アイコン",
+        "description": "Form field label"
+    },
+    "0l+aD2": {
+        "message": "毎日の目標とインスピレーションを与える名言",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "不透明度",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "追加"
+    },
+    "20tqYI": {
+        "message": "カレンダー用のiCal(.ics)ファイルへのURL",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "27lljH": {
+        "message": "あなたは<b>{age}</b>歳です",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "良い眠りを、{name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "こんばんは、{name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "あいさつ",
+        "description": "Greeting Widget"
+    },
+    "2s4stS": {
+        "message": "<a>Renewed Tab</a>へようこそ",
+        "description": "Onboarding modal: title"
+    },
+    "2vJWTd": {
+        "message": "写真",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "ウェブサイト",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "検索エンジンの名前",
+        "description": "Search widget: form field label"
+    },
+    "3UG6ds": {
+        "message": "お気に入りの検索エンジンでウィジェットやWebを検索します",
+        "description": "Search widget description"
+    },
+    "3aaibf": {
+        "message": "ウィジェットを追加"
+    },
+    "3vjl5Q": {
+        "message": "表示/非表示",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "キャンセル"
+    },
+    "4F+2K3": {
+        "message": "Unsplashコレクションのランダムな画像",
+        "description": "Backgroud mode description"
+    },
+    "4cMia7": {
+        "message": "新しい写真を表示",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "換算元",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "ヘルプと要望"
+    },
+    "5640CU": {
+        "message": "現在の降水量を表示",
+        "description": "Weather widget: form field label"
+    },
+    "5DCxT+": {
+        "message": "温度の単位",
+        "description": "Weather widget: form field label"
+    },
+    "5MMUNJ": {
+        "message": "これは<b>実験的な機能で使いにくい可能性があります</b>。",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "5mVcg9": {
+        "message": "カスタムCSS",
+        "description": "Theme settings: form field label"
+    },
+    "5mfAB9": {
+        "message": "Atom、JSONフィード、RSSフィードのURL",
+        "description": "Form field hint (Feed URL)"
+    },
+    "6MDM6D": {
+        "message": "名言",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "ブックマークを取得できません",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "画像",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "1年の経過",
+        "description": "Year Progress widget"
+    },
+    "7zYGs9": {
+        "message": "カレンダーのスケジュール",
+        "description": "CalendarSchedule Widget"
+    },
+    "8HmiSe": {
+        "message": "ソースを設定してください",
+        "description": "Feed widget: no sources error message"
+    },
+    "8J0Bhj": {
+        "message": "<a>Renewed Tab</a>へようこそ。ウィジェットや美しい背景でカスタマイズ可能な新しいタブページです。"
+    },
+    "8xVVb5": {
+        "message": "基本色",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "このウィジェットはブラウザー拡張機能版が必要です。"
+    },
+    "ATbgo4": {
+        "message": "放射状",
+        "description": "Form field option, radial gradient"
+    },
+    "Ack5ID": {
+        "message": "検索結果がありません",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "AgU+/t": {
+        "message": "RocketLaunch.Liveによる打ち上げ予定のリスト",
+        "description": "SpaceFlights widget description"
+    },
+    "AuSjzq": {
+        "message": "現在の紫外線指数を表示",
+        "description": "Weather widget: form field label"
+    },
+    "B0kbsm": {
+        "message": "フィード",
+        "description": "Unsplash background mode"
+    },
+    "B1pyj1": {
+        "message": "現在の体感温度",
+        "description": "Weather widget: form field label"
+    },
+    "B3NCWb": {
+        "message": "色",
+        "description": "Form field label"
+    },
+    "B4LnaC": {
+        "message": "iCal(.ics)のURLから取得した今後の予定を表示します(Googleカレンダーなど)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "BJYZgx": {
+        "message": "移動ハンドル(<move></move>)とサイズ変更ハンドル(<resize></resize>)を使用します。"
+    },
+    "BiPNnl": {
+        "message": "風速の単位",
+        "description": "Weather widget: form field label"
+    },
+    "Bl74xq": {
+        "message": "リンクのボタン",
+        "description": "Button widget description"
+    },
+    "BmzsQb": {
+        "message": "見出しとアイコン付きのリンク(スピードダイヤル)",
+        "description": "Links widget description"
+    },
+    "BnmONl": {
+        "message": "現在の日の出/日の入りを表示",
+        "description": "Weather widget: form field label"
+    },
+    "C7WJrL": {
+        "message": "垂直",
+        "description": "Form field option, vertical gradient"
+    },
+    "CN0kVN": {
+        "message": "ウィジェットのグリッド",
+        "description": "Settings tab"
+    },
+    "CmRs9p": {
+        "message": "検索",
+        "description": "Search Widget"
+    },
+    "CshCZY": {
+        "message": "背景の種類"
+    },
+    "D0+wcK": {
+        "message": "画像を表示し、オプションで画像をリンクにします",
+        "description": "Image widget description"
+    },
+    "D3idYv": {
+        "message": "設定"
+    },
+    "Ddd3ZY": {
+        "message": "換算先",
+        "description": "Currencies widget: form field label"
+    },
+    "Dk7Khi": {
+        "message": "華氏",
+        "description": "Weather widget: Fahrenheit unit"
+    },
+    "E4nLwR": {
+        "message": "毎日",
+        "description": "Background expiry dropdown"
+    },
+    "Ekvvsi": {
+        "message": "ブックマークバー",
+        "description": "Chrome-only, a bar for bookmarks at the top"
+    },
+    "EpPEVJ": {
+        "message": "グラデーション",
+        "description": "Gradient background mode"
+    },
+    "EscvnU": {
+        "message": "アイコン",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "F1A/8i": {
+        "message": "ソース",
+        "description": "Feed widget: form field label"
+    },
+    "FqCn+F": {
+        "message": "おはようございます、{name}",
+        "description": "Greeting widget: greeting, from midnight to noon"
+    },
+    "G6WG/N": {
+        "message": "非表示",
+        "description": "Invisible Widget"
+    },
+    "GWRKVT": {
+        "message": "テキストの色",
+        "description": "Form field label"
+    },
+    "GXkv/F": {
+        "message": "場所を選択してください",
+        "description": "Location form field: prompt"
+    },
+    "GcxpZV": {
+        "message": "日付の形式",
+        "description": "Clock widget: date style form field label"
+    },
+    "Go7At+": {
+        "message": "土",
+        "description": "Short weekday name (Saturday)"
+    },
+    "GpfSpy": {
+        "message": "ブックマークバーを表示",
+        "description": "General settings: bookmarks bar"
+    },
+    "GqPEp+": {
+        "message": "ブラウザー拡張機能版が必要です"
+    },
+    "H00a0q": {
+        "message": "見出しにするには空欄のままにしておいてください",
+        "description": "Links widget, form field hint (Link URL)"
+    },
+    "HEvlTB": {
+        "message": "表示オプション",
+        "description": "Weather widget: display subform title"
+    },
+    "HksGis": {
+        "message": "現在の風速を表示",
+        "description": "Weather widget: form field label"
+    },
+    "I48yxw": {
+        "message": "プライバシー",
+        "description": "General settings: privacy"
+    },
+    "IKpSw0": {
+        "message": "水平",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "IbCXY9": {
+        "message": "標準({example})",
+        "description": "Clock widget: date style type"
+    },
+    "IqLwUL": {
+        "message": "グリッドの間隔",
+        "description": "Widget grid: form label for grid spacing"
+    },
+    "J91edI": {
+        "message": "インポート/エクスポート",
+        "description": "Settings tab"
+    },
+    "JN/uvd": {
+        "message": "<b>中程度</b>の紫外線",
+        "description": "Moderate UV risk"
+    },
+    "JvOSvX": {
+        "message": "背景",
+        "description": "Settings tab"
+    },
+    "JzanJ8": {
+        "message": "グリッド列",
+        "description": "Widget grid: form label for grid columns"
+    },
+    "K3r6DQ": {
+        "message": "削除"
+    },
+    "K8s82y": {
+        "message": "誕生日",
+        "description": "Age widget: form field label"
+    },
+    "KhM0zv": {
+        "message": "名言は外部ソースから提供されており、Renewed Tabによる確認は行われておりません。",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "KjUKUz": {
+        "message": "色のグラデーション",
+        "description": "Backgroud mode description"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b>、緯度:{latitude}、経度:{longitude}"
+    },
+    "KyDwm3": {
+        "message": "トップサイトを表示",
+        "description": "Top Sites widget: description"
+    },
+    "Kzo9ZH": {
+        "message": "画像URL",
+        "description": "Form field label"
+    },
+    "L6nTur": {
+        "message": "出発点を選びましょう",
+        "description": "Onboarding: presets title"
+    },
+    "LfHpBk": {
+        "message": "フォントの大きさ",
+        "description": "Theme settings: form field label"
+    },
+    "Lxc1x4": {
+        "message": "時計",
+        "description": "Clock Widget"
+    },
+    "M0PwXU": {
+        "message": "風速({unit})",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "MN3prI": {
+        "message": "セクションとしてフォルダーを含める",
+        "description": "Bookmarks widget: form field label"
+    },
+    "MiIvsP": {
+        "message": "直感的な操作でグリッド上にウィジェットを追加、移動、サイズ変更そして設定できます。"
+    },
+    "Mihrhf": {
+        "message": "なし",
+        "description": "Clock widget: date style type, not shown"
+    },
+    "MtrTNy": {
+        "message": "明日"
+    },
+    "N/7Stk": {
+        "message": "<a>rubenwardy</a>によって製作されました。"
+    },
+    "O2Mjef": {
+        "message": "レビュー",
+        "description": "Review request, review button"
+    },
+    "O8mt7g": {
+        "message": "数字({example})",
+        "description": "Clock widget: date style type"
+    },
+    "OBJta4": {
+        "message": "ウィジェット上で名前をクリックして変更できます",
+        "description": "Greeting widget: edit modal hint"
+    },
+    "OPzczE": {
+        "message": "省略形({example})",
+        "description": "Clock widget: date style type"
+    },
+    "OQHLB5": {
+        "message": "色",
+        "description": "Form field label"
+    },
+    "PBMGxw": {
+        "message": "画像を制限する",
+        "description": "Feed background mode: form field label"
+    },
+    "PHwOzi": {
+        "message": "UnsplashやAccuWeather、RocketLaunch.LiveのAPIに感謝します。"
+    },
+    "PM6qZ7": {
+        "message": "秒を表示"
+    },
+    "PYJFvz": {
+        "message": "カテゴリー",
+        "description": "Form field label, list of categories. Used by Quotes widget"
+    },
+    "Q1mwPp": {
+        "message": "<a>あなたが使う言語の翻訳の改善や追加</a>をご検討ください。"
+    },
+    "QV6YlB": {
+        "message": "為替レート",
+        "description": "Currencies widget: form field label"
+    },
+    "QcExtH": {
+        "message": "プライバシーポリシー",
+        "description": "General settings: privacy policy button"
+    },
+    "QkI7Lb": {
+        "message": "ブラウザーのタイムゾーン({browserTimeZone})",
+        "description": "An option when selecting a time zone"
+    },
+    "QqE4JC": {
+        "message": "フィードURLがありません。"
+    },
+    "R1jLoC": {
+        "message": "垂直",
+        "description": "List box style (ie: list/bookmark widgets)"
+    },
+    "R4cyIr": {
+        "message": "現在の湿度を表示",
+        "description": "Weather widget: form field label"
+    },
+    "RCe+DS": {
+        "message": "ウィジェットをドラッグアンドドロップ"
+    },
+    "RZqASt": {
+        "message": "単色",
+        "description": "Backgroud mode description"
+    },
+    "RhyKzC": {
+        "message": "厳選",
+        "description": "Curated background mode"
+    },
+    "S3njcM": {
+        "message": "iframe",
+        "description": "IFrame Widget"
+    },
+    "S6nfAm": {
+        "message": "湿度(%)",
+        "description": "Weather widget: humidity tooltip"
+    },
+    "SAo61B": {
+        "message": "ブックマーク",
+        "description": "Bookmarks Widget"
+    },
+    "SENRqu": {
+        "message": "ヘルプ"
+    },
+    "SG4UJU": {
+        "message": "ボタン",
+        "description": "Button Widget"
+    },
+    "ShQneX": {
+        "message": "テキスト",
+        "description": "Form field label"
+    },
+    "T/wBPw": {
+        "message": "{type}を削除"
+    },
+    "T4VxQN": {
+        "message": "読み込み中…"
+    },
+    "TDaF6J": {
+        "message": "非表示"
+    },
+    "TUnCKb": {
+        "message": "テキスト",
+        "description": "Text Widget"
+    },
+    "TkgCJ9": {
+        "message": "下のリンクからヘルプを得たり機能をリクエストしたりすることができます。"
+    },
+    "U2Qnh7": {
+        "message": "画像",
+        "description": "Image background mode"
+    },
+    "Upkn1Q": {
+        "message": "<b>強い</b>紫外線",
+        "description": "High UV risk"
+    },
+    "V1EIOe": {
+        "message": "Webページを表示します",
+        "description": "IFrame widget description"
+    },
+    "VPDVTF": {
+        "message": "なし",
+        "description": "Shown when array table form field has no rows"
+    },
+    "Vckd1G": {
+        "message": "月",
+        "description": "Short weekday name (Monday)"
+    },
+    "VjDvbL": {
+        "message": "URL",
+        "description": "Form field label"
+    },
+    "W3zKGr": {
+        "message": "キロメートル毎時(km/h)",
+        "description": "Weather widget: Speed unit"
+    },
+    "WF5DKA": {
+        "message": "年齢",
+        "description": "Age widget"
+    },
+    "WKiXhX": {
+        "message": "色",
+        "description": "Color background mode"
+    },
+    "WZjKFf": {
+        "message": "警告: ウィジェットの設定に個人データが入力されている場合、これに個人データが含まれている可能性があります。"
+    },
+    "Wi0G88": {
+        "message": "このアプリの概要とヘルプ",
+        "description": "Settings tab"
+    },
+    "X18x9m": {
+        "message": "一般",
+        "description": "Settings tab"
+    },
+    "X5OoHJ": {
+        "message": "今日の目標は何ですか？",
+        "description": "Daily Goal prompt"
+    },
+    "XV4mnl": {
+        "message": "設定によっては、同じ写真が選択される場合があります",
+        "description": "Background settings: form field hint (Show a new photo)"
+    },
+    "XrQEPN": {
+        "message": "場所",
+        "description": "Form field label"
+    },
+    "XsTD4Q": {
+        "message": "ToDoリスト",
+        "description": "Todo List Widget"
+    },
+    "YQhLKn": {
+        "message": "毎時",
+        "description": "Background expiry dropdown"
+    },
+    "YS3jnS": {
+        "message": "金",
+        "description": "Short weekday name (Friday)"
+    },
+    "YS5zRT": {
+        "message": "{name}で検索",
+        "description": "Search widget: searchbox placeholder text, when search engine name is known"
+    },
+    "YYoBQn": {
+        "message": "パネルのぼかし半径",
+        "description": "Theme settings: form field label"
+    },
+    "YuNOET": {
+        "message": "HTML",
+        "description": "HTML widget: form field label"
+    },
+    "Z2/hH0": {
+        "message": "画像: {filename}"
+    },
+    "Z79HMN": {
+        "message": "厳選されたランダム画像",
+        "description": "Backgroud mode description"
+    },
+    "ZRWjTk": {
+        "message": "ブラウザーのデフォルトの検索エンジンを使用する",
+        "description": "Search widget: form field label"
+    },
+    "ZUZeuR": {
+        "message": "メッセージを表示します",
+        "description": "Text widget description"
+    },
+    "ZZIlU9": {
+        "message": "毎日の目標",
+        "description": "Daily Goal Widget"
+    },
+    "a09vzt": {
+        "message": "HTTPリクエストに失敗しました: {code} {msg}。"
+    },
+    "a0L2KE": {
+        "message": "国名やイニシャルを含めてみてください。"
+    },
+    "aXrD3p": {
+        "message": "通貨",
+        "description": "Currencies widget"
+    },
+    "aaxFkJ": {
+        "message": "ToDoの項目を新規作成する",
+        "description": "Todo List widget: prompt"
+    },
+    "abwneZ": {
+        "message": "メートル毎秒(m/s)",
+        "description": "Weather widget: Speed unit"
+    },
+    "adRrk3": {
+        "message": "全てリセット",
+        "description": "Import / export settings, reset"
+    },
+    "amHvKE": {
+        "message": "ここにメモを入力してください",
+        "description": "Notes widget: prompt"
+    },
+    "appDescription": {
+        "message": "ウィジェットや美しい背景でカスタマイズ可能な新しいタブのページ",
+        "description": "App description"
+    },
+    "appName": {
+        "message": "Renewed Tab",
+        "description": "The name of the app"
+    },
+    "b2Rs2F": {
+        "message": "明るい画像の明るさを変更する",
+        "description": "Backgroud settings: form field label (Brightness: Light)"
+    },
+    "bQFsdR": {
+        "message": "{host}へのアクセス権限を許可する"
+    },
+    "bfWes8": {
+        "message": "グラデーションの種類",
+        "description": "Form field label"
+    },
+    "btOI+Z": {
+        "message": "新しいタブ"
+    },
+    "cR7nCG": {
+        "message": "デフォルトのテーマに戻す"
+    },
+    "cSF2y1": {
+        "message": "ブックマークを表示します",
+        "description": "Bookmarks widget description"
+    },
+    "ckvzIb": {
+        "message": "<b>弱い</b>紫外線",
+        "description": "Low UV risk"
+    },
+    "d7dHsn": {
+        "message": "15分おき",
+        "description": "Background expiry dropdown"
+    },
+    "dGu5JQ": {
+        "message": "フィード",
+        "description": "Feed Widget"
+    },
+    "dIwFS5": {
+        "message": "画像を選択",
+        "description": "Form field label"
+    },
+    "mw6Uh+": {
+        "message": "毎日の天気予報を表示",
+        "description": "Weather widget: form field label"
+    },
+    "eKCjBm": {
+        "message": "降水確率(%)",
+        "description": "Weather widget: change of precipitation (rain, etc)"
+    },
+    "eXB4qM": {
+        "message": "水",
+        "description": "Short weekday name (Wednesday)"
+    },
+    "ekIjqh": {
+        "message": "全てのウェブサイトへのアクセスを許可する"
+    },
+    "ekW/+6": {
+        "message": "インターネットに接続できません"
+    },
+    "exTzGh": {
+        "message": "水平",
+        "description": "Form field option, horizontal gradient"
+    },
+    "fWK68w": {
+        "message": "フォント",
+        "description": "Theme settings: form field label"
+    },
+    "frEJEM": {
+        "message": "木",
+        "description": "Short weekday name (Thursday)"
+    },
+    "fz43UJ": {
+        "message": "寄付",
+        "description": "Renewed Tab donation link"
+    },
+    "gEYo49": {
+        "message": "位置",
+        "description": "Backgroud settings: form field label"
+    },
+    "gHzZEt": {
+        "message": "時計と検索バーのみ",
+        "description": "Preset: focus description"
+    },
+    "gQAsym": {
+        "message": "他のウィジェットのドラッグ中は避けてくれないことにご注意ください。",
+        "description": "Widget grid: form label 3 for grid full width"
+    },
+    "gS3mti": {
+        "message": "リストボックスのスタイル",
+        "description": "Form field label"
+    },
+    "gSjZfg": {
+        "message": "リンク",
+        "description": "Links Widget"
+    },
+    "gXcVyS": {
+        "message": "編集を終了",
+        "description": "Edit bar button to make the grid readonly"
+    },
+    "grbGxs": {
+        "message": "イベントはありません",
+        "description": "CalendarSchedule: no events"
+    },
+    "h/ftND": {
+        "message": "ファイルを選択"
+    },
+    "h00yCR": {
+        "message": "AtomやJSONフィード、RSSフィードからの最近の画像を表示します。Webコミックに有用です。",
+        "description": "Web Comic widget description"
+    },
+    "hCBQrY": {
+        "message": "体感<b>{temp}°</b>"
+    },
+    "hUIQ7h": {
+        "message": "明るさ",
+        "description": "Backgroud settings: form field label"
+    },
+    "hktZIl": {
+        "message": "時間を表示"
+    },
+    "iFxzUm": {
+        "message": "いいね",
+        "description": "Background credits vote"
+    },
+    "iH2AHA": {
+        "message": "<a>オープンソース</a>、GPLv3+の下でライセンスされています。"
+    },
+    "irdBm2": {
+        "message": "テーマ",
+        "description": "Settings tab"
+    },
+    "j0VHNa": {
+        "message": "ブックマークにアクセスしたりウェブサイトからアイコンを取得するための権限を許可する"
+    },
+    "jGWq1h": {
+        "message": "タイムゾーン"
+    },
+    "jSHZmX": {
+        "message": "ToDoリストの項目を追跡します",
+        "description": "Todo List widget: description"
+    },
+    "kAEQyV": {
+        "message": "OK"
+    },
+    "kF06lD": {
+        "message": "拡張({example})",
+        "description": "Clock widget: date style type"
+    },
+    "ktmuOE": {
+        "message": "フィードのタイトルを使用するには空欄のままにします",
+        "description": "Feed widget: form field hint (Title)"
+    },
+    "ku7Ot7": {
+        "message": "明るさ: 明るい",
+        "description": "Backgroud settings: form field label"
+    },
+    "kueLs9": {
+        "message": "リンク",
+        "description": "Links widget: form field label"
+    },
+    "l8+Uwz": {
+        "message": "編集するものがありません。",
+        "description": "Form has no fields"
+    },
+    "lUdRdE": {
+        "message": "エラー: {msg}"
+    },
+    "lY73np": {
+        "message": "パネルの背景を表示",
+        "description": "Widget styling, checkbox"
+    },
+    "lYJGY5": {
+        "message": "画像のURL",
+        "description": "Image URL background mode"
+    },
+    "languageName": {
+        "message": "  ",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "lkJAu6": {
+        "message": "Unsplash",
+        "description": "Unsplash background mode"
+    },
+    "mL3MOs": {
+        "message": "マイル毎時(mi/h)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mSg5KK": {
+        "message": "明るさ: 暗い",
+        "description": "Backgroud settings: form field label"
+    },
+    "mv9TrH": {
+        "message": "HTML",
+        "description": "HTML Widget"
+    },
+    "nF7bWj": {
+        "message": "ISO({example})",
+        "description": "Clock widget: date style type"
+    },
+    "nGSwtl": {
+        "message": "検索",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "nHw5cV": {
+        "message": "アイテムをクリックして編集します。",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "nlnYxI": {
+        "message": "最大日数",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "nnaWVi": {
+        "message": "摂氏",
+        "description": "Weather widget: Celsius unit"
+    },
+    "o2uuHu": {
+        "message": "12時間表記"
+    },
+    "o9vGxx": {
+        "message": "新しいタブでリンクを開く",
+        "description": "Form field label"
+    },
+    "oDog89": {
+        "message": "メモ用の編集可能なテキストエリア",
+        "description": "Notes widget description"
+    },
+    "oGS5TE": {
+        "message": "こんにちは、{name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "oJnbwn": {
+        "message": "名前",
+        "description": "Greeting widget: name prompt"
+    },
+    "oPO8GY": {
+        "message": "カレンダーのURLがありません。このウィジェットを編集して追加してください"
+    },
+    "ofl4Ui": {
+        "message": "検索",
+        "description": "Location form field: search"
+    },
+    "olBVPS": {
+        "message": "エクスポート",
+        "description": "Import / export settings, export"
+    },
+    "or/+Da": {
+        "message": "スタイル",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "p8GKKf": {
+        "message": "トップサイト",
+        "description": "Top Sites Widget"
+    },
+    "pHo6u+": {
+        "message": "フィードに画像がありません",
+        "description": "Web Comic widget: no images found error"
+    },
+    "pVrtrA": {
+        "message": "カスタム画像を使用する",
+        "description": "Backgroud mode description"
+    },
+    "pbEMNj": {
+        "message": "前へ",
+        "description": "Onboarding page: previous button"
+    },
+    "pqIuCa": {
+        "message": "現在の天気を表示",
+        "description": "Weather widget: form field label"
+    },
+    "q4caWd": {
+        "message": "ぼかし半径",
+        "description": "Backgroud settings: form field label"
+    },
+    "q6/aVX": {
+        "message": "検索ウィジェットを使用してこのウィジェットをフィルターできます。",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "qCsSqt": {
+        "message": "パネル背景の暗さ",
+        "description": "Theme settings: form field label"
+    },
+    "qEk9AJ": {
+        "message": "暗い画像の明るさを変更する",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "qYVXqA": {
+        "message": "{mode}設定",
+        "description": "Background mode options"
+    },
+    "qoEZRi": {
+        "message": "Unsplashのコレクション",
+        "description": "Backgroud settings: form field label"
+    },
+    "qzlLb3": {
+        "message": "日",
+        "description": "Short weekday name (Sunday)"
+    },
+    "r8bU6m": {
+        "message": "ページの上部にブックマークバーを表示します。",
+        "description": "General settings: bookmarks bar"
+    },
+    "rAuRqW": {
+        "message": "コミュニティによって翻訳されています。"
+    },
+    "rb3Zy8": {
+        "message": "記事をフィルターする",
+        "description": "Feed widget: form field label"
+    },
+    "sFyAdH": {
+        "message": "代わりに: <import></import>"
+    },
+    "sIC2UV": {
+        "message": "テキストを表示",
+        "description": "Widget styling, checkbox for showing text on eg: Links"
+    },
+    "sPl3nI": {
+        "message": "タイトル",
+        "description": "Form field label"
+    },
+    "sX3mXR": {
+        "message": "非表示",
+        "description": "Hide"
+    },
+    "sYvWWw": {
+        "message": "オプション、画像のURL(18pxを推奨)",
+        "description": "Links widget, form field hint (Icon)"
+    },
+    "tSMpM0": {
+        "message": "トップサイトにアクセスしてウェブサイトからアイコンを取得するための権限を許可する",
+        "description": "Top Sites widget: permission request"
+    },
+    "translation_credits": {
+        "message": "  ",
+        "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
+    },
+    "tyq8NB": {
+        "message": "天気",
+        "description": "Weather Widget"
+    },
+    "uRYRJh": {
+        "message": "{type}を編集"
+    },
+    "ubO4zt": {
+        "message": "Webコミック",
+        "description": "Web Comic Widget"
+    },
+    "+PNw8j": {
+        "message": "一部の情報を非表示にしても、日時にホバーすることで確認できます",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "/Mpu8A": {
+        "message": "ページ全体をカバーするようにグリッドを引き伸ばします。",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/Mx09O": {
+        "message": "実験的です。画像の情報が不足しているため、すべてのフィードのソースで機能するわけではありません。画像が大きいと、読み込みに時間がかかる場合があります。",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "2j5LN5": {
+        "message": "デフォルトのサジェストに提案したURLが追加されます",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "3ZfhWo": {
+        "message": "{host}にアクセスするには権限が必要です。許可するにはこのウィジェットを編集してください。"
+    },
+    "uv1bYR": {
+        "message": "火",
+        "description": "Short weekday name (Tuesday)"
+    },
+    "uzT59w": {
+        "message": "グリッド",
+        "description": "Preset: Grid"
+    },
+    "v9UIPJ": {
+        "message": "日の出 - 日の入り",
+        "description": "Weather widget: wind speed tooltip"
+    },
+    "vVnypL": {
+        "message": "ランダムな名言をカテゴリとともに表示します",
+        "description": "Quotes Widget description"
+    },
+    "vlumg9": {
+        "message": "ウィジェットを検索…",
+        "description": "Create Widgets modal: search widgets placeholder"
+    },
+    "wEQDC6": {
+        "message": "編集"
+    },
+    "wETxDh": {
+        "message": "カレンダー",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "wogY8a": {
+        "message": "ウィジェットを作成"
+    },
+    "wr0l0L": {
+        "message": "URL先の画像",
+        "description": "Backgroud mode description"
+    },
+    "wwQ6Va": {
+        "message": "場所を選択",
+        "description": "Location field"
+    },
+    "x59fh0": {
+        "message": "ロケットの打ち上げ",
+        "description": "Space Flights Widget"
+    },
+    "xR87uK": {
+        "message": "ウィジェット同士の間隔をピクセル単位で指定します。",
+        "description": "Widget grid: form hint for grid spacing"
+    },
+    "xtOPHp": {
+        "message": "URL",
+        "description": "Form field label"
+    },
+    "xtl3ls": {
+        "message": "カスタムアイコンを有効化",
+        "description": "Links widget: form field label"
+    },
+    "xvXMaZ": {
+        "message": "あいさつします",
+        "description": "Greeting widget description"
+    },
+    "y1Z3or": {
+        "message": "言語"
+    },
+    "yT43pK": {
+        "message": "ウェブサイトからのアイコンを使用します(ファビコン)",
+        "description": "Form field label"
+    },
+    "yUJ5MA": {
+        "message": "目標",
+        "description": "Preset: goals"
+    },
+    "yY7Rve": {
+        "message": "非表示",
+        "description": "Feed widget: filter show checkbox label"
+    },
+    "yfgoZf": {
+        "message": "Discord/Matrixチャット"
+    },
+    "yvWbz6": {
+        "message": "次へ",
+        "description": "Onboarding page: next button"
+    },
+    "ywSKRt": {
+        "message": "カスタムHTML",
+        "description": "HTML widget description"
+    },
+    "z7UTSa": {
+        "message": "Renewed Tabについて"
+    },
+    "zEj0dg": {
+        "message": "1年のうちどのぐらい経過したかをプログレスバーで表示します",
+        "description": "Age widget description"
+    },
+    "zPAzlS": {
+        "message": "単一のタブにソースをまとめます",
+        "description": "Feed widget: form field label"
+    },
+    "zWgbGg": {
+        "message": "今日"
+    },
+    "zXtUcf": {
+        "message": "ご心配なく、後でロック解除できます"
+    },
+    "zaQRTm": {
+        "message": "<b>著しく強い</b>紫外線",
+        "description": "Extreme UV risk"
+    },
+    "zfsplE": {
+        "message": "二度と表示しない",
+        "description": "Background credits vote"
+    },
+    "ziyAdj": {
+        "message": "インポート",
+        "description": "Import / export settings, import"
+    },
+    "zo4ZQa": {
+        "message": "表示",
+        "description": "Feed widget: filter allow checkbox label"
+    },
+    "zsdRww": {
+        "message": "プライマリーボタンとリンクに使用されます",
+        "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "3vh5vd": {
+        "message": "何も表示しません。レイアウトの調整の目的に使用します",
+        "description": "Invisible widget description"
+    },
+    "4UpnpD": {
+        "message": "画像はブラウザー上でローカルに保存され、アップロードされません",
+        "description": "Form field hint (Image)"
+    },
+    "6wEkCM": {
+        "message": "また、ブックマークウィジェットを使用して細かい調整をすることもできます。",
+        "description": "General settings: bookmarks bar"
+    },
+    "8xPAKF": {
+        "message": "0~100%、グラデーションの色の位置",
+        "description": "Form field hint (Stop)"
+    },
+    "Abtyj/": {
+        "message": "画像が2MB({dataSizeMB}MB)を超えています。読み込みを速くするには、小さい画像を使用してください。",
+        "description": "Image upload error message"
+    },
+    "Ay1sfO": {
+        "message": "最近の画像の中からランダムに選択する画像の数を制御します。これを1に設定すると常に最新の画像を使用します",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "BfX7n6": {
+        "message": "注: Firefoxはグラデーション背景の上に線のようなノイズが表示されることがあります。これは私たちが修正できるものではありません。",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "CNpJaZ": {
+        "message": "集中",
+        "description": "Preset: focus"
+    },
+    "Cq4JWx": {
+        "message": "ニュースや天気など",
+        "description": "Preset: grid description"
+    },
+    "DVGnNH": {
+        "message": "左下のクレジットにカーソルを合わせて、背景画像にいいねを付けたりスキップしたりすることができます。"
+    },
+    "GSox4d": {
+        "message": "コンピューターにインストールされているフォント名",
+        "description": "Theme settings: form field hint (Font)"
+    },
+    "HPLtg4": {
+        "message": "不明な通貨です「{currency}」",
+        "description": "Currencies widget: error"
+    },
+    "JihbEV": {
+        "message": "CSSドキュメント",
+        "description": "Theme settings: link to CSS docs"
+    },
+    "KdIFGg": {
+        "message": "'{query}'が検索URLに含まれていません。例) https://google.com/search/?q='{query}'",
+        "description": "Search widget: error, missing query variable"
+    },
+    "Lnvfz8": {
+        "message": "{source}の読み込みに失敗しました: {error}",
+        "description": "Feed error message"
+    },
+    "M6lR5V": {
+        "message": "ウィジェットグリッド内の列数です。現在のウィンドウ幅({res}px)では{max}列のカラムを収めることができます。",
+        "description": "Widget grid: form hint for grid columns"
+    },
+    "MdUPbJ": {
+        "message": "日, 月, 火, 水, 木, 金, 土",
+        "description": "Days of the week, separated by commas"
+    },
+    "NjoFru": {
+        "message": "Atom、JSONフィード、RSSフィードからのランダムな画像",
+        "description": "Backgroud mode description"
+    },
+    "Oa5RYo": {
+        "message": "<b>ウィジェットにも設定があります</b>: ウィジェットにカーソルを合わせて鉛筆をクリックするとカスタマイズできます。",
+        "description": "General settings: help message"
+    },
+    "QBZZBG": {
+        "message": "ご注意ください: これは実験的な機能であり、CSSセレクターは将来のリリースで破壊される可能性があります。",
+        "description": "Theme settings: form field hint (Custom CSS)"
+    },
+    "RVGNBh": {
+        "message": "完了したら、<button></button>をクリックしてウィジェットを読み取り専用にします。"
+    },
+    "TIEfOV": {
+        "message": "記事は、少なくとも1つの「表示」フィルターに一致(存在する場合)し、「非表示」フィルターがない場合に表示されます。",
+        "description": "Feed widget: form field hint (Filters)"
+    },
+    "VkW6D1": {
+        "message": "中央、上部または下部",
+        "description": "Backgroud settings: form field hint (Position)"
+    },
+    "VxE3S8": {
+        "message": "この機能はRenewed Tabの開発者に自動的にURLを送信します。開発者はこのURLを全ユーザーの候補に追加することができます。",
+        "description": "Host URL field: help text for suggest URL button"
+    },
+    "XYIyWM": {
+        "message": "スペースを有効に活用するには「グリッドカラム」を最低でも{cols}に増やす必要があります。",
+        "description": "Widget grid: form label 2 for grid full width"
+    },
+    "ZeZlbR": {
+        "message": "ボタン色の不透明度を設定します",
+        "description": "Button widget: form field hint (Opacity)"
+    },
+    "ao/AFQ": {
+        "message": "毎日の目標のことをリマインドします",
+        "description": "Daily Goal widget description"
+    },
+    "as6rZ1": {
+        "message": "クラッシュレポートを有効にする(Sentryを利用)",
+        "description": "General settings: enable sentry"
+    },
+    "c7zm0j": {
+        "message": "フィードの読み込みに失敗しました。RSS、JSONフィード、Atomフィードであることを確認してください。"
+    },
+    "fW8Xpd": {
+        "message": "場所が必要です。編集をクリックして追加してください。",
+        "description": "Weather widget: location needed error"
+    },
+    "gAZqVl": {
+        "message": "必要に応じて、ウィジェットを後で追加(<add></add>)または削除(<remove></remove>)したり、設定を変更(<cog></cog>)したりできます。",
+        "description": "Onboarding: preset hint"
+    },
+    "dOlhtQ": {
+        "message": "アドレスバーの隣を右クリック > ブックマークツールバー > 新しいタブページのみ表示する、を順にクリックすることで新しいタブページでのみブックマークバーを表示させることができます。<a>詳しく見る</a>",
+        "description": "General settings: Help for Firefox bookmarks bar"
+    },
+    "hWimZf": {
+        "message": "ウィジェットの検索を有効にする",
+        "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "ilIuh2": {
+        "message": "便利に感じてくれましたか？天気APIのコストを賄うためやRenewed Tabの開発の未来を支援するために、<a>寄付</a>をご検討いただけると幸いです。",
+        "description": "Weather widget: asking for donations"
+    },
+    "lQIN1l": {
+        "message": "Renewed Tabをお楽しみいただけていますか？レビューをお願いします！"
+    },
+    "lwUV0r": {
+        "message": "ウィジェットをクリックして目標を変更できます",
+        "description": "Daily Goal widget: edit modal hint"
+    },
+    "n+w6I2": {
+        "message": "停止",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "n0cZ3b": {
+        "message": "{host}の提供。",
+        "description": "Credit to a website"
+    },
+    "oBl48o": {
+        "message": "全てのデータをリセットしますか？",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "oRui+E": {
+        "message": "Renewed Tabをお楽しみいただけていますか？コストをカバーし、開発をサポートするために寄付をご検討いただけると幸いです。"
+    },
+    "pG7wIz": {
+        "message": "為替レートを表示します。外国為替通貨と暗号通貨をサポートしています(ビットコインなど)",
+        "description": "Currencies widget description"
+    },
+    "pWdLkT": {
+        "message": "<a>チュートリアル</a>をご覧ください。GoogleカレンダーやOutlookなどの、iCalをサポートするクラウドのカレンダーであれば何でもご利用いただけます。",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "qfkgCx": {
+        "message": "どこまで先のイベントを表示するかを設定します。1に設定すると今日のイベントだけ、2にすると今日と明日の予定を表示するといった具合です。",
+        "description": "CalendarSchedule widget: form field hint (max number of days)"
+    },
+    "x7WADS": {
+        "message": "ページの幅いっぱいのグリッド",
+        "description": "Widget grid: form label for grid full width"
+    },
+    "y8o0oA": {
+        "message": "現在と今後の天気",
+        "description": "Weather widget description"
+    },
+    "ykNa5O": {
+        "message": "アイコンにFont Awesome、UIにReact、ビルドにWebPackを使用しています。"
+    },
+    "zKofmb": {
+        "message": "コレクションID。URL内に含まれています。例: 42576559",
+        "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    }
+}
