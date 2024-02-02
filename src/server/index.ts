@@ -36,12 +36,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use((_req, res, next) => {
-	const expiresAt = new Date(new Date().getTime() + 15*60*1000);
-
 	res.append("Access-Control-Allow-Origin", ["*"]);
 	res.append("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
 	res.append("Access-Control-Allow-Headers", "Content-Type");
-	res.append("expires", expiresAt.toISOString());
 	next();
 });
 
