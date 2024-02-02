@@ -90,7 +90,9 @@ app.get("/proxy/", async (req: express.Request, res: express.Response, next: (e:
 
 		const url = new URL(req.query.url as string);
 		const result = await handleProxy(url);
-		res.status(result.status).type(result.contentType).send(result.text);
+		res.status(result.status)
+			.setHeader("Cache-Control", "max-age: 300")
+			.type(result.contentType).send(result.text);
 	} catch (e: any) {
 		next(e);
 	}
@@ -125,7 +127,9 @@ app.get("/api/weather/", async (req: express.Request, res: express.Response, nex
 
 		notifyAPIRequest("weather");
 
-		res.json(await getWeatherInfoByCoords(location.latitude, location.longitude));
+		res
+			.setHeader("Cache-Control", "max-age: 7200")
+			.json(await getWeatherInfoByCoords(location.latitude, location.longitude));
 	} catch (e: any) {
 		next(e);
 	}
@@ -141,7 +145,9 @@ app.get("/api/geocode/", async (req: express.Request, res: express.Response, nex
 
 		notifyAPIRequest("geocode");
 
-		res.json(await getCoordsFromQuery((req.query.q as string).trim()));
+		res
+			.setHeader("Cache-Control", "max-age: 604800")
+			.json(await getCoordsFromQuery((req.query.q as string).trim()));
 	} catch (e: any) {
 		next(e);
 	}
@@ -158,7 +164,9 @@ app.get("/api/geolookup/", async (req: express.Request, res: express.Response, n
 
 		notifyAPIRequest("geolookup");
 
-		res.json(await getLocationFromCoords(location.latitude, location.longitude));
+		res
+			.setHeader("Cache-Control", "max-age: 604800")
+			.json(await getLocationFromCoords(location.latitude, location.longitude));
 	} catch (e: any) {
 		next(e);
 	}
@@ -169,7 +177,9 @@ app.get("/api/background/", async (_req: express.Request, res: express.Response,
 	try {
 		notifyAPIRequest("background");
 
-		res.json(await getBackground());
+		res
+			.setHeader("Cache-Control", "max-age: 300")
+			.json(await getBackground());
 	} catch (e: any) {
 		next(e);
 	}
@@ -219,7 +229,9 @@ app.get("/api/unsplash/", async (req: express.Request, res: express.Response, ne
 			return;
 		}
 
-		res.json(await getImageFromUnsplash(collection));
+		res
+			.setHeader("Cache-Control", "max-age: 300")
+			.json(await getImageFromUnsplash(collection));
 	} catch (e: any) {
 		next(e);
 	}
@@ -265,7 +277,7 @@ app.get("/api/space-flights/", async (_req: express.Request, res: express.Respon
 			link: `https://rocketlaunch.live/launch/${launch.slug}`,
 		}));
 
-		res.json(launches);
+		res.setHeader("Cache-Control", "max-age: 3600").json(launches);
 	} catch (e: any) {
 		next(e);
 	}
@@ -340,7 +352,7 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response, n
 app.get("/api/feeds/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("autocomplete:feeds");
-		res.json(autocompleteFeeds);
+		res.setHeader("Cache-Control", "max-age: 25200").json(autocompleteFeeds);
 	} catch (e: any) {
 		next(e);
 	}
@@ -349,7 +361,7 @@ app.get("/api/feeds/", async (_req: express.Request, res: express.Response, next
 app.get("/api/webcomics/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("autocomplete:webcomic");
-		res.json(autocompleteWebcomics);
+		res.setHeader("Cache-Control", "max-age: 25200").json(autocompleteWebcomics);
 	} catch (e: any) {
 		next(e);
 	}
@@ -358,7 +370,7 @@ app.get("/api/webcomics/", async (_req: express.Request, res: express.Response, 
 app.get("/api/feeds/background/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("autocomplete:feeds_background");
-		res.json(autocompleteBackgroundFeeds);
+		res.setHeader("Cache-Control", "max-age: 25200").json(autocompleteBackgroundFeeds);
 	} catch (e: any) {
 		next(e);
 	}
@@ -408,7 +420,7 @@ app.get("/api/quote-categories/", async (req: express.Request, res: express.Resp
 		notifyAPIRequest("quote-categories");
 
 		const quoteCategories = await getQuoteCategories();
-		res.json(quoteCategories);
+		res.setHeader("Cache-Control", "max-age: 3600").json(quoteCategories);
 	} catch (e: any) {
 		next(e);
 	}
@@ -446,7 +458,7 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 			res.removeHeader("expires");
 			res.append("max-age", "0");
 		}
-		res.json(quotes);
+		res.setHeader("Cache-Control", "max-age: 300").json(quotes);
 	} catch (e: any) {
 		// next(e);
 		res.removeHeader("expires");
@@ -459,7 +471,7 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 app.get("/api/currencies/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		notifyAPIRequest("currency");
-		res.json(await getCurrencies());
+		res.setHeader("Cache-Control", "max-age: 10800").json(await getCurrencies());
 	} catch (e: any) {
 		next(e);
 	}
@@ -492,7 +504,7 @@ app.get("/api/website-icons/", async (req, res: express.Response, next: (e: unkn
 			icons.find(x => x.domains.includes("github.com"))!.image_url =
 				"https://github.githubassets.com/favicons/favicon-dark.svg";
 		}
-		res.json(icons);
+		res.setHeader("Cache-Control", "max-age: 25200").json(icons);
 	} catch (e: any) {
 		next(e);
 	}
