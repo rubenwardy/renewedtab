@@ -1,6 +1,9 @@
 import fetch, { RequestInfo, RequestInit, Request, Response } from "node-fetch";
 import UserError from "./UserError";
+import { notifyUpstreamRetry } from "./metrics";
+
 export { Request, Response } from "node-fetch";
+
 
 export default async function fetchCatch(url: RequestInfo, init?: RequestInit): Promise<Response> {
 	try {
@@ -52,6 +55,9 @@ export async function fetchRetry(url: RequestInfo, init?: RequestInit): Promise<
 			}
 
 			await sleep(200);
+
+			const urlO = new URL(url.toString());
+			notifyUpstreamRetry(urlO.hostname);
 		}
 	}
 

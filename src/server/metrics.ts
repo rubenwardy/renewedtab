@@ -33,3 +33,15 @@ const upstreamCounter = new client.Counter({
 export function notifyUpstreamRequest(upstream: string) {
 	upstreamCounter.labels({ upstream }).inc();
 }
+
+
+const upstreamRetriesCounter = new client.Counter({
+	name: "renewedtab_upstream_retries",
+	help: "renewedtab_upstream_retries",
+	labelNames: [ "upstream" ],
+});
+
+
+export function notifyUpstreamRetry(upstream: string) {
+	upstreamRetriesCounter.labels({ upstream }).inc();
+}
