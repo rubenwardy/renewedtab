@@ -114,4 +114,4 @@ async function fetchCurrencies(): Promise<Record<string, CurrencyInfo>> {
 }
 
 
-export const getCurrencies = makeSingleCache(fetchCurrencies, 12*60);
+export const getCurrencies = makeSingleCache(fetchCurrencies, 24*60);
