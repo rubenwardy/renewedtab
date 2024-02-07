@@ -481,6 +481,7 @@ let icons: (TippyTopImage[] | undefined) = undefined;
 app.get("/api/website-icons/", async (req, res: express.Response, next: (e: unknown) => void) => {
 	try {
 		if (!icons) {
+			notifyUpstreamRequest(new URL(TIPPY_TOP_URL).hostname);
 			const response = await fetchCatch(new Request(TIPPY_TOP_URL), {
 				method: "GET",
 				timeout: 10000,

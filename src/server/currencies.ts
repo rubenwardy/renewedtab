@@ -3,6 +3,7 @@ import { makeSingleCache } from "./cache";
 import fetchCatch, {Request, Response} from "./http";
 import UserError from "./UserError";
 import { EXCHANGERATE_API_KEY, UA_DEFAULT } from "./config";
+import { notifyUpstreamRequest } from "./metrics";
 
 
 const shitCoins = new Set([
@@ -25,6 +26,8 @@ function checkError(response: Response, json: any) {
 async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
 	const url = new URL("http://api.exchangerate.host/list");
 	url.searchParams.set("access_key", EXCHANGERATE_API_KEY);
+
+	notifyUpstreamRequest("ExchangeRate.host");
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
@@ -63,6 +66,8 @@ async function fetchLiveValues(rates: Record<string, number>): Promise<void> {
 	url.searchParams.set("access_key", EXCHANGERATE_API_KEY);
 	url.searchParams.set("base", "USD");
 	url.searchParams.set("places", "10");
+
+	notifyUpstreamRequest("ExchangeRate.host");
 
 	// TODO: this API only returns BTC, use another API for crypto
 
@@ -109,4 +114,4 @@ async function fetchCurrencies(): Promise<Record<string, CurrencyInfo>> {
 }
 
 
-export const getCurrencies = makeSingleCache(fetchCurrencies, 120);
+export const getCurrencies = makeSingleCache(fetchCurrencies, 12*60);
