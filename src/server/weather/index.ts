@@ -231,4 +231,4 @@ async function fetchWeatherInfoByCoords(lat: number, long: number): Promise<Weat
 
 export const getWeatherInfoByCoords: (lat: number, long: number) => Promise<WeatherInfo>
 	= makeKeyCache(fetchWeatherInfoByCoords, 1 * 60,
-		(lat, long) => `${lat.toFixed(3)},${long.toFixed(3)}`)
+		(lat, long) => `${lat.toFixed(2)},${long.toFixed(2)}`)
