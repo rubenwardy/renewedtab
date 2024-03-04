@@ -91,4 +91,4 @@ export const getCoordsFromQuery: (query: string) => Promise<Location[]>
 
 export const getLocationFromCoords: (lat: number, long: number) => Promise<Location[]>
 	= makeKeyCache(fetchLocationsFromCoord, 0,
-		(lat, long) => `${lat.toFixed(3)},${long.toFixed(3)}`);
+		(lat, long) => `${lat.toFixed(2)},${long.toFixed(2)}`);

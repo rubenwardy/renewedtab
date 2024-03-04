@@ -451,8 +451,10 @@ function Weather(widget: WidgetProps<WeatherProps>) {
 			throw new UserError(messages.locationNeeded);
 		}
 
-		return fetchAPI("/weather/",
-			{lat: props.location.latitude, long: props.location.longitude})
+		return fetchAPI("/weather/", {
+			lat: props.location.latitude.toFixed(2),
+			long: props.location.longitude.toFixed(2)
+		});
 	}, [props.location, props.location?.latitude, props.location?.longitude])
 
 	if (rawInfo) {
