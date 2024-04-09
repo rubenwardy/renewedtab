@@ -141,7 +141,7 @@ async function fetchHourlyForecast(key: string): Promise<WeatherHour[]> {
 	const json = await response.json() as AccuHourlyAPI;
 	return json.map(hour => ({
 		time: dateToLocaltime(hour.DateTime),
-		temp: hour.Temperature.Value,
+		temp: hour.Temperature.Value ?? undefined,
 		icon: getLegacyIcon(hour.WeatherIcon, hour.IconPhrase),
 		precipitation: hour.PrecipitationProbability,
 	}));
@@ -177,12 +177,14 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 	return json.DailyForecasts.map(day => ({
 		dayOfWeek: dateToDayOfWeek(day.Date),
 		icon: getLegacyIcon(day.Day.Icon, day.Day.IconPhrase),
-		minTemp: day.Temperature.Minimum.Value,
-		maxTemp: day.Temperature.Maximum.Value,
+		minTemp: day.Temperature.Minimum.Value ?? undefined,
+		maxTemp: day.Temperature.Maximum.Value ?? undefined,
 		sunrise: day.Sun.Rise ? dateToLocaltime(day.Sun.Rise) : undefined,
 		sunset: day.Sun.Set ? dateToLocaltime(day.Sun.Set) : undefined,
 		precipitation: day.Day.PrecipitationProbability,
-		wind_speed: Math.round(100 * day.Day.Wind.Speed.Value / 3.6) / 100,
+		wind_speed: day.Day.Wind.Speed.Value  != null
+			? Math.round(100 * day.Day.Wind.Speed.Value / 3.6) / 100
+			: undefined,
 	}));
 }
 
@@ -200,15 +202,17 @@ async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
 	return {
 		current: {
 			icon: getLegacyIcon(current.WeatherIcon, undefined),
-			temp: current.Temperature.Metric.Value,
-			feels_like: current.RealFeelTemperature.Metric.Value,
-			pressure: current.Pressure.Metric.Value,
+			temp: current.Temperature.Metric.Value ?? undefined,
+			feels_like: current.RealFeelTemperature.Metric.Value ?? undefined,
+			pressure: current.Pressure.Metric.Value ?? undefined,
 			humidity: current.RelativeHumidity,
 			sunrise: daily[0]?.sunrise,
 			sunset: daily[0]?.sunset,
 			uvi: current.UVIndex,
 			precipitation: current.PrecipitationProbability ?? estimatedPercipitation,
-			wind_speed: Math.round(100 * current.Wind.Speed.Metric.Value / 3.6) / 100,
+			wind_speed: current.Wind.Speed.Metric.Value != null
+				? Math.round(100 * current.Wind.Speed.Metric.Value / 3.6) / 100
+				: undefined,
 		},
 
 		hourly,

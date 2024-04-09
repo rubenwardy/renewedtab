@@ -9,7 +9,7 @@ import Panel from 'app/components/Panel';
 import ErrorView from 'app/components/ErrorView';
 import { convertWeatherTemperatures, getUVRisk, Location, convertSpeed, SpeedUnit, TemperatureUnit, UVRisk, WeatherCurrent, WeatherDay, WeatherHour, WeatherInfo, getSpeedUnitSuffix } from 'common/api/weather';
 import UserError from 'app/utils/UserError';
-import { formatNumber, mergeClasses } from 'app/utils';
+import { formatInteger, mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
 import deepCopy from 'app/utils/deepcopy';
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
@@ -238,9 +238,9 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 			<div className="row row-centered">
 				<div className="col-auto"><Icon icon={day.icon} /></div>
 				<div className="col temp">
-					<span className="high">{formatNumber(day.maxTemp)}</span>
+					<span className="high">{formatInteger(day.maxTemp)}</span>
 					{" "}
-					<span className="low">{formatNumber(day.minTemp)}</span>
+					<span className="low">{formatInteger(day.minTemp)}</span>
 				</div>
 			</div>
 		</div>);
@@ -255,7 +255,7 @@ function Hour(props: WeatherHour) {
 			<div>{renderHour(props.time)}</div>
 			<div className="row row-centered">
 				<div className="col-auto"><Icon icon={props.icon} /></div>
-				<div className="col temp">{formatNumber(props.temp)}</div>
+				<div className="col temp">{formatInteger(props.temp)}</div>
 				{(props.precipitation && props.precipitation > 2) ?  (
 					<div className="col rain ml-1" title={precipitationTooltip}>
 						{props.precipitation.toFixed(0)}%
@@ -325,7 +325,7 @@ function Current(props: {
 			<div className="col h-100">
 				<div className="row row-vertical text-left h-100">
 					<FitText className="col temp">
-						{formatNumber(props.current.temp)}°
+						{formatInteger(props.current.temp)}°
 					</FitText>
 					{props.display.showFeelsLike && props.current.feels_like && (
 						<div className="col-auto">

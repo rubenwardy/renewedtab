@@ -100,8 +100,15 @@ export function relativeURLToAbsolute(url: (string | null | undefined | false), 
 }
 
 
-export function formatNumber(v: number): string {
-	if (v <= 0 && v > -0.5) {
+/**
+ * Formats a number to an integer or "-" for undefined, without doing `-0`.
+ * @param v the number
+ * @returns An integer or `-` for undefined
+ */
+export function formatInteger(v: (number | undefined)): string {
+	if (v == undefined) {
+		return "-";
+	} else if (v <= 0 && v > -0.5) {
 		return "0";
 	} else {
 		return v.toFixed(0);

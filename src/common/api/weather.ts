@@ -3,7 +3,7 @@ import { enumToValue } from "app/utils/enum";
 export interface WeatherCurrent {
 	icon?: string; // <deprecated
 
-	temp: number;
+	temp?: number;
 	feels_like?: number;
 	pressure?: number;
 	humidity?: number;
@@ -18,8 +18,8 @@ export interface WeatherCurrent {
 export interface WeatherDay {
 	dayOfWeek: number;
 	icon?: string, // <deprecated
-	minTemp: number;
-	maxTemp: number;
+	minTemp?: number;
+	maxTemp?: number;
 	sunrise?: string;
 	sunset?: string;
 	precipitation?: number;
@@ -30,7 +30,7 @@ export interface WeatherHour {
 	time: string;
 	icon?: string; // <deprecated
 	precipitation?: number;
-	temp: number;
+	temp?: number;
 }
 
 export interface WeatherInfo {
@@ -65,8 +65,10 @@ export interface Location {
 export function convertWeatherTemperatures(info: WeatherInfo, unit: TemperatureUnit): WeatherInfo {
 	unit = enumToValue(TemperatureUnit, unit);
 
-	function convert(temp: number): number {
-		if (unit == TemperatureUnit.Fahrenheit) {
+	function convert(temp: (number | undefined)): (number | undefined) {
+		if (temp == undefined) {
+			return undefined;
+		} else if (unit == TemperatureUnit.Fahrenheit) {
 			return 1.8 * temp + 32;
 		} else {
 			return temp;
@@ -78,7 +80,7 @@ export function convertWeatherTemperatures(info: WeatherInfo, unit: TemperatureU
 		current: {
 			...info.current,
 			temp: convert(info.current.temp),
-			feels_like: info.current.feels_like ? convert(info.current.feels_like) : undefined,
+			feels_like: convert(info.current.feels_like),
 		},
 		hourly: info.hourly.map(hour => ({
 			...hour,

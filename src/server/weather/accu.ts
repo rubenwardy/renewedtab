@@ -18,7 +18,7 @@ export interface AccuLocation {
 
 
 export interface AccuValue {
-	Value: number;
+	Value: (number | null | undefined);
 	Unit: string;
 	UnitType: number;
 }
@@ -74,7 +74,7 @@ export type AccuHourlyAPI = AccuHour[];
 
 export interface AccuCurrentAPI {
 	LocalObservationDateTime: string;
-    WeatherIcon: number;
+	WeatherIcon: number;
 	Temperature: { Metric: AccuValue; };
 	RealFeelTemperature: { Metric: AccuValue; };
 	Pressure: { Metric: AccuValue; };
