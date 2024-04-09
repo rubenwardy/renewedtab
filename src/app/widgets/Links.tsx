@@ -52,12 +52,6 @@ const initialProps: LinkBoxProps = {
 		},
 		{
 			id: uuid(),
-			title: "@RenewedTab on Twitter",
-			icon: "",
-			url: "https://twitter.com/RenewedTab/"
-		},
-		{
-			id: uuid(),
 			title: "Popular",
 			icon: "",
 			url: "",

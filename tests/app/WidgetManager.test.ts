@@ -5,7 +5,7 @@ import { WidgetManager } from "app/WidgetManager";
 import { expect } from "chai";
 import DummyStorage from "./DummyStorage";
 
-const NUM_LINKS = 6;
+const NUM_LINKS = 5;
 
 describe("WidgetManager::create", () => {
 	it("createsDefaultWidgets", async () => {
