@@ -30,7 +30,7 @@ export default function HostAllField(props: FieldProps<boolean>) {
 
 	const permissions: browser.permissions.Permissions = {
 		permissions: [],
-		origins: ["*://*/"],
+		origins: ["<all_urls>"],
 	};
 
 	const [needsPermission,] =

@@ -97,7 +97,7 @@ function TopSites(widget: WidgetProps<Record<string, never>>) {
 	if (typeof browser.topSites === "undefined") {
 		const permissions: browser.permissions.Permissions = {
 			permissions: ["topSites"],
-			origins: ["*://*/"],
+			origins: ["<all_urls>"],
 		};
 
 		return (

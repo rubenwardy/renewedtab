@@ -29,7 +29,7 @@ export default function BookmarksTopBar(props: { onHide: () => void }) {
 	if (typeof browser.bookmarks === "undefined") {
 		const permissions: browser.permissions.Permissions = {
 			permissions: ["bookmarks"],
-			origins: ["*://*/"],
+			origins: ["<all_urls>"],
 		};
 
 		return (
