@@ -1,11 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
 import App from "./components/App";
+import { isSentryEnabled } from "./storage";
 import "./scss/main.scss";
 import { getFeedbackURL } from "./utils/webext";
 
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+
 
 Sentry.init({
 	enabled: config.SENTRY_DSN !== undefined,
@@ -36,9 +38,7 @@ Sentry.init({
 			return null;
 		}
 
-		// Read opt-out setting from localStorage
-		// (localStorage is used because it is synchronous)
-		if (localStorage.getItem("_sentry-opt-out") == "yes") {
+		if (!isSentryEnabled()) {
 			return null;
 		}
 

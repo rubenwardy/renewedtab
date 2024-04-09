@@ -1,6 +1,4 @@
-import { useLargeStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
-import { largeStorage } from "app/storage";
 import { readBlobAsDataURL } from "app/utils/blob";
 import { ImageHandle } from "app/utils/Schema";
 import uuid from "app/utils/uuid";
@@ -8,6 +6,8 @@ import React, { useRef } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import Button from "../Button";
+import { removeImage, storeImage } from "app/storage/database";
+import { useImage } from "app/hooks";
 
 
 const messages = defineMessages({
@@ -25,14 +25,14 @@ export interface FileInfo {
 
 
 export default function ImageUploadField(props: FieldProps<ImageHandle>) {
-	const [file] = useLargeStorage<FileInfo>(props.value?.key);
+	const [image] = useImage(props.value?.key);
 	const ref = useRef<HTMLInputElement>(null);
 	const intl = useIntl();
 	const key: (string | undefined) = typeof props.value == "object" ? props.value?.key : props.value;
 
 	async function handleFile(file: File) {
 		if (key) {
-			await largeStorage.remove(key);
+			removeImage(key);
 		}
 
 		const dataSizeMB = file.size / 1024 / 1024;
@@ -46,9 +46,9 @@ export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 		const id = key ?? `image-${uuid()}`;
 		const data = await readBlobAsDataURL(file);
 
-		await largeStorage.set(id, {
+		await storeImage({
+			id, data,
 			filename: file.name,
-			data: data,
 		});
 
 		props.onChange({ key: id });
@@ -60,11 +60,11 @@ export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 				accept=".png,.jpg,image/png,image/jpeg"
 				onChange={(e) => handleFile(e.target.files![0]).catch(console.error)} />
 
-			{file &&
+			{image &&
 				<p className="text-muted">
 					<FormattedMessage
 							defaultMessage="Image: {filename}"
-							values={{ filename: file.filename }} />
+							values={{ filename: image.filename }} />
 				</p>}
 
 			<Button onClick={() => ref.current?.click()}

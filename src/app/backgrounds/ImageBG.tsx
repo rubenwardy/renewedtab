@@ -1,10 +1,9 @@
-import { FileInfo } from "app/components/forms/ImageUploadField";
 import { schemaMessages } from "app/locale/common";
-import { largeStorage } from "app/storage";
 import { ImageHandle, type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
 import { ActualBackgroundProps, BackgroundProvider } from "./common";
 import { backgroundMessages } from "./messages";
+import { getImage } from "app/storage/database";
 
 
 const messages = defineMessages({
@@ -45,7 +44,7 @@ export const ImageBG : BackgroundProvider<ImageBGProps> = {
 	async get(values: ImageBGProps): Promise<ActualBackgroundProps> {
 		const id: (string | undefined) =
 			typeof values.image == "object" ? values.image?.key : values.image;
-		const file = await largeStorage.get<FileInfo>(id ?? "");
+		const file = id ? await getImage(id) : undefined;
 
 		return {
 			...values,

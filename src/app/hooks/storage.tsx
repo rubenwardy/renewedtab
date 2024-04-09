@@ -1,8 +1,9 @@
-import { cacheStorage, IStorage, largeStorage, storage } from "app/storage";
+import { IStorage, storage } from "app/storage";
 import debounce from "app/utils/debounce";
 import { useCallback, useMemo, useState } from "react";
 import { useForceUpdate } from ".";
 import { useRunPromise } from "./promises";
+import { getImage, Image, storeImage } from "app/storage/database";
 
 
 function useStorageBacking<T>(backing: IStorage, key: string,
@@ -48,30 +49,32 @@ export function useStorage<T>(key: string,
 }
 
 
+
 /**
-* Allows retrieving and updating a value in large storage
+* Allows retrieving and updating an image
 *
 * @param {string} key - the key
-* @param {T} defaultValue - default value if storage not set
+* @param {string?} defaultValue - default value if storage not set
 * @param {any[]} dependents - A list of dependent variables for the URL.
 * @return {[value, setValue]]} - Response and error
 */
-export function useLargeStorage<T>(key: string,
-		defaultValue?: (T | null)): [T | null, (val: T) => void] {
-	return useStorageBacking(largeStorage, key, defaultValue);
-}
+export function useImage(key: string): [Image | null, (data: string, filename: string) => void] {
+	const [value, setValue] = useState<Image | null>(null);
 
+	useRunPromise<Image | null>(() => getImage(key),
+		(v) => setValue(v ?? null),
+		() => {}, [ key ]);
 
+	const update = useCallback((data: string, filename: string) => {
+		// TODO: debounce?
+		const image: Image = {
+			id: key,
+			data: data,
+			filename,
+		};
+		storeImage(image).catch(console.error);
+		setValue(image);
+	}, [key, setValue]);
 
-/**
-* Allows retrieving and updating a value in cache storage
-*
-* @param {string} key - the key
-* @param {T} defaultValue - default value if storage not set
-* @param {any[]} dependents - A list of dependent variables for the URL.
-* @return {[value, setValue]]} - Response and error
-*/
-export function useCache<T>(key: string,
-		defaultValue?: (T | null), enableDebounce?: boolean): [T | null, (val: T) => void] {
-	return useStorageBacking(cacheStorage, key, defaultValue, enableDebounce);
+	return [value, update];
 }

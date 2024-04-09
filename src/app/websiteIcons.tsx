@@ -1,13 +1,8 @@
 import { TippyTopImage } from "common/api/icons";
 import { fetchBinaryAsDataURL, fetchCheckCors, fetchAPI } from "./hooks/http";
-import { cacheStorage } from "./storage";
 import { firstPromise } from "./utils";
-
-
-interface CachedIcon {
-	url: string;
-	fetchedAt: Date;
-}
+import { getImage, storeImage } from "./storage/database";
+import { addDays } from "./utils/dates";
 
 
 function getDomain(url: string): string {
@@ -125,9 +120,9 @@ function getParentDomainIfWhitelisted(urlStr: string): string | undefined {
 
 async function fetchIcon(url: string): Promise<string | undefined> {
 	const key = "favicon-" + new URL(url).hostname;
-	const value = await cacheStorage.get<CachedIcon>(key);
+	const value = await getImage(key);
 	if (value) {
-		return value.url;
+		return value.data;
 	}
 
 	const rootURL = new URL(url);
@@ -144,9 +139,12 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 		() => fetchBinaryAsDataURL(new URL("/favicon.ico", url).toString(), validateIcon),
 	]);
 	if (data) {
-		await cacheStorage.set(key, {
-			url: data,
-			fetchedAt: new Date(),
+		const expiresAt = addDays(new Date(), 7 + Math.random());
+		await storeImage({
+			id: key,
+			filename: url,
+			data,
+			expiresAt,
 		});
 		return data;
 	}

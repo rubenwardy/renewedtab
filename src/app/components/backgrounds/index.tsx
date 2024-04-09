@@ -3,12 +3,12 @@ import { getBackgroundProvider, getSchemaForProvider } from "app/backgrounds";
 import { CacheExpiry } from "app/backgrounds/messages";
 import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
-import { clearLocalStorage } from "app/storage";
 import { enumToValue } from "app/utils/enum";
-import { fromTypedJSON, toTypedJSON } from "app/utils/TypedJSON";
+import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useMemo } from "react";
 import ActualBackground from "./ActualBackground";
 import { CreditsProps } from "./Credits";
+import { BackgroundCache, clearBackgroundCache, getBackgroundCache, storeBackgroundCache } from "app/storage/database";
 
 
 export interface BackgroundProps {
@@ -17,31 +17,14 @@ export interface BackgroundProps {
 }
 
 
-interface BackgroundCache {
-	key: string;
-	value: ActualBackgroundProps;
-	fetchedAt: Date;
-}
 
 
-function loadFromCache(key: string, provider: BackgroundProvider<any>): (BackgroundCache | undefined) {
+async function loadFromCache(key: string, provider: BackgroundProvider<any>): Promise<BackgroundCache | undefined> {
 	if (!provider.enableCaching) {
 		return undefined;
 	}
 
-	const cachedJson = window.localStorage.getItem("_bg-cache");
-	const cached: (BackgroundCache | undefined) = cachedJson ? fromTypedJSON(JSON.parse(cachedJson)) : undefined;
-	if (!cached) {
-		return undefined;
-	}
-
-	if (cached.key == key) {
-		return cached;
-	} else {
-		console.log("Clearing background cache due to changed key");
-		window.localStorage.removeItem("_bg-cache");
-		return undefined;
-	}
+	return getBackgroundCache(key);
 }
 
 
@@ -65,25 +48,11 @@ async function updateBackground<T>(key: string, provider: BackgroundProvider<T>,
 	const retval = await provider.get(values);
 	if (retval && provider.enableCaching) {
 		console.log("Filling background cache from provider");
-		const toCache: BackgroundCache = {
+		storeBackgroundCache({
 			key,
-			value: retval,
+			...retval,
 			fetchedAt: new Date(),
-		};
-
-		const json = JSON.stringify(toTypedJSON(toCache));
-		try {
-			window.localStorage.setItem("_bg-cache", json);
-		} catch (e: any) {
-			if (typeof e.toString() != "function" ||
-					!e.toString().includes("Quota") ||
-					typeof browser == "undefined") {
-				throw e;
-			}
-
-			clearLocalStorage();
-			window.localStorage.setItem("_bg-cache", json);
-		}
+		})
 	}
 	return retval;
 }
@@ -92,16 +61,16 @@ async function updateBackground<T>(key: string, provider: BackgroundProvider<T>,
 async function loadBackground(provider: BackgroundProvider<any>,
 		values: any): Promise<ActualBackgroundProps | undefined> {
 	const key = `${provider.id}:${JSON.stringify(toTypedJSON(values))}`;
-	const cache = loadFromCache(key, provider);
+	const cache = await loadFromCache(key, provider);
 	if (cache && values.cacheExpiry && isNotExpired(cache.fetchedAt, values.cacheExpiry ?? CacheExpiry.Hourly)) {
 		console.log("Setting background from cache");
-		return cache.value;
+		return cache;
 	}
 
 	if (cache) {
 		console.log("Setting background from cache, updating in the background");
 		updateBackground(key, provider, values).catch(console.error);
-		return cache.value;
+		return cache;
 	} else {
 		console.log("Setting background from provider");
 		return await updateBackground(key, provider, values);
@@ -138,7 +107,7 @@ export default function Background(props: BackgroundProps) {
 		credits.onVoted = (isPositive) => {
 			if (!isPositive) {
 				if (provider.enableCaching) {
-					window.localStorage.removeItem("_bg-cache");
+					clearBackgroundCache();
 				}
 				forceUpdate();
 			}

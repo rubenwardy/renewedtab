@@ -1,8 +1,10 @@
 import { miscMessages } from "app/locale/common";
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import LanguageSelector from "../LanguageSelector";
+import { isSentryEnabled, setSentryEnabled } from "app/storage";
+import { useForceUpdate } from "app/hooks";
 
 
 const messages = defineMessages({
@@ -28,15 +30,11 @@ export interface GeneralSettingsProps {
 
 
 export default function GeneralSettings(props: GeneralSettingsProps) {
-	const [sentryEnabled, setSentryEnabled] =
-		useState(localStorage.getItem("_sentry-opt-out") != "yes");
+	const forceUpdate = useForceUpdate();
+	const sentryEnabled = isSentryEnabled();
 	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
-		if (e.target.checked) {
-			localStorage.removeItem("_sentry-opt-out");
-		} else {
-			localStorage.setItem("_sentry-opt-out", "yes");
-		}
 		setSentryEnabled(e.target.checked);
+		forceUpdate();
 	}
 
 	const isBrowserExtension = typeof browser !== "undefined";

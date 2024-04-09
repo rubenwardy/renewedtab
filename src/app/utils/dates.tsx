@@ -82,3 +82,8 @@ export function parseDate(v: (string | undefined)): (Date | undefined) {
 	const ret = new Date(v);
 	return !isNaN(ret.getTime()) ? ret : undefined;
 }
+
+
+export function addDays(date: Date, days: number): Date {
+	return new Date(date.getTime() + days * ONE_DAY_MS);
+}

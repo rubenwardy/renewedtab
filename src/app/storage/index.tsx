@@ -116,34 +116,6 @@ class LocalStorage implements IStorage {
 }
 
 
-class DelegateStorage implements IStorage {
-	constructor(private delegate: IStorage, private prefix: string) {}
-
-	async getAll(): Promise<{ [key: string]: any; }> {
-		throw new Error("Unimplemented");
-	}
-
-	async get<T>(key: string): Promise<T | null> {
-		if (key == undefined) {
-			return null;
-		}
-		return await this.delegate.get(this.prefix + key);
-	}
-
-	async set<T>(key: string, value: T): Promise<void> {
-		await this.delegate.set(this.prefix + key, value);
-	}
-
-	async remove(key: string): Promise<void> {
-		await this.delegate.remove(this.prefix + key);
-	}
-
-	async clear(): Promise<void> {
-		await this.delegate.clear();
-	}
-}
-
-
 if (typeof browser === 'undefined' && typeof navigator !== "undefined" &&
 		navigator.storage && navigator.storage.persist) {
 	navigator.storage.persist()
@@ -156,14 +128,27 @@ if (typeof browser === 'undefined' && typeof navigator !== "undefined" &&
 export const storage : IStorage =
 	(typeof browser !== 'undefined') ? new WebExtStorage(browser.storage.local) : new LocalStorage();
 
-export const largeStorage : IStorage = new DelegateStorage(storage, "large-");
-
-export const cacheStorage : IStorage = new DelegateStorage(new LocalStorage(), "_");
 
 export function clearLocalStorage() {
 	const opt_out = window.localStorage.getItem("_sentry-opt-out");
 	window.localStorage.clear();
 	if (opt_out) {
 		window.localStorage.setItem("_sentry-opt-out", opt_out);
+	}
+}
+
+
+export function isSentryEnabled() {
+	// Read opt-out setting from localStorage
+	// (localStorage is used because it is synchronous)
+	return localStorage.getItem("_sentry-opt-out") != "yes";
+}
+
+
+export function setSentryEnabled(v: boolean) {
+	if (v) {
+		localStorage.removeItem("_sentry-opt-out");
+	} else {
+		localStorage.setItem("_sentry-opt-out", "yes");
 	}
 }
