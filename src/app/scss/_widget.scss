@@ -15,7 +15,7 @@
 		margin: 0;
 
 		z-index: 250;
-		border-radius: 0.25rem 0.25rem 0 0;
+		border-radius: var(--base-border-radius) 0.25rem 0 0;
 		transition: opacity 0.15s ease-in-out;
 		opacity: 0;
 		user-select: none;
@@ -181,7 +181,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 0.25rem;
+		border-radius: var(--base-border-radius);
 	}
 
 	.panel > a, .panel-invis > a {

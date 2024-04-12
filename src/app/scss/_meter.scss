@@ -1,7 +1,7 @@
 .meter {
 	width: 100%;
 	background: rgba(10, 10, 10, 0.2);
-	border-radius: 0.25rem;
+	border-radius: var(--base-border-radius);
 	height: 1.2rem;
 	position: relative;
 	overflow: hidden;
@@ -11,7 +11,7 @@
 	.bar {
 		display: block;
 		background-color: var(--color-primary-light);
-		border-radius: 0.25rem 0 0 0.25rem;
+		border-radius: var(--base-border-radius) 0 0 0.25rem;
 		position: absolute;
 		top: 0;
 		left: 0;

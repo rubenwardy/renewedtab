@@ -1,7 +1,7 @@
 .panel {
 	display: block;
 	background: rgba(15, 15, 15, var(--panel-opacity));
-	border-radius: 0.25rem;
+	border-radius: var(--panel-border-radius);
 	box-shadow: 0px 4px 12px 0 HSL(243deg 62% 18% / 20%), 0px 2px 6px 0 HSL(243deg 62% 18% / 15%);
 	padding: 0;
 	transition: background-color 0.15s ease-in-out, drop-shadow 0.15s ease-in-out;

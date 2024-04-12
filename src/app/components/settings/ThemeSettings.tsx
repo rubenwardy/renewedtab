@@ -24,6 +24,26 @@ const messages = defineMessages({
 		description: "Theme settings: form field hint (Font)",
 	},
 
+	baseBorderRadius: {
+		defaultMessage: "Border Radius",
+		description: "Theme settings: form field label",
+	},
+
+	baseBorderRadiusHint: {
+		defaultMessage: "How rounded should the edges of most things be? From 0% to 300%",
+		description: "Theme settings: form field hint (Border Radius)",
+	},
+
+	panelBorderRadius: {
+		defaultMessage: "Panel Border Radius",
+		description: "Theme settings: form field label",
+	},
+
+	panelBorderRadiusHint: {
+		defaultMessage: "How rounded should the edges of panels (eg: widgets) be? From 0% to 1000%",
+		description: "Theme settings: form field hint (Border Radius)",
+	},
+
 	panelBlurRadius: {
 		defaultMessage: "Panel Blur Radius",
 		description: "Theme settings: form field label",
@@ -64,6 +84,8 @@ const messages = defineMessages({
 export interface ThemeConfig {
 	fontFamily?: string;
 	fontScaling?: number;
+	baseBorderRadius?: number;
+	panelBorderRadius?: number;
 	panelBlurRadius?: number;
 	panelOpacity?: number;
 	colorPrimaryPair?: ColorPair;
@@ -73,6 +95,8 @@ export interface ThemeConfig {
 const defaults: ThemeConfig = {
 	fontFamily: "Roboto",
 	fontScaling: 100,
+	baseBorderRadius: 100,
+	panelBorderRadius: 100,
 	panelBlurRadius: 12,
 	panelOpacity: 50,
 	colorPrimaryPair: { one: "#007DB8", two: "#67cee5" },
@@ -119,24 +143,16 @@ function getThemeSchema(): Schema<ThemeConfig> {
 	const supportsBackdropFilter =
 		CSS.supports("backdrop-filter: brightness(70%) contrast(110%) saturate(140%) blur(12px)");
 
-	if (supportsBackdropFilter) {
-		return {
-			fontFamily: type.string(messages.font, messages.fontHint),
-			fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
-			panelBlurRadius: type.unit_number(messages.panelBlurRadius, "px", undefined, 0),
-			panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
-			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
-			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
-		};
-	} else {
-		return {
-			fontFamily: type.string(messages.font, messages.fontHint),
-			fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
-			panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
-			colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
-			customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
-		};
-	}
+	return {
+		fontFamily: type.string(messages.font, messages.fontHint),
+		fontScaling: type.unit_number(schemaMessages.fontScaling, "%", undefined, 80, 200),
+		baseBorderRadius: type.unit_number(messages.baseBorderRadius, "%", messages.baseBorderRadiusHint, 0, 300),
+		panelBorderRadius: type.unit_number(messages.panelBorderRadius, "%", messages.panelBorderRadiusHint, 0, 1000),
+		panelBlurRadius: supportsBackdropFilter ? type.unit_number(messages.panelBlurRadius, "px", undefined, 0) : undefined,
+		panelOpacity: type.unit_number(messages.panelOpacity, "%", undefined, 0, 100),
+		colorPrimaryPair: type.colorPair(messages.colorPrimary, messages.colorPrimaryHint),
+		customCSS: type.textarea(messages.customCSS, messages.customCSSHint),
+	};
 }
 
 
@@ -151,6 +167,8 @@ export function applyTheme(theme: ThemeConfig) {
 	const style = document.documentElement.style;
 	style.setProperty("--font-family", theme.fontFamily!);
 	style.setProperty("--font-size", `${fontScaling}%`);
+	style.setProperty("--base-border-radius", `${(theme.baseBorderRadius ?? 100) * 0.25 / 100}rem`);
+	style.setProperty("--panel-border-radius", `${(theme.panelBorderRadius ?? 100) * 0.25 / 100}rem`);
 	style.setProperty("--panel-blur", `${theme.panelBlurRadius}px`);
 	style.setProperty("--panel-opacity", `${theme.panelOpacity}%`);
 	style.setProperty("--color-primary-dark", colorPrimaryDark.hex);
