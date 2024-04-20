@@ -76,6 +76,10 @@ export class WidgetManager {
 		return widget;
 	}
 
+	findWidgetByType<T>(type: string): (Widget<T> | undefined) {
+		return this.widgets.find(x => x.type == type) as (Widget<T> | undefined);
+	}
+
 	removeWidget(id: number) {
 		let i = this.widgets.length;
 		while (i--) {

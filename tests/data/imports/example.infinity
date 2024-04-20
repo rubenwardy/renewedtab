@@ -1,0 +1,63 @@
+{
+    "version": "v2",
+    "data": {
+        "site": {
+            "sites": [
+                [
+                    {
+                        "uuid": "example1",
+                        "name": "Example 1",
+                        "target": "https://example.com/abc/",
+                        "bgImage": "https://example.com/icon.png",
+                        "bgType": "image",
+                        "type": "web",
+                        "id": "siteId-example1",
+                        "updatetime": 0
+                    },
+
+                    {
+                        "name": "Folder",
+                        "uuid": "folder-1",
+                        "children": [
+                            {
+                                "uuid": "example2",
+                                "name": "Example 2",
+                                "target": "https://example.com/def/",
+                                "bgImage": "https://example.com/icon.png",
+                                "bgType": "image",
+                                "type": "web",
+                                "id": "siteId-example2",
+                                "updatetime": 0
+                            }
+                        ],
+                        "id": "siteId-folder-1",
+                        "updatetime": 0
+                    }
+                ],
+                [
+                    {
+                        "uuid": "example3",
+                        "name": "Example 3",
+                        "target": "https://example.com/ghi/",
+                        "bgImage": "https://example.com/icon.png",
+                        "bgType": "image",
+                        "type": "web",
+                        "id": "siteId-example3",
+                        "updatetime": 0
+                    }
+                ]
+            ]
+        },
+        "todo": {
+            "todoList": [
+                {
+                    "text": "A to do list item",
+                    "todoId": "todo-1",
+                    "time": 1713610113000,
+                    "updatetime": 0,
+                    "done": false
+                }
+            ]
+        }
+    }
+}
