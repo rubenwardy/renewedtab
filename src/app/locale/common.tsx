@@ -232,4 +232,8 @@ export const miscMessages = defineMessages({
 	duplicate: {
 		defaultMessage: "Duplicate",
 	},
+
+	importsMayContainAffiliates: {
+		defaultMessage: "Warning: Links imported from external sources may contain affiliate links. To ensure privacy, you should replace these with direct links."
+	}
 });
