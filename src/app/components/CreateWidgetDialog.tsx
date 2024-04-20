@@ -2,21 +2,21 @@ import { miscMessages } from "app/locale/common";
 import { queryMatchesAny } from "app/utils";
 import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { WidgetManager } from "../WidgetManager";
 import { WidgetTypes } from "../widgets";
 import Modal from "./Modal";
+import { useWidgetManager } from "app/hooks/widgetManagerContext";
 
 interface CreateWidgetDialogProps {
 	onClose: () => void;
-	manager: WidgetManager;
 }
 
 export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	const intl = useIntl();
 	const [query, setQuery] = useState("");
+	const widgetManager = useWidgetManager();
 
 	function select(key: string) {
-		props.manager.createWidget(key);
+		widgetManager.createWidget(key);
 		props.onClose();
 	}
 

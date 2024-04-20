@@ -1,5 +1,4 @@
 import { miscMessages } from "app/locale/common";
-import { WidgetManager } from "app/WidgetManager";
 import React from "react";
 import { useIntl } from "react-intl";
 import Carousel from "../Carousel";
@@ -13,7 +12,6 @@ interface OnboardingProps {
 
 	locale: string;
 	setLocale: (locale: string) => void;
-	manager: WidgetManager;
 }
 
 export interface OnboardingPageProps {
@@ -21,7 +19,6 @@ export interface OnboardingPageProps {
 
 	locale: string;
 	setLocale: (locale: string) => void;
-	manager: WidgetManager;
 }
 
 

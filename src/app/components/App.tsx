@@ -17,6 +17,7 @@ import { GlobalSearchContext } from "app/hooks/globalSearch";
 import BookmarksTopBar from "./BookmarksTopBar";
 import Button, { ButtonVariant } from "./Button";
 import { miscMessages } from "app/locale/common";
+import { WidgetManagerContext } from "app/hooks/widgetManagerContext";
 
 
 const messages = defineMessages({
@@ -87,79 +88,79 @@ export default function App() {
 
 	return (
 		<IntlProvider locale={(localeMessages && locale) ? locale : "en"} defaultLocale="en" messages={localeMessages ?? undefined}>
-			<GlobalSearchContext.Provider value={{ query, setQuery }}>
-				<Title />
-				<main className={classes.join(" ")}>
-					{showBookmarksBar && !onboardingIsOpen &&
-						typeof browser !== "undefined" && (
-						<BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />)}
-					<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
-						<Background background={background} setWidgetsHidden={setWidgetsHidden} />
-					</Sentry.ErrorBoundary>
-					{createIsOpen && (<CreateWidgetDialog
-						manager={widgetManager}
-						onClose={() => setCreateOpen(false)} />)}
-					{gridSettings && (
-						<SettingsDialog
-							isOpen={settingsIsOpen}
-							onClose={() => setSettingsOpen(false)}
-							background={background} setBackground={setBackground}
-							theme={theme} setTheme={setTheme}
-							locale={locale ?? "en"} setLocale={setLocale}
-							showBookmarksBar={showBookmarksBar ?? false} setShowBookmarksBar={setShowBookmarksBar}
-							grid={gridSettings} setGrid={setGridSettings} />)}
+			<WidgetManagerContext.Provider value={widgetManager}>
+				<GlobalSearchContext.Provider value={{ query, setQuery }}>
+					<Title />
+					<main className={classes.join(" ")}>
+						{showBookmarksBar && !onboardingIsOpen &&
+							typeof browser !== "undefined" && (
+							<BookmarksTopBar onHide={() => setShowBookmarksBar(false)} />)}
+						<Sentry.ErrorBoundary fallback={<div id="background"></div>}>
+							<Background background={background} setWidgetsHidden={setWidgetsHidden} />
+						</Sentry.ErrorBoundary>
+						{createIsOpen && (
+							<CreateWidgetDialog onClose={() => setCreateOpen(false)} />)}
+						{gridSettings && (
+							<SettingsDialog
+								isOpen={settingsIsOpen}
+								onClose={() => setSettingsOpen(false)}
+								background={background} setBackground={setBackground}
+								theme={theme} setTheme={setTheme}
+								locale={locale ?? "en"} setLocale={setLocale}
+								showBookmarksBar={showBookmarksBar ?? false} setShowBookmarksBar={setShowBookmarksBar}
+								grid={gridSettings} setGrid={setGridSettings} />)}
 
-					{loaded && gridSettings &&
-						<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
-					{onboardingIsOpen && (
-						<Onboarding
-							onClose={() => setOnboardingIsOpen(false)}
-							locale={locale ?? "en"} setLocale={setLocale}
-							manager={widgetManager} />)}
-					<ReviewRequester />
+						{loaded && gridSettings &&
+							<WidgetGrid {...gridSettings} wm={widgetManager} isLocked={isLocked ?? false} />}
+						{onboardingIsOpen && (
+							<Onboarding
+								onClose={() => setOnboardingIsOpen(false)}
+								locale={locale ?? "en"} setLocale={setLocale} />)}
+						<ReviewRequester />
 
-					{isLocked && !onboardingIsOpen && (
-						<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
-							tabIndex={0} variant={ButtonVariant.None}
-							data-cy="start-editing"
-							className="text-shadow" icon="fas fa-pen"
-							title={messages.unlockWidgets} />)}
+						{isLocked && !onboardingIsOpen && (
+							<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
+								tabIndex={0} variant={ButtonVariant.None}
+								data-cy="start-editing"
+								className="text-shadow" icon="fas fa-pen"
+								title={messages.unlockWidgets} />)}
 
-					{!isLocked && (
-						<aside className="edit-bar" role="toolbar" data-cy="edit-bar">
-							<Button href="https://renewedtab.com/help/"
-								variant={ButtonVariant.Secondary}
-								icon="fa fa-question" small={true}
-								target="_blank"
-								label={defineMessage({
-									defaultMessage: "Help",
-								})} />
+						{!isLocked && (
+							<aside className="edit-bar" role="toolbar" data-cy="edit-bar">
+								<Button href="https://renewedtab.com/help/"
+									variant={ButtonVariant.Secondary}
+									icon="fa fa-question" small={true}
+									target="_blank"
+									label={defineMessage({
+										defaultMessage: "Help",
+									})} />
 
-							<div className="col" />
+								<div className="col" />
 
-							<Button onClick={() => setCreateOpen(true)}
-								variant={ButtonVariant.Secondary}
-								icon="fa fa-plus" small={true}
-								id="add-widget"
-								label={defineMessage({
-									defaultMessage: "Add Widget",
-								})} />
+								<Button onClick={() => setCreateOpen(true)}
+									variant={ButtonVariant.Secondary}
+									icon="fa fa-plus" small={true}
+									id="add-widget"
+									label={defineMessage({
+										defaultMessage: "Add Widget",
+									})} />
 
-							<Button onClick={() => setSettingsOpen(true)}
-								variant={ButtonVariant.Secondary}
-								icon="fa fa-cog" small={true}
-								id="open-settings"
-								label={defineMessage({
-									defaultMessage: "Settings",
-								})} />
+								<Button onClick={() => setSettingsOpen(true)}
+									variant={ButtonVariant.Secondary}
+									icon="fa fa-cog" small={true}
+									id="open-settings"
+									label={defineMessage({
+										defaultMessage: "Settings",
+									})} />
 
-							<Button onClick={() => setIsLocked(true)}
-								variant={ButtonVariant.Secondary}
-								icon="fa fa-check" small={true}
-								data-cy="finish-editing"
-								label={miscMessages.finishEditing} />
-						</aside>)}
-				</main>
-			</GlobalSearchContext.Provider>
+								<Button onClick={() => setIsLocked(true)}
+									variant={ButtonVariant.Secondary}
+									icon="fa fa-check" small={true}
+									data-cy="finish-editing"
+									label={miscMessages.finishEditing} />
+							</aside>)}
+					</main>
+				</GlobalSearchContext.Provider>
+			</WidgetManagerContext.Provider>
 		</IntlProvider>);
 }

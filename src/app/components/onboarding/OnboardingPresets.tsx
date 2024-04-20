@@ -4,6 +4,7 @@ import { defineMessage, FormattedMessage, MessageDescriptor } from "react-intl";
 import { OnboardingPageProps } from ".";
 import { ButtonVariant } from "../Button";
 import ImportButton from "../ImportButton";
+import { useWidgetManager } from "app/hooks/widgetManagerContext";
 
 
 interface Preset {
@@ -81,8 +82,10 @@ export const presets: Preset[] = [
 
 
 export default function OnboardingPresets(props: OnboardingPageProps) {
+	const widgetManager = useWidgetManager();
+
 	function applyPreset(preset: Preset) {
-		props.manager.createFromArray(preset.widgets);
+		widgetManager.createFromArray(preset.widgets);
 		props.onDone();
 	}
 
@@ -112,7 +115,8 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 				<FormattedMessage
 					defaultMessage="Alternatively: <import></import>"
 					values={{
-						import: () => <ImportButton small={true} variant={ButtonVariant.Secondary} />,
+						import: () =>
+							<ImportButton small={true} variant={ButtonVariant.Secondary} />,
 					}} />
 			</p>
 		</div>);
