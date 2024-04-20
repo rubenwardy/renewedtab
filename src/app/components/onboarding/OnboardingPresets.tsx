@@ -81,6 +81,9 @@ export const presets: Preset[] = [
 ];
 
 
+export const gridPreset = presets[1];
+
+
 export default function OnboardingPresets(props: OnboardingPageProps) {
 	const widgetManager = useWidgetManager();
 

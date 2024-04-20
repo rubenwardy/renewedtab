@@ -2,13 +2,64 @@ import { storage } from "app/storage";
 import React, { useRef } from "react";
 import Button, { ButtonProps } from "./Button";
 import { miscMessages } from "app/locale/common";
+import { parseInfinity } from "app/utils/imports";
+import { WidgetManager } from "app/WidgetManager";
+import { useWidgetManager } from "app/hooks/widgetManagerContext";
+import { gridPreset } from "./onboarding/OnboardingPresets";
+import { LinkBoxProps } from "./LinkBox";
+import { TodoListProps } from "app/widgets/TodoList";
 
 
-async function handleImport(file: File) {
-	const json = new TextDecoder("utf-8").decode(await file.arrayBuffer());
-	const data = JSON.parse(json);
-	for (const [key, value] of Object.entries(data)) {
-		await storage.set(key, value);
+async function handleImport(widgetManager: WidgetManager, file: File) {
+	const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
+	const json = JSON.parse(text);
+	if (file.name.endsWith(".infinity")) {
+		try {
+			const data = parseInfinity(json);
+			console.log(data);
+			if (widgetManager.widgets.length == 0) {
+				widgetManager.createFromArray(gridPreset.widgets);
+				widgetManager.findWidgetByType<LinkBoxProps>("Links")!.props.links = [];
+			}
+
+			if (data.links.length > 0) {
+				let widget = widgetManager.findWidgetByType<LinkBoxProps>("Links");
+				if (widget == undefined) {
+					widget = widgetManager.createWidget("Links");
+					widget.props.links = [];
+				}
+
+				const added = new Set();
+				widget.props.links.forEach(link => added.add(link.url));
+
+				widget.props.links = [
+					...widget.props.links,
+					...data.links.filter(link => !added.has(link.url)),
+				];
+			}
+
+			if (data.todo.length > 0) {
+				let widget = widgetManager.findWidgetByType<TodoListProps>("TodoList");
+				if (widget == undefined) {
+					widget = widgetManager.createWidget("TodoList");
+					widget.props.list = [];
+				}
+
+				widget.props.list = [
+					...widget.props.list,
+					...data.todo,
+				];
+			}
+
+			widgetManager.save();
+		} catch (e) {
+			alert(e);
+			return;
+		}
+	} else {
+		for (const [key, value] of Object.entries(json)) {
+			await storage.set(key, value);
+		}
 	}
 
 	location.reload();
@@ -17,10 +68,11 @@ async function handleImport(file: File) {
 
 export default function ImportButton(props: Partial<ButtonProps>) {
 	const ref = useRef<HTMLInputElement>(null);
+	const widgetManager = useWidgetManager();
 	return (<>
 		<input ref={ref} type="file" className="display-none"
-			accept=".json,application/json" name="import-file"
-			onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
+			accept=".json,application/json,.infinity" name="import-file"
+			onChange={(e) => handleImport(widgetManager, e.target.files![0]).catch(console.error)} />
 		<Button id="import" onClick={() => ref.current?.click()} label={miscMessages.import} {...props} />
 	</>);
 }

@@ -35,13 +35,14 @@ const messages = defineMessages({
 });
 
 
-interface TodoItemData {
+export interface TodoItemData {
 	id: string;
 	text: string;
 	completed: boolean;
 }
 
-interface TodoListProps {
+
+export interface TodoListProps {
 	list: TodoItemData[];
 }
 
