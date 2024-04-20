@@ -7,7 +7,7 @@ import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetEditComponentProps, WidgetProps, WidgetType } from 'app/Widget';
 import React, { useCallback, useMemo, useRef } from 'react';
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 
 
 const messages = defineMessages({
@@ -45,6 +45,7 @@ function encode(str: string) {
 
 
 function LinksImportExport(widget: WidgetEditComponentProps<LinkBoxProps>) {
+	const intl = useIntl();
 	const handleImport = useCallback(async (file: File) => {
 		try {
 			const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
@@ -57,6 +58,10 @@ function LinksImportExport(widget: WidgetEditComponentProps<LinkBoxProps>) {
 				}
 
 				links = parseInfinity(json).links;
+
+				if (links.length > 0) {
+					alert(intl.formatMessage(miscMessages.importsMayContainAffiliates));
+				}
 			} else if (file.name.endsWith(".json")) {
 				const json = JSON.parse(text);
 				if (!json) {
@@ -81,7 +86,7 @@ function LinksImportExport(widget: WidgetEditComponentProps<LinkBoxProps>) {
 			alert(e);
 			return;
 		}
-	}, [widget]);
+	}, [widget, intl]);
 
 	const exportData = useMemo(() => {
 		return `data:application/json;base64,${encode(JSON.stringify(widget.props.links))}`

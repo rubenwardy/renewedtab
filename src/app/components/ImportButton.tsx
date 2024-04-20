@@ -8,15 +8,15 @@ import { useWidgetManager } from "app/hooks/widgetManagerContext";
 import { gridPreset } from "./onboarding/OnboardingPresets";
 import { LinkBoxProps } from "./LinkBox";
 import { TodoListProps } from "app/widgets/TodoList";
+import { IntlShape, useIntl } from "react-intl";
 
 
-async function handleImport(widgetManager: WidgetManager, file: File) {
+async function handleImport(intl: IntlShape, widgetManager: WidgetManager, file: File) {
 	const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
 	const json = JSON.parse(text);
 	if (file.name.endsWith(".infinity")) {
 		try {
 			const data = parseInfinity(json);
-			console.log(data);
 			if (widgetManager.widgets.length == 0) {
 				widgetManager.createFromArray(gridPreset.widgets);
 				widgetManager.findWidgetByType<LinkBoxProps>("Links")!.props.links = [];
@@ -36,6 +36,8 @@ async function handleImport(widgetManager: WidgetManager, file: File) {
 					...widget.props.links,
 					...data.links.filter(link => !added.has(link.url)),
 				];
+
+				alert(intl.formatMessage(miscMessages.importsMayContainAffiliates));
 			}
 
 			if (data.todo.length > 0) {
@@ -68,11 +70,12 @@ async function handleImport(widgetManager: WidgetManager, file: File) {
 
 export default function ImportButton(props: Partial<ButtonProps>) {
 	const ref = useRef<HTMLInputElement>(null);
+	const intl = useIntl();
 	const widgetManager = useWidgetManager();
 	return (<>
 		<input ref={ref} type="file" className="display-none"
 			accept=".json,application/json,.infinity" name="import-file"
-			onChange={(e) => handleImport(widgetManager, e.target.files![0]).catch(console.error)} />
+			onChange={(e) => handleImport(intl, widgetManager, e.target.files![0]).catch(console.error)} />
 		<Button id="import" onClick={() => ref.current?.click()} label={miscMessages.import} {...props} />
 	</>);
 }
