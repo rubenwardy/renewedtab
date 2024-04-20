@@ -1,11 +1,13 @@
-import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema } from 'app/components/LinkBox';
+import Button, { ButtonVariant } from 'app/components/Button';
+import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema, Link } from 'app/components/LinkBox';
 import { miscMessages, schemaMessages } from 'app/locale/common';
+import { parseInfinity, parseLinksJson } from 'app/utils/imports';
 import { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
-import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetProps, WidgetType } from 'app/Widget';
-import React from 'react';
-import { defineMessages } from 'react-intl';
+import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetEditComponentProps, WidgetProps, WidgetType } from 'app/Widget';
+import React, { useCallback, useMemo, useRef } from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
 
 const messages = defineMessages({
@@ -33,6 +35,77 @@ const messages = defineMessages({
 
 function Links(widget: WidgetProps<LinkBoxProps>)  {
 	return (<LinkBox {...widget.props} widgetTheme={widget.theme} />);
+}
+
+
+function encode(str: string) {
+	// Escapes needed to fix `#` in data.
+	return btoa(unescape(encodeURIComponent(str)));
+}
+
+
+function LinksImportExport(widget: WidgetEditComponentProps<LinkBoxProps>) {
+	const handleImport = useCallback(async (file: File) => {
+		try {
+			const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
+
+			let links: Link[] = [];
+			if (file.name.endsWith(".infinity")) {
+				const json = JSON.parse(text);
+				if (!json) {
+					return;
+				}
+
+				links = parseInfinity(json).links;
+			} else if (file.name.endsWith(".json")) {
+				const json = JSON.parse(text);
+				if (!json) {
+					return;
+				}
+
+				links = parseLinksJson(json);
+			} else {
+				alert("Unknown " + file.name);
+				return;
+			}
+
+			const added = new Set();
+			widget.props.links.forEach(link => added.add(link.url));
+
+			widget.props.links = [
+				...widget.props.links,
+				...links.filter(link => !added.has(link.url)),
+			];
+			widget.onChange();
+		} catch (e) {
+			alert(e);
+			return;
+		}
+	}, [widget]);
+
+	const exportData = useMemo(() => {
+		return `data:application/json;base64,${encode(JSON.stringify(widget.props.links))}`
+	}, [widget.props.links]);
+
+	const ref = useRef<HTMLInputElement>(null);
+	return (
+		<div className="buttons row-centered mb-4">
+			<p className="col my-0 text-muted">
+				<FormattedMessage {...miscMessages.globalSearchEditHint} />
+			</p>
+			<input ref={ref} type="file" className="display-none"
+				accept="application/json,.json,.infinity" name="import-file"
+				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
+			<Button id="import"
+				variant={ButtonVariant.Secondary}
+				onClick={() => ref.current?.click()}
+				label={miscMessages.import} />
+			<Button id="export" data-cy="export-links"
+				variant={ButtonVariant.Secondary}
+				href={exportData}
+				download="renewedtab-links.json"
+				label={miscMessages.export} />
+		</div>);
 }
 
 
@@ -76,7 +149,7 @@ const widget: WidgetType<LinkBoxProps> = {
 	Component: Links,
 	title: messages.title,
 	description: messages.description,
-	editHint: miscMessages.globalSearchEditHint,
+	editHeaderComponent: LinksImportExport,
 	defaultSize: new Vector2(5, 5),
 	initialProps: initialProps,
 	themeSchema: defaultLinksThemeSchema,
