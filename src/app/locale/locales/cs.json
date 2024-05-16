@@ -6,5 +6,29 @@
     "+TYXj6": {
         "message": "Dnes, {time}",
         "description": "SpaceFlights widget: today and time"
+    },
+    "/Mx09O": {
+        "message": "Experimentální. Toto nefunguje se všemi zdroji zdrojů kvůli chybějícím informacím o obrázku. Obrázky mohou být také velké a jejich načítání může chvíli trvat.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "/aA+Xf": {
+        "message": "Zobrazit obrázky",
+        "description": "Feed widget: form field label"
+    },
+    "+oSH/F": {
+        "message": "Uvádí svůj aktuální věk s příliš velkou přesností",
+        "description": "Age widget description"
+    },
+    "+GMx80": {
+        "message": "Nebyly nalezeny žádné lokace",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Čeština",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "+g7L/A": {
+        "message": "Zobrazuje zdroje Atom, JSONFeed a RSS – užitečné pro sledování zpráv, webů a blogů",
+        "description": "Feed widget description"
     }
 }
