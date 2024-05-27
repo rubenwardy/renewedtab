@@ -163,7 +163,7 @@
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "3UG6ds": {
-        "message": "Ieškok valdiklių arba internete naudojant mėgstamą paieškos variklį",
+        "message": "Ieškok valdiklių arba internete naudojant mėgstamą paieškos variklį.",
         "description": "Search widget description"
     },
     "4cMia7": {
@@ -199,7 +199,7 @@
         "description": "Theme settings: form field label"
     },
     "9+2gJZ": {
-        "message": "Šiam valdikliui reikalinga naršyklės plėtinio versija."
+        "message": "Šiam valdikliui privaloma naršyklės plėtinio versija."
     },
     "ATbgo4": {
         "message": "Radialinis",
@@ -749,7 +749,7 @@
         "description": "General settings: enable sentry"
     },
     "b2Rs2F": {
-        "message": "Keisti skaisčių vaizdų ryškumą",
+        "message": "Keisk šviesesnių vaizdų ryškumą.",
         "description": "Backgroud settings: form field label (Brightness: Light)"
     },
     "bQFsdR": {
@@ -855,7 +855,7 @@
         "description": "Web Comic widget description"
     },
     "hUIQ7h": {
-        "message": "Skaistis",
+        "message": "Ryškumas",
         "description": "Backgroud settings: form field label"
     },
     "hktZIl": {
@@ -928,5 +928,197 @@
     "hWimZf": {
         "message": "Įjungti valdiklio paiešką",
         "description": "Search widget: form field label, enable filtering widgets"
+    },
+    "o9vGxx": {
+        "message": "Atidaryti nuorodas naujame skirtuke",
+        "description": "Form field label"
+    },
+    "oPO8GY": {
+        "message": "Trūksta kalendoriaus URL adresas. Redaguok šį valdiklį, kad jį pridėtum."
+    },
+    "pG7wIz": {
+        "message": "Rodo valiutų kursus, palaiko „Forex“ valiutas ir kriptovaliutas (BitCoin ir kt.).",
+        "description": "Currencies widget description"
+    },
+    "pWdLkT": {
+        "message": "Perskaityk <a>vadovėlį</a>. Gali naudoti bet kurį debesų kalendorių, palaikantį iCal, įskaitant „Google“ kalendorių ir „Outlook“.",
+        "description": "CalendarSchedule widget: edit hint"
+    },
+    "n0cZ3b": {
+        "message": "Veikia {host}.",
+        "description": "Credit to a website"
+    },
+    "nF7bWj": {
+        "message": "ISO ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "nGSwtl": {
+        "message": "Paieška",
+        "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
+    },
+    "nHw5cV": {
+        "message": "Spustelėk elementus, jei nori juos redaguoti.",
+        "description": "Todo List widget: edit modal hint"
+    },
+    "nlnYxI": {
+        "message": "Didžiausias dienų skaičius",
+        "description": "CalendarSchedule widget: form field label"
+    },
+    "nnaWVi": {
+        "message": "Celsijus",
+        "description": "Weather widget: Celsius unit"
+    },
+    "o2uuHu": {
+        "message": "12 valandų laikrodis"
+    },
+    "oBl48o": {
+        "message": "Ar tikrai nori iš naujo nustatyti visus duomenis?",
+        "description": "Import / export settings, reset confirmation"
+    },
+    "oDog89": {
+        "message": "Redaguojamas teksto sritis užrašoms",
+        "description": "Notes widget description"
+    },
+    "oGS5TE": {
+        "message": "Laba diena, {name}",
+        "description": "Greeting widget: greeting, from noon to 4pm"
+    },
+    "oJnbwn": {
+        "message": "vardas",
+        "description": "Greeting widget: name prompt"
+    },
+    "oRui+E": {
+        "message": "Mėgaujasi „Renewed Tab“? Apsvarstyk galimybę paaukoti lėšų, kad padėtum padengti išlaidas ir palaikyti jo kūrimą."
+    },
+    "ofl4Ui": {
+        "message": "Paieška",
+        "description": "Location form field: search"
+    },
+    "olBVPS": {
+        "message": "Eksportuoti",
+        "description": "Import / export settings, export"
+    },
+    "or/+Da": {
+        "message": "Stilius",
+        "description": "Subheading for per-widget styling properties"
+    },
+    "p8GKKf": {
+        "message": "Populiariausios svetainės",
+        "description": "Top Sites Widget"
+    },
+    "ku7Ot7": {
+        "message": "Ryškumas: šviesi",
+        "description": "Backgroud settings: form field label"
+    },
+    "mSg5KK": {
+        "message": "Ryškumas: tamsi",
+        "description": "Backgroud settings: form field label"
+    },
+    "ilIuh2": {
+        "message": "Ar tai naudinga? Apsvarstyk galimybę <a>paaukoti</a> lėšų, kad padengtum orų API išlaidas ir palaikytum būsimą „Renewed Tab“ kūrimą.",
+        "description": "Weather widget: asking for donations"
+    },
+    "irdBm2": {
+        "message": "Tema",
+        "description": "Settings tab"
+    },
+    "j0VHNa": {
+        "message": "Suteik leidimą pasiekti žymes ir gauti piktogramas iš svetainių"
+    },
+    "jGWq1h": {
+        "message": "Laiko juosta"
+    },
+    "jSHZmX": {
+        "message": "Sek darbų sąrašo elementus.",
+        "description": "Todo List widget: description"
+    },
+    "kAEQyV": {
+        "message": "Gerai"
+    },
+    "kF06lD": {
+        "message": "Išplėstinis ({example})",
+        "description": "Clock widget: date style type"
+    },
+    "ktmuOE": {
+        "message": "Palik tuščią, jei nori naudoti kanalo pavadinimą",
+        "description": "Feed widget: form field hint (Title)"
+    },
+    "kueLs9": {
+        "message": "Nuorodai",
+        "description": "Links widget: form field label"
+    },
+    "l8+Uwz": {
+        "message": "Nėra ką redaguoti.",
+        "description": "Form has no fields"
+    },
+    "lQIN1l": {
+        "message": "Ar tau patinka „Renewed Tab“? Parašyk mums apžvalgą!"
+    },
+    "lUdRdE": {
+        "message": "Klaida: {msg}"
+    },
+    "lY73np": {
+        "message": "Rodyti skydelio foną",
+        "description": "Widget styling, checkbox"
+    },
+    "lYJGY5": {
+        "message": "Vaizdo URL adresas",
+        "description": "Image URL background mode"
+    },
+    "languageName": {
+        "message": "lietuvių",
+        "description": "The name of the current language, to be used in the settings dialog"
+    },
+    "lkJAu6": {
+        "message": "„Unsplash“",
+        "description": "Unsplash background mode"
+    },
+    "mL3MOs": {
+        "message": "Mylios per valandą (mph)",
+        "description": "Weather widget: Speed unit"
+    },
+    "mv9TrH": {
+        "message": "HTML",
+        "description": "HTML Widget"
+    },
+    "mw6Uh+": {
+        "message": "Rodyti kasdienę prognozę",
+        "description": "Weather widget: form field label"
+    },
+    "n+w6I2": {
+        "message": "Sustoti",
+        "description": "Form field label. Gradient stop (%)"
+    },
+    "pHo6u+": {
+        "message": "Nerasta jokių vaizdų kanale.",
+        "description": "Web Comic widget: no images found error"
+    },
+    "pVrtrA": {
+        "message": "Naudok pasirinktinį vaizdą.",
+        "description": "Backgroud mode description"
+    },
+    "pbEMNj": {
+        "message": "Ankstesnis",
+        "description": "Onboarding page: previous button"
+    },
+    "qEk9AJ": {
+        "message": "Keisk tamsesnių vaizdų ryškumą.",
+        "description": "Backgroud settings: form field label (Brightness: Dark)"
+    },
+    "q4caWd": {
+        "message": "Neryškumo spindulys",
+        "description": "Backgroud settings: form field label"
+    },
+    "q6/aVX": {
+        "message": "Šį valdiklį gali filtruoti naudojant Paieškos valdiklį.",
+        "description": "Edit hint shown on searchable widgets"
+    },
+    "qCsSqt": {
+        "message": "Skydo fono tamsumas",
+        "description": "Theme settings: form field label"
+    },
+    "lwUV0r": {
+        "message": "Tikslą gali pakeisti spustelėjus jį valdiklyje",
+        "description": "Daily Goal widget: edit modal hint"
     }
 }
