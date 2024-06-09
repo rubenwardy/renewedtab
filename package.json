@@ -21,7 +21,7 @@
 		"package:edge": "export TARGET=edge && npm run build:app && web-ext build -s ./dist/webext/ -i app/manifest.json -i app/index.html -i manifest.chrome.json -i manifest.firefox.json -i 'app/*.map' -n edge.zip --overwrite-dest",
 		"lint": "eslint 'src/**/*.{js,ts,tsx}' --max-warnings 0",
 		"fixlint": "eslint 'src/**/*.{js,ts,tsx}' --fix",
-		"test": "TS_NODE_FILES=1 NODE_PATH=src mocha 'tests/app/**/*.test.ts'",
+		"test": "TS_NODE_FILES=1 NODE_PATH=src mocha 'tests/**/*.test.ts'",
 		"uitest": "TS_NODE_FILES=1 NODE_PATH=src cypress run",
 		"uitest:chrome": "TS_NODE_FILES=1 NODE_PATH=src cypress run --browser chrome",
 		"uitest:firefox": "TS_NODE_FILES=1 NODE_PATH=src cypress run --browser firefox",

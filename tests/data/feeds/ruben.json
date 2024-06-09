@@ -20,7 +20,7 @@
         },
 
         {
-            "id": "/2021/05/08/mozilla-bleach-markdown",
+            "id": "id123",
             "title": "Securing Markdown user content with Mozilla Bleach",
             "content_text": "article 2",
             "url": "/2021/05/08/mozilla-bleach-markdown/",
@@ -31,7 +31,6 @@
         },
 
         {
-            "id": "/2020/09/13/return-to-android-dev",
             "title": "ForumMate: My return to Android app development",
             "content_text": "article 3",
             "url": "/2020/09/13/return-to-android-dev/",

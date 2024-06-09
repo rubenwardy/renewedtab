@@ -1,11 +1,11 @@
 import fs from "fs";
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
-import { FeedType } from "common/feeds/parse";
-import { detectFeed } from "common/feeds/detect";
+import { FeedType } from "common/feeds";
+import { detectFeed, Loader } from "common/feeds/detect";
 
 
-function loadFromFile(urlStr: string): (Element | null) {
+const loadFromFile: Loader = async (urlStr) => {
 	const url = new URL(urlStr);
 	const path = "tests/data/feeds/" + url.pathname;
 	if (!fs.existsSync(path)) {
@@ -20,65 +20,89 @@ function loadFromFile(urlStr: string): (Element | null) {
 
 
 describe("detectFeed", () => {
-	it("handlesDirectURLs", () => {
-		expect(detectFeed("http://example.com/nasa.rss", loadFromFile)).to.deep.eq([
+	it("handlesDirectURLs", async () => {
+		expect(await detectFeed("http://example.com/nasa.rss", loadFromFile)).to.deep.eq([
 			{
 				type: FeedType.Rss,
-				url: "http://example.com/nasa.rss"
+				url: "http://example.com/nasa.rss",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "",
 			},
 		]);
 
-		expect(detectFeed("http://example.com/xkcd.atom", loadFromFile)).to.deep.eq([
+		expect(await detectFeed("http://example.com/xkcd.atom", loadFromFile)).to.deep.eq([
 			{
 				type: FeedType.Atom,
-				url: "http://example.com/xkcd.atom"
+				url: "http://example.com/xkcd.atom",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "",
 			},
 		]);
 	});
 
-	it("handlesMissingURLs", () => {
-		expect(detectFeed("http://example.com/nonexistant/", loadFromFile)).to.be.empty;
-		expect(detectFeed("http://example.com/pageWithDeadUrl.html", loadFromFile)).to.be.empty;
+	it("handlesMissingURLs", async () => {
+		expect(await detectFeed("http://example.com/nonexistant/", loadFromFile)).to.be.empty;
+		expect(await detectFeed("http://example.com/pageWithDeadUrl.html", loadFromFile)).to.be.empty;
 	});
 
-	it("handlesLink", () => {
-		expect(detectFeed("http://example.com/pageNoFeed.html", loadFromFile)).to.be.empty;
-		expect(detectFeed("http://example.com/pageWithRSS.html", loadFromFile)).to.deep.eq([
+	it("handlesLink", async () => {
+		expect(await detectFeed("http://example.com/pageNoFeed.html", loadFromFile)).to.be.empty;
+		expect(await detectFeed("http://example.com/pageWithRSS.html", loadFromFile)).to.deep.eq([
 			{
 				type: FeedType.Rss,
-				url: "http://example.com/nasa.rss"
+				url: "http://example.com/nasa.rss",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "Subscribe to What's New",
 			},
 		]);
-		expect(detectFeed("http://example.com/pageWithAbsUrl.html", loadFromFile)).to.deep.eq([
+		expect(await detectFeed("http://example.com/pageWithAbsUrl.html", loadFromFile)).to.deep.eq([
 			{
 				type: FeedType.Rss,
-				url: "http://other.com/nasa.rss"
+				url: "http://other.com/nasa.rss",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "Subscribe to What's New",
 			},
 		]);
-		expect(detectFeed("http://example.com/pageWithAtom.html", loadFromFile)).to.deep.eq([
+		expect(await detectFeed("http://example.com/pageWithAtom.html", loadFromFile)).to.deep.eq([
 			{
 				type: FeedType.Atom,
-				url: "http://example.com/xkcd.atom"
+				url: "http://example.com/xkcd.atom",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "Atom 1.0",
 			},
 		]);
 	});
 
-	it("handlesMultipleLinks", () => {
-		expect(detectFeed("http://example.com/pageWithMultiple.html", loadFromFile)).to.deep.eq([
+	it("handlesMultipleLinks", async () => {
+		expect(await detectFeed("http://example.com/pageWithMultiple.html", loadFromFile)).to.deep.eq([
 			{
 				type: FeedType.Rss,
-				url: "http://example.com/nasa.rss"
+				url: "http://example.com/nasa.rss",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "Subscribe to What's New",
 			},
 
 			{
 				type: FeedType.Atom,
-				url: "http://example.com/xkcd.atom"
+				url: "http://example.com/xkcd.atom",
+				numberOfArticles: 0,
+				numberOfImages: 0,
+				title: "Atom 1.0",
 			},
 
 			// TODO: Detect json feeds
 			// {
 			// 	type: FeedType.Json,
-			// 	url: "http://other.com/nasa.rss"
+			// 	url: "http://other.com/nasa.rss",
+			// 	numberOfArticles: 0,
+			// 	numberOfImages: 0,
+			// 	title: "",
 			// },
 		]);
 	});

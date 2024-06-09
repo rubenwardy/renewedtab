@@ -173,7 +173,7 @@ function parseJSONFeed(json: JSONFeed, baseURL: string, parseXML: XMLParser): Fe
 
 	feed.articles = json.items.map(item => {
 		const link = relativeURLToAbsolute(item.url, baseURL);
-		const id = item.id ?? item.url ?? uuid();
+		const id = item.id ?? link ?? uuid();
 		return {
 			id,
 			title: item.title ?? item.content_text ?? escapeHTMLtoText(item.content_html!, parseXML),

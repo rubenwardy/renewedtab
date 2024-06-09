@@ -1,7 +1,7 @@
 import fs from "fs";
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
-import { FeedSource } from "common/feeds/parse";
+import { FeedSource } from "common/feeds";
 import { makeOPML, parseOPML } from "common/feeds/opml";
 
 

@@ -1,7 +1,7 @@
 import { FeedInfo, FeedType } from ".";
 
 
-type Loader = (url: string) => Promise<Element | null>;
+export type Loader = (url: string) => Promise<Element | null>;
 
 
 const LINK_SELECTOR = [

@@ -18,7 +18,7 @@
 				Observatory, as shown in this image from March 2021.</description>
 			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/uranus_lg.jpeg" length="1135972"
 				type="image/jpeg" />
-			<guid isPermaLink="false">http://www.nasa.gov/image-feature/detecting-x-rays-from-uranus</guid>
+			<guid isPermaLink="false">an_id</guid>
 			<pubDate>Fri, 04 Jun 2021 09:17 EDT</pubDate>
 			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
 		</item>
@@ -30,8 +30,6 @@
 				event Wednesday, June 2, 2021.</description>
 			<enclosure url="http://www.nasa.gov/sites/default/files/thumbnails/image/51221294498_8a0636de32_o.jpeg"
 				length="3861753" type="image/jpeg" />
-			<guid isPermaLink="false">
-				http://www.nasa.gov/image-feature/administrator-bill-nelson-gives-his-first-state-of-nasa-address</guid>
 			<pubDate>Thu, 03 Jun 2021 08:29 EDT</pubDate>
 			<source url="http://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss">NASA Image of the Day</source>
 		</item>
