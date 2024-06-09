@@ -1,0 +1,239 @@
+{
+    "+TYXj6": {
+        "message": "Сёння, а {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "Паказвае навіны ад Atom, JSONFeed і RSS — карысна для сачэння за навінамі, вэбсайтамі і блогамі",
+        "description": "Feed widget description"
+    },
+    "+sI+Oh": {
+        "message": "Паказваць пагадзінны прагноз",
+        "description": "Weather widget: form field label"
+    },
+    "/Mpu8A": {
+        "message": "Расцягнуць поле на ўсю старонку.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/aA+Xf": {
+        "message": "Паказваць відарасы",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Нататкі",
+        "description": "Notes Widget"
+    },
+    "0feb3b": {
+        "message": "Неабавязкова, ператварае відарыс у спасылку",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Значок",
+        "description": "Form field label"
+    },
+    "0l+aD2": {
+        "message": "Штодзённыя цэлі і натхненныя цытаты",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "Празрыстасць",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Дадаць"
+    },
+    "27lljH": {
+        "message": "Вам <b>{age}</b> гадоў",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "Дабранач, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2efE5y": {
+        "message": "Вітанне",
+        "description": "Greeting Widget"
+    },
+    "2j5LN5": {
+        "message": "Прапануйце URL, якую жадайце дадаць да прадвызначаных прапаноў",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "3/EBw0": {
+        "message": "Вэбсайт",
+        "description": "Renewed Tab website"
+    },
+    "3aaibf": {
+        "message": "Дадаць віджэт"
+    },
+    "3vjl5Q": {
+        "message": "Паказаць / Схаваць",
+        "description": "Feed widget filter allow label"
+    },
+    "4dzBeG": {
+        "message": "Ад",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Дапамога і прапановы"
+    },
+    "5mVcg9": {
+        "message": "Уласны CSS",
+        "description": "Theme settings: form field label"
+    },
+    "5mfAB9": {
+        "message": "URL на навіны ад Atom, JSONFeed або RSS feed",
+        "description": "Form field hint (Feed URL)"
+    },
+    "6MDM6D": {
+        "message": "Цытаты",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "Не адбылося атрымаць закладкі",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "Відарыс",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "Штогодні прагрэс",
+        "description": "Year Progress widget"
+    },
+    "7zYGs9": {
+        "message": "Расклад і каляндар",
+        "description": "CalendarSchedule Widget"
+    },
+    "8xPAKF": {
+        "message": "Ад 0% да 100%, пазіцыя колера на градыенце",
+        "description": "Form field hint (Stop)"
+    },
+    "8xVVb5": {
+        "message": "Аcноўны колер",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "Для гэтага віджэта патрэбна версія пашырення браўзера."
+    },
+    "ATbgo4": {
+        "message": "Радыяльны",
+        "description": "Form field option, radial gradient"
+    },
+    "Ack5ID": {
+        "message": "Няма вынікаў",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "AgU+/t": {
+        "message": "Спіс будучых запускаў ракет па дадзеным RocketLaunch.Live",
+        "description": "SpaceFlights widget description"
+    },
+    "AuSjzq": {
+        "message": "У бягучы момант: паказваць рызыку УФ",
+        "description": "Weather widget: form field label"
+    },
+    "+GMx80": {
+        "message": "Не знойдзена лакацый",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Нават калі вы схавайце якую-небудзь інфармацыю, вы часта можаце убачыць яе, калі наводзіце курсор на дні і гадзіны",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "+oSH/F": {
+        "message": "Паказвае ваш узрост з занадтай дакладнасцю",
+        "description": "Age widget description"
+    },
+    "/4k9ry": {
+        "message": "<b>Вельмі Высокае</b> УФ выпраменьванне",
+        "description": "Very High UV risk"
+    },
+    "/Mx09O": {
+        "message": "Эксперэментальнае. Працуе не са ўсімі крыніцамі па прычыне адсутнасці дадзеных аб відарысах. Яны таксама могуць быць дужа вялікімі і доўга загружацца.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "0PsF7Z": {
+        "message": "Вы ўпэўнены, што хочаце назаўсёды выдаліць гэты віджэт?",
+        "description": "Delete widget modal message"
+    },
+    "20tqYI": {
+        "message": "URL на файл каляндара iCal (.ics)",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "2O5Rq1": {
+        "message": "Добры вечар, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2s4stS": {
+        "message": "Сардэчна запрашаем у <a>Renewed Tab</a>",
+        "description": "Onboarding modal: title"
+    },
+    "2vJWTd": {
+        "message": "Фота",
+        "description": "Background credits title placeholder"
+    },
+    "3Nw7b0": {
+        "message": "Назва сістэмы пошуку",
+        "description": "Search widget: form field label"
+    },
+    "3UG6ds": {
+        "message": "Шукайце віджэты або інтэрнэт з вашай любімай сістэмай пошуку",
+        "description": "Search widget description"
+    },
+    "3ZfhWo": {
+        "message": "Для доступу к {host} патрэбен дазвол. Каб даць яго, адрэдагуйце гэты віджэт."
+    },
+    "3vh5vd": {
+        "message": "Нічога не адлюстроўвае, патрэбен для наладжвання макета",
+        "description": "Invisible widget description"
+    },
+    "47FYwb": {
+        "message": "Адмяніць"
+    },
+    "4F+2K3": {
+        "message": "Выпадковая выява з калекцыі Unsplash",
+        "description": "Backgroud mode description"
+    },
+    "4UpnpD": {
+        "message": "Відарысы захоўваюцца лакальна, у вашым браўзеры, і ніколі не загружаюцца ў інтэрнэт",
+        "description": "Form field hint (Image)"
+    },
+    "4cMia7": {
+        "message": "Паказваць новае фота",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "5640CU": {
+        "message": "У бягучы момант: паказваць ападкі",
+        "description": "Weather widget: form field label"
+    },
+    "5DCxT+": {
+        "message": "Адзінкі тэмпературы",
+        "description": "Weather widget: form field label"
+    },
+    "5MMUNJ": {
+        "message": "Гэта <b>эксперэментальна і можа быць цяжка карыстацца</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6wEkCM": {
+        "message": "Вы таксама можаце карыстацца віджэтам закладак для больш дэтальнага кантролю.",
+        "description": "General settings: bookmarks bar"
+    },
+    "8HmiSe": {
+        "message": "Калі ласка, абярыце крыніцу",
+        "description": "Feed widget: no sources error message"
+    },
+    "8J0Bhj": {
+        "message": "Сардэчна запрашаем у <a>Renewed Tab</a>: дапасавальную хатнюю старонку з віджэтамі і прыгожымі шпалерамі."
+    },
+    "Abtyj/": {
+        "message": "Памер відарыса больш за 2МБ ({dataSizeMB}МБ). Для меншага часу загрузкі, абярыце меншы відарыс.",
+        "description": "Image upload error message"
+    },
+    "L6nTur": {
+        "message": "У бягучы момант: паказваць рызыку УФ",
+        "description": "Onboarding: presets title"
+    },
+    "Ay1sfO": {
+        "message": "Кіруе колькасцю нядаўніх відарысаў, каб абраць адын з іх. Калі выстаўлена на 1, бузде паказвцца самы новы відарыс",
+        "description": "Feed background mode: form field hint (Limit images)"
+    }
+}
