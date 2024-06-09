@@ -1,3 +1,4 @@
+import uuid from "app/utils/uuid";
 import { FeedSource } from ".";
 import { relativeURLToAbsolute } from "../../app/utils";
 import { parseDate } from "../../app/utils/dates";
@@ -11,6 +12,7 @@ export interface Feed {
 }
 
 export interface Article {
+	id: string;
 	feed: Feed;
 	title: string;
 	link?: string;
@@ -88,9 +90,12 @@ function parseRSSFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed
 			return;
 		}
 
+		const link = relativeURLToAbsolute(el.querySelector("link")?.textContent?.trim(), baseURL);
+		const id = el.querySelector("guid")?.textContent?.trim() ?? link ?? uuid();
 		feed.articles.push({
+			id,
 			title: escapeHTMLtoText(title, parseXML).trim(),
-			link: relativeURLToAbsolute(el.querySelector("link")?.textContent?.trim(), baseURL),
+			link,
 			image: relativeURLToAbsolute(img?.[0], baseURL),
 			alt: img?.[1],
 			date: parseDate(el.querySelector("pubDate")?.textContent?.trim() ?? undefined),
@@ -120,8 +125,9 @@ function parseAtomFeed(root: Element, baseURL: string, parseXML: XMLParser): Fee
 		}
 
 		const link = el.querySelector("link:not([rel='enclosure'])")?.getAttribute("href")?.trim();
-
+		const id = el.querySelector("id")?.textContent?.trim() ?? link ?? uuid();
 		feed.articles.push({
+			id,
 			title: escapeHTMLtoText(title, parseXML).trim(),
 			link: relativeURLToAbsolute(link, baseURL),
 			image: relativeURLToAbsolute(img?.[0], baseURL),
@@ -136,6 +142,7 @@ function parseAtomFeed(root: Element, baseURL: string, parseXML: XMLParser): Fee
 
 
 interface JSONFeedItem {
+	id?: string;
 	url?: string;
 	title?: string;
 	summary?: string;
@@ -165,9 +172,12 @@ function parseJSONFeed(json: JSONFeed, baseURL: string, parseXML: XMLParser): Fe
 	};
 
 	feed.articles = json.items.map(item => {
+		const link = relativeURLToAbsolute(item.url, baseURL);
+		const id = item.id ?? item.url ?? uuid();
 		return {
+			id,
 			title: item.title ?? item.content_text ?? escapeHTMLtoText(item.content_html!, parseXML),
-			link: relativeURLToAbsolute(item.url, baseURL),
+			link,
 			image: relativeURLToAbsolute(item.image, baseURL),
 			date: parseDate(item.date_published),
 			feed: feed,

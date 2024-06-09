@@ -188,8 +188,16 @@ function FeedPanel(props: FeedPanelProps) {
 		.filter(filter => !(filter.isAllowed === true || filter.isAllowed == "true"))
 		.map(filter => filter.text.toLowerCase());
 
+	const seenIds = new Set();
 	const rows = feed.articles
 		.filter(article => queryMatchesAny(query, article.title))
+		.filter(article => {
+			if (seenIds.has(article.id)) {
+				return false;
+			}
+			seenIds.add(article.id);
+			return true;
+		})
 		.filter(article => {
 			const title = article.title.toLowerCase();
 			return article.link &&
@@ -198,7 +206,7 @@ function FeedPanel(props: FeedPanelProps) {
 				!blockFilters.some(filter => title.includes(filter));
 		})
 		.map(article => (
-			<li key={article.link}>
+			<li key={article.id}>
 				<a href={article.link} target={target} rel="noreferrer">
 					<FeedArticle article={article} feedProps={props} />
 				</a>
