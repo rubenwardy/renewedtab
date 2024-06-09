@@ -52,7 +52,7 @@ export default function ImportExport() {
 	}
 
 	return (
-		<div className="modal-body">
+		<>
 			<p>
 				<FormattedMessage
 						defaultMessage="Warning: this may contain personal data,
@@ -68,5 +68,5 @@ export default function ImportExport() {
 					href={`data:text/plain;base64,${encode(data ?? "")}`}
 					download="renewedtab.json" label={miscMessages.export} />
 			</p>
-		</div>);
+		</>);
 }
