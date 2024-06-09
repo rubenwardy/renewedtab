@@ -70,6 +70,7 @@ ul.links {
 			transition: color 0.2s ease-in-out,
 				background-color 0.2s ease-in-out;
 			cursor: pointer;
+			box-sizing: border-box;
 
 			&:hover, &:focus {
 				color: white;
