@@ -1,0 +1,69 @@
+{
+    "+GMx80": {
+        "message": "Geen locaties gevonden",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Zelfs als u bepaalde informatie verbergt, kunt u deze vaak nog steeds zien door over dagen en uren te gaan staan",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "+TYXj6": {
+        "message": "Vandaag, {tijd}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "Toont Atom-, JSONFeed- en RSS-feeds - handig voor het volgen van nieuws, websites en blogs",
+        "description": "Feed widget description"
+    },
+    "+oSH/F": {
+        "message": "Geeft uw huidige leeftijd met veel te veel precisie weer",
+        "description": "Age widget description"
+    },
+    "+sI+Oh": {
+        "message": "Toon voorspelling per uur",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "<b>Zeer hoge</b> UV",
+        "description": "Very High UV risk"
+    },
+    "/Mpu8A": {
+        "message": "Rek het raster uit om de hele pagina te bedekken.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/aA+Xf": {
+        "message": "Toon afbeeldingen",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Notities",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "Weet je zeker dat je deze widget definitief wilt verwijderen?",
+        "description": "Delete widget modal message"
+    },
+    "0feb3b": {
+        "message": "Optioneel, maakt van afbeelding een link",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Icoon",
+        "description": "Form field label"
+    },
+    "0l+aD2": {
+        "message": "Dagelijkse doelen en inspirerende citaten",
+        "description": "Preset: focus description"
+    },
+    "1s5GYl": {
+        "message": "Dekking",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Toevoegen"
+    },
+    "/Mx09O": {
+        "message": "Experimenteel. Dit werkt niet bij alle feedbronnen vanwege ontbrekende afbeeldingsinformatie. Afbeeldingen kunnen ook groot zijn en het laden ervan kan enige tijd duren.",
+        "description": "Feed widget: form field hint (Show Images)"
+    }
+}
