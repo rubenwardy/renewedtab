@@ -1,0 +1,307 @@
+{
+    "BfX7n6": {
+        "message": "Σημείωση: Ο Firefox ενδέχεται να εμφανίσει τεχνουργήματα όπως γραμμές σε διαβαθμισμένα φόντα. Αυτό δεν είναι κάτι που μπορούμε να διορθώσουμε.",
+        "description": "Gradient background disclaimer on Firefox"
+    },
+    "Bl74xq": {
+        "message": "Ένα κουμπί συνδέσμου",
+        "description": "Button widget description"
+    },
+    "BmzsQb": {
+        "message": "Σύνδεσμοι, με υποστήριξη επικεφαλίδων και εικονιδίων (ταχεία κλήση)",
+        "description": "Links widget description"
+    },
+    "D0+wcK": {
+        "message": "Εμφάνιση μιας εικόνας, κάνοντάς την προαιρετικά σύνδεσμο",
+        "description": "Image widget description"
+    },
+    "DVGnNH": {
+        "message": "Μπορείτε να περάσετε με το ποντίκι πάνω από τους τίτλους τέλους κάτω αριστερά για να σας αρέσει ή να παραλείψετε μια εικόνα φόντου."
+    },
+    "+TYXj6": {
+        "message": "Σήμερα, {time}",
+        "description": "SpaceFlights widget: today and time"
+    },
+    "+g7L/A": {
+        "message": "Εμφανίζει τις ροές Atom, JSONFeed και RSS - χρήσιμες για την παρακολούθηση ειδήσεων, ιστότοπων και ιστολογίων",
+        "description": "Feed widget description"
+    },
+    "+sI+Oh": {
+        "message": "Εμφάνιση ωριαίας πρόβλεψης",
+        "description": "Weather widget: form field label"
+    },
+    "/4k9ry": {
+        "message": "<b>Πολύ Υψηλή</b> Υπεριώδης Aκτινοβολία",
+        "description": "Very High UV risk"
+    },
+    "/Mpu8A": {
+        "message": "Επέκταση του πλέγματος ώστε να καλύπτει ολόκληρη τη σελίδα.",
+        "description": "Widget grid: form label 1 for grid full width"
+    },
+    "/aA+Xf": {
+        "message": "Εμφάνιση εικόνων",
+        "description": "Feed widget: form field label"
+    },
+    "/dtDqf": {
+        "message": "Σημειώσεις",
+        "description": "Notes Widget"
+    },
+    "0PsF7Z": {
+        "message": "Είστε σίγουροι ότι θέλετε να αφαιρέσετε μόνιμα αυτό το γραφικό;",
+        "description": "Delete widget modal message"
+    },
+    "0feb3b": {
+        "message": "Προαιρετικό, καθιστά την εικόνα σύνδεσμο",
+        "description": "Image widget: Form field hint (Link)"
+    },
+    "0hxZWu": {
+        "message": "Εικονίδιο",
+        "description": "Form field label"
+    },
+    "1s5GYl": {
+        "message": "Αδιαφάνεια",
+        "description": "Form field label"
+    },
+    "2/2yg+": {
+        "message": "Προσθήκη"
+    },
+    "20tqYI": {
+        "message": "URL σε ένα αρχείο iCal (.ics) για ένα ημερολόγιο",
+        "description": "CalendarSchedule widget: form field hint (Calendar URL)"
+    },
+    "27lljH": {
+        "message": "Είστε <b>{age}</b>",
+        "description": "Age widget text"
+    },
+    "2AUlDo": {
+        "message": "Καλό ύπνο, {name}",
+        "description": "Greeting widget: greeting, from 9pm to midnight"
+    },
+    "2O5Rq1": {
+        "message": "Καλησπέρα, {name}",
+        "description": "Greeting widget: greeting, from 4pm to 9pm"
+    },
+    "2efE5y": {
+        "message": "Χαιρετισμός",
+        "description": "Greeting Widget"
+    },
+    "2s4stS": {
+        "message": "Καλώς ήρθατε στην <a>Ανανεωμένη Καρτέλα</a>",
+        "description": "Onboarding modal: title"
+    },
+    "2vJWTd": {
+        "message": "Φωτογραφία",
+        "description": "Background credits title placeholder"
+    },
+    "3/EBw0": {
+        "message": "Ιστοσελίδα",
+        "description": "Renewed Tab website"
+    },
+    "3Nw7b0": {
+        "message": "Όνομα μηχανής αναζήτησης",
+        "description": "Search widget: form field label"
+    },
+    "3ZfhWo": {
+        "message": "Χρειάζεται άδεια για πρόσβαση στο {host}. Επεξεργαστείτε αυτό το γραφικό για να το χορηγήσετε."
+    },
+    "3aaibf": {
+        "message": "Προσθήκη Γραφικού"
+    },
+    "3vjl5Q": {
+        "message": "Εμφάνιση / Απόκρυψη",
+        "description": "Feed widget filter allow label"
+    },
+    "47FYwb": {
+        "message": "Ακύρωση"
+    },
+    "4F+2K3": {
+        "message": "Τυχαία εικόνα από μια συλλογή Unsplash",
+        "description": "Backgroud mode description"
+    },
+    "4cMia7": {
+        "message": "Εμφάνιση νέας φωτογραφίας",
+        "description": "Backgroud settings: form field label (how often background images change)"
+    },
+    "4dzBeG": {
+        "message": "Από",
+        "description": "Currencies widget: form field label"
+    },
+    "4syC1B": {
+        "message": "Βοήθεια και Αιτήματα"
+    },
+    "5640CU": {
+        "message": "Τρέχον: Εμφάνιση βροχοπτώσεων",
+        "description": "Weather widget: form field label"
+    },
+    "5DCxT+": {
+        "message": "Μονάδα Θερμοκρασίας",
+        "description": "Weather widget: form field label"
+    },
+    "5mVcg9": {
+        "message": "Προσαρμοσμένο CSS",
+        "description": "Theme settings: form field label"
+    },
+    "5mfAB9": {
+        "message": "URL σε μια ροή Atom, JSONFeed ή RSS",
+        "description": "Form field hint (Feed URL)"
+    },
+    "6MDM6D": {
+        "message": "Αποσπάσματα",
+        "description": "Quotes Widget"
+    },
+    "6pdO6i": {
+        "message": "Αδυναμία λήψης σελιδοδεικτών",
+        "description": "Bookmarks widget: error message"
+    },
+    "7OH6mh": {
+        "message": "Εικόνα",
+        "description": "Image Widget"
+    },
+    "7wOM6+": {
+        "message": "Έτος Πρόοδος",
+        "description": "Year Progress widget"
+    },
+    "7zYGs9": {
+        "message": "Χρονοδιάγραμμα Ημερολογίου",
+        "description": "CalendarSchedule Widget"
+    },
+    "8HmiSe": {
+        "message": "Προσδιορίστε μια πηγή",
+        "description": "Feed widget: no sources error message"
+    },
+    "8xPAKF": {
+        "message": "Από 0-100%, θέση του χρώματος στη διαβάθμιση",
+        "description": "Form field hint (Stop)"
+    },
+    "8xVVb5": {
+        "message": "Πρωτεύον Χρώμα",
+        "description": "Theme settings: form field label"
+    },
+    "9+2gJZ": {
+        "message": "Αυτό το γραφικό απαιτεί την έκδοση της επέκτασης του περιηγητή."
+    },
+    "ATbgo4": {
+        "message": "Ακτινική",
+        "description": "Form field option, radial gradient"
+    },
+    "Ack5ID": {
+        "message": "Κανένα αποτέλεσμα",
+        "description": "A search has returned no results here (note: there may be multiple places being searched)"
+    },
+    "AgU+/t": {
+        "message": "Ένας κατάλογος επερχόμενων διαστημικών εκτοξεύσεων, από το RocketLaunch.Live",
+        "description": "SpaceFlights widget description"
+    },
+    "AuSjzq": {
+        "message": "Τρέχον: Εμφάνιση κινδύνου Υπεριώδους Ακτινοβολίας",
+        "description": "Weather widget: form field label"
+    },
+    "B0kbsm": {
+        "message": "Ροή",
+        "description": "Unsplash background mode"
+    },
+    "B1pyj1": {
+        "message": "Τρέχον: Εμφάνιση αίσθησης σαν",
+        "description": "Weather widget: form field label"
+    },
+    "B3NCWb": {
+        "message": "Χρώματα",
+        "description": "Form field label"
+    },
+    "B4LnaC": {
+        "message": "Εμφάνιση επερχόμενων συμβάντων από μια διεύθυνση URL iCal (.ics) (Όπως το Ημερολόγιο Google)",
+        "description": "CalendarSchedule widget: description"
+    },
+    "BiPNnl": {
+        "message": "Μονάδα Ταχύτητας Ανέμου",
+        "description": "Weather widget: form field label"
+    },
+    "BnmONl": {
+        "message": "Τρέχον: Εμφάνιση ανατολής / ηλιοβασιλέματος",
+        "description": "Weather widget: form field label"
+    },
+    "C7WJrL": {
+        "message": "Κατακόρυφο",
+        "description": "Form field option, vertical gradient"
+    },
+    "CN0kVN": {
+        "message": "Πλέγμα Γραφικών",
+        "description": "Settings tab"
+    },
+    "CNpJaZ": {
+        "message": "Εστίαση",
+        "description": "Preset: focus"
+    },
+    "CmRs9p": {
+        "message": "Αναζήτηση",
+        "description": "Search Widget"
+    },
+    "Cq4JWx": {
+        "message": "Οι ειδήσεις, ο καιρός και άλλα",
+        "description": "Preset: grid description"
+    },
+    "CshCZY": {
+        "message": "Τύπος Φόντου"
+    },
+    "D3idYv": {
+        "message": "Ρυθμίσεις"
+    },
+    "+GMx80": {
+        "message": "Δεν βρέθηκαν τοποθεσίες",
+        "description": "Location form field: error"
+    },
+    "+PNw8j": {
+        "message": "Ακόμα και αν αποκρύψετε κάποιες πληροφορίες, μπορείτε συχνά να τις δείτε, αιωρώντας το ποντίκι πάνω από τις ημέρες και τις ώρες",
+        "description": "Weather widget: form field hint (Display Options)"
+    },
+    "+oSH/F": {
+        "message": "Δηλώνει την τρέχουσα ηλικία σας με υπερβολική ακρίβεια",
+        "description": "Age widget description"
+    },
+    "/Mx09O": {
+        "message": "Πειραματικό. Αυτό δεν λειτουργεί με όλες τις πηγές ροής, λόγω έλλειψης πληροφοριών εικόνας. Οι εικόνες μπορεί επίσης να είναι μεγάλες και να χρειάζονται λίγο χρόνο για να φορτωθούν.",
+        "description": "Feed widget: form field hint (Show Images)"
+    },
+    "0l+aD2": {
+        "message": "Καθημερινοί στόχοι και εμπνευσμένα αποσπάσματα",
+        "description": "Preset: focus description"
+    },
+    "2j5LN5": {
+        "message": "Πρόταση να προστεθεί η διεύθυνση URL στις προεπιλεγμένες προτάσεις",
+        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
+    },
+    "3UG6ds": {
+        "message": "Αναζήτηση γραφικών ή στο διαδίκτυο χρησιμοποιώντας την αγαπημένη σας μηχανή αναζήτησης",
+        "description": "Search widget description"
+    },
+    "3vh5vd": {
+        "message": "Δεν εμφανίζει τίποτα, χρήσιμο για σκοπούς διάταξης",
+        "description": "Invisible widget description"
+    },
+    "4UpnpD": {
+        "message": "Οι εικόνες αποθηκεύονται τοπικά στον περιηγητή σας και δεν μεταφορτώνονται ποτέ",
+        "description": "Form field hint (Image)"
+    },
+    "5MMUNJ": {
+        "message": "Αυτό είναι <b>πειραματικό και μπορεί να είναι πιο δύσκολο στη χρήση</b>.",
+        "description": "Widget grid: form label 4 for grid full width"
+    },
+    "6wEkCM": {
+        "message": "Εναλλακτικά, μπορείτε να χρησιμοποιήσετε ένα γραφικό σελιδοδεικτών για λεπτομερή έλεγχο.",
+        "description": "General settings: bookmarks bar"
+    },
+    "8J0Bhj": {
+        "message": "Καλώς ήρθατε στην <a>Ανανεωμένη Καρτέλα</a>: μια προσαρμόσιμη σελίδα Νέας Καρτέλας, με γραφικά και όμορφα φόντα."
+    },
+    "Abtyj/": {
+        "message": "Η εικόνα είναι μεγαλύτερη από 2MB ({dataSizeMB}MB). Για να επιτύχετε καλύτερους χρόνους φόρτωσης, θα πρέπει να χρησιμοποιήσετε μια μικρότερη εικόνα.",
+        "description": "Image upload error message"
+    },
+    "Ay1sfO": {
+        "message": "Ελέγχει πόσες από τις πιο πρόσφατες εικόνες θα επιλέγονται τυχαία. Αν το ρυθμίσετε στο 1, θα επιλέγετε πάντα την πιο πρόσφατη εικόνα",
+        "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "BJYZgx": {
+        "message": "Χρησιμοποιήστε τη λαβή μετακίνησης (<move></move>) και τη λαβή αλλαγής μεγέθους (<resize></resize>)."
+    }
+}
