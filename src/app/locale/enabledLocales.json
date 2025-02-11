@@ -1,13 +1,17 @@
 {
 	"en": "English",
+	"be": "беларуская мова",
 	"bg": "български език",
 	"de": "Deutsch",
 	"es": "Español",
 	"fr": "Français",
 	"it": "Italiano",
+	"ja": "日本語",
+	"lt": "Lietuvių kalba",
 	"ms": "Bahasa Melayu",
 	"pt-br": "Português (do Brasil)",
 	"ru": "Русский",
+	"sv": "Svenska",
 	"tr": "Türkçe",
 	"zh-cn": "中文 (简体)",
 	"zh-tw": "正體中文 (繁體)"
