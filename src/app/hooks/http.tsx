@@ -84,6 +84,11 @@ async function fetchJSON(url: string) {
 		throw new UserError(await response.text());
 	}
 
+	if (!(response.headers.get("Content-Type") ?? "").includes("application/json")) {
+		throw new Error("Expected JSON, received: "
+			+ response.headers.get("Content-Type") + await response.text());
+	}
+
 	return await response.json();
 }
 
