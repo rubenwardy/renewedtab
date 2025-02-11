@@ -8,7 +8,7 @@
         "description": "Weather widget: form field hint (Display Options)"
     },
     "+TYXj6": {
-        "message": "Vandaag, {tijd}",
+        "message": "Vandaag, {time}",
         "description": "SpaceFlights widget: today and time"
     },
     "+g7L/A": {
