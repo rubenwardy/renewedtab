@@ -23,7 +23,7 @@ Renewed Tab has 3 components:
 
 ### Dependencies
 
-* Node 16+ and NPM
+* Node 22+ and NPM
 * SASS
 
 Make sure to run `npm install`
