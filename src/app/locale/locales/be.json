@@ -4,7 +4,7 @@
         "description": "SpaceFlights widget: today and time"
     },
     "+g7L/A": {
-        "message": "Паказвае навіны ад Atom, JSONFeed і RSS — карысна для сачэння за навінамі, вэбсайтамі і блогамі",
+        "message": "Паказвае навіны ад Atom, JSONFeed і RSS — карысна для сачэння за навінамі, вэб-сайтамі і блогамі",
         "description": "Feed widget description"
     },
     "+sI+Oh": {
@@ -55,11 +55,11 @@
         "description": "Greeting Widget"
     },
     "2j5LN5": {
-        "message": "Прапануйце URL, якую жадайце дадаць да прадвызначаных прапаноў",
+        "message": "Прапануйце URL, якую жадаеце дадаць да прадвызначаных прапаноў",
         "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "3/EBw0": {
-        "message": "Вэбсайт",
+        "message": "Вэб-сайт",
         "description": "Renewed Tab website"
     },
     "3aaibf": {
@@ -113,7 +113,7 @@
         "description": "Theme settings: form field label"
     },
     "9+2gJZ": {
-        "message": "Для гэтага віджэта патрэбна версія пашырення браўзера."
+        "message": "Для гэтага віджэта патрэбна версія пашырэння браўзера."
     },
     "ATbgo4": {
         "message": "Радыяльны",
@@ -136,7 +136,7 @@
         "description": "Location form field: error"
     },
     "+PNw8j": {
-        "message": "Нават калі вы схавайце якую-небудзь інфармацыю, вы часта можаце убачыць яе, калі наводзіце курсор на дні і гадзіны",
+        "message": "Нават калі вы схавайце якую-небудзь інфармацыю, вы часта можаце ўбачыць яе, калі наводзіце курсор на дні і гадзіны",
         "description": "Weather widget: form field hint (Display Options)"
     },
     "+oSH/F": {
@@ -156,7 +156,7 @@
         "description": "Delete widget modal message"
     },
     "20tqYI": {
-        "message": "URL на файл каляндара iCal (.ics)",
+        "message": "URL на файл календара iCal (.ics)",
         "description": "CalendarSchedule widget: form field hint (Calendar URL)"
     },
     "2O5Rq1": {
@@ -176,21 +176,21 @@
         "description": "Search widget: form field label"
     },
     "3UG6ds": {
-        "message": "Шукайце віджэты або інтэрнэт з вашай любімай сістэмай пошуку",
+        "message": "Выконвайце пошук праз віджэты або інтэрнэт з вашай любімай сістэмай пошуку",
         "description": "Search widget description"
     },
     "3ZfhWo": {
-        "message": "Для доступу к {host} патрэбен дазвол. Каб даць яго, адрэдагуйце гэты віджэт."
+        "message": "Для доступу к {host} патрэбны дазвол. Каб даць яго, адрэдагуйце гэты віджэт."
     },
     "3vh5vd": {
-        "message": "Нічога не паказвае, патрэбен для наладжвання макета",
+        "message": "Нічога не паказвае, патрэбны для наладжвання макета",
         "description": "Invisible widget description"
     },
     "47FYwb": {
         "message": "Адмяніць"
     },
     "4F+2K3": {
-        "message": "Выпадковая выява з калекцыі Unsplash",
+        "message": "Выпадковы відарыс з калекцыі Unsplash",
         "description": "Backgroud mode description"
     },
     "4UpnpD": {
@@ -233,7 +233,7 @@
         "description": "Onboarding: presets title"
     },
     "Ay1sfO": {
-        "message": "Кіруе колькасцю нядаўніх відарысаў, каб абраць адын з іх. Калі выстаўлена на 1, бузде паказвцца самы новы відарыс",
+        "message": "Кіруе колькасцю нядаўніх відарысаў, каб абраць адзін з іх. Калі выстаўлена на 1, будзе паказвацца самы новы відарыс",
         "description": "Feed background mode: form field hint (Limit images)"
     },
     "Ddd3ZY": {
@@ -358,7 +358,7 @@
         "description": "General settings: bookmarks bar"
     },
     "GqPEp+": {
-        "message": "Патрэбна версія расшырэння браўзера"
+        "message": "Патрэбна версія пашырэння браўзера"
     },
     "HEvlTB": {
         "message": "Налады дысплэя",
@@ -470,7 +470,7 @@
         "description": "Weather widget: wind speed tooltip"
     },
     "M6lR5V": {
-        "message": "Колькасць слупкоў на поле віджэтаў. Можна памясціць {max} слупкоў на бягучай шырыне акна ({res}пікселяў).",
+        "message": "Колькасць слупкоў на поле віджэтаў. Можна памясціць {max} слупкоў на бягучай шырыні акна ({res}пікселяў).",
         "description": "Widget grid: form hint for grid columns"
     },
     "MN3prI": {
@@ -559,7 +559,7 @@
         "description": "Weather widget: form field label"
     },
     "RCe+DS": {
-        "message": "Віджэты перацягвання"
+        "message": "Віджэты Drag and Drop"
     },
     "RZqASt": {
         "message": "Адзіны колер",
@@ -779,11 +779,11 @@
         "description": "General settings: help message"
     },
     "QBZZBG": {
-        "message": "Майце на ўвазе: гэта эксперэментальная функцыя, селектары CSS могуць пачаць працаваць некарэктна ў будучых выпусках.",
+        "message": "Майце на ўвазе: гэта эксперыментальная функцыя, селектары CSS могуць пачаць працаваць некарэктна ў будучых выпусках.",
         "description": "Theme settings: form field hint (Custom CSS)"
     },
     "RVGNBh": {
-        "message": "Калі вы скончыце, націсніце на <button></button>, каб зрабіць віджэты даступнымі толькі для чытання."
+        "message": "Калі вы скончыце, націсніце на <button></button>, каб замацаваць віджэты."
     },
     "TIEfOV": {
         "message": "Артыкул будзе паказаны, калі ён адпавядае мінімум адын фільтар \"Паказаць\"(калі ёсць такія), і ніводнага фільтра \"Схаваць\".",
@@ -874,7 +874,7 @@
         "description": "Weather widget: location needed error"
     },
     "gAZqVl": {
-        "message": "Вы зможаце дадаць (<add></add>), або прыбраць (<remove></remove>) віджэты пазней, або змяніць налады (<cog></cog>) як жадайце.",
+        "message": "Вы зможаце дадаць (<add></add>), або выдаліць (<remove></remove>) віджэты пазней, або змяніць налады (<cog></cog>) як жадайце.",
         "description": "Onboarding: preset hint"
     },
     "gS3mti": {
@@ -894,10 +894,10 @@
         "description": "CalendarSchedule: no events"
     },
     "h/ftND": {
-        "message": "Абярыце файл"
+        "message": "Выберыце файл"
     },
     "h00yCR": {
-        "message": "Паказвае нядаўнія відарысы са стужак Atom, JSONFeed, або RSS – палезна для WebComics.",
+        "message": "Паказвае нядаўнія відарысы са стужак Atom, JSONFeed, або RSS – карысна для WebComics.",
         "description": "Web Comic widget description"
     },
     "hCBQrY": {
@@ -919,14 +919,14 @@
         "description": "Background credits vote"
     },
     "iH2AHA": {
-        "message": "З <a>адкрытым зыходным кодам</a>, пад ліцэнзіей GPLv3+."
+        "message": "З <a>адкрытым зыходным кодам</a>, пад ліцэнзіяй GPLv3+."
     },
     "irdBm2": {
         "message": "Тэма",
         "description": "Settings tab"
     },
     "j0VHNa": {
-        "message": "Дайце дазвол да доступу к закладкам і атрыманню значкоў з вэбсайтаў"
+        "message": "Дайце дазвол да доступу да закладак і атрыманню значкоў з вэб-сайтаў"
     },
     "jGWq1h": {
         "message": "Часавы пояс"
@@ -939,7 +939,7 @@
         "description": "Clock widget: date style type"
     },
     "ilIuh2": {
-        "message": "Палезна? Вы можаце дапамагчы, <a>ахвяраваўшы</a> праект. Грошамі з ахвяраванняў мы плацім за API надвор'я, а вы дапамагайце будучай распрацоўцы Renewed Tab.",
+        "message": "Карысна? Вы можаце дапамагчы, <a>ахвяраваўшы</a> праект. Грошамі з ахвяраванняў мы плацім за API надвор'я, а вы дапамагайце будучай распрацоўцы Renewed Tab.",
         "description": "Weather widget: asking for donations"
     },
     "lYJGY5": {
@@ -962,7 +962,7 @@
         "message": "Спасылка на каляндар адсутнічае. Адрэдагуйце гэты віджэт, каб дадаць яе"
     },
     "oRui+E": {
-        "message": "Падабаецца Renewed Tab? Вы можаце ахвяраваць праект, каб дапамагчы пакрыць расходы й падтрымаць распрацоўку."
+        "message": "Падабаецца Renewed Tab? Вы можаце ахвяраваць праект, каб дапамагчы пакрыць расходы і падтрымаць распрацоўку."
     },
     "jSHZmX": {
         "message": "Трымайце на віду вашы задачы",
@@ -1039,7 +1039,7 @@
         "description": "CalendarSchedule widget: form field label"
     },
     "nnaWVi": {
-        "message": "Цэльсій",
+        "message": "Цэльсіі",
         "description": "Weather widget: Celsius unit"
     },
     "o2uuHu": {
@@ -1078,11 +1078,11 @@
         "description": "Top Sites Widget"
     },
     "pG7wIz": {
-        "message": "Паказвае курсы валют, падтрымлівае іншакраінныя валюты й крыптавалюты(BitCoin і г. д.)",
+        "message": "Паказвае курсы валют, падтрымлівае іншакраінныя валюты і крыптавалюты(BitCoin і г. д.)",
         "description": "Currencies widget description"
     },
     "pHo6u+": {
-        "message": "У стужцы ня знойдзена відарысаў",
+        "message": "У стужцы не знойдзена відарысаў",
         "description": "Web Comic widget: no images found error"
     },
     "pVrtrA": {
@@ -1090,7 +1090,7 @@
         "description": "Backgroud mode description"
     },
     "pWdLkT": {
-        "message": "Калі ласка, прачытайце <a>інструкцыю</a>. Вы можаце скарыстацца любым календарам, які падтрымлівае iCal, напрыклад каляндар Calendar, або Outlook.",
+        "message": "Калі ласка, прачытайце <a>інструкцыю</a>. Вы можаце выкарыстоўваць любы каляндар, які падтрымлівае iCal, напрыклад каляндар Google або Outlook.",
         "description": "CalendarSchedule widget: edit hint"
     },
     "pbEMNj": {
@@ -1106,7 +1106,7 @@
         "description": "Backgroud settings: form field label"
     },
     "y8o0oA": {
-        "message": "Бягучае надвор'е й надвор'е на будучыню",
+        "message": "Бягучае надвор'е і надвор'е на будучыню",
         "description": "Weather widget description"
     },
     "ywSKRt": {
@@ -1134,7 +1134,7 @@
         "description": "Background mode options"
     },
     "qfkgCx": {
-        "message": "Якія падзеі будуць паказвацца. Пастаўце 1, каб паказваць падзеі на сёння, 2, каб паказваць падзеі на сённяі заўтра і г.д.",
+        "message": "Якія падзеі будуць паказвацца. Пастаўце 1, каб паказваць падзеі на сёння, 2, каб паказваць падзеі на сёння і заўтра і г.д.",
         "description": "CalendarSchedule widget: form field hint (max number of days)"
     },
     "qoEZRi": {
@@ -1176,7 +1176,7 @@
         "description": "Links widget, form field hint (Icon)"
     },
     "tSMpM0": {
-        "message": "Дайце дазвол на доступ к найбольш частым сайтам і на тое, каб атрымліваць з іх значкі",
+        "message": "Дайце дазвол на доступ да найбольш частых сайтах і на тое, каб атрымліваць з іх значкі",
         "description": "Top Sites widget: permission request"
     },
     "translation_credits": {
@@ -1260,7 +1260,7 @@
         "message": "Мова"
     },
     "yT43pK": {
-        "message": "Выкарыстоўваць значкі з вэбсайтаў",
+        "message": "Выкарыстоўваць значкі з вэб-сайтаў",
         "description": "Form field label"
     },
     "yUJ5MA": {
@@ -1300,7 +1300,7 @@
         "message": "Сёння"
     },
     "zXtUcf": {
-        "message": "Ня трэба хвалявацца, вы можаце разамкнуць гэта пазней"
+        "message": "Не трэба хвалявацца, вы можаце адрэдагаваць іх пазней"
     },
     "zaQRTm": {
         "message": "<b>Надзвычайнае</b> УФ выпраменьванне",
