@@ -3,6 +3,7 @@ import React, { ChangeEvent, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import LanguageSelector from "../LanguageSelector";
+import { getIsSentryEnabled, setSentryEnabled } from "app/sentry";
 
 
 const messages = defineMessages({
@@ -28,15 +29,11 @@ export interface GeneralSettingsProps {
 
 
 export default function GeneralSettings(props: GeneralSettingsProps) {
-	const [sentryEnabled, setSentryEnabled] =
-		useState(localStorage.getItem("_sentry-opt-out") != "yes");
+	const [sentryEnabledValue, setSentryEnabledValue] =
+		useState(getIsSentryEnabled());
 	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
-		if (e.target.checked) {
-			localStorage.removeItem("_sentry-opt-out");
-		} else {
-			localStorage.setItem("_sentry-opt-out", "yes");
-		}
 		setSentryEnabled(e.target.checked);
+		setSentryEnabledValue(e.target.checked);
 	}
 
 	const isBrowserExtension = typeof browser !== "undefined";
@@ -95,7 +92,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 			<div className="field">
 				<label className="inline" htmlFor="sentry-enabled">
 					<input name="sentry-enabled" className="mr-2"
-						type="checkbox" checked={sentryEnabled}
+						type="checkbox" checked={sentryEnabledValue}
 						onChange={onSentryEnabledChanged} />
 					<FormattedMessage
 						defaultMessage="Enable crash reporting (using Sentry)"
