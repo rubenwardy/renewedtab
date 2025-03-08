@@ -97,6 +97,10 @@ a, .link {
 .credits {
 	font-size: 80%;
 	color: rgba(255, 255, 255, 0.4);
+	position: fixed;
+	bottom: 0px;
+	left: 15px;
+	z-index: 100;
 
 	* {
 		vertical-align: middle;
@@ -116,11 +120,6 @@ a, .link {
 			text-decoration: none !important;
 		}
 	}
-
-	position: fixed;
-	bottom: 0px;
-	left: 15px;
-	z-index: 100;
 
 	> a > span {
 		display: block;

@@ -7,7 +7,7 @@ import { useState, RefObject, useLayoutEffect } from "react";
 *
 * @returns [ref, size]
 */
-export function useElementSize<T extends HTMLElement>(ref: RefObject<T>):
+export function useElementSize<T extends HTMLElement>(ref: RefObject<T | null>):
 		(Vector2 | undefined) {
 	const [size, setSize] = useState<Vector2 | undefined>(undefined);
 

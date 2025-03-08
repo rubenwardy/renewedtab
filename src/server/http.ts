@@ -2,7 +2,7 @@ import fetch, { RequestInfo, RequestInit, Request, Response } from "node-fetch";
 import UserError from "./UserError";
 import { notifyUpstreamRetry } from "./metrics";
 
-export { Request, Response } from "node-fetch";
+export { RequestInfo, RequestInit, Request, Response }
 
 
 export default async function fetchCatch(url: RequestInfo, init?: RequestInit): Promise<Response> {

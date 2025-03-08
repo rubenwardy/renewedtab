@@ -1,4 +1,5 @@
-import { MessageDescriptor } from "@formatjs/intl";
+import { JSX } from "react";
+import { MessageDescriptor } from "react-intl";
 import { defineMessages, IntlShape } from "react-intl";
 import { schemaMessages } from "./locale/common";
 import { MyMessageDescriptor } from "./locale/MyMessageDescriptor";

@@ -1,6 +1,6 @@
 import { mergeClasses } from "app/utils";
 import Schema, { SchemaEntry } from "app/utils/Schema";
-import React from "react";
+import React, { JSX } from "react";
 import { FormattedMessage } from "react-intl";
 import { Field } from "./Field";
 

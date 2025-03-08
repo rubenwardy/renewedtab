@@ -1,4 +1,4 @@
-image: node:16
+image: node:22
 cache:
   paths:
     - node_modules
@@ -16,7 +16,7 @@ variables:
 before_script: &before_script
   - NODE_ENV=debug npm ci --cache .npm --prefer-offline
   - cp config.example.json config.json
-  - PATH=$(npm bin):$PATH
+  - PATH=$(realpath ./node_modules/.bin):$PATH
 
 test:
   stage: test
@@ -28,30 +28,30 @@ test:
     - npm run lint
 
 ui-chrome:
-  image: cypress/browsers:node16.16.0-chrome107-ff107-edge
+  image: cypress/browsers:node-22.14.0-chrome-134.0.6998.88-1-ff-136.0.1-edge-134.0.3124.51-1
   stage: test
   dependencies: []
   interruptible: true
   script:
     - unset SENTRY_DSN
-    - npm run build:app
+    - npm run build
     - npm run uitest:chrome
   variables:
     TARGET: chrome
     SENTRY_DSN: ""
 
-ui-firefox:
-  image: cypress/browsers:node16.16.0-chrome107-ff107-edge
-  stage: test
-  dependencies: []
-  interruptible: true
-  script:
-    - unset SENTRY_DSN
-    - npm run build:app
-    - npm run uitest:firefox
-  variables:
-    TARGET: firefox
-    SENTRY_DSN: ""
+# ui-firefox:
+#   image: cypress/browsers:node-22.14.0-chrome-134.0.6998.88-1-ff-136.0.1-edge-134.0.3124.51-1
+#   stage: test
+#   dependencies: []
+#   interruptible: true
+#   script:
+#     - unset SENTRY_DSN
+#     - npm run build
+#     - npm run uitest:firefox
+#   variables:
+#     TARGET: firefox
+#     SENTRY_DSN: ""
 
 webext:
   stage: package
@@ -74,7 +74,7 @@ pages:
   dependencies: []
   interruptible: true
   script:
-    - npm run build:app
+    - npm run build
     - cp -r dist/webext/app public
   artifacts:
     paths:

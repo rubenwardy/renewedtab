@@ -24,10 +24,11 @@
 			margin-right: 0.5em;
 
 			&:checked + span {
+				opacity: 0.7;
+
 				&, input {
 					text-decoration: line-through;
 				}
-				opacity: 0.7;
 			}
 
 			&:disabled {

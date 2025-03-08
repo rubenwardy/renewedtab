@@ -64,5 +64,5 @@ export default function ErrorView(props: ErrorViewProps) {
 
 
 export const ErrorBoundary = Sentry.withErrorBoundary(Fragment, {
-	fallback: ({error}) => (<ErrorView error={error} />)
+	fallback: ({error}) => (<ErrorView error={error as any} />)
 });

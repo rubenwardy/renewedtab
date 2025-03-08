@@ -1,9 +1,7 @@
 import express from "express";
 import fs from "fs";
 import path from "path";
-import fetchCatch, { Request } from "./http";
-import * as Sentry from "@sentry/node";
-import * as Tracing from "@sentry/tracing";
+import Sentry from "@sentry/node";
 
 import { SENTRY_DSN, SAVE_ROOT, UA_DEFAULT, DISCORD_WEBHOOK, UA_PROXY, PORT, IS_DEBUG } from "./config";
 
@@ -15,10 +13,6 @@ const app = express();
 Sentry.init({
 	enabled: SENTRY_DSN != undefined,
 	dsn: SENTRY_DSN,
-	integrations: [
-		new Sentry.Integrations.Http({ tracing: true }),
-		new Tracing.Integrations.Express({ app }),
-	],
 
 	beforeSend(event) {
 		// Drop expected UserError exceptions
@@ -30,8 +24,6 @@ Sentry.init({
 	}
 });
 
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -47,6 +39,7 @@ function writeClientError(res: express.Response, msg: string) {
 	res.status(400).type("text").send(msg);
 }
 
+import fetchCatch, {Request} from "./http";
 import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
 import { TippyTopImage } from "common/api/icons";
 import UserError from "./UserError";
@@ -555,7 +548,7 @@ app.get("/api/detect-feed/", async (req: express.Request, res: express.Response,
 });
 
 
-app.use(Sentry.Handlers.errorHandler());
+Sentry.setupExpressErrorHandler(app);
 
 
 app.use(function (err: any, _req: any, res: any, next: any) {

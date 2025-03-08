@@ -78,7 +78,7 @@ Make sure to run `npm install`, and to set the `NODE_ENV` environment
 variable to `production`.
 
 * Web + server: `npm run build`
-* Web only: `npm run build:app`
+* Web only: `npm run build`
 * Web extension: `npm run package:webext`
 
 Also see .gitlab-ci.yml.

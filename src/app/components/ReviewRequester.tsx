@@ -1,4 +1,4 @@
-import { defineMessages } from "@formatjs/intl";
+import { defineMessages } from "react-intl";
 import { usePromise, useStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { getInstallInfo } from "app/utils/webext";

@@ -1,6 +1,7 @@
+import { JSX } from "react";
+import { defineMessages } from 'react-intl';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetType } from 'app/Widget';
-import { defineMessages } from 'react-intl';
 
 
 const messages = defineMessages({

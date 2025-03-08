@@ -1,4 +1,4 @@
-import { MessageDescriptor } from "@formatjs/intl";
+import { MessageDescriptor } from "react-intl";
 import { mergeClasses } from "app/utils";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";

@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import {createRoot} from "react-dom/client";
 import App from "./components/App";
 import "./scss/main.scss";
 import { getFeedbackURL } from "./utils/webext";
@@ -7,10 +7,8 @@ import { initSentry }  from "./sentry";
 
 initSentry();
 
-render(
-	<App />,
-	document.getElementById("app")
-);
+
+createRoot(document.getElementById("app")!).render(<App />);
 
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'

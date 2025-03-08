@@ -394,7 +394,7 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, rawInfo: WeatherInfo }) {
 	const props = widget.props;
 	const unit = props.unit ?? TemperatureUnit.Celsius;
-	const ref = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 	const size = useElementSize(ref);
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 

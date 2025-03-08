@@ -1,6 +1,5 @@
 
 import * as Sentry from "@sentry/react";
-import { Integrations } from "@sentry/tracing";
 
 
 export function getIsSentryEnabled(): boolean {
@@ -23,8 +22,8 @@ export function initSentry() {
 		enabled: config.SENTRY_DSN !== undefined && getIsSentryEnabled(),
 		dsn: config.SENTRY_DSN,
 		integrations: [
-			new Integrations.BrowserTracing({
-				tracingOrigins: [new URL(config.API_URL).host],
+			Sentry.browserTracingIntegration({
+				// tracingOrigins: [new URL(config.API_URL).host],
 			})
 		],
 

@@ -15,8 +15,7 @@ describe("Feed", () => {
 		cy.getCy("field-sources").find("tbody tr").should("have.length", 2);
 		cy.getCy("field-sources").find("[data-cy='add-row']").click();
 		cy.getCy("field-sources").find("tbody tr").should("have.length", 3);
-
-		cy.getCy("field-sources").find("[name='url'][value='']")
+		cy.getCy("field-sources").find("[name='url'][value=''], [name='url']:not([value])")
 			.type("https://www.nasa.gov/rss/dyn/breaking_news.rss");
 		cy.getCy("edit-ok").click();
 		cy.contains("www.nasa.gov").click();

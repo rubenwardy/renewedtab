@@ -30,7 +30,7 @@ const MAGIC_NUMBER = 0.7;
 export default function FitText(props: FitTextProps) {
 	const children = typeof props.children == "string" ? [ props.children ] : props.children
 
-	const ref = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 	const size = useElementSize(ref);
 	const style: CSSProperties = {};
 	if (size) {

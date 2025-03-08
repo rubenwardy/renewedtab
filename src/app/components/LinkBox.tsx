@@ -120,7 +120,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	const { query } = useGlobalSearch();
 	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
-	const ref = useRef(null);
+	const ref = useRef<HTMLDivElement>(null);
 	const size = useElementSize(ref);
 
 	const links = useMemo<Link[]>(() => {
