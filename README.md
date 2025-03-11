@@ -1,8 +1,11 @@
 # Renewed Tab
 
-[![pipeline status](https://gitlab.com/renewedtab/renewedtab/badges/master/pipeline.svg)](https://gitlab.com/renewedtab/renewedtab/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://web.renewedtab.com/)
+[![pipeline status](https://gitlab.com/renewedtab/renewedtab/badges/master/pipeline.svg)](https://gitlab.com/renewedtab/renewedtab/-/commits/master) [![website](https://img.shields.io/badge/Try_It-Online-blue)](https://web.renewedtab.com/) <a href="https://hosted.weblate.org/engage/renewed-tab/">
+[![translation status](https://hosted.weblate.org/widget/renewed-tab/svg-badge.svg)](https://renewedtab.com/blog/2023/04/02/translating-renewed-tab/)
 
 A clean web browser "New Tab" / "Home page" page, created using TypeScript and React.
+
+[Help translate Renewed Tab using Weblate](https://renewedtab.com/blog/2023/04/02/translating-renewed-tab/)
 
 License: GPLv3 or later.
 
