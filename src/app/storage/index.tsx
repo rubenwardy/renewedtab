@@ -6,6 +6,7 @@ import { fromTypedJSON, toTypedJSON } from "../utils/TypedJSON";
  */
 export interface IStorage {
 	getAll(): Promise<{ [key: string]: any }>;
+	keys(): Promise<string[]>;
 	get<T>(key: string): Promise<T | null>;
 	set<T>(key: string, value: T): Promise<void>;
 	remove(key: string): Promise<void>;
@@ -27,6 +28,10 @@ class WebExtStorage implements IStorage {
 	async getAll(): Promise<{ [key: string]: any }> {
 		console.log(`[Storage] Get All`);
 		return await this.values;
+	}
+
+	async keys() {
+		return Object.keys(await this.values);
 	}
 
 	async get<T>(key: string): Promise<T | null> {
@@ -78,6 +83,17 @@ class LocalStorage implements IStorage {
 		return ret;
 	}
 
+	async keys(): Promise<string[]> {
+		const ret: string[] = [];
+		for (let i = 0; i < window.localStorage.length; i++) {
+			const key = window.localStorage.key(i);
+			if (key && !key.startsWith("_")) {
+				ret.push(key);
+			}
+		}
+		return ret;
+	}
+
 	async get<T>(key: string): Promise<T | null> {
 		if (key == undefined) {
 			return null;
@@ -92,18 +108,7 @@ class LocalStorage implements IStorage {
 		console.log(`[Storage] Set ${key}`);
 
 		const json = JSON.stringify(toTypedJSON(value));
-		try {
-			window.localStorage.setItem(key, json);
-		} catch (e: any) {
-			if (typeof e.toString() != "function" ||
-					!e.toString().includes("Quota") ||
-					typeof browser == "undefined") {
-				throw e;
-			}
-
-			clearLocalStorage();
-			window.localStorage.setItem(key, json);
-		}
+		window.localStorage.setItem(key, json);
 	}
 
 	async remove(key: string): Promise<void> {
@@ -123,6 +128,10 @@ class DelegateStorage implements IStorage {
 		throw new Error("Unimplemented");
 	}
 
+	async keys(): Promise<string[]> {
+		return (await this.delegate.keys()).filter(key => key.startsWith(this.prefix));
+	}
+
 	async get<T>(key: string): Promise<T | null> {
 		if (key == undefined) {
 			return null;
@@ -139,7 +148,7 @@ class DelegateStorage implements IStorage {
 	}
 
 	async clear(): Promise<void> {
-		await this.delegate.clear();
+		(await this.keys()).forEach(key => this.remove(key));
 	}
 }
 
@@ -158,12 +167,4 @@ export const storage : IStorage =
 
 export const largeStorage : IStorage = new DelegateStorage(storage, "large-");
 
-export const cacheStorage : IStorage = new DelegateStorage(new LocalStorage(), "_");
-
-export function clearLocalStorage() {
-	const opt_out = window.localStorage.getItem("_sentry-opt-out");
-	window.localStorage.clear();
-	if (opt_out) {
-		window.localStorage.setItem("_sentry-opt-out", opt_out);
-	}
-}
+export const cacheStorage : IStorage = new DelegateStorage(storage, "cache-");

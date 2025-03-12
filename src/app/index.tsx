@@ -36,4 +36,13 @@ if (typeof browser !== "undefined") {
 	}
 
 	setUninstallURL().catch(console.error);
+
+	setTimeout(() => {
+		for (let i = 0; i < window.localStorage.length; i++) {
+			const key = window.localStorage.key(i);
+			if (key && key != "_sentry-opt-out") {
+				window.localStorage.removeItem(key);
+			}
+		}
+	}, 100);
 }

@@ -7,6 +7,10 @@ export default class DummyStorage implements IStorage {
 		return { ...this.values };
 	}
 
+	async keys(): Promise<string[]> {
+		return Object.keys(await this.getAll());
+	}
+
 	async get<T>(key: string): Promise<T | null> {
 		return this.values[key] ?? null;
 	}
