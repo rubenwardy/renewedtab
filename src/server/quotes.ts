@@ -15,7 +15,7 @@ export async function getQuoteCategories(): Promise<QuoteCategory[]> {
 import quotes from "./data/quotes.json";
 
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+ 
 async function fetchQuotes(_category: string): Promise<Quote[]> {
 	// TODO: use quote API
 

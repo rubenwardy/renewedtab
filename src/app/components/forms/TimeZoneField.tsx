@@ -373,7 +373,7 @@ export default function TimeZoneField(props: FieldProps<(string | undefined)>) {
 	let browserTimeZone;
 	try {
 		browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-	} catch(e) {
+	} catch {
 		// ignore
 	}
 

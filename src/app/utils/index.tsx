@@ -72,7 +72,7 @@ export function queryMatchesAny(query: string, ...args: string[]) {
 export function parseURL(v: string): URL | undefined {
 	try {
 		return new URL(v);
-	} catch (e) {
+	} catch {
 		return undefined;
 	}
 }

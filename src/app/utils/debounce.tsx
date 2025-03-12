@@ -1,4 +1,4 @@
-export default function debounce(func: any, ms: number) { // eslint-disable-line
+export default function debounce(func: any, ms: number) {  
 	let handle: any;
 	return (...args: any[]) => {
 		if (handle) {

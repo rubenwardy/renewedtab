@@ -74,7 +74,7 @@ function CalendarSchedule(widget: WidgetProps<CalendarScheduleProps>) {
 	if (!pair) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		useMemo(() => {}, [[], ""]);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		 
 		return (<ErrorView error={error} loading={true} />);
 	}
 

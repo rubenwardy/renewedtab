@@ -71,9 +71,9 @@ declare namespace browser.search {
 		favIconUrl?: string;
 	}
 
-	function get(): Promise<SearchEngine[]>; // eslint-disable-line
-	function search(props: any): void; // eslint-disable-line
-	function query(props: any): void; // eslint-disable-line
+	function get(): Promise<SearchEngine[]>;
+	function search(props: any): void;
+	function query(props: any): void;
 }
 
 declare namespace browser.tabs {
@@ -81,7 +81,7 @@ declare namespace browser.tabs {
 		id?: number;
 	}
 
-	function getCurrent(): Promise<Tab>; // eslint-disable-line
+	function getCurrent(): Promise<Tab>;
 }
 
 
@@ -239,7 +239,7 @@ const widget: WidgetType<SearchProps> = {
 					const url = new URL(widget.props.searchURL);
 					url.searchParams.set("q", "---query---");
 					widget.props.searchURL = url.toString().replace("q=---query---", "q={query}");
-				} catch(e) {
+				} catch {
 					widget.props.searchURL += "?q={query}";
 				}
 			}

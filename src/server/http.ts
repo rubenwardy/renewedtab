@@ -12,7 +12,7 @@ export default async function fetchCatch(url: RequestInfo, init?: RequestInit): 
 			init.timeout = 20000;
 		}
 		return await fetch(url, init);
-	} catch (e) {
+	} catch {
 		let host = "?";
 		if (typeof (url) == "string") {
 			host = new URL(url).host;

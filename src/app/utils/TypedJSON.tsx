@@ -18,7 +18,7 @@ type JSONValues = { [key: string]: any } | any[] | string | number | boolean | n
  * @param anyObj Something to convert
  */
 
-export function toTypedJSON(anyObj: any): JSONValues {  // eslint-disable-line
+export function toTypedJSON(anyObj: any): JSONValues {   
 	if (anyObj == null) {
 		return anyObj;
 	} else if (Array.isArray(anyObj)) {

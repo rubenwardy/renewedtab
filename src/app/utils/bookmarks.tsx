@@ -10,7 +10,7 @@ async function tryGetSubTree(id: string): Promise<browser.bookmarks.BookmarkTree
 			return null;
 		}
 		return toolbar_subtree[0]
-	} catch (ex: any) {
+	} catch {
 		return null;
 	}
 }

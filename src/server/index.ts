@@ -449,7 +449,7 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 			res.append("max-age", "0");
 		}
 		res.setHeader("Cache-Control", "max-age=300").json(quotes);
-	} catch (e: any) {
+	} catch {
 		// next(e);
 		res.removeHeader("expires");
 		res.append("max-age", "0");

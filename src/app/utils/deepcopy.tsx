@@ -1,6 +1,6 @@
 import { Vector2 } from "./Vector2";
 
-export default function deepCopy(value: any) { // eslint-disable-line
+export default function deepCopy(value: any) {  
 	if (typeof value !== "object" || value === null) {
 		return value;
 	}
