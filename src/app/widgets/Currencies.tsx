@@ -51,14 +51,14 @@ interface CurrenciesProps {
 }
 
 
-function Currencies(widget: WidgetProps<CurrenciesProps>) {
+function Currencies(props: WidgetProps<CurrenciesProps>) {
 	const { query } = useGlobalSearch();
 	const rates = useMemo(
-		() => widget.props.rates.filter(
+		() => props.props.rates.filter(
 			rate => rate.from != "" && rate.to != "" &&
 				queryMatchesAny(query, rate.from, rate.to)),
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-		[ widget.props.rates, widget.props.rates.length, query ]);
+		[ props.props.rates, props.props.rates.length, query ]);
 
 	const intl = useIntl();
 	const [ currencies, error ] = useAPI<Record<string, CurrencyInfo>>(`/currencies/`, {}, []);
@@ -84,7 +84,7 @@ function Currencies(widget: WidgetProps<CurrenciesProps>) {
 	}
 
 	return (
-		<Panel {...widget.theme}>
+		<Panel {...props.theme}>
 			<div className="stats h-100">
 				{rates.map(({from, to}) => (
 					<div className="singlestat" key={`${from}-${to}`}>
@@ -97,7 +97,7 @@ function Currencies(widget: WidgetProps<CurrenciesProps>) {
 							{renderExchangeRate(from, to)}
 						</span>
 					</div>))}
-				{rates.length == 0 && widget.props.rates.length > 0 && (
+				{rates.length == 0 && props.props.rates.length > 0 && (
 					<div className="text-muted">
 						<FormattedMessage {...miscMessages.noResults} />
 					</div>)}

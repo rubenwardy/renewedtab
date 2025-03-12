@@ -33,8 +33,8 @@ interface QuotesProps {
 }
 
 
-function Quotes(widget: WidgetProps<QuotesProps>) {
-	const categories = Object.entries(widget.props.categories)
+function Quotes(props: WidgetProps<QuotesProps>) {
+	const categories = Object.entries(props.props.categories)
 		.filter(([, value]) => value)
 		.map(([key,]) => key);
 
@@ -49,7 +49,7 @@ function Quotes(widget: WidgetProps<QuotesProps>) {
 	}
 
 	return (
-		<Panel {...widget.theme} scrolling={true}>
+		<Panel {...props.theme} scrolling={true}>
 			<div className="middle-center quote">
 				<div className="quote-text">
 					{quote.text}

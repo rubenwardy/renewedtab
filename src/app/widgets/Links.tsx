@@ -33,8 +33,8 @@ const messages = defineMessages({
 });
 
 
-function Links(widget: WidgetProps<LinkBoxProps>)  {
-	return (<LinkBox {...widget.props} widgetTheme={widget.theme} />);
+function Links(props: WidgetProps<LinkBoxProps>)  {
+	return (<LinkBox {...props.props} widgetTheme={props.theme} />);
 }
 
 
@@ -44,7 +44,7 @@ function encode(str: string) {
 }
 
 
-function LinksImportExport(widget: WidgetEditComponentProps<LinkBoxProps>) {
+function LinksImportExport(props: WidgetEditComponentProps<LinkBoxProps>) {
 	const intl = useIntl();
 	const handleImport = useCallback(async (file: File) => {
 		try {
@@ -75,22 +75,22 @@ function LinksImportExport(widget: WidgetEditComponentProps<LinkBoxProps>) {
 			}
 
 			const added = new Set();
-			widget.props.links.forEach(link => added.add(link.url));
+			props.props.links.forEach(link => added.add(link.url));
 
-			widget.props.links = [
-				...widget.props.links,
+			props.props.links = [
+				...props.props.links,
 				...links.filter(link => !added.has(link.url)),
 			];
-			widget.onChange();
+			props.onChange();
 		} catch (e) {
 			alert(e);
 			return;
 		}
-	}, [widget, intl]);
+	}, [props, intl]);
 
 	const exportData = useMemo(() => {
-		return `data:application/json;base64,${encode(JSON.stringify(widget.props.links))}`
-	}, [widget.props.links]);
+		return `data:application/json;base64,${encode(JSON.stringify(props.props.links))}`
+	}, [props.props.links]);
 
 	const ref = useRef<HTMLInputElement>(null);
 	return (

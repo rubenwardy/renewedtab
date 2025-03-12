@@ -27,10 +27,10 @@ interface HTMLProps {
 	html: string;
 }
 
-function HTML(widget: WidgetProps<HTMLProps>) {
+function HTML(props: WidgetProps<HTMLProps>) {
 	return (
-		<Panel {...widget.theme} scrolling={false}>
-			<div dangerouslySetInnerHTML={{__html: widget.props.html}} />
+		<Panel {...props.theme} scrolling={false}>
+			<div dangerouslySetInnerHTML={{__html: props.props.html}} />
 		</Panel>);
 }
 

@@ -24,11 +24,11 @@ interface TextProps
 	text: string;
 }
 
-function Text(widget: WidgetProps<TextProps>)  {
+function Text(props: WidgetProps<TextProps>)  {
 	return (
-		<Panel {...widget.theme}>
+		<Panel {...props.theme}>
 			<div className="medium">
-				{widget.props.text}
+				{props.props.text}
 			</div>
 		</Panel>);
 }

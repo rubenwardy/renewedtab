@@ -149,17 +149,17 @@ async function getSearchEngineSettings(props: SearchProps): Promise<SearchEngine
 }
 
 
-function Search(widget: WidgetProps<SearchProps>) {
+function Search(props: WidgetProps<SearchProps>) {
 	const globalSearch = useGlobalSearch();
-	const props = widget.props;
+	const data = props.props;
 	const intl = useIntl();
-	const enableGlobalSearch = props.enableGlobalSearch ?? true;
+	const enableGlobalSearch = data.enableGlobalSearch ?? true;
 	const [query, setQuery] = enableGlobalSearch
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		? [globalSearch.query, globalSearch.setQuery] : useState("");
 	const directURL = getProbableURL(query);
 
-	const [settings, error] = usePromise(() => getSearchEngineSettings(props), []);
+	const [settings, error] = usePromise(() => getSearchEngineSettings(data), []);
 	const ref = useRef<HTMLInputElement>(null);
 	if (!settings) {
 		return (<ErrorView error={error} loading={true} />);
@@ -180,7 +180,7 @@ function Search(widget: WidgetProps<SearchProps>) {
 		: intl.formatMessage(messages.search);
 
 	return (
-		<Panel {...widget.theme} flush={true}>
+		<Panel {...props.theme} flush={true}>
 			<form onSubmit={onSubmit}>
 				<span key={directURL ?? "icon"} className="icon">
 					<i className={directURL !== null

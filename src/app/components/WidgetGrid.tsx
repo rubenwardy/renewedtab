@@ -122,7 +122,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 					className={mergeClasses("widget",
 						widget.position?.y == 0 && "widget-bar-bottom",
 						`widget-${widget.type.toLowerCase()}`)}
-					data-widget-id={props.id}>
+					data-widget-id={widget.id}>
 				<ErrorBoundary>
 					<WidgetContainer {...props} />
 				</ErrorBoundary>

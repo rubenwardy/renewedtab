@@ -64,7 +64,7 @@ function getGreeting(): MessageDescriptor {
 }
 
 
-function Greeting(widget: WidgetProps<Record<string, never>>) {
+function Greeting(props: WidgetProps<Record<string, never>>) {
 	const [name, setName] = useStorage<string | undefined>("name", undefined, true);
 
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -73,7 +73,7 @@ function Greeting(widget: WidgetProps<Record<string, never>>) {
 
 	const intl = useIntl();
 	return (
-		<Panel {...widget.theme}>
+		<Panel {...props.theme}>
 			<div className="large middle-center">
 				<div>
 					{name !== undefined &&

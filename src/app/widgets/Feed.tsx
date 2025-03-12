@@ -109,8 +109,8 @@ interface FeedPanelProps extends FeedProps {
 }
 
 
-function FeedArticle({ article, feedProps: props }: { article: Article, feedProps: FeedProps }) {
-	if (props.showImages) {
+function FeedArticle({ article, data }: { article: Article, data: FeedProps }) {
+	if (data.showImages) {
 		return (
 			<div className="row row-gap-3">
 				<div className="col-3">
@@ -122,15 +122,15 @@ function FeedArticle({ article, feedProps: props }: { article: Article, feedProp
 				</div>
 				<div className="col">
 					{article.title}
-					{props.sources.length != 1 && (
+					{data.sources.length != 1 && (
 						<p className="mt-1 mb-0 text-muted">
 							{article.feed.source?.title || article.feed.title}
 						</p>)}
 				</div>
 			</div>);
-	} else if (props.sources.length == 1) {
+	} else if (data.sources.length == 1) {
 		return (<>{article.title}</>);
-	} else if (props.useWebsiteIcons) {
+	} else if (data.useWebsiteIcons) {
 		return (
 			<div className="row row-gap-3">
 				<span className="col-auto">
@@ -208,7 +208,7 @@ function FeedPanel(props: FeedPanelProps) {
 		.map(article => (
 			<li key={article.id}>
 				<a href={article.link} target={target} rel="noreferrer">
-					<FeedArticle article={article} feedProps={props} />
+					<FeedArticle article={article} data={props} />
 				</a>
 			</li>));
 
@@ -235,18 +235,18 @@ function FeedPanel(props: FeedPanelProps) {
 }
 
 
-function Feed(widget: WidgetProps<FeedProps>) {
-	const props = widget.props;
-	const showAll = widget.props.combineSources;
+function Feed(props: WidgetProps<FeedProps>) {
+	const data = props.props;
+	const showAll = props.props.combineSources;
 	const showTabs = !showAll;
 
-	const [selectedId, setSelectedId] = useState(showAll ? "*" : (props.sources[0]?.id ?? ""));
-	const selectedSource = props.sources.find(x => x.id == selectedId);
-	const sources: FeedSource[] = selectedId == "*" ? props.sources : (selectedSource ? [selectedSource] : []);
+	const [selectedId, setSelectedId] = useState(showAll ? "*" : (data.sources[0]?.id ?? ""));
+	const selectedSource = data.sources.find(x => x.id == selectedId);
+	const sources: FeedSource[] = selectedId == "*" ? data.sources : (selectedSource ? [selectedSource] : []);
 	const [force, forceUpdate] = useForceUpdateValue();
 
 	const options = useMemo<TabOption[]>(() => {
-		const ret: TabOption[] = props.sources.filter(x => x.url).map(x => ({
+		const ret: TabOption[] = data.sources.filter(x => x.url).map(x => ({
 			id: x.id,
 			title: x.title || parseURL(x.url)?.hostname || "?",
 			url: x.url,
@@ -262,20 +262,20 @@ function Feed(widget: WidgetProps<FeedProps>) {
 
 		return ret;
 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [force, props.sources, props.sources.length]);
+	}, [force, data.sources, data.sources.length]);
 
-	if (props.sources.length == 0) {
+	if (data.sources.length == 0) {
 		return (
 			<ErrorView error={new UserError(messages.noSources)} />);
 	}
 
 	return (
-		<Panel {...widget.theme} flush={true}>
+		<Panel {...props.theme} flush={true}>
 			{showTabs && (
 				<Tabs value={selectedId} options={options} onChanged={setSelectedId}
-					useWebsiteIcons={props.useWebsiteIcons}
+					useWebsiteIcons={data.useWebsiteIcons}
 					useRootPathForIcons={true} />)}
-			<FeedPanel {...props}
+			<FeedPanel {...data}
 				key={sources.map(x => x.url).join(",")}
 				sources={sources}
 				onGotTitle={(source, title, htmlUrl) => {
@@ -285,7 +285,7 @@ function Feed(widget: WidgetProps<FeedProps>) {
 					if (htmlUrl && !source.htmlUrl) {
 						source.htmlUrl = htmlUrl;
 					}
-					widget.save();
+					props.save();
 					forceUpdate();
 				}} />
 		</Panel>);
@@ -298,26 +298,26 @@ function encode(str: string) {
 }
 
 
-function FeedsImportExport(widget: WidgetEditComponentProps<FeedProps>) {
+function FeedsImportExport(props: WidgetEditComponentProps<FeedProps>) {
 	const handleImport = useCallback(async (file: File) => {
 		const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
 		const sources = parseOPML(text, (s, l) => new window.DOMParser().parseFromString(s, l as any));
 
 		// Avoid duplicates
 		const urls = new Set();
-		widget.props.sources.forEach(x => urls.add(x.url));
+		props.props.sources.forEach(x => urls.add(x.url));
 
-		widget.props.sources = [
-			...widget.props.sources,
+		props.props.sources = [
+			...props.props.sources,
 			...sources.filter(x => !urls.has(x.url))
 		];
-		widget.onChange();
-	}, [widget]);
+		props.onChange();
+	}, [props]);
 
 	const exportData = useMemo(() => {
-		const data = makeOPML(widget.props.sources);
-		return `data:text/plain;base64,${encode(data ?? "")}`
-	}, [widget.props.sources]);
+		const feeds = makeOPML(props.props.sources);
+		return `data:text/plain;base64,${encode(feeds ?? "")}`
+	}, [props.props.sources]);
 
 	const ref = useRef<HTMLInputElement>(null);
 	return (

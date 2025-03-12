@@ -21,7 +21,7 @@ const messages = defineMessages({
 });
 
 
-function YearProgress(widget: WidgetProps<any>) {
+function YearProgress(props: WidgetProps<any>) {
 	const now = new Date();
 	const start = new Date(now.getFullYear(), 0, 0);
 	const diff = (now.valueOf() - start.valueOf()) +
@@ -30,8 +30,8 @@ function YearProgress(widget: WidgetProps<any>) {
 	const dayOfYear = Math.floor(diff / oneDay);
 
 	return (
-		<Panel {...widget.theme} className="vertical-middle" invisClassName="vertical-middle">
-			<Meter className="blur" color={widget.theme.color}
+		<Panel {...props.theme} className="vertical-middle" invisClassName="vertical-middle">
+			<Meter className="blur" color={props.theme.color}
 				value={dayOfYear} max={365} />
 		</Panel>);
 }

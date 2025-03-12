@@ -74,15 +74,15 @@ function renderDate(intl: IntlShape, launch: SpaceLaunch): string {
 }
 
 
-function SpaceFlights(widget: WidgetProps<any>) {
+function SpaceFlights(props: WidgetProps<any>) {
 	const { query } = useGlobalSearch();
 	const intl = useIntl();
-	const [data, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
-	if (!data) {
+	const [launches, error] = useAPI<SpaceLaunch[]>("space-flights/", {}, []);
+	if (!launches) {
 		return (<ErrorView error={error} loading={true} />);
 	}
 
-	const rows = data
+	const rows = launches
 		.filter(launch => queryMatchesAny(query, launch.name, launch.provider))
 		.map(launch => {
 			const winOpen = attemptDate(launch.win_open);
@@ -109,13 +109,13 @@ function SpaceFlights(widget: WidgetProps<any>) {
 		});
 
 	return (
-		<Panel {...widget.theme} flush={true}>
+		<Panel {...props.theme} flush={true}>
 			<h2 className="panel-inset pb-1">
 				<FormattedMessage {...messages.title} />
 			</h2>
 			<ul className="links">
 				{rows}
-				{rows.length == 0 && data.length > 0 && (
+				{rows.length == 0 && launches.length > 0 && (
 					<li className="section">
 						<FormattedMessage {...miscMessages.noResults} />
 					</li>

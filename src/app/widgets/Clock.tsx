@@ -107,8 +107,8 @@ interface ClockProps {
 }
 
 
-function Clock(widget: WidgetProps<ClockProps>) {
-	const props = widget.props;
+function Clock(props: WidgetProps<ClockProps>) {
+	const data = props.props;
 	const [time, setTime] = React.useState<Date>(new Date());
 	const intl = useIntl();
 
@@ -123,19 +123,19 @@ function Clock(widget: WidgetProps<ClockProps>) {
 	}, []);
 
 
-	const timeZone = (props.timeZone != "" && props.timeZone != "auto") ? props.timeZone : undefined;
-	const dateStyle = enumToValue(DateStyle, props.dateStyle);
+	const timeZone = (data.timeZone != "" && data.timeZone != "auto") ? data.timeZone : undefined;
+	const dateStyle = enumToValue(DateStyle, data.dateStyle);
 
 	return (
-		<Panel {...widget.theme} scrolling={false}>
+		<Panel {...props.theme} scrolling={false}>
 			<div className="row row-vertical h-100">
 				<div className="col text-center">
 					<FitText>
 						{intl.formatTime(time, {
 							hour: "numeric",
 							minute: "numeric",
-							second: props.showSeconds ? "numeric" : undefined,
-							hourCycle: props.hour12 ? "h12" : "h23",
+							second: data.showSeconds ? "numeric" : undefined,
+							hourCycle: data.hour12 ? "h12" : "h23",
 							timeZone,
 						})}
 					</FitText>

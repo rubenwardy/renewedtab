@@ -78,9 +78,9 @@ function TodoItem(props: { item: TodoItemData, onChange: () => void, delete: () 
 }
 
 
-function TodoList(widget: WidgetProps<TodoListProps>) {
+function TodoList(props: WidgetProps<TodoListProps>) {
 	const { query } = useGlobalSearch();
-	const [list, setList] = useWidgetProp<TodoItemData[]>(widget, "list");
+	const [list, setList] = useWidgetProp<TodoItemData[]>(props, "list");
 	const [newItemText, setNewItemText] = useState<string>("");
 	const intl = useIntl();
 
@@ -107,7 +107,7 @@ function TodoList(widget: WidgetProps<TodoListProps>) {
 	const filteredList = list.filter(item => queryMatchesAny(query, item.text));
 
 	return (
-		<Panel {...widget.theme}>
+		<Panel {...props.theme}>
 			<ul className="todolist">
 				{filteredList.map(item => (
 					<TodoItem key={item.id} item={item}

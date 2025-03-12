@@ -34,21 +34,21 @@ interface BookmarksProps {
 }
 
 
-function BookmarksImpl(widget: WidgetProps<BookmarksProps>) {
-	const props = widget.props;
+function BookmarksImpl(props: WidgetProps<BookmarksProps>) {
+	const data = props.props;
 
-	const [links, error] = usePromise(() => getBookmarks(props.includeFolders), []);
+	const [links, error] = usePromise(() => getBookmarks(data.includeFolders), []);
 	if (!links) {
 		return (<ErrorView error={error} />);
 	}
 
 	return (
-		<LinkBox {...props} widgetTheme={widget.theme}  useWebsiteIcons={true}
+		<LinkBox {...data} widgetTheme={props.theme}  useWebsiteIcons={true}
 			links={links.filter(x => !x.children)}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 
-function Bookmarks(widget: WidgetProps<BookmarksProps>) {
+function Bookmarks(props: WidgetProps<BookmarksProps>) {
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
 
@@ -66,7 +66,7 @@ function Bookmarks(widget: WidgetProps<BookmarksProps>) {
 			</div>);
 	}
 
-	return (<BookmarksImpl {...widget} />);
+	return (<BookmarksImpl {...props} />);
 }
 
 

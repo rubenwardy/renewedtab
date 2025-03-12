@@ -392,23 +392,23 @@ function getSizeCode(size: Vector2 | undefined, props: WeatherProps) {
 
 
 function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, rawInfo: WeatherInfo }) {
-	const props = widget.props;
-	const unit = props.unit ?? TemperatureUnit.Celsius;
+	const data = widget.props;
+	const unit = data.unit ?? TemperatureUnit.Celsius;
 	const ref = useRef<HTMLDivElement>(null);
 	const size = useElementSize(ref);
 	const info = useMemo(() => convertWeatherTemperatures(rawInfo, unit), [rawInfo, unit]);
 
-	const columnWidth = props.display.showHourlyForecast ? 80 : 75;
+	const columnWidth = data.display.showHourlyForecast ? 80 : 75;
 	const numberOfColumns = size ? size.x / columnWidth : 5;
 	const hourly = info.hourly.slice(0, numberOfColumns).map(hour =>
 		(<Hour key={hour.time} {...hour} />))
 
 	const daily = info.daily.slice(0, numberOfColumns).map(day =>
-		(<Day key={day.dayOfWeek} day={day} windSpeedUnit={props.windSpeedUnit} />));
+		(<Day key={day.dayOfWeek} day={day} windSpeedUnit={data.windSpeedUnit} />));
 
-	const sizeCode = getSizeCode(size, props);
-	const hideCredits = size && (size.x < 170 || size.y < 75) && !hasDetails(props.display) &&
-			!props.display.showHourlyForecast && !props.display.showDailyForecast;
+	const sizeCode = getSizeCode(size, data);
+	const hideCredits = size && (size.x < 170 || size.y < 75) && !hasDetails(data.display) &&
+			!data.display.showHourlyForecast && !data.display.showDailyForecast;
 	const classes = mergeClasses("weather", `weather-${sizeCode}`,
 			hideCredits && "weather-by", "h-100");
 	return (
@@ -418,8 +418,8 @@ function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, r
 				<div className="row">
 					<div className="col text-left location weather-title">
 						{info.url
-							? (<a href={info.url}>{props.location.name}</a>)
-							: (props.location.name)}
+							? (<a href={info.url}>{data.location.name}</a>)
+							: (data.location.name)}
 					</div>
 					<div className="col-auto text-right weather-credits">
 						<a href="https://www.accuweather.com">
@@ -428,37 +428,37 @@ function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, r
 					</div>
 				</div>)}
 
-			{props.display.showCurrent && (
+			{data.display.showCurrent && (
 				<div className="col">
 					<Current current={info.current}
-						display={props.display}
-						windSpeedUnit={props.windSpeedUnit} />
+						display={data.display}
+						windSpeedUnit={data.windSpeedUnit} />
 				</div>)}
 
-			{props.display.showHourlyForecast && (
+			{data.display.showHourlyForecast && (
 				<div className="row forecasts" data-cy="weather-hourly">{hourly}</div>)}
 
-			{props.display.showDailyForecast && (
+			{data.display.showDailyForecast && (
 				<div className="row forecasts" data-cy="weather-daily">{daily}</div>)}
 		</Panel>);
 }
 
 
-function Weather(widget: WidgetProps<WeatherProps>) {
-	const props = widget.props;
+function Weather(props: WidgetProps<WeatherProps>) {
+	const data = props.props;
 	const [rawInfo, error] = usePromise<WeatherInfo>(async () => {
-		if (!props.location) {
+		if (!data.location) {
 			throw new UserError(messages.locationNeeded);
 		}
 
 		return fetchAPI("/weather/", {
-			lat: props.location.latitude.toFixed(2),
-			long: props.location.longitude.toFixed(2)
+			lat: data.location.latitude.toFixed(2),
+			long: data.location.longitude.toFixed(2)
 		});
-	}, [props.location, props.location?.latitude, props.location?.longitude])
+	}, [data.location, data.location?.latitude, data.location?.longitude])
 
 	if (rawInfo) {
-		return (<WeatherImpl widget={widget} rawInfo={rawInfo} />);
+		return (<WeatherImpl widget={props} rawInfo={rawInfo} />);
 	} else {
 		return (<ErrorView error={error} loading={true} />);
 	}

@@ -29,14 +29,14 @@ interface ImageProps {
 	link: string;
 }
 
-function Image(widget: WidgetProps<ImageProps>) {
-	const props = widget.props;
+function Image(props: WidgetProps<ImageProps>) {
+	const data = props.props;
 
 	return (
-		<Panel {...widget.theme} scrolling={false}>
-			{((props.link ?? "").length > 0)
-				? (<a href={props.link}><img src={props.image_url} /></a>)
-				: (<img src={props.image_url} />)}
+		<Panel {...props.theme} scrolling={false}>
+			{((data.link ?? "").length > 0)
+				? (<a href={data.link}><img src={data.image_url} /></a>)
+				: (<img src={data.image_url} />)}
 		</Panel>
 	);
 }

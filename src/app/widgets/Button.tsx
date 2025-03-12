@@ -34,11 +34,11 @@ interface ButtonProps {
 	useWebsiteIcons: boolean;
 }
 
-function Button(widget: WidgetProps<ButtonProps>) {
-	const props = widget.props;
+function Button(props: WidgetProps<ButtonProps>) {
+	const data = props.props;
 
-	const color = Color.fromString(widget.theme.color ?? "") ?? Color.fromString("#007DB8")!;
-	color.a = clampNumber(widget.theme.opacity ?? 100, 0, 100) / 100;
+	const color = Color.fromString(props.theme.color ?? "") ?? Color.fromString("#007DB8")!;
+	color.a = clampNumber(props.theme.opacity ?? 100, 0, 100) / 100;
 	const style: any = {
 		"--color-button": color.rgba,
 		"--color-button-lighter": color.rgba,
@@ -46,26 +46,26 @@ function Button(widget: WidgetProps<ButtonProps>) {
 	};
 
 	const icon = useMemo(
-		() => (props.useWebsiteIcons && getWebsiteIconOrNull(props.url)) || props.icon,
-		[props.icon, props.url, props.useWebsiteIcons]);
+		() => (data.useWebsiteIcons && getWebsiteIconOrNull(data.url)) || data.icon,
+		[data.icon, data.url, data.useWebsiteIcons]);
 
 	const className = mergeClasses(
 		"btn btn-custom btn-brighten h-100 w-100 m-0 p-3",
-		(widget.theme.showPanelBG !== false) && "blur");
+		(props.theme.showPanelBG !== false) && "blur");
 
-	const isHorizontal = widget.size.x > 2 * widget.size.y;
+	const isHorizontal = props.size.x > 2 * props.size.y;
 
 	return (
-		<a href={props.url} style={style} className={className}>
+		<a href={data.url} style={style} className={className}>
 			<div className={mergeClasses("row middle-center h-100", !isHorizontal && "row-vertical")}>
 				{icon && (
 					<div className={mergeClasses(isHorizontal ? "col-auto" : "col", "p-1 h-100")}
 						style={{ position: "relative" }}>
 						<Icon icon={icon} />
 					</div>)}
-				{props.text && (
+				{data.text && (
 					<div className={isHorizontal ? "col" : "col-auto"}>
-						{props.text}
+						{data.text}
 					</div>)}
 			</div>
 		</a>);

@@ -35,8 +35,6 @@ export default [...fixupConfigRules(compat.extends(
 		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-require-imports": "off",
-		"react/prop-types": "off",
-
 
 		"@typescript-eslint/no-unused-vars": [
 			"warn", // or "error"

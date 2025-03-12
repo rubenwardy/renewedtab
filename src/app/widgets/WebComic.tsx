@@ -63,9 +63,9 @@ interface WebComicProps {
 }
 
 
-function WebComic(widget: WidgetProps<WebComicProps>) {
-	const props = widget.props;
-	const [feed, error] = useFeed(props.url, [props.url]);
+function WebComic(props: WidgetProps<WebComicProps>) {
+	const data = props.props;
+	const [feed, error] = useFeed(data.url, [data.url]);
 	const [page, setPage] = useState(0);
 	const [fullscreen, setFullscreen] = useState(false);
 	useEffect(() => {
@@ -112,7 +112,7 @@ function WebComic(widget: WidgetProps<WebComicProps>) {
 			</Modal>);
 	} else {
 		return (
-			<Panel {...widget.theme} flush={true} invisClassName="text-shadow">
+			<Panel {...props.theme} flush={true} invisClassName="text-shadow">
 				<ImageCarousel hasPrev={page + 1 < feed.articles.length} hasNext={page > 0} onNavigate={handleNavigate}>
 					<div className="image-caption h-100">
 						<a onClick={() => setFullscreen(true)} title={article.alt ?? ""}>

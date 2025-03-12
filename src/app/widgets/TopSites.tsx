@@ -11,7 +11,7 @@ import { defineMessages, useIntl } from 'react-intl';
 
 
 function createDebugData(): browser.topSites.MostVisitedURL[] {
-	const data = [
+	const debugData = [
 		{
 			title: "GitLab",
 			url: "https://gitlab.com",
@@ -38,7 +38,7 @@ function createDebugData(): browser.topSites.MostVisitedURL[] {
 		},
 	];
 
-	return [ ...data ];
+	return [ ...debugData ];
 }
 
 
@@ -69,8 +69,8 @@ async function getTopSites(): Promise<browser.topSites.MostVisitedURL[]> {
 }
 
 
-function TopSitesImpl(widget: WidgetProps<any>) {
-	const props = widget.props;
+function TopSitesImpl(props: WidgetProps<any>) {
+	const data = props.props;
 
 	const [sites, error] = usePromise(getTopSites, []);
 	if (!sites) {
@@ -85,12 +85,12 @@ function TopSitesImpl(widget: WidgetProps<any>) {
 	}));
 
 	return (
-		<LinkBox {...props} widgetTheme={widget.theme} links={links} useWebsiteIcons={true}
+		<LinkBox {...data} widgetTheme={props.theme} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe"
-			limitItemsToAvoidScrolling={widget.theme.listBoxStyle == ListBoxStyle.Icons} />);
+			limitItemsToAvoidScrolling={props.theme.listBoxStyle == ListBoxStyle.Icons} />);
 }
 
-function TopSites(widget: WidgetProps<Record<string, never>>) {
+function TopSites(props: WidgetProps<Record<string, never>>) {
 	const forceUpdate = useForceUpdate();
 	const intl = useIntl();
 
@@ -108,7 +108,7 @@ function TopSites(widget: WidgetProps<Record<string, never>>) {
 			</div>);
 	}
 
-	return (<TopSitesImpl {...widget} />);
+	return (<TopSitesImpl {...props} />);
 }
 
 

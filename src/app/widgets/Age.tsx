@@ -35,23 +35,23 @@ interface AgeProps {
 }
 
 
-function Age(widget: WidgetProps<AgeProps>) {
-	const props = widget.props;
+function Age(props: WidgetProps<AgeProps>) {
+	const data = props.props;
 
-	const [age, setAge] = useState(calculateDecimalAge(props.birthDate));
+	const [age, setAge] = useState(calculateDecimalAge(data.birthDate));
 
 	useEffect(() => {
 		const timer = setInterval(() => {
-			setAge(calculateDecimalAge(props.birthDate));
+			setAge(calculateDecimalAge(data.birthDate));
 		}, 500);
 
 		return () => {
 			clearInterval(timer);
 		};
-	}, [props.birthDate]);
+	}, [data.birthDate]);
 
 	return (
-		<Panel {...widget.theme} className="vertical-middle" invisClassName="vertical-middle">
+		<Panel {...props.theme} className="vertical-middle" invisClassName="vertical-middle">
 			<FormattedMessage {...messages.current_age}
 				values={{
 					b: (chunks: any) => <strong>&nbsp;{chunks}&nbsp;</strong>,

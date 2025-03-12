@@ -23,10 +23,10 @@ interface IFrameProps {
 	url: string;
 }
 
-function IFrame(widget: WidgetProps<IFrameProps>) {
+function IFrame(props: WidgetProps<IFrameProps>) {
 	return (
-		<Panel {...widget.theme} scrolling={false}>
-			<iframe src={widget.props.url} width="100%" height="100%" frameBorder="0" />
+		<Panel {...props.theme} scrolling={false}>
+			<iframe src={props.props.url} width="100%" height="100%" frameBorder="0" />
 		</Panel>);
 }
 

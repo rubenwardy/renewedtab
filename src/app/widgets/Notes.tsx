@@ -27,8 +27,8 @@ export interface NotesProps {
 	notes: string;
 }
 
-function Notes(widget: WidgetProps<NotesProps>) {
-	const [ notes, setNotes ] = useWidgetProp<string>(widget, "notes");
+function Notes(props: WidgetProps<NotesProps>) {
+	const [ notes, setNotes ] = useWidgetProp<string>(props, "notes");
 
 	function handleChange(event: React.FormEvent<HTMLTextAreaElement>) {
 		const element = event.target as HTMLTextAreaElement;
@@ -37,7 +37,7 @@ function Notes(widget: WidgetProps<NotesProps>) {
 
 	const intl = useIntl();
 	return (
-		<Panel {...widget.theme} scrolling={false}>
+		<Panel {...props.theme} scrolling={false}>
 			<textarea className="invisible" onChange={handleChange}
 					placeholder={intl.formatMessage(messages.placeholder)}
 					value={notes || ""} />

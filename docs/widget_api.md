@@ -51,12 +51,12 @@ interface HelloWorldProps {
 }
 
 
-function HelloWorld(widget: WidgetProps<HelloWorldProps>) {
+function HelloWorld(props: WidgetProps<HelloWorldProps>) {
 	return (
-		<Panel {...widget.theme} className="vertical-middle">
+		<Panel {...props.theme} className="vertical-middle">
 			<FormattedMessage
 					defaultMessage="Hello {name}!"
-					values={{ name: props.name }}>
+					values={{ name: props.props.name }}>
 		</Panel>);
 }
 
