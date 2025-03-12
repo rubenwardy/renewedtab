@@ -28,7 +28,7 @@ function PanelImpl(props: PanelProps, ref: Ref<HTMLDivElement>) {
 		style.color = style.color ?? props.textColor;
 	}
 
-	const className = [];
+	const className = ["panel-any"];
 	if (props.showPanelBG) {
 		className.push("panel");
 		if (props.flush) {
