@@ -40,18 +40,18 @@ ui-chrome:
     TARGET: chrome
     SENTRY_DSN: ""
 
-# ui-firefox:
-#   image: cypress/browsers:node-22.14.0-chrome-134.0.6998.88-1-ff-136.0.1-edge-134.0.3124.51-1
-#   stage: test
-#   dependencies: []
-#   interruptible: true
-#   script:
-#     - unset SENTRY_DSN
-#     - npm run build
-#     - npm run uitest:firefox
-#   variables:
-#     TARGET: firefox
-#     SENTRY_DSN: ""
+ui-firefox:
+  image: cypress/browsers:node-22.14.0-chrome-134.0.6998.88-1-ff-136.0.1-edge-134.0.3124.51-1
+  stage: test
+  dependencies: []
+  interruptible: true
+  script:
+    - unset SENTRY_DSN
+    - npm run build
+    - npm run uitest:firefox
+  variables:
+    TARGET: firefox
+    SENTRY_DSN: ""
 
 webext:
   stage: package
