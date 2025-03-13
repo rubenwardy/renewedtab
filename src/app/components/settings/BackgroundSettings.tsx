@@ -4,8 +4,8 @@ import { miscMessages } from "app/locale/common";
 import { myFormatMessage, MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Radio, RadioGroup } from "react-radio-group";
 import { Form } from "../forms";
+import Radio, { RadioGroup } from "../Radio";
 
 
 export interface BackgroundSettingsProps {

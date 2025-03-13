@@ -2,7 +2,7 @@ import React, { CSSProperties, useRef } from "react"
 import { clampNumber, mergeClasses } from "app/utils";
 import { useElementSize } from "app/hooks/elementSize";
 
-interface FitTextProps extends  React.HTMLAttributes<HTMLDivElement>{
+interface FitTextProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: string[] | string;
 	minFontSize?: number;
 	maxFontSize?: number;
