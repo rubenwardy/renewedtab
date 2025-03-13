@@ -3,7 +3,7 @@ import { parseURL } from "app/utils";
 import React, { useRef, useState } from "react";
 import { useIntl } from "react-intl";
 import { FieldProps } from ".";
-import RequestHostPermission from "../RequestHostPermission";
+import RequestHostPermission from "app/components/RequestHostPermission";
 
 export default function FeedURLField(props: FieldProps<string>) {
 	const [value, setValue] = useState<string>(props.value);

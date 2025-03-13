@@ -1,6 +1,6 @@
 import React from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
-import Button from "../Button";
+import Button from "app/components/Button";
 
 
 const messages = defineMessages({

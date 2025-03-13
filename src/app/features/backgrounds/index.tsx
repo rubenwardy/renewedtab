@@ -1,6 +1,6 @@
-import { ActualBackgroundProps, BackgroundProvider } from "app/backgrounds/common";
-import { getBackgroundProvider, getSchemaForProvider } from "app/backgrounds";
-import { CacheExpiry } from "app/backgrounds/messages";
+import { ActualBackgroundProps, BackgroundProvider } from "app/features/backgrounds/providers/common";
+import { getBackgroundProvider, getSchemaForProvider } from "app/features/backgrounds/providers";
+import { CacheExpiry } from "app/features/backgrounds/providers/messages";
 import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
 import { cacheStorage } from "app/storage";

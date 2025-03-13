@@ -2,8 +2,8 @@ import { miscMessages } from "app/locale/common";
 import { queryMatchesAny } from "app/utils";
 import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { WidgetTypes } from "../widgets";
-import Modal from "./Modal";
+import { WidgetTypes } from "../../widgets";
+import Modal from "app/components/Modal";
 import { useWidgetManager } from "app/hooks/widgetManagerContext";
 
 interface CreateWidgetDialogProps {

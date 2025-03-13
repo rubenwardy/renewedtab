@@ -1,8 +1,8 @@
 import { miscMessages } from "app/locale/common";
 import React, { ChangeEvent, useState } from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
-import Button, { ButtonVariant } from "../Button";
-import LanguageSelector from "../LanguageSelector";
+import Button, { ButtonVariant } from "app/components/Button";
+import LanguageSelector from "app/components/LanguageSelector";
 import { getIsSentryEnabled, setSentryEnabled } from "app/sentry";
 import { cacheStorage } from "app/storage";
 

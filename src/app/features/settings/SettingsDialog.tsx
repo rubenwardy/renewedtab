@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AboutSettings from "./AboutSettings";
 import BackgroundSettings, { BackgroundSettingsProps } from "./BackgroundSettings";
-import Modal from "../Modal";
+import Modal from "app/components/Modal";
 import ImportExport from "./ImportExport";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { ThemeSettings, ThemeSettingsProps } from "./ThemeSettings";

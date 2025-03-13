@@ -1,8 +1,8 @@
 import { miscMessages } from "app/locale/common";
 import React from "react";
 import { useIntl } from "react-intl";
-import Carousel from "../Carousel";
-import Modal from "../Modal";
+import Carousel from "app/components/Carousel";
+import Modal from "app/components/Modal";
 import OnboardingHelp from "./OnboardingHelp";
 import OnboardingPresets from "./OnboardingPresets";
 import OnboardingWelcome from "./OnboardingWelcome";

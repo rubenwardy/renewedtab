@@ -29,7 +29,7 @@ export function RadioGroup(props: RadioGroupProps) {
 			onChange(value);
 			setSelected(value);
 		},
-	}), [selected, onChange]);
+	}), [selected, name, onChange]);
 
 	return (
 		<div className={props.className} role="radiogroup">

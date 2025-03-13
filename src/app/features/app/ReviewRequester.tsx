@@ -4,7 +4,7 @@ import { miscMessages } from "app/locale/common";
 import { getInstallInfo } from "app/utils/webext";
 import React from "react";
 import { useIntl } from "react-intl";
-import { Alert, AlertButton } from "./Alert";
+import { Alert, AlertButton } from "app/components/Alert";
 
 
 const messages = defineMessages({

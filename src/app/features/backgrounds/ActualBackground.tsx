@@ -1,4 +1,4 @@
-import { ActualBackgroundProps, GradientType } from "app/backgrounds/common";
+import { ActualBackgroundProps, GradientType } from "./providers/common";
 import Color from "app/utils/Color";
 import { enumToValue } from "app/utils/enum";
 import React, { CSSProperties } from "react";

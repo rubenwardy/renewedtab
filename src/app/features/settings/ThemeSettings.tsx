@@ -3,9 +3,9 @@ import Color from "app/utils/Color";
 import Schema, { type } from "app/utils/Schema";
 import React, { useMemo } from "react";
 import { defineMessages } from "react-intl";
-import Button, { ButtonVariant } from "../Button";
-import { Form } from "../forms";
-import { ColorPair } from "../forms/ColorFields";
+import Button, { ButtonVariant } from "app/components/Button";
+import { Form } from "app/components/forms";
+import { ColorPair } from "app/components/forms/ColorFields";
 import { schemaMessages } from "app/locale/common";
 
 

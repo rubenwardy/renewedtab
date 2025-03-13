@@ -1,10 +1,10 @@
-import { BackgroundCredit } from "app/backgrounds/common";
+import { BackgroundCredit } from "./providers/common";
 import { buildAPIURL, fetchCheckCors, useStorage } from "app/hooks";
 import { useDelay } from "app/hooks/delay";
 import { BackgroundInfo } from "common/api/backgrounds";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";
-import Button, { ButtonVariant } from "../Button";
+import Button, { ButtonVariant } from "app/components/Button";
 
 
 const messages = defineMessages({

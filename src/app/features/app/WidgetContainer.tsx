@@ -1,12 +1,12 @@
 import React, { useState, KeyboardEvent } from "react";
-import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../Widget";
-import Modal from "./Modal";
-import { Form } from "./forms";
-import ErrorView, { ErrorBoundary } from "./ErrorView";
+import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../../Widget";
+import Modal from "app/components/Modal";
+import { Form } from "app/components/forms";
+import ErrorView, { ErrorBoundary } from "app/components/ErrorView";
 import { usePromise } from "app/hooks";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
-import Button, { ButtonVariant } from "./Button";
+import Button, { ButtonVariant } from "app/components/Button";
 import { SchemaEntry } from "app/utils/Schema";
 import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 

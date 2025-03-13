@@ -5,7 +5,7 @@ import { miscMessages } from "app/locale/common";
 import { parseInfinity } from "app/utils/imports";
 import { WidgetManager } from "app/WidgetManager";
 import { useWidgetManager } from "app/hooks/widgetManagerContext";
-import { gridPreset } from "./onboarding/OnboardingPresets";
+import { gridPreset } from "app/features/onboarding/OnboardingPresets";
 import { LinkBoxProps } from "./LinkBox";
 import { TodoListProps } from "app/widgets/TodoList";
 import { IntlShape, useIntl } from "react-intl";

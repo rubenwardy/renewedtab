@@ -2,8 +2,8 @@ import { fromTypedJSON } from "app/utils/TypedJSON";
 import React from "react";
 import { defineMessage, FormattedMessage, MessageDescriptor } from "react-intl";
 import { OnboardingPageProps } from ".";
-import { ButtonVariant } from "../Button";
-import ImportButton from "../ImportButton";
+import { ButtonVariant } from "app/components/Button";
+import ImportButton from "app/components/ImportButton";
 import { useWidgetManager } from "app/hooks/widgetManagerContext";
 
 

@@ -6,8 +6,8 @@ import { WidgetTypes } from "app/widgets";
 import { NotesProps } from "app/widgets/Notes";
 import React, { useMemo } from "react";
 import { FormattedMessage } from "react-intl";
-import Button, { ButtonVariant } from "../Button";
-import { WidgetContainer } from "../WidgetContainer";
+import Button, { ButtonVariant } from "app/components/Button";
+import { WidgetContainer } from "../app/WidgetContainer";
 
 
 export default function OnboardingHelp() {

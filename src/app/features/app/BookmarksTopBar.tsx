@@ -4,10 +4,10 @@ import { getBookmarks } from "app/utils/bookmarks";
 import { ListBoxStyle, WidgetTheme } from "app/Widget";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import Button, { ButtonVariant } from "./Button";
-import ErrorView from "./ErrorView";
-import LinkBox from "./LinkBox";
-import RequestPermission from "./RequestPermission";
+import Button, { ButtonVariant } from "app/components/Button";
+import ErrorView from "app/components/ErrorView";
+import LinkBox from "app/components/LinkBox";
+import RequestPermission from "app/components/RequestPermission";
 
 
 function BookmarksImpl(props: { widgetTheme: WidgetTheme }) {

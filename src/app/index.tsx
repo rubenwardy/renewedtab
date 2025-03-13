@@ -1,6 +1,6 @@
 import React from "react";
 import {createRoot} from "react-dom/client";
-import App from "./components/App";
+import App from "./features/app/App";
 import "./scss/main.scss";
 import { getFeedbackURL } from "./utils/webext";
 import { initSentry }  from "./sentry";

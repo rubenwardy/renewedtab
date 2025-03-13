@@ -1,4 +1,4 @@
-import { getBackgroundProvider } from "app/backgrounds";
+import { getBackgroundProvider } from "app/features/backgrounds/providers";
 import { storage } from "app/storage";
 import { useState } from "react";
 import { useRunPromise } from ".";

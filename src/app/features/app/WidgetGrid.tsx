@@ -2,7 +2,7 @@ import React, { CSSProperties, useEffect, useState } from "react";
 import { WidgetContainer } from "./WidgetContainer";
 import { WidgetManager } from "app/WidgetManager";
 import { WidgetTypes } from "app/widgets";
-import { ErrorBoundary } from "./ErrorView";
+import { ErrorBoundary } from "app/components/ErrorView";
 import WidgetLayouter from "app/WidgetLayouter";
 import { Vector2 } from "app/utils/Vector2";
 import GridLayout, { Layout, WidthProvider } from "react-grid-layout";

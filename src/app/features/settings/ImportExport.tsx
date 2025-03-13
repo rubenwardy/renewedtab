@@ -4,8 +4,8 @@ import { storage } from "app/storage";
 import { toTypedJSON } from "app/utils/TypedJSON";
 import React from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
-import Button, { ButtonVariant } from "../Button";
-import ImportButton from "../ImportButton";
+import Button, { ButtonVariant } from "app/components/Button";
+import ImportButton from "app/components/ImportButton";
 
 
 const messages = defineMessages({

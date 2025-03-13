@@ -1,11 +1,11 @@
-import { backgroundProviders, getBackgroundProvider, getSchemaForProvider } from "app/backgrounds";
+import { backgroundProviders, getBackgroundProvider, getSchemaForProvider } from "app/features/backgrounds/providers";
 import { BackgroundConfig } from "app/hooks/background";
 import { miscMessages } from "app/locale/common";
 import { myFormatMessage, MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { Form } from "../forms";
-import Radio, { RadioGroup } from "../Radio";
+import { Form } from "app/components/forms";
+import Radio, { RadioGroup } from "app/components/Radio";
 
 
 export interface BackgroundSettingsProps {

@@ -2,7 +2,7 @@ import { miscMessages } from "app/locale/common";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import { OnboardingPageProps } from ".";
-import LanguageSelector from "../LanguageSelector";
+import LanguageSelector from "app/components/LanguageSelector";
 
 
 export default function OnboardingWelcome(props: OnboardingPageProps) {
