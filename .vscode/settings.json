@@ -1,5 +1,5 @@
 {
-	"mochaExplorer.files": "tests/**/*.test.ts",
+	"mochaExplorer.files": "src/**/*.test.*",
 	"mochaExplorer.require": "ts-node/register",
 	"mochaExplorer.configFile": ".mocharc.json",
 	"mochaExplorer.env": {

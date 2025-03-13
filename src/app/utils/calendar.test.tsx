@@ -4,7 +4,7 @@ import { getEventsBetweenDates } from "app/utils/calendar";
 
 
 function getCalendar(name: string): string {
-	return fs.readFileSync("tests/data/calendars/" + name).toString();
+	return fs.readFileSync("src/test_data/calendars/" + name).toString();
 }
 
 

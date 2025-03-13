@@ -3,7 +3,7 @@
 	"exclude": [
 		"src/app",
 		"src/webext",
-		"tests",
+		"src/**/*.test.*",
 		"cypress"
 	]
 }

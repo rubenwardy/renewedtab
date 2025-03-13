@@ -1,5 +1,5 @@
 {
 	"package": "./package.json",
 	"require": "ts-node/register",
-	"watch-files": ["test/**/*.test.ts"]
+	"spec": "src/**/*.test.*"
 }

@@ -5,7 +5,7 @@ describe("Import/Export", () => {
 	});
 
 	it("can import", () => {
-		const filepath = "tests/data/saves/mine.json";
+		const filepath = "src/test_data/saves/mine.json";
 
 		cy.selectPreset("focus");
 

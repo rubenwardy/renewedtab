@@ -5,7 +5,7 @@ import { Feed, parseFeed } from "common/feeds/parse";
 
 
 function parseTestFeed(name: string, base?: string): Feed | null {
-	const text = fs.readFileSync("tests/data/feeds/" + name).toString();
+	const text = fs.readFileSync("src/test_data/feeds/" + name).toString();
 	return parseFeed(text, base ?? "https://example.com/",
 		(s, l) => new JSDOM(s, { contentType: l }).window.document);
 }

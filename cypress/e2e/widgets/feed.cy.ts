@@ -28,7 +28,7 @@ describe("Feed", () => {
 
 		cy.getCy("field-sources").find("tbody tr").should("have.length", 2);
 
-		const filepath = "tests/data/feeds/feedly.opml";
+		const filepath = "src/test_data/feeds/feedly.opml";
 		cy.get("input[name='import-file']").selectFile(filepath, { force: true });
 
 		cy.getCy("field-sources").find("tbody tr").should("have.length", 12);

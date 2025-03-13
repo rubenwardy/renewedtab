@@ -47,7 +47,7 @@ describe("Onboarding", () => {
 	});
 
 	it("can import from .json", () => {
-		const filepath = "tests/data/saves/mine.json";
+		const filepath = "src/test_data/saves/mine.json";
 
 		cy.contains("Welcome to Renewed Tab");
 		cy.get(".carousel-next").click();

@@ -3,7 +3,7 @@ import { Vector2 } from "app/utils/Vector2";
 import { ListBoxStyle } from "app/Widget";
 import { WidgetManager } from "app/WidgetManager";
 import { expect } from "chai";
-import DummyStorage from "./DummyStorage";
+import DummyStorage from "./storage/DummyStorage.test";
 
 const NUM_LINKS = 5;
 

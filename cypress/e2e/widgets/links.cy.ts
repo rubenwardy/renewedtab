@@ -14,7 +14,7 @@ describe("Links", () => {
 
 		cy.getCy("field-links").find("tbody tr").should("have.length", 5);
 
-		const filepath = "tests/data/saves/mine.json";
+		const filepath = "src/test_data/saves/mine.json";
 		cy.get("input[name='import-file']").selectFile(filepath, { force: true });
 
 		cy.getCy("field-links").find("tbody tr").should("have.length", 8);
@@ -41,7 +41,7 @@ describe("Links", () => {
 		cy.getCy("field-links").find("tbody tr").should("have.length", 1);
 		cy.getCy("field-links").find("tbody tr").contains("Nothing here");
 
-		const filepath = "tests/data/imports/example.infinity";
+		const filepath = "src/test_data/imports/example.infinity";
 		cy.get("input[name='import-file']").selectFile(filepath, { force: true });
 
 		cy.getCy("field-links").find("tbody tr").should("have.length", 4);

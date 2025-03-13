@@ -7,7 +7,7 @@ import { detectFeed, Loader } from "common/feeds/detect";
 
 const loadFromFile: Loader = async (urlStr) => {
 	const url = new URL(urlStr);
-	const path = "tests/data/feeds/" + url.pathname;
+	const path = "src/test_data/feeds/" + url.pathname;
 	if (!fs.existsSync(path)) {
 		return null;
 	}

@@ -6,7 +6,7 @@ import { makeOPML, parseOPML } from "common/feeds/opml";
 
 
 function parseTestOPML(name: string): FeedSource[] {
-	const text = fs.readFileSync("tests/data/feeds/" + name).toString();
+	const text = fs.readFileSync("src/test_data/feeds/" + name).toString();
 	return parseOPML(text, (s, l) => new JSDOM(s, { contentType: l }).window.document);
 }
 
