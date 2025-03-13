@@ -1,4 +1,4 @@
-import { cacheStorage, IStorage, largeStorage, storage } from "app/storage";
+import { IStorage, largeStorage, storage } from "app/storage";
 import debounce from "app/utils/debounce";
 import { useCallback, useMemo, useState } from "react";
 import { useForceUpdate } from ".";
@@ -59,19 +59,4 @@ export function useStorage<T>(key: string,
 export function useLargeStorage<T>(key: string,
 		defaultValue?: (T | null)): [T | null, (val: T) => void] {
 	return useStorageBacking(largeStorage, key, defaultValue);
-}
-
-
-
-/**
-* Allows retrieving and updating a value in cache storage
-*
-* @param {string} key - the key
-* @param {T} defaultValue - default value if storage not set
-* @param {any[]} dependents - A list of dependent variables for the URL.
-* @return {[value, setValue]]} - Response and error
-*/
-export function useCache<T>(key: string,
-		defaultValue?: (T | null), enableDebounce?: boolean): [T | null, (val: T) => void] {
-	return useStorageBacking(cacheStorage, key, defaultValue, enableDebounce);
 }
