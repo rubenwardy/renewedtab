@@ -4,12 +4,18 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import LanguageSelector from "../LanguageSelector";
 import { getIsSentryEnabled, setSentryEnabled } from "app/sentry";
+import { cacheStorage } from "app/storage";
 
 
 const messages = defineMessages({
 	privacyPolicy: {
 		defaultMessage: "Privacy Policy",
 		description: "General settings: privacy policy button",
+	},
+
+	clearCache: {
+		defaultMessage: "Clear caches and reload",
+		description: "General settings: clear cache button",
 	},
 
 	firefoxBookmarksBar: {
@@ -34,6 +40,11 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
 		setSentryEnabled(e.target.checked);
 		setSentryEnabledValue(e.target.checked);
+	}
+
+	async function onClearCache() {
+		await cacheStorage.clear();
+		location.reload();
 	}
 
 	const isBrowserExtension = typeof browser !== "undefined";
@@ -104,5 +115,16 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						href="https://renewedtab.com/privacy_policy/" />
 				</p>
 			</div>
+
+			<h3 className="label mt-6">
+				<FormattedMessage
+					defaultMessage="Cache"
+					description="General settings: cache" />
+			</h3>
+			<p className="mt-4">
+				<Button label={messages.clearCache}
+					variant={ButtonVariant.Secondary}
+					onClick={onClearCache} />
+			</p>
 		</>);
 }

@@ -56,6 +56,7 @@ class WebExtStorage implements IStorage {
 	}
 
 	async remove(key: string): Promise<void> {
+		console.log(`[Storage] Remove ${key}`);
 		const values = await this.values;
 		delete values[key];
 		await this.store.remove(key);
@@ -148,7 +149,7 @@ class DelegateStorage implements IStorage {
 	}
 
 	async clear(): Promise<void> {
-		(await this.keys()).forEach(key => this.remove(key));
+		(await this.keys()).forEach(key => this.delegate.remove(key));
 	}
 }
 
