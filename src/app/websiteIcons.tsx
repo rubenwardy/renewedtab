@@ -122,13 +122,8 @@ function getParentDomainIfWhitelisted(urlStr: string): string | undefined {
 	return undefined;
 }
 
-
 async function fetchIcon(url: string): Promise<string | undefined> {
 	const key = "favicon-" + new URL(url).hostname;
-	const value = await cacheStorage.get<CachedIcon>(key);
-	if (value) {
-		return value.url;
-	}
 
 	const rootURL = new URL(url);
 	rootURL.pathname = "/";
@@ -150,8 +145,24 @@ async function fetchIcon(url: string): Promise<string | undefined> {
 		});
 		return data;
 	}
+}
 
-	return undefined;
+
+async function fetchIconCached(url: string): Promise<string | undefined> {
+	const key = "favicon-" + new URL(url).hostname;
+	const value = await cacheStorage.get<CachedIcon>(key);
+	if (value) {
+		const now = new Date();
+		if (now.valueOf() > value.fetchedAt.valueOf() + 7*60*60*24*1000) {
+			// Update cache in background
+			console.log("Website icon is stale, updating in the background")
+			cacheStorage.remove(key);
+			fetchIcon(url);
+		}
+		return value.url;
+	}
+
+	return await fetchIcon(url);
 }
 
 
@@ -161,7 +172,7 @@ function getWebsiteIcon(url: string): Promise<string | undefined> {
 	try {
 		const key = getDomain(url);
 		if (!cache.has(key)) {
-			cache.set(key, fetchIcon(url));
+			cache.set(key, fetchIconCached(url));
 		}
 
 		return cache.get(key)!;
