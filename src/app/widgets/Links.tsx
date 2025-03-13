@@ -1,13 +1,13 @@
 import Button, { ButtonVariant } from 'app/components/Button';
 import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema, Link } from 'app/components/LinkBox';
 import { miscMessages, schemaMessages } from 'app/locale/common';
-import { parseInfinity, parseLinksJson } from 'app/utils/imports';
+import { parseLinksJson } from 'app/utils/imports';
 import { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetEditComponentProps, WidgetProps, WidgetType } from 'app/Widget';
 import React, { useCallback, useMemo, useRef } from 'react';
-import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 
 
 const messages = defineMessages({
@@ -45,24 +45,24 @@ function encode(str: string) {
 
 
 function LinksImportExport(props: WidgetEditComponentProps<LinkBoxProps>) {
-	const intl = useIntl();
 	const handleImport = useCallback(async (file: File) => {
 		try {
 			const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
 
 			let links: Link[] = [];
-			if (file.name.endsWith(".infinity")) {
-				const json = JSON.parse(text);
-				if (!json) {
-					return;
-				}
+			// if (file.name.endsWith(".infinity")) {
+			// 	const json = JSON.parse(text);
+			// 	if (!json) {
+			// 		return;
+			// 	}
 
-				links = parseInfinity(json).links;
+			// 	links = parseInfinity(json).links;
 
-				if (links.length > 0) {
-					alert(intl.formatMessage(miscMessages.importsMayContainAffiliates));
-				}
-			} else if (file.name.endsWith(".json")) {
+			// 	if (links.length > 0) {
+			// 		alert(intl.formatMessage(miscMessages.importsMayContainAffiliates));
+			// 	}
+			// } else
+			if (file.name.endsWith(".json")) {
 				const json = JSON.parse(text);
 				if (!json) {
 					return;
@@ -86,7 +86,7 @@ function LinksImportExport(props: WidgetEditComponentProps<LinkBoxProps>) {
 			alert(e);
 			return;
 		}
-	}, [props, intl]);
+	}, [props]);
 
 	const exportData = useMemo(() => {
 		return `data:application/json;base64,${encode(JSON.stringify(props.props.links))}`
@@ -99,7 +99,7 @@ function LinksImportExport(props: WidgetEditComponentProps<LinkBoxProps>) {
 				<FormattedMessage {...miscMessages.globalSearchEditHint} />
 			</p>
 			<input ref={ref} type="file" className="display-none"
-				accept="application/json,.json,.infinity" name="import-file"
+				accept="application/json,.json" name="import-file"
 				onChange={(e) => handleImport(e.target.files![0]).catch(console.error)} />
 			<Button id="import"
 				variant={ButtonVariant.Secondary}

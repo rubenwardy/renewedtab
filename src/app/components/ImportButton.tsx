@@ -11,58 +11,64 @@ import { TodoListProps } from "app/widgets/TodoList";
 import { IntlShape, useIntl } from "react-intl";
 
 
-async function handleImport(intl: IntlShape, widgetManager: WidgetManager, file: File) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+async function handleImportInfinity(intl: IntlShape, widgetManager: WidgetManager, json: any) {
+	try {
+		const data = parseInfinity(json);
+		if (widgetManager.widgets.length == 0) {
+			widgetManager.createFromArray(gridPreset.widgets);
+			widgetManager.findWidgetByType<LinkBoxProps>("Links")!.props.links = [];
+		}
+
+		if (data.links.length > 0) {
+			let widget = widgetManager.findWidgetByType<LinkBoxProps>("Links");
+			if (widget == undefined) {
+				widget = widgetManager.createWidget("Links");
+				widget.props.links = [];
+			}
+
+			const added = new Set();
+			widget.props.links.forEach(link => added.add(link.url));
+
+			widget.props.links = [
+				...widget.props.links,
+				...data.links.filter(link => !added.has(link.url)),
+			];
+
+			alert(intl.formatMessage(miscMessages.importsMayContainAffiliates));
+		}
+
+		if (data.todo.length > 0) {
+			let widget = widgetManager.findWidgetByType<TodoListProps>("TodoList");
+			if (widget == undefined) {
+				widget = widgetManager.createWidget("TodoList");
+				widget.props.list = [];
+			}
+
+			widget.props.list = [
+				...widget.props.list,
+				...data.todo,
+			];
+		}
+
+		widgetManager.save();
+	} catch (e) {
+		alert(e);
+		return;
+	}
+}
+
+
+async function handleImport(_intl: IntlShape, _widgetManager: WidgetManager, file: File) {
 	const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
 	const json = JSON.parse(text);
-	if (file.name.endsWith(".infinity")) {
-		try {
-			const data = parseInfinity(json);
-			if (widgetManager.widgets.length == 0) {
-				widgetManager.createFromArray(gridPreset.widgets);
-				widgetManager.findWidgetByType<LinkBoxProps>("Links")!.props.links = [];
-			}
-
-			if (data.links.length > 0) {
-				let widget = widgetManager.findWidgetByType<LinkBoxProps>("Links");
-				if (widget == undefined) {
-					widget = widgetManager.createWidget("Links");
-					widget.props.links = [];
-				}
-
-				const added = new Set();
-				widget.props.links.forEach(link => added.add(link.url));
-
-				widget.props.links = [
-					...widget.props.links,
-					...data.links.filter(link => !added.has(link.url)),
-				];
-
-				alert(intl.formatMessage(miscMessages.importsMayContainAffiliates));
-			}
-
-			if (data.todo.length > 0) {
-				let widget = widgetManager.findWidgetByType<TodoListProps>("TodoList");
-				if (widget == undefined) {
-					widget = widgetManager.createWidget("TodoList");
-					widget.props.list = [];
-				}
-
-				widget.props.list = [
-					...widget.props.list,
-					...data.todo,
-				];
-			}
-
-			widgetManager.save();
-		} catch (e) {
-			alert(e);
-			return;
-		}
-	} else {
-		for (const [key, value] of Object.entries(json)) {
-			await storage.set(key, value);
-		}
+	// if (file.name.endsWith(".infinity")) {
+	// 	await handleImportInfinity(intl, widgetManager, json);
+	// } else {
+	for (const [key, value] of Object.entries(json)) {
+		await storage.set(key, value);
 	}
+	// }
 
 	location.reload();
 }

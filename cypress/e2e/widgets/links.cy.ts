@@ -30,7 +30,7 @@ describe("Links", () => {
 		cy.readFile(`cypress/downloads/renewedtab-links.json`);
 	});
 
-	it("import links from infinity", () => {
+	it.skip("import links from infinity", () => {
 		const widget = new Widget(3);
 		widget.edit();
 
