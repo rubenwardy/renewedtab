@@ -133,10 +133,15 @@ function FeedArticle({ article, data }: { article: Article, data: FeedProps }) {
 	} else if (data.useWebsiteIcons) {
 		return (
 			<div className="row row-gap-3">
-				<span className="col-auto">
-					<WebsiteIcon url={article.feed.source!.url} className="m-0" />
-				</span>
-				<span className="col">{article.title}</span>
+				<div className="col-auto">
+					<WebsiteIcon url={article.feed.source!.url} title={article.feed.source?.title} className="m-0" />
+				</div>
+				<div className="col">
+					{article.title}
+					<p className="mt-1 mb-0 text-muted">
+						{article.feed.source?.title || article.feed.title}
+					</p>
+				</div>
 			</div>);
 	} else {
 		return (

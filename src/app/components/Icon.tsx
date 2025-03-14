@@ -9,6 +9,7 @@ export interface IconProps {
 	defaultIcon?: string;
 	errorIcon?: string;
 	className?: string;
+	title?: string;
 }
 
 
@@ -27,12 +28,12 @@ export default function Icon(props: IconProps) {
 	if (!requiresIcons && (!icon || icon.length == 0)) {
 		return null;
 	} else if (errored) {
-		return (<span className={props.className}><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
+		return (<span title={props.title} className={props.className}><i className={`fas ${props.errorIcon ?? "fa-times"} icon`} /></span>);
 	} else if (typeof icon == "string" && (icon.includes("/") || icon.startsWith("data:"))) {
-		return (<img className={mergeClasses("icon", props.className)} src={icon} onError={() => setErrored(true)} />);
+		return (<img title={props.title} className={mergeClasses("icon", props.className)} src={icon} onError={() => setErrored(true)} />);
 	} else if (typeof icon == "string" && icon.startsWith("fa-")) {
-		return (<span className={props.className}><i className={`fas ${icon} icon`} /></span>);
+		return (<span title={props.title} className={props.className}><i className={`fas ${icon} icon`} /></span>);
 	} else {
-		return (<span className={props.className}><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
+		return (<span title={props.title} className={props.className}><i className={`fas ${props.defaultIcon ?? "fa-circle"} icon`} /></span>);
 	}
 }
