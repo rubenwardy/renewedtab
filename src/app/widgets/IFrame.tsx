@@ -26,7 +26,9 @@ interface IFrameProps {
 function IFrame(props: WidgetProps<IFrameProps>) {
 	return (
 		<Panel {...props.theme} scrolling={false}>
-			<iframe src={props.props.url} width="100%" height="100%" frameBorder="0" />
+			<iframe src={props.props.url}
+				width="100%" height="100%" frameBorder="0"
+				sandbox="allow-downloads allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" />
 		</Panel>);
 }
 
