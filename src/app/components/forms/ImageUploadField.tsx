@@ -1,13 +1,13 @@
 import { useLargeStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { largeStorage } from "app/storage";
-import { readBlobAsDataURL } from "app/utils/blob";
 import { ImageHandle } from "app/utils/Schema";
 import uuid from "app/utils/uuid";
 import React, { useRef } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import Button from "../Button";
+import resizeImage from "app/utils/resizeImage";
 
 
 const messages = defineMessages({
@@ -35,16 +35,16 @@ export default function ImageUploadField(props: FieldProps<ImageHandle>) {
 			await largeStorage.remove(key);
 		}
 
-		const dataSizeMB = file.size / 1024 / 1024;
+		const id = key ?? `image-${uuid()}`;
+		const data = await resizeImage(file, 1920, 1080);
+
+		const dataSizeMB = data.length / 1024 / 1024;
 		if (dataSizeMB > 2) {
 			alert(intl.formatMessage(messages.imageTooLarge, {
 				dataSizeMB: dataSizeMB.toFixed(1),
 			}));
 			return;
 		}
-
-		const id = key ?? `image-${uuid()}`;
-		const data = await readBlobAsDataURL(file);
 
 		await largeStorage.set(id, {
 			filename: file.name,
