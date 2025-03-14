@@ -2,6 +2,7 @@ import { enumToValue } from "app/utils/enum";
 
 export interface WeatherCurrent {
 	icon?: string; // <deprecated
+	icon2?: number;
 
 	temp?: number;
 	feels_like?: number;
@@ -18,6 +19,7 @@ export interface WeatherCurrent {
 export interface WeatherDay {
 	dayOfWeek: number;
 	icon?: string, // <deprecated
+	icon2?: number;
 	minTemp?: number;
 	maxTemp?: number;
 	sunrise?: string;
@@ -29,8 +31,10 @@ export interface WeatherDay {
 export interface WeatherHour {
 	time: string;
 	icon?: string; // <deprecated
+	icon2?: number;
 	precipitation?: number;
 	temp?: number;
+	uvi?: number;
 }
 
 export interface WeatherInfo {

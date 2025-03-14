@@ -192,10 +192,11 @@ const uvRiskMessages = defineMessages({
 }) as Record<UVRisk, MessageDescriptor>;
 
 
-function Icon(props: { icon?: string, className?: string }) {
-	return props.icon
+function Icon(props: { icon?: number, isDay: boolean, className?: string }) {
+	const filename = (props.icon == 32) ? `32${props.isDay ? 'd' : 'n'}` : props.icon?.toString();
+	return filename
 		? (<img className={mergeClasses("icon", props.className)}
-				src={`https://openweathermap.org/img/wn/${props.icon}@2x.png`} />)
+				src={`weather/${filename}.svg`} />)
 		: (<></>);
 }
 
@@ -236,7 +237,7 @@ function Day({ day, windSpeedUnit }: { day: WeatherDay, windSpeedUnit: SpeedUnit
 				<FormattedMessage {...dayNames[day.dayOfWeek]} />
 			</div>
 			<div className="row row-centered">
-				<div className="col-auto"><Icon icon={day.icon} /></div>
+				<div className="col-auto"><Icon icon={day.icon2} isDay={true} /></div>
 				<div className="col temp">
 					<span className="high">{formatInteger(day.maxTemp)}</span>
 					{" "}
@@ -254,7 +255,7 @@ function Hour(props: WeatherHour) {
 		<div className="col-auto forecast">
 			<div>{renderHour(props.time)}</div>
 			<div className="row row-centered">
-				<div className="col-auto"><Icon icon={props.icon} /></div>
+				<div className="col-auto"><Icon icon={props.icon2} isDay={props.uvi != 0} /></div>
 				<div className="col temp">{formatInteger(props.temp)}</div>
 				{(props.precipitation && props.precipitation > 2) ?  (
 					<div className="col rain ml-1" title={precipitationTooltip}>
@@ -345,7 +346,7 @@ function Current(props: {
 					<CurrentDetails {...props} />
 				</div>)}
 			<div className="col text-right h-100 icon-container">
-				<Icon icon={props.current.icon} />
+				<Icon icon={props.current.icon2} isDay={props.current.uvi != 0} />
 			</div>
 		</div>);
 }

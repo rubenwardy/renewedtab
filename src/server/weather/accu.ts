@@ -61,6 +61,7 @@ export interface AccuHour {
 	WeatherIcon: number;
 	IconPhrase: string;
 	PrecipitationProbability: number;
+	UVIndex: number | null;
 }
 
 

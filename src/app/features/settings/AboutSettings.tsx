@@ -64,6 +64,11 @@ export default function AboutSettings() {
 				{" "}
 				<FormattedMessage
 					defaultMessage="Thanks to Font-Awesome for icons, React for UI, and WebPack for builds." />
+				<FormattedMessage
+					defaultMessage="<a>Weather icons</a> copyright KDE and licenced under GNU LGPL v3 or later"
+					values={{
+						a: (chunk: any) => (<a href="https://develop.kde.org/frameworks/breeze-icons/">{chunk}</a>)
+					}} />
 			</p>
 			<p>
 				<FormattedMessage

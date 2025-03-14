@@ -142,8 +142,10 @@ async function fetchHourlyForecast(key: string): Promise<WeatherHour[]> {
 	return json.map(hour => ({
 		time: dateToLocaltime(hour.DateTime),
 		temp: hour.Temperature.Value ?? undefined,
+		icon2: hour.WeatherIcon,
 		icon: getLegacyIcon(hour.WeatherIcon, hour.IconPhrase),
 		precipitation: hour.PrecipitationProbability,
+		uvi: hour.UVIndex ?? undefined,
 	}));
 }
 
@@ -176,6 +178,7 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 	const json = await response.json() as AccuDailyAPI;
 	return json.DailyForecasts.map(day => ({
 		dayOfWeek: dateToDayOfWeek(day.Date),
+		icon2: day.Day.Icon,
 		icon: getLegacyIcon(day.Day.Icon, day.Day.IconPhrase),
 		minTemp: day.Temperature.Minimum.Value ?? undefined,
 		maxTemp: day.Temperature.Maximum.Value ?? undefined,
@@ -202,6 +205,7 @@ async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
 	return {
 		current: {
 			icon: getLegacyIcon(current.WeatherIcon, undefined),
+			icon2: current.WeatherIcon,
 			temp: current.Temperature.Metric.Value ?? undefined,
 			feels_like: current.RealFeelTemperature.Metric.Value ?? undefined,
 			pressure: current.Pressure.Metric.Value ?? undefined,
