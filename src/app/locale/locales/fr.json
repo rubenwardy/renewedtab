@@ -61,7 +61,7 @@
         "description": "Form field hint (Image)"
     },
     "4syC1B": {
-        "message": "Support et demandes"
+        "message": "Aide et requêtes"
     },
     "5DCxT+": {
         "message": "Unité de température",
@@ -451,7 +451,7 @@
         "message": "Utiliser le mouvement (<move></move>) et le redimensionnement (<resize></resize>)."
     },
     "0PsF7Z": {
-        "message": "Êtes-vous sûr de vouloir supprimer définitivement ce composant ?",
+        "message": "Êtes-vous sûr·e de vouloir supprimer définitivement ce composant ?",
         "description": "Delete widget modal message"
     },
     "0l+aD2": {
@@ -517,7 +517,7 @@
         "description": "Settings tab"
     },
     "wEQDC6": {
-        "message": "Éditer"
+        "message": "Modifier"
     },
     "wogY8a": {
         "message": "Créer un widget"
@@ -586,7 +586,7 @@
         "description": "Links Widget"
     },
     "iH2AHA": {
-        "message": "<a>Open source</a>, licence sous GPLv3+."
+        "message": "<a>Logiciel libre</a>, licence sous GPLv3+."
     },
     "h/ftND": {
         "message": "Choisir un fichier"
@@ -612,7 +612,7 @@
         "description": "Background credits title placeholder"
     },
     "B0kbsm": {
-        "message": "Feed",
+        "message": "Flux",
         "description": "Unsplash background mode"
     },
     "RhyKzC": {
@@ -620,10 +620,10 @@
         "description": "Curated background mode"
     },
     "uRYRJh": {
-        "message": "Éditer {type}"
+        "message": "Modifier {type}"
     },
     "ubO4zt": {
-        "message": "Web Comic",
+        "message": "BD Web",
         "description": "Web Comic Widget"
     },
     "ofl4Ui": {
@@ -860,7 +860,7 @@
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
     },
     "oBl48o": {
-        "message": "Êtes-vous sûr de vouloir réinitialiser toutes les données ?",
+        "message": "Êtes-vous sûr·e de vouloir réinitialiser toutes les données ?",
         "description": "Import / export settings, reset confirmation"
     },
     "oJnbwn": {
@@ -1033,7 +1033,7 @@
         "description": "Widget grid: form label 1 for grid full width"
     },
     "XYIyWM": {
-        "message": "Vous devriez augmenter les \"colonnes de la grille\" à au moins {cols} pour un meilleur usage de l'espace.",
+        "message": "Vous devriez augmenter les « colonnes de la grille » à au moins {cols} pour un meilleur usage de l'espace.",
         "description": "Widget grid: form label 2 for grid full width"
     },
     "gQAsym": {
@@ -1106,7 +1106,7 @@
         "message": "Aide"
     },
     "8xPAKF": {
-        "message": "De 0 à 100%, position de la couleur sur le dégradé",
+        "message": "De 0 à 100 %, position de la couleur sur le dégradé",
         "description": "Form field hint (Stop)"
     },
     "B3NCWb": {
@@ -1268,7 +1268,7 @@
         "description": "Days of the week, separated by commas"
     },
     "grbGxs": {
-        "message": "Aucun événement",
+        "message": "Aucun évènement",
         "description": "CalendarSchedule: no events"
     },
     "wETxDh": {
@@ -1315,7 +1315,7 @@
         "message": "Vous pouvez survolez les crédits en bas à gauche pour aimer ou passer un fond d'écran."
     },
     "ilIuh2": {
-        "message": "Vous trouvez cela utile ? Pensez à <a>faire un don</a> pour couvrir les frais de l'API de météo, et soutenir le développement futur de Renewed Tab.",
+        "message": "Vous trouvez ceci utile ? Pensez à <a>faire un don</a> pour couvrir les frais de l'API de météo, et soutenir le développement futur de Renewed Tab.",
         "description": "Weather widget: asking for donations"
     }
 }
