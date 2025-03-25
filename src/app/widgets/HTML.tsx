@@ -21,6 +21,11 @@ const messages = defineMessages({
 		defaultMessage: "HTML",
 		description: "HTML widget: form field label",
 	},
+
+	noJS: {
+		defaultMessage: "JavaScript is not supported for security reasons. Use the iFrame widget instead",
+		description: "HTML widget: form field description",
+	}
 });
 
 interface HTMLProps {
@@ -44,7 +49,7 @@ const widget: WidgetType<HTMLProps> = {
 		html: "Hello <b>World</b>"
 	},
 	schema: {
-		html: type.textarea(messages.html),
+		html: type.textarea(messages.html, messages.noJS),
 	},
 };
 export default widget;
