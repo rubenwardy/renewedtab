@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { FormattedMessage, IntlShape, MessageDescriptor } from "react-intl";
 
 export interface MessageWithValue extends MessageDescriptor {
@@ -10,7 +10,7 @@ export type MyMessageDescriptor = MessageWithValue | MessageWithValue[];
 export function MyFormattedMessage(props: { message: MyMessageDescriptor }) {
 	const descriptor = props.message;
 	if (Array.isArray(descriptor)) {
-		return (<>{descriptor.map(msg => (<><FormattedMessage key={msg.id} {...msg} />{" "}</>))}</>);
+		return (<>{descriptor.map(msg => (<Fragment key={msg.id} ><FormattedMessage {...msg} />{" "}</Fragment>))}</>);
 	} else {
 		return <FormattedMessage {...descriptor} />;
 	}
