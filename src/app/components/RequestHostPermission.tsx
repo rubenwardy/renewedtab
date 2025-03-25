@@ -24,7 +24,7 @@ function makeHostPermission(host: string): browser.permissions.Permissions {
  * @returns true if host permission is needed, false otherwise
  */
 export async function needsHostPermission(host: string): Promise<boolean> {
-	if (typeof browser === 'undefined' || host.endsWith(".renewedtab.com")) {
+	if (host == "" || typeof browser === 'undefined' || host.endsWith(".renewedtab.com")) {
 		return false;
 	}
 
