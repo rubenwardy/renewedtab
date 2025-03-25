@@ -11,6 +11,11 @@ file.split(/\r?\n/).forEach((line, lineNo) => {
 		return null;
 	}
 
+	if (parts.length !== 4) {
+		errors.push(`Line ${lineNo + 1}: too many parts, ${parts.length}`);
+		return null;
+	}
+
 	if (parts[2] != "good" && parts[2] != "bad") {
 		errors.push(`Line ${lineNo + 1}: vote is neither good nor bad`);
 	}
@@ -45,11 +50,11 @@ const backgrounds =
 		.map(([key, value]) => ({ ...value, id: key }))
 		.sort((a, b) => b.balance - a.balance);
 
-console.log(`| Votes               | URL                                     |`);
+console.log(`Score, Votes,          URL`);
 backgrounds.forEach(bg => {
 	const pad = (v, n) => v.toString().padStart(n, " ")
-	const votes = `${pad(bg.balance, 2)} = ${pad(bg.good, 1)} - ${pad(bg.bad, 1)}`;
-	console.log(`| ${votes.padEnd(19, " ")} | ${bg.url.padEnd(39, " ")} |`);
+	const votes = `+${pad(bg.good, 1)} -${pad(bg.bad, 1)}`;
+	console.log([ bg.balance.toFixed(0).padEnd(5), votes.padEnd(14, " "), bg.url.padEnd(39, " ")].join(", "));
 });
 
 console.log(`\n\nThere are ${votes.length} votes on ${backgrounds.length} backgrounds`);
