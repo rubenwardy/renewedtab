@@ -65,5 +65,983 @@
     "/Mx09O": {
         "message": "Experimenteel. Dit werkt niet bij alle feedbronnen vanwege ontbrekende afbeeldingsinformatie. Afbeeldingen kunnen ook groot zijn en het laden ervan kan enige tijd duren.",
         "description": "Feed widget: form field hint (Show Images)"
+    },
+    "47FYwb": {
+        "message": "Annuleer"
+    },
+    "5DCxT+": {
+        "message": "Temperatuur eenheid"
+    },
+    "4dzBeG": {
+        "message": "Van"
+    },
+    "4syC1B": {
+        "message": "Help en aanvragen"
+    },
+    "5mfAB9": {
+        "message": "URL naar een Atom, JSONFeed, of RSS feed"
+    },
+    "20tqYI": {
+        "message": "URL naar een iCal (.ics) file voor een kalender"
+    },
+    "2s4stS": {
+        "message": "Welkom bij <a>Renewed Tab</a>"
+    },
+    "27lljH": {
+        "message": "U bent <b>(age)</b> jaar oud"
+    },
+    "2AUlDo": {
+        "message": "Welterusten {name}"
+    },
+    "2O5Rq1": {
+        "message": "Goedenavond {name}"
+    },
+    "2j5LN5": {
+        "message": "Stel een URL voor om toe te voegen aan de standaard suggesties"
+    },
+    "2vJWTd": {
+        "message": "Foto"
+    },
+    "3Nw7b0": {
+        "message": "Naam van de zoekmachine"
+    },
+    "3UG6ds": {
+        "message": "Zoek naar widgets of op het web naar je favoriete zoekmachine"
+    },
+    "3ZfhWo": {
+        "message": "Permissie is nodig voor toegang tot {host}. Bewerk deze widget om toegang te krijgen."
+    },
+    "4F+2K3": {
+        "message": "Willekeurige afbeelding uit de Unsplash collectie"
+    },
+    "4cMia7": {
+        "message": "Toon een nieuwe foto"
+    },
+    "2efE5y": {
+        "message": "Gegroet!"
+    },
+    "3vjl5Q": {
+        "message": "Toon / Verberg"
+    },
+    "3aaibf": {
+        "message": "Voeg widget toe"
+    },
+    "3/EBw0": {
+        "message": "Website"
+    },
+    "4UpnpD": {
+        "message": "Afbeeldingen worden lokaal in je browser opgeslagen en nooit geupload"
+    },
+    "5640CU": {
+        "message": "Huidig: toon voorkennis"
+    },
+    "3vh5vd": {
+        "message": "Toont niets, handig bij het maken van een layout"
+    },
+    "5mVcg9": {
+        "message": "Aangepaste CSS"
+    },
+    "5MMUNJ": {
+        "message": "Dit is <b>experimenteel en kan lastig te gebruiken zijn</b>."
+    },
+    "6MDM6D": {
+        "message": "Citaten"
+    },
+    "6pdO6i": {
+        "message": "Onmogelijk om bladwijzers op te halen"
+    },
+    "7wOM6+": {
+        "message": "Voortgang van het jaar"
+    },
+    "7zYGs9": {
+        "message": "Kalender planning"
+    },
+    "8HmiSe": {
+        "message": "Selecteer een bron"
+    },
+    "8xPAKF": {
+        "message": "Van 0-100%, positie van het kleurverloop"
+    },
+    "8xVVb5": {
+        "message": "Basiskleur"
+    },
+    "9+2gJZ": {
+        "message": "Deze widget vereist de browser extensie versie."
+    },
+    "ATbgo4": {
+        "message": "Radiaal"
+    },
+    "Abtyj/": {
+        "message": "Afbeelding is groter dan 2MB ({dataSizeMB}MB). Gebruik een kleinere afbeelding zodat het laden snel blijft."
+    },
+    "AgU+/t": {
+        "message": "Een overzicht van aankomende ruimtelanceringen, verzorgt door RocketLaunch.Live"
+    },
+    "AuSjzq": {
+        "message": "Huidig: Toon UV risico"
+    },
+    "B0kbsm": {
+        "message": "Feed"
+    },
+    "B1pyj1": {
+        "message": "Hudig: Toon gevoelstemperatuur"
+    },
+    "B3NCWb": {
+        "message": "Kleuren"
+    },
+    "B4LnaC": {
+        "message": "Toon aankomende gebeurtenissen vanuit een iCal (.ics) URL (Zoals Google of Nextcloud Calendar)"
+    },
+    "BJYZgx": {
+        "message": "Gebruik de optie verplaatsen (<move></move>) en de optie om het formaat aan te passen (<resize></resize>)."
+    },
+    "BiPNnl": {
+        "message": "Eenheid windsnelheid"
+    },
+    "Bl74xq": {
+        "message": "Een knop met een link"
+    },
+    "BmzsQb": {
+        "message": "Koppelingen met ondersteuning voor koppen en iconen (speed dial)"
+    },
+    "BnmONl": {
+        "message": "Huidig: toon zonsopgang / zonsondergang"
+    },
+    "C7WJrL": {
+        "message": "Vertikaal"
+    },
+    "DVGnNH": {
+        "message": "Je kunt linksonder met de muis over de credits van een afbeelding bewegen om de afbeelding leuk te vinden of over te slaan."
+    },
+    "Ddd3ZY": {
+        "message": "Naar"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit"
+    },
+    "E4nLwR": {
+        "message": "Elke dag"
+    },
+    "Ekvvsi": {
+        "message": "Bladwijzerbalk"
+    },
+    "EpPEVJ": {
+        "message": "Verloop"
+    },
+    "EscvnU": {
+        "message": "Iconen"
+    },
+    "F1A/8i": {
+        "message": "Bronnen"
+    },
+    "FqCn+F": {
+        "message": "Goedemorgen {name}"
+    },
+    "G6WG/N": {
+        "message": "Onzichtbaar"
+    },
+    "GXkv/F": {
+        "message": "Kies een locatie"
+    },
+    "GcxpZV": {
+        "message": "Datumopmaak"
+    },
+    "Go7At+": {
+        "message": "Zat"
+    },
+    "GqPEp+": {
+        "message": "Vereist de browser extensie versie"
+    },
+    "H00a0q": {
+        "message": "Laat leeg voor een koptekst"
+    },
+    "HEvlTB": {
+        "message": "Weergave opties"
+    },
+    "HPLtg4": {
+        "message": "Onbekende valuta \"{currency}\""
+    },
+    "HksGis": {
+        "message": "Huidig: toon wind"
+    },
+    "I48yxw": {
+        "message": "Privacy"
+    },
+    "IqLwUL": {
+        "message": "Rasterruimte"
+    },
+    "J91edI": {
+        "message": "Importeer / Exporteer"
+    },
+    "JN/uvd": {
+        "message": "<b>Gemiddeld</b> UV"
+    },
+    "JihbEV": {
+        "message": "CSS documentatie"
+    },
+    "Cq4JWx": {
+        "message": "Het nieuws, het weer en meer"
+    },
+    "Ay1sfO": {
+        "message": "Regelt hoeveel willekeurige recente afbeeldingen gekozen worden. Met de instelling op 1 laat het altijd de laatste afbeelding zien"
+    },
+    "CN0kVN": {
+        "message": "Widgetrooster"
+    },
+    "Ack5ID": {
+        "message": "Geen resultaten"
+    },
+    "CshCZY": {
+        "message": "Achtergrondtype"
+    },
+    "7OH6mh": {
+        "message": "Afbeelding"
+    },
+    "BfX7n6": {
+        "message": "NB: Firefox laat soms artifacten zien, zoals lijnen op achtergronden met een verloop. Dit kunnen wij helaas niet verhelpen."
+    },
+    "6wEkCM": {
+        "message": "Voor extra instellingen is het mogelijk om de bladwijzer widget te gebruiken."
+    },
+    "GpfSpy": {
+        "message": "Toon bladwijzerbalk"
+    },
+    "CmRs9p": {
+        "message": "Zoek"
+    },
+    "8J0Bhj": {
+        "message": "Welkom bij <a>Renewed Tab</a>: een volledig aanpasbaar nieuw Tab scherm, met widgets en schitterende achtergronden."
+    },
+    "K3r6DQ": {
+        "message": "Verwijder"
+    },
+    "CNpJaZ": {
+        "message": "Focus"
+    },
+    "JzanJ8": {
+        "message": "Raster kolommen"
+    },
+    "GSox4d": {
+        "message": "Ieder lettertype aanwezig op je computer"
+    },
+    "D3idYv": {
+        "message": "Instellingen"
+    },
+    "D0+wcK": {
+        "message": "Toon een afbeelding, eventueel met een link"
+    },
+    "GWRKVT": {
+        "message": "Kleur van de tekst"
+    },
+    "IbCXY9": {
+        "message": "Standaard ({example})"
+    },
+    "JvOSvX": {
+        "message": "Achtergrond"
+    },
+    "IKpSw0": {
+        "message": "Horizontaal"
+    },
+    "as6rZ1": {
+        "message": "Schakel crashrapportage in (gebruik Sentry)"
+    },
+    "b2Rs2F": {
+        "message": "Pas helderheid van lichte afbeeldingen aan"
+    },
+    "bQFsdR": {
+        "message": "Geef toegangsrechten voor {host}"
+    },
+    "btOI+Z": {
+        "message": "Nieuwe tab"
+    },
+    "c7zm0j": {
+        "message": "Fout bij het laden van deze feed. Zorg dat het een RSS, JSONFeed, of Atom feed is."
+    },
+    "cSF2y1": {
+        "message": "Toon bladwijzers"
+    },
+    "ckvzIb": {
+        "message": "<b>Lage</b> UV"
+    },
+    "dGu5JQ": {
+        "message": "Feed"
+    },
+    "dIwFS5": {
+        "message": "Kies een afbeelding"
+    },
+    "cR7nCG": {
+        "message": "Zet thema terug naar het standaard thema"
+    },
+    "appName": {
+        "message": "Renewed Tab"
+    },
+    "d7dHsn": {
+        "message": "Elke 15 minuten"
+    },
+    "bfWes8": {
+        "message": "Verlooptype"
+    },
+    "appDescription": {
+        "message": "Een volledig aanpasbaar nieuw Tab scherm, met widgets en schitterende achtergronden"
+    },
+    "dOlhtQ": {
+        "message": "Je kunt de bladwijzer alleen laten zien op de New Tab pagina door rechts te klikken naast de Adresbalk > Bladwijzer toolbar > Toon alleen op nieuwe tab. <a>Toon meer</a>"
+    },
+    "ekIjqh": {
+        "message": "Geef toestemming om alle websites te bekijken"
+    },
+    "exTzGh": {
+        "message": "Horizontaal"
+    },
+    "fW8Xpd": {
+        "message": "Hiervoor is een locatie nodig. Klik op bewerken om toe te voegen."
+    },
+    "fWK68w": {
+        "message": "Lettertype"
+    },
+    "frEJEM": {
+        "message": "DON"
+    },
+    "gAZqVl": {
+        "message": "Je kunt widgets later toevoegen (<add></add>), verwijderen (<remove></remove>) ,of de instellingen naar wens aanpassen (<cog></cog>)."
+    },
+    "gHzZEt": {
+        "message": "Gewoon een eenvoudige klok en een zoekbalk"
+    },
+    "gQAsym": {
+        "message": "NB: de andere widgets blijven gewoon staan bij het verschuiven."
+    },
+    "gS3mti": {
+        "message": "Stijl van de keuzelijst"
+    },
+    "gSjZfg": {
+        "message": "Koppelingen"
+    },
+    "gXcVyS": {
+        "message": "Eindig de bewerking"
+    },
+    "grbGxs": {
+        "message": "Geen gebeurtenissen"
+    },
+    "h00yCR": {
+        "message": "Laat recente afbeeldingen zien van een Atom, JSONFeed, of RSSS feed, handig voor WebComics."
+    },
+    "hCBQrY": {
+        "message": "Voelt aan als<b>{temp}°</b>"
+    },
+    "hUIQ7h": {
+        "message": "Helderheid"
+    },
+    "hWimZf": {
+        "message": "Schakel widget zoeken in"
+    },
+    "hktZIl": {
+        "message": "Laat de tijd zien"
+    },
+    "iH2AHA": {
+        "message": "<a>Open source</a>, gelicenseerd onder GPLv3+."
+    },
+    "irdBm2": {
+        "message": "Thema"
+    },
+    "j0VHNa": {
+        "message": "Geef permissie om bladwijzers en iconen van websites te halen"
+    },
+    "kF06lD": {
+        "message": "Uitgebreide ({example})"
+    },
+    "ktmuOE": {
+        "message": "Laat leeg om de titel van de feed zelf te gebruiken"
+    },
+    "ku7Ot7": {
+        "message": "Helderheid: licht"
+    },
+    "l8+Uwz": {
+        "message": "Niets om te bewerken."
+    },
+    "lQIN1l": {
+        "message": "Ook zo blij met Renewed Tab? Schrijf een review!"
+    },
+    "lUdRdE": {
+        "message": "Fout: {msg}"
+    },
+    "jSHZmX": {
+        "message": "Houdt een takenlijst bij"
+    },
+    "eKCjBm": {
+        "message": "Neerslag (%)"
+    },
+    "iFxzUm": {
+        "message": "Zoals"
+    },
+    "ilIuh2": {
+        "message": "Vind je dit ook zo handig? Overweeg dan om <a>bij te dragen</a> in de kosten van de Wheather API en in de ondersteuning van toekomstige Renewed Tab ontwikkeling."
+    },
+    "eXB4qM": {
+        "message": "WOE"
+    },
+    "gEYo49": {
+        "message": "Positie"
+    },
+    "ekW/+6": {
+        "message": "Het lukt niet om te verbinden met het internet"
+    },
+    "fz43UJ": {
+        "message": "Doneer"
+    },
+    "kAEQyV": {
+        "message": "Oké"
+    },
+    "kueLs9": {
+        "message": "Koppelingen"
+    },
+    "h/ftND": {
+        "message": "Kies een file"
+    },
+    "jGWq1h": {
+        "message": "Tijdzone"
+    },
+    "lYJGY5": {
+        "message": "Afbeeldings URL"
+    },
+    "lY73np": {
+        "message": "Toon achtergrond met panelen"
+    },
+    "K8s82y": {
+        "message": "Geboortedatum"
+    },
+    "KdIFGg": {
+        "message": "Missende '{query}' in zoek URL. bijv: https://startpage.com/search/?q='{query}'"
+    },
+    "KhM0zv": {
+        "message": "Quotes komen uit externe bronnen en worden verder niet beoordeeld door Renewed Tab."
+    },
+    "KjUKUz": {
+        "message": "Het kleurverloop"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> op {latitude} bij {longitude}"
+    },
+    "KyDwm3": {
+        "message": "Toon toplocaties"
+    },
+    "LfHpBk": {
+        "message": "Schaal lettertype"
+    },
+    "Lnvfz8": {
+        "message": "Laden niet gelukt {source}: {error}"
+    },
+    "Lxc1x4": {
+        "message": "Klok"
+    },
+    "M0PwXU": {
+        "message": "Windsnelheid ({unit})"
+    },
+    "MN3prI": {
+        "message": "Neem de folders mee in de sectie"
+    },
+    "MiIvsP": {
+        "message": "Je kunt toevoegen, het formaat aanpassen, verplaatsen, en de widgets configureren met de gebruikelijke knoppen."
+    },
+    "MtrTNy": {
+        "message": "Morgen"
+    },
+    "N/7Stk": {
+        "message": "Gemaakt door <a>rubenwardy</a>."
+    },
+    "NjoFru": {
+        "message": "Willekeurige afbeelding van een Atom, JSONFeed, of RSSS feed"
+    },
+    "O2Mjef": {
+        "message": "Beoordeling"
+    },
+    "O8mt7g": {
+        "message": "Cijfers ({example})"
+    },
+    "OPzczE": {
+        "message": "Afgekort ({example})"
+    },
+    "OQHLB5": {
+        "message": "Kleur"
+    },
+    "Oa5RYo": {
+        "message": "<b>Widgets hebben ook instellingen</b>: beweeg je muis over een widget en klik op de pen om aan te passen."
+    },
+    "PBMGxw": {
+        "message": "Beperk afbeeldingen"
+    },
+    "PHwOzi": {
+        "message": "Met dank aan Unsplash, AccuWeather, en RocketLaunch.Live voor hun API's."
+    },
+    "PM6qZ7": {
+        "message": "Toon seconden"
+    },
+    "Q1mwPp": {
+        "message": "Overweeg <a>bij te dragen in je eigen taal</a>."
+    },
+    "QV6YlB": {
+        "message": "Wisselkoers"
+    },
+    "R1jLoC": {
+        "message": "Verticaal"
+    },
+    "RCe+DS": {
+        "message": "Sleep en laat widgets weer los"
+    },
+    "RVGNBh": {
+        "message": "enmal klaar, klik <button></button> om de widgets read only te maken."
+    },
+    "RhyKzC": {
+        "message": "Samengesteld"
+    },
+    "S3njcM": {
+        "message": "IFrame"
+    },
+    "SAo61B": {
+        "message": "Bladwijzers"
+    },
+    "SENRqu": {
+        "message": "Help"
+    },
+    "SG4UJU": {
+        "message": "Knop"
+    },
+    "TDaF6J": {
+        "message": "Wijs af"
+    },
+    "TIEfOV": {
+        "message": "Een artikel wordt getoond als het overeenkomt met minstens één ''Show' filter (indien aanwezig), en geen 'Hide' filters."
+    },
+    "TUnCKb": {
+        "message": "Tekst"
+    },
+    "TkgCJ9": {
+        "message": "Je kunt hulp krijgen of vragen naar nieuwe functionaliteit met de link hieronder."
+    },
+    "V1EIOe": {
+        "message": "Toon een webpagina"
+    },
+    "VPDVTF": {
+        "message": "Er is hier niets te zien"
+    },
+    "Vckd1G": {
+        "message": "MAA"
+    },
+    "VjDvbL": {
+        "message": "URL"
+    },
+    "VkW6D1": {
+        "message": "midden, boven of onder"
+    },
+    "W3zKGr": {
+        "message": "Kilometers per uur (km/u)"
+    },
+    "WF5DKA": {
+        "message": "Leeftijd"
+    },
+    "WKiXhX": {
+        "message": "Kleur"
+    },
+    "WZjKFf": {
+        "message": "Waarschuwing: dit kan persoonlijke gegevens bevatten, wanneer dit in de Widget instellingen gezet is."
+    },
+    "Wi0G88": {
+        "message": "Over en help"
+    },
+    "X18x9m": {
+        "message": "Algemeen"
+    },
+    "X5OoHJ": {
+        "message": "Wat is je doel voor vandaag?"
+    },
+    "XV4mnl": {
+        "message": "Afhankelijk van je instellingen, kun je dezelfde foto kiezen"
+    },
+    "XrQEPN": {
+        "message": "Locatie"
+    },
+    "XsTD4Q": {
+        "message": "Todo lijst"
+    },
+    "YQhLKn": {
+        "message": "Elk uur"
+    },
+    "YS3jnS": {
+        "message": "VRI"
+    },
+    "YS5zRT": {
+        "message": "Zoek met {name}"
+    },
+    "YYoBQn": {
+        "message": "Vervagingsstraal radius"
+    },
+    "YuNOET": {
+        "message": "HTML"
+    },
+    "Z2/hH0": {
+        "message": "Afbeelding: {filename}"
+    },
+    "Z79HMN": {
+        "message": "Willekeurig samengestelde achtergrond"
+    },
+    "ZRWjTk": {
+        "message": "Gebruik de zoekmachine van de browser"
+    },
+    "ZUZeuR": {
+        "message": "Toon een bericht"
+    },
+    "ZZIlU9": {
+        "message": "Dagelijks doel"
+    },
+    "ZeZlbR": {
+        "message": "Stel de doorzichtigheid van de gekleurde knop in"
+    },
+    "a0L2KE": {
+        "message": "Probeer het land of afkorting daarvan toe te voegen."
+    },
+    "aXrD3p": {
+        "message": "Valuta"
+    },
+    "aaxFkJ": {
+        "message": "Maak een nieuw todo item"
+    },
+    "abwneZ": {
+        "message": "Meters per seconde (m/s)"
+    },
+    "adRrk3": {
+        "message": "Herstel alles"
+    },
+    "amHvKE": {
+        "message": "Vul hier notities in"
+    },
+    "ao/AFQ": {
+        "message": "Herinnert je aan een dagelijks doel"
+    },
+    "lkJAu6": {
+        "message": "Unsplash"
+    },
+    "lwUV0r": {
+        "message": "Je kunt het doel veranderen door het op de widget te klikken"
+    },
+    "mL3MOs": {
+        "message": "Mijlen per uur (mpu)"
+    },
+    "mSg5KK": {
+        "message": "Helderheid: donker"
+    },
+    "mv9TrH": {
+        "message": "HTML"
+    },
+    "mw6Uh+": {
+        "message": "Toon dagelijkse voorspelling"
+    },
+    "n+w6I2": {
+        "message": "Stop"
+    },
+    "nHw5cV": {
+        "message": "Klik op de items om ze te bewerken."
+    },
+    "nlnYxI": {
+        "message": "Maximaal aantal dagen"
+    },
+    "nnaWVi": {
+        "message": "Celsius"
+    },
+    "o2uuHu": {
+        "message": "12 uursklok"
+    },
+    "o9vGxx": {
+        "message": "Open koppeling in nieuwe tab"
+    },
+    "oBl48o": {
+        "message": "Weet je zeker dat je alle gegevens wil terugzetten?"
+    },
+    "oDog89": {
+        "message": "Een aanpasbare tekst voor notities"
+    },
+    "oGS5TE": {
+        "message": "Goedenmiddag {name}"
+    },
+    "oJnbwn": {
+        "message": "naam"
+    },
+    "oRui+E": {
+        "message": "Ook blij met Renewed Tab? Overweeg een donatie om de kosten te dekken en de ontwikkeling te ondersteunen."
+    },
+    "ofl4Ui": {
+        "message": "Zoek"
+    },
+    "sX3mXR": {
+        "message": "Verberg"
+    },
+    "tSMpM0": {
+        "message": "Toestemming geven om toegang te krijgen tot topsites en de iconen van websites"
+    },
+    "or/+Da": {
+        "message": "Styling"
+    },
+    "pG7wIz": {
+        "message": "Toon de wisselkoers, inclusief forex valuta en cryptomunten (Bitcoin etc.)"
+    },
+    "pVrtrA": {
+        "message": "Gebruik een aangepaste afbeelding"
+    },
+    "pWdLkT": {
+        "message": "Bekijk de <a>de handleiding</a>. Je kunt elke cloud kalendar gebruiken die iCal ondersteunt, inclusief Google Calendar, Outlook en Nextcloud."
+    },
+    "q4caWd": {
+        "message": "vervagingsstraal"
+    },
+    "q6/aVX": {
+        "message": "Je kunt deze widget filteren met een zoek widget."
+    },
+    "qCsSqt": {
+        "message": "Donkerte paneel achtergrond"
+    },
+    "qEk9AJ": {
+        "message": "Pas de helderheid van donkere afbeeldingen aan"
+    },
+    "qYVXqA": {
+        "message": "{mode} opties"
+    },
+    "qfkgCx": {
+        "message": "Hoe ver in de toekomst kijken naar gebeurtenissen. Op 1 instellen om alleen de gebeurtenissen van vandaag te laten zien, 2 voor vandaag en morgen, etc."
+    },
+    "qoEZRi": {
+        "message": "Unsplash collectie"
+    },
+    "r8bU6m": {
+        "message": "Toon de bladwijzer aan de bovenkant van de pagina."
+    },
+    "rAuRqW": {
+        "message": "Vertalingen worden gemaakt door de community."
+    },
+    "rb3Zy8": {
+        "message": "Filter artikelen"
+    },
+    "sFyAdH": {
+        "message": "Alternatief: <import></import>"
+    },
+    "sIC2UV": {
+        "message": "Toon tekst"
+    },
+    "wEQDC6": {
+        "message": "Bewerk"
+    },
+    "wETxDh": {
+        "message": "Kalenders"
+    },
+    "wogY8a": {
+        "message": "Maak een widget"
+    },
+    "wr0l0L": {
+        "message": "Een afbeelding uit een URL"
+    },
+    "wwQ6Va": {
+        "message": "Kies locatie"
+    },
+    "tyq8NB": {
+        "message": "Weer"
+    },
+    "uRYRJh": {
+        "message": "Bewerken {type}"
+    },
+    "ubO4zt": {
+        "message": "Web Comic"
+    },
+    "uv1bYR": {
+        "message": "DIN"
+    },
+    "uzT59w": {
+        "message": "Raster"
+    },
+    "zEj0dg": {
+        "message": "Laat de vooruitgang zien door het jaar heen middels een voortgangsbalk"
+    },
+    "zKofmb": {
+        "message": "Collectie ID. gevonden in de URL, bijvoorbeeld 42576559"
+    },
+    "zPAzlS": {
+        "message": "Combineer de bronnen in een enkele tab"
+    },
+    "zWgbGg": {
+        "message": "Vandaag"
+    },
+    "zXtUcf": {
+        "message": "Maak je geen zorgen, je kunt ook op een later punt ontsluiten"
+    },
+    "zaQRTm": {
+        "message": "<b>Extreem</b> UV"
+    },
+    "zfsplE": {
+        "message": "Laat dit niet meer zien"
+    },
+    "ziyAdj": {
+        "message": "Importeer"
+    },
+    "zo4ZQa": {
+        "message": "Laat zien"
+    },
+    "zsdRww": {
+        "message": "In gebruik voor primaire knoppen en koppelingen"
+    },
+    "vVnypL": {
+        "message": "Toont een willekeurig citaat, met categorieën"
+    },
+    "xvXMaZ": {
+        "message": "Gegroet"
+    },
+    "yfgoZf": {
+        "message": "Discord/ Matrix chats"
+    },
+    "sYvWWw": {
+        "message": "Optioneel, URL naar afbeelding (18px aanbevolen)"
+    },
+    "a09vzt": {
+        "message": "HTTP request mislukt, {code} {msg}."
+    },
+    "QBZZBG": {
+        "message": "NB: dit is een experimentele functie en de CSS selectie kan stoppen met werken in toekomstige versies."
+    },
+    "QkI7Lb": {
+        "message": "Tijdzone van de browser ({browserTimeZone})"
+    },
+    "v9UIPJ": {
+        "message": "Zonsopgang - Zonsondergang"
+    },
+    "Mihrhf": {
+        "message": "Geen"
+    },
+    "pbEMNj": {
+        "message": "Vorige"
+    },
+    "vlumg9": {
+        "message": "Doorzoek de widgets..."
+    },
+    "x59fh0": {
+        "message": "Ruimtevluchten"
+    },
+    "U2Qnh7": {
+        "message": "Afbeelding"
+    },
+    "xR87uK": {
+        "message": "De ruimte tussen widgets, in pixels."
+    },
+    "z7UTSa": {
+        "message": "Over Renewed Tab"
+    },
+    "T/wBPw": {
+        "message": "Verwijder {type}"
+    },
+    "S6nfAm": {
+        "message": "Luchtvochtigheid (%)"
+    },
+    "T4VxQN": {
+        "message": "Laadt.…"
+    },
+    "y1Z3or": {
+        "message": "Taal"
+    },
+    "n0cZ3b": {
+        "message": "Mogelijk gemaakt door {host}."
+    },
+    "pHo6u+": {
+        "message": "Geen afbeeldingen gevonden bij deze feed"
+    },
+    "x7WADS": {
+        "message": "Raster voor volledige pagina"
+    },
+    "yvWbz6": {
+        "message": "Volgende"
+    },
+    "PYJFvz": {
+        "message": "Categoriën"
+    },
+    "yT43pK": {
+        "message": "Gebruik de iconen van websites (favicons)"
+    },
+    "ShQneX": {
+        "message": "Tekst"
+    },
+    "Upkn1Q": {
+        "message": "<b>Hoog</b> UV"
+    },
+    "xtOPHp": {
+        "message": "Koppelings URL"
+    },
+    "xtl3ls": {
+        "message": "Aangepaste iconen inschkelen"
+    },
+    "ykNa5O": {
+        "message": "Met dank aan Font-Awesome voor de iconen, React voor de UI en WebPack voor de builds."
+    },
+    "MdUPbJ": {
+        "message": "zondag, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag"
+    },
+    "QqE4JC": {
+        "message": "Missende URL feed."
+    },
+    "RZqASt": {
+        "message": "Een enkele kleur"
+    },
+    "qzlLb3": {
+        "message": "ZON"
+    },
+    "VxE3S8": {
+        "message": "Dit zal automatisch deze URL naar de Renewed Tab ontwikkelaars sturen. Ze kunnen dan kiezen om het toe te voegen als suggestie voor alle gebruikers."
+    },
+    "yUJ5MA": {
+        "message": "Doelen"
+    },
+    "y8o0oA": {
+        "message": "Actueel en voorspeld weer"
+    },
+    "yY7Rve": {
+        "message": "Verberg"
+    },
+    "ywSKRt": {
+        "message": "Aangepaste HTML"
+    },
+    "OBJta4": {
+        "message": "Je kunt de naam veranderen door op de widget te klikken"
+    },
+    "Kzo9ZH": {
+        "message": "Afbeeldings URL"
+    },
+    "L6nTur": {
+        "message": "Kies een startpunt"
+    },
+    "M6lR5V": {
+        "message": "Aantal kolommen in het widget raster. Je kunt {max} kolommen passen in het huidige scherm ({res}px)."
+    },
+    "olBVPS": {
+        "message": "Exporteer"
+    },
+    "p8GKKf": {
+        "message": "Top sites"
+    },
+    "R4cyIr": {
+        "message": "Hudig: toon luchtvochtigheid"
+    },
+    "oPO8GY": {
+        "message": "Missende kalender URL. Pas deze widget aan om toe te voegen"
+    },
+    "QcExtH": {
+        "message": "Privacy Policy"
+    },
+    "XYIyWM": {
+        "message": "Je zult de \"raster kolommen\" moeten verhogen met tenminste {cols} om de beste ruimte te gebruiken."
+    },
+    "nF7bWj": {
+        "message": "ISO ({example})"
+    },
+    "nGSwtl": {
+        "message": "Zoek"
+    },
+    "pqIuCa": {
+        "message": "Toon huidig weer"
+    },
+    "sPl3nI": {
+        "message": "Titel"
     }
 }
