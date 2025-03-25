@@ -566,10 +566,6 @@
     "a0L2KE": {
         "message": "Cuba sertakan huruf awal atau nama penuh negara."
     },
-    "VxE3S8": {
-        "message": "Ini akan hantar URL yang anda cadangkan secara automatik kepada pembangun Renewed Tab. Mereka akan putuskan sama ada ia akan ditambah sebagai cadangan untuk semua pengguna atau tidak.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "6MDM6D": {
         "message": "Petikan",
         "description": "Quotes Widget"
@@ -1131,10 +1127,6 @@
     "n+w6I2": {
         "message": "Berhenti",
         "description": "Form field label. Gradient stop (%)"
-    },
-    "2j5LN5": {
-        "message": "Cadangkan URL untuk ditambah ke cadangan lalai",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "Lnvfz8": {
         "message": "Gagal untuk memuatkan {source}: {error}",

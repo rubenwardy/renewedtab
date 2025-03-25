@@ -88,16 +88,13 @@
         "message": "Welkom bij <a>Renewed Tab</a>"
     },
     "27lljH": {
-        "message": "U bent <b>(age)</b> jaar oud"
+        "message": "U bent <b>{age}</b> jaar oud"
     },
     "2AUlDo": {
         "message": "Welterusten {name}"
     },
     "2O5Rq1": {
         "message": "Goedenavond {name}"
-    },
-    "2j5LN5": {
-        "message": "Stel een URL voor om toe te voegen aan de standaard suggesties"
     },
     "2vJWTd": {
         "message": "Foto"
@@ -986,9 +983,6 @@
     },
     "qzlLb3": {
         "message": "ZON"
-    },
-    "VxE3S8": {
-        "message": "Dit zal automatisch deze URL naar de Renewed Tab ontwikkelaars sturen. Ze kunnen dan kiezen om het toe te voegen als suggestie voor alle gebruikers."
     },
     "yUJ5MA": {
         "message": "Doelen"

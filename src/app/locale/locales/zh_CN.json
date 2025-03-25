@@ -399,10 +399,6 @@
         "message": "center, top, or bottom (中间，顶部或底部)",
         "description": "Backgroud settings: form field hint (Position)"
     },
-    "VxE3S8": {
-        "message": "这将自动发送网址给 Renewed Tab 的开发者。然后他们可以选择将其添加到对所有用户的建议中。",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "Kzo9ZH": {
         "message": "图像链接",
         "description": "Form field label"
@@ -1078,10 +1074,6 @@
     "R4cyIr": {
         "message": "当前：显示湿度",
         "description": "Weather widget: form field label"
-    },
-    "2j5LN5": {
-        "message": "建议将 URL 添加到默认建议",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "appDescription": {
         "message": "一个可自定义的新标签页，拥有丰富的小部件和各种精美的背景图片供您选择",

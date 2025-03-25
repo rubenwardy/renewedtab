@@ -266,10 +266,6 @@
         "message": "Καθημερινοί στόχοι και εμπνευσμένα αποσπάσματα",
         "description": "Preset: focus description"
     },
-    "2j5LN5": {
-        "message": "Πρόταση να προστεθεί η διεύθυνση URL στις προεπιλεγμένες προτάσεις",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "3UG6ds": {
         "message": "Αναζήτηση γραφικών ή στο διαδίκτυο χρησιμοποιώντας την αγαπημένη σας μηχανή αναζήτησης",
         "description": "Search widget description"

@@ -254,10 +254,6 @@
         "message": "晚上好，{name}",
         "description": "Greeting widget: greeting, from 4pm to 9pm"
     },
-    "2j5LN5": {
-        "message": "URL 將新增到預設建議",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "2vJWTd": {
         "message": "圖片",
         "description": "Background credits title placeholder"
@@ -1235,10 +1231,6 @@
     "mv9TrH": {
         "message": "HTML",
         "description": "HTML Widget"
-    },
-    "VxE3S8": {
-        "message": "這會自動將網址發送給 Renewed Tab 的開發人員。然後他們可以選擇將其添加到所有用戶的建議中。",
-        "description": "Host URL field: help text for suggest URL button"
     },
     "b2Rs2F": {
         "message": "更改淺色圖像的亮度",

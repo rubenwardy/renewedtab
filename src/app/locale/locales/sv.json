@@ -878,10 +878,6 @@
         "message": "Dagliga mål och inspirerande citat",
         "description": "Preset: focus description"
     },
-    "2j5LN5": {
-        "message": "Föreslå URL bli tillagd till standardförslag",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "4F+2K3": {
         "message": "Slumpmässig bild från en Unsplash-samling",
         "description": "Backgroud mode description"

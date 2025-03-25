@@ -743,10 +743,6 @@
         "message": "Като алтернатива можете да използвате приспособление за отметки за фино управление.",
         "description": "General settings: bookmarks bar"
     },
-    "2j5LN5": {
-        "message": "Предложете URL адрес да бъде добавен към предложенията по подразбиране",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "8J0Bhj": {
         "message": "Добре дошли в <a>Renewed Tab</a>: страница с нов раздел с възможност за персонализиране, с приспособления и красиви фонове."
     },
@@ -865,10 +861,6 @@
     "VkW6D1": {
         "message": "център, отгоре или отдолу",
         "description": "Backgroud settings: form field hint (Position)"
-    },
-    "VxE3S8": {
-        "message": "Това автоматично ще изпрати URL адреса на разработчиците на Renewed Tab. След това те могат да изберат да го добавят към предложенията за всички потребители.",
-        "description": "Host URL field: help text for suggest URL button"
     },
     "XV4mnl": {
         "message": "В зависимост от вашите настройки може да бъде избрана една и съща снимка",

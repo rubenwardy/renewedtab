@@ -402,10 +402,6 @@
         "message": "Schaltfläche",
         "description": "Button Widget"
     },
-    "VxE3S8": {
-        "message": "Ihre Anregung wird über die URL an die Renewed Tab Entwickler weitergeleitet. Die entscheiden dann, ob der Vorschlag in die Liste aufgenommen wird.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "Z79HMN": {
         "message": "Zufällige kuratierte Hintergründe",
         "description": "Backgroud mode description"
@@ -1078,10 +1074,6 @@
     "zsdRww": {
         "message": "Wird für die übergeordneten Schaltflächen und Links verwendet",
         "description": "Theme settings: form field hint (Primary Color)"
-    },
-    "2j5LN5": {
-        "message": "Füge diese URL zu den Standardvorschlägen hinzu",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "appDescription": {
         "message": "Einer frei gestaltbaren „Neuer Tab“ Seite, mit praktischen Widgets und faszinierenden Wallpapers",

@@ -544,10 +544,6 @@
     "KsX2fE": {
         "message": "{latitude}' {longitude} konumundaki <b>{name}</b>"
     },
-    "VxE3S8": {
-        "message": "Bu, URL'i Renewed Tab geliştiricilerine gönderir. Geliştiriciler bunu bütün kullanıcılara öneri olarak ekleyebilirler.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "wwQ6Va": {
         "message": "Konum Seç",
         "description": "Location field"
@@ -1131,10 +1127,6 @@
     "exTzGh": {
         "message": "Yatay",
         "description": "Form field option, horizontal gradient"
-    },
-    "2j5LN5": {
-        "message": "URL'in varsayılan önerilere eklenmesini öner",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "c7zm0j": {
         "message": "Besleme yüklenemedi. RSS, JSONFeed veya Atom beslemesi olduğundan emin olun."

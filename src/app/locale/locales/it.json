@@ -206,10 +206,6 @@
         "message": "center, top, or bottom",
         "description": "Backgroud settings: form field hint (Position)"
     },
-    "VxE3S8": {
-        "message": "Questo invierà in automatico l'URL agli sviluppatori di Renewed Tab, che potrebbero decidere di aggiungerlo alla lista dei suggeriti base per tutti gli utenti.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "WF5DKA": {
         "message": "Età",
         "description": "Age widget"
@@ -1078,10 +1074,6 @@
     "zaQRTm": {
         "message": "<b>Estremi</b> UV",
         "description": "Extreme UV risk"
-    },
-    "2j5LN5": {
-        "message": "Suggerisci l'aggiunta dell'URL tra quelli predefiniti",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "appDescription": {
         "message": "Una pagina \"Nuova Finestra\" personalizzabile, attraverso widget e fantastici sfondi",

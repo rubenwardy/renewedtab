@@ -393,10 +393,6 @@
     "ekW/+6": {
         "message": "Connexion Internet impossible"
     },
-    "VxE3S8": {
-        "message": "Cela enverra automatiquement l'URL aux développeurs de Renewed Tab. Ils peuvent ensuite choisir de l'ajouter aux suggestions pour tous les utilisateurs.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "zfsplE": {
         "message": "Ne plus afficher",
         "description": "Background credits vote"
@@ -1078,10 +1074,6 @@
     "eKCjBm": {
         "message": "Précipitation (%)",
         "description": "Weather widget: change of precipitation (rain, etc)"
-    },
-    "2j5LN5": {
-        "message": "Proposer une URL à ajouter à la liste des suggestions par défaut",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "/Mx09O": {
         "message": "Expérimental. Ça ne marche pas avec tous les sources de flux, à cause du manque d'informations sur les images. Les images peuvent également être grandes, ce qui va prendre du temps au chargement.",

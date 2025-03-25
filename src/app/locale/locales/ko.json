@@ -206,10 +206,6 @@
         "message": "뉴스, 날씨 등",
         "description": "Preset: grid description"
     },
-    "2j5LN5": {
-        "message": "기본 제안에 제안할 URL을 추가합니다",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "appDescription": {
         "message": "위젯과 아름다운 배경을 가졌고 사용자 지정이 가능한 새 탭 페이지인",
         "description": "App description"

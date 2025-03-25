@@ -413,10 +413,6 @@
         "message": "IFrame",
         "description": "IFrame Widget"
     },
-    "2j5LN5": {
-        "message": "Kiritilgan URL odatiy joydan o'rin oladi",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "appDescription": {
         "message": "Yangi sahifani videjet va ajoyib fonlar bilan moslab oling",
         "description": "App description"

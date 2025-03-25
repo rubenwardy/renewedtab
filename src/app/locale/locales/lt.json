@@ -158,10 +158,6 @@
         "message": "Sveikinimas",
         "description": "Greeting Widget"
     },
-    "2j5LN5": {
-        "message": "Siūlyti URL pridėti į numatytuosius pasiūlymus",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "3UG6ds": {
         "message": "Ieškok valdiklių arba internete naudojant mėgstamą paieškos variklį.",
         "description": "Search widget description"
@@ -886,10 +882,6 @@
     "TIEfOV": {
         "message": "Straipsnis bus rodomas, jei atitiks bent vieną filtrą Rodyti (jei yra) ir jokių filtrų Slėpti.",
         "description": "Feed widget: form field hint (Filters)"
-    },
-    "VxE3S8": {
-        "message": "Tai automatiškai nusiųs URL adresą į „Renewed Tab“ kūrėjus. Tada jie gali nuspręsti pridėti jį prie visiems naudotojams skirtų pasiūlymų.",
-        "description": "Host URL field: help text for suggest URL button"
     },
     "XYIyWM": {
         "message": "Turėtum padidinti Tinklelio stulpelių reikšmę bent iki {cols}, kad kuo geriau išnaudotum erdvę.",

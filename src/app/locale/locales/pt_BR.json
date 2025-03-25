@@ -306,10 +306,6 @@
         "message": "center, top, or bottom",
         "description": "Backgroud settings: form field hint (Position)"
     },
-    "VxE3S8": {
-        "message": "Isso enviará automaticamente o URL para os desenvolvedores da guia renovada. Eles podem então optar por adicioná-lo às sugestões de todos os usuários.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "WF5DKA": {
         "message": "Idade",
         "description": "Age widget"
@@ -984,10 +980,6 @@
     "lY73np": {
         "message": "Mostrar fundo do painel",
         "description": "Widget styling, checkbox"
-    },
-    "2j5LN5": {
-        "message": "Sugerir que o URL seja adicionado às sugestões padrão",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "KdIFGg": {
         "message": "Falta '{query}' no URL de pesquisa. Por exemplo: https://google.com/search/?q='{query}'",

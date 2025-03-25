@@ -1068,16 +1068,8 @@
     "PHwOzi": {
         "message": "Спасибо Unsplash, AccuWeather и RocketLaunch.Live за их API."
     },
-    "VxE3S8": {
-        "message": "Автоматически отправит URL разработчикам обновленной вкладки. Затем они могут добавить его к предложениям для всех пользователей.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "KsX2fE": {
         "message": "<b>{name}</b> @ {latitude} , {longitude}"
-    },
-    "2j5LN5": {
-        "message": "Предложить URL, чтобы добавить к вариантам по умолчанию",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "appDescription": {
         "message": "настраиваемую страницу Новая Вкладка с виджетами и красивыми фонами",

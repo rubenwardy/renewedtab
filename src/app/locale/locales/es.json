@@ -884,10 +884,6 @@
         "message": "Puede agregar (<add></add>) o eliminar (<remove></remove>) widgets más tarde, o cambiar las configuraciones (<cog></cog>) como desee.",
         "description": "Onboarding: preset hint"
     },
-    "VxE3S8": {
-        "message": "Esto enviará automáticamente el URL a los desarrolladores de Renewed Tab. Luego, pueden optar por agregarlo a las sugerencias para todos los usuarios.",
-        "description": "Host URL field: help text for suggest URL button"
-    },
     "ykNa5O": {
         "message": "Gracias a Font-Awesome por sus íconos, a React por su UI y a WebPack por las compilaciones."
     },
@@ -1116,10 +1112,6 @@
     "exTzGh": {
         "message": "Horizontal",
         "description": "Form field option, horizontal gradient"
-    },
-    "2j5LN5": {
-        "message": "Sugerir URL que se agregue a las sugerencias predeterminadas",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
     },
     "appName": {
         "message": "Renewed Tab",

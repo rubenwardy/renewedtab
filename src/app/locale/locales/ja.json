@@ -1008,10 +1008,6 @@
         "message": "実験的です。画像の情報が不足しているため、すべてのフィードのソースで機能するわけではありません。画像が大きいと、読み込みに時間がかかる場合があります。",
         "description": "Feed widget: form field hint (Show Images)"
     },
-    "2j5LN5": {
-        "message": "デフォルトのサジェストに提案したURLが追加されます",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "3ZfhWo": {
         "message": "{host}にアクセスするには権限が必要です。許可するにはこのウィジェットを編集してください。"
     },
@@ -1225,10 +1221,6 @@
     "VkW6D1": {
         "message": "中央、上部または下部",
         "description": "Backgroud settings: form field hint (Position)"
-    },
-    "VxE3S8": {
-        "message": "この機能はRenewed Tabの開発者に自動的にURLを送信します。開発者はこのURLを全ユーザーの候補に追加することができます。",
-        "description": "Host URL field: help text for suggest URL button"
     },
     "XYIyWM": {
         "message": "スペースを有効に活用するには「グリッドカラム」を最低でも{cols}に増やす必要があります。",

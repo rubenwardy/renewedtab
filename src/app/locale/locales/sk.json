@@ -26,10 +26,6 @@
         "message": "Adresa URL súboru iCal (.ics) pre kalendár",
         "description": "CalendarSchedule widget: form field hint (Calendar URL)"
     },
-    "2j5LN5": {
-        "message": "Navrhnúť pridanie adresy URL k predvoleným návrhom",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "3ZfhWo": {
         "message": "Na prístup k serveru {host} je potrebné povolenie. Upravte túto miniaplikáciu, aby ste ju udelili."
     },

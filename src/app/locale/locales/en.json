@@ -59,6 +59,14 @@
     "description": "Preset: focus description",
     "message": "Daily goals and inspirational quotes"
   },
+  "1Ms/OE": {
+    "description": "Theme settings: form field hint (Border Radius)",
+    "message": "How rounded should the edges of most things be? From 0% to 300%"
+  },
+  "1hvL/q": {
+    "description": "Button to enter edit mode",
+    "message": "Enter edit mode"
+  },
   "1s5GYl": {
     "description": "Form field label",
     "message": "Opacity"
@@ -82,13 +90,13 @@
     "description": "Greeting widget: greeting, from 4pm to 9pm",
     "message": "Good evening, {name}"
   },
+  "2YhLSH": {
+    "description": "Name of widget",
+    "message": "{name} Widget"
+  },
   "2efE5y": {
     "description": "Greeting Widget",
     "message": "Greeting"
-  },
-  "2j5LN5": {
-    "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds",
-    "message": "Suggest URL be added to default suggestions"
   },
   "2s4stS": {
     "description": "Onboarding modal: title",
@@ -115,6 +123,10 @@
   },
   "3aaibf": {
     "message": "Add Widget"
+  },
+  "3lHnZE": {
+    "description": "General settings: clear cache button",
+    "message": "Clear caches and reload"
   },
   "3vh5vd": {
     "description": "Invisible widget description",
@@ -143,6 +155,9 @@
     "description": "Currencies widget: form field label",
     "message": "From"
   },
+  "4fHiNl": {
+    "message": "Duplicate"
+  },
   "4syC1B": {
     "message": "Help and Requests"
   },
@@ -169,6 +184,10 @@
   "6MDM6D": {
     "description": "Quotes Widget",
     "message": "Quotes"
+  },
+  "6mQdhI": {
+    "description": "Theme settings: form field hint (Border Radius)",
+    "message": "How rounded should the edges of panels (eg: widgets) be? From 0% to 1000%"
   },
   "6pdO6i": {
     "description": "Bookmarks widget: error message",
@@ -367,6 +386,9 @@
   "GqPEp+": {
     "message": "Requires browser extension version"
   },
+  "H/r5m6": {
+    "message": "Move down"
+  },
   "H00a0q": {
     "description": "Links widget, form field hint (Link URL)",
     "message": "Leave blank to make heading"
@@ -452,6 +474,9 @@
   "L6nTur": {
     "description": "Onboarding: presets title",
     "message": "Choose a Starting Point"
+  },
+  "LaT9nn": {
+    "message": "<a>Weather icons</a> copyright KDE and licenced under GNU LGPL v3 or later"
   },
   "LfHpBk": {
     "description": "Theme settings: form field label",
@@ -651,10 +676,6 @@
     "description": "Backgroud settings: form field hint (Position)",
     "message": "center, top, or bottom"
   },
-  "VxE3S8": {
-    "description": "Host URL field: help text for suggest URL button",
-    "message": "This will automatically send the URL to the Renewed Tab developers. They may then choose to add it to the suggestions for all users."
-  },
   "W3zKGr": {
     "description": "Weather widget: Speed unit",
     "message": "Kilometers per hour (kph)"
@@ -747,6 +768,10 @@
   "a0L2KE": {
     "message": "Try including the country name or initials."
   },
+  "aO/LJo": {
+    "description": "Location form field: search using GPS",
+    "message": "Search using GPS location"
+  },
   "aXrD3p": {
     "description": "Currencies widget",
     "message": "Currencies"
@@ -793,6 +818,10 @@
   "bfWes8": {
     "description": "Form field label",
     "message": "Gradient Type"
+  },
+  "bhFF6J": {
+    "description": "General settings: cache",
+    "message": "Cache"
   },
   "btOI+Z": {
     "message": "New Tab"
@@ -929,6 +958,10 @@
     "description": "Settings tab",
     "message": "Theme"
   },
+  "iyOvAb": {
+    "description": "Theme settings: form field label",
+    "message": "Panel Border Radius"
+  },
   "j0VHNa": {
     "message": "Grant permission to access bookmarks and fetch icons from websites"
   },
@@ -1012,6 +1045,10 @@
     "description": "Credit to a website",
     "message": "Powered by {host}."
   },
+  "nF+GWk": {
+    "description": "HTML widget: form field description",
+    "message": "JavaScript is not supported for security reasons. Use the iFrame widget instead"
+  },
   "nF7bWj": {
     "description": "Clock widget: date style type",
     "message": "ISO ({example})"
@@ -1019,6 +1056,9 @@
   "nGSwtl": {
     "description": "Search widget: searchbox placeholder text, when search engine name is unknown",
     "message": "Search"
+  },
+  "nHcPTf": {
+    "message": "Warning: Links imported from external sources may contain affiliate links. To ensure privacy, you should replace these with direct links."
   },
   "nHw5cV": {
     "description": "Todo List widget: edit modal hint",
@@ -1101,6 +1141,10 @@
     "description": "Weather widget: form field label",
     "message": "Show current weather"
   },
+  "q3GXOR": {
+    "description": "CalendarSchedule widget disclaimer",
+    "message": "<b>This widget is experimental</b>: There may be issues with events appearing, and it may cause the page to freeze."
+  },
   "q4caWd": {
     "description": "Backgroud settings: form field label",
     "message": "Blur radius"
@@ -1144,6 +1188,9 @@
     "description": "Feed widget: form field label",
     "message": "Filter Articles"
   },
+  "rbrahO": {
+    "message": "Close"
+  },
   "sFyAdH": {
     "message": "Alternatively: <import></import>"
   },
@@ -1174,6 +1221,10 @@
   "tyq8NB": {
     "description": "Weather Widget",
     "message": "Weather"
+  },
+  "u9iVp5": {
+    "description": "Theme settings: form field label",
+    "message": "Border Radius"
   },
   "uRYRJh": {
     "message": "Edit {type}"
@@ -1208,6 +1259,9 @@
   "wETxDh": {
     "description": "CalendarSchedule widget: form field label",
     "message": "Calendars"
+  },
+  "wmFdws": {
+    "message": "Move up"
   },
   "wogY8a": {
     "message": "Create Widget"

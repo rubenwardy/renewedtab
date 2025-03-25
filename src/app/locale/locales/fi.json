@@ -62,10 +62,6 @@
         "message": "Tervehdys",
         "description": "Greeting Widget"
     },
-    "2j5LN5": {
-        "message": "Ehdotuksen URL-osoite lisätään oletusehdotuksiin",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "2s4stS": {
         "message": "Tervetuloa <a>Uusittuun välilehteen</a>",
         "description": "Onboarding modal: title"

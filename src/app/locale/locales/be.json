@@ -54,10 +54,6 @@
         "message": "Вітанне",
         "description": "Greeting Widget"
     },
-    "2j5LN5": {
-        "message": "Прапануйце URL, якую жадаеце дадаць да прадвызначаных прапаноў",
-        "description": "Host URL field: button for users to suggest new URLs for RSS/JSONFeed/Atom feeds"
-    },
     "3/EBw0": {
         "message": "Вэб-сайт",
         "description": "Renewed Tab website"
@@ -788,10 +784,6 @@
     "TIEfOV": {
         "message": "Артыкул будзе паказаны, калі ён адпавядае мінімум адын фільтар \"Паказаць\"(калі ёсць такія), і ніводнага фільтра \"Схаваць\".",
         "description": "Feed widget: form field hint (Filters)"
-    },
-    "VxE3S8": {
-        "message": "Гэта аўтаматычна адправіць спасылку распрацоўшчыкам Renewed Tab. Яны вырашаць, дадаць яе, як прапанову для ўсіх карыстачоў, ці не.",
-        "description": "Host URL field: help text for suggest URL button"
     },
     "XV4mnl": {
         "message": "Гледзячы на вашы налады, можа быць абрана адно і тое ж фота",
