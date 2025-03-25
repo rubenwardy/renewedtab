@@ -485,11 +485,11 @@ app.get("/api/website-icons/", async (req, res: express.Response, next: (e: unkn
 			});
 			icons = (await response.json()) as TippyTopImage[];
 			icons.push({
-				domains: [ "minetest.net", "wiki.minetest.net", "forum.minetest.net" ],
-				image_url: "https://www.minetest.net/media/icon.svg",
+				domains: [ "luanti.org", "forum.luanti.org", "minetest.net", "wiki.minetest.net", "forum.minetest.net" ],
+				image_url: "https://www.luanti.org/media/icon.svg",
 			}, {
 				domains: [ "feeds.bbci.co.uk" ],
-				image_url: "https://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/5.2.0/apple-touch-icon.png",
+				image_url: "https://static.files.bbci.co.uk/core/website/assets/static/icons/touch/news/touch-icon-512.685da29e9e.png",
 			});
 
 			icons.find(x => x.domains.includes("github.com"))!.image_url =
