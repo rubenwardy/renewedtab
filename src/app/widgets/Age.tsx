@@ -54,7 +54,7 @@ function Age(props: WidgetProps<AgeProps>) {
 		<Panel {...props.theme} className="vertical-middle" invisClassName="vertical-middle">
 			<FormattedMessage {...messages.current_age}
 				values={{
-					b: (chunks: any) => <strong>&nbsp;{chunks}&nbsp;</strong>,
+					b: (chunks: any) => <strong key={Math.random()}>&nbsp;{chunks}&nbsp;</strong>,
 					age: age.toFixed(7),
 				}} />
 		</Panel>);

@@ -18,7 +18,7 @@ export default function OnboardingWelcome(props: OnboardingPageProps) {
 							<FormattedMessage
 								{...miscMessages.welcome}
 								values={{
-									a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
+									a: (chunk: any) => (<a key={Math.random()} href="https://renewedtab.com">{chunk}</a>)
 								}} />
 							. <FormattedMessage
 									id="appDescription"

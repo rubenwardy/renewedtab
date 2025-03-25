@@ -199,7 +199,7 @@ export function makeGridSettingsSchema(values: WidgetGridSettings): Schema<Widge
 			messages.fullPageHint1,
 			messages.fullPageHint3,
 			bindValuesToDescriptor(messages.fullPageHint4, {
-				b: (chunk: any) => (<b>{chunk}</b>),
+				b: (chunk: any) => (<b key={Math.random()}>{chunk}</b>),
 			}),
 			bindValuesToDescriptor(messages.fullPageHint2, {
 				cols: Math.floor(maxColumns * 0.85),

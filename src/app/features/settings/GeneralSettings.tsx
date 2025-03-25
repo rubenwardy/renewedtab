@@ -54,7 +54,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 			<p>
 				<FormattedMessage
 						{...miscMessages.widgetsHaveSettings}
-						values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
+						values={{ b: (chunk: any) => (<b key={Math.random()}>{chunk}</b>) }} />
 			</p>
 			<LanguageSelector
 				locale={props.locale}
@@ -66,7 +66,7 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 				</h3>
 				<p className="text-muted">
 					<FormattedMessage {...messages.firefoxBookmarksBar}
-						values={{ a: (chunk: any) => (<a href="https://renewedtab.com/help/firefox-bookmarks/">{chunk}</a>) }} />
+						values={{ a: (chunk: any) => (<a key={Math.random()} href="https://renewedtab.com/help/firefox-bookmarks/">{chunk}</a>) }} />
 				</p>
 			</>)}
 

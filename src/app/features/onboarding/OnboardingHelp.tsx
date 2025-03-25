@@ -52,8 +52,8 @@ export default function OnboardingHelp() {
 								defaultMessage=
 									"Use the move handle (<move></move>) and the resize handle (<resize></resize>)."
 								values={{
-									move: () => <i className="fas fa-grip-vertical" />,
-									resize: () => <span className="fake-resizable-handle" />,
+									move: () => <i key={Math.random()} className="fas fa-grip-vertical" />,
+									resize: () => <span key={Math.random()} className="fake-resizable-handle" />,
 								}} />
 						</p>
 						<p>

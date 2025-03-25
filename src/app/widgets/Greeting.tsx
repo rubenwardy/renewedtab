@@ -79,7 +79,7 @@ function Greeting(props: WidgetProps<Record<string, never>>) {
 					{name !== undefined &&
 						<FormattedMessage {...getGreeting()} values={{
 							name: (
-								<AutoWidthInput onChange={handleChange} value={name ?? ""}
+								<AutoWidthInput key={Math.random()} onChange={handleChange} value={name ?? ""}
 									placeholder={intl.formatMessage(messages.name)} />),
 						}} />}
 				</div>

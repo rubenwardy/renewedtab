@@ -31,7 +31,7 @@ export default function GridSettings(props: GridSettingsProps) {
 			<p>
 				<FormattedMessage
 					{...miscMessages.widgetsHaveSettings}
-					values={{ b: (chunk: any) => (<b>{chunk}</b>) }} />
+					values={{ b: (chunk: any) => (<b key={Math.random()}>{chunk}</b>) }} />
 			</p>
 
 			<Form

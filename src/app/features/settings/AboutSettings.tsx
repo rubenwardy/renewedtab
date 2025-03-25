@@ -35,20 +35,20 @@ export default function AboutSettings() {
 				<FormattedMessage
 					defaultMessage="Welcome to <a>Renewed Tab</a>: a customisable New Tab page, with widgets and beautiful backgrounds."
 					values={{
-						a: (chunk: any) => (<a href="https://renewedtab.com">{chunk}</a>)
+						a: (chunk: any) => (<a key={Math.random()} href="https://renewedtab.com">{chunk}</a>)
 					}} />
 			</p>
 			<p>
 				<FormattedMessage
 					defaultMessage="Created by <a>rubenwardy</a>."
 					values={{
-						a: (chunk: any) => (<a href="https://rubenwardy.com">{chunk}</a>)
+						a: (chunk: any) => (<a key={Math.random()} href="https://rubenwardy.com">{chunk}</a>)
 					}} />
 				{" "}
 				<FormattedMessage
 					defaultMessage="<a>Open source</a>, licensed under GPLv3+."
 					values={{
-						a: (chunk: any) => (<a href="https://gitlab.com/renewedtab/renewedtab/">{chunk}</a>)
+						a: (chunk: any) => (<a key={Math.random()} href="https://gitlab.com/renewedtab/renewedtab/">{chunk}</a>)
 					}} />
 			</p>
 			{intl.locale != intl.defaultLocale && (
@@ -67,7 +67,7 @@ export default function AboutSettings() {
 				<FormattedMessage
 					defaultMessage="<a>Weather icons</a> copyright KDE and licenced under GNU LGPL v3 or later"
 					values={{
-						a: (chunk: any) => (<a href="https://develop.kde.org/frameworks/breeze-icons/">{chunk}</a>)
+						a: (chunk: any) => (<a key={Math.random()} href="https://develop.kde.org/frameworks/breeze-icons/">{chunk}</a>)
 					}} />
 			</p>
 			<p>

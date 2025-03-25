@@ -177,7 +177,7 @@ export default function LocationField(props: FieldProps<Location>) {
 			<FormattedMessage
 				defaultMessage="<b>{name}</b> at {latitude} by {longitude}"
 				values={{
-					b: (chunk: any) => (<strong className="text-normal">{chunk}</strong>),
+					b: (chunk: any) => (<strong key={Math.random()} className="text-normal">{chunk}</strong>),
 					name: value.name,
 					latitude: value.latitude.toFixed(4),
 					longitude: value.longitude.toFixed(4), }} />);

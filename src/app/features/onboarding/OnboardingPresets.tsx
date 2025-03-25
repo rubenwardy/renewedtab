@@ -109,9 +109,9 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 					defaultMessage="You can add (<add></add>) or remove (<remove></remove>) widgets later, or change settings (<cog></cog>) as desired."
 					description="Onboarding: preset hint"
 					values={{
-						add: () => <i className="fas fa-plus" />,
-						remove: () => <i className="fas fa-trash" />,
-						cog: () => <i className="fas fa-cog" />,
+						add: () => <i key={Math.random()} className="fas fa-plus" />,
+						remove: () => <i key={Math.random()}className="fas fa-trash" />,
+						cog: () => <i key={Math.random()} className="fas fa-cog" />,
 					}} />
 			</p>
 			<p className="text-muted">
@@ -119,7 +119,7 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 					defaultMessage="Alternatively: <import></import>"
 					values={{
 						import: () =>
-							<ImportButton small={true} variant={ButtonVariant.Secondary} />,
+							<ImportButton key={Math.random()} small={true} variant={ButtonVariant.Secondary} />,
 					}} />
 			</p>
 		</div>);

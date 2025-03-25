@@ -166,10 +166,10 @@ const widget: WidgetType<CalendarScheduleProps> = {
 	defaultSize: new Vector2(5, 4),
 	editHint: [
 		bindValuesToDescriptor(messages.editHint, {
-			a: (chunk: any) => (<a href="https://renewedtab.com/help/calendar/">{chunk}</a>),
+			a: (chunk: any) => (<a key={Math.random()} href="https://renewedtab.com/help/calendar/">{chunk}</a>),
 		}),
 		bindValuesToDescriptor(messages.experimental, {
-			b: (chunk: any) => (<strong>{chunk}</strong>),
+			b: (chunk: any) => (<strong key={Math.random()}>{chunk}</strong>),
 		}),
 	],
 	isBrowserOnly: true,

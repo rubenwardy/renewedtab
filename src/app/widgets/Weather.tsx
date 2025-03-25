@@ -304,7 +304,7 @@ function CurrentDetails(props: { current: WeatherCurrent, display: WeatherDispla
 						<FormattedMessage {...uvRiskMessages[uvRisk]}
 							values={{
 								b: (chunk: any) => (
-									<b className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
+									<b key={Math.random()} className={`uv-${UVRisk[uvRisk].toLowerCase()}`}>
 										{chunk}
 									</b>),
 						}}/>
@@ -335,7 +335,7 @@ function Current(props: {
 									defaultMessage="Feels like <b>{temp}°</b>"
 									values={{
 										temp: props.current.feels_like.toFixed(0),
-										b: (chunk: any) => (<b>{chunk}</b>),
+										b: (chunk: any) => (<b key={Math.random()}>{chunk}</b>),
 									}} />
 							</p>
 						</div>)}
@@ -507,7 +507,7 @@ const widget: WidgetType<WeatherProps> = {
 	defaultSize: new Vector2(5, 3),
 	initialProps: initialProps,
 	editHint: bindValuesToDescriptor(messages.askForDonations, {
-		a: (chunk: any) => (<a href="https://renewedtab.com/donate/">{chunk}</a>),
+		a: (chunk: any) => (<a key={Math.random()} href="https://renewedtab.com/donate/">{chunk}</a>),
 	}),
 	schema: {
 		location: type.location(schemaMessages.location),
