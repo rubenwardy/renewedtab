@@ -24,7 +24,7 @@ const messages = defineMessages({
 async function getStoredData(): Promise<string> {
 	const data = toTypedJSON(await storage.getAll()) as { [name: string]: any };
 	for (const key in data) {
-		if (key.startsWith("large-")) {
+		if (key.startsWith("large-") || key.startsWith("cache-")) {
 			delete data[key];
 		}
 	}
