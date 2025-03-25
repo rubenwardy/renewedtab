@@ -1310,5 +1310,8 @@
     "v9UIPJ": {
         "message": "日出 - 日落",
         "description": "Weather widget: wind speed tooltip"
+    },
+    "DVGnNH": {
+        "message": "您可以藉由將游標懸停於左下角的製作人員名單上，以點讚或選擇不再顯示當前的背景圖像。"
     }
 }
