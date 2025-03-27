@@ -161,12 +161,15 @@ ul.links {
 
 
 .bookmarks-top-bar {
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	z-index: 100;
-
-	.panel {
-		border-radius: 0;
-		overflow: visible;
-	}
+	margin: 0;
+	border-radius: 0;
 
 	ul.links-horizontal {
 		padding-left: 0.32rem;
