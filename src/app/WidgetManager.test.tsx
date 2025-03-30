@@ -1,4 +1,4 @@
-import { LinkBoxProps } from "app/components/LinkBox";
+import { LinkBoxWidgetProps } from "app/components/LinkBox";
 import { Vector2 } from "app/utils/Vector2";
 import { ListBoxStyle } from "app/Widget";
 import { WidgetManager } from "app/WidgetManager";
@@ -31,8 +31,8 @@ describe("WidgetManager::create", () => {
 		await wm.load();
 		expect(wm.widgets.length).to.equal(1);
 
-		const widget1 = wm.createWidget<LinkBoxProps>("Links");
-		const widget2 = wm.createWidget<LinkBoxProps>("Links");
+		const widget1 = wm.createWidget<LinkBoxWidgetProps>("Links");
+		const widget2 = wm.createWidget<LinkBoxWidgetProps>("Links");
 		expect(widget1.props.links.length).to.equal(NUM_LINKS);
 		expect(widget2.props.links.length).to.equal(NUM_LINKS);
 
@@ -53,8 +53,8 @@ describe("WidgetManager::create", () => {
 		await wm.load();
 		expect(wm.widgets.length).to.equal(0);
 
-		const widget1 = wm.createWidget<LinkBoxProps>("Links");
-		const widget2 = wm.createWidget<LinkBoxProps>("Links");
+		const widget1 = wm.createWidget<LinkBoxWidgetProps>("Links");
+		const widget2 = wm.createWidget<LinkBoxWidgetProps>("Links");
 		expect(widget1.theme.listBoxStyle).is.eq(ListBoxStyle.Vertical);
 		widget1.theme.listBoxStyle = ListBoxStyle.Icons;
 		expect(widget1.theme.listBoxStyle).is.eq(ListBoxStyle.Icons);

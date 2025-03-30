@@ -1,3 +1,23 @@
+@use "mixins" as *;
+@use "buttons" as *;
+@use "panel" as *;
+@use "widget" as *;
+@use "fields" as *;
+@use "meter" as *;
+@use "alert.scss" as *;
+@use "modal" as *;
+@use "onboarding" as *;
+@use "utils" as *;
+@use "scrollbar" as *;
+@use "stats" as *;
+@use "iconbar" as *;
+@use "linkbox" as *;
+@use "todolist" as *;
+@use "table" as *;
+@use "weather" as *;
+@import "~react-grid-layout/css/styles.css";
+@import "~react-resizable/css/styles.css";
+
 :root {
 	--font-family: "Roboto";
 	--font-size: 100%;
@@ -38,9 +58,6 @@
     font-weight: 700;
     font-style: normal;
 }
-
-
-@import "mixins";
 
 html, body, #app {
 	width: 100%;
@@ -219,29 +236,6 @@ a, .link {
 		transform: translate(0, -50%);
 	}
 }
-
-
-
-@import "buttons";
-@import "panel";
-@import "widget";
-@import "fields";
-@import "meter";
-@import "alert.scss";
-@import "modal";
-@import "onboarding";
-@import "utils";
-@import "scrollbar";
-@import "stats";
-@import "iconbar";
-@import "links";
-@import "todolist";
-@import "table";
-@import "weather";
-
-@import "~react-grid-layout/css/styles.css";
-@import "~react-resizable/css/styles.css";
-
 
 #unlock-widgets {
 	display: block;

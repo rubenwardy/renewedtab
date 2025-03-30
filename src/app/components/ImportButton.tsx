@@ -6,7 +6,7 @@ import { parseInfinity } from "app/utils/imports";
 import { WidgetManager } from "app/WidgetManager";
 import useWidgetManager from "app/hooks/useWidgetManager";
 import { gridPreset } from "app/features/onboarding/OnboardingPresets";
-import { LinkBoxProps } from "./LinkBox";
+import { LinkBoxWidgetProps } from "./LinkBox";
 import { TodoListProps } from "app/widgets/TodoList";
 import { IntlShape, useIntl } from "react-intl";
 
@@ -17,11 +17,11 @@ async function handleImportInfinity(intl: IntlShape, widgetManager: WidgetManage
 		const data = parseInfinity(json);
 		if (widgetManager.widgets.length == 0) {
 			widgetManager.createFromArray(gridPreset.widgets);
-			widgetManager.findWidgetByType<LinkBoxProps>("Links")!.props.links = [];
+			widgetManager.findWidgetByType<LinkBoxWidgetProps>("Links")!.props.links = [];
 		}
 
 		if (data.links.length > 0) {
-			let widget = widgetManager.findWidgetByType<LinkBoxProps>("Links");
+			let widget = widgetManager.findWidgetByType<LinkBoxWidgetProps>("Links");
 			if (widget == undefined) {
 				widget = widgetManager.createWidget("Links");
 				widget.props.links = [];

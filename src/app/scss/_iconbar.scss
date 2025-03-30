@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .iconbar {
 	display: flex;
 	flex-direction: row;
@@ -12,39 +14,34 @@
 	box-sizing: border-box;
 	overflow: hidden auto;
 
-	li {
+	> .link-item, > .dropdown > .link-item {
 		display: block;
-		text-align: center;
 		text-shadow: 2px 2px 2px rgba(15, 15, 15, 0.25);
+		color: #eee;
+		transition: transform 200ms ease;
+		width: 90px;
 
-		.icon {
+		> .icon {
 			margin: 0 auto;
 			display: block;
 			border-radius: var(--base-border-radius);
 			width: 50px;
 			height: 50px;
 			font-size: 50px;
-			text-align: center;
 			object-fit: contain;
 			filter: drop-shadow(2px 2px 2px rgba(15, 15, 15, 0.3));
 		}
 
-		.title {
+		> .title {
 			display: block;
 			margin: 10px 0 0 0;
 			overflow-wrap: break-word;
+			text-align: center;
 
 			@include line-clamp(2);
 		}
 
-		a {
-			display: inline-block;
-			color: #eee;
-			transition: transform 200ms ease;
-			width: 90px;
-		}
-
-		&:not(.section) a:hover {
+		&:is(.link-item-action):hover {
 			color: white;
 			text-decoration: none;
 			transform: scale(1.05, 1.05);

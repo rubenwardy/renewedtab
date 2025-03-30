@@ -36,27 +36,28 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 	let widgets = widgetTypes
 		.filter((widget) => isBrowser || widget.isBrowserOnly !== true)
 		.map((widget) => (
-			<li key={widget.key} data-widget-type={widget.key}>
-				<button onClick={() => select(widget.key)}>
-					{widget.title}
-					<span className="text-muted ml-1">
-						{" "}
-						{widget.description}
-					</span>
-				</button>
-			</li>));
+			<button key={widget.key}
+					className="link-item link-item-action"
+					data-widget-type={widget.key}
+					onClick={() => select(widget.key)}>
+				{widget.title}
+				<span className="text-muted ml-1">
+					{" "}
+					{widget.description}
+				</span>
+			</button>));
 
 	if (!isBrowser) {
 		widgets = widgets.concat(widgetTypes
 			.filter((widget) => widget.isBrowserOnly === true)
 			.map((widget) => (
-				<li key={widget.key} className="text-disabled text-muted">
+				<div key={widget.key} className="link-item text-disabled text-muted">
 					{widget.title}
 					<span className="ml-1">
 						{" "}
 						<FormattedMessage {...miscMessages.requiresBrowserVersion} />
 					</span>
-				</li>)));
+				</div>)));
 	}
 
 	const placeholder = intl.formatMessage({
@@ -68,12 +69,12 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 		<Modal title={intl.formatMessage({ defaultMessage: "Create Widget" })} wide={true}  {...props}>
 			<input type="search" placeholder={placeholder} autoFocus={true}
 				value={query} onChange={(e) => setQuery(e.target.value)} />
-			<ul className="links large" role="menu">
+			<div className="linkbox large" role="menu">
 				{widgets}
 				{widgets.length == 0 && (
-					<li className="section" role="menuitem">
+					<div className="section" role="menuitem">
 						<FormattedMessage {...miscMessages.noResults} />
-					</li>)}
-			</ul>
+					</div>)}
+			</div>
 		</Modal>);
 }

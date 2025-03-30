@@ -1,5 +1,5 @@
 import Button, { ButtonVariant } from 'app/components/Button';
-import LinkBox, { LinkSchema, LinkBoxProps, FullLinkSchema, Link } from 'app/components/LinkBox';
+import LinkBox, { LinkSchema, LinkBoxWidgetProps, FullLinkSchema, Link } from 'app/components/LinkBox';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { parseLinksJson } from 'app/utils/imports';
 import { type } from 'app/utils/Schema';
@@ -33,7 +33,7 @@ const messages = defineMessages({
 });
 
 
-function Links(props: WidgetProps<LinkBoxProps>)  {
+function Links(props: WidgetProps<LinkBoxWidgetProps>)  {
 	return (<LinkBox {...props.props} widgetTheme={props.theme} />);
 }
 
@@ -44,7 +44,7 @@ function encode(str: string) {
 }
 
 
-function LinksImportExport(props: WidgetEditComponentProps<LinkBoxProps>) {
+function LinksImportExport(props: WidgetEditComponentProps<LinkBoxWidgetProps>) {
 	const handleImport = useCallback(async (file: File) => {
 		try {
 			const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
@@ -113,8 +113,11 @@ function LinksImportExport(props: WidgetEditComponentProps<LinkBoxProps>) {
 		</div>);
 }
 
+interface LinkProps extends LinkBoxWidgetProps {
+	enableCustomIcons?: boolean;
+}
 
-const initialProps: LinkBoxProps = {
+const initialProps: LinkProps = {
 	links: [
 		{
 			id: uuid(),
@@ -150,7 +153,7 @@ const initialProps: LinkBoxProps = {
 };
 
 
-const widget: WidgetType<LinkBoxProps> = {
+const widget: WidgetType<LinkProps> = {
 	Component: Links,
 	title: messages.title,
 	description: messages.description,
