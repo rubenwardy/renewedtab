@@ -79,6 +79,7 @@ async function fetchLocationsFromCoord(lat: number, long: number): Promise<Locat
 		{
 			key: json.Key,
 			name: getLocationName(json),
+			short_name: json.LocalisedName ?? json.EnglishName,
 			latitude: json.GeoPosition.Latitude,
 			longitude: json.GeoPosition.Longitude,
 		}

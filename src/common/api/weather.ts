@@ -38,6 +38,7 @@ export interface WeatherHour {
 }
 
 export interface WeatherInfo {
+	short_name?: string;
 	url?: string;
 
 	current: WeatherCurrent;
@@ -60,6 +61,7 @@ export enum SpeedUnit {
 
 export interface Location {
 	name: string;
+	short_name?: string;
 	key: string;
 	latitude: number;
 	longitude: number;

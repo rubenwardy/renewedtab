@@ -192,7 +192,7 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 }
 
 
-async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
+async function fetchWeatherInfo(key: string, shortName: string): Promise<WeatherInfo> {
 	const [current, hourly, daily] = await Promise.all([
 		fetchCurrentForecast(key),
 		fetchHourlyForecast(key),
@@ -203,6 +203,9 @@ async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
 		.reduce((acc, x) => Math.max(acc, x.precipitation ?? 0), 0);
 
 	return {
+		short_name: shortName,
+		url: current.Link.replace("http://", "https://"),
+
 		current: {
 			icon: getLegacyIcon(current.WeatherIcon, undefined),
 			icon2: current.WeatherIcon,
@@ -221,19 +224,17 @@ async function fetchWeatherInfo(key: string): Promise<WeatherInfo> {
 
 		hourly,
 		daily,
-
-		url: current.Link.replace("http://", "https://"),
 	};
 }
 
 
-export const getWeatherInfo: (key: string) => Promise<WeatherInfo>
-	= makeKeyCache(fetchWeatherInfo, 2 * 60)
+export const getWeatherInfo: (key: string, shortName: string) => Promise<WeatherInfo>
+	= makeKeyCache(fetchWeatherInfo, 2 * 60, (key, name) => `${key},${name}`);
 
 
 async function fetchWeatherInfoByCoords(lat: number, long: number): Promise<WeatherInfo> {
-	const location = await getLocationFromCoords(lat, long);
-	return await getWeatherInfo(location[0].key);
+	const location = (await getLocationFromCoords(lat, long))[0];
+	return await getWeatherInfo(location.key, location.short_name ?? location.name);
 }
 
 
