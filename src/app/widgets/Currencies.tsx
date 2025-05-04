@@ -43,6 +43,11 @@ const messages = defineMessages({
 		defaultMessage: "Unknown currency ''{currency}''",
 		description: "Currencies widget: error",
 	},
+
+	warranty: {
+		defaultMessage: "No warranty is given for the accuracy of the information shown. Always double check before making decisions based on this data.",
+		description: "Currentcies widget: limited warranty",
+	},
 });
 
 
@@ -112,7 +117,8 @@ const widget: WidgetType<CurrenciesProps> = {
 	description: messages.description,
 	editHint: [
 		miscMessages.globalSearchEditHint,
-		bindValuesToDescriptor(miscMessages.poweredBy, { host: "exchangerate.host" }),
+		bindValuesToDescriptor(miscMessages.poweredBy, { host: "OpenExchangeRates.org" }),
+		messages.warranty,
 	],
 	defaultSize: new Vector2(5, 3),
 	initialProps: {
