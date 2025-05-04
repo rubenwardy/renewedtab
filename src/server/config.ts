@@ -18,5 +18,5 @@ export const ACCUWEATHER_API_KEY =
 	process.env.ACCUWEATHER_API_KEY ?? serverConfig.ACCUWEATHER_API_KEY;
 export const UNSPLASH_ACCESS_KEY =
 	process.env.UNSPLASH_ACCESS_KEY ?? serverConfig.UNSPLASH_ACCESS_KEY;
-export const EXCHANGERATE_API_KEY =
-	process.env.EXCHANGERATE_API_KEY ?? serverConfig.EXCHANGERATE_API_KEY;
+export const OPEN_EXCHANGE_RATES_KEY =
+	process.env.OPEN_EXCHANGE_RATES_KEY ?? serverConfig.OPEN_EXCHANGE_RATES_KEY;

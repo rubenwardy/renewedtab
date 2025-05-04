@@ -2,7 +2,7 @@ import { CurrencyInfo } from "common/api/currencies";
 import { makeSingleCache } from "./cache";
 import fetchCatch, {Request, Response} from "./http";
 import UserError from "./UserError";
-import { EXCHANGERATE_API_KEY, UA_DEFAULT } from "./config";
+import { OPEN_EXCHANGE_RATES_KEY, UA_DEFAULT } from "./config";
 import { notifyUpstreamRequest } from "./metrics";
 
 
@@ -13,9 +13,17 @@ const shitCoins = new Set([
 
 function checkError(response: Response, json: any) {
 	if (!response.ok || json?.success === false) {
+		console.log(json);
 		throw new UserError("Unknown error from upstream API");
 	}
 }
+
+type SymbolsAPI = Record<string, string>;
+
+interface RatesAPI {
+	rates: Record<string, number>;
+}
+
 
 
 /**
@@ -24,10 +32,10 @@ function checkError(response: Response, json: any) {
  * @returns Map of currency key to info
  */
 async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
-	const url = new URL("http://api.exchangerate.host/list");
-	url.searchParams.set("access_key", EXCHANGERATE_API_KEY);
+	const url = new URL("https://openexchangerates.org/api/currencies.json");
+	url.searchParams.set("app_id", OPEN_EXCHANGE_RATES_KEY);
 
-	notifyUpstreamRequest("ExchangeRate.host");
+	notifyUpstreamRequest("OpenExchangeRates.host");
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
@@ -43,11 +51,11 @@ async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
 		throw new UserError(await response.text());
 	}
 
-	const json = await response.json();
+	const json: SymbolsAPI = await response.json();
 	checkError(response, json);
 
 	const retval: Record<string, CurrencyInfo> = {};
-	Object.entries(json.currencies as Record<string, string>)
+	Object.entries(json)
 		.forEach(([key, description]) => {
 			retval[key] = {
 				code: key,
@@ -60,16 +68,11 @@ async function fetchSymbols(): Promise<Record<string, CurrencyInfo>> {
 	return retval;
 }
 
-
 async function fetchLiveValues(rates: Record<string, number>): Promise<void> {
-	const url = new URL("http://api.exchangerate.host/live")
-	url.searchParams.set("access_key", EXCHANGERATE_API_KEY);
-	url.searchParams.set("base", "USD");
-	url.searchParams.set("places", "10");
+	const url = new URL("https://openexchangerates.org/api/latest.json")
+	url.searchParams.set("app_id", OPEN_EXCHANGE_RATES_KEY);
 
-	notifyUpstreamRequest("ExchangeRate.host");
-
-	// TODO: this API only returns BTC, use another API for crypto
+	notifyUpstreamRequest("OpenExchangeRates.host");
 
 	const response = await fetchCatch(new Request(url, {
 		method: "GET",
@@ -84,12 +87,11 @@ async function fetchLiveValues(rates: Record<string, number>): Promise<void> {
 		throw new UserError(await response.text());
 	}
 
-	const json = await response.json();
+	const json: RatesAPI = await response.json();
 	checkError(response, json);
 
-	Object.entries(json.quotes as Record<string, string>).forEach(([key, value]) => {
-		const withoutUSD = key.slice(3);
-		rates[withoutUSD] = parseFloat(value);
+	Object.entries(json.rates).forEach(([key, value]) => {
+		rates[key] = Number(value);
 	});
 }
 
