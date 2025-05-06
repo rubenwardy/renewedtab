@@ -1309,5 +1309,20 @@
     "zKofmb": {
         "message": "コレクションID。URL内に含まれています。例: 42576559",
         "description": "Backgroud settings: form field hint (Unsplash Collection)"
+    },
+    "1Ms/OE": {
+        "message": "ほぼすべての要素の角丸の大きさを指定します。0~300%の間で指定"
+    },
+    "1hvL/q": {
+        "message": "編集モードに入る"
+    },
+    "2YhLSH": {
+        "message": "{name} ウィジェット"
+    },
+    "3lHnZE": {
+        "message": "キャッシュをクリアして再読み込み"
+    },
+    "4fHiNl": {
+        "message": "複製"
     }
 }
