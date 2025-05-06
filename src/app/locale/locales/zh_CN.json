@@ -1116,7 +1116,7 @@
         "description": "Backgroud mode description"
     },
     "zXtUcf": {
-        "message": "不必担心，稍后您仍可以解锁"
+        "message": "不必担心，稍后您仍可以解锁并编辑布局"
     },
     "CN0kVN": {
         "message": "部件网格",
@@ -1309,5 +1309,56 @@
     "ilIuh2": {
         "message": "该小部件是否好用？考虑通过<a>捐赠</a>来支付天气 API 的费用，并且支持 Renewed Tab 未来的发展。",
         "description": "Weather widget: asking for donations"
+    },
+    "nHcPTf": {
+        "message": "警告：从外部来源导入的链接中可能包含追踪代码。为了保证隐私安全，请替换使用直链。"
+    },
+    "LaT9nn": {
+        "message": "<a>天气图标</a>的版权属于 KDE，由 GNU LGPL v3 或更高的版本授权使用"
+    },
+    "aO/LJo": {
+        "message": "基于 GPS 位置搜索"
+    },
+    "iyOvAb": {
+        "message": "面板圆角半径"
+    },
+    "3lHnZE": {
+        "message": "清除缓存并重新加载"
+    },
+    "u9iVp5": {
+        "message": "圆角半径"
+    },
+    "1Ms/OE": {
+        "message": "大部分元素边框圆角的半径，范围从 0% 到 300%"
+    },
+    "1hvL/q": {
+        "message": "进入编辑模式"
+    },
+    "2YhLSH": {
+        "message": "小部件 {name}"
+    },
+    "6mQdhI": {
+        "message": "面板 (例如小部件) 边框圆角的半径，范围从 0% 到 1000%"
+    },
+    "4fHiNl": {
+        "message": "复制"
+    },
+    "H/r5m6": {
+        "message": "向下移动"
+    },
+    "bhFF6J": {
+        "message": "缓存"
+    },
+    "nF+GWk": {
+        "message": "处于安全原因，不支持 JavaScript，请使用 iFrame 小部件代替"
+    },
+    "rbrahO": {
+        "message": "关闭"
+    },
+    "wmFdws": {
+        "message": "向上移动"
+    },
+    "q3GXOR": {
+        "message": "<b>实验性的小部件</b>：可能会导致问题，并且可能导致页面无响应。"
     }
 }
