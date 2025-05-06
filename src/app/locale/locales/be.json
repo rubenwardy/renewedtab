@@ -385,7 +385,7 @@
         "description": "Settings tab"
     },
     "JihbEV": {
-        "message": "Дакументацыя к CSS",
+        "message": "Дакументацыя да CSS",
         "description": "Theme settings: link to CSS docs"
     },
     "JvOSvX": {
@@ -495,7 +495,7 @@
         "description": "Backgroud mode description"
     },
     "O2Mjef": {
-        "message": "Перагляд",
+        "message": "Пакінуць водгук",
         "description": "Review request, review button"
     },
     "O8mt7g": {
@@ -1058,7 +1058,7 @@
         "description": "Location form field: search"
     },
     "olBVPS": {
-        "message": "Экспат",
+        "message": "Экспартаваць",
         "description": "Import / export settings, export"
     },
     "or/+Da": {
@@ -1309,5 +1309,44 @@
     "zsdRww": {
         "message": "Для асноўных кнопак і спасылак",
         "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "1Ms/OE": {
+        "message": "Наколькі cкругленымі павінны быць вуглы большай колькасці рэчаў? Ад 0% да 300%"
+    },
+    "1hvL/q": {
+        "message": "Увайсці ў рэжым рэдагавання"
+    },
+    "2YhLSH": {
+        "message": "Віджэт \"{name}\""
+    },
+    "3lHnZE": {
+        "message": "Ачысціць кэш і перазагрузіць"
+    },
+    "4fHiNl": {
+        "message": "Дубліраваць"
+    },
+    "6mQdhI": {
+        "message": "Наколькі скругленымі павінны быць вуглы панэлей (напрыклад віджэтаў)? Ад 0% да 1000%"
+    },
+    "H/r5m6": {
+        "message": "На задні план"
+    },
+    "LaT9nn": {
+        "message": "<a>Значкі надвор'я</a> пад правамі KDE, ліцэнзаваны пад GNU LGPL v3 або пазней"
+    },
+    "aO/LJo": {
+        "message": "Пошук праз лакацыю"
+    },
+    "bhFF6J": {
+        "message": "Кэш"
+    },
+    "iyOvAb": {
+        "message": "Радыус краёў панэляў"
+    },
+    "nF+GWk": {
+        "message": "JavaScript не падтрымліваецца з прычыны бяспекі. Замест гэтага скарыстайцеся віджэтам iFrame"
+    },
+    "nHcPTf": {
+        "message": "Увага: спасылкі, узятыя з вонкавых рэсурсаў могуць утрымліваць партнёрскія коды. Каб забяспечыць прыватнасць, замяніце гэтыя спасылкі на прамыя."
     }
 }
