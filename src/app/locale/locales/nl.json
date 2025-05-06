@@ -1037,5 +1037,56 @@
     },
     "sPl3nI": {
         "message": "Titel"
+    },
+    "3lHnZE": {
+        "message": "Maak de cache leeg en herlaad"
+    },
+    "6mQdhI": {
+        "message": "Hoe rond zou de randen van panelen zijn? Van 0 tot 1000%"
+    },
+    "1Ms/OE": {
+        "message": "Hoe rond moetEN de randen van de meeste dingen zijn? Van 0 tot 300%"
+    },
+    "1hvL/q": {
+        "message": "Naar de bewerkingsmodus gaan"
+    },
+    "2YhLSH": {
+        "message": "{name} Widget"
+    },
+    "4fHiNl": {
+        "message": "Dupliceren"
+    },
+    "H/r5m6": {
+        "message": "Omlaag"
+    },
+    "LaT9nn": {
+        "message": "<a>Weer iconen</a> copyright KDE en gelicenseerd onder GNU LGPL v3 of later"
+    },
+    "aO/LJo": {
+        "message": "Zoek de locatie met GPS"
+    },
+    "bhFF6J": {
+        "message": "Cache"
+    },
+    "iyOvAb": {
+        "message": "Paneelrand radius"
+    },
+    "nF+GWk": {
+        "message": "JavaScript is niet ondersteund om veiligheidsredenen. Gebruik in plaats daarvan de iFrame Widget"
+    },
+    "nHcPTf": {
+        "message": "Waarschuwing: geimporteerde koppelingen van externe bronnen kunnen gelieerde koppelingen bevatten. Uit privacyoverwegingen is het beter deze te vervangen met directe koppelingen."
+    },
+    "q3GXOR": {
+        "message": "<b>Deze Widget is experimenteel</b>: Er kunnen problemen zijn met gebeurtenissen die verschijnen, en de pagina kan bevriezen."
+    },
+    "rbrahO": {
+        "message": "Sluiten"
+    },
+    "u9iVp5": {
+        "message": "Paneelrand radius"
+    },
+    "wmFdws": {
+        "message": "Omhoog"
     }
 }
