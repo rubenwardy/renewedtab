@@ -131,7 +131,7 @@
         "description": "A search has returned no results here (note: there may be multiple places being searched)"
     },
     "AgU+/t": {
-        "message": "다가오는 우주 발사 목록, RocketLaunch.Live에 의해 구동",
+        "message": "RocketLaunch.Live에 의해 구동되는 다가오는 로켓 발사 목록",
         "description": "SpaceFlights widget description"
     },
     "Ay1sfO": {
@@ -246,5 +246,137 @@
     },
     "4fHiNl": {
         "message": "복제"
+    },
+    "Dk7Khi": {
+        "message": "화씨"
+    },
+    "AuSjzq": {
+        "message": "현재 자외선 위험지수 보이기"
+    },
+    "EpPEVJ": {
+        "message": "그라데이션"
+    },
+    "GqPEp+": {
+        "message": "확장 프로그램의 버전이 필요합니다"
+    },
+    "BfX7n6": {
+        "message": "주의: Firefox 브라우저를 사용할 경우 그라데이션 배경에 이상한 선과 같은 무늬가 생길 수 있지만, 이건 저희가 고칠 수 있는 것이 아닙니다."
+    },
+    "Ekvvsi": {
+        "message": "북마크바"
+    },
+    "Go7At+": {
+        "message": "토"
+    },
+    "DVGnNH": {
+        "message": "왼쪽 하단의 크레딧 위로 마우스를 갖다대면 배경 사진을 좋아하거나 건너뛸 수 있습니다."
+    },
+    "E4nLwR": {
+        "message": "매일"
+    },
+    "EscvnU": {
+        "message": "아이콘"
+    },
+    "GcxpZV": {
+        "message": "날짜 스타일"
+    },
+    "5mfAB9": {
+        "message": "Atom, JSONFeed, 또는 RSS feed의 URL"
+    },
+    "6wEkCM": {
+        "message": "세밀한 조정을 위해 북마크 위젯을 대신 사용할 수 있습니다."
+    },
+    "B1pyj1": {
+        "message": "현재 체감 기온 보이기"
+    },
+    "B4LnaC": {
+        "message": "iCloud 캘린더(.ics)의 URL에서 다가오는 이벤트 보이기"
+    },
+    "B3NCWb": {
+        "message": "색상"
+    },
+    "D0+wcK": {
+        "message": "이미지를 표시합니다 (웹사이트 링크로 만들 수도 있습니다)"
+    },
+    "D3idYv": {
+        "message": "설정"
+    },
+    "Ddd3ZY": {
+        "message": "에게"
+    },
+    "5640CU": {
+        "message": "현재 강수량 보이기"
+    },
+    "5MMUNJ": {
+        "message": "이것은 <b>실험적 기능으로서 비전문가의 사용이 어려울 수 있습니다</b>."
+    },
+    "6mQdhI": {
+        "message": "위젯의 모서리를 얼마나 둥글게 할까요? (0%~1000% 사이)"
+    },
+    "7zYGs9": {
+        "message": "캘린더 스케쥴"
+    },
+    "8xPAKF": {
+        "message": "그라데이션 색상의 위치 (0%~100% 사이)"
+    },
+    "ATbgo4": {
+        "message": "원형"
+    },
+    "BmzsQb": {
+        "message": "제목과 아이콘을 지원하는 링크"
+    },
+    "BnmONl": {
+        "message": "오늘의 일출/일몰 시간 보이기"
+    },
+    "C7WJrL": {
+        "message": "세로"
+    },
+    "CN0kVN": {
+        "message": "위젯 그리드"
+    },
+    "F1A/8i": {
+        "message": "출처"
+    },
+    "FqCn+F": {
+        "message": "좋은 아침입니다, {name}"
+    },
+    "G6WG/N": {
+        "message": "투명"
+    },
+    "GSox4d": {
+        "message": "당신의 컴퓨터에 설치되어 있는 폰트의 이름"
+    },
+    "GWRKVT": {
+        "message": "글씨 색상"
+    },
+    "GXkv/F": {
+        "message": "위치를 선택하세요"
+    },
+    "GpfSpy": {
+        "message": "북마크바 보이기"
+    },
+    "H/r5m6": {
+        "message": "아래로 이동"
+    },
+    "H00a0q": {
+        "message": "제목을 만들기 위해서는 빈칸으로 남겨두세요"
+    },
+    "HPLtg4": {
+        "message": "알려지지 않은 화폐 단위 \"{currency}\""
+    },
+    "HksGis": {
+        "message": "현재 풍속 보이기"
+    },
+    "HEvlTB": {
+        "message": "디스플레이 설정"
+    },
+    "I48yxw": {
+        "message": "개인정보"
+    },
+    "IKpSw0": {
+        "message": "가로"
+    },
+    "IbCXY9": {
+        "message": "기본 ({example})"
     }
 }
