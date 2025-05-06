@@ -378,5 +378,74 @@
     },
     "IbCXY9": {
         "message": "기본 ({example})"
+    },
+    "JzanJ8": {
+        "message": "세로줄 격자"
+    },
+    "IqLwUL": {
+        "message": "격자 간격"
+    },
+    "J91edI": {
+        "message": "불러오기 및 내보내기"
+    },
+    "JN/uvd": {
+        "message": "<b>자외선 지수</b>보통"
+    },
+    "JihbEV": {
+        "message": "CSS 문서"
+    },
+    "JvOSvX": {
+        "message": "배경"
+    },
+    "K3r6DQ": {
+        "message": "삭제"
+    },
+    "K8s82y": {
+        "message": "생일"
+    },
+    "KhM0zv": {
+        "message": "문구들은 외부 출처에서 가져왔으며, Renewed Tab에 의해 관리되지 않습니다."
+    },
+    "KjUKUz": {
+        "message": "색상 그라데이션"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> 위도 {latitude} 경도 {longitude}"
+    },
+    "KyDwm3": {
+        "message": "많이 사용된 사이트를 보여줍니다"
+    },
+    "Kzo9ZH": {
+        "message": "이미지 URL"
+    },
+    "L6nTur": {
+        "message": "시작점을 고르세요"
+    },
+    "LaT9nn": {
+        "message": "<a>날씨 아이콘</a> 저작권 KDE 및 GNU LGPL v3 이상 라이선스"
+    },
+    "LfHpBk": {
+        "message": "글자 크기"
+    },
+    "Lnvfz8": {
+        "message": "{source} 불러오기 실패: {error}"
+    },
+    "Lxc1x4": {
+        "message": "시계"
+    },
+    "MN3prI": {
+        "message": "폴더를 구역으로 포함하기"
+    },
+    "MdUPbJ": {
+        "message": "일요일, 월요일, 화요일, 수요일, 목요일, 금요일, 토요일"
+    },
+    "MiIvsP": {
+        "message": "당신은 직관적인 조작 방법을 통해 위젯을 옮기거나, 크기를 변경하거나, 변경할 수 있습니다."
+    },
+    "M0PwXU": {
+        "message": "풍속 ({unit})"
+    },
+    "M6lR5V": {
+        "message": "위젯 격자의 열 개수입니다. 당신의 현재 창 크기 ({res})에는 {max}열까지 넣을 수 있습니다."
     }
 }
