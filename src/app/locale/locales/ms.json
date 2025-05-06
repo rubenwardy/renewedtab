@@ -12,7 +12,7 @@
         "description": "Image widget: Form field hint (Link)"
     },
     "3ZfhWo": {
-        "message": "Kebenaran diperlukan untuk mencapai {host}. Edit widget ini untuk berikannya."
+        "message": "Keizinan diperlukan untuk mencapai {host}. Edit widget ini untuk berikannya."
     },
     "6pdO6i": {
         "message": "Gagal dapatkan tanda buku",
@@ -324,7 +324,7 @@
         "description": "Daily Goal widget description"
     },
     "bQFsdR": {
-        "message": "Berikan kebenaran untuk mencapai {host}"
+        "message": "Berikan keizinan untuk mencapai {host}"
     },
     "cR7nCG": {
         "message": "Tetapkan semula tema menjadi asal"
@@ -342,7 +342,7 @@
         "description": "Form field label"
     },
     "ekIjqh": {
-        "message": "Berikan kebenaran untuk mencapai semua laman sesawang"
+        "message": "Berikan keizinan untuk mencapai semua laman sesawang"
     },
     "ekW/+6": {
         "message": "Tidak mampu sambung ke Internet"
@@ -1234,7 +1234,7 @@
         "description": "Edit bar button to make the grid readonly"
     },
     "j0VHNa": {
-        "message": "Berikan kebenaran untuk mencapai tanda buku dan mendapatkan ikon dari laman sesawang"
+        "message": "Berikan keizinan untuk mencapai tanda buku dan mendapatkan ikon dari laman sesawang"
     },
     "r8bU6m": {
         "message": "Tunjuk bar tanda buku di bahagian teratas halaman.",
@@ -1248,7 +1248,7 @@
         "description": "Hide"
     },
     "tSMpM0": {
-        "message": "Berikan kebenaran untuk mencapai tapak teratas dan mendapatkan ikon dari laman sesawang",
+        "message": "Berikan keizinan untuk mencapai tapak teratas dan mendapatkan ikon dari laman sesawang",
         "description": "Top Sites widget: permission request"
     },
     "20tqYI": {
@@ -1309,5 +1309,56 @@
     "ilIuh2": {
         "message": "Anda rasa ini berguna? Apa kata anda <a>menderma</a> untuk menanggung kos API cuaca, dan menyokong pembangunan Renewed Tab masa hadapan.",
         "description": "Weather widget: asking for donations"
+    },
+    "1hvL/q": {
+        "message": "Masuk mod edit"
+    },
+    "2YhLSH": {
+        "message": "Widget {name}"
+    },
+    "1Ms/OE": {
+        "message": "Berapa bulatkah bucu yang patut bagi kebanyakan benda? Antara 0% dan 300%"
+    },
+    "3lHnZE": {
+        "message": "Kosongkan cache dan muatkan semula"
+    },
+    "4fHiNl": {
+        "message": "Duplikasi"
+    },
+    "aO/LJo": {
+        "message": "Cari menggunakan kedudukan GPS"
+    },
+    "bhFF6J": {
+        "message": "Cache"
+    },
+    "iyOvAb": {
+        "message": "Jejari Bucu Panel"
+    },
+    "nHcPTf": {
+        "message": "Amaran: Pautan yang diimport dari sumber luaran mungkin mempunyai pautan gabungan. Untuk memastikan privasi terjaga, anda patut menggantikannya dengan pautan terus."
+    },
+    "nF+GWk": {
+        "message": "JavaScript tidak disokong atas sebab keselamatan. Sebaliknya sila gunakan widget iFrame"
+    },
+    "q3GXOR": {
+        "message": "<b>Widget ini dalam uji kaji</b>: Mungkin terdapat isu dengan acara yang muncul, dan ia boleh menyebabkan halaman dibekukan."
+    },
+    "rbrahO": {
+        "message": "Tutup"
+    },
+    "u9iVp5": {
+        "message": "Jejari Bucu"
+    },
+    "wmFdws": {
+        "message": "Pindah ke atas"
+    },
+    "H/r5m6": {
+        "message": "Pindah ke bawah"
+    },
+    "LaT9nn": {
+        "message": "<a>Ikon-ikon cuaca</a> berhak cipta KDE dan dilesenkan di bawah GNU LGPL v3 atau yang terkemudian"
+    },
+    "6mQdhI": {
+        "message": "Berapa bulatkah bucu yang patut bagi panel (spt: widget)? Antara 0% dan 1000%"
     }
 }
