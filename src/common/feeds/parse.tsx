@@ -85,7 +85,7 @@ function parseRSSFeed(root: Element, baseURL: string, parseXML: XMLParser): Feed
 
 	root.querySelectorAll("item").forEach(el => {
 		const img = getImage(el, parseXML);
-		const title = el.querySelector("title")?.textContent;
+		const title = el.querySelector("title")?.textContent ?? el.querySelector("description")?.textContent;
 		if (!title) {
 			return;
 		}

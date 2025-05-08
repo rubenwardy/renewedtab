@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import { expect } from "chai";
 import { JSDOM } from "jsdom";
 import fs from "fs";
@@ -11,8 +13,8 @@ function parseTestFeed(name: string, base?: string): Feed | null {
 }
 
 
-describe("Feed", () => {
-	it("parsesXML", () => {
+describe("parseFeed", () => {
+	it("RSS", () => {
 		const feed = parseTestFeed("nasa.rss");
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("NASA Image of the Day");
@@ -29,7 +31,16 @@ describe("Feed", () => {
 		expect(feed!.articles[1].image).to.equal("http://www.nasa.gov/sites/default/files/thumbnails/image/51221294498_8a0636de32_o.jpeg");
 	});
 
-	it("parsesAtom", () => {
+	it("RSS - without titles", () => {
+		const feed = parseTestFeed("mastodon.rss");
+		expect(feed).to.exist;
+
+		expect(feed!.title).to.equal("rubenwardy");
+		expect(feed!.link).to.equal("https://hachyderm.io/@rubenwardy");
+		expect(feed!.articles).to.have.length(2);
+	});
+
+	it("Atom", () => {
 		const feed = parseTestFeed("xkcd.atom");
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("xkcd.com");
@@ -52,7 +63,7 @@ describe("Feed", () => {
 		expect(feed!.articles[2].image).to.equal("https://imgs.xkcd.com/comics/next_slide_please.png");
 	});
 
-	it("parsesAtom test", () => {
+	it("Atom test", () => {
 		const feed = parseTestFeed("atomOrder.atom");
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("xkcd.com");
@@ -65,7 +76,7 @@ describe("Feed", () => {
 		expect(feed!.articles[0].image).to.equal("https://imgs.xkcd.com/comics/fuzzy_blob.png");
 	});
 
-	it("parseJson", () => {
+	it("JSON", () => {
 		const feed = parseTestFeed("ruben.json", "https://blog.rubenwardy.com");
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("rubenwardy’s blog");
@@ -88,7 +99,7 @@ describe("Feed", () => {
 		expect(feed!.articles[2].image).to.be.undefined;
 	});
 
-	it("parsesRDF", () => {
+	it("RDF", () => {
 		const feed = parseTestFeed("feed.rdf");
 		expect(feed).to.exist;
 		expect(feed!.title).to.equal("XML.com");

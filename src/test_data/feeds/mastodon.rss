@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:webfeeds="http://webfeeds.org/rss/1.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>rubenwardy</title>
+    <description>Public posts from @rubenwardy@hachyderm.io</description>
+    <link>https://hachyderm.io/@rubenwardy</link>
+    <image>
+      <url>https://media.hachyderm.io/accounts/avatars/114/415/126/404/376/957/original/26042262e764189e.png</url>
+      <title>rubenwardy</title>
+      <link>https://hachyderm.io/@rubenwardy</link>
+    </image>
+    <lastBuildDate>Thu, 01 May 2025 19:50:04 +0000</lastBuildDate>
+    <webfeeds:icon>https://media.hachyderm.io/accounts/avatars/114/415/126/404/376/957/original/26042262e764189e.png</webfeeds:icon>
+    <generator>Mastodon v4.3.8</generator>
+    <item>
+      <guid isPermaLink="true">https://hachyderm.io/@rubenwardy/114420614834722203</guid>
+      <link>https://hachyderm.io/@rubenwardy/114420614834722203</link>
+      <pubDate>Tue, 29 Apr 2025 09:47:06 +0000</pubDate>
+      <description>&lt;p&gt;Hey look at these business cards I got printed last week 🙈 &lt;/p&gt;&lt;p&gt;&lt;a href="https://hachyderm.io/tags/Fosstodon" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;Fosstodon&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <media:content url="https://media.hachyderm.io/media_attachments/files/114/420/611/602/303/613/original/2d454eeb27540c3d.png" type="image/png" fileSize="9422088" medium="image">
+        <media:rating scheme="urn:simple">nonadult</media:rating>
+        <media:description type="plain">On the left, business cards. Front says Andrew Ward, rubenwardy. Back says "software engineer and open source maintainer" and has contact details
+
+ On the right, Luanti badges</media:description>
+      </media:content>
+      <category>fosstodon</category>
+    </item>
+    <item>
+      <guid isPermaLink="true">https://hachyderm.io/@rubenwardy/114420607394894022</guid>
+      <link>https://hachyderm.io/@rubenwardy/114420607394894022</link>
+      <pubDate>Tue, 29 Apr 2025 09:45:12 +0000</pubDate>
+      <description>&lt;p&gt;Moving instances is probably a good time for a re- &lt;a href="https://hachyderm.io/tags/introduction" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;introduction&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Hi, I&amp;#39;m rubenwardy! I&amp;#39;m a software engineer and open source maintainer. I&amp;#39;m a core dev for &lt;span class="h-card" translate="no"&gt;&lt;a href="https://floss.social/@Luanti" class="u-url mention"&gt;@&lt;span&gt;Luanti&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;, I made ContentDB and represent &lt;a href="https://hachyderm.io/tags/Luanti" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;Luanti&lt;/span&gt;&lt;/a&gt; at conferences&lt;/p&gt;&lt;p&gt;I&amp;#39;m interested in a wide range of areas, including &lt;a href="https://hachyderm.io/tags/GameDev" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;GameDev&lt;/span&gt;&lt;/a&gt;, UI/UX, &lt;a href="https://hachyderm.io/tags/electronics" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;electronics&lt;/span&gt;&lt;/a&gt;, &lt;a href="https://hachyderm.io/tags/makers" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;makers&lt;/span&gt;&lt;/a&gt;, &lt;a href="https://hachyderm.io/tags/Linux" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;Linux&lt;/span&gt;&lt;/a&gt;, &lt;a href="https://hachyderm.io/tags/AndroidDev" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;AndroidDev&lt;/span&gt;&lt;/a&gt;, and &lt;a href="https://hachyderm.io/tags/IndieWeb" class="mention hashtag" rel="tag"&gt;#&lt;span&gt;IndieWeb&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;I&amp;#39;m a prolific creator, I have way too many side projects on the go at a time. I post about things I&amp;#39;m working on here and on my website&lt;/p&gt;&lt;p&gt;&lt;a href="https://rubenwardy.com" target="_blank" rel="nofollow noopener noreferrer" translate="no"&gt;&lt;span class="invisible"&gt;https://&lt;/span&gt;&lt;span class=""&gt;rubenwardy.com&lt;/span&gt;&lt;span class="invisible"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;</description>
+      <media:content url="https://media.hachyderm.io/media_attachments/files/114/420/587/436/753/239/original/ee905128c077ec26.png" type="image/png" fileSize="141208" medium="image">
+        <media:rating scheme="urn:simple">nonadult</media:rating>
+        <media:description type="plain">Screenshot of a video game about mining. The game is 2D. There's a mineshaft with a ladder running down the center with little people mining out tunnels. At the top of the mine shaft is a cornish engine house</media:description>
+      </media:content>
+      <media:content url="https://media.hachyderm.io/media_attachments/files/114/420/588/764/326/634/original/6f803e2d343fb3fa.jpg" type="image/jpeg" fileSize="351987" medium="image">
+        <media:rating scheme="urn:simple">nonadult</media:rating>
+        <media:description type="plain">Photo of a PCB with a microcontroller and various components</media:description>
+      </media:content>
+      <media:content url="https://media.hachyderm.io/media_attachments/files/114/420/601/036/004/346/original/8fa4ab5373b97c3d.png" type="image/png" fileSize="1262955" medium="image">
+        <media:rating scheme="urn:simple">nonadult</media:rating>
+        <media:description type="plain">Screenshot of Renewed Tab - a new tab web page with widgets. On the left, the time, weather, and a quote. On the right, bookmarks</media:description>
+      </media:content>
+      <category>introduction</category>
+      <category>luanti</category>
+      <category>gamedev</category>
+      <category>electronics</category>
+      <category>makers</category>
+      <category>linux</category>
+      <category>androiddev</category>
+      <category>indieweb</category>
+    </item>
+  </channel>
+</rss>
