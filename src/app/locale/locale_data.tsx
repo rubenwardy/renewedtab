@@ -13,6 +13,7 @@ const locales : { [key: string]: Translation } = {
 	"ja": require("./compiled/ja.json"),
 	"lt": require("./compiled/lt.json"),
 	"ms": require("./compiled/ms.json"),
+	"nl": require("./compiled/nl.json"),
 	"pt-br": require("./compiled/pt_BR.json"),
 	"ru": require("./compiled/ru.json"),
 	"sv": require("./compiled/sv.json"),
