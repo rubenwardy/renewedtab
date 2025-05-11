@@ -13,7 +13,8 @@ import { formatInteger, mergeClasses } from 'app/utils';
 import FitText from 'app/components/FitText';
 import deepCopy from 'app/utils/deepcopy';
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
-import { fetchAPI, usePromise } from "app/hooks";
+import { fetchAPI } from "app/hooks/http";
+import { usePromise } from 'app/hooks/promises';
 
 
 const messages = defineMessages({

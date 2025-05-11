@@ -1,7 +1,6 @@
 import { ActualBackgroundProps, BackgroundProvider } from "app/features/backgrounds/providers/common";
 import { getBackgroundProvider, getSchemaForProvider } from "app/features/backgrounds/providers";
 import { CacheExpiry } from "app/features/backgrounds/providers/messages";
-import { useForceUpdateValue, usePromise } from "app/hooks";
 import { BackgroundConfig } from "app/hooks/background";
 import { cacheStorage } from "app/storage";
 import { enumToValue } from "app/utils/enum";
@@ -9,6 +8,8 @@ import { toTypedJSON } from "app/utils/TypedJSON";
 import React, { useMemo } from "react";
 import ActualBackground from "./ActualBackground";
 import { CreditsProps } from "./Credits";
+import { useForceUpdateValue } from "app/hooks/useForceUpdate";
+import { usePromise } from "app/hooks/promises";
 
 
 export interface BackgroundProps {

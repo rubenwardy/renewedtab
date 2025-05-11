@@ -1,6 +1,6 @@
 import ErrorView from "app/components/ErrorView";
 import Panel from "app/components/Panel";
-import { useAPI } from "app/hooks";
+import { useAPI } from "app/hooks/http";
 import { schemaMessages } from "app/locale/common";
 import { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";

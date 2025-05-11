@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAPI } from 'app/hooks';
+import { useAPI } from "app/hooks/http";
 import { Vector2 } from 'app/utils/Vector2';
 import { defineMessages, FormattedMessage, IntlShape, useIntl } from 'react-intl';
 import Panel from 'app/components/Panel';

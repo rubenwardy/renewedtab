@@ -1,7 +1,7 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
-import { useWidgetProp } from "app/hooks/widget";
+import useWidgetProp from "app/hooks/useWidgetProp";
 import { miscMessages } from "app/locale/common";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";

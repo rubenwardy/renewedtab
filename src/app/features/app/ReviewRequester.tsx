@@ -1,10 +1,11 @@
 import { defineMessages } from "react-intl";
-import { usePromise, useStorage } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { getInstallInfo } from "app/utils/webext";
 import React from "react";
 import { useIntl } from "react-intl";
 import { Alert, AlertButton } from "app/components/Alert";
+import { usePromise } from "app/hooks/promises";
+import { useStorage } from "app/hooks/storage";
 
 
 const messages = defineMessages({

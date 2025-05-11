@@ -1,4 +1,3 @@
-import { usePromise, useForceUpdate } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import { getBookmarks } from "app/utils/bookmarks";
 import { ListBoxStyle, WidgetTheme } from "app/Widget";
@@ -9,6 +8,8 @@ import ErrorView from "app/components/ErrorView";
 import LinkBox from "app/components/LinkBox";
 import RequestPermission from "app/components/RequestPermission";
 import useIsLocked from "app/hooks/useIsLocked";
+import useForceUpdate from "app/hooks/useForceUpdate";
+import { usePromise } from "app/hooks/promises";
 
 const messages = defineMessages({
 	onHide: {

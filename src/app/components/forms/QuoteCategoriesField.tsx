@@ -1,5 +1,5 @@
 import { useIntl } from "react-intl";
-import { useAPI } from "app/hooks";
+import { useAPI } from "app/hooks/http";
 import { QuoteCategory } from "common/api/quotes";
 import React, { ChangeEvent, useState } from "react";
 import { FieldProps } from ".";

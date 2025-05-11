@@ -4,7 +4,6 @@ import CreateWidgetDialog from "./CreateWidgetDialog";
 import WidgetGrid, { defaultGridSettings, WidgetGridSettings } from "./WidgetGrid";
 import SettingsDialog from "../settings/SettingsDialog";
 import Background from "../backgrounds";
-import { usePromise, useStorage } from "app/hooks";
 import { defineMessage, defineMessages, IntlProvider, useIntl } from "react-intl";
 import { getTranslation, detectUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "../settings/ThemeSettings";
@@ -17,8 +16,10 @@ import { GlobalSearchContext } from "app/hooks/globalSearch";
 import BookmarksTopBar from "./BookmarksTopBar";
 import Button, { ButtonVariant } from "app/components/Button";
 import { miscMessages } from "app/locale/common";
-import { WidgetManagerContext } from "app/hooks/widgetManagerContext";
+import { WidgetManagerContext } from "app/hooks/useWidgetManager";
 import { LockedContext } from "app/hooks/useIsLocked";
+import { usePromise } from "app/hooks/promises";
+import { useStorage } from "app/hooks/storage";
 
 
 const messages = defineMessages({

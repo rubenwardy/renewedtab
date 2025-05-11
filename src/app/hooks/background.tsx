@@ -1,7 +1,7 @@
 import { getBackgroundProvider } from "app/features/backgrounds/providers";
 import { storage } from "app/storage";
 import { useState } from "react";
-import { useRunPromise } from ".";
+import { useRunPromise } from "./promises";
 
 export interface BackgroundConfig {
 	mode: string;

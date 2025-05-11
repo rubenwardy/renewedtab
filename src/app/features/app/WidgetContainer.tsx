@@ -3,7 +3,7 @@ import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../../
 import Modal from "app/components/Modal";
 import { Form } from "app/components/forms";
 import ErrorView, { ErrorBoundary } from "app/components/ErrorView";
-import { usePromise } from "app/hooks";
+import { usePromise } from "app/hooks/promises";
 import { FormattedMessage, useIntl } from "react-intl";
 import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "app/components/Button";

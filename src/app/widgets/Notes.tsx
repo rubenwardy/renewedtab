@@ -1,5 +1,5 @@
 import Panel from 'app/components/Panel';
-import { useWidgetProp } from 'app/hooks/widget';
+import useWidgetProp from 'app/hooks/useWidgetProp';
 import { Vector2 } from 'app/utils/Vector2';
 import { WidgetProps, WidgetType } from 'app/Widget';
 import React from 'react';

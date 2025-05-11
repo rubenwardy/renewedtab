@@ -1,10 +1,11 @@
-import { useForceUpdateValue, usePromise } from "app/hooks";
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import { clearWebsiteIcons } from "app/websiteIcons";
 import React, { ChangeEvent, useState } from "react";
 import { defineMessages, useIntl } from "react-intl";
 import { FieldProps } from ".";
 import RequestPermission from "../RequestPermission";
+import { useForceUpdateValue } from "app/hooks/useForceUpdate";
+import { usePromise } from "app/hooks/promises";
 
 const messages = defineMessages({
 	grantAll: {

@@ -1,7 +1,6 @@
 import ErrorView from 'app/components/ErrorView';
 import LinkBox from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
-import { useForceUpdate, usePromise } from 'app/hooks';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetProps, WidgetType } from 'app/Widget';
@@ -9,6 +8,8 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { getBookmarks } from "app/utils/bookmarks";
+import useForceUpdate from 'app/hooks/useForceUpdate';
+import { usePromise } from 'app/hooks/promises';
 
 
 const messages = defineMessages({

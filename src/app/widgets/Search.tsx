@@ -1,6 +1,6 @@
 import ErrorView from "app/components/ErrorView";
 import Panel from "app/components/Panel";
-import { usePromise } from "app/hooks";
+import { usePromise } from "app/hooks/promises";
 import { useGlobalSearch } from "app/hooks/globalSearch";
 import { schemaMessages } from "app/locale/common";
 import { getProbableURL } from "app/utils";

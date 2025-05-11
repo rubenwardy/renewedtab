@@ -1,9 +1,9 @@
-import { useForceUpdateValue } from "app/hooks";
 import { miscMessages } from "app/locale/common";
 import React, { useMemo } from "react";
 import { FormattedMessage } from "react-intl";
 import { Form } from "app/components/forms";
 import { makeGridSettingsSchema, WidgetGridSettings } from "../app/WidgetGrid";
+import { useForceUpdateValue } from "app/hooks/useForceUpdate";
 
 
 export interface GridSettingsProps {

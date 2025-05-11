@@ -1,7 +1,8 @@
 import ErrorView from 'app/components/ErrorView';
 import LinkBox, { Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
-import { useForceUpdate, usePromise } from 'app/hooks';
+import { usePromise } from 'app/hooks/promises';
+import useForceUpdate from 'app/hooks/useForceUpdate';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';

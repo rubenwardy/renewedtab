@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { usePromise } from 'app/hooks';
-import { mergeClasses } from 'app/utils';
+import React, { useState } from "react";
+import { usePromise } from "app/hooks/promises";
+import { mergeClasses } from "app/utils";
 
 
 export interface IconProps {

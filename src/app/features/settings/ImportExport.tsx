@@ -1,4 +1,4 @@
-import { usePromise } from "app/hooks";
+import { usePromise } from "app/hooks/promises";
 import { miscMessages } from "app/locale/common";
 import { storage } from "app/storage";
 import { toTypedJSON } from "app/utils/TypedJSON";

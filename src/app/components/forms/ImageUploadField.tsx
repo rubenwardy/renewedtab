@@ -1,4 +1,4 @@
-import { useLargeStorage } from "app/hooks";
+import { useLargeStorage } from "app/hooks/storage";
 import { miscMessages } from "app/locale/common";
 import { largeStorage } from "app/storage";
 import { ImageHandle } from "app/utils/Schema";

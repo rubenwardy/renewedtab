@@ -1,4 +1,4 @@
-import { fetchFeed, fetchAPI } from "app/hooks";
+import { fetchFeed, fetchAPI } from "app/hooks/http";
 import { schemaMessages } from "app/locale/common";
 import { AutocompleteItem, type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";

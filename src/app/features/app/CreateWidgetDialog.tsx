@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetTypes } from "../../widgets";
 import Modal from "app/components/Modal";
-import { useWidgetManager } from "app/hooks/widgetManagerContext";
+import useWidgetManager from "app/hooks/useWidgetManager";
 
 interface CreateWidgetDialogProps {
 	onClose: () => void;

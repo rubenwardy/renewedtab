@@ -1,4 +1,4 @@
-import { useAPI } from "app/hooks";
+import { useAPI } from "app/hooks/http";
 import React, { useRef, useState, KeyboardEvent } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { FieldProps } from ".";

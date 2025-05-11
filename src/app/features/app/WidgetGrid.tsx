@@ -6,12 +6,12 @@ import { ErrorBoundary } from "app/components/ErrorView";
 import WidgetLayouter from "app/WidgetLayouter";
 import { Vector2 } from "app/utils/Vector2";
 import GridLayout, { Layout, WidthProvider } from "react-grid-layout";
-import { useForceUpdate } from "app/hooks";
 import { WidgetProps } from "app/Widget";
 import Schema, { type } from "app/utils/Schema";
 import { defineMessages } from "react-intl";
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { mergeClasses } from "app/utils";
+import useForceUpdate from "app/hooks/useForceUpdate";
 
 
 export interface WidgetGridSettings {

@@ -1,8 +1,8 @@
 import { IStorage, largeStorage, storage } from "app/storage";
 import debounce from "app/utils/debounce";
 import { useCallback, useMemo, useState } from "react";
-import { useForceUpdate } from ".";
 import { useRunPromise } from "./promises";
+import useForceUpdate from "./useForceUpdate";
 
 
 function useStorageBacking<T>(backing: IStorage, key: string,

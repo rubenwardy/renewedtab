@@ -3,7 +3,7 @@ import Form, { FormProps } from "./Form";
 import { FieldProps } from ".";
 import uuid from "app/utils/uuid";
 import { UncheckedSchema } from "app/utils/Schema";
-import { useForceUpdate } from "app/hooks";
+import useForceUpdate from "app/hooks/useForceUpdate";
 import { FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "../Button";
 import { miscMessages } from "app/locale/common";

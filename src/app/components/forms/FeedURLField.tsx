@@ -1,4 +1,4 @@
-import { usePromise } from "app/hooks";
+import { usePromise } from "app/hooks/promises";
 import { parseURL } from "app/utils";
 import React, { useRef, useState } from "react";
 import { useIntl } from "react-intl";

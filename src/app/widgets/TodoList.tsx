@@ -2,7 +2,7 @@ import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
 import Panel from "app/components/Panel";
 import { useGlobalSearch } from "app/hooks/globalSearch";
-import { useWidgetProp } from "app/hooks/widget";
+import useWidgetProp from "app/hooks/useWidgetProp";
 import { miscMessages } from "app/locale/common";
 import { queryMatchesAny } from "app/utils";
 import uuid from "app/utils/uuid";

@@ -3,7 +3,7 @@ import { defineMessages, FormattedMessage, FormattedTime, useIntl } from "react-
 
 import ErrorView from "app/components/ErrorView";
 import Panel from "app/components/Panel";
-import { useMultiCalendar } from "app/hooks";
+import { useMultiCalendar } from "app/hooks/http";
 import { miscMessages, schemaMessages } from "app/locale/common";
 import Schema, { type } from "app/utils/Schema";
 import { Vector2 } from "app/utils/Vector2";

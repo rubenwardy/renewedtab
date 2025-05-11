@@ -4,7 +4,7 @@ import { defineMessage, FormattedMessage, MessageDescriptor } from "react-intl";
 import { OnboardingPageProps } from ".";
 import { ButtonVariant } from "app/components/Button";
 import ImportButton from "app/components/ImportButton";
-import { useWidgetManager } from "app/hooks/widgetManagerContext";
+import useWidgetManager from "app/hooks/useWidgetManager";
 
 
 interface Preset {

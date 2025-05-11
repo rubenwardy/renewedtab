@@ -1,6 +1,6 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
 import Panel from "app/components/Panel";
-import { useStorage } from "app/hooks";
+import { useStorage } from "app/hooks/storage";
 import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";
 import React, { ChangeEvent } from "react";

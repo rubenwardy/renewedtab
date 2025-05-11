@@ -1,6 +1,6 @@
 import ErrorView from 'app/components/ErrorView';
 import Panel from 'app/components/Panel';
-import { fetchAPI, useAPI } from 'app/hooks';
+import { fetchAPI, useAPI } from "app/hooks/http";
 import { useGlobalSearch } from 'app/hooks/globalSearch';
 import { miscMessages } from 'app/locale/common';
 import { bindValuesToDescriptor } from 'app/locale/MyMessageDescriptor';
