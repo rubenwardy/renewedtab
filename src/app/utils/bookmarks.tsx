@@ -2,8 +2,62 @@ import { Link } from "app/components/LinkBox";
 import { miscMessages } from "app/locale/common";
 import UserError from "./UserError";
 
+function createDebugData() {
+	const retval: browser.bookmarks.BookmarkTreeNode = {
+		id: "1",
+		title: "Bookmarks Bar",
+		children: [
+			{
+				id: "1",
+				title: "One one one",
+				url: "https://example.org",
+			},
+			{
+				id: "2",
+				title: "Two two two",
+				url: "https://example.org",
+			},
+			{
+				id: "3",
+				title: "Three three three",
+				children: [
+					{
+						id: "3-1",
+						title: "Child One",
+						url: "https://example.org",
+					},
+					{
+						id: "3-2",
+						title: "Child Two",
+						url: "https://example.org",
+					},
+					{
+						id: "3-3",
+						title: "Child Three",
+						url: "https://example.org",
+					},
+				],
+			},
+		]
+	};
+
+	for (let i = 4; i <= 9; i++) {
+		retval.children!.push({
+			id: i.toFixed(0),
+			title: i.toFixed().repeat(10),
+			url: "https://example.org",
+		});
+	}
+
+	return retval;
+}
+
 
 async function tryGetSubTree(id: string): Promise<browser.bookmarks.BookmarkTreeNode | null> {
+	if (app_version.is_debug && (browser as any).is_ui_test == undefined) {
+		return createDebugData();
+	}
+
 	try {
 		const toolbar_subtree = await browser.bookmarks.getSubTree(id);
 		if (!toolbar_subtree || !toolbar_subtree[0]) {

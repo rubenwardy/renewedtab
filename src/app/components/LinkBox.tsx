@@ -150,7 +150,7 @@ export default function LinkBox(props: LinkBoxProps & { widgetTheme: WidgetTheme
 	);
 
 	return (
-		<Panel {...props.widgetTheme} flush={true} ref={ref}>
+		<Panel {...props.widgetTheme} flush={true} ref={ref} scrolling={listBoxStyle !== ListBoxStyle.Horizontal}>
 			<ul className={ulClasses}>
 				<LinkLists {...props} links={links} />
 				{links.length == 0 && props.links.length > 0 && (

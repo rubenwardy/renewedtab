@@ -171,6 +171,10 @@ ul.links {
 	margin: 0;
 	border-radius: 0;
 
+	> .panel-any {
+		flex-grow: 1;
+	}
+
 	ul.links-horizontal {
 		padding-left: 0.32rem;
 
