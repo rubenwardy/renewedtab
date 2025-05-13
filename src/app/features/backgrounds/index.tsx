@@ -1,7 +1,7 @@
 import { ActualBackgroundProps, BackgroundProvider } from "app/features/backgrounds/providers/common";
 import { getBackgroundProvider, getSchemaForProvider } from "app/features/backgrounds/providers";
 import { CacheExpiry } from "app/features/backgrounds/providers/messages";
-import { BackgroundConfig } from "app/hooks/background";
+import { BackgroundConfig } from "app/hooks/useBackground";
 import { cacheStorage } from "app/storage";
 import { enumToValue } from "app/utils/enum";
 import { toTypedJSON } from "app/utils/TypedJSON";

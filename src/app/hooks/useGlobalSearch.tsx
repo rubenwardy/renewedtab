@@ -7,6 +7,6 @@ interface GlobalSearch {
 
 export const GlobalSearchContext = createContext<GlobalSearch>(undefined as any);
 
-export function useGlobalSearch(): GlobalSearch {
+export default function useGlobalSearch(): GlobalSearch {
 	return useContext(GlobalSearchContext);
 }

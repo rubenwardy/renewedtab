@@ -1,6 +1,6 @@
 import React, { useMemo, useRef } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { useElementSize } from 'app/hooks/elementSize';
+import useElementSize from 'app/hooks/useElementSize';
 import deepCopy from 'app/utils/deepcopy';
 import { getWebsiteIconOrNull } from 'app/websiteIcons';
 import { miscMessages, schemaMessages } from 'app/locale/common';
@@ -8,7 +8,7 @@ import Schema, { type } from 'app/utils/Schema';
 import { ListBoxStyle, WidgetTheme } from 'app/Widget';
 import Panel from './Panel';
 import Icon from './Icon';
-import { useGlobalSearch } from 'app/hooks/globalSearch';
+import useGlobalSearch from 'app/hooks/useGlobalSearch';
 import { mergeClasses, parseURL, queryMatchesAny } from 'app/utils';
 import { enumToValue } from "app/utils/enum";
 

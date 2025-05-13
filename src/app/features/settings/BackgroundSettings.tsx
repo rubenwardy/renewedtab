@@ -1,5 +1,5 @@
 import { backgroundProviders, getBackgroundProvider, getSchemaForProvider } from "app/features/backgrounds/providers";
-import { BackgroundConfig } from "app/hooks/background";
+import { BackgroundConfig } from "app/hooks/useBackground";
 import { miscMessages } from "app/locale/common";
 import { myFormatMessage, MyFormattedMessage } from "app/locale/MyMessageDescriptor";
 import React from "react";

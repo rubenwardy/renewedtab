@@ -1,6 +1,6 @@
 import { BackgroundCredit } from "./providers/common";
 import { buildAPIURL, fetchCheckCors } from "app/hooks/http";
-import { useDelay } from "app/hooks/delay";
+import useDelay from "app/hooks/useDelay";
 import { BackgroundInfo } from "common/api/backgrounds";
 import React from "react";
 import { defineMessages, useIntl } from "react-intl";

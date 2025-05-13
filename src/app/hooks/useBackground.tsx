@@ -8,7 +8,7 @@ export interface BackgroundConfig {
 	values: { [key: string]: any };
 }
 
-export async function getBackgroundConfig(): Promise<BackgroundConfig> {
+async function getBackgroundConfig(): Promise<BackgroundConfig> {
 	const info : BackgroundConfig | null = await storage.get("background");
 	if (info) {
 		const provider = getBackgroundProvider<any>(info.mode);
@@ -29,11 +29,11 @@ export async function getBackgroundConfig(): Promise<BackgroundConfig> {
 	}
 }
 
-export function updateBackgroundConfig(info: BackgroundConfig) {
+function updateBackgroundConfig(info: BackgroundConfig) {
 	storage.set("background", info);
 }
 
-export function useBackground(): [(BackgroundConfig | null), (info: BackgroundConfig) => void] {
+export default function useBackground(): [(BackgroundConfig | null), (info: BackgroundConfig) => void] {
 	const [value, setValue] = useState<BackgroundConfig | null>(null);
 	useRunPromise<BackgroundConfig | null>(
 		getBackgroundConfig, setValue, () => {}, []);

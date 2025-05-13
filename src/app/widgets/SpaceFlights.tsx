@@ -6,7 +6,7 @@ import Panel from 'app/components/Panel';
 import { WidgetProps, WidgetType } from 'app/Widget';
 import ErrorView from 'app/components/ErrorView';
 import SpaceLaunch from 'common/api/SpaceLaunch';
-import { useGlobalSearch } from 'app/hooks/globalSearch';
+import useGlobalSearch from 'app/hooks/useGlobalSearch';
 import { queryMatchesAny } from 'app/utils';
 import { miscMessages } from 'app/locale/common';
 import { bindValuesToDescriptor } from 'app/locale/MyMessageDescriptor';

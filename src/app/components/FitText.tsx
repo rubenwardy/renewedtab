@@ -1,6 +1,6 @@
 import React, { CSSProperties, useRef } from "react"
 import { clampNumber, mergeClasses } from "app/utils";
-import { useElementSize } from "app/hooks/elementSize";
+import useElementSize from "app/hooks/useElementSize";
 
 interface FitTextProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: string[] | string;

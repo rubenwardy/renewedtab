@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from 'react';
-import { useElementSize } from 'app/hooks/elementSize';
+import useElementSize from 'app/hooks/useElementSize';
 import { Vector2 } from 'app/utils/Vector2';
 import Schema, { type } from 'app/utils/Schema';
 import { WidgetProps, WidgetType } from 'app/Widget';

@@ -10,7 +10,7 @@ import ErrorView from 'app/components/ErrorView';
 import uuid from 'app/utils/uuid';
 import { TabOption, Tabs } from 'app/components/Tabs';
 import UserError from 'app/utils/UserError';
-import { useGlobalSearch } from 'app/hooks/globalSearch';
+import useGlobalSearch from 'app/hooks/useGlobalSearch';
 import { parseURL, queryMatchesAny } from 'app/utils';
 import { Article } from 'common/feeds/parse';
 import WebsiteIcon from 'app/components/WebsiteIcon';

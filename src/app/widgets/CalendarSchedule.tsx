@@ -10,7 +10,7 @@ import { Vector2 } from "app/utils/Vector2";
 import { WidgetProps, WidgetType } from "app/Widget";
 import { setMidnight } from "app/utils/dates";
 import { bindValuesToDescriptor, myFormatMessage } from "app/locale/MyMessageDescriptor";
-import { useGlobalSearch } from "app/hooks/globalSearch";
+import useGlobalSearch from "app/hooks/useGlobalSearch";
 import { queryMatchesAny } from "app/utils";
 import MyFormattedDate from "app/components/MyFormattedDate";
 

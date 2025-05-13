@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from "react";
  * @param ms Timeout period, in milliseconds
  * @return {[start, cancel]]} - Start and cancel
  */
-export function useDelay(callback: (...args: any[]) => void,
+export default function useDelay(callback: (...args: any[]) => void,
 		ms?: number, ...args: any[]): [(() => void), (() => void)] {
 
 	const [handle, setHandle] = useState<NodeJS.Timeout | null>(null);
