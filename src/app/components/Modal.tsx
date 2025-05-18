@@ -11,6 +11,7 @@ export interface ModalProps {
 	lighterBg?: boolean;
 	wide?: boolean;
 	tall?: boolean;
+	fixedTall?: boolean;
 }
 
 export default function Modal(props: ModalProps) {
@@ -60,8 +61,12 @@ export default function Modal(props: ModalProps) {
 	return ReactDOM.createPortal((
 		<aside className={bgClasses} onMouseDown={handleMouseDown}
 			onMouseUp={handleMouseUp} style={style}>
-			<div className={mergeClasses("flush modal",
-					props.wide === true && "modal-wide", props.tall == true && "modal-tall")}
+			<div
+					className={mergeClasses(
+						"flush modal",
+						props.wide === true && "modal-wide",
+						props.tall == true && "modal-tall",
+						props.fixedTall && "modal-fixed-tall")}
 					onMouseDown={(e) => e.stopPropagation()}
 					onMouseUp={(e) => e.stopPropagation()}
 					role="dialog" aria-modal={true}

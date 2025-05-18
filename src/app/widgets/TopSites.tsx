@@ -1,5 +1,5 @@
 import ErrorView from 'app/components/ErrorView';
-import LinkBox, { Link } from 'app/components/LinkBox';
+import { LinkBoxPanel, Link } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { usePromise } from 'app/hooks/promises';
 import useForceUpdate from 'app/hooks/useForceUpdate';
@@ -86,7 +86,7 @@ function TopSitesImpl(props: WidgetProps<any>) {
 	}));
 
 	return (
-		<LinkBox {...data} widgetTheme={props.theme} links={links} useWebsiteIcons={true}
+		<LinkBoxPanel {...data} widgetTheme={props.theme} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe"
 			limitItemsToAvoidScrolling={props.theme.listBoxStyle == ListBoxStyle.Icons} />);
 }

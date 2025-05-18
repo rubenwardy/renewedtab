@@ -1,5 +1,5 @@
 import ErrorView from 'app/components/ErrorView';
-import LinkBox from 'app/components/LinkBox';
+import { LinkBoxPanel } from 'app/components/LinkBox';
 import RequestPermission from 'app/components/RequestPermission';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
@@ -7,10 +7,9 @@ import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetProps, WidgetType 
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { miscMessages, schemaMessages } from 'app/locale/common';
-import { getBookmarks } from "app/utils/bookmarks";
+import useBookmarks from "app/hooks/useBookmarks";
 import useForceUpdate from 'app/hooks/useForceUpdate';
-import { usePromise } from 'app/hooks/promises';
-
+import useShowBookmarksModal from 'app/features/bookmarks/useShowBookmarksModal';
 
 const messages = defineMessages({
 	title: {
@@ -38,14 +37,15 @@ interface BookmarksProps {
 function BookmarksImpl(props: WidgetProps<BookmarksProps>) {
 	const data = props.props;
 
-	const [links, error] = usePromise(() => getBookmarks(data.includeFolders), []);
+	const showBookmarksModal = useShowBookmarksModal();
+	const [links, error] = useBookmarks(data.includeFolders, showBookmarksModal);
 	if (!links) {
 		return (<ErrorView error={error} />);
 	}
 
 	return (
-		<LinkBox {...data} widgetTheme={props.theme}  useWebsiteIcons={true}
-			links={links.filter(x => !x.children)}
+		<LinkBoxPanel {...data} widgetTheme={props.theme}  useWebsiteIcons={true}
+			links={links}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
 

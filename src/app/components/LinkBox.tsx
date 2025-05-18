@@ -1,9 +1,8 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef } from "react";
 import { ListBoxStyle, WidgetTheme } from "app/Widget";
 import Icon from "app/components/Icon";
 import Panel from "app/components/Panel";
 import { mergeClasses, parseURL, queryMatchesAny } from "app/utils";
-import { Vector2 } from "app/utils/Vector2";
 import { defineMessages } from "react-intl";
 import Schema, { type } from 'app/utils/Schema';
 import { schemaMessages } from "app/locale/common";
@@ -63,39 +62,8 @@ interface LinkBoxProps extends BaseLinkBoxProps {
 
 export type LinkBoxWidgetProps = Omit<LinkBoxProps, "widgetTheme">;
 
-function Dropdown(props: { links: Link[]; anchor: "right" | "bottom" | false; linkBoxProps: BaseLinkBoxProps}) {
-	const { links, anchor, linkBoxProps } = props;
-	const ref = useRef<HTMLDivElement>(null);
-	const [position, setPosition] = useState<Vector2 | undefined>(undefined);
-	useEffect(() => {
-		const parent = ref.current?.parentElement;
-		if (parent && anchor !== false) {
-			const update = () => {
-				const rect = parent.getBoundingClientRect();
-				if (rect) {
-					if (anchor === "bottom") {
-						setPosition(new Vector2(rect.left, rect.bottom));
-					} else {
-						setPosition(new Vector2(rect.right - 20, rect.top));
-					}
-				}
-			};
-
-			parent.addEventListener("mouseover", update);
-			return () => parent.removeEventListener("mouseover", update);
-		}
-	}, [ref, setPosition, anchor]);
-
-	return (
-		<div ref={ref}
-				className={mergeClasses("linkbox", anchor && "dropdown-js")}
-				style={{ position: anchor ? "fixed" : "absolute", top: position?.y, left: position?.x }}>
-			{links.map(link => (<LinkItem key={link.id} link={link} linkBoxProps={linkBoxProps} />))}
-		</div>);
-}
-
-function LinkItem(props: { link: Link; isHorizontal?: boolean; linkBoxProps: BaseLinkBoxProps }) {
-	const {link, isHorizontal, linkBoxProps} = props;
+function LinkItem(props: { link: Link; linkBoxProps: BaseLinkBoxProps }) {
+	const {link, linkBoxProps} = props;
 	const listBoxStyle = enumToValue(ListBoxStyle, linkBoxProps.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
 	const useWebsiteIcons = linkBoxProps.useWebsiteIcons ?? false;
 	const showText = listBoxStyle == ListBoxStyle.Vertical || (linkBoxProps.widgetTheme.showText ?? true);
@@ -131,18 +99,6 @@ function LinkItem(props: { link: Link; isHorizontal?: boolean; linkBoxProps: Bas
 				{showText && (
 					<span className="title">{link.title}</span>)}
 			</button>);
-	} else if (link.children) {
-		return (
-			<div className="dropdown">
-				<div className="link-item link-item-action">
-					{icon}
-					<span className="title">{link.title}</span>
-				</div>
-				<Dropdown
-					links={link.children}
-					anchor={isHorizontal ? false : "right"}
-					linkBoxProps={linkBoxProps} />
-			</div>);
 	} else if (link.title !== "") {
 		return (
 			<div className="link-item section">
@@ -155,7 +111,7 @@ function LinkItem(props: { link: Link; isHorizontal?: boolean; linkBoxProps: Bas
 	}
 }
 
-export default function LinkBox(props: LinkBoxProps) {
+export function LinkBox(props: LinkBoxProps) {
 	const {links: rawLinks, ...style} = props;
 	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
 	const useWebsiteIcons = props.useWebsiteIcons ?? false;
@@ -188,17 +144,22 @@ export default function LinkBox(props: LinkBoxProps) {
 		listBoxStyle == ListBoxStyle.Vertical && "linkbox large",
 		listBoxStyle == ListBoxStyle.Horizontal && "linkbox links-horizontal",
 	);
-	const isHorizontal = listBoxStyle == ListBoxStyle.Horizontal;
 
 	return (
-		<Panel {...props.widgetTheme} scrolling={!isHorizontal} flush={true} ref={ref}>
-			<nav className={ulClasses}>
-				{links.map(link =>
-					<LinkItem
-						key={link.id}
-						link={link}
-						isHorizontal={isHorizontal}
-						linkBoxProps={style} />)}
-			</nav>
+		<nav className={ulClasses} ref={ref}>
+			{links.map(link =>
+				<LinkItem
+					key={link.id}
+					link={link}
+					linkBoxProps={style} />)}
+		</nav>);
+}
+
+export function LinkBoxPanel(props: LinkBoxProps) {
+	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
+	const isHorizontal = listBoxStyle == ListBoxStyle.Horizontal;
+	return (
+		<Panel {...props.widgetTheme} scrolling={!isHorizontal} flush={true}>
+			<LinkBox {...props} />
 		</Panel>);
 }

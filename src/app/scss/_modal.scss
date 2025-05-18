@@ -142,8 +142,16 @@
 		}
 	}
 
-	&.modal-tall .modal-body {
-		max-height: calc(80vh - 20px);
+	&.modal-tall {
+		.modal-body, & > .linkbox {
+			max-height: calc(80vh - 20px);
+		}
+	}
+
+	&.modal-fixed-tall {
+		.modal-body, & > .linkbox:not(.breadcrumbs) {
+			height: 70vh;
+		}
 	}
 }
 

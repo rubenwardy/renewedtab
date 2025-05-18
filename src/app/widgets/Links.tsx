@@ -1,5 +1,5 @@
 import Button, { ButtonVariant } from 'app/components/Button';
-import LinkBox, { LinkSchema, LinkBoxWidgetProps, FullLinkSchema, Link } from 'app/components/LinkBox';
+import { LinkBoxPanel, LinkSchema, LinkBoxWidgetProps, FullLinkSchema, Link } from 'app/components/LinkBox';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { parseLinksJson } from 'app/utils/imports';
 import { type } from 'app/utils/Schema';
@@ -34,7 +34,7 @@ const messages = defineMessages({
 
 
 function Links(props: WidgetProps<LinkBoxWidgetProps>)  {
-	return (<LinkBox {...props.props} widgetTheme={props.theme} />);
+	return (<LinkBoxPanel {...props.props} widgetTheme={props.theme} />);
 }
 
 

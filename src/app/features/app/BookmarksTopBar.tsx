@@ -1,15 +1,15 @@
 import { miscMessages } from "app/locale/common";
-import { getBookmarks } from "app/utils/bookmarks";
+import useBookmarks from "app/hooks/useBookmarks";
 import { ListBoxStyle, WidgetTheme } from "app/Widget";
 import React, { useCallback } from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "app/components/Button";
 import ErrorView from "app/components/ErrorView";
-import LinkBox from "app/components/LinkBox";
+import { LinkBox } from "app/components/LinkBox";
 import RequestPermission from "app/components/RequestPermission";
 import useIsLocked from "app/hooks/useIsLocked";
 import useForceUpdate from "app/hooks/useForceUpdate";
-import { usePromise } from "app/hooks/promises";
+import useShowBookmarksModal from "../bookmarks/useShowBookmarksModal";
 
 const messages = defineMessages({
 	onHide: {
@@ -19,7 +19,8 @@ const messages = defineMessages({
 });
 
 function BookmarksImpl(props: { widgetTheme: WidgetTheme }) {
-	const [links, error] = usePromise(() => getBookmarks(false), []);
+	const showBookmarksModal = useShowBookmarksModal();
+	const [links, error] = useBookmarks(false, showBookmarksModal);
 	if (!links) {
 		return (<ErrorView error={error} />);
 	}
@@ -28,7 +29,6 @@ function BookmarksImpl(props: { widgetTheme: WidgetTheme }) {
 		<LinkBox {...props} links={links} useWebsiteIcons={true}
 			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
 }
-
 
 export default function BookmarksTopBar({onHide}: { onHide: () => void }) {
 	const forceUpdate = useForceUpdate();

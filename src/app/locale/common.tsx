@@ -177,6 +177,11 @@ export const miscMessages = defineMessages({
 		description: "Onboarding modal: title",
 	},
 
+	bookmarks: {
+		defaultMessage: "Bookmarks",
+		description: "Browser bookmarks",
+	},
+
 	errFetchBookmarks: {
 		defaultMessage: "Unable to get bookmarks",
 		description: "Bookmarks widget: error message",
