@@ -65,8 +65,10 @@ export default function BookmarksTopBar({onHide}: { onHide: () => void }) {
 	}
 	return (
 		<aside className="bookmarks-top-bar panel flush">
-			<BookmarksImpl widgetTheme={{
-				showPanelBG: false, listBoxStyle: ListBoxStyle.Horizontal }}  />
+			<div className="left">
+				<BookmarksImpl widgetTheme={{
+					showPanelBG: false, listBoxStyle: ListBoxStyle.Horizontal }}  />
+			</div>
 			{!isLocked && (
 				<Button variant={ButtonVariant.Outline} onClick={handleHide}
 					label={miscMessages.hideBookmarksBar} small={true} className="m-0"  />)}
