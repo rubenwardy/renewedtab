@@ -33,7 +33,7 @@
 			max-height: 18px;
 		}
 
-		&.link-item-action {
+		&.link-item-action, &.link-item-article {
 			text-decoration: none;
 			transition: color 0.2s ease-in-out,
 				background-color 0.2s ease-in-out;
@@ -44,6 +44,11 @@
 				color: white;
 				background: rgba(255, 255, 255, 0.1);
 			}
+		}
+
+		&.link-item-article {
+			flex-direction: column;
+			align-items: stretch;
 		}
 
 		&.active {

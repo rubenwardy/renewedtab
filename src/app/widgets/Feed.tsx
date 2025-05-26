@@ -212,16 +212,14 @@ function FeedPanel(props: FeedPanelProps) {
 				!blockFilters.some(filter => title.includes(filter));
 		})
 		.map(article => (
-			<li key={article.id}>
-				<a href={article.link} target={target} rel="noreferrer">
-					<FeedArticle article={article} data={props} />
-				</a>
-			</li>));
+			<a className="link-item link-item-article"  key={article.id} href={article.link} target={target} rel="noreferrer">
+				<FeedArticle article={article} data={props} />
+			</a>));
 
 	return (
-		<ul className="links">
+		<div className="linkbox">
 			{errors.map(({ source, error }, i) => (
-				<li key={`err-${i}`} className="section error">
+				<span key={`err-${i}`} className="link-item section error">
 					<FormattedMessage
 						defaultMessage="Failed to load {source}: {error}"
 						description="Feed error message"
@@ -229,15 +227,15 @@ function FeedPanel(props: FeedPanelProps) {
 							source: source.title ?? source.url,
 							error: error.messageDescriptor ? myFormatMessage(intl, error.messageDescriptor) : error.message,
 						}} />
-				</li>
+				</span>
 			))}
 			{rows}
 			{rows.length == 0 && feed.articles.length > 0 && (
-				<li className="section">
+				<div className="link-item section">
 					<FormattedMessage {...miscMessages.noResults} />
-				</li>
+				</div>
 			)}
-		</ul>);
+		</div>);
 }
 
 

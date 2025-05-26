@@ -88,24 +88,22 @@ function SpaceFlights(props: WidgetProps<any>) {
 			const winOpen = attemptDate(launch.win_open);
 			const isToday = isSameDay(new Date(), winOpen ?? undefined);
 			return (
-				<li key={launch.id}>
-					<a href={launch.link}>
-						<div>
-							{launch.name}
-							{isToday && " 🚀"}
+				<a key={launch.id} className="link-item link-item-article">
+					<div>
+						{launch.name}
+						{isToday && " 🚀"}
+					</div>
+					<div className="row mt-1">
+						<div className="col one-line text-muted">
+							{launch.provider}
 						</div>
-						<div className="row">
-							<div className="col one-line text-muted">
-								{launch.provider}
-							</div>
-							<div className="col-auto float-right text-muted"
-									title={winOpen ? intl.formatDate(winOpen,
-										{ dateStyle: "medium", timeStyle: "short" }) : undefined}>
-								{renderDate(intl, launch)}
-							</div>
+						<div className="col-auto float-right text-muted"
+								title={winOpen ? intl.formatDate(winOpen,
+									{ dateStyle: "medium", timeStyle: "short" }) : undefined}>
+							{renderDate(intl, launch)}
 						</div>
-					</a>
-				</li>);
+					</div>
+				</a>);
 		});
 
 	return (
@@ -113,14 +111,14 @@ function SpaceFlights(props: WidgetProps<any>) {
 			<h2 className="panel-inset pb-1">
 				<FormattedMessage {...messages.title} />
 			</h2>
-			<ul className="links">
+			<div className="linkbox">
 				{rows}
 				{rows.length == 0 && launches.length > 0 && (
 					<li className="section">
 						<FormattedMessage {...miscMessages.noResults} />
 					</li>
 				)}
-			</ul>
+			</div>
 		</Panel>);
 }
 
