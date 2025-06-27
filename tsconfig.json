@@ -7,7 +7,6 @@
 		"sourceMap": true,
 		"typeRoots": [
 			"./node_modules/@types",
-			"./node_modules/web-ext-types",
 			"src/@types"
 		],
 		"baseUrl": "src",
