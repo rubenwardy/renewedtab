@@ -36,13 +36,22 @@
 		&.link-item-action, &.link-item-article {
 			text-decoration: none;
 			transition: color 0.2s ease-in-out,
-				background-color 0.2s ease-in-out;
+				background-color 0.2s ease-in-out,
+				opacity 0.2s ease-in-out;
 			cursor: pointer;
 
 			&:hover, &:focus {
 				text-decoration: none;
 				color: white;
 				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+
+		&.link-item-muted {
+			opacity: 0.5;
+
+			&:hover, &:focus {
+				opacity: 1;
 			}
 		}
 

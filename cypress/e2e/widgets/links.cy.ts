@@ -51,4 +51,15 @@ describe("Links", () => {
 		cy.getCy("field-links").find("tbody tr:nth-child(3) td:nth-child(2) input").should("have.value", "Folder");
 		cy.getCy("field-links").find("tbody tr:nth-child(4) td:nth-child(2) input").should("have.value", "Example 2");
 	});
+
+	it("add link quick modal", () => {
+		const widget = new Widget(3);
+		widget.get(".link-item[data-title='Hello']").should("not.exist");
+		widget.get(".link-item[data-title='Add']").click();
+		cy.get("input[name='title']").type("Hello");
+		cy.get("input[name='url']").type("https://example.com");
+		cy.get("input[name='url']").blur();
+		cy.getCy("add-link").click();
+		widget.get(".link-item[data-title='Hello']").should("exist");
+	});
 });

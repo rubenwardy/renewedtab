@@ -31,6 +31,7 @@ export interface Link {
 	icon?: string | Promise<string | undefined>;
 	url: string;
 	children?: Link[];
+	muted?: boolean;
 	onClick?: (link: Link) => void;
 }
 
@@ -74,11 +75,11 @@ function LinkItem(props: { link: Link; linkBoxProps: BaseLinkBoxProps }) {
 
 	if (link.url !== "") {
 		const attr = (typeof browser !== "undefined" && link.url.startsWith("chrome://")) ? {
-			onClick: () => browser.tabs.update(undefined, { url: link.url }),
+			onClick: () => browser.tabs.update({ url: link.url }),
 		} : { href: link.url };
 
 		return (
-			<a className="link-item link-item-action"
+			<a className={mergeClasses("link-item link-item-action", link.muted && "link-item-muted")}
 					{...attr}
 					rel="noreferrer"
 					target={target}
@@ -92,8 +93,9 @@ function LinkItem(props: { link: Link; linkBoxProps: BaseLinkBoxProps }) {
 			</a>);
 	} else if (link.onClick) {
 		return (
-			<button className="link-item link-item-action"
+			<button className={mergeClasses("link-item link-item-action", link.muted && "link-item-muted")}
 					rel="noreferrer"
+					data-title={link.title}
 					onClick={() => link.onClick!(link)}>
 				{icon}
 				{showText && (

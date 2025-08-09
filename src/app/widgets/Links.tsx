@@ -1,13 +1,15 @@
 import Button, { ButtonVariant } from 'app/components/Button';
+import { Form } from 'app/components/forms';
 import { LinkBoxPanel, LinkSchema, LinkBoxWidgetProps, FullLinkSchema, Link } from 'app/components/LinkBox';
+import Modal from 'app/components/Modal';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { parseLinksJson } from 'app/utils/imports';
 import { type } from 'app/utils/Schema';
 import uuid from 'app/utils/uuid';
 import { Vector2 } from 'app/utils/Vector2';
 import { defaultLinksThemeSchema, ListBoxStyle, Widget, WidgetEditComponentProps, WidgetProps, WidgetType } from 'app/Widget';
-import React, { useCallback, useMemo, useRef } from 'react';
-import { defineMessages, FormattedMessage } from 'react-intl';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 
 
 const messages = defineMessages({
@@ -30,11 +32,72 @@ const messages = defineMessages({
 		defaultMessage: "Enable custom icons",
 		description: "Links widget: form field label",
 	},
+
+	showAddButton: {
+		defaultMessage: "Show '+ Add' button",
+		description: "Links widget: form field label",
+	},
 });
 
 
-function Links(props: WidgetProps<LinkBoxWidgetProps>)  {
-	return (<LinkBoxPanel {...props.props} widgetTheme={props.theme} />);
+interface LinksWidgetProps extends LinkBoxWidgetProps {
+	enableCustomIcons?: boolean;
+	showAddButton?: boolean;
+}
+
+
+function LinksQuickAdd(props: WidgetProps<LinksWidgetProps> & { onClose: () => void}) {
+	const [values, setValues] = useState({ title: "", url: "" });
+	const intl = useIntl();
+	const disabled = values.title === "" || values.url === "";
+	function handleAdd() {
+		props.props.links.push({
+			...values,
+			id: uuid(),
+		});
+		props.save();
+		props.onClose();
+	}
+
+	return (
+		<Modal onClose={props.onClose} title={intl.formatMessage({ defaultMessage: "Add link" })}>
+			<div className="modal-body">
+				<Form
+					schema={LinkSchema}
+					values={values}
+					onChange={(key, value) => setValues({...values, [key]: value})} />
+				<Button data-cy="add-link" label={miscMessages.add} disabled={disabled} onClick={handleAdd} />
+			</div>
+		</Modal>);
+}
+
+
+function Links(props: WidgetProps<LinksWidgetProps>) {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const intl = useIntl();
+	const linkProps = useMemo(() => {
+		const ret = {...props.props};
+		if (props.props.showAddButton) {
+			ret.links = [...ret.links,
+				{
+					id: "links_add",
+					title: intl.formatMessage(miscMessages.add),
+					url: "",
+					onClick: () => setIsModalOpen(true),
+					icon: "fa-add",
+					muted: true,
+				}
+			];
+		}
+		return ret;
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [intl, props.props, isModalOpen]);
+
+	if (isModalOpen) {
+		return (<LinksQuickAdd {...props} onClose={() => setIsModalOpen(false)} />);
+	} else {
+		return (<LinkBoxPanel {...linkProps} widgetTheme={props.theme} />);
+	}
 }
 
 
@@ -44,7 +107,7 @@ function encode(str: string) {
 }
 
 
-function LinksImportExport(props: WidgetEditComponentProps<LinkBoxWidgetProps>) {
+function LinksImportExport(props: WidgetEditComponentProps<LinksWidgetProps>) {
 	const handleImport = useCallback(async (file: File) => {
 		try {
 			const text = new TextDecoder("utf-8").decode(await file.arrayBuffer());
@@ -113,11 +176,8 @@ function LinksImportExport(props: WidgetEditComponentProps<LinkBoxWidgetProps>) 
 		</div>);
 }
 
-interface LinkProps extends LinkBoxWidgetProps {
-	enableCustomIcons?: boolean;
-}
-
-const initialProps: LinkProps = {
+const initialProps: LinksWidgetProps = {
+	showAddButton: true,
 	links: [
 		{
 			id: uuid(),
@@ -153,7 +213,7 @@ const initialProps: LinkProps = {
 };
 
 
-const widget: WidgetType<LinkProps> = {
+const widget: WidgetType<LinksWidgetProps> = {
 	Component: Links,
 	title: messages.title,
 	description: messages.description,
@@ -170,12 +230,14 @@ const widget: WidgetType<LinkProps> = {
 				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				enableCustomIcons: type.boolean(messages.enableCustomIcons),
 				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
+				showAddButton: type.boolean(messages.showAddButton),
 			};
 		} else {
 			return {
 				links: type.array(linkSchema, messages.links),
 				openInNewTab: type.boolean(schemaMessages.openInNewTab),
 				enableCustomIcons: type.boolean(messages.enableCustomIcons),
+				showAddButton: type.boolean(messages.showAddButton),
 			};
 		}
 	},
@@ -204,6 +266,10 @@ const widget: WidgetType<LinkProps> = {
 				? ListBoxStyle.Icons
 				: ListBoxStyle.Vertical;
 			delete (widget.theme as any).useIconBar;
+		}
+
+		if (widget.props.showAddButton === undefined) {
+			widget.props.showAddButton = true;
 		}
 	},
 };
