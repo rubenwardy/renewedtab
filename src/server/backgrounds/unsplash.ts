@@ -11,7 +11,7 @@ interface UnsplashImage {
 	location?: { title: string };
 	links: { html: string };
 	user: { name: string, links: { html: string } };
-	urls: { raw: string };
+	urls?: { raw: string };
 }
 
 export default async function getImageFromUnsplash(collection: string): Promise<BackgroundInfo> {
@@ -43,7 +43,7 @@ export default async function getImageFromUnsplash(collection: string): Promise<
 		id: `unsplash:${image.id}`,
 		title: image.location?.title,
 		color: image.color,
-		url: image.urls.raw + "&w=2048&h=1117&crop=entropy&fit=crop",
+		url: image.urls ? image.urls.raw + "&w=2048&h=1117&crop=entropy&fit=crop" : "https://unsplash.com",
 		author: image.user.name,
 		site: "Unsplash",
 		links: {
