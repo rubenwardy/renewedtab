@@ -95,8 +95,7 @@ export interface AccuCurrentAPI {
 
 export async function handleAccuError(response: Response) {
 	if (!(response.headers.get("content-type") ?? "").includes("application/json")) {
-		const text = await response.text();
-		throw new Error(`Invalid accuweather response: ${text}`);
+		throw new UserError(`Error getting weather, AccuWeather returned an invalid response. ${response.statusText}.`);
 	}
 
 	const error = await response.json() as AccuError;
