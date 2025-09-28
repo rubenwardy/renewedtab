@@ -80,7 +80,7 @@ function TopSitesImpl(props: WidgetProps<any>) {
 
 	const links: Link[] = sites.map((site) => ({
 		id: site.url,
-		title: site.title,
+		title: site.title ?? "??",
 		icon: "",
 		url: site.url,
 	}));
