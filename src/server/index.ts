@@ -118,7 +118,7 @@ app.get("/api/weather/", async (req: express.Request, res: express.Response, nex
 		notifyAPIRequest("weather");
 
 		res
-			.setHeader("Cache-Control", "max-age=7200")
+			.setHeader("Cache-Control", "max-age=10800")
 			.json(await getWeatherInfoByCoords(location.latitude, location.longitude));
 	} catch (e: any) {
 		next(e);
