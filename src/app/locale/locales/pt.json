@@ -1,0 +1,1001 @@
+{
+    "+GMx80": {
+        "message": "Nenhum local encontrado"
+    },
+    "+PNw8j": {
+        "message": "Mesmo se ocultar algumas informações, ainda poderá vê-las passando o rato sobre dias e horas"
+    },
+    "+TYXj6": {
+        "message": "Hoje, {time}"
+    },
+    "+g7L/A": {
+        "message": "Mostra feeds Atom, JSONFeed e RSS - úteis para acompanhar as notícias de sites e blogs"
+    },
+    "+oSH/F": {
+        "message": "Indica a sua idade atual com muita precisão"
+    },
+    "+sI+Oh": {
+        "message": "Mostrar previsão de hora em hora"
+    },
+    "/4k9ry": {
+        "message": "UV <b>Muito Alto</b>"
+    },
+    "/Mpu8A": {
+        "message": "Estique a grade para cobrir toda a página."
+    },
+    "/Mx09O": {
+        "message": "Experimental. Isto não funciona com todas as fontes de feed, devido à falta de informações de imagem. As imagens também podem ser grandes e demorar um pouco para carregar."
+    },
+    "/aA+Xf": {
+        "message": "Mostrar imagens"
+    },
+    "/dtDqf": {
+        "message": "Notas"
+    },
+    "0PsF7Z": {
+        "message": "Tem certeza que deseja remover este widget permanentemente?"
+    },
+    "0feb3b": {
+        "message": "Opcional, fazer da imagem uma ligação"
+    },
+    "0hxZWu": {
+        "message": "ícone"
+    },
+    "0l+aD2": {
+        "message": "Metas diárias e citações inspiradoras"
+    },
+    "1s5GYl": {
+        "message": "opacidade"
+    },
+    "2/2yg+": {
+        "message": "add"
+    },
+    "20tqYI": {
+        "message": "URL para um ficheiro iCal (.ics) para um calendário"
+    },
+    "27lljH": {
+        "message": "A sua idade <b>{age}</b>"
+    },
+    "2efE5y": {
+        "message": "Saudação"
+    },
+    "2s4stS": {
+        "message": "Bem-vindo(a) ao <a>Renewed Tab.</a>"
+    },
+    "2vJWTd": {
+        "message": "Foto"
+    },
+    "3/EBw0": {
+        "message": "Website"
+    },
+    "3Nw7b0": {
+        "message": "Nome do Navegador"
+    },
+    "3UG6ds": {
+        "message": "Pesquise widgets ou na web usando o seu mecanismo de pesquisa favorito"
+    },
+    "3ZfhWo": {
+        "message": "Permissão necessária para aceder {host}. Edite este widget para concedê-lo."
+    },
+    "3aaibf": {
+        "message": "Adicionar Widget"
+    },
+    "3vh5vd": {
+        "message": "Não mostra nada,útil para fins de layout"
+    },
+    "3vjl5Q": {
+        "message": "Mostrar/Esconder"
+    },
+    "47FYwb": {
+        "message": "Cancelar"
+    },
+    "4F+2K3": {
+        "message": "Imagem aleatória da coleção Unsplash"
+    },
+    "4UpnpD": {
+        "message": "As imagens são armazenadas localmente no seu navegador e nunca são enviadas"
+    },
+    "4cMia7": {
+        "message": "Mostrar uma foto nova"
+    },
+    "4dzBeG": {
+        "message": "De"
+    },
+    "4syC1B": {
+        "message": "Ajuda e pedidos"
+    },
+    "5640CU": {
+        "message": "Atual: Mostrar precipitação"
+    },
+    "5DCxT+": {
+        "message": "Unidade de temperatura"
+    },
+    "5MMUNJ": {
+        "message": "Isto é <b>experimental e pode ser difícil de usar.</b>."
+    },
+    "5mVcg9": {
+        "message": "Customizar Css"
+    },
+    "5mfAB9": {
+        "message": "URL para um feed Atom, JSONFeed ou RSS"
+    },
+    "6MDM6D": {
+        "message": "Citações"
+    },
+    "6pdO6i": {
+        "message": "Incapaz de obter favoritos"
+    },
+    "6wEkCM": {
+        "message": "Alternativamente, poderia usar o widget de Favoritos para um melhor controlo."
+    },
+    "7OH6mh": {
+        "message": "Imagem"
+    },
+    "7wOM6+": {
+        "message": "Progresso do ano"
+    },
+    "7zYGs9": {
+        "message": "Calendário de agendamentos"
+    },
+    "8HmiSe": {
+        "message": "Especifique uma fonte"
+    },
+    "8J0Bhj": {
+        "message": "Bem-vindo ao <a>Renewed Tab</a>: uma página nova guia personalizável, com widgets e belos planos de fundo."
+    },
+    "8xPAKF": {
+        "message": "De 0-100%, posição da cor no gradiente"
+    },
+    "8xVVb5": {
+        "message": "Cor Primaria"
+    },
+    "9+2gJZ": {
+        "message": "Este widget requer a versão da extensão do navegador."
+    },
+    "Abtyj/": {
+        "message": "A imagem tem mais que 2 MB ({dataSizeMB} MB). Para obter melhores tempos de carregamento, deve usar uma imagem menor."
+    },
+    "Ack5ID": {
+        "message": "Nenhum Resultado"
+    },
+    "AgU+/t": {
+        "message": "Uma lista dos próximos lançamentos espaciais, com tecnologia RocketLaunch.Live"
+    },
+    "AuSjzq": {
+        "message": "Atual: Mostrar risco UV"
+    },
+    "Ay1sfO": {
+        "message": "Controla quantas das imagens mais recentes podem ser escolhidas aleatoriamente. Definir como 1 sempre escolherá a imagem mais recente"
+    },
+    "B0kbsm": {
+        "message": "Feed noticias"
+    },
+    "B1pyj1": {
+        "message": "Atual: Mostrar sensação térmica"
+    },
+    "B3NCWb": {
+        "message": "Cores"
+    },
+    "B4LnaC": {
+        "message": "Mostre os próximos eventos provenientes de uma URL iCal (.ics) (Como o Calendário Google)"
+    },
+    "BJYZgx": {
+        "message": "Use a alça de movimentação (<move> </move>) e a alça de redimensionamento (<resize> </resize>)."
+    },
+    "BfX7n6": {
+        "message": "Nota: O Firefox pode mostrar artefatos como linhas em fundos gradientes. Isto não é algo que podemos consertar."
+    },
+    "BiPNnl": {
+        "message": "Unidade de velocidade do vento"
+    },
+    "Bl74xq": {
+        "message": "Botão de ligação"
+    },
+    "BmzsQb": {
+        "message": "Ligações, com apoio a ícones e títulos (speed dial)"
+    },
+    "BnmONl": {
+        "message": "Atual: Mostrar nascer / pôr do sol"
+    },
+    "C7WJrL": {
+        "message": "Vertical"
+    },
+    "CN0kVN": {
+        "message": "Grade dos Widgets"
+    },
+    "CNpJaZ": {
+        "message": "Foco"
+    },
+    "CmRs9p": {
+        "message": "Pesquisar"
+    },
+    "Cq4JWx": {
+        "message": "Novidades, previsão do tempo e muito mais"
+    },
+    "CshCZY": {
+        "message": "Tipo de Fundo"
+    },
+    "D0+wcK": {
+        "message": "Exibir uma imagem, opcionalmente a fazer dela uma ligação"
+    },
+    "D3idYv": {
+        "message": "Configurações"
+    },
+    "DVGnNH": {
+        "message": "Pode passar o rato sobre os créditos no canto inferior esquerdo para pular ou favoritar a imagem de fundo."
+    },
+    "Ddd3ZY": {
+        "message": "Para"
+    },
+    "E4nLwR": {
+        "message": "Todos os dias"
+    },
+    "Ekvvsi": {
+        "message": "Barra de Favoritos"
+    },
+    "EpPEVJ": {
+        "message": "Gradiente"
+    },
+    "EscvnU": {
+        "message": "Ícones"
+    },
+    "F1A/8i": {
+        "message": "Fontes"
+    },
+    "FqCn+F": {
+        "message": "Bom dia!, {name}"
+    },
+    "G6WG/N": {
+        "message": "Invisível"
+    },
+    "GSox4d": {
+        "message": "Qualquer nome de fonte instalado no seu computador"
+    },
+    "GWRKVT": {
+        "message": "Cor Do Texto"
+    },
+    "GXkv/F": {
+        "message": "Escolha a Localização"
+    },
+    "GcxpZV": {
+        "message": "Estilo de Data"
+    },
+    "Go7At+": {
+        "message": "Sábado"
+    },
+    "GpfSpy": {
+        "message": "Mostre a barra de favoritos"
+    },
+    "GqPEp+": {
+        "message": "Requer versão de extensão do navegador"
+    },
+    "H00a0q": {
+        "message": "Deixe em branco para fazer o cabeçalho"
+    },
+    "HEvlTB": {
+        "message": "Opções de exibição"
+    },
+    "HPLtg4": {
+        "message": "Moeda desconhecida ''{currency}''"
+    },
+    "HksGis": {
+        "message": "Atual: Mostrar vento"
+    },
+    "I48yxw": {
+        "message": "Privacidade"
+    },
+    "IKpSw0": {
+        "message": "Horizontal"
+    },
+    "IbCXY9": {
+        "message": "Padrão ({example})"
+    },
+    "IqLwUL": {
+        "message": "Espaçamento de grade"
+    },
+    "J91edI": {
+        "message": "Importar/Exportar"
+    },
+    "JN/uvd": {
+        "message": "UV <b>Moderado</b>"
+    },
+    "JihbEV": {
+        "message": "Documentação CSS"
+    },
+    "JvOSvX": {
+        "message": "Fundo"
+    },
+    "JzanJ8": {
+        "message": "Colunas de grade"
+    },
+    "K3r6DQ": {
+        "message": "Apagar"
+    },
+    "K8s82y": {
+        "message": "Data de aniversário"
+    },
+    "KdIFGg": {
+        "message": "Falta '{query}' no URL de pesquisa. Por exemplo: https://google.com/search/?q='{query}'"
+    },
+    "KhM0zv": {
+        "message": "As cotações são obtidas de fontes externas e não são revisadas pelo Renewed Tab."
+    },
+    "KjUKUz": {
+        "message": "Um gradiente de cores"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> at {latitude} by {longitude}"
+    },
+    "KyDwm3": {
+        "message": "Mostrar os melhores sites"
+    },
+    "Kzo9ZH": {
+        "message": "Imagem URL"
+    },
+    "L6nTur": {
+        "message": "Escolha um ponto de partida"
+    },
+    "LfHpBk": {
+        "message": "Tamanho Da Fonte"
+    },
+    "Lnvfz8": {
+        "message": "Falha ao carregar {source}: {error}"
+    },
+    "Lxc1x4": {
+        "message": "Relógio"
+    },
+    "M0PwXU": {
+        "message": "Velocidade do Vento ({unit})"
+    },
+    "M6lR5V": {
+        "message": "Quantidade de colunas na grade do widget. Pode ajustar {max} colunas à largura da janela atual ({res} px)."
+    },
+    "MN3prI": {
+        "message": "Incluir pastas como secções"
+    },
+    "MdUPbJ": {
+        "message": "Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado"
+    },
+    "MiIvsP": {
+        "message": "Pode adicionar, mover, redimensionar e configurar widgets numa grade usando controlos intuitivos."
+    },
+    "Mihrhf": {
+        "message": "Nenhum"
+    },
+    "MtrTNy": {
+        "message": "Amanhã"
+    },
+    "N/7Stk": {
+        "message": "Desenvolvido Por <a>rubenwardy</a>."
+    },
+    "NjoFru": {
+        "message": "Imagem aleatória de um feed Atom, JSONFeed ou RSS"
+    },
+    "O2Mjef": {
+        "message": "Análise"
+    },
+    "O8mt7g": {
+        "message": "Números ({example})"
+    },
+    "OBJta4": {
+        "message": "Pode alterar o nome clicando nele no widget"
+    },
+    "OPzczE": {
+        "message": "Abreviação ({example})"
+    },
+    "OQHLB5": {
+        "message": "Cor"
+    },
+    "Oa5RYo": {
+        "message": "<b>Widgets possuem configurações</b>: passe o rato sobre e clique no lápis para o customizar."
+    },
+    "PBMGxw": {
+        "message": "Limitar imagens"
+    },
+    "PHwOzi": {
+        "message": "Obrigado ao Unsplash, AccuWeather e RocketLaunch.Live pelas suas APIs."
+    },
+    "PM6qZ7": {
+        "message": "Mostrar os segundos"
+    },
+    "PYJFvz": {
+        "message": "Categorias"
+    },
+    "Q1mwPp": {
+        "message": "Considere <a> contribuir ou adicionar o seu idioma </a>."
+    },
+    "QBZZBG": {
+        "message": "Observação: este é um recurso experimental e os seletores de CSS podem falhar em versões futuras."
+    },
+    "QV6YlB": {
+        "message": "Taxas de câmbio"
+    },
+    "QcExtH": {
+        "message": "Política de privacidade"
+    },
+    "QkI7Lb": {
+        "message": "Fuso horário do navegador ({browserTimeZone})"
+    },
+    "QqE4JC": {
+        "message": "URL de feed ausente."
+    },
+    "R1jLoC": {
+        "message": "Vertical"
+    },
+    "R4cyIr": {
+        "message": "Atual: Mostrar humidade"
+    },
+    "RCe+DS": {
+        "message": "Arrastar e Soltar Widgets"
+    },
+    "RVGNBh": {
+        "message": "Quando finalizar, clique em <button></button> para gravar as edições."
+    },
+    "RZqASt": {
+        "message": "Uma única cor"
+    },
+    "RhyKzC": {
+        "message": "Curado"
+    },
+    "S6nfAm": {
+        "message": "Humidade (%)"
+    },
+    "SAo61B": {
+        "message": "Favoritos"
+    },
+    "SENRqu": {
+        "message": "Ajuda"
+    },
+    "SG4UJU": {
+        "message": "Botão"
+    },
+    "ShQneX": {
+        "message": "Texto"
+    },
+    "T/wBPw": {
+        "message": "Remova {type}"
+    },
+    "T4VxQN": {
+        "message": "A carregar…"
+    },
+    "TDaF6J": {
+        "message": "Dispensar"
+    },
+    "TIEfOV": {
+        "message": "Um artigo será mostrado se corresponder a pelo menos um filtro 'Mostrar' (se houver) e nenhum filtro 'Ocultar'."
+    },
+    "TUnCKb": {
+        "message": "Texto"
+    },
+    "TkgCJ9": {
+        "message": "Pode obter ajuda ou solicitar um recurso usando a ligação abaixo."
+    },
+    "U2Qnh7": {
+        "message": "Imagem"
+    },
+    "Upkn1Q": {
+        "message": "<b>Alto</b> UV"
+    },
+    "V1EIOe": {
+        "message": "Mostrar Páginas da Web"
+    },
+    "VPDVTF": {
+        "message": "Nada Aqui"
+    },
+    "Vckd1G": {
+        "message": "Segunda-feira"
+    },
+    "VjDvbL": {
+        "message": "URL"
+    },
+    "W3zKGr": {
+        "message": "quilómetro"
+    },
+    "WF5DKA": {
+        "message": "Idade"
+    },
+    "WKiXhX": {
+        "message": "Cor"
+    },
+    "WZjKFf": {
+        "message": "Aviso: pode conter dados pessoais, se algum foi inserido nas configurações do widget."
+    },
+    "Wi0G88": {
+        "message": "Sobre e ajuda"
+    },
+    "X18x9m": {
+        "message": "Em Geral"
+    },
+    "X5OoHJ": {
+        "message": "Qual é o seu objetivo para hoje?"
+    },
+    "XV4mnl": {
+        "message": "Dependendo das suas configurações, a mesma foto pode ser escolhida"
+    },
+    "XYIyWM": {
+        "message": "Deve aumentar \"Grid Columns\" para pelo menos {cols} para fazer o melhor uso do espaço."
+    },
+    "XrQEPN": {
+        "message": "Localização"
+    },
+    "XsTD4Q": {
+        "message": "Lista de afazeres"
+    },
+    "YQhLKn": {
+        "message": "Toda hora"
+    },
+    "YS3jnS": {
+        "message": "sexta-feira"
+    },
+    "YS5zRT": {
+        "message": "Pesquise com {name}"
+    },
+    "YYoBQn": {
+        "message": "Raio de desfoque do painel"
+    },
+    "YuNOET": {
+        "message": "HTML"
+    },
+    "Z2/hH0": {
+        "message": "Imagem: {filename}"
+    },
+    "Z79HMN": {
+        "message": "Planos de fundo selecionados aleatoriamente"
+    },
+    "ZRWjTk": {
+        "message": "Use o mecanismo de pesquisa padrão do navegador"
+    },
+    "ZUZeuR": {
+        "message": "Mostrar uma mensagem"
+    },
+    "ZZIlU9": {
+        "message": "Objetivo diário"
+    },
+    "ZeZlbR": {
+        "message": "Define a opacidade da cor matizada do botão"
+    },
+    "a09vzt": {
+        "message": "A solicitação HTTP falhou, {code} {msg}."
+    },
+    "a0L2KE": {
+        "message": "Tente incluir o nome ou as iniciais do país."
+    },
+    "aXrD3p": {
+        "message": "Moedas"
+    },
+    "aaxFkJ": {
+        "message": "Crie um elemento de tarefa"
+    },
+    "abwneZ": {
+        "message": "Metros por segundo (m / s)"
+    },
+    "adRrk3": {
+        "message": "Reinicializar tudo"
+    },
+    "amHvKE": {
+        "message": "Insira notas aqui"
+    },
+    "ao/AFQ": {
+        "message": "Lembra-o de uma meta diária"
+    },
+    "appDescription": {
+        "message": "Uma página nova guia personalizável, com widgets e belos planos de fundo"
+    },
+    "appName": {
+        "message": "Renewed Tab"
+    },
+    "as6rZ1": {
+        "message": "Ativar relatórios de travamento (usando Sentinela)"
+    },
+    "b2Rs2F": {
+        "message": "Alterar o brilho de imagens mais claras"
+    },
+    "bQFsdR": {
+        "message": "Conceda permissão para aceder {host}"
+    },
+    "bfWes8": {
+        "message": "Tipo de gradiente"
+    },
+    "btOI+Z": {
+        "message": "Nova guia"
+    },
+    "c7zm0j": {
+        "message": "Erro ao carregar o feed. Verifique se é um feed RSS, JSONFeed ou Atom."
+    },
+    "cR7nCG": {
+        "message": "Redefinir o tema para o padrão"
+    },
+    "cSF2y1": {
+        "message": "Mostra os seus favoritos"
+    },
+    "ckvzIb": {
+        "message": "<b>Baixo</b> UV"
+    },
+    "d7dHsn": {
+        "message": "A cada 15 minutos"
+    },
+    "dGu5JQ": {
+        "message": "Feed noticias"
+    },
+    "dIwFS5": {
+        "message": "Escolha uma Imagem"
+    },
+    "dOlhtQ": {
+        "message": "Pode mostrar a a barra de favoritos apenas na página de Nova Guia com Clique direito perto da barra de endereço > Barra de favoritos > Mostrar apenas na nova guia. <a>Ver mais</a>"
+    },
+    "eKCjBm": {
+        "message": "Precipitação (%)"
+    },
+    "eXB4qM": {
+        "message": "quarta-feira"
+    },
+    "ekIjqh": {
+        "message": "Conceda permissão para aceder todos os sites"
+    },
+    "ekW/+6": {
+        "message": "Incapaz de conectar à Internet"
+    },
+    "exTzGh": {
+        "message": "Horizontal"
+    },
+    "fW8Xpd": {
+        "message": "Localização necessária. Clique em editar para adicionar."
+    },
+    "fWK68w": {
+        "message": "Fonte"
+    },
+    "frEJEM": {
+        "message": "Quinta-feira"
+    },
+    "fz43UJ": {
+        "message": "Faça uma doação"
+    },
+    "gAZqVl": {
+        "message": "Pode adicionar (<add> </add>) ou remover (<remove> </remove>) widgets posteriormente, ou alterar as configurações (<cog> </cog>) conforme desejado."
+    },
+    "gEYo49": {
+        "message": "Posição"
+    },
+    "gHzZEt": {
+        "message": "Apenas um relógio e uma barra de pesquisa"
+    },
+    "gQAsym": {
+        "message": "Observe se outros widgets não sairão do caminho ao arrastar."
+    },
+    "gS3mti": {
+        "message": "Lista de estilos"
+    },
+    "gSjZfg": {
+        "message": "Ligações"
+    },
+    "gXcVyS": {
+        "message": "Gravar edição"
+    },
+    "grbGxs": {
+        "message": "Sem eventos"
+    },
+    "h/ftND": {
+        "message": "Escolha o Ficheiro"
+    },
+    "h00yCR": {
+        "message": "Mostra as imagens recentes de um feed Atom, JSONFeed ou RSS - útil para WebComics."
+    },
+    "hCBQrY": {
+        "message": "Parece como <b> {temp} ° </b>"
+    },
+    "hUIQ7h": {
+        "message": "Brilho"
+    },
+    "hWimZf": {
+        "message": "Ativar pesquisa de widgets"
+    },
+    "hktZIl": {
+        "message": "Mostra a hora"
+    },
+    "iFxzUm": {
+        "message": "Curtir Like"
+    },
+    "iH2AHA": {
+        "message": "<a> Código aberto </a>, licenciado sob GPLv3 +."
+    },
+    "ilIuh2": {
+        "message": "Achou útil? Considere fazer uma <a>doação</a> para ajudar com os custos da API da previsão do tempo e ajudar o desenvolvimento do Renewed Tab."
+    },
+    "irdBm2": {
+        "message": "Tema"
+    },
+    "j0VHNa": {
+        "message": "Autorize o acesso aos favoritos e a busca dos ícones dos sites"
+    },
+    "jGWq1h": {
+        "message": "Fuso Horário"
+    },
+    "jSHZmX": {
+        "message": "Lista de elementos a fazer"
+    },
+    "kAEQyV": {
+        "message": "Ok"
+    },
+    "kF06lD": {
+        "message": "Estendido ({example})"
+    },
+    "ktmuOE": {
+        "message": "Deixe em branco para usar o título do feed"
+    },
+    "ku7Ot7": {
+        "message": "Brilho: Claro"
+    },
+    "kueLs9": {
+        "message": "Ligações"
+    },
+    "l8+Uwz": {
+        "message": "Nada para editar."
+    },
+    "lQIN1l": {
+        "message": "Gosta do Renewed Tab? Dê-nos uma avaliação!"
+    },
+    "lUdRdE": {
+        "message": "Erro: {msg}"
+    },
+    "lY73np": {
+        "message": "Mostrar fundo do painel"
+    },
+    "lYJGY5": {
+        "message": "Imagem URL"
+    },
+    "lwUV0r": {
+        "message": "Pode alterar a meta clicando nele no widget"
+    },
+    "mL3MOs": {
+        "message": "Milhas por hora (mph)"
+    },
+    "mSg5KK": {
+        "message": "Brilho: Escuro"
+    },
+    "mv9TrH": {
+        "message": "HTML"
+    },
+    "mw6Uh+": {
+        "message": "Mostrar previsão diária"
+    },
+    "n+w6I2": {
+        "message": "Pare"
+    },
+    "n0cZ3b": {
+        "message": "Desenvolvido por {host}."
+    },
+    "nF7bWj": {
+        "message": "ISO ({example})"
+    },
+    "nGSwtl": {
+        "message": "Buscador"
+    },
+    "nHw5cV": {
+        "message": "Clique nos elementos para editá-los."
+    },
+    "nlnYxI": {
+        "message": "Quantidade máxima de dias"
+    },
+    "nnaWVi": {
+        "message": "Celsius"
+    },
+    "o2uuHu": {
+        "message": "Relógio de 12 horas"
+    },
+    "o9vGxx": {
+        "message": "Abra ligações numa nova guia"
+    },
+    "oBl48o": {
+        "message": "Tem certeza que deseja redefinir todos os dados?"
+    },
+    "oDog89": {
+        "message": "Uma área de texto editável para notas"
+    },
+    "oGS5TE": {
+        "message": "Boa tarde!, {name}"
+    },
+    "oJnbwn": {
+        "message": "Nome"
+    },
+    "oPO8GY": {
+        "message": "Falta a URL do calendário. Edite este widget para adicionar"
+    },
+    "oRui+E": {
+        "message": "Gosta do Renewed Tab? Considere doar para ajudar a cobrir os custos e apoiar o seu desenvolvimento."
+    },
+    "ofl4Ui": {
+        "message": "Procurar"
+    },
+    "olBVPS": {
+        "message": "Exportar"
+    },
+    "or/+Da": {
+        "message": "Estilo"
+    },
+    "p8GKKf": {
+        "message": "Melhores sites"
+    },
+    "pG7wIz": {
+        "message": "Mostra taxas de câmbio, com apoio para moedas forex e criptografia (BitCoin etc)"
+    },
+    "pHo6u+": {
+        "message": "Nenhuma imagem encontrada no feed"
+    },
+    "pVrtrA": {
+        "message": "Use uma imagem personalizada"
+    },
+    "pWdLkT": {
+        "message": "Por favor leia <a>o tutorial</a>. Pode usar qualquer serviço de calendário que apoio iCal, incluindo o Calendário Google e Outlook."
+    },
+    "pbEMNj": {
+        "message": "Anterior"
+    },
+    "pqIuCa": {
+        "message": "Mostrar clima atual"
+    },
+    "q4caWd": {
+        "message": "Raio de desfoque"
+    },
+    "q6/aVX": {
+        "message": "Pode filtrar este widget usando um widget de Pesquisa."
+    },
+    "qCsSqt": {
+        "message": "Escuridão do fundo do painel"
+    },
+    "qEk9AJ": {
+        "message": "Alterar o brilho de imagens mais escuras"
+    },
+    "qYVXqA": {
+        "message": "{mode} Opções"
+    },
+    "qfkgCx": {
+        "message": "O quão no futuro buscará por eventos. Defina 1 para mostrar somente os eventos de hoje, 2 para os eventos de amanhã, etc."
+    },
+    "qoEZRi": {
+        "message": "Coleção Unsplash"
+    },
+    "qzlLb3": {
+        "message": "Domingo"
+    },
+    "r8bU6m": {
+        "message": "Mostre a barra de favoritos no topo da página."
+    },
+    "rAuRqW": {
+        "message": "As traduções são fornecidas pela comunidade."
+    },
+    "rb3Zy8": {
+        "message": "Artigos de filtro"
+    },
+    "sFyAdH": {
+        "message": "Alternativamente: <import></import>"
+    },
+    "sIC2UV": {
+        "message": "Mostrar texto"
+    },
+    "sPl3nI": {
+        "message": "Título"
+    },
+    "sX3mXR": {
+        "message": "Esconder"
+    },
+    "sYvWWw": {
+        "message": "Opcional, URL para imagem (18px recomendado)"
+    },
+    "tSMpM0": {
+        "message": "Autorize o acesso aos sites frequentes e a criação dos seus ícones"
+    },
+    "tyq8NB": {
+        "message": "Clima"
+    },
+    "uRYRJh": {
+        "message": "Editar {type}"
+    },
+    "uv1bYR": {
+        "message": "terça-feira"
+    },
+    "uzT59w": {
+        "message": "Grade"
+    },
+    "v9UIPJ": {
+        "message": "Nascer do sol pôr do sol"
+    },
+    "vVnypL": {
+        "message": "Mostra uma citação aleatória, com categorias"
+    },
+    "vlumg9": {
+        "message": "Pesquisar widgets ..."
+    },
+    "wEQDC6": {
+        "message": "Editar"
+    },
+    "wETxDh": {
+        "message": "Calendários"
+    },
+    "wogY8a": {
+        "message": "Criar widget"
+    },
+    "wr0l0L": {
+        "message": "Uma imagem de um URL"
+    },
+    "wwQ6Va": {
+        "message": "Escolha Localização"
+    },
+    "x59fh0": {
+        "message": "Vôos espaciais"
+    },
+    "x7WADS": {
+        "message": "Grade de página inteira"
+    },
+    "xR87uK": {
+        "message": "O espaçamento entre widgets, em pixels."
+    },
+    "xtOPHp": {
+        "message": "Ligação de URL"
+    },
+    "xtl3ls": {
+        "message": "Ativar ícones personalizados"
+    },
+    "xvXMaZ": {
+        "message": "Cumprimenta-o"
+    },
+    "y1Z3or": {
+        "message": "Idioma"
+    },
+    "y8o0oA": {
+        "message": "Clima atual e previsão"
+    },
+    "yT43pK": {
+        "message": "Use ícones de sites (favicons)"
+    },
+    "yUJ5MA": {
+        "message": "Objetivos"
+    },
+    "yY7Rve": {
+        "message": "Esconder"
+    },
+    "yfgoZf": {
+        "message": "Discord E Matrix chats"
+    },
+    "ykNa5O": {
+        "message": "Agradecimentos a Font-Awesome para ícones, React for UI e WebPack para builds."
+    },
+    "yvWbz6": {
+        "message": "Próximo"
+    },
+    "ywSKRt": {
+        "message": "HTML personalizado"
+    },
+    "z7UTSa": {
+        "message": "Sobre o Renewed Tab"
+    },
+    "zEj0dg": {
+        "message": "Mostra o progresso ao longo do ano como uma barra de progresso"
+    },
+    "zKofmb": {
+        "message": "ID da coleção. Encontrado no URL, exemplo: 42576559"
+    },
+    "zPAzlS": {
+        "message": "Combine fontes numa única guia"
+    },
+    "zWgbGg": {
+        "message": "Hoje"
+    },
+    "zXtUcf": {
+        "message": "Não se preocupe, pode desbloquear mais tarde"
+    },
+    "zaQRTm": {
+        "message": "<b>Extremo</b> UV"
+    },
+    "zfsplE": {
+        "message": "Nunca mais mostrar Novamente"
+    },
+    "ziyAdj": {
+        "message": "Importar"
+    },
+    "zo4ZQa": {
+        "message": "Mostrar"
+    },
+    "zsdRww": {
+        "message": "Usado para botões e ligações primárias"
+    }
+}
