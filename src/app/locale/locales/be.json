@@ -726,7 +726,7 @@
         "description": "Import / export settings, reset"
     },
     "amHvKE": {
-        "message": "Увядзіце нататкі",
+        "message": "Увядзіце нататку",
         "description": "Notes widget: prompt"
     },
     "appDescription": {
@@ -738,7 +738,7 @@
         "description": "The name of the app"
     },
     "as6rZ1": {
-        "message": "Уключыць паведамленні аб збоях(з дапамогай Sentry)",
+        "message": "Уключыць справаздачы пра збоі (з дапамогай Sentry)",
         "description": "General settings: enable sentry"
     },
     "bQFsdR": {
@@ -1314,7 +1314,7 @@
         "message": "Наколькі скругленымі павінны быць вуглы большасці элементаў? Ад 0% да 300%"
     },
     "1hvL/q": {
-        "message": "Увайсці ў рэжым рэдагавання"
+        "message": "Уваход у рэжым рэдагавання"
     },
     "2YhLSH": {
         "message": "Віджэт «{name}»"
@@ -1335,7 +1335,7 @@
         "message": "Аўтарскае права на <a>Значкі надвор'я</a> належыць KDE на ўмовах ліцэнзіі GNU LGPL v3 або любой пазнейшай версіі"
     },
     "aO/LJo": {
-        "message": "Пошук праз лакацыю"
+        "message": "Пошук месцазнаходжання праз GPS"
     },
     "bhFF6J": {
         "message": "Кэш"
