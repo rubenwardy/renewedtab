@@ -1,6 +1,6 @@
 {
     "+GMx80": {
-        "message": "Aucune position trouvée",
+        "message": "Aucun lieu n'a été trouvé",
         "description": "Location form field: error"
     },
     "/dtDqf": {
@@ -1309,5 +1309,53 @@
     "ilIuh2": {
         "message": "Vous trouvez ceci utile ? Pensez à <a>faire un don</a> pour couvrir les frais de l'API de météo, et soutenir le développement futur de Renewed Tab.",
         "description": "Weather widget: asking for donations"
+    },
+    "1Ms/OE": {
+        "message": "À quel point les angles de la plupart des éléments devraient-ils être arrondis ? De 0% à 300%"
+    },
+    "1hvL/q": {
+        "message": "Passer au mode édition"
+    },
+    "2YhLSH": {
+        "message": "{name} Gadget"
+    },
+    "3lHnZE": {
+        "message": "Effacer les caches et recharger"
+    },
+    "4fHiNl": {
+        "message": "Doublon"
+    },
+    "6mQdhI": {
+        "message": "À quel point les angles des fenêtres contenant les gadgets devrait-elles être arrondies ? Entre 0% et 1000%"
+    },
+    "H/r5m6": {
+        "message": "Déplacer vers le bas"
+    },
+    "LaT9nn": {
+        "message": "<a>Icônes météo</a> KDE pour les droits d'auteur et sous licence GNU LGPL v3 ou plus récente"
+    },
+    "aO/LJo": {
+        "message": "Rechercher au moyen de la position GPS"
+    },
+    "bhFF6J": {
+        "message": "Cache"
+    },
+    "iyOvAb": {
+        "message": "Rayon de la bordure de la fenêtre"
+    },
+    "nF+GWk": {
+        "message": "JavaScript n'est pas disponible pour des raisons de sécurité. Utilisez plutôt le gadget iFrame"
+    },
+    "nHcPTf": {
+        "message": "Avertissement : Les liens importés depuis des sources externes peuvent contenir des identifiants d'affiliation. Afin de garantir le respect de votre vie privée, vous devriez les remplacer par des liens directs."
+    },
+    "rbrahO": {
+        "message": "Fermer"
+    },
+    "u9iVp5": {
+        "message": "Rayon de la bordure"
+    },
+    "wmFdws": {
+        "message": "Déplacer vers le haut"
     }
 }
