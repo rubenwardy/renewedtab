@@ -69,7 +69,7 @@
         "message": "設定"
     },
     "G6WG/N": {
-        "message": "佔位符",
+        "message": "隱形小工具",
         "description": "Invisible Widget"
     },
     "GSox4d": {
@@ -92,7 +92,7 @@
         "description": "Links widget, form field hint (Link URL)"
     },
     "I48yxw": {
-        "message": "私隱",
+        "message": "隱私",
         "description": "General settings: privacy"
     },
     "J91edI": {
@@ -172,7 +172,7 @@
         "description": "Age widget text"
     },
     "languageName": {
-        "message": "漢語",
+        "message": "正體中文",
         "description": "The name of the current language, to be used in the settings dialog"
     },
     "GcxpZV": {
@@ -418,7 +418,7 @@
         "description": "Widget grid: form label for grid columns"
     },
     "KsX2fE": {
-        "message": "<b>{name}</b> 在 維度 {latitude} 經度 {longitude}"
+        "message": "<b>{name}</b> 在 緯度 {latitude} 經度 {longitude}"
     },
     "KyDwm3": {
         "message": "顯示最常造訪的網站",
@@ -480,7 +480,7 @@
         "description": "List box style (ie: list/bookmark widgets)"
     },
     "BfX7n6": {
-        "message": "注意：在Firefox上可能會導致漸層背景上出現線條之類的顏色錯誤。這不是我們能夠解決的。",
+        "message": "注意：在 Firefox 上可能會導致漸層背景上出現線條之類的顏色錯誤。這不是我們能夠解決的。",
         "description": "Gradient background disclaimer on Firefox"
     },
     "BiPNnl": {
@@ -1017,7 +1017,7 @@
         "message": "別擔心，您可以稍後解鎖"
     },
     "zo4ZQa": {
-        "message": "匯入",
+        "message": "顯示",
         "description": "Feed widget: filter allow checkbox label"
     },
     "zsdRww": {
@@ -1305,5 +1305,59 @@
     },
     "DVGnNH": {
         "message": "您可以藉由將游標懸停於左下角的製作人員名單上，以點讚或選擇不再顯示當前的背景圖像。"
+    },
+    "u9iVp5": {
+        "message": "圓角尺寸"
+    },
+    "wmFdws": {
+        "message": "往上移動"
+    },
+    "1Ms/OE": {
+        "message": "大多數元件的圓角尺寸大小？從 0% 到 300%"
+    },
+    "1hvL/q": {
+        "message": "進入編輯模式"
+    },
+    "2YhLSH": {
+        "message": "小工具 {name}"
+    },
+    "3lHnZE": {
+        "message": "清除暫存並重新載入"
+    },
+    "4fHiNl": {
+        "message": "複製"
+    },
+    "6mQdhI": {
+        "message": "面版 ( 例如小工具 ) 圓角尺寸大小？從 0% 到 1000%"
+    },
+    "H/r5m6": {
+        "message": "往下移動"
+    },
+    "LaT9nn": {
+        "message": "<a>天氣圖示</a>版權屬 KDE 所有，採用 GNU LGPL v3 或更新版本授權"
+    },
+    "aO/LJo": {
+        "message": "使用 GPS 位置進行搜尋"
+    },
+    "bhFF6J": {
+        "message": "暫存"
+    },
+    "ilIuh2": {
+        "message": "是不是很實用呢？考慮 <a> 捐贈</a> 以支付天氣 API 的費用，並支持 Renewed Tab 未來的發展。"
+    },
+    "iyOvAb": {
+        "message": "面版圓角尺寸"
+    },
+    "nF+GWk": {
+        "message": "基於安全理由，不支援 JavaScript。請改用 iFrame 小工具"
+    },
+    "nHcPTf": {
+        "message": "警告： 從外部來源匯入的連結可能包含聯盟行銷連結。為確保隱私，您應以直接連結取代這些連結。"
+    },
+    "q3GXOR": {
+        "message": "<b>此小工具屬於實驗性</b>：可能會出現問題，而且可能會導致頁面凍結。"
+    },
+    "rbrahO": {
+        "message": "關閉"
     }
 }
