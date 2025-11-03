@@ -359,7 +359,7 @@
         "description": "Form field label"
     },
     "VkW6D1": {
-        "message": "center, top, or bottom",
+        "message": "centro, arriba, o abajo",
         "description": "Backgroud settings: form field hint (Position)"
     },
     "WF5DKA": {
@@ -1287,5 +1287,74 @@
     },
     "lQIN1l": {
         "message": "¿Te está gustando Renewed Tab? ¡Danos un review!"
+    },
+    "1Ms/OE": {
+        "message": "¿Cómo de curvados tienen que ser los bordes? Del 0 al 300%"
+    },
+    "1hvL/q": {
+        "message": "Entrar en el modo edición"
+    },
+    "2YhLSH": {
+        "message": "Widget {name}"
+    },
+    "3lHnZE": {
+        "message": "Limpiar el caché y actualizar"
+    },
+    "4fHiNl": {
+        "message": "Duplicar"
+    },
+    "6mQdhI": {
+        "message": "¿Cómo de curvados tienen que ser los bordes de los paneles? De 0 a 1000%"
+    },
+    "DVGnNH": {
+        "message": "Puedes pasar por los créditos en la parte inferior izquierda para darle \"me gusta\" o saltar la imagen de fondo."
+    },
+    "H/r5m6": {
+        "message": "Bajar"
+    },
+    "aO/LJo": {
+        "message": "Buscar usando la localización GPS"
+    },
+    "bhFF6J": {
+        "message": "Caché"
+    },
+    "gS3mti": {
+        "message": "Estilo de la caja de lista"
+    },
+    "ilIuh2": {
+        "message": "¿Lo encuentras útil? Considera <a>donar</a> para cubrir los costes del API del tiempo, y para apoyar el desarrollo futuro de Renewed Tab."
+    },
+    "nF+GWk": {
+        "message": "JavaScript no está soportado por cuestiones de seguridad. Use el widget iFrame en su lugar"
+    },
+    "LaT9nn": {
+        "message": "Los <a>iconos del tiempo</a> son propiedad de KDE bajo licencia GNU LGPL v3 o posterior"
+    },
+    "dOlhtQ": {
+        "message": "Puedes ver la barra de marcadores en la pestaña nueva haciendo click derecho junto a la barra de direcciones > Barra de Marcadores > Mostrar solo en pestaña nueva <a>Ver más</a>"
+    },
+    "iyOvAb": {
+        "message": "Radio del borde del panel"
+    },
+    "nHcPTf": {
+        "message": "Precaución: Enlaces importados de fuentes externas podrían contener enlaces asociados. Para asegurar la privacidad, deberías reemplazarlos por enlaces directos."
+    },
+    "q3GXOR": {
+        "message": "<b>Este widget es experimental</b>: Podría haber problemas con los eventos que aparecen, y podría causar que la página se detenga."
+    },
+    "rbrahO": {
+        "message": "Cerrar"
+    },
+    "tSMpM0": {
+        "message": "Otorgar permiso para acceder a sitios principales y obtener íconos de las webs"
+    },
+    "u9iVp5": {
+        "message": "Radio del borde"
+    },
+    "wmFdws": {
+        "message": "Subir"
+    },
+    "zXtUcf": {
+        "message": "No te preocupes, puedes desbloquearlo luego"
     }
 }
