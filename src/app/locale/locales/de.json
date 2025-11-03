@@ -1086,5 +1086,59 @@
     "+g7L/A": {
         "message": "Zeigt Atom, JSONFeed und RSS Feeds an - nützlich um Nachrichten, Webseiten oder Blogs zu folgen",
         "description": "Feed widget description"
+    },
+    "/Mx09O": {
+        "message": "Experimental. Das funktioniert nicht mit allen Feed-Quellen. Grund ist wegen fehlender Information. Bilder könnten gross sein, was die Ladezeit verlängert."
+    },
+    "1Ms/OE": {
+        "message": "Wie gerundet sollten die Ecken von den meisten dingen sein? Von 0% bis 300%"
+    },
+    "1hvL/q": {
+        "message": "Starte editier modus"
+    },
+    "2s4stS": {
+        "message": "Willkommen zu <a> Renewed Tab</a>"
+    },
+    "/aA+Xf": {
+        "message": "Zeige Bilder"
+    },
+    "20tqYI": {
+        "message": "URL zu einem iCal (.ics) file für einen Kalender"
+    },
+    "2YhLSH": {
+        "message": "{name} Widget"
+    },
+    "3lHnZE": {
+        "message": "Cache leeren und neu laden"
+    },
+    "4fHiNl": {
+        "message": "Duplizieren"
+    },
+    "5MMUNJ": {
+        "message": "Das ist<b> experimentell und könnte schwierig zum Benutzen sein</b>."
+    },
+    "5mfAB9": {
+        "message": "URL zu Atom, JSON Feed, oder RSS-Feed"
+    },
+    "6mQdhI": {
+        "message": "Wie gerundet sollten die ecken des Panels (eg: widgets) sein? Von 0% bis 100%"
+    },
+    "7zYGs9": {
+        "message": "Kalender Zeitplan"
+    },
+    "8xPAKF": {
+        "message": "Von 0-100%, position von Farbe und Gradient"
+    },
+    "ATbgo4": {
+        "message": "Radial"
+    },
+    "B3NCWb": {
+        "message": "Farben"
+    },
+    "B4LnaC": {
+        "message": "Zeige bevorstehende events eine iCal (.ics) URL (So wie Google Calendar)"
+    },
+    "BfX7n6": {
+        "message": "Hinweis: Firefox kann Artefakte wie Linien auf Farbverlaufshintergründen anzeigen. Dies können wir nicht beheben."
     }
 }
