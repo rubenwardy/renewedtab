@@ -4,7 +4,7 @@
         "description": "SpaceFlights widget: today and time"
     },
     "+g7L/A": {
-        "message": "Паказвае навіны ад Atom, JSONFeed і RSS — карысна для сачэння за навінамі, вэб-сайтамі і блогамі",
+        "message": "Паказвае каналы Atom, JSONFeed і RSS — карысна для сачэння за навінамі, вэб-сайтамі і блогамі",
         "description": "Feed widget description"
     },
     "+sI+Oh": {
@@ -16,7 +16,7 @@
         "description": "Widget grid: form label 1 for grid full width"
     },
     "/aA+Xf": {
-        "message": "Паказваць відарасы",
+        "message": "Паказваць відарысы",
         "description": "Feed widget: form field label"
     },
     "/dtDqf": {
@@ -24,7 +24,7 @@
         "description": "Notes Widget"
     },
     "0feb3b": {
-        "message": "Неабавязкова, ператварае відарыс у спасылку",
+        "message": "Неабавязкова, робіць відарыс спасылкай",
         "description": "Image widget: Form field hint (Link)"
     },
     "0hxZWu": {
@@ -32,7 +32,7 @@
         "description": "Form field label"
     },
     "0l+aD2": {
-        "message": "Штодзённыя мэты і натхненныя цытаты",
+        "message": "Штодзённыя мэты і натхняльныя цытаты",
         "description": "Preset: focus description"
     },
     "1s5GYl": {
@@ -66,11 +66,11 @@
         "description": "Feed widget filter allow label"
     },
     "4dzBeG": {
-        "message": "Ад",
+        "message": "З",
         "description": "Currencies widget: form field label"
     },
     "4syC1B": {
-        "message": "Дапамога і прапановы"
+        "message": "Даведка і прапановы"
     },
     "5mVcg9": {
         "message": "Уласны CSS",
@@ -101,7 +101,7 @@
         "description": "CalendarSchedule Widget"
     },
     "8xPAKF": {
-        "message": "Ад 0% да 100%, пазіцыя колера на градыенце",
+        "message": "Ад 0% да 100%, пазіцыя колеру на градыенце",
         "description": "Form field hint (Stop)"
     },
     "8xVVb5": {
@@ -120,35 +120,35 @@
         "description": "A search has returned no results here (note: there may be multiple places being searched)"
     },
     "AgU+/t": {
-        "message": "Спіс будучых запускаў ракет па дадзеным RocketLaunch.Live",
+        "message": "Спіс будучых запускаў ракет паводле RocketLaunch.Live",
         "description": "SpaceFlights widget description"
     },
     "AuSjzq": {
-        "message": "У бягучы момант: паказваць рызыку УФ",
+        "message": "Бягучае надвор'е: паказваць рызыку УФ",
         "description": "Weather widget: form field label"
     },
     "+GMx80": {
-        "message": "Не знойдзена месцазнаходжанняў",
+        "message": "Месцазнаходжанне не знойдзена",
         "description": "Location form field: error"
     },
     "+PNw8j": {
-        "message": "Нават калі вы схавайце якую-небудзь інфармацыю, вы часта можаце ўбачыць яе, калі наводзіце курсор на дні і гадзіны",
+        "message": "Нават калі схаваць нейкія звесткі, часта іх можна ўбачыць, калі навесці ўказальнік мышы на дні або гадзіны",
         "description": "Weather widget: form field hint (Display Options)"
     },
     "+oSH/F": {
-        "message": "Паказвае ваш узрост з занадтай дакладнасцю",
+        "message": "Паказвае ваш узрост з надзвычайна вялікай дакладнасцю",
         "description": "Age widget description"
     },
     "/4k9ry": {
-        "message": "<b>Вельмі высокае</b> УФ выпраменьванне",
+        "message": "УФ-індэкс <b>Вельмі высокі</b>",
         "description": "Very High UV risk"
     },
     "/Mx09O": {
-        "message": "Эксперэментальнае. Працуе не са ўсімі крыніцамі па прычыне адсутнасці дадзеных аб відарысах. Яны таксама могуць быць дужа вялікімі і доўга загружацца.",
+        "message": "Эксперыментальнае. Не працуе з крыніцамі, у якіх няма звестак пра відарысы. Калі відарысы вельмі вялікія, загрузка займае шмат часу.",
         "description": "Feed widget: form field hint (Show Images)"
     },
     "0PsF7Z": {
-        "message": "Вы ўпэўнены, што хочаце назаўсёды выдаліць гэты віджэт?",
+        "message": "Сапраўды незваротна выдаліць гэты віджэт?",
         "description": "Delete widget modal message"
     },
     "20tqYI": {
@@ -160,11 +160,11 @@
         "description": "Greeting widget: greeting, from 4pm to 9pm"
     },
     "2s4stS": {
-        "message": "Сардэчна запрашаем у <a>Renewed Tab</a>",
+        "message": "Вітаем у <a>Renewed Tab</a>",
         "description": "Onboarding modal: title"
     },
     "2vJWTd": {
-        "message": "Фота",
+        "message": "Фатаграфія",
         "description": "Background credits title placeholder"
     },
     "3Nw7b0": {
@@ -176,14 +176,14 @@
         "description": "Search widget description"
     },
     "3ZfhWo": {
-        "message": "Для доступу к {host} патрэбны дазвол. Каб даць яго, адрэдагуйце гэты віджэт."
+        "message": "Патрабуецца дазвол для доступу да {host}. Каб даць яго, адрэдагуйце гэты віджэт."
     },
     "3vh5vd": {
         "message": "Нічога не паказвае, патрэбны для наладжвання макета",
         "description": "Invisible widget description"
     },
     "47FYwb": {
-        "message": "Адмяніць"
+        "message": "Скасаваць"
     },
     "4F+2K3": {
         "message": "Выпадковы відарыс з калекцыі Unsplash",
@@ -198,15 +198,15 @@
         "description": "Backgroud settings: form field label (how often background images change)"
     },
     "5640CU": {
-        "message": "У бягучы момант: паказваць ападкі",
+        "message": "Бягучае надвор'е: паказваць ападкі",
         "description": "Weather widget: form field label"
     },
     "5DCxT+": {
-        "message": "Адзінкі тэмпературы",
+        "message": "Адзінкі вымярэння тэмпературы",
         "description": "Weather widget: form field label"
     },
     "5MMUNJ": {
-        "message": "Гэта <b>эксперэментальна і можа быць цяжка карыстацца</b>.",
+        "message": "Гэта <b>эксперыментальная функцыя, якой можа быць складана карыстацца</b>.",
         "description": "Widget grid: form label 4 for grid full width"
     },
     "6wEkCM": {
@@ -214,26 +214,26 @@
         "description": "General settings: bookmarks bar"
     },
     "8HmiSe": {
-        "message": "Калі ласка, абярыце крыніцу",
+        "message": "Укажыце крыніцу",
         "description": "Feed widget: no sources error message"
     },
     "8J0Bhj": {
-        "message": "Сардэчна запрашаем у <a>Renewed Tab</a>: дапасавальную хатнюю старонку з віджэтамі і прыгожымі шпалерамі."
+        "message": "Вітаем у <a>Renewed Tab</a>: уласная новая ўкладка з віджэтамі і прыгожымі фонамі."
     },
     "Abtyj/": {
-        "message": "Памер відарыса больш за 2МБ ({dataSizeMB}МБ). Для меншага часу загрузкі, абярыце меншы відарыс.",
+        "message": "Памер відарыса большы за 2 МБ ({dataSizeMB} МБ). Каб паскорыць загрузку, варта выкарыстоўваць меншы відарыс.",
         "description": "Image upload error message"
     },
     "L6nTur": {
-        "message": "Абярыце пачатковы макет",
+        "message": "Выберыце пачатковы макет",
         "description": "Onboarding: presets title"
     },
     "Ay1sfO": {
-        "message": "Кіруе колькасцю нядаўніх відарысаў, каб абраць адзін з іх. Калі выстаўлена на 1, будзе паказвацца самы новы відарыс",
+        "message": "Кіруе колькасцю нядаўніх відарысаў для выпадковага выбару. Калі значэнне 1, заўсёды будзе паказвацца самы апошні відарыс",
         "description": "Feed background mode: form field hint (Limit images)"
     },
     "Ddd3ZY": {
-        "message": "у",
+        "message": "У",
         "description": "Currencies widget: form field label"
     },
     "B0kbsm": {
@@ -241,7 +241,7 @@
         "description": "Unsplash background mode"
     },
     "B1pyj1": {
-        "message": "У бягучы момант: паказваць як адчуваецца",
+        "message": "Бягучае надвор'е: паказваць як адчуваецца",
         "description": "Weather widget: form field label"
     },
     "B3NCWb": {
@@ -253,14 +253,14 @@
         "description": "CalendarSchedule widget: description"
     },
     "BJYZgx": {
-        "message": "Выкарыстоўваць маркёр руху (<move></move>) ды маркёр змены памеру (<resize></resize>)."
+        "message": "Выкарыстоўвайце ўказальнікі (<move></move>) для перамяшчэння і (<resize></resize>) для змянення памеру."
     },
     "BfX7n6": {
-        "message": "Увага: Firefox можа паказваць артэфакты, напрыклад лініі на градыентавых фонах. Мы не можам гэта выправіць.",
+        "message": "Звярніце ўвагу. Firefox можа паказваць артэфакты, напрыклад лініі на градыентных фонах. Мы не можам гэта выправіць.",
         "description": "Gradient background disclaimer on Firefox"
     },
     "BiPNnl": {
-        "message": "Адзінка скорасці ветру",
+        "message": "Адзінкі вымярэння хуткасці ветру",
         "description": "Weather widget: form field label"
     },
     "Bl74xq": {
@@ -272,7 +272,7 @@
         "description": "Links widget description"
     },
     "BnmONl": {
-        "message": "У бягучы момант: паказваць усход / захад сонца",
+        "message": "Бягучае надвор'е: паказваць усход і захад сонца",
         "description": "Weather widget: form field label"
     },
     "C7WJrL": {
@@ -296,17 +296,17 @@
         "description": "Preset: grid description"
     },
     "CshCZY": {
-        "message": "Рэжым фона"
+        "message": "Тып фону"
     },
     "D0+wcK": {
-        "message": "Адлюстроўвае выяву, па жаданні робячы яе спасылкаю",
+        "message": "Паказвае відарыс, які таксама можа працаваць як спасылка",
         "description": "Image widget description"
     },
     "D3idYv": {
         "message": "Налады"
     },
     "Dk7Khi": {
-        "message": "Фарэнгейт",
+        "message": "Градусы Фарэнгейта",
         "description": "Weather widget: Fahrenheit unit"
     },
     "EpPEVJ": {
@@ -330,7 +330,7 @@
         "description": "Invisible Widget"
     },
     "GSox4d": {
-        "message": "Назва любога шрыфта, усталяванага на вашым камп'ютары",
+        "message": "Назва любога шрыфту, усталяванага на вашым камп'ютары",
         "description": "Theme settings: form field hint (Font)"
     },
     "GWRKVT": {
@@ -338,15 +338,15 @@
         "description": "Form field label"
     },
     "GXkv/F": {
-        "message": "Калі ласка, абярыце месцазнаходжанне",
+        "message": "Выберыце месцазнаходжанне",
         "description": "Location form field: prompt"
     },
     "GcxpZV": {
-        "message": "Cтыль даты",
+        "message": "Стыль даты",
         "description": "Clock widget: date style form field label"
     },
     "Go7At+": {
-        "message": "СУБ",
+        "message": "СБ",
         "description": "Short weekday name (Saturday)"
     },
     "GpfSpy": {
@@ -357,11 +357,11 @@
         "message": "Патрэбна версія пашырэння браўзера"
     },
     "HEvlTB": {
-        "message": "Налады дысплэя",
+        "message": "Налады паказу",
         "description": "Weather widget: display subform title"
     },
     "HPLtg4": {
-        "message": "Невядомая валюта ''{currency}''",
+        "message": "Невядомая валюта «{currency}»",
         "description": "Currencies widget: error"
     },
     "I48yxw": {
@@ -408,7 +408,7 @@
         "description": "Backgroud mode description"
     },
     "KsX2fE": {
-        "message": "<b>{name}</b> у(ў) {latitude} на {longitude}"
+        "message": "<b>{name}</b> {latitude}, {longitude}"
     },
     "KyDwm3": {
         "message": "Паказвае сайты, якія вы адкрывайце найбольш часта",
@@ -419,7 +419,7 @@
         "description": "Form field label"
     },
     "DVGnNH": {
-        "message": "Вы можаце навесці курсор на падзякі ў левым ніжнім кутку экрана, каб упадабаць ці прапусціць фота."
+        "message": "Вы можаце навесці ўказальнік мышы на імя аўтара ў левым ніжнім куце, каб упадабаць або прапусціць фон."
     },
     "E4nLwR": {
         "message": "Штодзень",
@@ -430,31 +430,31 @@
         "description": "Chrome-only, a bar for bookmarks at the top"
     },
     "H00a0q": {
-        "message": "Пакінце пустым, каб зрабіць загалоўкам",
+        "message": "Пакіньце пустым, каб зрабіць загалоўкам",
         "description": "Links widget, form field hint (Link URL)"
     },
     "HksGis": {
-        "message": "У бягучы момант: паказваць вецер",
+        "message": "Бягучае надвор'е: паказваць вецер",
         "description": "Weather widget: form field label"
     },
     "JN/uvd": {
-        "message": "<b>Умеранае</b> УФ-выпраменьванне",
+        "message": "УФ-індэкс <b>Умераны</b>",
         "description": "Moderate UV risk"
     },
     "KdIFGg": {
-        "message": "Адсутнічае '{query}' у URL пошука. Як: https://google.com/search/?q='{query}'",
+        "message": "У пошукавым URL-адрасе адсутнічае '{query}'. Прыклад: https://google.com/search/?q='{query}'",
         "description": "Search widget: error, missing query variable"
     },
     "KhM0zv": {
-        "message": "Цытаты атрымліваюцца з вонкавых крыніц і не правяраюцца Renewed Tab.",
+        "message": "Цытаты атрымліваюцца са знешніх крыніц і не правяраюцца Renewed Tab.",
         "description": "Daily Goal widget: edit modal hint"
     },
     "LfHpBk": {
-        "message": "Маштаб шрыфта",
+        "message": "Маштабаванне шрыфту",
         "description": "Theme settings: form field label"
     },
     "Lnvfz8": {
-        "message": "Не атрымалася загрузіць {source}: {error}",
+        "message": "Не ўдалося загрузіць {source}: {error}",
         "description": "Feed error message"
     },
     "Lxc1x4": {
@@ -466,7 +466,7 @@
         "description": "Weather widget: wind speed tooltip"
     },
     "M6lR5V": {
-        "message": "Колькасць слупкоў на поле віджэтаў. Можна памясціць {max} слупкоў на бягучай шырыні акна ({res}пікселяў).",
+        "message": "Колькасць слупкоў на полі віджэтаў. З бягучай шырынёй акна ({res} пікселяў) можна размясціць да {max} слупкоў.",
         "description": "Widget grid: form hint for grid columns"
     },
     "MN3prI": {
@@ -478,10 +478,10 @@
         "description": "Days of the week, separated by commas"
     },
     "MiIvsP": {
-        "message": "Вы можаце дадаваць, перамяшчаць, змяняць памер і наладжваць віджэты на поле, карыстаючыся простымі інструментамі кантролю."
+        "message": "Вы можаце дадаваць, перамяшчаць, змяняць памер і наладжваць віджэты на сетцы праз інтуітыўны інтэрфейс."
     },
     "Mihrhf": {
-        "message": "Адсутнічае",
+        "message": "Не паказваецца",
         "description": "Clock widget: date style type, not shown"
     },
     "MtrTNy": {
@@ -499,15 +499,15 @@
         "description": "Review request, review button"
     },
     "O8mt7g": {
-        "message": "Лічбы ({example})",
+        "message": "Лічбавы ({example})",
         "description": "Clock widget: date style type"
     },
     "OBJta4": {
-        "message": "Вы можаце змяніць назву, націснуўшы на яе на віджэце",
+        "message": "Вы можаце змяніць імя на віджэце, калі націсніце на яго",
         "description": "Greeting widget: edit modal hint"
     },
     "OPzczE": {
-        "message": "Скарочана ({example})",
+        "message": "Скарочаны ({example})",
         "description": "Clock widget: date style type"
     },
     "OQHLB5": {
@@ -515,7 +515,7 @@
         "description": "Form field label"
     },
     "PBMGxw": {
-        "message": "Абмежаваць відарысы",
+        "message": "Абмежаванне колькасці відарысаў",
         "description": "Feed background mode: form field label"
     },
     "PHwOzi": {
@@ -532,7 +532,7 @@
         "message": "Вы можаце <a>паўдзельнічаць у перакладзе, або дадаць сваю мову</a>."
     },
     "QV6YlB": {
-        "message": "Валютны курс",
+        "message": "Курсы валют",
         "description": "Currencies widget: form field label"
     },
     "QcExtH": {
@@ -547,22 +547,22 @@
         "message": "Адсутнічае спасылка на стужку."
     },
     "R1jLoC": {
-        "message": "Вертыкальная",
+        "message": "Вертыкальны",
         "description": "List box style (ie: list/bookmark widgets)"
     },
     "R4cyIr": {
-        "message": "У бягучы момант: паказваць вільготнасць",
+        "message": "Бягучае надвор'е: паказваць вільготнасць",
         "description": "Weather widget: form field label"
     },
     "RCe+DS": {
-        "message": "Віджэты Drag and Drop"
+        "message": "Перацягвайце віджэты"
     },
     "RZqASt": {
         "message": "Адзіны колер",
         "description": "Backgroud mode description"
     },
     "RhyKzC": {
-        "message": "Дагляданы",
+        "message": "Адборныя",
         "description": "Curated background mode"
     },
     "S3njcM": {
@@ -578,7 +578,7 @@
         "description": "Bookmarks Widget"
     },
     "SENRqu": {
-        "message": "Дапамога"
+        "message": "Даведка"
     },
     "SG4UJU": {
         "message": "Кнопка",
@@ -589,31 +589,31 @@
         "description": "Form field label"
     },
     "T/wBPw": {
-        "message": "Прыбраць {type}"
+        "message": "Выдаленне «{type}»"
     },
     "T4VxQN": {
         "message": "Загрузка…"
     },
     "TDaF6J": {
-        "message": "Скасаваць"
+        "message": "Адхіліць"
     },
     "TUnCKb": {
         "message": "Тэкст",
         "description": "Text Widget"
     },
     "TkgCJ9": {
-        "message": "Вы можаце атрымаць дапамогу, або прапанаваць функцыю, скарыстаўшыся спасылкай ніжэй."
+        "message": "Каб атрымаць даведку або прапанаваць функцыю, можна скарыстацца спасылкай ніжэй."
     },
     "U2Qnh7": {
         "message": "Відарыс",
         "description": "Image background mode"
     },
     "Upkn1Q": {
-        "message": "<b>Высокае</b> УФ выпраменьванне",
+        "message": "УФ-індэкс <b>Высокі</b>",
         "description": "High UV risk"
     },
     "V1EIOe": {
-        "message": "Адлюстроўвае вэб-старонку",
+        "message": "Паказвае вэб-старонку",
         "description": "IFrame widget description"
     },
     "VPDVTF": {
@@ -621,7 +621,7 @@
         "description": "Shown when array table form field has no rows"
     },
     "Vckd1G": {
-        "message": "ПАН",
+        "message": "ПН",
         "description": "Short weekday name (Monday)"
     },
     "VjDvbL": {
@@ -641,10 +641,10 @@
         "description": "Color background mode"
     },
     "WZjKFf": {
-        "message": "Увага: гэта можа ўтрымліваць персанальныя дадзеныя, якія былі ўведзены ў налады віджэтаў."
+        "message": "Увага! Можа ўтрымліваць персанальныя даныя, якія былі ўведзены ў наладах віджэтаў."
     },
     "Wi0G88": {
-        "message": "Пра нас і дапамога",
+        "message": "Пра нас і даведка",
         "description": "Settings tab"
     },
     "X18x9m": {
@@ -656,7 +656,7 @@
         "description": "Daily Goal prompt"
     },
     "XYIyWM": {
-        "message": "Вы можаце павялічыць \"Слупкі сетцы\" да {cols}, каб выкарыстоўваць месца найлепшым чынам.",
+        "message": "Каб выкарыстоўваць месца найлепшым чынам, вы павінны павялічыць «Слупкі сеткі» прынамсі да {cols}.",
         "description": "Widget grid: form label 2 for grid full width"
     },
     "XrQEPN": {
@@ -672,15 +672,15 @@
         "description": "Background expiry dropdown"
     },
     "YS3jnS": {
-        "message": "ПЯТ",
+        "message": "ПТ",
         "description": "Short weekday name (Friday)"
     },
     "YS5zRT": {
-        "message": "Шукаць у {name}",
+        "message": "Пошук у {name}",
         "description": "Search widget: searchbox placeholder text, when search engine name is known"
     },
     "YYoBQn": {
-        "message": "Радыўс размытасці на панэлі",
+        "message": "Радыус размыцця панэлі",
         "description": "Theme settings: form field label"
     },
     "YuNOET": {
@@ -707,7 +707,7 @@
         "description": "Button widget: form field hint (Opacity)"
     },
     "a09vzt": {
-        "message": "Запыт HTTP няўдалы, {code} {msg}."
+        "message": "Няўдалы HTTP-запыт, {code} {msg}."
     },
     "aXrD3p": {
         "message": "Валюты",
@@ -718,7 +718,7 @@
         "description": "Todo List widget: prompt"
     },
     "abwneZ": {
-        "message": "Метры ў секунду (м/с)",
+        "message": "Метры за секунду (м/с)",
         "description": "Weather widget: Speed unit"
     },
     "adRrk3": {
@@ -726,7 +726,7 @@
         "description": "Import / export settings, reset"
     },
     "amHvKE": {
-        "message": "Уводзьце нататкі тут",
+        "message": "Увядзіце нататкі",
         "description": "Notes widget: prompt"
     },
     "appDescription": {
@@ -759,7 +759,7 @@
         "description": "Bookmarks widget description"
     },
     "d7dHsn": {
-        "message": "Кожные 15 хвілін",
+        "message": "Кожныя 15 хвілін",
         "description": "Background expiry dropdown"
     },
     "dGu5JQ": {
@@ -767,26 +767,26 @@
         "description": "Feed Widget"
     },
     "dIwFS5": {
-        "message": "Абярыце відарыс",
+        "message": "Выберыце відарыс",
         "description": "Form field label"
     },
     "Oa5RYo": {
-        "message": "<b>У віджэтаў таксама ёсць налады</b>, навядзіцеся на віджэт і націсніце на аловак, каб дапасаваць яго.",
+        "message": "<b>У віджэтаў таксама ёсць налады</b>. Каб змяніць іх, навядзіце ўказальнік мышы на віджэт і націсніце на аловак.",
         "description": "General settings: help message"
     },
     "QBZZBG": {
-        "message": "Майце на ўвазе: гэта эксперыментальная функцыя, селектары CSS могуць пачаць працаваць некарэктна ў будучых выпусках.",
+        "message": "Звярніце ўвагу. Гэта эксперыментальная функцыя, у будучых выпусках селектары CSS могуць пачаць працаваць няправільна.",
         "description": "Theme settings: form field hint (Custom CSS)"
     },
     "RVGNBh": {
         "message": "Калі вы скончыце, націсніце на <button></button>, каб замацаваць віджэты."
     },
     "TIEfOV": {
-        "message": "Артыкул будзе паказаны, калі ён адпавядае мінімум адын фільтар \"Паказаць\"(калі ёсць такія), і ніводнага фільтра \"Схаваць\".",
+        "message": "Артыкул будзе паказаны, калі ён адпавядае прынамсі аднаму фільтру «Паказаць» (калі такі ёсць), і не адпавядае фільтру «Схаваць».",
         "description": "Feed widget: form field hint (Filters)"
     },
     "XV4mnl": {
-        "message": "Гледзячы на вашы налады, можа быць абрана адно і тое ж фота",
+        "message": "У залежнасці ад вашых налад, можа быць выбрана тая ж фатаграфія",
         "description": "Background settings: form field hint (Show a new photo)"
     },
     "Z79HMN": {
@@ -794,14 +794,14 @@
         "description": "Backgroud mode description"
     },
     "a0L2KE": {
-        "message": "Паспрабуйце дадаць назву краіны, альбо яе код."
+        "message": "Паспрабуйце дадаць назву краіны або яе код."
     },
     "W3zKGr": {
-        "message": "Кіламетры ў гадзіну (км/г)",
+        "message": "Кіламетры за гадзіну (км/гадз)",
         "description": "Weather widget: Speed unit"
     },
     "ao/AFQ": {
-        "message": "Напамінае вам аб вашай мэце на дзень",
+        "message": "Напамінае пра вашу мэту на дзень",
         "description": "Daily Goal widget description"
     },
     "b2Rs2F": {
@@ -809,10 +809,10 @@
         "description": "Backgroud settings: form field label (Brightness: Light)"
     },
     "c7zm0j": {
-        "message": "Памылка пра загрузке стужкі. Упэўніцеся, што гэта стужка RSS, JSONFeed, або Atom."
+        "message": "Памылка загрузкі стужкі. Пераканайцеся, што гэта стужка RSS, JSONFeed або Atom."
     },
     "ckvzIb": {
-        "message": "<b>Нізкае</b> УФ выпраменьванне",
+        "message": "УФ-індэкс <b>Нізкі</b>",
         "description": "Low UV risk"
     },
     "dOlhtQ": {
@@ -820,11 +820,11 @@
         "description": "General settings: Help for Firefox bookmarks bar"
     },
     "eKCjBm": {
-        "message": "Ападкі (%)",
+        "message": "Імавернасць ападкаў (%)",
         "description": "Weather widget: change of precipitation (rain, etc)"
     },
     "eXB4qM": {
-        "message": "СЕР",
+        "message": "СР",
         "description": "Short weekday name (Wednesday)"
     },
     "ekIjqh": {
@@ -842,11 +842,11 @@
         "description": "Theme settings: form field label"
     },
     "frEJEM": {
-        "message": "ЧАЦ",
+        "message": "ЧЦ",
         "description": "Short weekday name (Thursday)"
     },
     "fz43UJ": {
-        "message": "Ахвярваць",
+        "message": "Ахвяраваць",
         "description": "Renewed Tab donation link"
     },
     "gEYo49": {
@@ -854,19 +854,19 @@
         "description": "Backgroud settings: form field label"
     },
     "gHzZEt": {
-        "message": "Толькі гадзіннік ды пошукавы радок",
+        "message": "Толькі гадзіннік і радок пошуку",
         "description": "Preset: focus description"
     },
     "gQAsym": {
-        "message": "Майце на ўвазе, што іншыя віджэты не будуць перасоўвацца, калі вы будзеце змяняць іх пазіцыю.",
+        "message": "Звярніце ўвагу, што пры перацягванні іншыя віджэты не перамяшчацца.",
         "description": "Widget grid: form label 3 for grid full width"
     },
     "fW8Xpd": {
-        "message": "Патрэбна месцазнаходжанне. Націсніце на \"Рэдагаваць\", каб дадаць яго.",
+        "message": "Патрабуецца месцазнаходжанне. Націсніце «Рэдагаваць», каб дадаць яго.",
         "description": "Weather widget: location needed error"
     },
     "gAZqVl": {
-        "message": "Вы зможаце дадаць (<add></add>), або выдаліць (<remove></remove>) віджэты пазней, або змяніць налады (<cog></cog>) як жадайце.",
+        "message": "Потым можна будзе дадаваць (<add></add>) і выдаляць (<remove></remove>) віджэты або змяніць налады (<cog></cog>) на свой густ.",
         "description": "Onboarding: preset hint"
     },
     "gS3mti": {
@@ -911,7 +911,7 @@
         "description": "Background credits vote"
     },
     "iH2AHA": {
-        "message": "З <a>адкрытым зыходным кодам</a>, пад ліцэнзіяй GPLv3+."
+        "message": "Мае адкрыты <a>зыходны код</a> і распаўсюджваецца пад ліцэнзіяй GPLv3+."
     },
     "irdBm2": {
         "message": "Тэма",
@@ -931,7 +931,7 @@
         "description": "Clock widget: date style type"
     },
     "ilIuh2": {
-        "message": "Карысна? Вы можаце дапамагчы, <a>ахвяраваўшы</a> праект. Грошамі з ахвяраванняў мы плацім за API надвор'я, а вы дапамагайце будучай распрацоўцы Renewed Tab.",
+        "message": "Лічыце гэта карысным? Вы можаце <a>ахвяраваць</a> на праект, каб дапамагчы пакрыць расходы на weather API і падтрымаць далейшую распрацоўку Renewed Tab.",
         "description": "Weather widget: asking for donations"
     },
     "lYJGY5": {
@@ -939,11 +939,11 @@
         "description": "Image URL background mode"
     },
     "lwUV0r": {
-        "message": "Вы можаце змяніць мэту, націснуўшы на яе на віджэте",
+        "message": "Вы можаце змяніць мэту на віджэце, калі націсніце на яе",
         "description": "Daily Goal widget: edit modal hint"
     },
     "nGSwtl": {
-        "message": "Шукаць",
+        "message": "Пошук",
         "description": "Search widget: searchbox placeholder text, when search engine name is unknown"
     },
     "o9vGxx": {
@@ -951,17 +951,17 @@
         "description": "Form field label"
     },
     "oPO8GY": {
-        "message": "Спасылка на каляндар адсутнічае. Адрэдагуйце гэты віджэт, каб дадаць яе"
+        "message": "Няма спасылкі на каляндар. Адрэдагуйце гэты віджэт, каб дадаць яе"
     },
     "oRui+E": {
-        "message": "Падабаецца Renewed Tab? Вы можаце ахвяраваць праект, каб дапамагчы пакрыць расходы і падтрымаць распрацоўку."
+        "message": "Падабаецца Renewed Tab? Вы можаце ахвяраваць на праект, каб дапамагчы пакрыць расходы і падтрымаць распрацоўку."
     },
     "jSHZmX": {
         "message": "Трымайце на віду вашы задачы",
         "description": "Todo List widget: description"
     },
     "ktmuOE": {
-        "message": "Пакінце пустым, каб скарыстацца загалоўкам стужкі",
+        "message": "Пакіньце пустым, каб выкарыстаць загаловак стужкі",
         "description": "Feed widget: form field hint (Title)"
     },
     "ku7Ot7": {
@@ -977,7 +977,7 @@
         "description": "Form has no fields"
     },
     "lQIN1l": {
-        "message": "Падабаецца Renewed Tab? Пакінце водгук!"
+        "message": "Падабаецца Renewed Tab? Пакіньце водгук!"
     },
     "lUdRdE": {
         "message": "Памылка: {msg}"
@@ -995,7 +995,7 @@
         "description": "Unsplash background mode"
     },
     "mL3MOs": {
-        "message": "Мілі ў гадзіну",
+        "message": "Мілі за гадзіну",
         "description": "Weather widget: Speed unit"
     },
     "mSg5KK": {
@@ -1031,14 +1031,14 @@
         "description": "CalendarSchedule widget: form field label"
     },
     "nnaWVi": {
-        "message": "Цэльсіі",
+        "message": "Градусы Цэльсія",
         "description": "Weather widget: Celsius unit"
     },
     "o2uuHu": {
         "message": "12-гадзінны фармат часу"
     },
     "oBl48o": {
-        "message": "Вы ўпэўнены, шо хочаце скінуць усе дадзеныя?",
+        "message": "Сапраўды скінуць усе даныя?",
         "description": "Import / export settings, reset confirmation"
     },
     "oDog89": {
@@ -1046,7 +1046,7 @@
         "description": "Notes widget description"
     },
     "oGS5TE": {
-        "message": "Добры дзень, {name}",
+        "message": "Дзень добры, {name}",
         "description": "Greeting widget: greeting, from noon to 4pm"
     },
     "oJnbwn": {
@@ -1054,7 +1054,7 @@
         "description": "Greeting widget: name prompt"
     },
     "ofl4Ui": {
-        "message": "Шукаць",
+        "message": "Пошук",
         "description": "Location form field: search"
     },
     "olBVPS": {
@@ -1062,7 +1062,7 @@
         "description": "Import / export settings, export"
     },
     "or/+Da": {
-        "message": "Стылізацыя",
+        "message": "Выгляд",
         "description": "Subheading for per-widget styling properties"
     },
     "p8GKKf": {
@@ -1070,7 +1070,7 @@
         "description": "Top Sites Widget"
     },
     "pG7wIz": {
-        "message": "Паказвае курсы валют, падтрымлівае іншакраінныя валюты і крыптавалюты(BitCoin і г. д.)",
+        "message": "Паказвае курсы валют, падтрымліваюцца валюты краін і крыптавалюты (BitCoin і інш.)",
         "description": "Currencies widget description"
     },
     "pHo6u+": {
@@ -1078,7 +1078,7 @@
         "description": "Web Comic widget: no images found error"
     },
     "pVrtrA": {
-        "message": "Скарыстацца ўласным відарысам",
+        "message": "Выкарыстоўваць уласны відарыс",
         "description": "Backgroud mode description"
     },
     "pWdLkT": {
@@ -1086,19 +1086,19 @@
         "description": "CalendarSchedule widget: edit hint"
     },
     "pbEMNj": {
-        "message": "Папярэдні",
+        "message": "Назад",
         "description": "Onboarding page: previous button"
     },
     "pqIuCa": {
-        "message": "Паказваць надвор'е ў бягечы момант",
+        "message": "Паказваць бягучае надвор'е",
         "description": "Weather widget: form field label"
     },
     "q4caWd": {
-        "message": "Радыўс размытасці",
+        "message": "Радыус размыцця",
         "description": "Backgroud settings: form field label"
     },
     "y8o0oA": {
-        "message": "Бягучае надвор'е і надвор'е на будучыню",
+        "message": "Бягучае надвор'е і прагнозы",
         "description": "Weather widget description"
     },
     "ywSKRt": {
@@ -1106,7 +1106,7 @@
         "description": "HTML widget description"
     },
     "zfsplE": {
-        "message": "Ніколі болей не паказваць",
+        "message": "Больш ніколі не паказваць",
         "description": "Background credits vote"
     },
     "q6/aVX": {
@@ -1114,7 +1114,7 @@
         "description": "Edit hint shown on searchable widgets"
     },
     "qCsSqt": {
-        "message": "Цемень фона панэлі",
+        "message": "Цёмнасць фону панэлі",
         "description": "Theme settings: form field label"
     },
     "qEk9AJ": {
@@ -1122,7 +1122,7 @@
         "description": "Backgroud settings: form field label (Brightness: Dark)"
     },
     "qYVXqA": {
-        "message": "Налады {mode}",
+        "message": "{mode} — параметры",
         "description": "Background mode options"
     },
     "qfkgCx": {
@@ -1134,7 +1134,7 @@
         "description": "Backgroud settings: form field label"
     },
     "qzlLb3": {
-        "message": "НЯД",
+        "message": "НД",
         "description": "Short weekday name (Sunday)"
     },
     "r8bU6m": {
@@ -1145,11 +1145,11 @@
         "message": "Пераклады ствараюцца супольнасцю."
     },
     "rb3Zy8": {
-        "message": "Адфільтрававаць артыкулы",
+        "message": "Фільтраваць артыкулы",
         "description": "Feed widget: form field label"
     },
     "sFyAdH": {
-        "message": "Альтэрнатэўна: <import></import>"
+        "message": "Таксама можна <import></import>"
     },
     "sIC2UV": {
         "message": "Паказваць тэкст",
@@ -1164,7 +1164,7 @@
         "description": "Hide"
     },
     "sYvWWw": {
-        "message": "Неабавязкова: спасылка на відарыс (рэкамендаваны памер: 18 пікселяў)",
+        "message": "Неабавязкова, URL-адрас відарыса (рэк. памер 18 пікселяў)",
         "description": "Links widget, form field hint (Icon)"
     },
     "tSMpM0": {
@@ -1180,14 +1180,14 @@
         "description": "Weather Widget"
     },
     "uRYRJh": {
-        "message": "Адрэдагаваць {type}"
+        "message": "Рэдагаванне — {type}"
     },
     "ubO4zt": {
         "message": "Інтэрнэт-комікс",
         "description": "Web Comic Widget"
     },
     "uv1bYR": {
-        "message": "АЎТ",
+        "message": "АЎ",
         "description": "Short weekday name (Tuesday)"
     },
     "uzT59w": {
@@ -1195,7 +1195,7 @@
         "description": "Preset: Grid"
     },
     "v9UIPJ": {
-        "message": "Довсітак - захад",
+        "message": "Усход - Захад",
         "description": "Weather widget: wind speed tooltip"
     },
     "vVnypL": {
@@ -1203,7 +1203,7 @@
         "description": "Quotes Widget description"
     },
     "vlumg9": {
-        "message": "Шукаць віджэты…",
+        "message": "Пошук віджэтаў...",
         "description": "Create Widgets modal: search widgets placeholder"
     },
     "wEQDC6": {
@@ -1221,7 +1221,7 @@
         "description": "Backgroud mode description"
     },
     "wwQ6Va": {
-        "message": "Абярыце месцазнаходжанне",
+        "message": "Выберыце месцазнаходжанне",
         "description": "Location field"
     },
     "x59fh0": {
@@ -1233,7 +1233,7 @@
         "description": "Widget grid: form label for grid full width"
     },
     "xR87uK": {
-        "message": "Інтэрвал паміж віджэтамі, у піскелях.",
+        "message": "Інтэрвал паміж віджэтамі, у пікселях.",
         "description": "Widget grid: form hint for grid spacing"
     },
     "xtOPHp": {
@@ -1274,7 +1274,7 @@
         "description": "Onboarding page: next button"
     },
     "z7UTSa": {
-        "message": "Аб Renewed Tab"
+        "message": "Пра Renewed Tab"
     },
     "zEj0dg": {
         "message": "Паказвае гадавы прагрэс як панэль выканання",
@@ -1285,17 +1285,17 @@
         "description": "Backgroud settings: form field hint (Unsplash Collection)"
     },
     "zPAzlS": {
-        "message": "Скамбінаваць крыніцы ў адну укладку",
+        "message": "Аб'яднаць крыніцы ў адной укладцы",
         "description": "Feed widget: form field label"
     },
     "zWgbGg": {
         "message": "Сёння"
     },
     "zXtUcf": {
-        "message": "Не трэба хвалявацца, вы можаце адрэдагаваць іх пазней"
+        "message": "Не турбуйцеся, потым іх можна будзе змяніць"
     },
     "zaQRTm": {
-        "message": "<b>Надзвычайнае</b> УФ выпраменьванне",
+        "message": "УФ-індэкс <b>Экстрэмальны</b>",
         "description": "Extreme UV risk"
     },
     "ziyAdj": {
@@ -1307,17 +1307,17 @@
         "description": "Feed widget: filter allow checkbox label"
     },
     "zsdRww": {
-        "message": "Для асноўных кнопак і спасылак",
+        "message": "Выкарыстоўваецца для асноўных кнопак і спасылак",
         "description": "Theme settings: form field hint (Primary Color)"
     },
     "1Ms/OE": {
-        "message": "Наколькі cкругленымі павінны быць вуглы большай колькасці рэчаў? Ад 0% да 300%"
+        "message": "Наколькі скругленымі павінны быць вуглы большасці элементаў? Ад 0% да 300%"
     },
     "1hvL/q": {
         "message": "Увайсці ў рэжым рэдагавання"
     },
     "2YhLSH": {
-        "message": "Віджэт \"{name}\""
+        "message": "Віджэт «{name}»"
     },
     "3lHnZE": {
         "message": "Ачысціць кэш і перазагрузіць"
@@ -1329,10 +1329,10 @@
         "message": "Наколькі скругленымі павінны быць вуглы панэлей (напрыклад віджэтаў)? Ад 0% да 1000%"
     },
     "H/r5m6": {
-        "message": "На задні план"
+        "message": "Ніжэй"
     },
     "LaT9nn": {
-        "message": "<a>Значкі надвор'я</a> пад правамі KDE, ліцэнзаваны пад GNU LGPL v3 або пазней"
+        "message": "Аўтарскае права на <a>Значкі надвор'я</a> належыць KDE на ўмовах ліцэнзіі GNU LGPL v3 або любой пазнейшай версіі"
     },
     "aO/LJo": {
         "message": "Пошук праз лакацыю"
@@ -1341,12 +1341,24 @@
         "message": "Кэш"
     },
     "iyOvAb": {
-        "message": "Радыус краёў панэляў"
+        "message": "Скругленне краёў панэляў"
     },
     "nF+GWk": {
-        "message": "JavaScript не падтрымліваецца з прычыны бяспекі. Замест гэтага скарыстайцеся віджэтам iFrame"
+        "message": "Дзеля бяспекі JavaScript не падтрымліваецца. Выкарыстоўвайце замест яго віджэт iFrame"
     },
     "nHcPTf": {
-        "message": "Увага: спасылкі, узятыя з вонкавых рэсурсаў могуць утрымліваць партнёрскія коды. Каб забяспечыць прыватнасць, замяніце гэтыя спасылкі на прамыя."
+        "message": "Увага! Спасылкі, імпартаваныя са знешніх рэсурсаў, могуць утрымліваць партнёрскія коды. Каб забяспечыць прыватнасць, замяніце гэтыя спасылкі на прамыя."
+    },
+    "rbrahO": {
+        "message": "Закрыць"
+    },
+    "u9iVp5": {
+        "message": "Скругленне межаў"
+    },
+    "wmFdws": {
+        "message": "Вышэй"
+    },
+    "q3GXOR": {
+        "message": "<b>Гэты віджэт эксперыментальны</b>: Могуць узнікаць праблемы з вывадам падзей і запаволены паказ старонкі."
     }
 }
