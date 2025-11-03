@@ -235,5 +235,854 @@
     "Ay1sfO": {
         "message": "Määrittää, kuinka monesta uusimmasta kuvasta valitaan satunnaisesti. Jos asetat tämän arvoon 1, valitaan aina uusin kuva",
         "description": "Feed background mode: form field hint (Limit images)"
+    },
+    "1Ms/OE": {
+        "message": "Kuinka pyöristettyjä useimpien laatikoiden reunojen tulisi olla? Alkaen 0% loppuen 300%"
+    },
+    "1hvL/q": {
+        "message": "Siirry muokkaustilaan painike"
+    },
+    "2YhLSH": {
+        "message": "Widgetin nimi"
+    },
+    "3lHnZE": {
+        "message": "Yleiset asetukset: välimuistin tyhjennyspainike"
+    },
+    "4fHiNl": {
+        "message": "Kopio"
+    },
+    "6mQdhI": {
+        "message": "Teeman asetukset: lomakekentän vihje (reunuksen säde)"
+    },
+    "B3NCWb": {
+        "message": "Lomakekentän otsikko"
+    },
+    "B4LnaC": {
+        "message": "Kalenteriaikataulu-widget: kuvaus"
+    },
+    "BJYZgx": {
+        "message": "Käytä siirtokahvaa (<move></move>) ja koonmuuttokahvaa (<resize></resize>)."
+    },
+    "BfX7n6": {
+        "message": "Liukuvärjäytyneen taustan vastuuvapauslauseke Firefoxissa"
+    },
+    "BiPNnl": {
+        "message": "Sääwidget: lomakekentän otsikko"
+    },
+    "Bl74xq": {
+        "message": "Painikewidgetin kuvaus"
+    },
+    "BmzsQb": {
+        "message": "Widget painikkeen kuvaus"
+    },
+    "BnmONl": {
+        "message": "Sää widget: lomakekentän otsikko"
+    },
+    "C7WJrL": {
+        "message": "Lomakekentän vaihtoehto, pystysuuntainen liukuvärjäys"
+    },
+    "CN0kVN": {
+        "message": "Asetukset-välilehti"
+    },
+    "CNpJaZ": {
+        "message": "Esiasetus: tarkennus"
+    },
+    "CmRs9p": {
+        "message": "Hae Widgettiä"
+    },
+    "Cq4JWx": {
+        "message": "Esiasetus: Ruudukon kuvaus"
+    },
+    "CshCZY": {
+        "message": "Taustatyyppi"
+    },
+    "D0+wcK": {
+        "message": "Kuvawidgetin kuvaus"
+    },
+    "D3idYv": {
+        "message": "Asetukset"
+    },
+    "DVGnNH": {
+        "message": "Voit tykätä taustakuvasta tai ohittaa sen viemällä hiiren osoittimen vasemmassa alakulmassa olevien tekijätietojen päälle."
+    },
+    "Ddd3ZY": {
+        "message": "Valuuttawidget: lomakekentän otsikko"
+    },
+    "Dk7Khi": {
+        "message": "Sääwidget: Fahrenheit-yksikkö"
+    },
+    "E4nLwR": {
+        "message": "Taustan vanhenemisen alasvetovalikko"
+    },
+    "Ekvvsi": {
+        "message": "Vain Chromessa, kirjanmerkkipalkki yläreunassa"
+    },
+    "EpPEVJ": {
+        "message": "Liukuvärjäys taustatilassa"
+    },
+    "EscvnU": {
+        "message": "Luettelolaatikon tyyli (eli luettelo-/kirjanmerkkiwidgetit)"
+    },
+    "F1A/8i": {
+        "message": "Syötewidget: lomakekentän otsikko"
+    },
+    "FqCn+F": {
+        "message": "Tervehdys Widget: Tervehdys keskiyöstä keskipäivään"
+    },
+    "G6WG/N": {
+        "message": "Näkymätön Widget"
+    },
+    "GSox4d": {
+        "message": "Teeman asetukset: lomakekentän vihje (fontti)"
+    },
+    "GWRKVT": {
+        "message": "Lomakekenttä: otsikko"
+    },
+    "GXkv/F": {
+        "message": "Sijaintilomakekenttä: kehote"
+    },
+    "GcxpZV": {
+        "message": "Kello-widget: päivämäärätyylinen lomakekentän otsikko"
+    },
+    "Go7At+": {
+        "message": "Lyhyt viikonpäivän nimi (lauantai)"
+    },
+    "GpfSpy": {
+        "message": "Yleiset asetukset: kirjanmerkkipalkki"
+    },
+    "GqPEp+": {
+        "message": "Vaatii selainlaajennus lisäosan"
+    },
+    "H/r5m6": {
+        "message": "Siirrä alas"
+    },
+    "H00a0q": {
+        "message": "Linkkiwidget, lomakekentän vihje (linkin URL-osoite)"
+    },
+    "HEvlTB": {
+        "message": "Sääwidget: näytä alilomakkeen otsikko"
+    },
+    "HPLtg4": {
+        "message": "Valuuttawidget: virhe"
+    },
+    "HksGis": {
+        "message": "Sää widget: lomakekentän otsikko"
+    },
+    "I48yxw": {
+        "message": "Yleiset asetukset: yksityisyys"
+    },
+    "IKpSw0": {
+        "message": "Luettelolaatikon tyyli (Eli luettelo -/ kirjanmerkkiwidgetit)"
+    },
+    "IbCXY9": {
+        "message": "Kello-widget: päivämäärätyyli"
+    },
+    "IqLwUL": {
+        "message": "Widget-ruudukko: ruudukon välilyönnin lomaketunniste"
+    },
+    "J91edI": {
+        "message": "Astukset välilehti"
+    },
+    "JN/uvd": {
+        "message": "<b>Kohtalainen<b> UV-riski"
+    },
+    "JihbEV": {
+        "message": "Teeman asetukset: linkki CSS-dokumentteihin"
+    },
+    "JvOSvX": {
+        "message": "Asetukset välilehti"
+    },
+    "JzanJ8": {
+        "message": "Widget-ruudukko: ruudukon sarakkeiden lomaketunniste"
+    },
+    "K3r6DQ": {
+        "message": "Poista"
+    },
+    "K8s82y": {
+        "message": "Ikä-widget: lomakekentän otsikko"
+    },
+    "KdIFGg": {
+        "message": "Hakuwidget: virhe, puuttuva kyselymuuttuja"
+    },
+    "KhM0zv": {
+        "message": "Päivittäinen tavoite widget: muokkaa modaalivihjettä."
+    },
+    "KjUKUz": {
+        "message": "Taustatilan kuvaus"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> koordinaateissa {latitude} ja {longitude}"
+    },
+    "KyDwm3": {
+        "message": "Suosituimmat sivustot -widget: kuvaus"
+    },
+    "Kzo9ZH": {
+        "message": "Lomakekenttä: otsikko"
+    },
+    "L6nTur": {
+        "message": "Käyttöönotto: esiasetusten otsikko"
+    },
+    "LaT9nn": {
+        "message": "<a>Sääkuvakkeet</a> tekijänoikeudet KDE ja lisensoitu GNU LGPL v3:n tai uudemman alaisuudessa"
+    },
+    "LfHpBk": {
+        "message": "Teeman asetukset: lomakekentän otsikko"
+    },
+    "Lnvfz8": {
+        "message": "Syötteen virheilmoitus"
+    },
+    "Lxc1x4": {
+        "message": "Kello Widget"
+    },
+    "M0PwXU": {
+        "message": "Sääwidget: tuulen nopeus työkaluvihje"
+    },
+    "M6lR5V": {
+        "message": "Widget ruudukko: lomakevihje ruudukon sarakkeille."
+    },
+    "MN3prI": {
+        "message": "Kirjanmerkkiwidget: lomakekentän otsikko"
+    },
+    "MdUPbJ": {
+        "message": "Viikonpäivät pilkuilla erotettuina"
+    },
+    "MiIvsP": {
+        "message": "Voit lisätä, siirtää, muuttaa kokoa ja määrittää widgetejä ruudukossa intuitiivisten säätimien avulla."
+    },
+    "Mihrhf": {
+        "message": "Kellowidget: päivämäärätyyli, ei näytetä"
+    },
+    "MtrTNy": {
+        "message": "Huomenna"
+    },
+    "N/7Stk": {
+        "message": "RubenWardyn</a> luoma</a>."
+    },
+    "NjoFru": {
+        "message": "Taustatila: kuvaus"
+    },
+    "O2Mjef": {
+        "message": "Arviointipyyntö, tarkistuspainike"
+    },
+    "O8mt7g": {
+        "message": "Kello Widget: päivämäärätyyli"
+    },
+    "OBJta4": {
+        "message": "Tervehdys Widget: muokkaa modaalivihjettä"
+    },
+    "OPzczE": {
+        "message": "Kello Widget: päivämäärän tyyli"
+    },
+    "OQHLB5": {
+        "message": "Lomakekenttä: otsikko"
+    },
+    "Oa5RYo": {
+        "message": "Yleiset asetukset: ohjeviesti."
+    },
+    "PBMGxw": {
+        "message": "Syötteen taustatila: lomakekentän otsikko"
+    },
+    "PHwOzi": {
+        "message": "Kiitos Unsplashille, AccuWeatherille ja RocketLaunch Livelle heidän API-rajapinnoistaan."
+    },
+    "PM6qZ7": {
+        "message": "Näytä sekunnit"
+    },
+    "PYJFvz": {
+        "message": "Lomakekentän otsikko, luokkien luettelo. Lainaukset Widgetin käyttämä"
+    },
+    "Q1mwPp": {
+        "message": "Harkitse <a>oman kielesi lisäämistä tai osallistumista</a>."
+    },
+    "QBZZBG": {
+        "message": "Teeman asetukset: lomakekentän vihje (mukautettu CSS)."
+    },
+    "QV6YlB": {
+        "message": "Valuutta Widget: lomakekentän otsikko"
+    },
+    "QcExtH": {
+        "message": "Yleiset asetukset: tietosuoja käytäntö painike"
+    },
+    "QkI7Lb": {
+        "message": "Vaihtoehto aikavyöhykettä valittaessa"
+    },
+    "QqE4JC": {
+        "message": "Puuttuva syötteen URL-osoite."
+    },
+    "R1jLoC": {
+        "message": "Luettelolaatikon tyyli (eli luettelo- / kirjanmerkkiwidgetit)"
+    },
+    "R4cyIr": {
+        "message": "Sääwidget: Lomakekentän otsikko"
+    },
+    "RCe+DS": {
+        "message": "Vedä ja pudota widgetit"
+    },
+    "RVGNBh": {
+        "message": "Kun olet valmis, napsauta <button></button> tehdäksesi widgeteistä vain luku -tilassa olevia."
+    },
+    "RZqASt": {
+        "message": "Taustatilan kuvaus."
+    },
+    "RhyKzC": {
+        "message": "Kuratoitu taustatila"
+    },
+    "S3njcM": {
+        "message": "IFrame Widget"
+    },
+    "S6nfAm": {
+        "message": "Sääwidget: kosteustyökaluvihje"
+    },
+    "SAo61B": {
+        "message": "Kirjanmerkkiwidget"
+    },
+    "SENRqu": {
+        "message": "Apua"
+    },
+    "SG4UJU": {
+        "message": "Painike widget"
+    },
+    "ShQneX": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "T/wBPw": {
+        "message": "Poista {tyyppi}"
+    },
+    "T4VxQN": {
+        "message": "Ladataan…"
+    },
+    "TDaF6J": {
+        "message": "Hylkää"
+    },
+    "TIEfOV": {
+        "message": "Syöte widget: lomakekentän vihje (suodattimet)"
+    },
+    "TUnCKb": {
+        "message": "Teksti widget"
+    },
+    "TkgCJ9": {
+        "message": "Voit saada apua tai pyytää ominaisuutta alla olevan linkin kautta."
+    },
+    "U2Qnh7": {
+        "message": "Kuvan taustatila"
+    },
+    "Upkn1Q": {
+        "message": "Korkea UV riski"
+    },
+    "V1EIOe": {
+        "message": "IFrame-widgetin kuvaus"
+    },
+    "VPDVTF": {
+        "message": "Näytetään, kun taulukkotaulukon lomakekentässä ei ole rivejä"
+    },
+    "Vckd1G": {
+        "message": "Lyhyt viikonpäivän nimi (maanantai)"
+    },
+    "VjDvbL": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "VkW6D1": {
+        "message": "Tausta-asetukset: lomakekentän vihje (sijainti)"
+    },
+    "W3zKGr": {
+        "message": "Sääwidget: Nopeusyksikkö"
+    },
+    "WF5DKA": {
+        "message": "Ikä-widget"
+    },
+    "WKiXhX": {
+        "message": "Värillinen taustatila"
+    },
+    "WZjKFf": {
+        "message": "Varoitus: tämä saattaa sisältää henkilötietoja, jos niitä on syötetty widgetin asetuksiin."
+    },
+    "Wi0G88": {
+        "message": "Asetukset Välilehti"
+    },
+    "X18x9m": {
+        "message": "Asetukset_välilehti"
+    },
+    "X5OoHJ": {
+        "message": "Päivittäisen tavoitteen kehote?"
+    },
+    "XV4mnl": {
+        "message": "Tausta-asetukset: lomakekentän vihje (Näytä uusi kuva)"
+    },
+    "XYIyWM": {
+        "message": "Widget ruudukko: lomakkeen otsikko 2 täysleveälle ruudukolle"
+    },
+    "XrQEPN": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "XsTD4Q": {
+        "message": "Tehtävälista-widget"
+    },
+    "YQhLKn": {
+        "message": "Taustan Vanhenemisen alasvetovalikko"
+    },
+    "YS3jnS": {
+        "message": "Lyhyt arkipäivän nimi (perjantai)"
+    },
+    "YS5zRT": {
+        "message": "Hakuwidget: hakukentän paikkamerkkiteksti, kun hakukoneen nimi on tiedossa"
+    },
+    "YYoBQn": {
+        "message": "Teeman asetukset: Lomakekentän otsikko"
+    },
+    "YuNOET": {
+        "message": "HTML-widget: lomakekentän otsikko"
+    },
+    "Z2/hH0": {
+        "message": "Kuva: {tiedostonimi}"
+    },
+    "Z79HMN": {
+        "message": "Taustatilan Kuvaus"
+    },
+    "ZRWjTk": {
+        "message": "Hakuwidget: lomakekentän otsikko"
+    },
+    "ZUZeuR": {
+        "message": "Tekstiwidgetin kuvaus"
+    },
+    "ZZIlU9": {
+        "message": "Päivittäisen tavoitteen widget"
+    },
+    "ZeZlbR": {
+        "message": "Painikewidget: lomakekentän vihje (läpinäkymättömyys)"
+    },
+    "a09vzt": {
+        "message": "HTTP-pyyntö epäonnistui, {code} {msg}."
+    },
+    "a0L2KE": {
+        "message": "Kokeile lisätä maan nimi tai nimikirjaimet."
+    },
+    "aO/LJo": {
+        "message": "Sijaintilomakekenttä: haku GPS:n avulla"
+    },
+    "aXrD3p": {
+        "message": "Valuuttawidget"
+    },
+    "aaxFkJ": {
+        "message": "Tehtävälista-widget: kehote"
+    },
+    "abwneZ": {
+        "message": "SääWidget: Nopeusyksikkö"
+    },
+    "adRrk3": {
+        "message": "Tuo/vie asetukset, palauta ne"
+    },
+    "amHvKE": {
+        "message": "Muistiinpano-widget: kehote"
+    },
+    "ao/AFQ": {
+        "message": "Päivittäistavoite-widgetin kuvaus"
+    },
+    "appDescription": {
+        "message": "Sovelluksen kuvaus"
+    },
+    "appName": {
+        "message": "Sovelluksen nimi"
+    },
+    "as6rZ1": {
+        "message": "Yleiset asetukset: ota vartio käyttöön"
+    },
+    "b2Rs2F": {
+        "message": "Tausta-asetukset: lomakekentän otsikko (Kirkkaus: Vaalea)"
+    },
+    "bQFsdR": {
+        "message": "Myönnä käyttöoikeus palvelimelle {host}"
+    },
+    "bfWes8": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "bhFF6J": {
+        "message": "Yleiset asetukset: välimuisti"
+    },
+    "btOI+Z": {
+        "message": "Uusi välilehti"
+    },
+    "c7zm0j": {
+        "message": "Virhe ladattaessa syötettä. Varmista, että kyseessä on RSS-, JSONFeed- tai Atom-syöte."
+    },
+    "cR7nCG": {
+        "message": "Palauta teema oletusasetuksiin"
+    },
+    "cSF2y1": {
+        "message": "Kirjanmerkkiwidgetin kuvaus"
+    },
+    "ckvzIb": {
+        "message": "<b>Alhainen<b> UV-riski"
+    },
+    "d7dHsn": {
+        "message": "Taustan Vanhenemisen Alasvetovalikko"
+    },
+    "dGu5JQ": {
+        "message": "Syötewidget"
+    },
+    "dIwFS5": {
+        "message": "Lomakekentän_otsikko"
+    },
+    "dOlhtQ": {
+        "message": "Yleiset asetukset: Ohje Firefoxin kirjanmerkkipalkille <a>Näytä lisää</a>"
+    },
+    "eKCjBm": {
+        "message": "Sääwidget: sateen muutos (sade jne.)"
+    },
+    "eXB4qM": {
+        "message": "Lyhyt arkipäivän nimi (keskiviikko)"
+    },
+    "ekIjqh": {
+        "message": "Myönnä lupa käyttää kaikkia verkkosivustoja"
+    },
+    "ekW/+6": {
+        "message": "Internet-yhteyden muodostaminen ei onnistu"
+    },
+    "exTzGh": {
+        "message": "Lomakekentän vaihtoehto, vaakasuora liukuvärjäys"
+    },
+    "fW8Xpd": {
+        "message": "Sääwidget: sijainti tarvitaan virhe"
+    },
+    "fWK68w": {
+        "message": "Teeman asetukset: Lomakekentän otsikko"
+    },
+    "frEJEM": {
+        "message": "Lyhyt arkipäivän nimi (torstai)"
+    },
+    "fz43UJ": {
+        "message": "Uudistettu välilehden lahjoituslinkki"
+    },
+    "gAZqVl": {
+        "message": "Käyttöönotto: ennalta määritetty vihje Voit lisätä (<add></add>) tai poistaa (<remove></remove>) widgetejä myöhemmin tai muuttaa asetuksia (<cog></cog>) haluamallasi tavalla."
+    },
+    "gEYo49": {
+        "message": "Tausta-asetukset: lomakekentän otsikko"
+    },
+    "gHzZEt": {
+        "message": "Esiasetus: tarkennuksen kuvaus"
+    },
+    "gQAsym": {
+        "message": "Widget ruudukko: lomakkeen otsikko 3 täysleveälle ruudukolle"
+    },
+    "gS3mti": {
+        "message": "Lomakekentän otsikko Luetteloruudun tyyli"
+    },
+    "gSjZfg": {
+        "message": "Linkkiwidget"
+    },
+    "gXcVyS": {
+        "message": "Muokkauspalkin painike, jolla ruudukko voidaan tehdä vain luettavaksi"
+    },
+    "grbGxs": {
+        "message": "Kalenteri Aikataulu: ei tapahtumia"
+    },
+    "h/ftND": {
+        "message": "Valitse tiedosto"
+    },
+    "h00yCR": {
+        "message": "Verkkosarjakuva widgetin kuvaus"
+    },
+    "hCBQrY": {
+        "message": "Tuntuu kuin <b>{temp}°</b>"
+    },
+    "hUIQ7h": {
+        "message": "Tausta asetukset: lomakekentän otsikko"
+    },
+    "hWimZf": {
+        "message": "Hakuwidget: lomakekentän otsikko, ota käyttöön suodatuswidgetit"
+    },
+    "hktZIl": {
+        "message": "Näyttää ajan"
+    },
+    "iFxzUm": {
+        "message": "Äänestys taustatiedoista"
+    },
+    "iH2AHA": {
+        "message": "<an>Avoimen lähdekoodin</a>, lisensoitu GPLv3+:n alaisuudessa."
+    },
+    "ilIuh2": {
+        "message": "Sääwidget: <a>lahjoitusten pyytäminen<a>"
+    },
+    "irdBm2": {
+        "message": "Asetukset_Välilehti"
+    },
+    "iyOvAb": {
+        "message": "Teeman asetukset: Lomakekentän otsikko"
+    },
+    "j0VHNa": {
+        "message": "Myönnä lupa käyttää kirjanmerkkejä ja hakea kuvakkeita verkkosivustoilta"
+    },
+    "jGWq1h": {
+        "message": "Aikavyöhyke"
+    },
+    "jSHZmX": {
+        "message": "Tehtävälista-widget: kuvaus"
+    },
+    "kAEQyV": {
+        "message": "OK"
+    },
+    "kF06lD": {
+        "message": "Kello widget: päivämäärätyyli"
+    },
+    "ktmuOE": {
+        "message": "Syötewidget: lomakekentän vihje (otsikko)"
+    },
+    "ku7Ot7": {
+        "message": "Taustaasetukset: lomakekentän otsikko"
+    },
+    "kueLs9": {
+        "message": "Linkit widget: lomakekentän otsikko"
+    },
+    "l8+Uwz": {
+        "message": "Lomakkeella ei ole kenttiä."
+    },
+    "lQIN1l": {
+        "message": "Pidätkö Renewed Tabista? Anna meille arvostelu!"
+    },
+    "lUdRdE": {
+        "message": "Virhe: {msg}"
+    },
+    "lY73np": {
+        "message": "Widgetin muotoilu, valintaruutu"
+    },
+    "lYJGY5": {
+        "message": "Kuvan URL-osoitteen taustatila"
+    },
+    "languageName": {
+        "message": "Nykyisen kielen nimi, jota käytetään asetusvalintaikkunassa"
+    },
+    "lkJAu6": {
+        "message": "Unsplash taustatila"
+    },
+    "lwUV0r": {
+        "message": "Päivittäinen tavoite -widget: muokkaa modaalivihjettä"
+    },
+    "mL3MOs": {
+        "message": "SääWidget: Nopeusyksikkö"
+    },
+    "mSg5KK": {
+        "message": "Tausta asetukset: lomakekentän otsikko"
+    },
+    "mv9TrH": {
+        "message": "HTML Widget"
+    },
+    "mw6Uh+": {
+        "message": "Sääwidget: Lomakekentän otsikko"
+    },
+    "n+w6I2": {
+        "message": "Lomakekentän otsikko. Liukuvärjäyksen raja (%)"
+    },
+    "n0cZ3b": {
+        "message": "Kiitos verkkosivustolle."
+    },
+    "nF+GWk": {
+        "message": "HTML-widget: lomakekentän kuvaus"
+    },
+    "nF7bWj": {
+        "message": "KelloWidget: päivämäärätyyli"
+    },
+    "nGSwtl": {
+        "message": "Hakuwidget: hakukentän paikkamerkkiteksti, kun hakukoneen nimi on tuntematon"
+    },
+    "nHcPTf": {
+        "message": "Varoitus: Ulkoisista lähteistä tuodut linkit saattavat sisältää affiliate-linkkejä. Tietosuojan varmistamiseksi sinun tulee korvata ne suorilla linkeillä."
+    },
+    "nHw5cV": {
+        "message": "Tehtävälistawidget: muokkaa modaalivihjettä"
+    },
+    "nlnYxI": {
+        "message": "Kalenteriaikataulu widget: lomakekentän otsikko"
+    },
+    "nnaWVi": {
+        "message": "Sääwidget: Celsius-yksikkö"
+    },
+    "o2uuHu": {
+        "message": "12 tunnin kello"
+    },
+    "o9vGxx": {
+        "message": "Lomakekentänotsikko"
+    },
+    "oBl48o": {
+        "message": "Tuo/vie asetukset, nollauksen vahvistus?"
+    },
+    "oDog89": {
+        "message": "Muistiinpano-widgetin kuvaus"
+    },
+    "oGS5TE": {
+        "message": "Tervehdyswidget: Tervehdys, klo 12–16"
+    },
+    "oJnbwn": {
+        "message": "Tervehdyswidget: nimikehote"
+    },
+    "oPO8GY": {
+        "message": "Kalenterin URL-osoite puuttuu. Muokkaa tätä widgetiä lisätäksesi sen"
+    },
+    "oRui+E": {
+        "message": "Pidätkö Renewed Tabista? Harkitse lahjoitusta kustannusten kattamiseksi ja sen kehityksen tukemiseksi."
+    },
+    "ofl4Ui": {
+        "message": "Sijaintilomakekenttä: haku"
+    },
+    "olBVPS": {
+        "message": "Tuo/vie asetukset, vienti"
+    },
+    "or/+Da": {
+        "message": "Pienoissovelluskohtaisten tyyliominaisuuksien alaotsikko"
+    },
+    "p8GKKf": {
+        "message": "Suosituimpien sivustojen widget"
+    },
+    "pG7wIz": {
+        "message": "Valuuttawidgetin kuvaus"
+    },
+    "pHo6u+": {
+        "message": "Verkkosarjakuvawidget: kuvia ei löytynyt virhe"
+    },
+    "pVrtrA": {
+        "message": "Taustatilan Kuvaus"
+    },
+    "pWdLkT": {
+        "message": "Kalenteriaikataulu-widget: muokkausvihje Lue <a>opastusvideo</a>. Voit käyttää mitä tahansa iCalia tukevaa pilvikalenteria, mukaan lukien Google Kalenteri ja Outlook."
+    },
+    "pbEMNj": {
+        "message": "Aloitussivu: edellinen painike"
+    },
+    "pqIuCa": {
+        "message": "SääWidget: Lomakekentän otsikko"
+    },
+    "q3GXOR": {
+        "message": "Kalenteriaikataulu widgetin vastuuvapauslauseke.<b>Tämä widget on kokeellinen</b>: Tapahtumien näkymisessä saattaa olla ongelmia, ja se voi aiheuttaa sivun jumiutumisen."
+    },
+    "q4caWd": {
+        "message": "Tausta asetukset: Lomakekentän otsikko"
+    },
+    "q6/aVX": {
+        "message": "Muokkausvihje näkyy haettavissa Widgeteissä"
+    },
+    "qCsSqt": {
+        "message": "Teeman asetukset: Lomakekentän otsikko"
+    },
+    "qEk9AJ": {
+        "message": "Tausta-asetukset: lomakekentän otsikko (Kirkkaus: Tumma)"
+    },
+    "qYVXqA": {
+        "message": "Taustatilan asetukset"
+    },
+    "qfkgCx": {
+        "message": "Kalenteriaikataulu-widget: lomakekentän vihje (päivien enimmäismäärä). Kuinka kauas tulevaisuuteen tapahtumia etsitään. Aseta arvoksi 1 näyttääksesi vain tämän päivän tapahtumat, arvoksi 2 näyttääksesi tämän päivän ja huomisen tapahtumat jne."
+    },
+    "qoEZRi": {
+        "message": "Tausta-asetukset: Lomakekentän otsikko"
+    },
+    "qzlLb3": {
+        "message": "Lyhyt viikonpäivän nimi (sunnuntai)"
+    },
+    "r8bU6m": {
+        "message": "Yleiset asetukset: Kirjanmerkkipalkki."
+    },
+    "rAuRqW": {
+        "message": "Käännökset tarjoaa yhteisö."
+    },
+    "rb3Zy8": {
+        "message": "SyöteWidget: Lomakekentän otsikko"
+    },
+    "rbrahO": {
+        "message": "Sulje"
+    },
+    "sFyAdH": {
+        "message": "Vaihtoehtoisesti: <import></import>"
+    },
+    "sIC2UV": {
+        "message": "Widgetin tyyli, valintaruutu tekstin näyttämiseen esim. linkeissä"
+    },
+    "sPl3nI": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "sX3mXR": {
+        "message": "Piilota"
+    },
+    "sYvWWw": {
+        "message": "Linkkiwidget, lomakekentän vihje (kuvake)"
+    },
+    "tSMpM0": {
+        "message": "Suosituimmat sivustot widget: lupapyyntö"
+    },
+    "translation_credits": {
+        "message": "Kääntäjät: Suomi käännös, kirjoittanut Karri Sakara, Sakara Group"
+    },
+    "tyq8NB": {
+        "message": "Sää Widget"
+    },
+    "u9iVp5": {
+        "message": "Teeman Asetukset: Lomakekentän otsikko"
+    },
+    "uRYRJh": {
+        "message": "Muokkaa {tyyppi}"
+    },
+    "ubO4zt": {
+        "message": "Verkkosarjakuva Widget"
+    },
+    "uv1bYR": {
+        "message": "Lyhyt viikonpäivän nimi (tiistai)"
+    },
+    "uzT59w": {
+        "message": "Esiasetus: Ruudukko"
+    },
+    "v9UIPJ": {
+        "message": "Weather widget: wind speed tooltip"
+    },
+    "vVnypL": {
+        "message": "Lainaus widgetin kuvaus"
+    },
+    "vlumg9": {
+        "message": "Luo Widgetit modaali: hae widgetien paikkamerkki"
+    },
+    "wEQDC6": {
+        "message": "Muokkaa"
+    },
+    "wETxDh": {
+        "message": "Kalenteriaikataulu-widget: lomakekentän otsikko"
+    },
+    "wmFdws": {
+        "message": "Siirry ylös"
+    },
+    "wogY8a": {
+        "message": "Luo widget"
+    },
+    "wr0l0L": {
+        "message": "Taustatilan Kuvaus"
+    },
+    "wwQ6Va": {
+        "message": "Sijaintikenttä"
+    },
+    "x59fh0": {
+        "message": "Avaruuslentojen widget"
+    },
+    "x7WADS": {
+        "message": "Widget-ruudukko: lomakkeen otsikko täysleveälle ruudukolle"
+    },
+    "xR87uK": {
+        "message": "Widget Ruudukko: Lomakevihje ruudukon välistykselle"
+    },
+    "xtOPHp": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "xtl3ls": {
+        "message": "Linkit Widget: lomakekentän otsikko"
+    },
+    "xvXMaZ": {
+        "message": "Tervehdyswidgetin kuvaus"
+    },
+    "y1Z3or": {
+        "message": "Kieli"
+    },
+    "y8o0oA": {
+        "message": "Sääwidgetin kuvaus"
+    },
+    "yT43pK": {
+        "message": "Lomakekentän Otsikko"
+    },
+    "yUJ5MA": {
+        "message": "Esiasetus: tavoitteet"
     }
 }
