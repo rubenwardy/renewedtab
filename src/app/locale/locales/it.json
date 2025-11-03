@@ -1309,5 +1309,44 @@
     },
     "zXtUcf": {
         "message": "Non ti preoccupare, lo potrai sbloccare successivamente"
+    },
+    "1Ms/OE": {
+        "message": "Quanto arrotondati dovrebbero essere i bordi degli elementi? Da 0% a 300%"
+    },
+    "1hvL/q": {
+        "message": "Entra nella modalità modifica"
+    },
+    "2YhLSH": {
+        "message": "Widget {name}"
+    },
+    "3lHnZE": {
+        "message": "Pulisci la cache e ricarica"
+    },
+    "4fHiNl": {
+        "message": "Duplica"
+    },
+    "6mQdhI": {
+        "message": "Quanto arrotondati dovrebbero essere i bordi dei pannelli (es. i widget)? Da 0% a 1000%"
+    },
+    "H/r5m6": {
+        "message": "Sposta in basso"
+    },
+    "aO/LJo": {
+        "message": "Cerca utilizzando la posizione GPS"
+    },
+    "iyOvAb": {
+        "message": "Bordo dei pannelli"
+    },
+    "nF+GWk": {
+        "message": "JavaScript non è supportato per ragioni di sicurezza. Usa il widget iFrame"
+    },
+    "rbrahO": {
+        "message": "Chiudi"
+    },
+    "u9iVp5": {
+        "message": "Bordi"
+    },
+    "wmFdws": {
+        "message": "Sposta su"
     }
 }
