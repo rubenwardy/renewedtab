@@ -1311,7 +1311,7 @@
         "description": "Weather widget: asking for donations"
     },
     "nHcPTf": {
-        "message": "警告：从外部来源导入的链接中可能包含追踪代码。为了保证隐私安全，请替换使用直链。"
+        "message": "警告：从外部来源导入的链接中可能包含追踪代码。为了保证您的隐私安全，请使用直链。"
     },
     "LaT9nn": {
         "message": "<a>天气图标</a>的版权属于 KDE，由 GNU LGPL v3 或更高的版本授权使用"
