@@ -822,5 +822,440 @@
     },
     "XrQEPN": {
         "message": "Lokalizacja"
+    },
+    "0feb3b": {
+        "message": "Opcjonalne, tworzy link obrazkowy"
+    },
+    "1Ms/OE": {
+        "message": "Jak bardzo krawędzie widżetów powinny być zaokrąglone? Od 0% do 300%"
+    },
+    "+PNw8j": {
+        "message": "Nawet jeśli ukryjesz niektóre informacje, często wciąż możesz je zobaczyć najeżdżając na dni i godziny"
+    },
+    "+GMx80": {
+        "message": "Nie znaleziono lokalizacji"
+    },
+    "wogY8a": {
+        "message": "Stwórz widżet"
+    },
+    "wr0l0L": {
+        "message": "Obraz z linku"
+    },
+    "wwQ6Va": {
+        "message": "Wybierz lokację"
+    },
+    "u9iVp5": {
+        "message": "Promień zaokrąglenia"
+    },
+    "rbrahO": {
+        "message": "Zamknij"
+    },
+    "q4caWd": {
+        "message": "Siła rozmycia"
+    },
+    "oPO8GY": {
+        "message": "Brakujący adres URL kalendarza. Edytuj widżet aby go dodać"
+    },
+    "ku7Ot7": {
+        "message": "Jasność: jasne"
+    },
+    "lwUV0r": {
+        "message": "Możesz zmienić cel klikając na widżet"
+    },
+    "2YhLSH": {
+        "message": "{name} Widżet"
+    },
+    "1hvL/q": {
+        "message": "Wejdź do trybu edycji"
+    },
+    "20tqYI": {
+        "message": "Odnośnik do kalendarza iCal (plik .ics)"
+    },
+    "3UG6ds": {
+        "message": "Szukaj widżetów lub przeglądaj sieć używając swojej ulubionej wyszukiwarki"
+    },
+    "3ZfhWo": {
+        "message": "Potrzebne uprawnienia do {host}. Edytuj ten widżet aby je przyznać."
+    },
+    "3lHnZE": {
+        "message": "Wyczyść pamięć podręczną i przeładuj"
+    },
+    "4UpnpD": {
+        "message": "Obrazy są przechowywane lokalnie w twojej przeglądarce, nigdy nie są wysyłane"
+    },
+    "4fHiNl": {
+        "message": "Duplikuj"
+    },
+    "4syC1B": {
+        "message": "Pomoc i Żądania"
+    },
+    "5MMUNJ": {
+        "message": "To jest <b> eksperymentalne i może być trudniejsze w użyciu</b>."
+    },
+    "6mQdhI": {
+        "message": "Jak bardzo zaokrąglone powinny być krawędzie paneli (np. widżetów)? Od 0% do 1000%"
+    },
+    "ATbgo4": {
+        "message": "Kołowy"
+    },
+    "Abtyj/": {
+        "message": "Obraz jest większy niż 2MB ({dataSizeMB}MB). Aby uzyskać lepsze czasy wczytywania powinieneś użyć mniejszego obrazu."
+    },
+    "8HmiSe": {
+        "message": "Proszę określić źródło"
+    },
+    "6wEkCM": {
+        "message": "Alternatywnie, możesz użyć widżetu zakładek dla większej kontroli."
+    },
+    "9+2gJZ": {
+        "message": "Ten widżet wymaga wersji rozszerzenia przeglądarki."
+    },
+    "BmzsQb": {
+        "message": "Odnośniki ze wsparciem nagłówków i ikon (speed dial)"
+    },
+    "C7WJrL": {
+        "message": "Pionowy"
+    },
+    "Ay1sfO": {
+        "message": "Kontroluje jak dużo losowych obrazów z puli ostatnio dodanych wybierać. Jeśli ustawisz 1 zawsze zostanie wybrany ostatnio obraz"
+    },
+    "7zYGs9": {
+        "message": "Harmonogram kalendarza"
+    },
+    "6pdO6i": {
+        "message": "Brak dostępu do zakładek"
+    },
+    "8J0Bhj": {
+        "message": "Witaj w <a>Renewed Tab</a>: konfigurowalna strona nowej karty z widżetami i pięknymi tłami."
+    },
+    "8xPAKF": {
+        "message": "Od 0-100%, pozycja koloru w gradiencie"
+    },
+    "B4LnaC": {
+        "message": "Pokazuje nadchodzące wydarzenia odnośnika do iCal (.ics) (na przykład Google Calendar)"
+    },
+    "D0+wcK": {
+        "message": "Pokazuje obraz, opcjonalnie robi z niego odnośnik"
+    },
+    "BJYZgx": {
+        "message": "Użyj uchwytu przesuwania (<move></move>) i uchwytu zmiany rozmiaru (<resize></resize>)."
+    },
+    "BfX7n6": {
+        "message": "Uwaga: Firefox może pokazywać artefakty takie jak linie na tłach z gradientem. Niestety nie mamy na to wpływu."
+    },
+    "Bl74xq": {
+        "message": "Przycisk z odnośnikiem"
+    },
+    "DVGnNH": {
+        "message": "Możesz najechać na autora zdjęcia w lewej dolnej części ekranu aby polubić lub odrzucić tło."
+    },
+    "GSox4d": {
+        "message": "Nazwa dowolnego fontu zainstalowanego na twoim komputerze"
+    },
+    "Ekvvsi": {
+        "message": "Pasek zakładek"
+    },
+    "GXkv/F": {
+        "message": "Proszę wybrać lokalizacje"
+    },
+    "GpfSpy": {
+        "message": "Pokaż pasek zakładek"
+    },
+    "GqPEp+": {
+        "message": "Wymaga wersji rozszerzenia przeglądarki"
+    },
+    "H/r5m6": {
+        "message": "Przesuń w dół"
+    },
+    "LfHpBk": {
+        "message": "Skalowanie fontu"
+    },
+    "Lnvfz8": {
+        "message": "Nie udało się załadować {source}: {error}"
+    },
+    "KjUKUz": {
+        "message": "Gradient kolorów"
+    },
+    "N/7Stk": {
+        "message": "Stworzone prze <a>rubenwardy</a>."
+    },
+    "Q1mwPp": {
+        "message": "Rozważ <a>dołączenie do edycji lub dodanie twojego języka</a>."
+    },
+    "RVGNBh": {
+        "message": "Kiedy będziesz gotowy, kliknij <button></button> aby ustawić widżet jako tylko do odczytu."
+    },
+    "TkgCJ9": {
+        "message": "Możesz uzyskać pomoc albo zgłosić funkcję używając odnośnika poniżej."
+    },
+    "Wi0G88": {
+        "message": "O rozszerzeniu i pomoc"
+    },
+    "KhM0zv": {
+        "message": "Cytaty pochodzą z zewnętrznych źródeł i nie są moderowane przez Renewed Tab."
+    },
+    "KyDwm3": {
+        "message": "Pokazuje najczęściej odwiedzane strony"
+    },
+    "MiIvsP": {
+        "message": "Możesz dodawać, przesuwać, skalować i konfigurować widżety na siatce używając intuicyjnego sterowania."
+    },
+    "JzanJ8": {
+        "message": "Kolumny siatki"
+    },
+    "KdIFGg": {
+        "message": "Brakujące '{query}' w odnośniku wyszukiwania. Na przykład: https://google.com/search/?q='{query}'"
+    },
+    "M6lR5V": {
+        "message": "Liczba kolumn w siatce widżetów. Możesz zmieścić {max} kolumn w aktualnej szerokości okna ({res}px)."
+    },
+    "MN3prI": {
+        "message": "Dołącz foldery jako sekcje"
+    },
+    "O2Mjef": {
+        "message": "Recenzja"
+    },
+    "OBJta4": {
+        "message": "Możesz zmienić nazwę klikając w nią w widżecie"
+    },
+    "Oa5RYo": {
+        "message": "<b>Widżety też mają ustawienia</b>: najedź na widżet i kliknij na ołówek aby go dostosować."
+    },
+    "PBMGxw": {
+        "message": "Ogranicz obrazy"
+    },
+    "PHwOzi": {
+        "message": "Dziękujemy Unsplash, AccuWeather i RocketLaunch.Live za ich API."
+    },
+    "QBZZBG": {
+        "message": "Uwaga: to jest funkcja eksperymentalna i selektory CSS mogą przestać działać na następnych wydaniach."
+    },
+    "QqE4JC": {
+        "message": "Brakujący odnośnik."
+    },
+    "RCe+DS": {
+        "message": "Przeciągnij i upuść widżety"
+    },
+    "T/wBPw": {
+        "message": "Usuń {type}"
+    },
+    "VPDVTF": {
+        "message": "Nic tu nie ma"
+    },
+    "WZjKFf": {
+        "message": "Uwaga: to może zawierać dane osobiste jeśli zostały wprowadzone w ustawieniach widżetu."
+    },
+    "XV4mnl": {
+        "message": "W zależności od twoich ustawień to samo zdjęcie może zostać wybrane"
+    },
+    "XYIyWM": {
+        "message": "Powinieneś zwiększyć \"Kolumny siatki\" do co najmniej {cols} aby w pełni wykorzystać dostępne miejsce."
+    },
+    "YS5zRT": {
+        "message": "Szukaj w {name}"
+    },
+    "YYoBQn": {
+        "message": "Siła rozmycia panelu"
+    },
+    "Z2/hH0": {
+        "message": "Obraz: {filename}"
+    },
+    "ZeZlbR": {
+        "message": "Ustawia przezroczystość przycisku"
+    },
+    "LaT9nn": {
+        "message": "<a>Ikony pogody</a> prawa zastrzeżone przez KDE na licencji GNU LGPL lub nowszej"
+    },
+    "TIEfOV": {
+        "message": "Artykuł zostanie wyświetlony jeśli pasuje do co najmniej jednego filtra \"Pokaż\" oraz nie jest ujęty w filtrze \"Ukryj\"."
+    },
+    "a0L2KE": {
+        "message": "Spróbuj dodać nazwę kraju lub jego inicjały."
+    },
+    "aO/LJo": {
+        "message": "Szukaj używając lokalizacji GPS"
+    },
+    "appDescription": {
+        "message": "Konfigurowalna strona nowej karty z widżetami i pięknymi tłami"
+    },
+    "b2Rs2F": {
+        "message": "Zmień jasność jasnych obrazów"
+    },
+    "bQFsdR": {
+        "message": "Przyznaj dostęp do {host}"
+    },
+    "bfWes8": {
+        "message": "Typ gradientu"
+    },
+    "bhFF6J": {
+        "message": "Pamięć podręczna"
+    },
+    "btOI+Z": {
+        "message": "Nowa karta"
+    },
+    "c7zm0j": {
+        "message": "Błąd wczytywania kanału. Upewnij się że jest to kanał RSS, JSONFeed albo Atom."
+    },
+    "dIwFS5": {
+        "message": "Wybierz obraz"
+    },
+    "dOlhtQ": {
+        "message": "Możesz wyświetlić pasek zakładek tylko na stronie nowej karty klikając prawym klawiszem myszy obok paska adresu>Pasek Zakładek>Wyświetlaj tylko w nowej karcie. <a> Zobacz więcej</a>"
+    },
+    "ekIjqh": {
+        "message": "Przyznaj uprawnienia do dostępu do wszystkich stron"
+    },
+    "ekW/+6": {
+        "message": "Nie można połączyć z internetem"
+    },
+    "exTzGh": {
+        "message": "Poziomo"
+    },
+    "fW8Xpd": {
+        "message": "Lokalizacja wymagana. Wejdź do edycji aby ją dodać."
+    },
+    "gAZqVl": {
+        "message": "Możesz dodać (<add></add>) albo usunąć (<remove></remove>) widżety później, albo zmienić ustawienia (<cog></cog>) zgodnie z potrzebami."
+    },
+    "gQAsym": {
+        "message": "Inne widżety nie przesuną się aby zrobić miejsce podczas przesuwania."
+    },
+    "grbGxs": {
+        "message": "Brak wydarzeń"
+    },
+    "h00yCR": {
+        "message": "Pokazuje ostatnie obrazy z Atom, JSONFeed, albo kanału RSS - przydatne dla WebComics."
+    },
+    "iFxzUm": {
+        "message": "Lubię"
+    },
+    "iH2AHA": {
+        "message": "<a>Otwarte oprogramowanie</a>, na licencjiGPLv3+."
+    },
+    "ilIuh2": {
+        "message": "Uważasz że to przydatne? Rozważ <a>wsparcie</a> aby pomóc pokryć koszty API pogody oraz wspierać przyszły rozwój Renewed Tab."
+    },
+    "iyOvAb": {
+        "message": "Szerokość obramowania panelu"
+    },
+    "ktmuOE": {
+        "message": "Pozostaw puste aby użyć tytułu kanału"
+    },
+    "l8+Uwz": {
+        "message": "Nic do edycji."
+    },
+    "languageName": {
+        "message": "Nazwa języka"
+    },
+    "mSg5KK": {
+        "message": "Jasność: ciemne"
+    },
+    "n+w6I2": {
+        "message": "Stop"
+    },
+    "n0cZ3b": {
+        "message": "Obsługiwane przez {host}."
+    },
+    "nF+GWk": {
+        "message": "JavaScript jest nie obsługiwany ze względów bezpieczeństwa. Zamiast tego użyj widżety iFrame"
+    },
+    "nHcPTf": {
+        "message": "Uwaga: Odnośniki importowane z zewnętrznych źródeł mogą zawierać linki afiliacyjne. Aby zapewnić prywatność, powinieneś zastąpić je bezpośrednimi odnośnikami."
+    },
+    "nHw5cV": {
+        "message": "Kliknij pozycję aby ją edytować."
+    },
+    "nlnYxI": {
+        "message": "Maksymalna liczba dni"
+    },
+    "oRui+E": {
+        "message": "Podoba ci się Renewed Tab? Rozważ wsparcie aby pomóc pokryć koszty i wesprzeć rozwój."
+    },
+    "or/+Da": {
+        "message": "Styl"
+    },
+    "p8GKKf": {
+        "message": "Najczęściej odwiedzane"
+    },
+    "pHo6u+": {
+        "message": "Brak obrazów znalezionych na kanale"
+    },
+    "pWdLkT": {
+        "message": "Przeczytaj <a>tutorial</a>. Możesz użyć dowolnego kalendarza który wspiera iCal, w tym Kalendarz Google i Outlook."
+    },
+    "q3GXOR": {
+        "message": "<b>Ten widżet jest eksperymentalny</b>. Mogą pojawić się błędy związane z wydarzeniami powodujące zawieszenie strony."
+    },
+    "q6/aVX": {
+        "message": "Możesz filtrować ten widżet używając widżety wyszukiwarki."
+    },
+    "qCsSqt": {
+        "message": "Ciemność tła panelu"
+    },
+    "qEk9AJ": {
+        "message": "Zmień jasność ciemniejszych obrazów"
+    },
+    "qYVXqA": {
+        "message": "{mode} Opcje"
+    },
+    "qfkgCx": {
+        "message": "Jak daleko w przyszłość wyszukiwać wydarzeń. Ustaw na 1 aby pokazywać tylko dzisiejsze wydarzenia lub 2 aby wyszukiwać dzisiejsze i wczorajsze itd."
+    },
+    "r8bU6m": {
+        "message": "Pokaż pasek zakładek w górnej części strony."
+    },
+    "rb3Zy8": {
+        "message": "Filtruj artykuły"
+    },
+    "sFyAdH": {
+        "message": "Alternatywnie: <import></import>"
+    },
+    "sYvWWw": {
+        "message": "Opcjonalnie, Odnośnik do obrazu (18px zalecane)"
+    },
+    "tSMpM0": {
+        "message": "Przyznaj dostęp do najczęściej odwiedzanych stron i pobierz ikony ze stron"
+    },
+    "translation_credits": {
+        "message": "tłumaczenie: Polski przetłumaczony przez Gorzi"
+    },
+    "uRYRJh": {
+        "message": "Edytuj {type}"
+    },
+    "vVnypL": {
+        "message": "Pokazuje losowy cytat, z kategoriami"
+    },
+    "wETxDh": {
+        "message": "Kalendarze"
+    },
+    "wmFdws": {
+        "message": "Podnieś"
+    },
+    "x7WADS": {
+        "message": "Siatka na pełną stronę"
+    },
+    "xR87uK": {
+        "message": "Odstęp między widżetami, w pikselach."
+    },
+    "ykNa5O": {
+        "message": "Podziękowania dla Font-Awesome za ikony, React za UI i Font-Awesome za kompilacje."
+    },
+    "zKofmb": {
+        "message": "ID kolekcji. Znajdziesz w odnośniku, na przykład: 42576559"
+    },
+    "zPAzlS": {
+        "message": "Połącz źródła do jednej karty"
+    },
+    "zXtUcf": {
+        "message": "Nie przejmuj się, możesz odblokować później"
+    },
+    "zfsplE": {
+        "message": "Nie pokazuj więcej"
+    },
+    "zsdRww": {
+        "message": "Używany do przycisków i odnośników"
+    },
+    "KsX2fE": {
+        "message": "<b>{name}</b> na {latitude} przez {longitude}"
     }
 }
