@@ -1360,5 +1360,45 @@
     },
     "q3GXOR": {
         "message": "<b>实验性的小部件</b>：可能会导致问题，并且可能导致页面无响应。"
+    },
+    "9KflVI": {
+        "message": "日历",
+        "description": "Calendar widget"
+    },
+    "S4PtGa": {
+        "message": "显示当月日历，高亮当前日期",
+        "description": "Calendar widget description"
+    },
+    "8Gpce2": {
+        "message": "显示星期标题",
+        "description": "Calendar widget: show weekday headers option"
+    },
+    "QQ/MZe": {
+        "message": "周日",
+        "description": "Calendar widget: Sunday abbreviation"
+    },
+    "LbKMMk": {
+        "message": "周一",
+        "description": "Calendar widget: Monday abbreviation"
+    },
+    "OApYRv": {
+        "message": "周二",
+        "description": "Calendar widget: Tuesday abbreviation"
+    },
+    "QYC0N5": {
+        "message": "周三",
+        "description": "Calendar widget: Wednesday abbreviation"
+    },
+    "RwOs0F": {
+        "message": "周四",
+        "description": "Calendar widget: Thursday abbreviation"
+    },
+    "1Vh9I5": {
+        "message": "周五",
+        "description": "Calendar widget: Friday abbreviation"
+    },
+    "wyf4bO": {
+        "message": "周六",
+        "description": "Calendar widget: Saturday abbreviation"
     }
 }
