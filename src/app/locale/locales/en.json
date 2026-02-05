@@ -1371,5 +1371,45 @@
     "zsdRww": {
         "message": "Used for primary buttons and links",
         "description": "Theme settings: form field hint (Primary Color)"
+    },
+    "9KflVI": {
+        "message": "Calendar",
+        "description": "Calendar widget"
+    },
+    "S4PtGa": {
+        "message": "Shows a monthly calendar with the current date highlighted",
+        "description": "Calendar widget description"
+    },
+    "8Gpce2": {
+        "message": "Show weekday headers",
+        "description": "Calendar widget: show weekday headers option"
+    },
+    "QQ/MZe": {
+        "message": "Sun",
+        "description": "Calendar widget: Sunday abbreviation"
+    },
+    "LbKMMk": {
+        "message": "Mon",
+        "description": "Calendar widget: Monday abbreviation"
+    },
+    "OApYRv": {
+        "message": "Tue",
+        "description": "Calendar widget: Tuesday abbreviation"
+    },
+    "QYC0N5": {
+        "message": "Wed",
+        "description": "Calendar widget: Wednesday abbreviation"
+    },
+    "RwOs0F": {
+        "message": "Thu",
+        "description": "Calendar widget: Thursday abbreviation"
+    },
+    "1Vh9I5": {
+        "message": "Fri",
+        "description": "Calendar widget: Friday abbreviation"
+    },
+    "wyf4bO": {
+        "message": "Sat",
+        "description": "Calendar widget: Saturday abbreviation"
     }
 }
