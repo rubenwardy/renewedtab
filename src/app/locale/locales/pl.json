@@ -16,15 +16,15 @@
         "description": "Weather widget: display subform title"
     },
     "AuSjzq": {
-        "message": "Obecnie: Pokaż poziom promieniowania UV",
+        "message": "Obecnie: Poziom promieniowania UV",
         "description": "Weather widget: form field label"
     },
     "4cMia7": {
-        "message": "Pokazuj nowy obraz",
+        "message": "Zmiana obrazu",
         "description": "Backgroud settings: form field label (how often background images change)"
     },
     "4F+2K3": {
-        "message": "Losowe zdjęcie z kolekcji Unsplash",
+        "message": "Losowy obraz z kolekcji Unsplash",
         "description": "Backgroud mode description"
     },
     "3vjl5Q": {
@@ -32,15 +32,15 @@
         "description": "Feed widget filter allow label"
     },
     "3vh5vd": {
-        "message": "Pusty widżet, przydatny do zarządzania rozmieszczeniem",
+        "message": "Pusty widżet, przydatny podczas rozmieszczania widżetów",
         "description": "Invisible widget description"
     },
     "0l+aD2": {
-        "message": "Cele dzienne i inspiracyjne cytaty",
+        "message": "Codzienne cele i inspirujące cytaty",
         "description": "Preset: focus description"
     },
     "/Mx09O": {
-        "message": "Eksperymentalne ustawienie. Nie działa ze wszystkimi źródłami ze względu na brakujące dane o obrazach. Obrazy mogą być duże i ładować się długo.",
+        "message": "Ustawienie eksperymentalne. Nie działa ze wszystkimi źródłami kanałów ze względu na brakujące dane o obrazach. Obrazy mogą być duże i ładować się długo.",
         "description": "Feed widget: form field hint (Show Images)"
     },
     "sX3mXR": {
@@ -75,19 +75,19 @@
         "description": "Widget grid: form label for grid spacing"
     },
     "5mfAB9": {
-        "message": "URL kanału Atom, JSONFeed lub RSS",
+        "message": "Adres URL kanału Atom, JSONFeed lub RSS",
         "description": "Form field hint (Feed URL)"
     },
     "+g7L/A": {
-        "message": "Pokazuje kanały Atom, JSONFeed i RSS - przydatne do śledzenia wiadomości, stron lub blogów",
+        "message": "Wyświetla kanały Atom, JSONFeed i RSS – przydatne do śledzenia wiadomości, witryn lub blogów",
         "description": "Feed widget description"
     },
     "/Mpu8A": {
-        "message": "Rozciągnij siatkę na całą stronę.",
+        "message": "Rozciąga siatkę na całą stronę.",
         "description": "Widget grid: form label 1 for grid full width"
     },
     "+oSH/F": {
-        "message": "Pokazuje twój wiek z nadmierną precyzją",
+        "message": "Wyświetla precyzyjnie twój wiek",
         "description": "Age widget description"
     },
     "/aA+Xf": {
@@ -99,7 +99,7 @@
         "description": "Notes Widget"
     },
     "0PsF7Z": {
-        "message": "Czy na pewno chcesz permanentnie usunąć ten widżet?",
+        "message": "Czy na pewno chcesz usunąć ten widżet?",
         "description": "Delete widget modal message"
     },
     "2AUlDo": {
@@ -137,7 +137,7 @@
         "message": "Anuluj"
     },
     "5DCxT+": {
-        "message": "Jednostka Temperatury",
+        "message": "Skala temperatury",
         "description": "Weather widget: form field label"
     },
     "6MDM6D": {
@@ -149,11 +149,11 @@
         "description": "Form field label"
     },
     "B1pyj1": {
-        "message": "Obecnie: Pokaż temperaturę odczuwalną",
+        "message": "Obecnie: Temperatura odczuwalna",
         "description": "Weather widget: form field label"
     },
     "AgU+/t": {
-        "message": "Lista nadchodzących przelotów kosmicznych z portalu RocketLaunch.Live",
+        "message": "Lista nadchodzących startów statków kosmicznych z portalu RocketLaunch.Live",
         "description": "SpaceFlights widget description"
     },
     "Ack5ID": {
@@ -161,11 +161,11 @@
         "description": "A search has returned no results here (note: there may be multiple places being searched)"
     },
     "7wOM6+": {
-        "message": "Postęp Roku",
+        "message": "Upływ roku",
         "description": "Year Progress widget"
     },
     "5640CU": {
-        "message": "Obecnie: Pokaż opady",
+        "message": "Wyświetlaj opady",
         "description": "Weather widget: form field label"
     },
     "4dzBeG": {
@@ -173,11 +173,11 @@
         "description": "Currencies widget: form field label"
     },
     "B0kbsm": {
-        "message": "Z Kanału",
+        "message": "Kanał",
         "description": "Unsplash background mode"
     },
     "8xVVb5": {
-        "message": "Kolor Podstawowy",
+        "message": "Kolor podstawowy",
         "description": "Theme settings: form field label"
     },
     "7OH6mh": {
@@ -185,7 +185,7 @@
         "description": "Image Widget"
     },
     "5mVcg9": {
-        "message": "Niestandardowy CSS",
+        "message": "Własny CSS",
         "description": "Theme settings: form field label"
     },
     "BiPNnl": {
@@ -779,7 +779,7 @@
         "description": "Weather widget: form field label"
     },
     "/4k9ry": {
-        "message": "<b>Bardzo Wysokie</b> promieniowanie UV",
+        "message": "<b>Bardzo wysokie</b> promieniowanie UV",
         "description": "Very High UV risk"
     },
     "2s4stS": {
@@ -787,7 +787,7 @@
         "description": "Onboarding modal: title"
     },
     "3aaibf": {
-        "message": "Dodaj Widżet"
+        "message": "Dodaj widżet"
     },
     "uv1bYR": {
         "message": "WTO",
@@ -824,13 +824,13 @@
         "message": "Lokalizacja"
     },
     "0feb3b": {
-        "message": "Opcjonalne, tworzy link obrazkowy"
+        "message": "Opcjonalne, dodaje do obrazu link"
     },
     "1Ms/OE": {
-        "message": "Jak bardzo krawędzie widżetów powinny być zaokrąglone? Od 0% do 300%"
+        "message": "Stopień zaokrąglenia krawędzi elementów. Od 0 do 300%."
     },
     "+PNw8j": {
-        "message": "Nawet jeśli ukryjesz niektóre informacje, często wciąż możesz je zobaczyć najeżdżając na dni i godziny"
+        "message": "Niewyświetlane informacje można zobaczyć, wskazując kursorem dni i godziny."
     },
     "+GMx80": {
         "message": "Nie znaleziono lokalizacji"
@@ -863,49 +863,49 @@
         "message": "Możesz zmienić cel klikając na widżet"
     },
     "2YhLSH": {
-        "message": "{name} Widżet"
+        "message": "Widżet {name}"
     },
     "1hvL/q": {
-        "message": "Wejdź do trybu edycji"
+        "message": "Przejdź do trybu edycji"
     },
     "20tqYI": {
-        "message": "Odnośnik do kalendarza iCal (plik .ics)"
+        "message": "Adres URL do kalendarza iCal (plik .ics)"
     },
     "3UG6ds": {
-        "message": "Szukaj widżetów lub przeglądaj sieć używając swojej ulubionej wyszukiwarki"
+        "message": "Wyszukiwanie w internecie lub wśród widżetów, używając preferowanej wyszukiwarki"
     },
     "3ZfhWo": {
-        "message": "Potrzebne uprawnienia do {host}. Edytuj ten widżet aby je przyznać."
+        "message": "Wymagane jest zezwolenie na dostęp do {host}. Edytuj ten widżet, aby je przyznać."
     },
     "3lHnZE": {
-        "message": "Wyczyść pamięć podręczną i przeładuj"
+        "message": "Wyczyść pamięć podręczną i odśwież"
     },
     "4UpnpD": {
-        "message": "Obrazy są przechowywane lokalnie w twojej przeglądarce, nigdy nie są wysyłane"
+        "message": "Obrazy są przechowywane lokalnie w przeglądarce i nigdy nie są przesyłane dalej"
     },
     "4fHiNl": {
         "message": "Duplikuj"
     },
     "4syC1B": {
-        "message": "Pomoc i Żądania"
+        "message": "Pomoc i prośby"
     },
     "5MMUNJ": {
-        "message": "To jest <b> eksperymentalne i może być trudniejsze w użyciu</b>."
+        "message": "To jest <b>eksperymentalne i może być trudne w użyciu</b>."
     },
     "6mQdhI": {
-        "message": "Jak bardzo zaokrąglone powinny być krawędzie paneli (np. widżetów)? Od 0% do 1000%"
+        "message": "Stopień zaokrąglenia krawędzi paneli np. widżetów. Od 0 do 1000%"
     },
     "ATbgo4": {
         "message": "Kołowy"
     },
     "Abtyj/": {
-        "message": "Obraz jest większy niż 2MB ({dataSizeMB}MB). Aby uzyskać lepsze czasy wczytywania powinieneś użyć mniejszego obrazu."
+        "message": "Obraz jest większy niż 2MB ({dataSizeMB}MB). Aby uzyskać lepsze czasy wczytywania, należy użyć mniejszego obrazu."
     },
     "8HmiSe": {
         "message": "Proszę określić źródło"
     },
     "6wEkCM": {
-        "message": "Alternatywnie, możesz użyć widżetu zakładek dla większej kontroli."
+        "message": "Alternatywnie można użyć widżetu zakładek, aby uzyskać większą kontrolę."
     },
     "9+2gJZ": {
         "message": "Ten widżet wymaga wersji rozszerzenia przeglądarki."
@@ -917,22 +917,22 @@
         "message": "Pionowy"
     },
     "Ay1sfO": {
-        "message": "Kontroluje jak dużo losowych obrazów z puli ostatnio dodanych wybierać. Jeśli ustawisz 1 zawsze zostanie wybrany ostatnio obraz"
+        "message": "Określa, z ilu ostatnich obrazów należy losowo wybierać. Ustawienie wartości 1 spowoduje, że zawsze zostanie wybrany najnowszy obraz."
     },
     "7zYGs9": {
-        "message": "Harmonogram kalendarza"
+        "message": "Kalendarz"
     },
     "6pdO6i": {
-        "message": "Brak dostępu do zakładek"
+        "message": "Nie można pobrać zakładek"
     },
     "8J0Bhj": {
-        "message": "Witaj w <a>Renewed Tab</a>: konfigurowalna strona nowej karty z widżetami i pięknymi tłami."
+        "message": "Witaj w <a>Renewed Tab</a>, konfigurowalnej stronie nowej karty z widżetami i pięknymi tłami."
     },
     "8xPAKF": {
         "message": "Od 0-100%, pozycja koloru w gradiencie"
     },
     "B4LnaC": {
-        "message": "Pokazuje nadchodzące wydarzenia odnośnika do iCal (.ics) (na przykład Google Calendar)"
+        "message": "Wyświetla nadchodzące wydarzenia z adresu iCal (.ics), na przykład z Kalendarza Google"
     },
     "D0+wcK": {
         "message": "Pokazuje obraz, opcjonalnie robi z niego odnośnik"
