@@ -96,7 +96,7 @@
         "description": "Notes Widget"
     },
     "0PsF7Z": {
-        "message": "Ar tikrai nori negrįžtamai pašalinti šį valdiklį?",
+        "message": "Ar tikrai norite negrįžtamai pašalinti šį valdiklį?",
         "description": "Delete widget modal message"
     },
     "0hxZWu": {
@@ -111,11 +111,11 @@
         "message": "Pridėti"
     },
     "27lljH": {
-        "message": "Tu esi <b>{age}</b>",
+        "message": "Jums <b>{age}</b> m.",
         "description": "Age widget text"
     },
     "2AUlDo": {
-        "message": "Gerai miegok, {name}",
+        "message": "Gerai miegokite, {name}",
         "description": "Greeting widget: greeting, from 9pm to midnight"
     },
     "2O5Rq1": {
@@ -123,11 +123,11 @@
         "description": "Greeting widget: greeting, from 4pm to 9pm"
     },
     "0feb3b": {
-        "message": "Pasirinktinis, vaizdas tampa nuoroda",
+        "message": "Pasirinktinis. Padaro vaizdą nuoroda.",
         "description": "Image widget: Form field hint (Link)"
     },
     "+PNw8j": {
-        "message": "Net jei paslepsi tam tikrą informaciją, dažnai ją vis tiek gali pamatyti užvestant pelės žymeklį ant dienų ir valandų",
+        "message": "Net jei paslepsite tam tikrą informaciją, dažnai ją vis tiek galima pamatyti, užvedus pelės žymeklį ant dienų ir valandų.",
         "description": "Weather widget: form field hint (Display Options)"
     },
     "+g7L/A": {
@@ -135,23 +135,23 @@
         "description": "Feed widget description"
     },
     "+oSH/F": {
-        "message": "Per daug tiksliai nurodo tavo dabartinį amžių.",
+        "message": "Per daug tiksliai nurodo jūsų dabartinį amžių.",
         "description": "Age widget description"
     },
     "0l+aD2": {
-        "message": "Kasdieniai tikslai ir įkvepiančios citatos",
+        "message": "Kasdieniai tikslai ir įkvepiančios citatos.",
         "description": "Preset: focus description"
     },
     "20tqYI": {
-        "message": "URL adresas į „iCal“ (.ics) kalendoriaus failą",
+        "message": "URL adresas į iCal (.ics) kalendoriaus failą",
         "description": "CalendarSchedule widget: form field hint (Calendar URL)"
     },
     "/Mpu8A": {
-        "message": "Ištiesk tinklelį, kad apimtų visą puslapį.",
+        "message": "Ištieskite tinklelį, kad apimtų visą puslapį.",
         "description": "Widget grid: form label 1 for grid full width"
     },
     "/Mx09O": {
-        "message": "Eksperimentinis. Dėl trūkstamos vaizdo informacijos tai neveikia su visais kanalų šaltiniais. Vaizdai taip pat gali būti dideli ir užtrukti, kol bus pakrauti.",
+        "message": "Eksperimentinis. Dėl trūkstamos vaizdo informacijos tai neveikia su visais kanalų šaltiniais. Vaizdai taip pat gali būti dideli ir užtrukti, kol bus įkelti.",
         "description": "Feed widget: form field hint (Show Images)"
     },
     "2efE5y": {
@@ -159,7 +159,7 @@
         "description": "Greeting Widget"
     },
     "3UG6ds": {
-        "message": "Ieškok valdiklių arba internete naudojant mėgstamą paieškos variklį.",
+        "message": "Ieškokite valdiklių arba internetą naudojant mėgstamą paieškos variklį.",
         "description": "Search widget description"
     },
     "4cMia7": {
@@ -1168,7 +1168,7 @@
         "description": "Top Sites widget: permission request"
     },
     "translation_credits": {
-        "message": "Lietuvių vertė Vaclovas Intas (Vac31.).",
+        "message": "Lietuvių k. išvertė Vaclovas Intas (Vac31.).",
         "description": "Credit the translators: LANGUAGE translation by YOUR NAME"
     },
     "tyq8NB": {
@@ -1179,7 +1179,7 @@
         "message": "Redaguoti {type}"
     },
     "ubO4zt": {
-        "message": "Interneto komiksas",
+        "message": "Internetinis komiksas",
         "description": "Web Comic Widget"
     },
     "uzT59w": {
@@ -1187,7 +1187,7 @@
         "description": "Preset: Grid"
     },
     "vlumg9": {
-        "message": "Ieškoti valdiklių...",
+        "message": "Ieškokite valdiklių...",
         "description": "Create Widgets modal: search widgets placeholder"
     },
     "wEQDC6": {
@@ -1201,7 +1201,7 @@
         "message": "Kurti valdiklį"
     },
     "wr0l0L": {
-        "message": "Vaizdas iš URL",
+        "message": "Vaizdas iš URL.",
         "description": "Backgroud mode description"
     },
     "wwQ6Va": {
@@ -1213,7 +1213,7 @@
         "description": "Space Flights Widget"
     },
     "x7WADS": {
-        "message": "Viso puslapio tinklelis",
+        "message": "Viso puslapio tinklelis.",
         "description": "Widget grid: form label for grid full width"
     },
     "xtOPHp": {
@@ -1225,7 +1225,7 @@
         "description": "Links widget: form field label"
     },
     "xvXMaZ": {
-        "message": "Sveikina tave",
+        "message": "Sveikina jus.",
         "description": "Greeting widget description"
     },
     "y1Z3or": {
@@ -1247,43 +1247,43 @@
         "message": "„Discord“ / „Matrix“ pokalbiai"
     },
     "yvWbz6": {
-        "message": "Kitas",
+        "message": "Tolesnis",
         "description": "Onboarding page: next button"
     },
     "ywSKRt": {
-        "message": "Pasirinktinis HTML",
+        "message": "Pasirinktinis HTML.",
         "description": "HTML widget description"
     },
     "z7UTSa": {
         "message": "Apie „Reneved Tab“"
     },
     "ykNa5O": {
-        "message": "Ir ačiū „Font-Awesome“ už piktogramas, „React“ už naudotojo sąsają ir „WebPack“ už darinius."
+        "message": "Ir ačiū „Font-Awesome“ už piktogramas, „React“ už NS (naudotojo sąsają) ir „WebPack“ už darinius."
     },
     "zEj0dg": {
-        "message": "Rodo metų eigą kaip eigos juostą.",
+        "message": "Rodo eigą per metus kaip eigos juostą.",
         "description": "Age widget description"
     },
     "zKofmb": {
-        "message": "Kolekcijos ID. Randamas pagal URL. Pavyzdžiui: 42576559",
+        "message": "Kolekcijos ID. Randamas URL adrese. Pavyzdžiui: 42576559.",
         "description": "Backgroud settings: form field hint (Unsplash Collection)"
     },
     "zPAzlS": {
-        "message": "Sujungti šaltinius į vieną skirtuką",
+        "message": "Sujungti šaltinius į vieną kortelę",
         "description": "Feed widget: form field label"
     },
     "zWgbGg": {
         "message": "Šiandien"
     },
     "zXtUcf": {
-        "message": "Nesijaudink, galėsi atrakinti vėliau"
+        "message": "Nesijaudinkite, galėsite atrakinti vėliau."
     },
     "zaQRTm": {
         "message": "<b>Ekstremalus</b> UV",
         "description": "Extreme UV risk"
     },
     "zfsplE": {
-        "message": "Niekada daugiau nerodyti",
+        "message": "Niekada neberodyti",
         "description": "Background credits vote"
     },
     "ziyAdj": {
@@ -1295,7 +1295,7 @@
         "description": "Feed widget: filter allow checkbox label"
     },
     "zsdRww": {
-        "message": "Naudojama pagrindiniams mygtukams ir nuorodoms",
+        "message": "Naudojama pagrindiniams mygtukams ir nuorodoms.",
         "description": "Theme settings: form field hint (Primary Color)"
     },
     "qfkgCx": {
@@ -1309,5 +1309,20 @@
     "xR87uK": {
         "message": "Atstumas tarp valdiklių taškais.",
         "description": "Widget grid: form hint for grid spacing"
+    },
+    "1Ms/OE": {
+        "message": "Kiek apvalūs turėtų būti daugumos objektų kraštai? Nuo 0 % iki 300 %."
+    },
+    "1hvL/q": {
+        "message": "Įeiti į redagavimo režimą"
+    },
+    "2YhLSH": {
+        "message": "„{name}“ valdiklis"
+    },
+    "wmFdws": {
+        "message": "Pakelti"
+    },
+    "u9iVp5": {
+        "message": "Kraštinės spindulys"
     }
 }
