@@ -997,5 +997,86 @@
     },
     "zsdRww": {
         "message": "Usado para botões e ligações primárias"
+    },
+    "1Ms/OE": {
+        "message": "Quão arredondados devem ser os vértices da maioria das coisas? De 0 a 300%"
+    },
+    "1hvL/q": {
+        "message": "Entrar no modo de edição"
+    },
+    "2AUlDo": {
+        "message": "Dorme bem, {name}"
+    },
+    "2O5Rq1": {
+        "message": "Boa noite, {name}"
+    },
+    "3lHnZE": {
+        "message": "Limpar as caches e recarregar"
+    },
+    "4fHiNl": {
+        "message": "Duplicar"
+    },
+    "6mQdhI": {
+        "message": "Quão arredondados devem ser os vértices dos painéis (eg:widgets)? De 0 a 1000%"
+    },
+    "ATbgo4": {
+        "message": "Radial"
+    },
+    "Dk7Khi": {
+        "message": "Fahrenheit"
+    },
+    "H/r5m6": {
+        "message": "Mover para baixo"
+    },
+    "S3njcM": {
+        "message": "IFrame"
+    },
+    "VkW6D1": {
+        "message": "centro, topo, ou fundo"
+    },
+    "aO/LJo": {
+        "message": "Procure utilizando uma localização GPS"
+    },
+    "bhFF6J": {
+        "message": "Cache"
+    },
+    "iyOvAb": {
+        "message": "Raio de fronteira do painel"
+    },
+    "languageName": {
+        "message": "Nome da Linguagem"
+    },
+    "nF+GWk": {
+        "message": "JavaScript não é suportado por questões de segurança. Utilize o widget de iFrame em vez disso"
+    },
+    "nHcPTf": {
+        "message": "Aviso: Ligações importadas de fontes externas podem conter ligações afiliadas. Para garantir privacidade, deve substituir estas por ligações diretas."
+    },
+    "q3GXOR": {
+        "message": "<b>Este widget é experimental</b>: Podem ocorrer situações com o aparecimento de eventos, e pode causar que a página congele."
+    },
+    "rbrahO": {
+        "message": "Fechar"
+    },
+    "translation_credits": {
+        "message": "creditos_traducao"
+    },
+    "u9iVp5": {
+        "message": "Raio de fronteira"
+    },
+    "ubO4zt": {
+        "message": "Banda desenhada da rede"
+    },
+    "wmFdws": {
+        "message": "Mover para cima"
+    },
+    "2YhLSH": {
+        "message": "Widget {name}"
+    },
+    "LaT9nn": {
+        "message": "<a>Icones do tempo</a> copyright KDE e licensiados segundo GNU LGPL v3 ou mais recente"
+    },
+    "lkJAu6": {
+        "message": "Unsplash"
     }
 }
