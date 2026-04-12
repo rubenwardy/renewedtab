@@ -384,7 +384,7 @@
         "message": "Astukset välilehti"
     },
     "JN/uvd": {
-        "message": "<b>Kohtalainen<b> UV-riski"
+        "message": "<b>Kohtalainen</b> UV-riski"
     },
     "JihbEV": {
         "message": "Teeman asetukset: linkki CSS-dokumentteihin"
@@ -456,7 +456,7 @@
         "message": "Huomenna"
     },
     "N/7Stk": {
-        "message": "RubenWardyn</a> luoma</a>."
+        "message": "<a>rubenwardy</a> luoma."
     },
     "NjoFru": {
         "message": "Taustatila: kuvaus"
@@ -711,7 +711,7 @@
         "message": "Kirjanmerkkiwidgetin kuvaus"
     },
     "ckvzIb": {
-        "message": "<b>Alhainen<b> UV-riski"
+        "message": "<b>Alhainen</b> UV-riski"
     },
     "d7dHsn": {
         "message": "Taustan Vanhenemisen Alasvetovalikko"
@@ -798,10 +798,10 @@
         "message": "Äänestys taustatiedoista"
     },
     "iH2AHA": {
-        "message": "<an>Avoimen lähdekoodin</a>, lisensoitu GPLv3+:n alaisuudessa."
+        "message": "<a>Avoimen lähdekoodin</a>, lisensoitu GPLv3+:n alaisuudessa."
     },
     "ilIuh2": {
-        "message": "Sääwidget: <a>lahjoitusten pyytäminen<a>"
+        "message": "Sääwidget: <a>lahjoitusten pyytäminen</a>"
     },
     "irdBm2": {
         "message": "Asetukset_Välilehti"
