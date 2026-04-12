@@ -35,6 +35,10 @@ export default [...fixupConfigRules(compat.extends(
 		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-require-imports": "off",
+		"react-hooks/set-state-in-effect": "off",
+		"react-hooks/immutability": "off",
+		"react-hooks/purity": "off",
+		"react-hooks/static-components": "off",
 
 		"@typescript-eslint/no-unused-vars": [
 			"warn", // or "error"
