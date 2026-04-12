@@ -1,4 +1,4 @@
-image: node:22
+image: node:24
 cache:
   paths:
     - node_modules
