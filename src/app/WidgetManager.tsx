@@ -16,9 +16,12 @@ export class WidgetManager {
 	constructor(private storage: IStorage) {}
 
 	async load() {
+		window.performance.mark("widget-repository-start-load");
+
 		const json = await this.storage.get<Widget<unknown>[]>("widgets");
 		if (!json) {
 			this.widgets = [];
+			window.performance.mark("widget-repository-end-load");
 			return;
 		}
 
@@ -29,6 +32,8 @@ export class WidgetManager {
 		for (const widget of this.widgets) {
 			await this.afterLoad(widget);
 		}
+
+		window.performance.mark("widget-repository-end-load");
 	}
 
 	private async afterLoad(widget: Widget<unknown>) {

@@ -1,7 +1,7 @@
 import { ActualBackgroundProps, GradientType } from "./providers/common";
 import Color from "app/utils/Color";
 import { enumToValue } from "app/utils/enum";
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useEffect } from "react";
 import { Credits } from "./Credits";
 
 
@@ -50,6 +50,10 @@ export default function ActualBackground(props: ActualBackgroundProps) {
 	if (props.position) {
 		style.backgroundPosition = props.position;
 	}
+
+	useEffect(() => {
+		window.performance.mark("background-loaded");
+	}, [])
 
 	return (
 		<>

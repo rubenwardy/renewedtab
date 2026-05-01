@@ -10,6 +10,7 @@ import useGlobalSearch from 'app/hooks/useGlobalSearch';
 import { queryMatchesAny } from 'app/utils';
 import { miscMessages } from 'app/locale/common';
 import { bindValuesToDescriptor } from 'app/locale/MyMessageDescriptor';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 
 
 const messages = defineMessages({
@@ -111,6 +112,7 @@ function SpaceFlights(props: WidgetProps<any>) {
 			<h2 className="panel-inset pb-1">
 				<FormattedMessage {...messages.title} />
 			</h2>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className="linkbox">
 				{rows}
 				{rows.length == 0 && launches.length > 0 && (

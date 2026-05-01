@@ -5,6 +5,8 @@ import "./scss/main.scss";
 import { getFeedbackURL } from "./utils/webext";
 import { initSentry }  from "./sentry";
 
+window.performance.mark("app-js-start");
+
 initSentry();
 
 

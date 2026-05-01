@@ -39,6 +39,10 @@ ui-chrome:
   variables:
     TARGET: chrome
     SENTRY_DSN: ""
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - cypress/performance.json
 
 ui-firefox:
   image: cypress/browsers:node-22.14.0-chrome-134.0.6998.88-1-ff-136.0.1-edge-134.0.3124.51-1
@@ -52,6 +56,10 @@ ui-firefox:
   variables:
     TARGET: firefox
     SENTRY_DSN: ""
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - cypress/performance.json
 
 webext:
   stage: package

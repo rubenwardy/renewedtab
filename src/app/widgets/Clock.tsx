@@ -1,4 +1,5 @@
 import FitText from "app/components/FitText";
+import MarkWidgetLoaded from "app/components/MarkWidgetLoaded";
 import Panel from "app/components/Panel";
 import { schemaMessages } from "app/locale/common";
 import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
@@ -128,6 +129,7 @@ function Clock(props: WidgetProps<ClockProps>) {
 
 	return (
 		<Panel {...props.theme} scrolling={false}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className="row row-vertical h-100">
 				<div className="col text-center">
 					<FitText>

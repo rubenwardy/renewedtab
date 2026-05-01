@@ -1,4 +1,4 @@
-import React, { useState, KeyboardEvent } from "react";
+import React, { useState, KeyboardEvent, useEffect } from "react";
 import { getSchemaForWidget, WidgetProps, getThemeSchemaForWidget } from "../../Widget";
 import Modal from "app/components/Modal";
 import { Form } from "app/components/forms";
@@ -119,6 +119,10 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 	const [mode, setMode] = useState(WidgetMode.View);
 	const close = () => setMode(WidgetMode.View);
 	const intl = useIntl();
+
+	useEffect(() => {
+		window.performance.mark(`widget-${props.type}-render-start`);
+	}, [props.type]);
 
 	switch (mode) {
 	case WidgetMode.Edit:

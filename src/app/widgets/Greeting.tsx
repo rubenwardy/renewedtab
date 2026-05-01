@@ -1,4 +1,5 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
+import MarkWidgetLoaded from "app/components/MarkWidgetLoaded";
 import Panel from "app/components/Panel";
 import { useStorage } from "app/hooks/storage";
 import { Vector2 } from "app/utils/Vector2";
@@ -74,6 +75,7 @@ function Greeting(props: WidgetProps<Record<string, never>>) {
 	const intl = useIntl();
 	return (
 		<Panel {...props.theme}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className="large middle-center">
 				<div>
 					{name !== undefined &&

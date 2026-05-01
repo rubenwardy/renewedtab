@@ -10,6 +10,7 @@ import { miscMessages, schemaMessages } from 'app/locale/common';
 import useBookmarks from "app/hooks/useBookmarks";
 import useForceUpdate from 'app/hooks/useForceUpdate';
 import useShowBookmarksModal from 'app/features/bookmarks/useShowBookmarksModal';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 
 const messages = defineMessages({
 	title: {
@@ -44,9 +45,12 @@ function BookmarksImpl(props: WidgetProps<BookmarksProps>) {
 	}
 
 	return (
-		<LinkBoxPanel {...data} widgetTheme={props.theme}  useWebsiteIcons={true}
-			links={links}
-			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />);
+		<>
+			<MarkWidgetLoaded widgetType={props.type} />
+			<LinkBoxPanel {...data} widgetTheme={props.theme}  useWebsiteIcons={true}
+				links={links}
+				defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe" />
+		</>);
 }
 
 function Bookmarks(props: WidgetProps<BookmarksProps>) {

@@ -1,3 +1,4 @@
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
@@ -27,6 +28,7 @@ interface TextProps
 function Text(props: WidgetProps<TextProps>)  {
 	return (
 		<Panel {...props.theme}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className="medium">
 				{props.props.text}
 			</div>

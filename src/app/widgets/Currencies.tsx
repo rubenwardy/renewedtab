@@ -1,4 +1,5 @@
 import ErrorView from 'app/components/ErrorView';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Panel from 'app/components/Panel';
 import { fetchAPI, useAPI } from "app/hooks/http";
 import useGlobalSearch from 'app/hooks/useGlobalSearch';
@@ -90,6 +91,7 @@ function Currencies(props: WidgetProps<CurrenciesProps>) {
 
 	return (
 		<Panel {...props.theme}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className="stats h-100">
 				{rates.map(({from, to}) => (
 					<div className="singlestat" key={`${from}-${to}`}>

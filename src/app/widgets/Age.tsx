@@ -1,3 +1,4 @@
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Panel from 'app/components/Panel';
 import { calculateDecimalAge } from 'app/utils/dates';
 import { type } from 'app/utils/Schema';
@@ -52,6 +53,7 @@ function Age(props: WidgetProps<AgeProps>) {
 
 	return (
 		<Panel {...props.theme} className="vertical-middle" invisClassName="vertical-middle">
+			<MarkWidgetLoaded widgetType={props.type} />
 			<FormattedMessage {...messages.current_age}
 				values={{
 					b: (chunks: any) => <strong key={Math.random()}>&nbsp;{chunks}&nbsp;</strong>,

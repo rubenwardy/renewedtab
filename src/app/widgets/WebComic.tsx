@@ -9,6 +9,7 @@ import { fetchAPI, useFeed } from 'app/hooks/http';
 import ErrorView from 'app/components/ErrorView';
 import UserError from 'app/utils/UserError';
 import Modal from "app/components/Modal";
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 
 
 const messages = defineMessages({
@@ -113,6 +114,7 @@ function WebComic(props: WidgetProps<WebComicProps>) {
 	} else {
 		return (
 			<Panel {...props.theme} flush={true} invisClassName="text-shadow">
+				<MarkWidgetLoaded widgetType={props.type} />
 				<ImageCarousel hasPrev={page + 1 < feed.articles.length} hasNext={page > 0} onNavigate={handleNavigate}>
 					<div className="image-caption h-100">
 						<a onClick={() => setFullscreen(true)} title={article.alt ?? ""}>

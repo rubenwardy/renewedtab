@@ -19,6 +19,7 @@ import Button, { ButtonVariant } from "app/components/Button";
 import { makeOPML, parseOPML } from "common/feeds/opml";
 import { FeedSource } from "common/feeds";
 import { useForceUpdateValue } from 'app/hooks/useForceUpdate';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 
 
 const messages = defineMessages({
@@ -218,6 +219,7 @@ function FeedPanel(props: FeedPanelProps) {
 
 	return (
 		<div className="linkbox">
+			<MarkWidgetLoaded widgetType="Feed" />
 			{errors.map(({ source, error }, i) => (
 				<span key={`err-${i}`} className="link-item section error">
 					<FormattedMessage

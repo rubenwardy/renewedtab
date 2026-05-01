@@ -1,4 +1,5 @@
 import ErrorView from "app/components/ErrorView";
+import MarkWidgetLoaded from "app/components/MarkWidgetLoaded";
 import Panel from "app/components/Panel";
 import { useAPI } from "app/hooks/http";
 import { schemaMessages } from "app/locale/common";
@@ -50,6 +51,7 @@ function Quotes(props: WidgetProps<QuotesProps>) {
 
 	return (
 		<Panel {...props.theme} scrolling={true}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className="middle-center quote">
 				<div className="quote-text">
 					{quote.text}

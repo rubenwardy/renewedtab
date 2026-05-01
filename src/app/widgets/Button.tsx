@@ -1,4 +1,5 @@
 import Icon from 'app/components/Icon';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import { schemaMessages } from 'app/locale/common';
 import { clampNumber, mergeClasses } from 'app/utils';
 import Color from 'app/utils/Color';
@@ -57,6 +58,7 @@ function Button(props: WidgetProps<ButtonProps>) {
 
 	return (
 		<a href={data.url} style={style} className={className}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div className={mergeClasses("row middle-center h-100", !isHorizontal && "row-vertical")}>
 				{icon && (
 					<div className={mergeClasses(isHorizontal ? "col-auto" : "col", "p-1 h-100")}

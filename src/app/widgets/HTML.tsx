@@ -1,3 +1,4 @@
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Panel from 'app/components/Panel';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
@@ -35,6 +36,7 @@ interface HTMLProps {
 function HTML(props: WidgetProps<HTMLProps>) {
 	return (
 		<Panel {...props.theme} scrolling={false}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<div dangerouslySetInnerHTML={{__html: props.props.html}} />
 		</Panel>);
 }

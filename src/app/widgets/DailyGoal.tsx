@@ -1,5 +1,6 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
+import MarkWidgetLoaded from "app/components/MarkWidgetLoaded";
 import Panel from "app/components/Panel";
 import useWidgetProp from "app/hooks/useWidgetProp";
 import { miscMessages } from "app/locale/common";
@@ -65,6 +66,7 @@ function DailyGoal(widget: WidgetProps<DailyGoalProps>) {
 	const intl = useIntl();
 	return (
 		<Panel {...widget.theme}>
+			<MarkWidgetLoaded widgetType={widget.type} />
 			<div className="large middle-center">
 				<AutoWidthInput onChange={handleChange} value={goal?.text ?? ""}
 						placeholder={intl.formatMessage(messages.placeholder)} />

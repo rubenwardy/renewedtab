@@ -1,3 +1,4 @@
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Meter from 'app/components/Meter';
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
@@ -31,6 +32,7 @@ function YearProgress(props: WidgetProps<any>) {
 
 	return (
 		<Panel {...props.theme} className="vertical-middle" invisClassName="vertical-middle">
+			<MarkWidgetLoaded widgetType={props.type} />
 			<Meter className="blur" color={props.theme.color}
 				value={dayOfYear} max={365} />
 		</Panel>);

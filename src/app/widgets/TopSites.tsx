@@ -1,5 +1,6 @@
 import ErrorView from 'app/components/ErrorView';
 import { LinkBoxPanel, Link } from 'app/components/LinkBox';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import RequestPermission from 'app/components/RequestPermission';
 import { usePromise } from 'app/hooks/promises';
 import useForceUpdate from 'app/hooks/useForceUpdate';
@@ -86,9 +87,12 @@ function TopSitesImpl(props: WidgetProps<any>) {
 	}));
 
 	return (
-		<LinkBoxPanel {...data} widgetTheme={props.theme} links={links} useWebsiteIcons={true}
-			defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe"
-			limitItemsToAvoidScrolling={props.theme.listBoxStyle == ListBoxStyle.Icons} />);
+		<>
+			<MarkWidgetLoaded widgetType={props.type} />
+			<LinkBoxPanel {...data} widgetTheme={props.theme} links={links} useWebsiteIcons={true}
+				defaultIcon="fa-globe-europe" errorIcon="fa-globe-europe"
+				limitItemsToAvoidScrolling={props.theme.listBoxStyle == ListBoxStyle.Icons} />
+		</>);
 }
 
 function TopSites(props: WidgetProps<Record<string, never>>) {

@@ -1,5 +1,6 @@
 import AutoWidthInput from "app/components/AutoWidthInput";
 import Button, { ButtonVariant } from "app/components/Button";
+import MarkWidgetLoaded from "app/components/MarkWidgetLoaded";
 import Panel from "app/components/Panel";
 import useGlobalSearch from "app/hooks/useGlobalSearch";
 import useWidgetProp from "app/hooks/useWidgetProp";
@@ -108,6 +109,7 @@ function TodoList(props: WidgetProps<TodoListProps>) {
 
 	return (
 		<Panel {...props.theme}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<ul className="todolist">
 				{filteredList.map(item => (
 					<TodoItem key={item.id} item={item}

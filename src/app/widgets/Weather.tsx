@@ -15,6 +15,7 @@ import deepCopy from 'app/utils/deepcopy';
 import { bindValuesToDescriptor } from "app/locale/MyMessageDescriptor";
 import { fetchAPI } from "app/hooks/http";
 import { usePromise } from 'app/hooks/promises';
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 
 
 const messages = defineMessages({
@@ -416,6 +417,7 @@ function WeatherImpl({ widget, rawInfo }: { widget: WidgetProps<WeatherProps>, r
 	return (
 		<Panel {...widget.theme} ref={ref}
 				className={classes} invisClassName={`${classes} text-shadow`}>
+			<MarkWidgetLoaded widgetType="Weather" />
 			{!hideCredits && (
 				<div className="row">
 					<div className="col text-left location weather-title">

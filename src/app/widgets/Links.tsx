@@ -1,6 +1,7 @@
 import Button, { ButtonVariant } from 'app/components/Button';
 import { Form } from 'app/components/forms';
 import { LinkBoxPanel, LinkSchema, LinkBoxWidgetProps, FullLinkSchema, Link } from 'app/components/LinkBox';
+import { useMarkWidgetLoaded } from 'app/components/MarkWidgetLoaded';
 import Modal from 'app/components/Modal';
 import { miscMessages, schemaMessages } from 'app/locale/common';
 import { parseLinksJson } from 'app/utils/imports';
@@ -92,6 +93,8 @@ function Links(props: WidgetProps<LinksWidgetProps>) {
 		return ret;
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [intl, props.props, isModalOpen]);
+
+	useMarkWidgetLoaded(props.type);
 
 	if (isModalOpen) {
 		return (<LinksQuickAdd {...props} onClose={() => setIsModalOpen(false)} />);

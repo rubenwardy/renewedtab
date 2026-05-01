@@ -1,4 +1,5 @@
 import ErrorView from "app/components/ErrorView";
+import MarkWidgetLoaded from "app/components/MarkWidgetLoaded";
 import Panel from "app/components/Panel";
 import { usePromise } from "app/hooks/promises";
 import useGlobalSearch from "app/hooks/useGlobalSearch";
@@ -181,6 +182,7 @@ function Search(props: WidgetProps<SearchProps>) {
 
 	return (
 		<Panel {...props.theme} flush={true}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<form onSubmit={onSubmit}>
 				<span key={directURL ?? "icon"} className="icon">
 					<i className={directURL !== null

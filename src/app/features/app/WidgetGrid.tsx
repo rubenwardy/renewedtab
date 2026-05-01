@@ -87,6 +87,7 @@ export default function WidgetGrid(props: WidgetGridProps) {
 	const maxRows = props.fullPage ? Math.floor(document.body.clientHeight / (cellSize+cellSpacing)) : undefined;
 
 	useEffect(() => {
+		window.performance.mark("widget-grid-mounted");
 		const timer = setTimeout(() => setGridClassNames("layout animated"), 1000);
 		return () => clearTimeout(timer);
 	}, []);

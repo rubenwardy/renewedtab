@@ -1,3 +1,4 @@
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Panel from 'app/components/Panel';
 import useWidgetProp from 'app/hooks/useWidgetProp';
 import { Vector2 } from 'app/utils/Vector2';
@@ -38,6 +39,7 @@ function Notes(props: WidgetProps<NotesProps>) {
 	const intl = useIntl();
 	return (
 		<Panel {...props.theme} scrolling={false}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			<textarea className="invisible" onChange={handleChange}
 					placeholder={intl.formatMessage(messages.placeholder)}
 					value={notes || ""} />

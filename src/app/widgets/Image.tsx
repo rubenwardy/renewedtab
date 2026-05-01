@@ -1,3 +1,4 @@
+import MarkWidgetLoaded from 'app/components/MarkWidgetLoaded';
 import Panel from 'app/components/Panel';
 import { schemaMessages } from 'app/locale/common';
 import { type } from 'app/utils/Schema';
@@ -34,6 +35,7 @@ function Image(props: WidgetProps<ImageProps>) {
 
 	return (
 		<Panel {...props.theme} scrolling={false}>
+			<MarkWidgetLoaded widgetType={props.type} />
 			{((data.link ?? "").length > 0)
 				? (<a href={data.link}><img src={data.image_url} /></a>)
 				: (<img src={data.image_url} />)}
