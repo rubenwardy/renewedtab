@@ -22,7 +22,7 @@ async function fetchLocationsFromQuery(query: string): Promise<Location[]> {
 		throw new UserError("Weather API disabled as the server owner hasn't configured ACCUWEATHER_API_KEY.")
 	}
 
-	const url = new URL("http://dataservice.accuweather.com/locations/v1/search");
+	const url = new URL("https://dataservice.accuweather.com/locations/v1/search");
 	url.searchParams.set("q", query);
 	url.searchParams.set("apikey", ACCUWEATHER_API_KEY);
 
@@ -56,7 +56,7 @@ async function fetchLocationsFromCoord(lat: number, long: number): Promise<Locat
 		throw new UserError("Weather API disabled as the server owner hasn't configured ACCUWEATHER_API_KEY.")
 	}
 
-	const url = new URL("http://dataservice.accuweather.com/locations/v1/cities/geoposition/search");
+	const url = new URL("https://dataservice.accuweather.com/locations/v1/cities/geoposition/search");
 	url.searchParams.set("q", `${lat},${long}`);
 	url.searchParams.set("apikey", ACCUWEATHER_API_KEY);
 

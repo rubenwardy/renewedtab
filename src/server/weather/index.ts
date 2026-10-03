@@ -93,7 +93,7 @@ async function fetchCurrentForecast(key: string): Promise<AccuCurrentAPI> {
 
 	notifyUpstreamRequest("AccuWeather.com");
 
-	const url = new URL(`http://dataservice.accuweather.com/currentconditions/v1/${key}`);
+	const url = new URL(`https://dataservice.accuweather.com/currentconditions/v1/${key}`);
 	url.searchParams.set("apikey", ACCUWEATHER_API_KEY);
 	url.searchParams.set("details", "true");
 	url.searchParams.set("metric", "true");
@@ -122,7 +122,7 @@ async function fetchHourlyForecast(key: string): Promise<WeatherHour[]> {
 
 	notifyUpstreamRequest("AccuWeather.com");
 
-	const url = new URL(`http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${key}`);
+	const url = new URL(`https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${key}`);
 	url.searchParams.set("apikey", ACCUWEATHER_API_KEY);
 	url.searchParams.set("metric", "true");
 
@@ -157,7 +157,7 @@ async function fetchDailyForecast(key: string): Promise<WeatherDay[]> {
 
 	notifyUpstreamRequest("AccuWeather.com");
 
-	const url = new URL(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}`);
+	const url = new URL(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}`);
 	url.searchParams.set("apikey", ACCUWEATHER_API_KEY);
 	url.searchParams.set("details", "true");
 	url.searchParams.set("metric", "true");
