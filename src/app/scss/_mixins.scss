@@ -5,11 +5,6 @@
 	@if $lines == 0 {
 		white-space: nowrap;
 	} @else {
-		// Fallbacks for browsers not supporting line-clamp.
-		max-height: $lines * 1.4em;
-		display: block;
-
-		// Line-clamp settings.
 		line-clamp: $lines;
 		display: -webkit-box;
 		-webkit-line-clamp: $lines;
