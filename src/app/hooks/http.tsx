@@ -45,7 +45,9 @@ function makeProxy(url: string) {
 
 export async function fetchCheckCors(request: Request, init?: RequestInit): Promise<Response> {
 	request.headers.set("X-Extension", typeof browser !== "undefined" ? browser.runtime.id : "");
-	request.headers.set("X-Source", window.location.href);
+	if (!window.location.href.startsWith("moz-extension")) {
+		request.headers.set("X-Source", window.location.href);
+	}
 
 	try {
 		return await fetch(request, init);
