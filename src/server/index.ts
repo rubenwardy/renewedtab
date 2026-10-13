@@ -285,7 +285,8 @@ app.post("/api/feedback/", async (req: express.Request, res: express.Response, n
 			return;
 		}
 
-		feedbackStream.write(JSON.stringify(req.body) + "\n\n");
+		const data = { ...req.body, "created_at": new Date().toISOString() };
+		feedbackStream.write(JSON.stringify(data) + "\n\n");
 
 		if (DISCORD_WEBHOOK) {
 			let comments = req.body.comments;
