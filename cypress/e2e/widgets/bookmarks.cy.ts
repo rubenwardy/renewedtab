@@ -41,14 +41,15 @@ describe("Bookmarks", () => {
 		cy.createWidget("Bookmarks");
 
 		const widget = new Widget(3);
-		widget.get(".iconbar li").should("have.length", 2);
+		widget.get(".iconbar .link-item").should("have.length", 3);
 		widget.get().contains("One");
 		widget.get().contains("Two");
+		widget.get().contains("Folder");
 
 		widget.edit();
 		cy.get("[name='includeFolders']").check();
 		cy.getCy("edit-ok").click();
-		widget.get(".iconbar li").should("have.length", 5);
+		widget.get(".iconbar .link-item").should("have.length", 5);
 
 		widget.get().contains("Folder");
 		widget.get().contains("Three");
@@ -65,9 +66,9 @@ describe("Bookmarks", () => {
 		const search = new Widget(2);
 		const bookmarks = new Widget(3);
 
-		bookmarks.get(".iconbar li").should("have.length", 2);
+		bookmarks.get(".iconbar .link-item").should("have.length", 3);
 		search.get("input").type("two");
-		bookmarks.get(".iconbar li").should("have.length", 1);
+		bookmarks.get(".iconbar .link-item").should("have.length", 1);
 		search.get("input").type("asdf");
 		bookmarks.get().contains("No results");
 	});

@@ -3,9 +3,9 @@ import { ListBoxStyle, WidgetTheme } from "app/Widget";
 import Icon from "app/components/Icon";
 import Panel from "app/components/Panel";
 import { mergeClasses, parseURL, queryMatchesAny } from "app/utils";
-import { defineMessages } from "react-intl";
+import { defineMessages, FormattedMessage } from "react-intl";
 import Schema, { type } from 'app/utils/Schema';
-import { schemaMessages } from "app/locale/common";
+import { miscMessages, schemaMessages } from "app/locale/common";
 import deepCopy from "app/utils/deepcopy";
 import { getWebsiteIconOrNull } from "app/websiteIcons";
 import { enumToValue } from "app/utils/enum";
@@ -154,6 +154,10 @@ export function LinkBox(props: LinkBoxProps) {
 					key={link.id}
 					link={link}
 					linkBoxProps={style} />)}
+			{links.length == 0 && rawLinks.length > 0 && (
+				<div className="link-item section">
+					<FormattedMessage {...miscMessages.noResults} />
+				</div>)}
 		</nav>);
 }
 

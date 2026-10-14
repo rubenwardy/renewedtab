@@ -61,8 +61,8 @@ describe("Feed", () => {
 
 		widget.get().should("exist");
 		widget.get(".tabs").should("not.exist");
-		widget.get(".links").contains("The Register");
-		widget.get(".links").contains("BBC News");
+		widget.get(".linkbox").contains("The Register");
+		widget.get(".linkbox").contains("BBC News");
 	});
 
 	it("global search", () => {
@@ -72,9 +72,9 @@ describe("Feed", () => {
 		// As the data isn't fixed, it's hard to search for a specific thing
 		// here, so we just search to get no results.
 
-		feed.get(".links li").should("have.length.gt", 1);
+		feed.get(".linkbox .link-item").should("have.length.gt", 1);
 		search.get("input").type("sdkfjbsdkfjbasdkjfbasdf")
-		feed.get(".links li").should("have.length", 1);
+		feed.get(".linkbox .link-item").should("have.length", 1);
 		feed.get().contains("No results");
 	});
 });

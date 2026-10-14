@@ -38,10 +38,10 @@ describe("TopSites", () => {
 		cy.createWidget("TopSites");
 
 		const widget = new Widget(3);
-		widget.get(".iconbar li").should("not.exist").then(() => {
+		widget.get(".iconbar .link-item").should("not.exist").then(() => {
 			setTopSites(testTopSites);
 			cy.visit("/dist/webext/app/index.html", config);
-			widget.get(".iconbar li").should("have.length", 6);
+			widget.get(".iconbar .link-item").should("have.length", 6);
 		});
 	});
 
@@ -55,9 +55,9 @@ describe("TopSites", () => {
 		const search = new Widget(2);
 		const topsites = new Widget(3);
 
-		topsites.get(".iconbar li").should("have.length", 6);
+		topsites.get(".iconbar .link-item").should("have.length", 6);
 		search.get("input").type("GitHub");
-		topsites.get(".iconbar li").should("have.length", 1);
+		topsites.get(".iconbar .link-item").should("have.length", 1);
 		search.get("input").type("asdf");
 		topsites.get().contains("No results");
 	});
