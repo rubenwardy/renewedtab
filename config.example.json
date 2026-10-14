@@ -7,6 +7,8 @@
 	"OPEN_EXCHANGE_RATES_KEY": "",
 	"OWNER_EMAIL": "your@email.com",
 	"SENTRY_DSN": "",
+	"POSTHOG_PROJECT_TOKEN": "",
+	"POSTHOG_HOST": "https://t.renewedtab.com",
 	"PROXY_ALLOWED_HOSTS": [
 		"feeds.bbci.co.uk",
 		"fdo.rocketlaunch.live",

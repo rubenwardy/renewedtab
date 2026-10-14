@@ -1,5 +1,6 @@
 
 import * as Sentry from "@sentry/react";
+import { getIsTechnicalDataAllowed } from "app/utils/dataCollection";
 
 
 export function getIsSentryEnabled(): boolean {
@@ -32,6 +33,10 @@ export function initSentry() {
 		release: `renewedtab@${app_version.version}`,
 
 		beforeSend(event) {
+			if (!getIsTechnicalDataAllowed()) {
+				return null;
+			}
+
 			const exceptions = event.exception?.values ?? [];
 
 			// Drop expected UserError exceptions
@@ -48,6 +53,10 @@ export function initSentry() {
 			}
 
 			return event;
+		},
+
+		beforeSendTransaction(event) {
+			return getIsTechnicalDataAllowed() ? event : null;
 		},
 
 		beforeBreadcrumb(crumb) {

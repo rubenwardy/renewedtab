@@ -9,6 +9,7 @@ import { miscMessages } from "app/locale/common";
 import Button, { ButtonVariant } from "app/components/Button";
 import { SchemaEntry } from "app/utils/Schema";
 import { MyFormattedMessage } from "app/locale/MyMessageDescriptor";
+import { captureWidgetDeleted, captureWidgetDuplicated, captureWidgetSettingChanged, captureWidgetSettingsOpened } from "app/analytics/events";
 
 
 interface WidgetDialogProps<T> extends WidgetProps<T> {
@@ -45,6 +46,16 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 		props.save();
 	}
 
+	function onPropsChange(key: string) {
+		captureWidgetSettingChanged(props.type, key, "props");
+		onChange();
+	}
+
+	function onThemeChange(key: string) {
+		captureWidgetSettingChanged(props.type, key, "theme");
+		onChange();
+	}
+
 	const isWide = Object.values(schema as Record<string, SchemaEntry>)
 		.some(field => field.type == "array" || field.type == "unordered_array");
 
@@ -64,7 +75,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 				<Form
 						values={props.props}
 						schema={schema}
-						onChange={onChange} />
+						onChange={onPropsChange} />
 
 				<h2 className="mt-6">
 					<FormattedMessage
@@ -75,7 +86,7 @@ function WidgetEditor<T>(props: WidgetDialogProps<T>) {
 				<Form
 						values={props.theme}
 						schema={themeSchema}
-						onChange={onChange} />
+						onChange={onThemeChange} />
 			</div>
 			<div className="modal-footer buttons">
 				<Button onClick={props.onClose} label={miscMessages.ok}
@@ -90,6 +101,12 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 	const title = intl.formatMessage(
 			{ defaultMessage: "Remove {type}" },
 			{ type: intl.formatMessage(props.typeDef.title) });
+
+	function handleDelete() {
+		captureWidgetDeleted(props.type);
+		props.remove();
+	}
+
 	return (
 		<Modal title={title} {...props}>
 			<div className="modal-body">
@@ -101,7 +118,7 @@ function WidgetDelete<T>(props: WidgetDialogProps<T>) {
 				<Button variant={ButtonVariant.Secondary} data-cy="cancel"
 					onClick={props.onClose} label={miscMessages.cancel} />
 				<Button variant={ButtonVariant.Danger} autoFocus={true}
-					onClick={props.remove} label={miscMessages.delete}
+					onClick={handleDelete} label={miscMessages.delete}
 					data-cy="delete" />
 			</div>
 		</Modal>);
@@ -151,6 +168,16 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 			</>);
 	}
 
+	function handleEdit() {
+		captureWidgetSettingsOpened(props.type, "button");
+		setMode(WidgetMode.Edit);
+	}
+
+	function handleDuplicate() {
+		captureWidgetDuplicated(props.type);
+		props.duplicate();
+	}
+
 	function onKeyPress(e: KeyboardEvent<HTMLInputElement>) {
 		const currentElement = document.activeElement;
 		if (currentElement?.nodeName == "INPUT" || currentElement?.nodeName == "TEXTAREA") {
@@ -158,6 +185,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 		}
 
 		if (e.key == "e") {
+			captureWidgetSettingsOpened(props.type, "keyboard");
 			setMode(WidgetMode.Edit);
 		} else if (e.key == "Delete" || e.key == "d") {
 			setMode(WidgetMode.Delete);
@@ -183,14 +211,14 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 					title={miscMessages.delete} />
 
 				<Button variant={ButtonVariant.None}
-					onClick={props.duplicate}
+					onClick={handleDuplicate}
 					data-cy="widget-duplicate"
 					icon="fas fa-clone"
 					title={miscMessages.duplicate} />
 
 				<Button variant={ButtonVariant.None}
 					className="btn widget-edit"
-					onClick={() => setMode(WidgetMode.Edit)}
+					onClick={handleEdit}
 					icon="fas fa-pen"
 					title={miscMessages.edit} />
 			</div>

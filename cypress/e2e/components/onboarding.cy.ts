@@ -15,6 +15,7 @@ describe("Onboarding", () => {
 	it("has presets, choose focus", () => {
 		cy.contains("Welcome to Renewed Tab");
 		cy.get(".carousel-next").click();
+		cy.skipAnalyticsConsent();
 
 		cy.contains("Drag and Drop Widgets");
 		cy.get(".carousel-next").click();
@@ -32,6 +33,7 @@ describe("Onboarding", () => {
 	it("has presets, choose grid", () => {
 		cy.contains("Welcome to Renewed Tab");
 		cy.get(".carousel-next").click();
+		cy.skipAnalyticsConsent();
 
 		cy.contains("Drag and Drop Widgets");
 		cy.get(".carousel-next").click();
@@ -51,6 +53,7 @@ describe("Onboarding", () => {
 
 		cy.contains("Welcome to Renewed Tab");
 		cy.get(".carousel-next").click();
+		cy.skipAnalyticsConsent();
 
 		cy.contains("Drag and Drop Widgets");
 		cy.get(".carousel-next").click();

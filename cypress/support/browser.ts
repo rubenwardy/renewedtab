@@ -40,6 +40,17 @@ export function mockBrowserAPIs() {
 			browser.topSites.get
 		*/
 
+		permissions: {
+			async getAll(): Promise<browser.permissions.Permissions> {
+				return { permissions: [], origins: [], data_collection: [] };
+			},
+			async request() {
+				return false;
+			},
+			onAdded: { addListener() {} },
+			onRemoved: { addListener() {} },
+		},
+
 		bookmarks: {
 			async getSubTree() {
 				return bookmarks;

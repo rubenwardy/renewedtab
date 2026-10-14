@@ -6,6 +6,7 @@ import React from "react";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "app/components/Button";
 import ImportButton from "app/components/ImportButton";
+import { captureDataReset } from "app/analytics/events";
 
 
 const messages = defineMessages({
@@ -47,6 +48,7 @@ export default function ImportExport() {
 		const confirmReset = intl.formatMessage(messages.confirmReset);
 		if (confirm(confirmReset)) {
 			await storage.clear();
+			captureDataReset();
 			location.reload();
 		}
 	}

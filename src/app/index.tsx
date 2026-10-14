@@ -4,6 +4,7 @@ import App from "./features/app/App";
 import "./scss/main.scss";
 import { getFeedbackURL } from "./utils/webext";
 import { initSentry }  from "./sentry";
+import "./analytics/posthog";
 
 performance.mark("app-js-start");
 
@@ -42,7 +43,7 @@ if (typeof browser !== "undefined") {
 	setTimeout(() => {
 		for (let i = 0; i < window.localStorage.length; i++) {
 			const key = window.localStorage.key(i);
-			if (key && key != "_sentry-opt-out") {
+			if (key && key != "_sentry-opt-out" && !key.startsWith("ph_") && !key.startsWith("__ph_")) {
 				window.localStorage.removeItem(key);
 			}
 		}

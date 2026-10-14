@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const fs = require("fs");
+
 const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -27,6 +28,8 @@ function getConfig() {
 		API_URL: JSON.stringify(config.API_URL),
 		PROXY_URL: JSON.stringify(config.PROXY_URL),
 		SENTRY_DSN: JSON.stringify(config.SENTRY_DSN),
+		POSTHOG_PROJECT_TOKEN: JSON.stringify(config.POSTHOG_PROJECT_TOKEN),
+		POSTHOG_HOST: JSON.stringify(config.POSTHOG_HOST),
 	};
 }
 

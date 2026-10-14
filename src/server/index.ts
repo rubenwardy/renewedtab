@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import Sentry from "@sentry/node";
 
-import { SENTRY_DSN, SAVE_ROOT, UA_DEFAULT, DISCORD_WEBHOOK, UA_PROXY, PORT, IS_DEBUG } from "./config";
+import { SENTRY_DSN, SAVE_ROOT, UA_DEFAULT, DISCORD_WEBHOOK, UA_PROXY, PORT, IS_DEBUG, ANALYTICS_CONSENT_ROLLOUT_PERCENT } from "./config";
 
 
 // App
@@ -40,7 +40,7 @@ function writeClientError(res: express.Response, msg: string) {
 }
 
 import fetchCatch, {Request} from "./http";
-import { promRegister, notifyAPIRequest, notifyUpstreamRequest } from "./metrics";
+import { promRegister, notifyAPIRequest, notifyUpstreamRequest, notifyAnalyticsConsentAnswer } from "./metrics";
 import { TippyTopImage } from "common/api/icons";
 import UserError from "./UserError";
 import { FeedType } from "common/feeds";
@@ -55,6 +55,8 @@ import SpaceLaunch from "common/api/SpaceLaunch";
 import { getQuote, getQuoteCategories } from "./quotes";
 import { getCurrencies } from "./currencies";
 import { autocompleteFeeds, autocompleteWebcomics, autocompleteBackgroundFeeds } from "./data";
+import { RemoteConfig } from "common/api/remoteConfig";
+import { ANALYTICS_CONSENT_CHOICES, ANALYTICS_CONSENT_SOURCES } from "common/api/analyticsConsent";
 
 
 app.get('/metrics', async (req, res) => {
@@ -455,6 +457,40 @@ app.get("/api/quotes/", async (req: express.Request, res: express.Response) => {
 		res.removeHeader("expires");
 		res.append("max-age", "0");
 		res.json([]);
+	}
+});
+
+
+app.get("/api/config/", async (_req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("config");
+
+		const remoteConfig: RemoteConfig = {
+			analytics_consent_rollout_percent: ANALYTICS_CONSENT_ROLLOUT_PERCENT,
+		};
+
+		res.setHeader("Cache-Control", "public,max-age=14400,stale-if-error=10000,stale-while-revalidate=10000").json(remoteConfig);
+	} catch (e: any) {
+		next(e);
+	}
+});
+
+
+app.post("/api/analytics-consent/", async (req: express.Request, res: express.Response, next: (e: unknown) => void) => {
+	try {
+		notifyAPIRequest("analytics-consent");
+
+		const { choice, source } = req.body ?? {};
+		if (!(ANALYTICS_CONSENT_CHOICES as readonly unknown[]).includes(choice) ||
+				!(ANALYTICS_CONSENT_SOURCES as readonly unknown[]).includes(source)) {
+			writeClientError(res, "Invalid choice or source");
+			return;
+		}
+
+		notifyAnalyticsConsentAnswer(choice, source);
+		res.status(204).end();
+	} catch (e: any) {
+		next(e);
 	}
 });
 

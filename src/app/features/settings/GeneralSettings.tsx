@@ -4,7 +4,10 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import Button, { ButtonVariant } from "app/components/Button";
 import LanguageSelector from "app/components/LanguageSelector";
 import { getIsSentryEnabled, setSentryEnabled } from "app/sentry";
+import { getIsPosthogOptedIn, getPosthogDistinctId, isPosthogEnabled, setPosthogOptedIn } from "app/analytics/posthog";
+import { reportAnalyticsConsentAnswer } from "app/analytics/analyticsConsentStats";
 import { cacheStorage } from "app/storage";
+import { getIsTechnicalDataAllowed, requestTechnicalData } from "app/utils/dataCollection";
 
 
 const messages = defineMessages({
@@ -36,10 +39,20 @@ export interface GeneralSettingsProps {
 
 export default function GeneralSettings(props: GeneralSettingsProps) {
 	const [sentryEnabledValue, setSentryEnabledValue] =
-		useState(getIsSentryEnabled());
-	function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
-		setSentryEnabled(e.target.checked);
-		setSentryEnabledValue(e.target.checked);
+		useState(getIsSentryEnabled() && getIsTechnicalDataAllowed());
+	async function onSentryEnabledChanged(e: ChangeEvent<HTMLInputElement>) {
+		const enabled = e.target.checked && await requestTechnicalData();
+		setSentryEnabled(enabled);
+		setSentryEnabledValue(enabled);
+	}
+
+	const [posthogOptedInValue, setPosthogOptedInValue] =
+		useState(getIsPosthogOptedIn());
+	async function onPosthogOptedInChanged(e: ChangeEvent<HTMLInputElement>) {
+		const optedIn = e.target.checked && await requestTechnicalData();
+		setPosthogOptedIn(optedIn);
+		reportAnalyticsConsentAnswer(optedIn ? "allow" : "deny", "settings");
+		setPosthogOptedInValue(optedIn);
 	}
 
 	async function onClearCache() {
@@ -109,6 +122,27 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 						defaultMessage="Enable crash reporting (using Sentry)"
 						description="General settings: enable sentry" />
 				</label>
+				{isPosthogEnabled && (
+					<div className="mt-2">
+						<label className="inline" htmlFor="posthog-opted-in">
+							<input name="posthog-opted-in" className="mr-2"
+								type="checkbox" checked={posthogOptedInValue}
+								onChange={onPosthogOptedInChanged} />
+							<FormattedMessage
+								defaultMessage="Share usage statistics (using PostHog)"
+								description="General settings: enable posthog" />
+						</label>
+						{posthogOptedInValue && (
+							<p className="text-muted mt-1 mb-0">
+								<FormattedMessage
+									defaultMessage="Your usage statistics ID is <code>{id}</code>."
+									description="General settings: posthog distinct ID, for deletion requests"
+									values={{
+										id: getPosthogDistinctId(),
+										code: (chunk: any) => (<code key={Math.random()}>{chunk}</code>),
+									}} />
+							</p>)}
+					</div>)}
 				<p className="mt-4">
 					<Button label={messages.privacyPolicy}
 						variant={ButtonVariant.Secondary} target="_blank"

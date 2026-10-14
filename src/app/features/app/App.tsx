@@ -8,6 +8,7 @@ import { defineMessage, defineMessages, IntlProvider, useIntl } from "react-intl
 import { getTranslation, detectUserLocale } from "app/locale";
 import { applyTheme, ThemeConfig } from "../settings/ThemeSettings";
 import ReviewRequester from "./ReviewRequester";
+import AnalyticsConsentModal, { getIsInAnalyticsConsentRollout } from "./AnalyticsConsentModal";
 import { storage } from "app/storage";
 import * as Sentry from "@sentry/react";
 import Onboarding from "../onboarding";
@@ -20,6 +21,9 @@ import { WidgetManagerContext } from "app/hooks/useWidgetManager";
 import { LockedContext } from "app/hooks/useIsLocked";
 import { usePromise } from "app/hooks/promises";
 import { useStorage } from "app/hooks/storage";
+import { captureGridLocked, captureGridUnlocked, captureDailyActive } from "app/analytics/events";
+import { getIsPosthogConsentPending } from "app/analytics/posthog";
+import useForceUpdate from "app/hooks/useForceUpdate";
 import BookmarksModal from "../bookmarks/BookmarksModal";
 
 
@@ -55,6 +59,7 @@ export default function App() {
 
 	const [loadingRes,] = usePromise(async () => {
 		await widgetManager.load();
+		captureDailyActive(widgetManager.widgets);
 		return true;
 	}, []);
 
@@ -79,6 +84,23 @@ export default function App() {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [loaded]);
+
+	function unlockGrid() {
+		setIsLocked(false);
+		captureGridUnlocked();
+	}
+
+	function lockGrid() {
+		setIsLocked(true);
+		captureGridLocked();
+	}
+
+	const [shouldPromptExistingUser] = usePromise(async () =>
+		onboardingIsOpen === false && getIsPosthogConsentPending() &&
+			await getIsInAnalyticsConsentRollout(),
+		[onboardingIsOpen]);
+	const showAnalyticsConsent = shouldPromptExistingUser === true && getIsPosthogConsentPending();
+	const forceUpdate = useForceUpdate();
 
 	const gridSettings = rawGridSettings && { ...defaultGridSettings, ...rawGridSettings };
 
@@ -125,10 +147,12 @@ export default function App() {
 									<Onboarding
 										onClose={() => setOnboardingIsOpen(false)}
 										locale={locale ?? "en"} setLocale={setLocale} />)}
+								{showAnalyticsConsent && (
+									<AnalyticsConsentModal onDone={forceUpdate} />)}
 								<ReviewRequester />
 
 								{isLocked && !onboardingIsOpen && (
-									<Button id="unlock-widgets" onClick={() => setIsLocked(false)}
+									<Button id="unlock-widgets" onClick={unlockGrid}
 										tabIndex={0} variant={ButtonVariant.None}
 										data-cy="start-editing"
 										className="text-shadow" icon="fas fa-pen"
@@ -162,7 +186,7 @@ export default function App() {
 												defaultMessage: "Settings",
 											})} />
 
-										<Button onClick={() => setIsLocked(true)}
+										<Button onClick={lockGrid}
 											variant={ButtonVariant.Secondary}
 											icon="fa fa-check" small={true}
 											data-cy="finish-editing"

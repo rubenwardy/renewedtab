@@ -5,6 +5,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import { WidgetTypes } from "../../widgets";
 import Modal from "app/components/Modal";
 import useWidgetManager from "app/hooks/useWidgetManager";
+import { captureWidgetCreated } from "app/analytics/events";
 
 interface CreateWidgetDialogProps {
 	onClose: () => void;
@@ -17,6 +18,7 @@ export default function CreateWidgetDialog(props: CreateWidgetDialogProps) {
 
 	function select(key: string) {
 		widgetManager.createWidget(key);
+		captureWidgetCreated(key);
 		props.onClose();
 	}
 

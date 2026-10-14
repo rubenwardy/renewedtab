@@ -7,6 +7,7 @@ import Button, { ButtonVariant } from "app/components/Button";
 import { Form } from "app/components/forms";
 import { ColorPair } from "app/components/forms/ColorFields";
 import { schemaMessages } from "app/locale/common";
+import { captureThemeReset } from "app/analytics/events";
 
 
 const messages = defineMessages({
@@ -121,6 +122,7 @@ export function ThemeSettings(props: ThemeSettingsProps) {
 
 	async function resetTheme() {
 		await storage.remove("theme");
+		captureThemeReset();
 		location.reload();
 	}
 

@@ -6,6 +6,7 @@ import React from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Form } from "app/components/forms";
 import Radio, { RadioGroup } from "app/components/Radio";
+import { captureBackgroundChanged } from "app/analytics/events";
 
 
 export interface BackgroundSettingsProps {
@@ -41,6 +42,7 @@ export default function BackgroundSettings(props: BackgroundSettingsProps) {
 	function handleModeChanged(newMode: string) {
 		props.background!.mode = newMode;
 		props.setBackground(props.background!);
+		captureBackgroundChanged(newMode);
 	}
 
 	function handleSetValue(key: string, val: any) {

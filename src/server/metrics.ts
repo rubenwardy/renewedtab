@@ -45,3 +45,14 @@ const upstreamRetriesCounter = new client.Counter({
 export function notifyUpstreamRetry(upstream: string) {
 	upstreamRetriesCounter.labels({ upstream }).inc();
 }
+
+
+const analyticsConsentAnswersCounter = new client.Counter({
+	name: "renewedtab_analytics_consent_answers",
+	help: "Anonymous count of answers to the analytics consent request",
+	labelNames: [ "choice", "source" ],
+});
+
+export function notifyAnalyticsConsentAnswer(choice: string, source: string) {
+	analyticsConsentAnswersCounter.labels({ choice, source }).inc();
+}

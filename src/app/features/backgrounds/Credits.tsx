@@ -6,6 +6,7 @@ import React from "react";
 import { defineMessages, useIntl } from "react-intl";
 import Button, { ButtonVariant } from "app/components/Button";
 import { useStorage } from "app/hooks/storage";
+import { captureBackgroundVoteCast } from "app/analytics/events";
 
 
 const messages = defineMessages({
@@ -58,6 +59,7 @@ function CreditsVote(props: CreditsProps) {
 	function handleClick(isPositive: boolean) {
 		if (votes?.[props.info!.id] !== isPositive) {
 			reportVote(props.info!, isPositive);
+			captureBackgroundVoteCast(isPositive ? "like" : "block");
 		}
 
 		setVotes({

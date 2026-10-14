@@ -5,6 +5,7 @@ import { OnboardingPageProps } from ".";
 import { ButtonVariant } from "app/components/Button";
 import ImportButton from "app/components/ImportButton";
 import useWidgetManager from "app/hooks/useWidgetManager";
+import { captureOnboardingPresetApplied } from "app/analytics/events";
 
 
 interface Preset {
@@ -89,6 +90,7 @@ export default function OnboardingPresets(props: OnboardingPageProps) {
 
 	function applyPreset(preset: Preset) {
 		widgetManager.createFromArray(preset.widgets);
+		captureOnboardingPresetApplied(preset.id);
 		props.onDone();
 	}
 
