@@ -14,6 +14,7 @@ import useGlobalSearch from 'app/hooks/useGlobalSearch';
 import { parseURL, queryMatchesAny } from 'app/utils';
 import { Article } from 'common/feeds/parse';
 import WebsiteIcon from 'app/components/WebsiteIcon';
+import { useWebsiteIconsEnabled } from 'app/utils/websiteIcons';
 import { myFormatMessage } from "app/locale/MyMessageDescriptor";
 import Button, { ButtonVariant } from "app/components/Button";
 import { makeOPML, parseOPML } from "common/feeds/opml";
@@ -112,6 +113,7 @@ interface FeedPanelProps extends FeedProps {
 
 
 function FeedArticle({ article, data }: { article: Article, data: FeedProps }) {
+	const websiteIconsEnabled = useWebsiteIconsEnabled();
 	if (data.showImages) {
 		return (
 			<div className="row row-gap-3">
@@ -132,7 +134,7 @@ function FeedArticle({ article, data }: { article: Article, data: FeedProps }) {
 			</div>);
 	} else if (data.sources.length == 1) {
 		return (<>{article.title}</>);
-	} else if (data.useWebsiteIcons) {
+	} else if (data.useWebsiteIcons && websiteIconsEnabled) {
 		return (
 			<div className="row row-gap-3">
 				<div className="col-auto">
@@ -383,29 +385,17 @@ const widget: WidgetType<FeedProps> = {
 		combineSources: false,
 		filters: [],
 		openInNewTab: false,
-		useWebsiteIcons: false,
+		useWebsiteIcons: true,
 		showImages: false,
 	},
 
-	async schema() {
-		if (typeof browser !== "undefined") {
-			return {
-				sources: type.array(sourceSchema, messages.sources),
-				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
-				combineSources: type.boolean(messages.combineSources),
-				openInNewTab: type.boolean(schemaMessages.openInNewTab),
-				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
-				showImages: type.boolean(messages.showImages, messages.showImagesHint),
-			};
-		} else {
-			return {
-				sources: type.array(sourceSchema, messages.sources),
-				filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
-				combineSources: type.boolean(messages.combineSources),
-				openInNewTab: type.boolean(schemaMessages.openInNewTab),
-				showImages: type.boolean(messages.showImages, messages.showImagesHint),
-			};
-		}
+	schema: {
+		sources: type.array(sourceSchema, messages.sources),
+		filters: type.unorderedArray(filterSchema, messages.filters, messages.filtersHint),
+		combineSources: type.boolean(messages.combineSources),
+		openInNewTab: type.boolean(schemaMessages.openInNewTab),
+		useWebsiteIcons: type.booleanWebsiteIcons(schemaMessages.useWebsiteIcons),
+		showImages: type.boolean(messages.showImages, messages.showImagesHint),
 	},
 
 	async onLoaded(widget) {

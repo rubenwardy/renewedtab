@@ -114,7 +114,9 @@ class DelegateStorage implements IStorage {
 	}
 
 	async keys(): Promise<string[]> {
-		return (await this.delegate.keys()).filter(key => key.startsWith(this.prefix));
+		return (await this.delegate.keys())
+			.filter(key => key.startsWith(this.prefix))
+			.map(key => key.substring(this.prefix.length));
 	}
 
 	async get<T>(key: string): Promise<T | null> {
@@ -133,7 +135,7 @@ class DelegateStorage implements IStorage {
 	}
 
 	async clear(): Promise<void> {
-		(await this.keys()).forEach(key => this.delegate.remove(key));
+		(await this.keys()).forEach(key => this.remove(key));
 	}
 }
 

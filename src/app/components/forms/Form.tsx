@@ -3,6 +3,7 @@ import Schema, { SchemaEntry } from "app/utils/Schema";
 import React, { JSX } from "react";
 import { FormattedMessage } from "react-intl";
 import { Field } from "./Field";
+import { useWebsiteIconsEnabled } from "app/utils/websiteIcons";
 
 
 type stringKeyOf<T> = keyof T & string;
@@ -42,8 +43,14 @@ function makeFieldEle<T>(props: FormProps<T>, key: stringKeyOf<T>, entry: Schema
  * Automatically creates fields based on the given values and schema.
  */
 export default function Form<T>(props: FormProps<T>) {
-	const inner = Object.entries(props.schema).map(([key, entry]) =>
-		makeFieldEle(props, key as keyof Schema<T>, entry as SchemaEntry));
+	const websiteIconsEnabled = useWebsiteIconsEnabled();
+	const inner = Object.entries(props.schema)
+		.filter(([, entry]) => {
+			const showIf = (entry as SchemaEntry).showIfWebsiteIconsEnabled;
+			return showIf === undefined || showIf == websiteIconsEnabled;
+		})
+		.map(([key, entry]) =>
+			makeFieldEle(props, key as keyof Schema<T>, entry as SchemaEntry));
 
 	if (inner.length == 0 && props.showEmptyView !== false) {
 		inner.push(

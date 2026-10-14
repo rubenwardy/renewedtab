@@ -27,6 +27,7 @@ function getConfig() {
 	return {
 		API_URL: JSON.stringify(config.API_URL),
 		PROXY_URL: JSON.stringify(config.PROXY_URL),
+		WEBSITE_ICONS_URL: JSON.stringify(config.WEBSITE_ICONS_URL),
 		SENTRY_DSN: JSON.stringify(config.SENTRY_DSN),
 		POSTHOG_PROJECT_TOKEN: JSON.stringify(config.POSTHOG_PROJECT_TOKEN),
 		POSTHOG_HOST: JSON.stringify(config.POSTHOG_HOST),

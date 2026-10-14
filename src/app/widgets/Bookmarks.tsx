@@ -60,7 +60,6 @@ function Bookmarks(props: WidgetProps<BookmarksProps>) {
 	if (typeof browser.bookmarks === "undefined") {
 		const permissions: browser.permissions.Permissions = {
 			permissions: ["bookmarks"],
-			origins: ["<all_urls>"],
 		};
 
 		return (

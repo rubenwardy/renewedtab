@@ -188,7 +188,7 @@ export const miscMessages = defineMessages({
 	},
 
 	bookmarksPermissionLabel: {
-		defaultMessage: "Grant permission to access bookmarks and fetch icons from websites",
+		defaultMessage: "Grant permission to access bookmarks",
 	},
 
 	bookmarksBar: {

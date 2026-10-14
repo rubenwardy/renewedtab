@@ -2,7 +2,7 @@ import { MyMessageDescriptor } from "app/locale/MyMessageDescriptor";
 import { IntlShape } from "react-intl";
 
 type JSType = "boolean" | "string" | "number" | "object" | (new (...args: any[]) => any);
-export type Type = JSType | "url_feed" | "host_all" | "location" |
+export type Type = JSType | "url_feed" | "location" |
 	"image_upload" | "array" | "unordered_array" | "json" | "url" |
 	"color" | "color_pair" | "image" | "unit_number" | "textarea" |
 	"quote_categories" | "enum" | "select" | "subform" | "time_zone";
@@ -27,6 +27,12 @@ export interface SchemaEntry {
 	min?: number;
 	max?: number;
 	autocomplete?: (intl: IntlShape) => Promise<AutocompleteItem[]>;
+
+	/**
+	 * If set, only show the field when website icons are enabled (true) or
+	 * disabled (false) in global settings.
+	 */
+	showIfWebsiteIconsEnabled?: boolean;
 }
 
 
@@ -68,6 +74,15 @@ function makeSelectFunc(type: Type) {
  */
 export namespace type {
 	export const boolean = makeTypeFunc("boolean");
+
+	/**
+	 * Boolean that is hidden when website icons are disabled in global settings.
+	 */
+	export const booleanWebsiteIcons = (label: MyMessageDescriptor, hint?: MyMessageDescriptor): SchemaEntry => ({
+		type: "boolean",
+		label, hint,
+		showIfWebsiteIconsEnabled: true,
+	});
 	export const string = makeTypeFunc("string");
 	export const textarea = makeTypeFunc("textarea");
 	export const json = makeTypeFunc("json");
@@ -104,8 +119,6 @@ export namespace type {
 	export const image_upload = makeTypeFunc("image_upload");
 
 	export const image = makeTypeFunc("image");
-
-	export const booleanHostPerm = makeTypeFunc("host_all");
 
 	/**
 	 * enumType: The TypeScript enum object

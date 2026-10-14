@@ -56,7 +56,7 @@ const messages = defineMessages({
 	},
 
 	permissionLabel: {
-		defaultMessage: "Grant permission to access top sites and fetch icons from websites",
+		defaultMessage: "Grant permission to access top sites",
 		description: "Top Sites widget: permission request",
 	},
 });
@@ -102,7 +102,6 @@ function TopSites(props: WidgetProps<Record<string, never>>) {
 	if (typeof browser.topSites === "undefined") {
 		const permissions: browser.permissions.Permissions = {
 			permissions: ["topSites"],
-			origins: ["<all_urls>"],
 		};
 
 		return (

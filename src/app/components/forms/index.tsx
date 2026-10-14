@@ -22,7 +22,6 @@ import { ColorField, ColorPairField } from "./ColorFields";
 import QuoteCategoriesField from "./QuoteCategoriesField";
 import SubFormField from "./SubFormField";
 import FeedURLField from "./FeedURLField";
-import HostAllField from "./HostAllField";
 import TimeZoneField from "./TimeZoneField";
 
 export interface FieldComponent<T> extends React.FC<FieldProps<T>> {
@@ -47,8 +46,6 @@ export function makeField(type: Type): FieldComponent<any> {
 		return SelectField;
 	} else if (type == "url_feed") {
 		return FeedURLField;
-	} else if (type == "host_all") {
-		return HostAllField;
 	} else if (type == "location") {
 		return LocationField;
 	} else if (type == "url") {

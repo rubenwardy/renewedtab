@@ -1,5 +1,5 @@
-import { getWebsiteIconOrNull } from "app/websiteIcons";
-import React, { useMemo } from "react";
+import { useWebsiteIconURL, WEBSITE_ICON_FALLBACK } from "app/utils/websiteIcons";
+import React from "react";
 import Icon, { IconProps } from './Icon';
 
 interface WebsiteIconProps extends Partial<IconProps> {
@@ -7,9 +7,10 @@ interface WebsiteIconProps extends Partial<IconProps> {
 }
 
 export default function WebsiteIcon(props: WebsiteIconProps) {
-	const iconPromise = useMemo(
-		() => (props.url) ? getWebsiteIconOrNull(props.url.toString()) : "",
-		[props.url]);
+	const icon = useWebsiteIconURL(props.url?.toString());
+	if (!icon) {
+		return null;
+	}
 
-	return (<Icon {...props} icon={iconPromise} />);
+	return (<Icon errorIcon={WEBSITE_ICON_FALLBACK} {...props} icon={icon} />);
 }

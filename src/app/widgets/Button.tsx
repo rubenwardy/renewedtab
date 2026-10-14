@@ -5,9 +5,9 @@ import { clampNumber, mergeClasses } from 'app/utils';
 import Color from 'app/utils/Color';
 import { type } from 'app/utils/Schema';
 import { Vector2 } from 'app/utils/Vector2';
-import { getWebsiteIconOrNull } from 'app/websiteIcons';
+import { useWebsiteIconURL, WEBSITE_ICON_FALLBACK } from 'app/utils/websiteIcons';
 import { WidgetProps, WidgetType } from 'app/Widget';
-import React, { useMemo } from 'react';
+import React from 'react';
 import { defineMessages } from 'react-intl';
 
 
@@ -46,9 +46,9 @@ function Button(props: WidgetProps<ButtonProps>) {
 		overflow: "hidden",
 	};
 
-	const icon = useMemo(
-		() => (data.useWebsiteIcons && getWebsiteIconOrNull(data.url)) || data.icon,
-		[data.icon, data.url, data.useWebsiteIcons]);
+	const websiteIconURL = useWebsiteIconURL(data.url);
+	const websiteIcon = data.useWebsiteIcons ? websiteIconURL : undefined;
+	const icon = websiteIcon || data.icon;
 
 	const className = mergeClasses(
 		"btn btn-custom btn-brighten h-100 w-100 m-0 p-3",
@@ -63,7 +63,7 @@ function Button(props: WidgetProps<ButtonProps>) {
 				{icon && (
 					<div className={mergeClasses(isHorizontal ? "col-auto" : "col", "p-1 h-100")}
 						style={{ position: "relative" }}>
-						<Icon icon={icon} />
+						<Icon icon={icon} errorIcon={websiteIcon ? WEBSITE_ICON_FALLBACK : undefined} />
 					</div>)}
 				{data.text && (
 					<div className={isHorizontal ? "col" : "col-auto"}>
@@ -83,28 +83,23 @@ const widget: WidgetType<ButtonProps> = {
 		url: "https://rubenwardy.com",
 		icon: "",
 		text: "rubenwardy.com",
-		useWebsiteIcons: false,
+		useWebsiteIcons: true,
 	},
 
 	async schema(widget) {
-		if (typeof browser === "undefined") {
-			return {
-				url: type.url(schemaMessages.url),
-				icon: type.url(schemaMessages.icon),
-				text: type.string(schemaMessages.text),
-			};
-		} else if (widget.props.useWebsiteIcons) {
+		if (widget.props.useWebsiteIcons) {
 			return {
 				url: type.url(schemaMessages.url),
 				text: type.string(schemaMessages.text),
-				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
+				icon: { ...type.url(schemaMessages.icon), showIfWebsiteIconsEnabled: false },
+				useWebsiteIcons: type.booleanWebsiteIcons(schemaMessages.useWebsiteIcons),
 			};
 		} else {
 			return {
 				url: type.url(schemaMessages.url),
 				text: type.string(schemaMessages.text),
 				icon: type.url(schemaMessages.icon),
-				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
+				useWebsiteIcons: type.booleanWebsiteIcons(schemaMessages.useWebsiteIcons),
 			};
 		}
 	},

@@ -5,6 +5,7 @@ import "./scss/main.scss";
 import { getFeedbackURL } from "./utils/webext";
 import { initSentry }  from "./sentry";
 import "./analytics/posthog";
+import { clearLegacyWebsiteIconCache } from "./utils/websiteIcons";
 
 performance.mark("app-js-start");
 
@@ -12,6 +13,8 @@ initSentry();
 
 
 createRoot(document.getElementById("app")!).render(<App />);
+
+clearLegacyWebsiteIconCache().catch(console.error);
 
 
 import { library, dom } from '@fortawesome/fontawesome-svg-core'

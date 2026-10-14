@@ -10,6 +10,7 @@ interface Version {
 interface Config {
 	API_URL: string;
 	PROXY_URL: string;
+	WEBSITE_ICONS_URL?: string;
 	SENTRY_DSN?: string;
 	POSTHOG_PROJECT_TOKEN?: string;
 	POSTHOG_HOST?: string;

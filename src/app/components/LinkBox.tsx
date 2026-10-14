@@ -7,7 +7,7 @@ import { defineMessages, FormattedMessage } from "react-intl";
 import Schema, { type } from 'app/utils/Schema';
 import { miscMessages, schemaMessages } from "app/locale/common";
 import deepCopy from "app/utils/deepcopy";
-import { getWebsiteIconOrNull } from "app/websiteIcons";
+import { useWebsiteIconURL, WEBSITE_ICON_FALLBACK } from "app/utils/websiteIcons";
 import { enumToValue } from "app/utils/enum";
 import useElementSize from "app/hooks/useElementSize";
 import useGlobalSearch from "app/hooks/useGlobalSearch";
@@ -70,8 +70,14 @@ function LinkItem(props: { link: Link; linkBoxProps: BaseLinkBoxProps }) {
 	const showText = listBoxStyle == ListBoxStyle.Vertical || (linkBoxProps.widgetTheme.showText ?? true);
 	const target = linkBoxProps.openInNewTab ? "_blank" : undefined;
 	const requiresIcons = (listBoxStyle == ListBoxStyle.Icons || useWebsiteIcons) && link.url.trim() != "";
-	const icon = link.icon && (<Icon icon={link.icon} requiresIcons={requiresIcons}
-		defaultIcon={linkBoxProps.defaultIcon} errorIcon={linkBoxProps.errorIcon} />);
+	const websiteIconURL = useWebsiteIconURL(link.url);
+	const websiteIcon = useWebsiteIcons && !link.icon ? websiteIconURL : undefined;
+	// Icon-only links would be invisible without an icon
+	const iconSrc = link.icon || websiteIcon ||
+		(useWebsiteIcons && listBoxStyle == ListBoxStyle.Icons ? WEBSITE_ICON_FALLBACK : undefined);
+	const icon = iconSrc && (<Icon icon={iconSrc} requiresIcons={requiresIcons}
+		defaultIcon={linkBoxProps.defaultIcon}
+		errorIcon={linkBoxProps.errorIcon ?? (websiteIcon ? WEBSITE_ICON_FALLBACK : undefined)} />);
 
 	if (link.url !== "") {
 		const attr = (typeof browser !== "undefined" && link.url.startsWith("chrome://")) ? {
@@ -116,7 +122,6 @@ function LinkItem(props: { link: Link; linkBoxProps: BaseLinkBoxProps }) {
 export function LinkBox(props: LinkBoxProps) {
 	const {links: rawLinks, ...style} = props;
 	const listBoxStyle = enumToValue(ListBoxStyle, props.widgetTheme.listBoxStyle ?? ListBoxStyle.Vertical);
-	const useWebsiteIcons = props.useWebsiteIcons ?? false;
 	const { query } = useGlobalSearch();
 	const ref = useRef<HTMLDivElement>(null);
 	const size = useElementSize(ref);
@@ -130,16 +135,8 @@ export function LinkBox(props: LinkBoxProps) {
 			ret.splice(rows * columns);
 		}
 
-		if (useWebsiteIcons && typeof browser !== "undefined") {
-			ret
-				.filter(link => link.url.length > 0 && (link.icon == "" || link.icon == undefined))
-				.forEach(link => {
-					link.icon = getWebsiteIconOrNull(link.url);
-				});
-		}
-
 		return ret;
-	}, [rawLinks, size, props.limitItemsToAvoidScrolling, useWebsiteIcons, query]);
+	}, [rawLinks, size, props.limitItemsToAvoidScrolling, query]);
 
 	const ulClasses = mergeClasses(
 		listBoxStyle == ListBoxStyle.Icons && "iconbar",

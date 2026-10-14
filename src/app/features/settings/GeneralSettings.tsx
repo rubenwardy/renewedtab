@@ -34,6 +34,9 @@ export interface GeneralSettingsProps {
 
 	showBookmarksBar: boolean;
 	setShowBookmarksBar: (value: boolean) => void;
+
+	disableWebsiteIcons: boolean;
+	setDisableWebsiteIcons: (value: boolean) => void;
 }
 
 
@@ -143,6 +146,22 @@ export default function GeneralSettings(props: GeneralSettingsProps) {
 									}} />
 							</p>)}
 					</div>)}
+			</div>
+
+			<div className="field">
+				<label className="inline" htmlFor="disable-website-icons">
+					<input name="disable-website-icons" id="disable-website-icons" className="mr-2"
+						type="checkbox" checked={props.disableWebsiteIcons}
+						onChange={e => props.setDisableWebsiteIcons(e.target.checked)} />
+					<FormattedMessage
+						defaultMessage="Disable website icons"
+						description="General settings: disable website icons" />
+				</label>
+				<p className="text-muted">
+					<FormattedMessage
+						defaultMessage="Only the domain name (ie: google.com) is sent, and we do not log or store website icon requests."
+						description="General settings: disable website icons hint" />
+				</p>
 				<p className="mt-4">
 					<Button label={messages.privacyPolicy}
 						variant={ButtonVariant.Secondary} target="_blank"

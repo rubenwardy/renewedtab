@@ -35,6 +35,10 @@ Make sure to run `npm install`
 
 Copy `config.example.json` to `config.json`.
 
+`WEBSITE_ICONS_URL` is the base URL of a [favicon-api](https://github.com/vemetric/favicon-api)
+instance, including the trailing slash; icons are loaded from `WEBSITE_ICONS_URL + domain`.
+Remove it or leave it empty to disable website icons.
+
 (Optional) If you want to run a local API/proxy server, then you will need to:
 
 * Change `API_URL` and `PROXY_URL` in `config.json` to localhost:

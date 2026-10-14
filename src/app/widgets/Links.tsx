@@ -181,6 +181,7 @@ function LinksImportExport(props: WidgetEditComponentProps<LinksWidgetProps>) {
 
 const initialProps: LinksWidgetProps = {
 	showAddButton: true,
+	useWebsiteIcons: true,
 	links: [
 		{
 			id: uuid(),
@@ -227,22 +228,13 @@ const widget: WidgetType<LinksWidgetProps> = {
 
 	async schema(widget) {
 		const linkSchema = widget.props.enableCustomIcons ? FullLinkSchema : LinkSchema;
-		if (typeof browser !== "undefined") {
-			return {
-				links: type.array(linkSchema, messages.links),
-				openInNewTab: type.boolean(schemaMessages.openInNewTab),
-				enableCustomIcons: type.boolean(messages.enableCustomIcons),
-				useWebsiteIcons: type.booleanHostPerm(schemaMessages.useWebsiteIcons),
-				showAddButton: type.boolean(messages.showAddButton),
-			};
-		} else {
-			return {
-				links: type.array(linkSchema, messages.links),
-				openInNewTab: type.boolean(schemaMessages.openInNewTab),
-				enableCustomIcons: type.boolean(messages.enableCustomIcons),
-				showAddButton: type.boolean(messages.showAddButton),
-			};
-		}
+		return {
+			links: type.array(linkSchema, messages.links),
+			openInNewTab: type.boolean(schemaMessages.openInNewTab),
+			enableCustomIcons: type.boolean(messages.enableCustomIcons),
+			useWebsiteIcons: type.booleanWebsiteIcons(schemaMessages.useWebsiteIcons),
+			showAddButton: type.boolean(messages.showAddButton),
+		};
 	},
 
 	async onLoaded(widget: Widget<any>) {
