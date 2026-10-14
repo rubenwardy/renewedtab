@@ -16,12 +16,12 @@ export class WidgetManager {
 	constructor(private storage: IStorage) {}
 
 	async load() {
-		window.performance.mark("widget-repository-start-load");
+		performance.mark("widget-repository-start-load");
 
 		const json = await this.storage.get<Widget<unknown>[]>("widgets");
 		if (!json) {
 			this.widgets = [];
-			window.performance.mark("widget-repository-end-load");
+			performance.mark("widget-repository-end-load");
 			return;
 		}
 
@@ -33,7 +33,7 @@ export class WidgetManager {
 			await this.afterLoad(widget);
 		}
 
-		window.performance.mark("widget-repository-end-load");
+		performance.mark("widget-repository-end-load");
 	}
 
 	private async afterLoad(widget: Widget<unknown>) {

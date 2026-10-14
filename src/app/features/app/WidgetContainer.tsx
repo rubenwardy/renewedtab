@@ -121,7 +121,7 @@ export function WidgetContainer<T>(props: WidgetProps<T>) {
 	const intl = useIntl();
 
 	useEffect(() => {
-		window.performance.mark(`widget-${props.type}-render-start`);
+		performance.mark(`widget-${props.type}-render-start`);
 	}, [props.type]);
 
 	switch (mode) {

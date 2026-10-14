@@ -50,7 +50,7 @@ const widgetManager = new WidgetManager(storage);
 
 export default function App() {
 	useEffect(() => {
-		window.performance.mark("app-mounted");
+		performance.mark("app-mounted");
 	}, []);
 
 	const [loadingRes,] = usePromise(async () => {

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 export function useMarkWidgetLoaded(type: string) {
 	useEffect(() => {
-		window.performance.mark(`widget-${type}-loaded`);
+		performance.mark(`widget-${type}-loaded`);
 	}, [type]);
 }
 

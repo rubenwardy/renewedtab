@@ -52,7 +52,7 @@ export default function ActualBackground(props: ActualBackgroundProps) {
 	}
 
 	useEffect(() => {
-		window.performance.mark("background-loaded");
+		performance.mark("background-loaded");
 	}, [])
 
 	return (
