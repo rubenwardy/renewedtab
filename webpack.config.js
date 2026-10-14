@@ -23,6 +23,7 @@ const configFile = path.resolve(__dirname, "config.json");
 function getConfig() {
 	const config = JSON.parse(fs.readFileSync(configFile).toString());
 	config.SENTRY_DSN = process.env.SENTRY_DSN ?? config.SENTRY_DSN;
+	config.POSTHOG_PROJECT_TOKEN = process.env.POSTHOG_PROJECT_TOKEN ?? config.POSTHOG_PROJECT_TOKEN;
 
 	return {
 		API_URL: JSON.stringify(config.API_URL),
